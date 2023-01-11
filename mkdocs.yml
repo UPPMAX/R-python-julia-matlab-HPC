@@ -1,10 +1,16 @@
 site_name: Introduction to running R, Python, and Julia in HPC
 
 nav:
-    - Home: index.md
+    - Overview: index.md
     - Python: 
-      - Intro: python-intro.md
-      - Load and run: load_run.md
+      - Intro: python_intro.md
+      - Load and run: python_load_run.md
+    - Julia:
+      - Intro: julia_intro.md
+      - Load and run: julia_load_run.md
+    - R: 
+      - Intro: r_intro.md
+      - Load and run: r_load_run.md
 
 theme: readthedocs
 
