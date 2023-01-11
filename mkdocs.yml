@@ -1,0 +1,4 @@
+site_name: Introduction to running R, Python, and Julia in HPC
+
+nav:
+    - Home: index.md
