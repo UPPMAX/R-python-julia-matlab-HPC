@@ -18,6 +18,8 @@ theme:
     hljs_languages:
         - yaml
         - rust
+    features: 
+        - content.tabs.link
         
 extra:
     feature:
