@@ -19,6 +19,10 @@ theme:
         - yaml
         - rust
         
+extra:
+    feature:
+        tabs: true
+
 markdown_extensions:
   - toc:
       toc_depth: 3
