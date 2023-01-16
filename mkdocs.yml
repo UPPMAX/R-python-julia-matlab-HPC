@@ -14,7 +14,11 @@ nav:
 
 theme: 
     name: readthedocs
-       
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - rust
+        
 markdown_extensions:
   - toc:
       toc_depth: 3
