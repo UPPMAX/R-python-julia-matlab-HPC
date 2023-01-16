@@ -15,8 +15,8 @@
    - Use Python for ML
    - Use GPUs with Python
 
-`````{tabs} 
-````{tab} Mac
+````` tabs
+```` tab "Mac"
 
 - Start terminal (e.g. from Launchpad) or [iTerm2](https://iterm2.com/)
 ```bash=
@@ -31,7 +31,7 @@ $ ssh <username>@rackham.uppmax.uu.se
 ```
 ````
 
-````{tab} Windows
+```` tab "Windows"
 
 - the ssh (secure shell) client [**putty**](https://www.putty.org/) is sufficient first days of the course!
 
