@@ -58,19 +58,33 @@ $ ssh <username>@rackham.uppmax.uu.se
 ````
 `````
 
- 
-<Tabs
-  defaultValue="apple"
-  values={[
-    {label: 'Apple', value: 'apple'},
-    {label: 'Orange', value: 'orange'},
-    {label: 'Banana', value: 'banana'},
-  ]}>
-  <TabItem value="apple">This is an apple 🍎</TabItem>
-  <TabItem value="orange">This is an orange 🍊</TabItem>
-  <TabItem value="banana">This is a banana 🍌</TabItem>
-</Tabs>
+## Tabs 
 
+```curl
+$ curl -O wget http://example.com/pk.zip
+```
+
+```wget
+$ wget http://example.com/pk.zip
+```
+
+## Single block
+
+```
+$ ls -lisa
+```
+
+
+=== "Tab 1"
+    Markdown **content**.
+
+    Multiple paragraphs.
+
+=== "Tab 2"
+    More Markdown **content**.
+
+    - list item a
+    - list item b
 
 === "C"
 
