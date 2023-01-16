@@ -36,9 +36,7 @@ markdown_extensions:
   - footnotes
   - pymdownx.details
   - pymdownx.tabbed:
-      slugify: !!python/object/apply:pymdownx.slugs.slugify
-        kwds:
-          case: lower
+      alternate_style: true
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
@@ -49,9 +47,5 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-  - markdown_fenced_code_tabs:
-      single_block_as_tab: False
-      active_class: 'active'
-      template: 'default'
       
 
