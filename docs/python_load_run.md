@@ -1,7 +1,9 @@
 Load and run python
 ===================
 
-At both UPPMAX and HPC2N we call the applications available via the module system modules. 
+!!! note
+    
+    At both UPPMAX and HPC2N we call the applications available via the module system modules. 
     - https://www.uppmax.uu.se/resources/software/module-system/ 
     - https://www.hpc2n.umu.se/documentation/environment/lmod 
 
@@ -34,15 +36,17 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
 Check for Python versions
 -------------------------
 
-=== "UPPMAX"
+## Results {.tabset}
 
-     Check all available Python versions with:
+### UPPMAX
+
+    Check all available Python versions with:
 
     ``` sh
     $ module avail python
     ```
 
-=== "HPC2N"
+### HPC2N
    
     Check all available version Python versions with:
 
@@ -62,10 +66,9 @@ Check for Python versions
     $ module spider Python/3.9.5 
     ```
 
-.. admonition:: Output at UPPMAX as of March 9 2022
-   :class: dropdown
+??? tip "Output at UPPMAX as of March 9 2022"
     
-       .. code-block::  tcl
+    ``` tcl
     
           -------------------------------------- /sw/mf/rackham/applications ---------------------------------------
            python_ML_packages/3.9.5    wrf-python/1.3.1
@@ -81,11 +84,11 @@ Check for Python versions
 
            Use module spider" to find all possible modules and extensions.
            Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+    ```
+    
+??? tip "Output at HPC2N as of 27 July 2022"
 
-.. admonition:: Output at HPC2N as of 27 July 2022
-    :class: dropdown
-
-        .. code-block:: tcl
+    ```tcl
 
            b-an01 [~]$ module spider Python
            ----------------------------------------------------------------------------
@@ -120,6 +123,7 @@ Check for Python versions
            For example:
             $ module spider Python/3.9.5
            ----------------------------------------------------------------------------
+    ```
 
 Load a Python module
 --------------------
