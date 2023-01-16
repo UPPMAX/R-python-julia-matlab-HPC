@@ -12,8 +12,11 @@ nav:
       - Intro: r_intro.md
       - Load and run: r_load_run.md
 
-theme: readthedocs
-
+theme: 
+    name: readthedocs
+    features:
+       - content.tabs.link
+       
 markdown_extensions:
   - toc:
       toc_depth: 3
