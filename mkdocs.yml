@@ -13,8 +13,7 @@ nav:
       - Load and run: r_load_run.md
 
 theme: 
-    features:
-       - content.tabs.link
+    name: readthedocs
        
 markdown_extensions:
   - toc:
