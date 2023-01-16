@@ -38,7 +38,8 @@ markdown_extensions:
   - pymdownx.tabbed:
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
-          case: lower  - pymdownx.highlight:
+          case: lower
+  - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
