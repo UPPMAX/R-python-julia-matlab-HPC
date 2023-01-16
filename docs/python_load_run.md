@@ -6,14 +6,13 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
     - https://www.hpc2n.umu.se/documentation/environment/lmod 
 
    
-.. objectives:: 
+!!! info "objectives" 
 
-   - Show how to load Python
-   - Show how to run Python scripts and start the Python command line
+    - Show how to load Python
+    - Show how to run Python scripts and start the Python command line
 
-.. admonition:: Short cheat sheet
-    :class: dropdown 
-    
+??? tip "Short cheat sheet"
+   
     - See which modules exists: ``module spider`` or ``ml spider``
     - Find module versions for a particular software: ``module spider <software>``
     - Modules depending only on what is currently loaded: ``module avail`` or ``ml av``
@@ -23,8 +22,9 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
     - More information about a module: ``module show <module>/<version>`` or ``ml show <module>/<version>``
     - Unload all modules except the 'sticky' modules: ``module purge`` or ``ml purge``
     
-.. warning::
-   Note that the module systems at UPPMAX and HPC2 are slightly different. While all modules at UPPMAX not directly related to bio-informatics are shown by ``ml avail``, modules at HPC2N are hidden until one has loaded a prerequisite like the compiler ``GCC``.
+!!! warning
+   
+    Note that the module systems at UPPMAX and HPC2 are slightly different. While all modules at UPPMAX not directly related to bio-informatics are shown by ``ml avail``, modules at HPC2N are hidden until one has loaded a prerequisite like the compiler ``GCC``.
 
 
 - For reproducibility reasons, you should always load a specific version of a module instead of just the default version
@@ -34,37 +34,33 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
 Check for Python versions
 -------------------------
 
-
-.. tabs::
-
-   .. tab:: UPPMAX
+=== "UPPMAX"
 
      Check all available Python versions with:
 
-      .. code-block:: sh
+    ``` sh
+    $ module avail python
+    ```
 
-          $ module avail python
-
-
-   .. tab:: HPC2N
+=== "HPC2N"
    
-      Check all available version Python versions with:
+    Check all available version Python versions with:
 
-      .. code-block:: sh
- 
-         $ module spider Python
-      
-      To see how to load a specific version of Python, including the prerequisites, do 
+    ``` sh
+    $ module spider Python
+    ``
+    
+    To see how to load a specific version of Python, including the prerequisites, do 
 
-      .. code-block:: sh
-   
-         $ module spider Python/<version>
+    ``` sh
+    $ module spider Python/<version>
+    ```
+    
+    Example for Python 3.9.5
 
-      Example for Python 3.9.5
-
-      .. code-block:: sh
-
-         $ module spider Python/3.9.5 
+    ``` sh
+    $ module spider Python/3.9.5 
+    ```
 
 .. admonition:: Output at UPPMAX as of March 9 2022
    :class: dropdown
