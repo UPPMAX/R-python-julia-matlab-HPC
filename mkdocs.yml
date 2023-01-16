@@ -13,7 +13,6 @@ nav:
       - Load and run: r_load_run.md
 
 theme: 
-#    name: readthedocs
     features:
        - content.tabs.link
        
