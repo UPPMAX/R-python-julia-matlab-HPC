@@ -114,54 +114,25 @@ Preliminary schedule
    :maxdepth: 2
    :caption: Python Lessons:
 
-   python/introPython.rst
-   python/load_runPython.rst
-   python/packagesPython.rst
-   python/isolatedPython.rst
-   python/batchPython.md
-   python/interactivePython.md
-   python/uppmaxPython.rst
-   python/isolatedUPPMAXPython.rst
-   python/conda.rst
-   python/jupyterUPPMAX.md
-   python/kebnekaisePython.md
-   python/isolatedHPC2NPython.rst
+   introPython.rst
+   load_runPython.rst
+   packagesPython.rst
+   isolatedPython.rst
+   batchPython.md
+   interactivePython.md
+   uppmaxPython.rst
+   isolatedUPPMAXPython.rst
+   conda.rst
+   jupyterUPPMAX.md
+   kebnekaisePython.md
+   isolatedHPC2NPython.rst
 
 .. toctree::
    :maxdepth: 2
    :caption: R Lessons:
 
    R/intro.rst
-   R/introPython.rst
-   R/load_runPython.rst
-   R/packagesPython.rst
-   R/isolatedPython.rst
-   R/batchPython.md
-   R/interactivePython.md
-   R/uppmaxPython.rst
-   R/isolatedUPPMAXPython.rst
-   R/conda.rst
-   R/jupyterUPPMAX.md
-   R/kebnekaisePython.md
-   R/isolatedHPC2NPython.rst
   
-.. toctree::
-   :maxdepth: 2
-   :caption: julia Lessons:
-
-   julia/introPython.rst
-   julia/load_runPython.rst
-   julia/packagesPython.rst
-   julia/isolatedPython.rst
-   julia/batchPython.md
-   julia/interactivePython.md
-   julia/uppmaxPython.rst
-   julia/isolatedUPPMAXPython.rst
-   julia/conda.rst
-   julia/jupyterUPPMAX.md
-   julia/kebnekaisePython.md
-   julia/isolatedHPC2NPython.rst
-
 
 .. Indices and tables
 .. ==================
