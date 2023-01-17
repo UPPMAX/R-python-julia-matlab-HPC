@@ -132,7 +132,7 @@ Preliminary schedule
    :maxdepth: 2
    :caption: julia Lessons:
 
-   julia/introPython.rst
+   julia/introJulia.rst
    julia/load_runPython.rst
    julia/packagesPython.rst
    julia/isolatedPython.rst
