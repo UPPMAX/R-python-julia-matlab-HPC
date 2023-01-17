@@ -127,6 +127,11 @@ Preliminary schedule
    kebnekaisePython.md
    isolatedHPC2NPython.rst
 
+.. toctree::
+   :maxdepth: 2
+   :caption: R Lessons:
+
+   R/intro.rst
   
 
 .. Indices and tables
