@@ -1,10 +1,10 @@
-.. Python-at-UPPMAX documentation master file, created by
+.. R-python-julia-HPC documentation master file, created by
    sphinx-quickstart on Fri Jan 21 18:24:04 2022.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
    
-Welcome to HPC python course material
-=====================================
+Welcome to Introduction to running R, Python, and Julia in HPC
+==============================================================
 
 .. admonition:: This material
    
@@ -112,10 +112,14 @@ Preliminary schedule
 
 .. toctree::
    :maxdepth: 2
-   :caption: Lessons:
+   :caption: Python Lessons:
 
-   intro.rst
-   
+   introPython.rst
+   load_runPython.rst
+   packagesPython.rst
+   isolatedPython.rst
+   batchPython.md
+   interactivePython.md
 
   
 
