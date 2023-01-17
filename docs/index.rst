@@ -118,14 +118,14 @@ Preliminary schedule
    python/load_runPython.rst
    python/packagesPython.rst
    python/isolatedPython.rst
+   python/isolatedUPPMAXPython.rst
+   python/isolatedHPC2NPython.rst
    python/batchPython.md
    python/interactivePython.md
    python/uppmaxPython.rst
-   python/isolatedUPPMAXPython.rst
    python/conda.rst
    python/jupyterUPPMAX.md
    python/kebnekaisePython.md
-   python/isolatedHPC2NPython.rst
 
  
 .. toctree::
@@ -136,14 +136,13 @@ Preliminary schedule
    julia/load_runPython.rst
    julia/packagesPython.rst
    julia/isolatedPython.rst
+   julia/isolatedUPPMAXPython.rst
+   julia/isolatedHPC2NPython.rst
    julia/batchPython.md
    julia/interactivePython.md
    julia/uppmaxPython.rst
-   julia/isolatedUPPMAXPython.rst
-   julia/conda.rst
    julia/jupyterUPPMAX.md
    julia/kebnekaisePython.md
-   julia/isolatedHPC2NPython.rst
    
 .. toctree::
    :maxdepth: 2
@@ -153,14 +152,13 @@ Preliminary schedule
    R/load_runPython.rst
    R/packagesPython.rst
    R/isolatedPython.rst
+   R/isolatedUPPMAXPython.rst
+   R/isolatedHPC2NPython.rst
    R/batchPython.md
    R/interactivePython.md
    R/uppmaxPython.rst
-   R/isolatedUPPMAXPython.rst
-   R/conda.rst
-   R/jupyterUPPMAX.md
    R/kebnekaisePython.md
-   R/isolatedHPC2NPython.rst
+
 
 
 .. Indices and tables
