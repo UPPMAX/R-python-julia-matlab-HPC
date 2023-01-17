@@ -1,6 +1,5 @@
 Isolated environments at UPPMAX
-===============================
-
+-------------------------------
 .. note::
    Isolated environments solve a couple of problems:
    
