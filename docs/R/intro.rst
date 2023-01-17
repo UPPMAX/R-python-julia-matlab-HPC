@@ -1,19 +1,16 @@
-Introduction Python
+Introduction R
 ===================
 
-`Welcome page and syllabus <https://uppmax.github.io/HPC-python/index.html>`_
+`Welcome page and syllabus <https://uppmax.github.io/R-python-julia-HPC/index.html>`_
    - Also link at House symbol |:house:| at top of page 
 
 .. admonition:: **Learning outcomes**
    
-   - Load Python modules and site-installed Python packages
+   - Load R modules and site-installed R packages
    - Create a virtual environment
    - Install Python packages with pip (Kebnekaise, Rackham, Snowy)
    - Install Python packages with conda (Bianca)
    - Write a batchscript for running Python
-   - Use Python in parallel
-   - Use Python for ML
-   - Use GPUs with Python
    
 .. warning:: Course has already been given
 
