@@ -120,6 +120,12 @@ Preliminary schedule
    isolatedPython.rst
    batchPython.md
    interactivePython.md
+   uppmaxPython.rst
+   isolatedUPPMAXPython.rst
+   conda.rst
+   jupyterUPPMAX.md
+   kebnekaisePython.md
+   isolatedHPC2NPython.rst
 
   
 
