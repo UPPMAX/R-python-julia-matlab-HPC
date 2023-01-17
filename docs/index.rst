@@ -127,6 +127,24 @@ Preliminary schedule
    python/kebnekaisePython.md
    python/isolatedHPC2NPython.rst
 
+ 
+.. toctree::
+   :maxdepth: 2
+   :caption: julia Lessons:
+
+   julia/introPython.rst
+   julia/load_runPython.rst
+   julia/packagesPython.rst
+   julia/isolatedPython.rst
+   julia/batchPython.md
+   julia/interactivePython.md
+   julia/uppmaxPython.rst
+   julia/isolatedUPPMAXPython.rst
+   julia/conda.rst
+   julia/jupyterUPPMAX.md
+   julia/kebnekaisePython.md
+   julia/isolatedHPC2NPython.rst
+   
 .. toctree::
    :maxdepth: 2
    :caption: R Lessons:
@@ -144,23 +162,6 @@ Preliminary schedule
    R/jupyterUPPMAX.md
    R/kebnekaisePython.md
    R/isolatedHPC2NPython.rst
-  
-.. toctree::
-   :maxdepth: 2
-   :caption: julia Lessons:
-
-   julia/introPython.rst
-   julia/load_runPython.rst
-   julia/packagesPython.rst
-   julia/isolatedPython.rst
-   julia/batchPython.md
-   julia/interactivePython.md
-   julia/uppmaxPython.rst
-   julia/isolatedUPPMAXPython.rst
-   julia/conda.rst
-   julia/jupyterUPPMAX.md
-   julia/kebnekaisePython.md
-   julia/isolatedHPC2NPython.rst
 
 
 .. Indices and tables
