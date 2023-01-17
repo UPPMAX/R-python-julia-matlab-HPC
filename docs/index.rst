@@ -150,7 +150,6 @@ Preliminary schedule
    :caption: R Lessons:
 
    R/intro.rst
-   R/introPython.rst
    R/load_runPython.rst
    R/packagesPython.rst
    R/isolatedPython.rst
