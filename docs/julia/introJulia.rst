@@ -20,7 +20,7 @@ Introduction Julia
       - https://hackmd.io/@bclaremar/HPC-python
       - https://hackmd.io/IoseeprATrWH0ZI7z6wJ-w?view
       
-
+   
 Some practicals
 ---------------
 
@@ -131,8 +131,13 @@ Example of arrangement for the "worst case"!
    :align: center
 
 
-What is python?
----------------
+What is Julia?
+--------------
+
+
+.. figure:: ../../img/two-language.png
+   :width: 300
+   :align: center
 
 As you probably already know…
     
@@ -207,14 +212,14 @@ Briefly about the cluster hardware and system at UPPMAX and HPC2N
      
 - Each node contains several processor cores and RAM and a local disk called scratch.
 
-.. figure:: img/node.png
+.. figure:: ../../img/node.png
    :align: center
 
 - The user logs in to **login nodes**  via Internet through ssh or Thinlinc.
 
   - Here the file management and lighter data analysis can be performed.
 
-.. figure:: img/nodes.png
+.. figure:: ../../img/nodes.png
    :align: center
 
 - The **calculation nodes** have to be used for intense computing. 
