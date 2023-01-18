@@ -8,16 +8,17 @@ Welcome to Introduction to running R, Python, and Julia in HPC
 
 .. admonition:: This material
    
-   Here you will find the content of the workshop Using Python in an HPC environment.
+   Here you will find the content of the workshop **Introduction to running R, Python, and
+   Julia** in an HPC environment.
    
    - Documentation at the HPC centres UPPMAx and HPC2N
       - UPPMAX: https://www.uppmax.uu.se/support/user-guides/python-user-guide/
-      - HPC2N: https://www.hpc2n.umu.se/resources/software/user_installed/python
+      - HPC2N: https://www.hpc2n.umu.se/resources/software/julia
 
 
 .. admonition:: Content
 
-   - This course aims to give a brief, but comprehensive introduction to using Python in an HPC environment.
+   - This course aims to give a brief, but comprehensive introduction to using Julia in an HPC environment.
    - You will learn how to
       - use modules to load Python
       - find site installed Python packages
@@ -114,7 +115,7 @@ Preliminary schedule
    :maxdepth: 2
    :caption: Python Lessons:
 
-   introJulia.rst
+   intro.rst
    load_runPython.rst
    packagesPython.rst
    isolatedPython.rst
