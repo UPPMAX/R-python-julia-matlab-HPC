@@ -6,16 +6,15 @@ Introduction Julia
 
 .. admonition:: **Learning outcomes**
    
-   - Load Python modules and site-installed Python packages
-   - Create a virtual environment
-   - Install Python packages with pip (Kebnekaise, Rackham, Snowy)
-   - Install Python packages with conda (Bianca)
-   - Write a batchscript for running Python
-   - Use Python in parallel
-   - Use Python for ML
-   - Use GPUs with Python
+   - Load Julia modules and site-installed Julia packages
+   - Create a Julia environment
+   - Install Julia packages with **Pkg**
+   - Write a batchscript for running Julia
+   - Use Julia in parallel mode
+   - Use Julia for ML
+   - Use GPUs with Julia
    
-.. warning:: Course has already been given
+.. warning:: Course has already been given (TOFIX)
 
    - Q/A are public at the HackMD pages
       - https://hackmd.io/@bclaremar/HPC-python
@@ -23,8 +22,8 @@ Introduction Julia
       
 
 Some practicals
-----------------
-        
+---------------
+
 .. admonition:: Zoom
 
     - The course is run over Zoom. You should have gotten an email with the links
@@ -41,7 +40,7 @@ Some practicals
     - There may be breakout rooms used in the Zoom for the hands-ons. You will be randomly assigned to one of them.  
     
     
-.. admonition:: Collabration document HackMD
+.. admonition:: Collabration document HackMD (TOFIX)
 
     - Use the HackMD page for the workshop with your questions.
         - https://hackmd.io/@bclaremar/HPC-python
@@ -55,7 +54,7 @@ Some practicals
     
     - **Have a try with the Icebreaker question**
 
-.. admonition:: Exercises
+.. admonition:: Exercises (TOFIX)
 
     - You can download the exercises from the course GitHub repo, under the "Exercises" directory: https://github.com/UPPMAX/HPC-python/tree/main/Exercises 
     - On HPC2N, you can copy the exercises in a tarball from ``/proj/nobackup/snic2022-22-641/bbrydsoe/examples.tar.gz``
@@ -63,14 +62,14 @@ Some practicals
     
 .. admonition:: **Your expectations?**
    
-    - find best practices for using Python at UPPMAX and HPC2N
+    - find best practices for using Julia at UPPMAX and HPC2N
     - packages
-    - use the HPC performance with Python
+    - use the HPC performance with Julia
 
     
     **Not covered**
     
-    - improve python *coding* skills 
+    - improve Julia *coding* skills 
     - Other clusters
 
 
@@ -82,6 +81,7 @@ Some practicals
     - UPPMAX software library: https://uppsala.instructure.com/courses/67267/pages/uppmax-basics-software?module_item_id=455641
     - Whole intro course material (UPPMAX): https://www.uppmax.uu.se/support/courses-and-workshops/introductory-course-winter-2022/
     - HPC2N's intro course material (including link to recordings): https://github.com/hpc2n/intro-course
+    - HPC2N's YouTube channel video on Linux: https://www.youtube.com/watch?v=gq4Dvt2LeDg
 
 .. admonition:: Prepare your environment now!
   
@@ -111,7 +111,7 @@ Some practicals
    
        - Example. If your username is bbrydsoe and you are at HPC2N, then we recommend you create this folder: 
      
-         /proj/nobackup/snic2022-22-641/bbrydsoe/pythonHPC2N
+         /proj/nobackup/snic2022-22-641/bbrydsoe/pythonHPC2N (TOFIX)
          
 .. admonition:: Use Thinlinc or terminal?
 
@@ -127,7 +127,7 @@ Example of arrangement for the "worst case"!
 - (shellshare) or web browser with course material
 - your own terminal
 
-.. figure:: img/worst.jpg
+.. figure:: ../../img/worst.jpg
    :align: center
 
 
