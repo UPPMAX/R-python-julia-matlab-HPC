@@ -19,8 +19,9 @@ Introduction Julia
    - Q/A are public at the HackMD pages
       - https://hackmd.io/@bclaremar/HPC-python
       - https://hackmd.io/IoseeprATrWH0ZI7z6wJ-w?view
-      
    
+   
+
 Some practicals
 ---------------
 
