@@ -51,30 +51,21 @@ What is R?
 
 As you probably already know…
     
-    - “Python combines remarkable power with very clear syntax.
-    - It has modules, classes, exceptions, very high level dynamic data types, and dynamic typing. 
-    - There are interfaces to many system calls and libraries, as well as to various windowing systems. …“
+    - R is a programming language for statistical computing and graphics. 
+    - R's data structures include vectors, arrays, lists, and data frames.
+    - R is an interpreted language; users can access it through a command-line interpreter.
+    - It supports procedural programming with functions and, for some functions, object-oriented programming with generic functions. 
+    - It has many user-created packages to augment the functions of the R language. These packages offer statistical techniques, graphical devices, import/export, reporting (RMarkdown, knitr, Sweave), etc.
+    - It is one of the most commonly used programming languages in data mining.
 
-In particular, what sets Python apart from other languages is its fantastic
-open-source ecosystem for scientific computing and machine learning with
-libraries like NumPy, SciPy, scikit-learn and Pytorch.
+In short; R has statistics-related libraries of a great variety and provides a good environment for statistical computing and design. Also, the R programming language is very useful for data importing and cleaning.
 
-- Official Python documentation is found here https://www.python.org/doc/ .
-- Python forum is found here https://python-forum.io/ .
-- A nice introduction to packages can be found here: https://aaltoscicomp.github.io/python-for-scicomp/dependencies/
+- The home page of "The R Project for Statistical Computing" is here: https://www.r-project.org/
+- Official R documentation is found here: https://cran.r-project.org/manuals.html
+- A list of CRAN (The Comprehensive R Archive Network) is here: https://cran.r-project.org/mirrors.html
+- Data analysis workflows with R and Python: https://aaltoscicomp.github.io/data-analysis-workflows-course/
 - CodeRefinery develops and maintains training material on software best practices for researchers that already write code. Ther material addresses all academic disciplines and tries to be as programming language-independent as possible. https://coderefinery.org/lessons/
-- The youtube video `Thinking about Concurrency <https://www.youtube.com/watch?v=Bv25Dwe84g0>`_ is a good introduction to writing concurrent programs in Python and the book `High Performance Python <https://www.oreilly.com/library/view/high-performance-python/9781492055013/>`_ is a good resource for ways of speeding up Python code.
     
-    - And, if you feel a little unfamiliar to the LINUX world, have a look at the Introduction to UPPMAX course material here: https://www.uppmax.uu.se/support/courses-and-workshops/introductory-course-winter-2022/
-    
-More python?
-------------
-
-- CodeRefinery develops and maintains training material on software best practices for researchers that already write code. Their material addresses all academic disciplines and tries to be as programming language-independent as possible. https://coderefinery.org/lessons/
-- General introduction to Python at https://www.uppmax.uu.se/support/courses-and-workshops/introductory-course-summer-2022/
-
-- **This course:** Introduction to HPC (High performance computing) python at UPPMAX and HPC2N in September. 
-
 The two HPC centers UPPMAX and HPC2N
 ------------------------------------
 
