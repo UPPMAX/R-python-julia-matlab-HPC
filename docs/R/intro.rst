@@ -2,23 +2,16 @@ Introduction R
 ===================
 
 `Welcome page and syllabus <https://uppmax.github.io/R-python-julia-HPC/index.html>`_
-   - Also link at House symbol |:house:| at top of page 
+   - Also link by clicking the logo at the top left of the page 
 
 .. admonition:: **Learning outcomes**
    
    - Load R modules and site-installed R packages
-   - Create a virtual environment
-   - Install Python packages with pip (Kebnekaise, Rackham, Snowy)
-   - Install Python packages with conda (Bianca)
-   - Write a batchscript for running Python
+   - Install R packages from CRAN - automatic download and install
+   - Install R packages manually
+   - Write a batchscript for running R
    
-.. warning:: Course has already been given
-
-   - Q/A are public at the HackMD pages
-      - https://hackmd.io/@bclaremar/HPC-python
-      - https://hackmd.io/IoseeprATrWH0ZI7z6wJ-w?view
-      
-
+ 
 Some practicals
 ----------------
         
