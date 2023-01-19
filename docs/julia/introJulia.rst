@@ -55,7 +55,7 @@ the features of this language are:
 - "A rich language of types for constructing and describing objects"
 - A fast growing community of users and developers
 
-Shorcomings of Julia
+Shortcomings of Julia
 --------------------
 
 - As this is a new language, the libraries ecosystem is not as rich as in Python or R, for instance
@@ -72,9 +72,8 @@ More on Julia?
    - HPC2N: https://www.hpc2n.umu.se/resources/software/julia
 - Official Julia documentation is found here: https://docs.julialang.org/en/v1/
 - Slack channel for Julia and instructions for joining it are found here: https://julialang.org/slack/
-- Julia for High Performance Computing course material from ENCCS: https://enccs.github.io/Julia-for-HPC/
 - HPC2N YouTube video on Julia in HPC: https://www.youtube.com/watch?v=bXHe7Kj3Xxg
-
+- Julia for High Performance Computing course material from ENCCS: https://enccs.github.io/Julia-for-HPC/
 
 
 
