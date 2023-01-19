@@ -11,33 +11,8 @@ Introduction Python
    - Install Python packages with pip (Kebnekaise, Rackham, Snowy)
    - Install Python packages with conda (Bianca)
    - Write a batchscript for running Python
-   - Use Python in parallel
-   - Use Python for ML
-   - Use GPUs with Python
-   
-.. warning:: Course has already been given
 
-   - Q/A are public at the HackMD pages
-      - https://hackmd.io/@bclaremar/HPC-python
-      - https://hackmd.io/IoseeprATrWH0ZI7z6wJ-w?view
-      
-
-
-    
-.. admonition:: Collabration document HackMD
-
-    - Use the HackMD page for the workshop with your questions.
-        - https://hackmd.io/@bclaremar/HPC-python
-
-    - Depending on how many helpers there are we'll see how fast there are answers. 
-        - Some answers may come after the workshop.
- 
-    - Type in the left frame 
-        - "-" means new bullet and <tab> indents the level.
-        - don't focus too much on the formatting if you are new to "Markdown" language!
-    
-    - **Have a try with the Icebreaker question**
-
+  
 .. admonition:: Exercises
 
     - You can download the exercises from the course GitHub repo, under the "Exercises" directory: https://github.com/UPPMAX/HPC-python/tree/main/Exercises 
@@ -57,7 +32,7 @@ Introduction Python
     - Other clusters
 
 Preliminary schedule
-====================
+--------------------
 
 .. list-table:: Preliminary schedule
    :widths: 25 25 50
