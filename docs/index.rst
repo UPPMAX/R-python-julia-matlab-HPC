@@ -295,7 +295,7 @@ Material for improving your programming skills
    :maxdepth: 2
    :caption: Python Lessons:
 
-   python/introPython.rst
+   python/intro.rst
    python/load_runPython.rst
    python/packages.rst
    python/isolatedPython.rst
