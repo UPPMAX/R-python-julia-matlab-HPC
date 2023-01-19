@@ -46,34 +46,35 @@ focus to learn a new language.
 Features of Julia
 -----------------
 
-According to the Julia documentation (https://docs.julialang.org/en/v1/)
+According to the Julia documentation (https://docs.julialang.org/en/v1/) some of
+the features of this language are:
 
 - Good Base library with efficiently implemented operations written in Julia itself
 - "Good performance, approaching that of statically-compiled languages like C"
 - Modular and self-contained approach for libraries and development
 - "A rich language of types for constructing and describing objects"
+- A fast growing community of users and developers
 
 Shorcomings of Julia
----------------------
+--------------------
 
 - As this is a new language, the libraries ecosystem is not as rich as in Python or R, for instance
--  
-- 
-- Official Python documentation is found here https://www.python.org/doc/ .
-- Python forum is found here https://python-forum.io/ .
-- A nice introduction to packages can be found here: https://aaltoscicomp.github.io/python-for-scicomp/dependencies/
-- CodeRefinery develops and maintains training material on software best practices for researchers that already write code. Ther material addresses all academic disciplines and tries to be as programming language-independent as possible. https://coderefinery.org/lessons/
-- The youtube video `Thinking about Concurrency <https://www.youtube.com/watch?v=Bv25Dwe84g0>`_ is a good introduction to writing concurrent programs in Python and the book `High Performance Python <https://www.oreilly.com/library/view/high-performance-python/9781492055013/>`_ is a good resource for ways of speeding up Python code.
-    
-    - And, if you feel a little unfamiliar to the LINUX world, have a look at the Introduction to UPPMAX course material here: https://www.uppmax.uu.se/support/courses-and-workshops/introductory-course-winter-2022/
-    
+- Currently, using Julia for simple tasks (for instance, opening a file and writing text, plotting) is not as
+  efficient as using Linux tools (AWK, GREP) or compiled languages (Fortran, C/C++, Rust)
+- Previous situation is more noticeable upon running simple tasks in parallel mode (MPI, Threads)
+  
+
 More on Julia?
 --------------
 
-- CodeRefinery develops and maintains training material on software best practices for researchers that already write code. Their material addresses all academic disciplines and tries to be as programming language-independent as possible. https://coderefinery.org/lessons/
-- General introduction to Python at https://www.uppmax.uu.se/support/courses-and-workshops/introductory-course-summer-2022/
+- Documentation at the HPC centres UPPMAx and HPC2N
+   - UPPMAX: https://www.uppmax.uu.se/support/user-guides/python-user-guide/
+   - HPC2N: https://www.hpc2n.umu.se/resources/software/julia
+- Official Julia documentation is found here: https://docs.julialang.org/en/v1/
+- Slack channel for Julia and instructions for joining it are found here: https://julialang.org/slack/
+- Julia for High Performance Computing course material from ENCCS: https://enccs.github.io/Julia-for-HPC/
+- HPC2N YouTube video on Julia in HPC: https://www.youtube.com/watch?v=bXHe7Kj3Xxg
 
-- **This course:** Introduction to HPC (High performance computing) python at UPPMAX and HPC2N in September. 
 
 
 
