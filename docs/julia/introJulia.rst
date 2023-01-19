@@ -68,7 +68,7 @@ More on Julia?
 --------------
 
 - Documentation at the HPC centres UPPMAx and HPC2N
-   - UPPMAX: https://www.uppmax.uu.se/support/user-guides/python-user-guide/
+   - UPPMAX: https://www.uppmax.uu.se/support/user-guides/julia-user-guide/e/
    - HPC2N: https://www.hpc2n.umu.se/resources/software/julia
 - Official Julia documentation is found here: https://docs.julialang.org/en/v1/
 - Slack channel for Julia and instructions for joining it are found here: https://julialang.org/slack/
