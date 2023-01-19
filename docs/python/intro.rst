@@ -56,6 +56,56 @@ Introduction Python
     - improve python *coding* skills 
     - Other clusters
 
+Preliminary schedule
+====================
+
+.. list-table:: Preliminary schedule
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Time
+     - Topic
+     - Activity
+   * - 9:00
+     - Syllabus 
+     -
+   * - 
+     - Introduction 
+     - Lecture
+   * - 
+     - Loading modules and running Python codes 
+     - Lecture+code along
+   * - 
+     - Dealing with packages  
+     - Lecture+code along
+   * - 
+     - **Coffee**
+     - 
+   * - 
+     - Isolated environments (general)
+     - Lecture+code along
+   * - 
+     - SLURM Batch scripts for Python jobs  
+     - Lecture+code along + exercise
+   * - 
+     - Interactive
+     - Lecture+code along
+   * - 
+     - **Short leg stretch**
+     - 
+   * - 
+     - Additional exercises 
+     -
+   * - 
+     - Summary 
+     -
+   * - 
+     - Q&A on-demand
+     -
+   * - 12.30
+     - END
+     -
+    
 
 What is python?
 ---------------
