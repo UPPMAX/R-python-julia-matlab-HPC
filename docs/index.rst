@@ -17,12 +17,13 @@ Welcome to Introduction to running R, Python, and Julia in HPC
 
 .. admonition:: Content
 
-   - This course aims to give a brief, but comprehensive introduction to using Python, Julia nd R in an HPC environment.
+   - This course aims to give a brief, but comprehensive introduction to using Python, Julia and R in an HPC environment.
    - You will learn how to
       - start the interpreters of Python, Julia and R by the HPC module system
       - find site installed packages/libraries
       - install packages/libraries yourself
       - use virtual environments
+      - work interactivly
       - write batch scripts 
     - This course will consist of lectures interspersed with hands-on sessions where you get to try out what you have just learned.    
 
@@ -54,56 +55,6 @@ Preliminary schedule
      - 
 
     
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Python Lessons:
-
-   python/introPython.rst
-   python/load_runPython.rst
-   python/packages.rst
-   python/isolatedPython.rst
-   python/isolatedUPPMAXPython.rst
-   python/isolatedHPC2NPython.rst
-   python/batchPython.md
-   python/interactivePython.md
-   python/uppmaxPython.rst
-   python/conda.rst
-   python/jupyterUPPMAX.md
-   python/kebnekaisePython.md
-
- 
-.. toctree::
-   :maxdepth: 2
-   :caption: julia Lessons:
-
-   julia/introJulia.rst
-   julia/load_runPython.rst
-   julia/packagesPython.rst
-   julia/isolatedPython.rst
-   julia/isolatedUPPMAXPython.rst
-   julia/isolatedHPC2NPython.rst
-   julia/batchPython.md
-   julia/interactivePython.md
-   julia/uppmaxPython.rst
-   julia/jupyterUPPMAX.md
-   julia/kebnekaisePython.md
-   
-.. toctree::
-   :maxdepth: 2
-   :caption: R Lessons:
-
-   R/intro.rst
-   R/load_runPython.rst
-   R/packagesPython.rst
-   R/isolatedPython.rst
-   R/isolatedUPPMAXPython.rst
-   R/isolatedHPC2NPython.rst
-   R/batchPython.md
-   R/interactivePython.md
-   R/uppmaxPython.rst
-   R/kebnekaisePython.md
-
 
 Some practicals
 ---------------
@@ -338,6 +289,56 @@ Material for improving your programming skills
     - Introduction to UPPMAX course material here: https://www.uppmax.uu.se/support/courses-and-workshops/introductory-course-winter-2022/
     - Introduction to HPC2N YouTube video (including a lecture on Linux): https://www.youtube.com/playlist?list=PL6jMHLEmPVLw8rz_O0WvzhfiAK72Wrv80
 - General introduction to Python at https://www.uppmax.uu.se/support/courses-and-workshops/introductory-course-summer-2022/
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Python Lessons:
+
+   python/introPython.rst
+   python/load_runPython.rst
+   python/packages.rst
+   python/isolatedPython.rst
+   python/isolatedUPPMAXPython.rst
+   python/isolatedHPC2NPython.rst
+   python/batchPython.md
+   python/interactivePython.md
+   python/uppmaxPython.rst
+   python/conda.rst
+   python/jupyterUPPMAX.md
+   python/kebnekaisePython.md
+
+ 
+.. toctree::
+   :maxdepth: 2
+   :caption: julia Lessons:
+
+   julia/introJulia.rst
+   julia/load_runPython.rst
+   julia/packagesPython.rst
+   julia/isolatedPython.rst
+   julia/isolatedUPPMAXPython.rst
+   julia/isolatedHPC2NPython.rst
+   julia/batchPython.md
+   julia/interactivePython.md
+   julia/uppmaxPython.rst
+   julia/jupyterUPPMAX.md
+   julia/kebnekaisePython.md
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: R Lessons:
+
+   R/intro.rst
+   R/load_runPython.rst
+   R/packagesPython.rst
+   R/isolatedPython.rst
+   R/isolatedUPPMAXPython.rst
+   R/isolatedHPC2NPython.rst
+   R/batchPython.md
+   R/interactivePython.md
+   R/uppmaxPython.rst
+   R/kebnekaisePython.md
 
 
 .. Indices and tables
