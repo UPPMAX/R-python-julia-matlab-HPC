@@ -20,8 +20,7 @@ Introduction R
 .. admonition:: Prepare your environment now!
   
    - Please log in to Rackham, Kebnekaise or other cluster that you are using.
-
-   
+  
 .. tabs::
 
    .. tab:: UPPMAX
@@ -47,25 +46,7 @@ Introduction R
      
          /proj/nobackup/snic2022-22-641/bbrydsoe/pythonHPC2N
          
-.. admonition:: Use Thinlinc or terminal?
-
-   - It is up to you!
-   - Graphics come easier with Thinlinc
-   - For this course, when having many windows open, it may be better to run in terminal, for space issues.
-   
-   
-Example of arrangement for the "worst case"!
-############################################
-- HackMD
-- ZOOM view
-- (shellshare) or web browser with course material
-- your own terminal
-
-.. figure:: img/worst.jpg
-   :align: center
-
-
-What is python?
+What is R?
 ---------------
 
 As you probably already know…
