@@ -154,8 +154,15 @@ the content of these files:
 
 Here, we can observe that the ``Project.toml`` only gives us the UUID of the project while the
 ``Manifest.toml`` file contains the full information about the dependencies versions and organization
-layout. Notice the message regarding editing for the latter.
+layout. Notice the message regarding editing for the latter. Let's leave this environment: 
 
+
+.. code-block:: julia
+
+   (my-first-env) pkg> activate 
+      Activating project at `~/.julia/environments/v1.8`
+
+   (v1.8) pkg> 
 
 
 
