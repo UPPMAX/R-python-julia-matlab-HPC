@@ -8,8 +8,8 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
    
 .. objectives:: 
 
-   - Show how to load Python
-   - Show how to run Python scripts and start the Python command line
+   - Show how to load R
+   - Show how to run R scripts and start R on the command line
 
 .. admonition:: Short cheat sheet
     :class: dropdown 
@@ -24,14 +24,14 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
     - Unload all modules except the 'sticky' modules: ``module purge`` or ``ml purge``
     
 .. warning::
-   Note that the module systems at UPPMAX and HPC2 are slightly different. While all modules at UPPMAX not directly related to bio-informatics are shown by ``ml avail``, modules at HPC2N are hidden until one has loaded a prerequisite like the compiler ``GCC``.
+   Note that the module systems at UPPMAX and HPC2 are slightly different. While all modules at UPPMAX not directly related to bio-informatics are shown by ``ml avail``, most modules at HPC2N are hidden until one has loaded a prerequisite like the compiler ``GCC``.
 
 
 - For reproducibility reasons, you should always load a specific version of a module instead of just the default version
-- Many modules have prerequisite modules which needs to be loaded first (at HPC2N this is also the case for the Python modules). When doing ``module spider <module>/<version>`` you will get a list of which other modules needs to be loaded first
+- Many modules have prerequisite modules which needs to be loaded first (at HPC2N this is also the case for the R modules). When doing ``module spider <module>/<version>`` you will get a list of which other modules needs to be loaded first
 
 
-Check for Python versions
+Check for R versions
 -------------------------
 
 
