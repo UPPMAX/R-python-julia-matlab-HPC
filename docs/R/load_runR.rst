@@ -39,32 +39,32 @@ Check for R versions
 
    .. tab:: UPPMAX
 
-     Check all available Python versions with:
+     Check all available R versions with:
 
       .. code-block:: sh
 
-          $ module avail python
+          $ module avail R
 
 
    .. tab:: HPC2N
    
-      Check all available version Python versions with:
+      Check all available version R versions with:
 
       .. code-block:: sh
  
-         $ module spider Python
+         $ module spider R
       
-      To see how to load a specific version of Python, including the prerequisites, do 
+      To see how to load a specific version of R, including the prerequisites, do 
 
       .. code-block:: sh
    
-         $ module spider Python/<version>
+         $ module spider R/<version>
 
-      Example for Python 3.9.5
+      Example for R 4.0.4 (recommended version)
 
       .. code-block:: sh
 
-         $ module spider Python/3.9.5 
+         $ module spider R/4.0.4 
 
 .. admonition:: Output at UPPMAX as of March 9 2022
    :class: dropdown
@@ -86,51 +86,47 @@ Check for R versions
            Use module spider" to find all possible modules and extensions.
            Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 
-.. admonition:: Output at HPC2N as of 27 July 2022
+.. admonition:: Output at HPC2N as of 20 January 2023
     :class: dropdown
 
         .. code-block:: tcl
 
-           b-an01 [~]$ module spider Python
-           ----------------------------------------------------------------------------
-           Python:
-           ----------------------------------------------------------------------------
-           Description:
-               Python is a programming language that lets you work more quickly and
-               integrate your systems more effectively.
-    
-            Versions:
-                Python/2.7.15   
-                Python/2.7.16  
-                Python/2.7.18-bare 
-                Python/2.7.18  
-                Python/3.7.2   
-                Python/3.7.4   
-                Python/3.8.2   
-                Python/3.8.6   
-                Python/3.9.5-bare  
-                Python/3.9.5   
-                Python/3.9.6-bare  
-                Python/3.9.6   
-            Other possible modules matches:
-                Biopython  Boost.Python  GitPython  IPython  flatbuffers-python  ...
-           ----------------------------------------------------------------------------
-           To find other possible module matches execute:
-               $ module -r spider '.*Python.*'
-           ----------------------------------------------------------------------------
-           For detailed information about a specific "Python" package (including how to load the modules) use the module's full name.
-               Note that names that have a trailing (E) are extensions provided by other modules.
-       
-           For example:
-            $ module spider Python/3.9.5
-           ----------------------------------------------------------------------------
+           b-an01 [~]$ module spider R
 
-Load a Python module
+           -----------------------------------------------------------------------------------------------------------------------------------------------
+           R:
+           -----------------------------------------------------------------------------------------------------------------------------------------------
+             Description:
+               R is a free software environment for statistical computing and graphics.
+               
+              Versions:
+                 R/4.0.0
+                 R/4.0.4
+                 R/4.1.0
+                 R/4.1.2
+              Other possible modules matches:
+                 AMPtorch  Amber  Armadillo  Arrow  Bader  BerkeleyGW  BioPerl  Brotli  CUDAcore  ChimeraX  CloudCompare  CubeWriter  DendroPy  ESPResSo  ...
+                    
+           -----------------------------------------------------------------------------------------------------------------------------------------------
+             To find other possible module matches execute:
+             
+                 $ module -r spider '.*R.*'
+                 
+           -----------------------------------------------------------------------------------------------------------------------------------------------
+             For detailed information about a specific "R" package (including how to load the modules) use the module's full name.
+             Note that names that have a trailing (E) are extensions provided by other modules.
+             For example:
+             
+                $ module spider R/4.1.2
+           -----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Load an R module
 --------------------
 
 For reproducibility, we recommend ALWAYS loading a specific module instad of using the default version! 
 
-For this course, we recommend using Python 3.9.5
+For this course, we recommend using R 4.0.4
 
 .. tabs::
 
