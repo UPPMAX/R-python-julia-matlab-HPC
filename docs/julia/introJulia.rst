@@ -37,11 +37,88 @@ focus to learn a new language.
 
 
 .. figure:: ../../img/two-language.png
-   :width: 300
+   :width: 450
    :align: center
 
    Two-language problem where Julia is shown as a bridge between the languages
    in the traditional paradigm. 
+
+Workflow in Julia
+-----------------
+
+After loading the appropriate modules for Julia, you will have access to the
+read-eval-print-loop (REPL) command line by typing ``julia``: 
+
+.. tabs::
+
+   .. tab:: UPPMAX 
+
+        .. code-block:: sh
+
+         ml ...
+
+
+   .. tab:: HPC2N
+
+        .. code-block:: sh
+         
+         $ ml Julia/1.8.5-linux-x86_64
+         $ julia 
+
+            _       _ _(_)_     |  Documentation: https://docs.julialang.org
+           (_)     | (_) (_)    |
+            _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+           | | | | | | |/ _` |  |
+           | | |_| | | | (_| |  |  Version 1.8.5 (2023-01-08)
+          _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+         |__/                   |
+
+         julia> 
+
+Julia has different modes, the one mentioned above is the so-called ``Julian`` mode
+where one can execute commands. The description for accessing these modes will be
+given in the following paragraphs. Once you are done with your work in any of the modes,
+you can return to the ``Julian`` mode by pressing the ``backspace`` key.
+
+While being on the Julian mode you can enter the ``shell`` mode by typing ``;``:
+
+.. code-block:: sh
+
+   julia>; 
+   shell>pwd
+   /current-folder-path
+
+this will allow you to use Linux commands. Notice that the availabilty of these commands
+depend on the OS, for instance, on Windows it will depend on the terminal that you have
+installed and if it is visible to the Julia installation. 
+
+Another mode available in Julia is the ``package manager`` mode, it can be accessed by typing ``]`` in the ``Julian`` mode:
+
+.. code-block:: sh
+
+   julia>]
+   (v1.8) pkg>
+
+this will make your interaction with the package manager **Pkg** easier, for instance,
+instead of typing the complete name of **Pkg** commands such as ``Pkg.status()`` in the
+``Julian`` mode, you can just type ``status`` in the ``package`` mode. 
+
+The last mode is the ``help`` mode, you can enter this mode from the ``Julian`` one by
+typing ``?``, then you may type some string from which you need more information:
+
+.. code-block:: sh
+
+   julia>?
+   help?> ans
+   search: ans transpose transcode contains expanduser instances MathConstants readlines LinearIndices leading_ones leading_zeros
+
+   ans
+
+   A variable referring to the last computed value, automatically set at the interactive prompt.
+
+
+
+
 
 Features of Julia
 -----------------
@@ -56,7 +133,7 @@ the features of this language are:
 - A fast growing community of users and developers
 
 Shortcomings of Julia
---------------------
+---------------------
 
 - As this is a new language, the libraries ecosystem is not as rich as in Python or R, for instance
 - Currently, using Julia for simple tasks (for instance, opening a file and writing text, plotting) is not as
