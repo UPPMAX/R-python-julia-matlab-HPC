@@ -28,7 +28,9 @@ computations).
 This pattern created the so called **two-language problem** where programmers
 had to choose between productivity (R, Python) or performance (Fortran, C/C++)
 and when both were needed programmers had to learn the language that offered 
-the desired capability and use some interface between different languages.
+the desired capability and use some interface between different languages. 
+Performant languages traditionally needed to be compiled while languages focusing
+on productivity are interpreted.
 
 Among the different features of Julia, is its capability of integrating
 both aspects productivity and performance into a single language. In this way,
@@ -60,7 +62,7 @@ read-eval-print-loop (REPL) command line by typing ``julia``:
 
    .. tab:: HPC2N
 
-        .. code-block:: sh
+        .. code-block:: julia-repl
          
          $ ml Julia/1.8.5-linux-x86_64
          $ julia 
@@ -82,7 +84,7 @@ you can return to the ``Julian`` mode by pressing the ``backspace`` key.
 
 While being on the Julian mode you can enter the ``shell`` mode by typing ``;``:
 
-.. code-block:: sh
+.. code-block:: julia
 
    julia>; 
    shell>pwd
@@ -94,7 +96,7 @@ installed and if it is visible to the Julia installation.
 
 Another mode available in Julia is the ``package manager`` mode, it can be accessed by typing ``]`` in the ``Julian`` mode:
 
-.. code-block:: sh
+.. code-block:: julia-repl
 
    julia>]
    (v1.8) pkg>
@@ -106,7 +108,7 @@ instead of typing the complete name of **Pkg** commands such as ``Pkg.status()``
 The last mode is the ``help`` mode, you can enter this mode from the ``Julian`` one by
 typing ``?``, then you may type some string from which you need more information:
 
-.. code-block:: sh
+.. code-block:: julia-repl
 
    julia>?
    help?> ans
@@ -117,7 +119,7 @@ typing ``?``, then you may type some string from which you need more information
    A variable referring to the last computed value, automatically set at the interactive prompt.
 
 
-
+More detailed information about the modes in Julia can be found here: https://docs.julialang.org/en/v1/stdlib/REPL/
 
 
 Features of Julia
@@ -152,5 +154,9 @@ More on Julia?
 - HPC2N YouTube video on Julia in HPC: https://www.youtube.com/watch?v=bXHe7Kj3Xxg
 - Julia for High Performance Computing course material from ENCCS: https://enccs.github.io/Julia-for-HPC/
 
+.. keypoints::
 
+   - Julia is a relatively new language with several attractive features.
+   - It offers several modes that can make your workflow easier, i.e., ``Julian``, 
+     ``shell``, ``package manager``, and ``help`` modes.
 
