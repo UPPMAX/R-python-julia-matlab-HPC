@@ -16,36 +16,8 @@ Introduction R
     - You can download the exercises from the course GitHub repo, under the "Exercises" directory: https://github.com/UPPMAX/R-python-julia-HPC/tree/main/Exercises
     - On HPC2N, you can copy the exercises in a tarball from TBC
     - On UPPMAX you can copy the exercises in a tarball from TBC
-    
-.. admonition:: Prepare your environment now!
-  
-   - Please log in to Rackham, Kebnekaise or other cluster that you are using.
-  
-.. tabs::
-
-   .. tab:: UPPMAX
-
-      - Rackham: ``ssh <user>@rackham.uppmax.uu.se`` 
-      
-      - Rackham through ThinLinc, use: ``<user>@rackham-gui.uppmax.uu.se``
-      - Create a working directory where you can code along. We recommend creating it under the course project storage directory
    
-         
-      - Example. If your username is "mrspock" and you are at UPPMAX, this we recommend you create this folder: 
-     
-         /proj/snic2022-22-641/nobackup/mrspock/pythonUPPMAX
-
-   .. tab:: HPC2N
-
-      - Kebnekaise: ``<user>@kebnekaise.hpc2n.umu.se``     
-      - Kebnekaise through ThinLinc, use: ``<user>@kebnekaise-tl.hpc2n.umu.se``
-   
-      - Create a working directory where you can code along. We recommend creating it under the course project storage directory
-   
-       - Example. If your username is bbrydsoe and you are at HPC2N, then we recommend you create this folder: 
-     
-         /proj/nobackup/snic2022-22-641/bbrydsoe/pythonHPC2N
-         
+       
 What is R?
 ---------------
 
@@ -67,50 +39,13 @@ In short; R has statistics-related libraries of a great variety and provides a g
 - CodeRefinery develops and maintains training material on software best practices for researchers that already write code. Ther material addresses all academic disciplines and tries to be as programming language-independent as possible. https://coderefinery.org/lessons/
     
 
-
-Common features
-###############
-
-- Intel CPUs
-- Linux kernel
-- Bash shell
-
-.. list-table:: Hardware
-   :widths: 25 25 25 25 25
-   :header-rows: 1
-
-   * - Technology
-     - Kebnekaise
-     - Rackham
-     - Snowy
-     - Bianca
-   * - Cores per calculation node
-     - 28 (72 for largemem part)
-     - 20
-     - 16
-     - 16
-   * - Memory per calculation node
-     - 128-3072 GB 
-     - 128-1024 GB
-     - 128-4096 GB
-     - 128-512 GB
-   * - GPU
-     - NVidia K80 and V100 
-     - None
-     - Nvidia T4 
-     - 2 NVIDIA A100
-
-
 .. objectives:: 
 
     We will:
     
     - teach you how to navigate the module system at HPC2N and UPPMAX
-    - show you how to find out which versions of Python and packages are installed
-    - look at the package handler **pip** (and **Conda** for UPPMAX)
-    - explain how to create and use virtual environments
+    - show you how to find out which versions of R and packages are installed
+    - look at how to install other R packages yourself
     - show you how to run batch jobs 
-    - show some examples with parallel computing and using GPUs
-    - guide you in how to start Python tools for Machine Learning
- 
+    - show some examples on using R 
 
