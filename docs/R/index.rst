@@ -132,7 +132,7 @@ Preliminary schedule
    :caption: R Lessons:
 
    R/intro.rst
-  
+   R/load_runR.rst  
 
 .. Indices and tables
 .. ==================
