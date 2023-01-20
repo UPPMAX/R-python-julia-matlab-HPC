@@ -114,8 +114,8 @@ Preliminary schedule
    :maxdepth: 2
    :caption: Python Lessons:
 
-   introPython.rst
-   load_runPython.rst
+   intro.rst
+   load_runR.rst
    packagesPython.rst
    isolatedPython.rst
    batchPython.md
