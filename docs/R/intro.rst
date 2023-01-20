@@ -10,6 +10,7 @@ Introduction R
    - Install R packages from CRAN - automatic download and install
    - Install R packages manually
    - Write a batchscript for running R
+   - Using Rstudio
    
 .. admonition:: Exercises
 
@@ -48,4 +49,5 @@ In short; R has statistics-related libraries of a great variety and provides a g
     - look at how to install other R packages yourself
     - show you how to run batch jobs 
     - show some examples on using R 
+    - Show you how to start up Rstudio and give a brief intro to the tool 
 
