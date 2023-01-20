@@ -132,18 +132,17 @@ For this course, we recommend using R 4.0.4
 
    .. tab:: UPPMAX
    
-      Go back and check which Python modules were available. To load version 3.9.5, do:
+      Go back and check which R modules were available. To load version 4.0.4, do:
 
       .. code-block:: sh
 
-        $ module load python/3.9.5
+        $ module load R/4.0.4
         
-      Note: Lowercase ``p``.
       For short, you can also use: 
 
       .. code-block:: sh
 
-         $ ml python/3.9.5
+         $ ml R/4.0.4
 
  
    .. tab:: HPC2N
@@ -151,38 +150,30 @@ For this course, we recommend using R 4.0.4
  
       .. code-block:: sh
 
-         $ module load GCC/10.3.0 Python/3.9.5
+         $ module load GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
+      
+         (or 'module load GCC/10.2.0  CUDA/11.1.1  OpenMPI/4.0.5  R/4.0.4' if you need CUDA)
 
-      Note: Uppercase ``P``.   
       For short, you can also use: 
 
       .. code-block:: sh
 
-         $ ml GCC/10.3.0 Python/3.9.5
+         $ ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
 
 .. warning::
 
    + UPPMAX: Don’t use system-installed python/2.7.5
-   + HPC2N: Don’t use system-installed python/2.7.18
-   + ALWAYS use python module
-
-.. admonition:: Why are there both Python/2.X.Y and Python/3.Z.W modules?
-
-    Some existing software might use `Python2` and some will use `Python3`. Some of the Python packages have both `Python2` and `Python3` versions. Check what your software as well as the installed modules need when you pick!   
-    
-.. admonition:: UPPMAX: Why are there both python/3.X.Y and python3/3.X.Y modules?
-
-    Sometimes existing software might use `python2` and there's nothing you can do about that. In pipelines and other toolchains the different tools may together require both `python2` and `python3`.
-    Here's how you handle that situation:
-    
-    + You can run two python modules at the same time if ONE of the module is ``python/2.X.Y`` and the other module is ``python3/3.X.Y`` (not ``python/3.X.Y``).
-    
+   + HPC2N: No system installed R 
+   + ALWAYS use R module
 
 
 Run
 ---
 
-Run Python script
+Run R from command line 
+#######################
+
+Run R script
 #####################
 
     
