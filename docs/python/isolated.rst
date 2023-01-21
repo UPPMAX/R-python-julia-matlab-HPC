@@ -52,17 +52,6 @@ In this course we will look at the following tools for creating and using isolat
    - These are almost completely interchangeable
    - the difference being that **virtualenv supports older python versions** and has a few more minor unique features, while **venv is in the standard library**.
 
-
-Virtual environment - venv (UPPMAX)
------------------------------------
-
-Separate session at <https://uppmax.github.io/HPC-python/isolatedUPPMAX.html>
-
-Virtual environment - virtualenv (HPC2N)
-----------------------------------------
-
-Separate session at <https://uppmax.github.io/HPC-python/isolatedHPC2N.html>
-
 .. keypoints::
 
    - With a virtual environment you can tailor an environment with specific versions for Python and packages, not interfering with other installed python versions and packages.
@@ -254,7 +243,7 @@ To use self-installed Python packages in a batch script, you also need to load t
 To see which Python packages you, yourself, have installed, you can use ``pip list --user`` while the environment you have installed the packages in are active. 
 
 Working with virtual environments defined from files
-----------------------------------------------------
+''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 - First create and activate and environment (see above)
 - Create an environment based on dependencies given in an environment file::
@@ -286,7 +275,7 @@ text file which looks like this::
 
 
 pyenv
------
+'''''
 
 This approach is more advanced and should be, in our opinion, used only if the above are not enough for the purpose. 
 This approach allows you to install your **own python version**, like 3.10, and much more… 
