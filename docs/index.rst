@@ -302,7 +302,6 @@ Material for improving your programming skills
    python/batchPython.md
    python/interactivePython.md
    python/uppmaxPython.rst
-   python/conda.rst
    python/jupyterUPPMAX.md
    python/kebnekaisePython.md
 
