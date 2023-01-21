@@ -73,7 +73,7 @@ Separate session at <https://uppmax.github.io/HPC-python/isolatedHPC2N.html>
       - More details in the separated sessions!
  
 Isolated environments at UPPMAX
-===============================
+-------------------------------
 
 .. note::
    Isolated environments solve a couple of problems:
@@ -93,7 +93,7 @@ Isolated environments at UPPMAX
    - Give a introduction to isolated environments at UPPMAX
    
 Virtual environment - venv    
---------------------------
+''''''''''''''''''''''''''
 
 Example
 #######
@@ -150,7 +150,7 @@ Everytime you need the tools available in the virtual environment you activate i
 
 
 Prepare the course environment
-------------------------------
+''''''''''''''''''''''''''''''
 
 Create a ``venv``. First load the python version you want to base your virtual environment on:
 
@@ -301,7 +301,7 @@ Have a look on this manual https://www.uppmax.uu.se/support/user-guides/python-m
       - UPPMAX has Conda and venv
 
 Isolated environments at HPC2N
-==============================
+------------------------------
 
 .. note::
    Isolated environments solve a couple of problems:
@@ -323,7 +323,7 @@ Isolated environments at HPC2N
    Installing with a virtual environment is the only recommended way at HPC2N! 
 
 Virtual environment - virtualenv
----------------------------------------------
+''''''''''''''''''''''''''''''''
 
 Create a ``vpyenv``. First load the python version you want to base your virtual environment on:
 
