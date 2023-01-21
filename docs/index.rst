@@ -169,11 +169,10 @@ Example of arrangement for the "worst case"!
 ############################################
 - HackMD
 - ZOOM view
-- (shellshare) or web browser with course material
+- web browser with course material
 - your own terminal
 
-.. figure:: ../img/worst.jpg
-   :align: center
+
 
 
 The two HPC centers UPPMAX and HPC2N
