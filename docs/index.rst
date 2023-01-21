@@ -298,9 +298,7 @@ Material for improving your programming skills
    python/intro.rst
    python/load_runPython.rst
    python/packages.rst
-   python/isolatedPython.rst
-   python/isolatedUPPMAXPython.rst
-   python/isolatedHPC2NPython.rst
+   python/isolated.rst
    python/batchPython.md
    python/interactivePython.md
    python/uppmaxPython.rst
