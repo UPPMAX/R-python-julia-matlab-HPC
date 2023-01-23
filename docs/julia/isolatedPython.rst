@@ -152,6 +152,8 @@ the content of these files:
    uuid = "79e6a3ab-5dfb-504d-930d-738a2a938a0e"
    version = "3.4.0"
 
+   ...
+
 Here, we can observe that the ``Project.toml`` only gives us the UUID of the project while the
 ``Manifest.toml`` file contains the full information about the dependencies versions and organization
 layout. Notice the message regarding editing for the latter. Let's leave this environment: 
@@ -163,6 +165,86 @@ layout. Notice the message regarding editing for the latter. Let's leave this en
       Activating project at `~/.julia/environments/v1.8`
 
    (v1.8) pkg> 
+
+
+Create a package environment
+----------------------------
+
+A package environment can be created by using the ``generate`` function in ``package mode``
+or ``Pkg.generate()`` in ``Julian`` mode:
+
+.. code-block:: julia
+
+   (v1.8) pkg> generate myfirstpackage 
+    Generating  project myfirstpackage:
+    myfirstpackage/Project.toml
+    myfirstpackage/src/myfirstpackage.jl
+
+One can activate this enviroment in the following way:
+
+.. code-block:: julia
+
+   shell> cd myfirstpackage 
+   (v1.8) pkg> activate . 
+   Activating project at `/pfs/proj/nobackup/path/Julia-Test/my-first-env/myfirstpackage`
+   (myfirstpackage) pkg> 
+
+
+The ``project`` function tells us that the current project has an UUID assigned to it:
+
+.. code-block:: julia
+
+   julia> Pkg.project()
+   Pkg.API.ProjectInfo("myfirstpackage", UUID("ca799254-944c-4043-b9e3-b70b93409f34"), v"0.1.0", true, Dict{String, Base.UUID}(), "/pfs/proj/nobackup/path/Julia-Test/my-first-env/myfirstpackage/Project.toml")
+
+As in the ``project environment``, the ``package environment`` can see the default and 
+the standard library environments. 
+
+Let's add the package ``Flux`` for Machine Learning routines:
+
+.. code-block:: julia
+
+   (myfirstpackage) pkg> add Flux
+     Precompiling project...
+     49 dependencies successfully precompiled in 92 seconds. 43 already precompiled.
+   (myfirstpackage) pkg> status
+     Project myfirstpackage v0.1.0
+     Status `/pfs/proj/nobackup/path/Julia-Test/my-first-env/myfirstpackage/Project.toml`
+     [587475ba] Flux v0.13.11
+
+where the status function tells us information about the packages that are installed
+in the current environment, for instance the ``Flux`` version that we just installed.
+
+
+Customizing the set of visible environments
+------------------------------------------
+
+We saw previously that by default some enviroments are visible to new environments.
+One can customize this setting with the variable ``JULIA_LOAD_PATH``, this can be
+done on the Linux command line:
+
+
+.. code-block:: julia
+
+   export JULIA_LOAD_PATH="path1:path2:..."
+
+For instance, for including just the current environment we can set the value of 
+this variable as:
+
+.. code-block:: julia
+
+   export JULIA_LOAD_PATH="@"
+
+Then, when we start a ``julia`` session the default option will be the current
+enviroment:
+
+.. code-block:: julia
+   
+   julia> LOAD_PATH
+   1-element Vector{String}:
+   "@"
+
+
 
 
 
