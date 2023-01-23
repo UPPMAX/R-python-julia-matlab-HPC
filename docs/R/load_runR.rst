@@ -243,21 +243,26 @@ Here is an example of running a short, serial R program at Kebnekaise:
    In addition to loading R, you will also often need to (install and) use own-installed R packages. The work-flow would be something like this: 
     
    1) Load R and prerequisites: `module load <pre-reqs> R/<version>``
-   2) Check which extensions your R version has. They are generally listed under "Extensions" when you do: ``module spider <R-package>/<version>``. Otherwise, you can do ```installed. packages()``` from within R. 
-   3) Install any extra R packages you need (optional): ``pip install --no-cache-dir --no-build-isolation <python-package>``
-   4) Start Python or run python script: ``python``
+   2) Check which extensions your R version has. They are generally listed under "Extensions" when you do: ``module spider <R-package>/<version>``. Otherwise, you can do ``installed.packages()`` from within R. NOTE that the latter option generates a LOT of output, but also gives versions of the R packages (Extensions, as they are called by the module system). 
+   3) Install any extra R packages you need (optional): 
+    - Automatical download and install: ``pip install --no-cache-dir --no-build-isolation <python-package>`` 
+    - Manual download and install: ``R CMD INSTALL -l <path-to-R-package>/R-package.tar.gz``
+   4) 
+    - Start R: ``R``
+    - run ``Rscript <program.R>``
+    - batch job for R program: sbatch <my-R-batch-job.sh> 
 
-   Installed Python modules (modules and own-installed) can be accessed within Python with ``import <package>`` as usual. 
+   Installed R packages can be accessed within R with ``library("package")`` as usual. 
 
-   The command ``pip list`` given within Python will list the available modules to import. 
+   The command ``installed.packages()`` given within R will list the available packages to import. 
 
-   More about packages and virtual/isolated environment to follow in later sections of the course! 
+   More about installing your own R packages to follow in later sections of the course! 
 
 
 .. keypoints::
 
-   - Before you can run Python scripts or work in a Python shell, first load a python module and prroble prerequisites
-   - Start a Python shell session either with ``python`` or ``ipython``
-   - Run scripts with ``python <script.py>``
+   - Before you can run R scripts or work in an R shell, first load an R module and any needed prerequisites. 
+   - Start an R shell session with ``R``.
+   - Run scripts with ``Rscript <script.R>``
     
 
