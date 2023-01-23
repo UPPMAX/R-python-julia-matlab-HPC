@@ -325,10 +325,7 @@ Material for improving your programming skills
 
    R/intro.rst
    R/load_runR.rst
-   R/packagesPython.rst
-   R/isolatedPython.rst
-   R/isolatedUPPMAXPython.rst
-   R/isolatedHPC2NPython.rst
+   R/packagesR.rst
    R/batchPython.md
    R/interactivePython.md
    R/uppmaxPython.rst
