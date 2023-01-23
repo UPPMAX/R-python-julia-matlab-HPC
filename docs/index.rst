@@ -312,9 +312,7 @@ Material for improving your programming skills
    julia/introJulia.rst
    julia/load_runPython.rst
    julia/packagesPython.rst
-   julia/isolatedPython.rst
-   julia/isolatedUPPMAXPython.rst
-   julia/isolatedHPC2NPython.rst
+   julia/isolatedJulia.rst
    julia/batchPython.md
    julia/interactivePython.md
    julia/uppmaxPython.rst
