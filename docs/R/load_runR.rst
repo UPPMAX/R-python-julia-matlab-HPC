@@ -217,21 +217,22 @@ Exit R with q() in the R prompt. Decide if you want to save your workspace image
 
 Here is an example of running a short, serial R program at Kebnekaise: 
 
-.. admonition:: Serial R program (add2.R) to add two arguments
-    :class: dropdown
+  .. admonition:: Serial R program (add2.R) to add two arguments
+      :class: dropdown
 
-        .. code-block:: tcl
+          .. code-block:: tcl
         
          
-            args <- commandArgs(trailingOnly = TRUE)
-            num1 <- as.numeric(args[1])
-            num2 <- as.numeric(args[2])
+             args <- commandArgs(trailingOnly = TRUE)
+             num1 <- as.numeric(args[1])
+             num2 <- as.numeric(args[2])
             
-            answer <- num1 + num2
-            cat("Sum of arguments is: ", answer)
-            cat("\n")
+             answer <- num1 + num2
+             cat("Sum of arguments is: ", answer)
+             cat("\n")
            
- .. code-block:: sh
+           
+  .. code-block:: sh
 
     b-an01 [~]$ Rscript add2.R 3 4
     Sum of arguments is:  7
