@@ -253,7 +253,7 @@ Here is an example of running a short, serial R program at Kebnekaise:
    4) 
     - Start R: ``R``
     - run ``Rscript <program.R>``
-    - batch job for R program: sbatch <my-R-batch-job.sh> 
+    - batch job for R program: ``sbatch <my-R-batch-job.sh>``
 
    Installed R packages can be accessed within R with ``library("package")`` as usual. 
 
