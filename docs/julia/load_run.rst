@@ -1,4 +1,4 @@
-Load and run python
+Load and run Julia
 ===================
 
 At both UPPMAX and HPC2N we call the applications available via the module system modules. 
@@ -8,8 +8,8 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
    
 .. objectives:: 
 
-   - Show how to load Python
-   - Show how to run Python scripts and start the Python command line
+   - Show how to load Julia
+   - Show how to run Julia scripts and start the Julia command line
 
 .. admonition:: Short cheat sheet
     :class: dropdown 
@@ -26,12 +26,9 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
 .. warning::
    Note that the module systems at UPPMAX and HPC2 are slightly different. While all modules at UPPMAX not directly related to bio-informatics are shown by ``ml avail``, modules at HPC2N are hidden until one has loaded a prerequisite like the compiler ``GCC``.
 
+- For reproducibility reasons, you should always load a specific version of a module instead of just the default version (often the latest)
 
-- For reproducibility reasons, you should always load a specific version of a module instead of just the default version
-- Many modules have prerequisite modules which needs to be loaded first (at HPC2N this is also the case for the Python modules). When doing ``module spider <module>/<version>`` you will get a list of which other modules needs to be loaded first
-
-
-Check for Python versions
+Check for Julia versions
 -------------------------
 
 
@@ -43,30 +40,30 @@ Check for Python versions
 
       .. code-block:: sh
 
-          $ module avail python
+          $ module avail julia
 
 
    .. tab:: HPC2N
    
-      Check all available version Python versions with:
+      Check all available version Julia versions with:
 
       .. code-block:: sh
  
-         $ module spider Python
+         $ module spider julia
       
-      To see how to load a specific version of Python, including the prerequisites, do 
+      To see how to load a specific version of Julia, including the prerequisites, do 
 
       .. code-block:: sh
    
-         $ module spider Python/<version>
+         $ module spider Julia/<version>
 
-      Example for Python 3.9.5
+      Example for Julia 1.8.5
 
       .. code-block:: sh
 
-         $ module spider Python/3.9.5 
+         $ module spider Julia/1.8.5
 
-.. admonition:: Output at UPPMAX as of March 9 2022
+.. admonition:: Output at UPPMAX as of Jan 23 2023 **FIX**
    :class: dropdown
     
        .. code-block::  tcl
@@ -92,38 +89,26 @@ Check for Python versions
         .. code-block:: tcl
 
            b-an01 [~]$ module spider Python
-           ----------------------------------------------------------------------------
-           Python:
-           ----------------------------------------------------------------------------
-           Description:
-               Python is a programming language that lets you work more quickly and
-               integrate your systems more effectively.
-    
-            Versions:
-                Python/2.7.15   
-                Python/2.7.16  
-                Python/2.7.18-bare 
-                Python/2.7.18  
-                Python/3.7.2   
-                Python/3.7.4   
-                Python/3.8.2   
-                Python/3.8.6   
-                Python/3.9.5-bare  
-                Python/3.9.5   
-                Python/3.9.6-bare  
-                Python/3.9.6   
-            Other possible modules matches:
-                Biopython  Boost.Python  GitPython  IPython  flatbuffers-python  ...
-           ----------------------------------------------------------------------------
-           To find other possible module matches execute:
-               $ module -r spider '.*Python.*'
-           ----------------------------------------------------------------------------
-           For detailed information about a specific "Python" package (including how to load the modules) use the module's full name.
-               Note that names that have a trailing (E) are extensions provided by other modules.
-       
-           For example:
-            $ module spider Python/3.9.5
-           ----------------------------------------------------------------------------
+           ------------------------------------------------------------------------------------------------
+             Julia:
+           ------------------------------------------------------------------------------------------------
+             Description:
+               Julia is a high-level, high-performance dynamic programming language for numerical
+               computing
+
+             Versions:
+                Julia/1.5.3-linux-x86_64
+                Julia/1.7.1-linux-x86_64
+                Julia/1.8.5-linux-x86_64
+
+           ------------------------------------------------------------------------------------------------
+             For detailed information about a specific "Julia" package (including how to load the modules) use the module's full name.
+             Note that names that have a trailing (E) are extensions provided by other modules.
+             For example:
+
+                $ module spider Julia/1.8.5-linux-x86_64
+           ------------------------------------------------------------------------------------------------
+
 
 Load a Python module
 --------------------
