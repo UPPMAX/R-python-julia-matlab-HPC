@@ -240,12 +240,11 @@ Here is an example of running a short, serial R program at Kebnekaise:
 
 .. admonition:: Workflow
 
-   In addition to loading R, you will also often need to load site-installed modules for R packages, or use own-installed R packages. The work-flow would be something like this: 
-   
- 
+   In addition to loading R, you will also often need to (install and) use own-installed R packages. The work-flow would be something like this: 
+    
    1) Load R and prerequisites: `module load <pre-reqs> R/<version>``
-   2) Load site-installed R packages (optional): ``module load <pre-reqs> <R-package>/<version>``
-   3) Install any extra R packages (optional): ``pip install --no-cache-dir --no-build-isolation <python-package>``
+   2) Check which extensions your R version has. They are generally listed under "Extensions" when you do: ``module spider <R-package>/<version>``. Otherwise, you can do ```installed. packages()``` from within R. 
+   3) Install any extra R packages you need (optional): ``pip install --no-cache-dir --no-build-isolation <python-package>``
    4) Start Python or run python script: ``python``
 
    Installed Python modules (modules and own-installed) can be accessed within Python with ``import <package>`` as usual. 
