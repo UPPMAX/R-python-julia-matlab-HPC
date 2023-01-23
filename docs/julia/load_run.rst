@@ -68,20 +68,16 @@ Check for Julia versions
     
        .. code-block::  tcl
     
-          -------------------------------------- /sw/mf/rackham/applications ---------------------------------------
-           python_ML_packages/3.9.5    wrf-python/1.3.1
-
-           --------------------------------------- /sw/mf/rackham/compilers ----------------------------------------
-           python/2.7.6     python/3.3      python/3.6.0    python/3.9.5  (D)    python3/3.8.7
-           python/2.7.9     python/3.3.1    python/3.6.8    python3/3.6.0        python3/3.9.5 (D)
-           python/2.7.11    python/3.4.3    python/3.7.2    python3/3.6.8
-           python/2.7.15    python/3.5.0    python/3.8.7    python3/3.7.2
+          $ module av julia
+          ------------------------------------- /sw/mf/rackham/compilers -------------------------------------
+             julia/1.0.5_LTS    julia/1.1.1    julia/1.4.2    julia/1.6.1    julia/1.6.3    julia/1.7.2 (D)
 
            Where:
-           D:  Default Module
+            D:  Default Module
 
-           Use module spider" to find all possible modules and extensions.
-           Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+          Use "module spider" to find all possible modules and extensions.
+          Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+
 
 .. admonition:: Output at HPC2N as of 27 July 2022
     :class: dropdown
@@ -110,29 +106,29 @@ Check for Julia versions
            ------------------------------------------------------------------------------------------------
 
 
-Load a Python module
+Load a Julia module
 --------------------
 
 For reproducibility, we recommend ALWAYS loading a specific module instad of using the default version! 
 
-For this course, we recommend using Python 3.9.5
+For this course, we recommend using Julia 1.8.X
 
 .. tabs::
 
    .. tab:: UPPMAX
    
-      Go back and check which Python modules were available. To load version 3.9.5, do:
+      Go back and check which Python modules were available. To load version 1.8.5, do:
 
       .. code-block:: sh
 
-        $ module load python/3.9.5
+        $ module load julia/1.8.5
         
-      Note: Lowercase ``p``.
+      Note: Lowercase ``j``.
       For short, you can also use: 
 
       .. code-block:: sh
 
-         $ ml python/3.9.5
+         $ ml julia/1.8.5
 
  
    .. tab:: HPC2N
@@ -140,32 +136,14 @@ For this course, we recommend using Python 3.9.5
  
       .. code-block:: sh
 
-         $ module load GCC/10.3.0 Python/3.9.5
+         $ module load Julia/1.8.5-linux-x86_64
 
-      Note: Uppercase ``P``.   
+      Note: Uppercase ``J``.   
       For short, you can also use: 
 
       .. code-block:: sh
 
-         $ ml GCC/10.3.0 Python/3.9.5
-
-.. warning::
-
-   + UPPMAX: Don’t use system-installed python/2.7.5
-   + HPC2N: Don’t use system-installed python/2.7.18
-   + ALWAYS use python module
-
-.. admonition:: Why are there both Python/2.X.Y and Python/3.Z.W modules?
-
-    Some existing software might use `Python2` and some will use `Python3`. Some of the Python packages have both `Python2` and `Python3` versions. Check what your software as well as the installed modules need when you pick!   
-    
-.. admonition:: UPPMAX: Why are there both python/3.X.Y and python3/3.X.Y modules?
-
-    Sometimes existing software might use `python2` and there's nothing you can do about that. In pipelines and other toolchains the different tools may together require both `python2` and `python3`.
-    Here's how you handle that situation:
-    
-    + You can run two python modules at the same time if ONE of the module is ``python/2.X.Y`` and the other module is ``python3/3.X.Y`` (not ``python/3.X.Y``).
-    
+         $ ml Julia/1.8.5-linux-x86_64
 
 
 Run
