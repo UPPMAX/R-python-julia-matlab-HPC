@@ -242,10 +242,13 @@ Here is an example of running a short, serial R program at Kebnekaise:
 
    In addition to loading R, you will also often need to (install and) use own-installed R packages. The work-flow would be something like this: 
     
-   1) Load R and prerequisites: `module load <pre-reqs> R/<version>``
-   2) Check which extensions your R version has. They are generally listed under "Extensions" when you do: ``module spider <R-package>/<version>``. Otherwise, you can do ``installed.packages()`` from within R. NOTE that the latter option generates a LOT of output, but also gives versions of the R packages (Extensions, as they are called by the module system). 
+   1) Load R and prerequisites: ``module load <pre-reqs> R/<version>``
+   2) Check which extensions your R version has. They are generally listed under "Extensions" when you do: 
+    - ``module spider <R-package>/<version>``. 
+    - Otherwise, you can do ``installed.packages()`` from within R. 
+    NOTE that the latter option generates a LOT of output, but also gives versions of the R packages (Extensions, as they are called by the module system). 
    3) Install any extra R packages you need (optional): 
-    - Automatical download and install: ``pip install --no-cache-dir --no-build-isolation <python-package>`` 
+    - Automatical download and install: ``R --quiet --no-save --no-restore -e "install.packages('<r-package>', repos='http://ftp.acc.umu.se/mirror/CRAN/')"`` 
     - Manual download and install: ``R CMD INSTALL -l <path-to-R-package>/R-package.tar.gz``
    4) 
     - Start R: ``R``
