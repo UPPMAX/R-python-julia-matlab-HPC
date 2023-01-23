@@ -310,7 +310,7 @@ Material for improving your programming skills
    :caption: julia Lessons:
 
    julia/introJulia.rst
-   julia/load_runPython.rst
+   julia/load_run.rst
    julia/packagesPython.rst
    julia/isolatedJulia.rst
    julia/batchPython.md
