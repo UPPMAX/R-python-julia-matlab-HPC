@@ -176,9 +176,9 @@ or ``Pkg.generate()`` in ``Julian`` mode:
 .. code-block:: julia
 
    (v1.8) pkg> generate myfirstpackage 
-    Generating  project myfirstpackage:
-    myfirstpackage/Project.toml
-    myfirstpackage/src/myfirstpackage.jl
+     Generating  project myfirstpackage:
+     myfirstpackage/Project.toml
+     myfirstpackage/src/myfirstpackage.jl
 
 One can activate this enviroment in the following way:
 
@@ -217,7 +217,7 @@ in the current environment, for instance the ``Flux`` version that we just insta
 
 
 Customizing the set of visible environments
-------------------------------------------
+-------------------------------------------
 
 We saw previously that by default some enviroments are visible to new environments.
 One can customize this setting with the variable ``JULIA_LOAD_PATH``, this can be
@@ -244,19 +244,68 @@ enviroment:
    1-element Vector{String}:
    "@"
 
+One can also modify the ``LOAD_PATH`` directly on the julian prompt with the following
+functions:
 
 
+.. code-block:: julia
+   
+   julia> empty!(LOAD_PATH)        # this will clean out the path
+   julia> push!(LOAD_PATH, "@")    # it will add the current environment
 
 
+Environment stacks
+------------------
+
+As we saw before, ``LOAD_PATH`` shows that environments can be stacked and we can place
+the environments we want in the path so that they are visible in our current environment.
+To illustrate this concept, let's create a second environment and firts we can remove the
+content of ``LOAD_PATH``:
+
+.. code-block:: julia
+
+   julia> empty!(LOAD_PATH)
+   shell> pwd
+      /pfs/proj/nobackup/path/Julia-Test
+
+   shell> mkdir my-second-env
+
+   shell> cd my-second-env
+   pkg> activate .
+
+If we try to use the ``DFTK`` package we will see the error message:
+
+.. code-block:: julia
+
+   julia> using DFTK
+      │ Package DFTK not found, but a package named DFTK is available from a registry. 
+      │ Install package?
+      │   (my-second-env) pkg> add DFTK 
+      └ (y/n/o) [y]: n
+       ERROR: ArgumentError: Package DFTK not found in current path.
+
+if you remember this package was installed in the first environment (``my-first-env``). In order
+to make this package available in our second environment we can push the corresponding folder's
+path to ``LOAD_PATH``:
+
+.. code-block:: julia
+
+   julia> push!(LOAD_PATH, "/pfs/proj/nobackup/path/Julia-Test/my-first-env/")
+      1-element Vector{String}:
+      "/pfs/proj/nobackup/path/Julia-Test/my-first-env/"
+
+   julia> using DFTK
+
+and now the package can be loaded from the first environment without errors.
 
 
 .. keypoints::
 
-   - With a virtual environment you can tailor an environment with specific versions for Python and packages, not interfering with other installed python versions and packages.
+   - With a virtual environment you can tailor an environment with specific versions for Julia
+     and packages, not interfering with other installed Julia versions and packages.
    - Make it for each project you have for reproducibility.
-   - There are different tools to create virtual environemnts.
-      - UPPMAX has  Conda and venv
-      - HPC2N has virtualenv.
-      - More details in the separated sessions!
+   - The environments in Julia are lightweight so it is recommended to start a new environment
+     for each project that you are developing. 
+   - Environments in Julia created by Julia itself so third party software are not required.
  
    
