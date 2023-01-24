@@ -83,6 +83,54 @@ A selection of the Julia packages and libraries installed on UPPMAX and HPC2N ar
    .. tab:: HPC2N
 
 
+HOW TO INSTALL PERSONAL PACKAGES
+================================
+
+To make sure that the package is not already installed, type in Julia:
+
+.. code-block:: julia 
+
+   using Pkg
+   Pkg.activate(DEPOT_PATH[2]*"/environments/v1.7");  #change version accordingly
+
+   Pkg.status()
+
+To go back to your own personal packages:
+
+.. code-block:: julia 
+     
+   Pkg.activate(DEPOT_PATH[1]*"/environments/v1.7");
+   Pkg.status()
+
+You can load (using/import) ANY package from both local and central installation irrespective to which environment you activate. However, the setup is that your package is prioritized if there are similar names.
+
+To install personal packages you type within Julia:
+
+.. code-block:: julia 
+     
+   Pkg.add("<package_name>")
+
+This will install under the path ~/.julia/packages/. Then you can load it by just doing "using/import <package_name>".
+
+.. code-block:: julia 
+     
+   using <package_name>
+
+You can also activate a "package prompt" in julia with   ']':
+
+.. code-block:: julia 
+     
+   (@v1.7) pkg> add <package name>
+
+For installing specific versions specify with  <package name>@<X.Y.Z>.
+
+After adding you may be asked to precompile or build. Do so according to instruction given on the screen. Otherwise, first time importing or using the package, Julia may start a precompilation that will take a few seconds up to several minutes.
+
+Exit "package prompt" with <backspace>:
+
+.. code-block:: julia 
+
+   julia> 
 
 .. note::
    
