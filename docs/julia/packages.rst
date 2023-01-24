@@ -83,8 +83,8 @@ A selection of the Julia packages and libraries installed on UPPMAX and HPC2N ar
    .. tab:: HPC2N
 
 
-HOW TO INSTALL PERSONAL PACKAGES
-================================
+Install own packages
+--------------------
 
 To make sure that the package is not already installed, type in Julia:
 
