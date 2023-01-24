@@ -42,8 +42,16 @@ Check for R versions
      Check all available R versions with:
 
       .. code-block:: sh
+ 
+           $ module avail R
 
-          $ module avail R
+     OR
+
+      .. code-block:: sh
+
+           $ module avail R
+ 
+     Note that the latter option also lists other software modules matching the string "R". 
 
 
    .. tab:: HPC2N
