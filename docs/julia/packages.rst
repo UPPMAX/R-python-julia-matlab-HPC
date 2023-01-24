@@ -139,10 +139,9 @@ Exit "package prompt" with <backspace>:
 .. keypoints::
 
    - You can check for packages 
-   	- from the Python shell with the ``import`` command
+   	- from the Julia shell with the ``using`` command
 	- from BASH shell with the 
-		- ``pip list`` command at both centers
-		- ``ml help python/3.9.5`` at UPPMAX
-   - Installation of Python packages can be done either with **PYPI** or **Conda**
-   - You install own packages with the ``pip install`` command (This is the recommended way on HPC2N)
-   - At UPPMAX Conda is also available (See Conda section)
+		- ``ml help julia/1.8.5`` at UPPMAX
+   - Installation of Julia packages can be done with Julia package manager.
+   - You install own packages with the ``add`` command
+
