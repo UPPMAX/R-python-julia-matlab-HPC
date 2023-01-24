@@ -173,7 +173,12 @@ The julia prompt looks like this:
    
    julia> 
 
-Exit with <Ctrl-D> or 'exit()'. 
+Exit with 
+
+.. code-block:: julia
+
+   <Ctrl-D> or 
+   exit()
 
 
 .. admonition:: Workflow  FIX **MOVE TO LATER**
@@ -212,7 +217,9 @@ $ julia
 
 In Julia:
 
-using IJulia
-notebook(dir="</path/to/work/dir/>")
+.. code-block:: julia
+
+   using IJulia
+   notebook(dir="</path/to/work/dir/>")
 
 A Firefox session will start with the Jupyter notebook interface.
