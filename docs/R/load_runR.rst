@@ -43,7 +43,7 @@ Check for R versions
 
       .. code-block:: sh
  
-           $ module avail R
+           $ module spider R
 
      OR
 
@@ -79,20 +79,42 @@ Check for R versions
     
        .. code-block::  tcl
     
-          -------------------------------------- /sw/mf/rackham/applications ---------------------------------------
-           python_ML_packages/3.9.5    wrf-python/1.3.1
+          [bbrydsoe@rackham3 bbrydsoe]$ module spider  R
 
-           --------------------------------------- /sw/mf/rackham/compilers ----------------------------------------
-           python/2.7.6     python/3.3      python/3.6.0    python/3.9.5  (D)    python3/3.8.7
-           python/2.7.9     python/3.3.1    python/3.6.8    python3/3.6.0        python3/3.9.5 (D)
-           python/2.7.11    python/3.4.3    python/3.7.2    python3/3.6.8
-           python/2.7.15    python/3.5.0    python/3.8.7    python3/3.7.2
+          ----------------------------------------------------------------------------
+          R:
+          ----------------------------------------------------------------------------
+             Versions:
+                R/3.0.2
+                R/3.2.3
+                R/3.3.2
+                R/3.4.0
+                R/3.4.3
+                R/3.5.0
+                R/3.5.2
+                R/3.6.0-foss-2019a
+                R/3.6.0
+                R/3.6.1
+                R/4.0.0
+                R/4.0.4
+                R/4.1.1
+                R/4.2.1
+             Other possible modules matches:
+                454-dataprocessing  ADMIXTURE  ANTLR  ARCS  ARC_assembler  ARPACK-NG  ..
+.
+          ----------------------------------------------------------------------------
+            To find other possible module matches execute:
+            
+                $ module -r spider '.*R.*'
 
-           Where:
-           D:  Default Module
+          ----------------------------------------------------------------------------
+            For detailed information about a specific "R" package (including how to load the modules) use the module's full name.
+            Note that names that have a trailing (E) are extensions provided by other modules.
+            For example:
+            
+               $ module spider R/4.2.1
+          ----------------------------------------------------------------------------
 
-           Use module spider" to find all possible modules and extensions.
-           Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 
 .. admonition:: Output at HPC2N as of 20 January 2023
     :class: dropdown
