@@ -74,7 +74,7 @@ Check for R versions
 
          $ module spider R/4.0.4 
 
-.. admonition:: Output at UPPMAX as of March 9 2022
+.. admonition:: Output at UPPMAX as of January 24 2023
    :class: dropdown
     
        .. code-block::  tcl
@@ -101,7 +101,7 @@ Check for R versions
                 R/4.2.1
              Other possible modules matches:
                 454-dataprocessing  ADMIXTURE  ANTLR  ARCS  ARC_assembler  ARPACK-NG  ..
-.
+          .
           ----------------------------------------------------------------------------
             To find other possible module matches execute:
             
