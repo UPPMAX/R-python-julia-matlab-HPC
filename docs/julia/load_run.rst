@@ -149,98 +149,38 @@ For this course, we recommend using Julia 1.8.X
 Run
 ---
 
-Run Python script
-#####################
+Run Julia script
+################
 
-    
 You can run a python script in the shell like this:
 
 .. code-block:: sh
 
-   $ python example.py
+   $ julia example.jl
+    
+More information will follow later in the course on running Julia from within a **batch job**. 
 
-or, if you loaded a python3 module, you can use:
+Run Julia as a session
+######################
 
 .. code-block:: sh
 
-   $ python3 example.py
+   $ julia 
 
-since python is a symbolic link to python3 in this case. 
+The julia prompt looks like this:
 
-NOTE: *only* run jobs that are short and/or do not use a lot of resources from the command line. Otherwise use the batch system!
-    
-More information will follow later in the course on running Python from within a **batch job**. 
+julia> 
 
-Exit Python with <Ctrl-D>, "quit()" or 'exit()’ in the python prompt
-
-.. code-block:: python
-
-    >>> <Ctrl-D>
-    >>> quit()
-    >>> exit()
+Exit with <Ctrl-D> or 'exit()'. 
 
 
-Run an interactive Python shell
-###############################
+.. admonition:: Workflow  FIX **MOVE TO LATER**
 
-For more interactiveness you can run Ipython
-
-.. tabs::
-
-   .. tab:: UPPMAX
-
-      NOTE: remember to load a python module first. The start IPython from terminal
-      
-      .. code-block:: sh
-
-         $ ipython 
-    
-      or 
-
-      .. code-block:: sh
-
-         $ ipython3 
-         
-      UPPMAX has also ``jupyter-notebook`` installed and available from the loaded Python module. Start with
-       
-      .. code-block:: sh
-
-         $ jupyter-notebook 
-         
-      More info to be given in the UPPMAX session.
-       
-    
-   .. tab:: HPC2N
-      
-      NOTE: remember to load an IPython module first. You can see possible modules with 
-
-      .. code-block:: sh
-
-         $ module spider IPython
-         $ ml IPython/7.25.0
-         
-      Then start Ipython with (lowercase):
-      
-      .. code-block:: sh
-
-         $ ipython 
-
-
-Exit Python or IPython with <Ctrl-D>, "quit()" or 'exit()’ in the python prompt
-
-.. code-block:: ipython
-
-    In [2]: <Ctrl-D>
-    In [12]: quit()
-    In [17]: exit()
-
-.. admonition:: Workflow
-
-   In addition to loading Python, you will also often need to load site-installed modules for Python packages, or use own-installed Python packages. The work-flow would be something like this: 
+   In addition to loading Julia, you will also often need to load site-installed modules for Python packages, or use own-installed Python packages. The work-flow would be something like this: 
    
  
-   1) Load Python and prerequisites: `module load <pre-reqs> Python/<version>``
-   2) Load site-installed Python packages (optional): ``module load <pre-reqs> <python-package>/<version>``
+   1) Load Julia: `module load julia/<version>`` ``Julia`` at HPC2N
+   2) Load site-installed Julia packages (optional): ``module load <pre-reqs> <python-package>/<version>``
    3) Activate your virtual environment (optional): ``source <path-to-virt-env>/bin/activate``
    4) Install any extra Python packages (optional): ``pip install --no-cache-dir --no-build-isolation <python-package>``
    5) Start Python or run python script: ``python``
@@ -255,7 +195,22 @@ Exit Python or IPython with <Ctrl-D>, "quit()" or 'exit()’ in the python promp
 .. keypoints::
 
    - Before you can run Python scripts or work in a Python shell, first load a python module and prroble prerequisites
-   - Start a Python shell session either with ``python`` or ``ipython``
-   - Run scripts with ``python <script.py>``
+   - Start a Python shell session with ``julia`` (note lower case even at HPC2N)
+   - Run scripts with ``julia <script.jl>``
     
+Running IJulia from Jupyter notebook on UPPMAX 
+##############################################
 
+For more interactiveness you can run IJulia.
+Like for python it is possible to run a Julia in a notebook, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the python module as well. In shell:
+
+$ module load julia/1.7.2
+$ module load python/3.9.5
+$ julia
+
+In Julia:
+
+using IJulia
+notebook(dir="</path/to/work/dir/>")
+
+A Firefox session will start with the Jupyter notebook interface.
