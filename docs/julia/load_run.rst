@@ -169,7 +169,9 @@ Run Julia as a session
 
 The julia prompt looks like this:
 
-julia> 
+.. code-block:: julia
+   
+   julia> 
 
 Exit with <Ctrl-D> or 'exit()'. 
 
