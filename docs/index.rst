@@ -311,7 +311,7 @@ Material for improving your programming skills
 
    julia/introJulia.rst
    julia/load_run.rst
-   julia/packagesPython.rst
+   julia/packages.rst
    julia/isolatedJulia.rst
    julia/batchPython.md
    julia/interactivePython.md
