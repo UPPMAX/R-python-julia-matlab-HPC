@@ -211,9 +211,11 @@ Running IJulia from Jupyter notebook on UPPMAX
 For more interactiveness you can run IJulia.
 Like for python it is possible to run a Julia in a notebook, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the python module as well. In shell:
 
-$ module load julia/1.7.2
-$ module load python/3.9.5
-$ julia
+.. code-block:: sh
+
+   $ module load julia/1.7.2
+   $ module load python/3.9.5
+   $ julia
 
 In Julia:
 
