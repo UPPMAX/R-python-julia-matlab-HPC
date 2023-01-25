@@ -287,43 +287,43 @@ Exercises
     
     Run the script ``serial.jl`` that is given above.
 
-.. solution:: Solution for HPC2N
-    :class: dropdown
-    
-          This batch script is for Kebnekaise. 
-          
-          .. code-block:: sh
- 
-            #!/bin/bash            
-            #SBATCH -A hpc2n20xx-xyz     # your project_ID       
-            #SBATCH -J job-serial        # name of the job         
-            #SBATCH -n 1                 # nr. tasks  
-            #SBATCH --time=00:03:00      # requested time
-            #SBATCH --error=job.%J.err   # error file
-            #SBATCH --output=job.%J.out  # output file                                                                                                                                                                         
-
-            ml purge  > /dev/null 2>&1   # recommended purge
-            ml Julia/1.8.5-linux-x86_64  # Julia module
-                       
-            julia serial.jl              # run the serial script
-
-.. solution:: Solution for UPPMAX
-    :class: dropdown
-    
-          This batch script is for UPPMAX. Adding the numbers 2 and 3. 
-          
-          .. code-block:: sh
- 
-            #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
-            #SBATCH --time=00:05:00 # Asking for 5 minutes
-            #SBATCH -n 1 # Asking for 1 core
+    .. solution:: Solution for HPC2N
+        :class: dropdown
+        
+            This batch script is for Kebnekaise. 
             
-            # Load any modules you need, here for Python 3.9.5
-            module load Python/3.9.5
+            .. code-block:: sh
+    
+                #!/bin/bash            
+                #SBATCH -A hpc2n20xx-xyz     # your project_ID       
+                #SBATCH -J job-serial        # name of the job         
+                #SBATCH -n 1                 # nr. tasks  
+                #SBATCH --time=00:03:00      # requested time
+                #SBATCH --error=job.%J.err   # error file
+                #SBATCH --output=job.%J.out  # output file                                                                                                                                                                         
+
+                ml purge  > /dev/null 2>&1   # recommended purge
+                ml Julia/1.8.5-linux-x86_64  # Julia module
+                        
+                julia serial.jl              # run the serial script
+
+    .. solution:: Solution for UPPMAX
+        :class: dropdown
+        
+            This batch script is for UPPMAX. Adding the numbers 2 and 3. 
             
-            # Run your Python script 
-            python sum-2args.py 2 3 
+            .. code-block:: sh
+    
+                #!/bin/bash
+                #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+                #SBATCH --time=00:05:00 # Asking for 5 minutes
+                #SBATCH -n 1 # Asking for 1 core
+                
+                # Load any modules you need, here for Python 3.9.5
+                module load Python/3.9.5
+                
+                # Run your Python script 
+                python sum-2args.py 2 3 
 
 
 
@@ -332,56 +332,56 @@ Exercises
     Run the script ``script-gpu.jl`` that is given above. Why are we running the simulations
     twice?
 
-.. solution:: Solution for HPC2N
-    :class: dropdown
+    .. solution:: Solution for HPC2N
+        :class: dropdown
+        
+            This batch script is for Kebnekaise. We run the simulation twice because
+            in this way, the reported time is more reliable for the computing time as
+            in the first simulation, data transfer and other settings could be added to
+            the reported time.
+            
+            .. code-block:: sh
+                
+                #!/bin/bash            
+                #SBATCH -A hpc2n20xx-xyz     # your project_ID       
+                #SBATCH -J job-serial        # name of the job         
+                #SBATCH -n 1                 # nr. tasks  
+                #SBATCH --time=00:03:00      # requested time
+                #SBATCH --error=job.%J.err   # error file
+                #SBATCH --output=job.%J.out  # output file  
+                #SBATCH --gres=gpu:k80:1     # 1 GPU K80 card
+
+                ml purge  > /dev/null 2>&1
+                ml Julia/1.8.5-linux-x86_64
+                ml CUDA/11.7.0
+
+                export JULIA_CUDA_USE_BINARYBUILDER=false
+
+                julia script-gpu.jl
+
+            Output:
+                0.689096 seconds (2.72 M allocations: 132.617 MiB, 6.27% gc time, 99.62% compilation time)
+                1.194153 seconds (1.24 M allocations: 62.487 MiB, 3.41% gc time, 55.13% compilation time)
+                0.000933 seconds (2 allocations: 512.047 KiB)
+                0.000311 seconds (5 allocations: 192 bytes)
+
+    .. solution:: Solution for UPPMAX
+        :class: dropdown
+        
+            This batch script is for UPPMAX. Adding the numbers 2 and 3. 
+            
+            .. code-block:: sh
     
-          This batch script is for Kebnekaise. We run the simulation twice because
-          in this way, the reported time is more reliable for the computing time as
-          in the first simulation, data transfer and other settings could be added to
-          the reported time.
-          
-          .. code-block:: sh
-            
-            #!/bin/bash            
-            #SBATCH -A hpc2n20xx-xyz     # your project_ID       
-            #SBATCH -J job-serial        # name of the job         
-            #SBATCH -n 1                 # nr. tasks  
-            #SBATCH --time=00:03:00      # requested time
-            #SBATCH --error=job.%J.err   # error file
-            #SBATCH --output=job.%J.out  # output file  
-            #SBATCH --gres=gpu:k80:1     # 1 GPU K80 card
-
-            ml purge  > /dev/null 2>&1
-            ml Julia/1.8.5-linux-x86_64
-            ml CUDA/11.7.0
-
-            export JULIA_CUDA_USE_BINARYBUILDER=false
-
-            julia script-gpu.jl
-
-          Output:
-            0.689096 seconds (2.72 M allocations: 132.617 MiB, 6.27% gc time, 99.62% compilation time)
-            1.194153 seconds (1.24 M allocations: 62.487 MiB, 3.41% gc time, 55.13% compilation time)
-            0.000933 seconds (2 allocations: 512.047 KiB)
-            0.000311 seconds (5 allocations: 192 bytes)
-
-.. solution:: Solution for UPPMAX
-    :class: dropdown
-    
-          This batch script is for UPPMAX. Adding the numbers 2 and 3. 
-          
-          .. code-block:: sh
- 
-            #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
-            #SBATCH --time=00:05:00 # Asking for 5 minutes
-            #SBATCH -n 1 # Asking for 1 core
-            
-            # Load any modules you need, here for Python 3.9.5
-            module load Python/3.9.5
-            
-            # Run your Python script 
-            python sum-2args.py 2 3 
+                #!/bin/bash
+                #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+                #SBATCH --time=00:05:00 # Asking for 5 minutes
+                #SBATCH -n 1 # Asking for 1 core
+                
+                # Load any modules you need, here for Python 3.9.5
+                module load Python/3.9.5
+                
+                # Run your Python script 
+                python sum-2args.py 2 3 
 
  
 
