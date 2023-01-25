@@ -323,10 +323,11 @@ Material for improving your programming skills
    R/intro.rst
    R/load_runR.rst
    R/packagesR.rst
-   R/batchPython.md
+   R/batchR.rst
    R/interactivePython.md
    R/uppmaxPython.rst
    R/kebnekaisePython.md
+   R/exercises.rst
 
 
 .. Indices and tables
