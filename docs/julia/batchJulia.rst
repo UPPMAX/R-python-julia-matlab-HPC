@@ -359,6 +359,12 @@ Exercises
 
             julia script-gpu.jl
 
+          Output:
+            0.689096 seconds (2.72 M allocations: 132.617 MiB, 6.27% gc time, 99.62% compilation time)
+            1.194153 seconds (1.24 M allocations: 62.487 MiB, 3.41% gc time, 55.13% compilation time)
+            0.000933 seconds (2 allocations: 512.047 KiB)
+            0.000311 seconds (5 allocations: 192 bytes)
+
 .. solution:: Solution for UPPMAX
     :class: dropdown
     
@@ -377,6 +383,7 @@ Exercises
             # Run your Python script 
             python sum-2args.py 2 3 
 
+ 
 
 
 .. keypoints::
