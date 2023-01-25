@@ -181,28 +181,25 @@ Exit with
    exit()
 
 
-.. admonition:: Workflow  FIX **MOVE TO LATER**
+.. admonition:: Workflow  FIX and perhaps MOVE TO LATER
 
-   In addition to loading Julia, you will also often need to load site-installed modules for Python packages, or use own-installed Python packages. The work-flow would be something like this: 
+   In addition to loading Julia, you will also often need to load site-installed modules for Python packages, or use own-installed Julia packages. The work-flow would be something like this: 
    
  
    1) Load Julia: `module load julia/<version>`` ``Julia`` at HPC2N
-   2) Load site-installed Julia packages (optional): ``module load <pre-reqs> <python-package>/<version>``
-   3) Activate your virtual environment (optional): ``source <path-to-virt-env>/bin/activate``
-   4) Install any extra Python packages (optional): ``pip install --no-cache-dir --no-build-isolation <python-package>``
-   5) Start Python or run python script: ``python``
+   2) Activate your virtual environment (optional): `` ``
+   3) Start Julia or run Julia script: ``julia``
+   4) Install any extra Julia packages (optional): ``> Pkg.add <julia package>``
 
-   Installed Python modules (modules and own-installed) can be accessed within Python with ``import <package>`` as usual. 
-
-   The command ``pip list`` given within Python will list the available modules to import. 
+   Installed Julia packages can be accessed within Julia with ``using <package>`. `
 
    More about packages and virtual/isolated environment to follow in later sections of the course! 
 
 
 .. keypoints::
 
-   - Before you can run Python scripts or work in a Python shell, first load a python module and prroble prerequisites
-   - Start a Python shell session with ``julia`` (note lower case even at HPC2N)
+   - Before you can run Julia scripts or work in a Julia shell, first load a julia module
+   - Start a Julia shell session with ``julia`` (note lower case even at HPC2N)
    - Run scripts with ``julia <script.jl>``
     
 Running IJulia from Jupyter notebook on UPPMAX 
