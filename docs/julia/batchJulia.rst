@@ -1,4 +1,4 @@
-Running Python in batch mode
+Running Julia in batch mode
 ============================
 
 .. questions::
@@ -33,10 +33,10 @@ Guides and documentation at: http://www.hpc2n.umu.se/support and https://www.upp
 
 - Write a batch script
 
-  - Inside the batch script you need to load the modules you need (Python, Python packages ... )
+  - Inside the batch script you need to load the modules you need, for instance Julia
   - Possibly activate an isolated/virtual environment to access own-installed packages
   - Ask for resources depending on if it is a parallel job or a serial job, if you need GPUs or not, etc.
-  - Give the command(s) to your Python script
+  - Give the command(s) to your Julia script
 
 - Submit batch script with ``sbatch <my-python-script.sh>`` 
 
