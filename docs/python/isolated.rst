@@ -139,23 +139,36 @@ If you want it in a certain place...
 
 Note that your prompt is changing to start with (name of your vitual environment) to show that you are within it.
 
-Install your packages with ``pip`` and the correct versions, like:
+Install your packages with ``pip``. While not always needed, it is often a good idea to give the correct versions you want, to ensure compatibility with other packages you use: 
 
 
+.. tabs::
 
-.. prompt:: 
-    :language: bash
-    :prompts: (Example) $
+   .. tab:: UPPMAX
 
-    pip install numpy==1.15.4 matplotlib==2.2.2
+      .. prompt:: 
+          :language: bash
+          :prompts: (Example) $
+      
+          pip install numpy==1.15.4 matplotlib==2.2.2
 
-Deactivate it.
+      Deactivate it.
 
-.. prompt:: 
-    :language: bash
-    :prompts: (Example) $
+      .. prompt:: 
+          :language: bash
+          :prompts: (Example) $
+   
+          deactivate
 
-    deactivate
+   .. tab:: HPC2N
+
+.. code-block:: sh
+
+    (vpyenv) $ pip install --no-cache-dir --no-build-isolation <package>==<version>
+    
+The "--no-cache-dir" option is required to avoid it from reusing earlier installations from the same user in a different environment. The "--no-build-isolation" is to make sure that it uses the loaded modules from the module system when building any Cython libraries.
+
+
 
 Everytime you need the tools available in the virtual environment you activate it as above.
 
@@ -163,6 +176,11 @@ Everytime you need the tools available in the virtual environment you activate i
 
    source <path/>Example/bin/activate
     
+
+
+
+
+
 
 
 Prepare the course environment
@@ -316,18 +334,17 @@ Have a look on this manual https://www.uppmax.uu.se/support/user-guides/python-m
    - There are different tools to create virtual environemnts.
       - UPPMAX has Conda and venv
 
+
+
+
+
+
 Isolated environments at HPC2N
 ------------------------------
 
 
 
-To place it in a directory below your project storage (again calling it "vpyenv"): 
 
-.. code-block:: sh
-
-   $ virtualenv --system-site-packages /proj/nobackup/<your-project-storage>/vpyenv
-
-**NOTE** To save space, you should load any other Python modules you will need that are system installed before installing your own packages! Remember to choose ones that are compatible with the Python version you picked! 
 
 **Example**
 
@@ -403,6 +420,8 @@ Every time you need the tools available in the virtual environment you activate 
 
     $ source <path/to/virt-environment>/vpyenv/bin/activate
     
+
+
 Using setup.py
 ''''''''''''''
 
