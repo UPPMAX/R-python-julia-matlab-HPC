@@ -44,37 +44,40 @@ Preliminary schedule
    * - 9:00
      - Syllabus 
      -
-   * - 
+   * - 9.10
      - Introduction 
      - Lecture
-   * - 
+   * - 9.25
      - Loading modules and running Python codes 
      - Lecture+code along
-   * - 
+   * - 9.50
      - Dealing with packages  
      - Lecture+code along
-   * - 
+   * - 10.00
      - **Coffee**
-     - 
-   * - 
+     - packages cont'd
+   * - 10.15
+     - Dealing with packages  
+     - Lecture+code along
+   * - 10.30
      - Isolated environments (general)
      - Lecture+code along
-   * - 
+   * - 10.50
      - SLURM Batch scripts for Python jobs  
      - Lecture+code along + exercise
-   * - 
+   * - 11.10
      - Interactive
      - Lecture+code along
-   * - 
+   * - 11.40
      - **Short leg stretch**
      - 
-   * - 
+   * - 11.45
      - Additional exercises 
      -
-   * - 
+   * - 12.10
      - Summary 
      -
-   * - 
+   * - 12.20
      - Q&A on-demand
      -
    * - 12.30
