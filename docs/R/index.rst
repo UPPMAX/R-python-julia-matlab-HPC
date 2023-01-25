@@ -116,7 +116,7 @@ Preliminary schedule
 
    intro.rst
    load_runR.rst
-   packagesPython.rst
+   packagesR.rst
    isolatedPython.rst
    batchPython.md
    interactivePython.md
