@@ -339,7 +339,7 @@ To use the Python packages you have installed under your virtual environment, lo
 
 **Example**
 
-Using the venv created earlier and the spacy we installed under example 1) above. 
+Using the virtual environment created earlier and the ``spacy`` we installed under example 1) above. 
 
 .. admonition:: Load modules for Python, activate the environment 
    :class: dropdown
@@ -355,11 +355,28 @@ Using the venv created earlier and the spacy we installed under example 1) above
 
            >>> import spacy
            >>> 
+
+
+.. admonition:: Load modules for Python, numpy (in SciPy-bundle), activate the environment (on Kebnekaise at HPC2N) 
+    :class: dropdown
+   
+        .. code-block:: sh
+           
+           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ module load GCC/10.3.0 OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05
+           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ source vpyenv/bin/activate
+           (vpyenv) b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ python
+           Python 3.9.5 (default, Jun  3 2021, 02:53:39) 
+           [GCC 10.3.0] on linux
+           Type "help", "copyright", "credits" or "license" for more information.
+           >>> import spacy
+           >>> 
+           
            
 
 To use self-installed Python packages in a batch script, you also need to load the above mentioned modules and activate the environment. An example of this will follow later in the course. 
 
 To see which Python packages you, yourself, have installed, you can use ``pip list --user`` while the environment you have installed the packages in are active. 
+
 
 Working with virtual environments defined from files
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -399,7 +416,12 @@ pyenv
 This approach is more advanced and should be, in our opinion, used only if the above are not enough for the purpose. 
 This approach allows you to install your **own python version**, like 3.10, and much more… 
 
-Have a look on this manual https://www.uppmax.uu.se/support/user-guides/python-modules-guide/
+More info
+'''''''''
+
+- UPPMAX's documentation pages about installing Python packages and virtual environments: https://www.uppmax.uu.se/support/user-guides/python-user-guide/#tocjump_8703728512506487_10
+- HPC2N's documentation pages about installing Python packages and virtual environments: https://www.hpc2n.umu.se/resources/software/user_installed/python
+
 
 .. keypoints::
 
@@ -407,58 +429,4 @@ Have a look on this manual https://www.uppmax.uu.se/support/user-guides/python-m
    - Make it for each project you have for reproducibility.
    - There are different tools to create virtual environemnts.
       - UPPMAX has Conda and venv
-
-
-
-
-
-
-Isolated environments at HPC2N
-------------------------------
-
-
-
-
-
-Using the self-installed packages in Python
-'''''''''''''''''''''''''''''''''''''''''''
-
-To use the Python packages you have installed under your virtual environment, load your Python module + prerequisites, load any site-installed Python packages you used, and then activate the environment. Now your own packages can be accessed from within Python, just like any other Python package. 
-
-**Example**
-
-Using the vpyenv created earlier and the spacy we installed under example 1) above. 
-
-.. admonition:: Load modules for Python, numpy (in SciPy-bundle), activate the environment (on Kebnekaise at HPC2N) 
-    :class: dropdown
-   
-        .. code-block:: sh
-           
-           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ module load GCC/10.3.0 OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05
-           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ source vpyenv/bin/activate
-           (vpyenv) b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ python
-           Python 3.9.5 (default, Jun  3 2021, 02:53:39) 
-           [GCC 10.3.0] on linux
-           Type "help", "copyright", "credits" or "license" for more information.
-           >>> import spacy
-           >>> 
-           
-
-To use self-installed Python packages in a batch script, you also need to load the above mentioned modules and activate the environment. An example of this will follow later in the course. 
-
-To see which Python packages you, yourself, has installed, you can use ``pip list --user`` while the environement you have installed the packages in are active. 
-
-More info
-'''''''''
-
-HPC2N's documentation pages about installing Python packages and virtual environments: https://www.hpc2n.umu.se/resources/software/user_installed/python
-
-
-.. keypoints::
-
-   - With a virtual environment you can tailor an environment with specific versions for Python and packages, not interfering with other installed python versions and packages.
-   - Make it for each project you have for reproducibility.
-   - There are different tools to create virtual environemnts.
       - HPC2N has virtualenv
-
-   
