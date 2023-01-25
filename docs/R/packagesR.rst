@@ -1,37 +1,42 @@
 Packages
 ========
 
-.. admonition:: Python modules AKA Python packages
+.. admonition:: R packages
 
-   - Python **packages broaden the use of python** to almost infinity! 
+   - R packages is the main **broaden the use of R** to almost infinity! 
 
    - Instead of writing code yourself there may be others that have done the same!
 
-   - Many **scientific tools** are distributed as **python packages**, making it possible to run a script in the prompt and there define files to be analysed and arguments defining exactly what to do.
+   - Many **scientific tools** are distributed as **R packages**, making it possible to run a script in the prompt and there define files to be analysed and arguments defining exactly what to do.
 
-   - A nice **introduction to packages** can be found here: https://aaltoscicomp.github.io/python-for-scicomp/dependencies/ 
+   - For more details about packages and in particular developing your own, see: [R packages](https://r-pkgs.org) 
 
 .. questions::
-
+   - What is an R package?
    - How do I find which packages and versions are available?
    - What to do if I need other packages?
    - Are there differences between HPC2N and UPPMAX?
    
 .. objectives:: 
 
-   - Show how to check for Python packages
+   - Show how to check for R packages
    - show how to install own packages on the different clusters
 
 
-.. admonition:: There are two package installation systems
+R packages: A short Primer
+--------------------------
 
-    - **PyPI** (``pip``) is traditionally for Python-only packages but it is no problem to also distribute packages written in other languages as long as they provide a Python interface.
+Whats is a package?
+###################
 
-    - **Conda** (``conda``) is more general and while it contains many Python packages and packages with a Python interface, it is often used to also distribute packages which do not contain any Python (e.g. C or C++ packages).
-    	- Creates its own environment that does not interact with other python installations
-	- At HPC2N, Conda is not recommended, and we do not support it there
+An R package is essentialy 
 
-    - Many libraries and tools are distributed in both ecosystems.
+Package states
+##############
+
+.. figure:: ../../img/R-pkg-states.png
+   :width: 450
+   :align: center
 
 
 Check current available packages
@@ -155,21 +160,8 @@ A selection of the Python packages and libraries installed on UPPMAX and HPC2N a
 
 
 
-Install with pip
-----------------
-
-You use ``pip`` this way, in a Linux shell OR a python shell: 
-
-.. code-block:: sh 
-
-    $ pip install --user <package>
-    
-Use ``pip3`` if you loaded python3.
-
-Then the package ends up in ``~/.local/lib/python<version>/site-packages/`` .
-
-Note that python<version> is imitting the last number (bug fix), like 3.8 for python-3.8.7.
-We HIGHLY recommend using a virtual environment during installation, since this makes it easier to install for different versions of Python.  More information will follow later in this course (https://uppmax.github.io/HPC-python/isolated.html). 
+Installing your own packages
+----------------------------
 
 
 
