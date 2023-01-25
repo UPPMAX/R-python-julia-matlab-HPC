@@ -3,13 +3,18 @@ Packages
 
 .. admonition:: R packages
 
-   - R packages is the main **broaden the use of R** to almost infinity! 
+   - R packages is the main way of extending the functionallity of R and
+     **broadens the use of R** to almost infinity! 
 
-   - Instead of writing code yourself there may be others that have done the same!
+   - Instead of writing code yourself there may be others that have done the
+     same!
 
-   - Many **scientific tools** are distributed as **R packages**, making it possible to run a script in the prompt and there define files to be analysed and arguments defining exactly what to do.
+   - Many **scientific tools** are distributed as **R packages**, making it
+     possible to run a script in the prompt and there define files to be
+     analysed and arguments defining exactly what to do.
 
-   - For more details about packages and in particular developing your own, see: [R packages](https://r-pkgs.org) 
+   - For more details about packages and in particular developing your own,
+     see: `R packages <https://r-pkgs.org>`_
 
 .. questions::
    - What is an R package?
@@ -18,7 +23,7 @@ Packages
    - Are there differences between HPC2N and UPPMAX?
    
 .. objectives:: 
-
+   - Understand the basics of what an R package is
    - Show how to check for R packages
    - show how to install own packages on the different clusters
 
@@ -29,7 +34,19 @@ R packages: A short Primer
 Whats is a package?
 ###################
 
-An R package is essentialy 
+An R package is essentialy a contained folder and file structure containing R
+code (and possibly C/C++ or other code) and other files relevant for the
+package e.g. documentation, licensing and configuration files. Let us look at a
+very simple example
+
+
+.. code-block:: sh
+
+   git clone 
+
+
+Packages can be 
+
 
 Package states
 ##############
