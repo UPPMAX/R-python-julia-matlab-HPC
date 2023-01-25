@@ -301,10 +301,8 @@ Material for improving your programming skills
    python/batchPython.md
    python/interactivePython.md
    python/uppmaxPython.rst
-   python/jupyterUPPMAX.md
    python/kebnekaisePython.md
 
- 
 .. toctree::
    :maxdepth: 2
    :caption: julia Lessons:
@@ -316,7 +314,6 @@ Material for improving your programming skills
    julia/batchJulia.md
    julia/interactivePython.md
    julia/uppmaxPython.rst
-   julia/jupyterUPPMAX.md
    julia/kebnekaisePython.md
    
 .. toctree::
