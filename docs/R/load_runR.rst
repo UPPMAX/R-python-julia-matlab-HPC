@@ -192,7 +192,7 @@ For this course, we recommend using R 4.0.4
 
 .. warning::
 
-   + UPPMAX: Don’t use system-installed python/2.7.5
+   + UPPMAX: Don’t use system-installed R/3.6.0
    + HPC2N: No system installed R 
    + ALWAYS use R module
 
