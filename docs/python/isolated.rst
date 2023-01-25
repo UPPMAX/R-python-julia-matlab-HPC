@@ -61,44 +61,51 @@ In this course we will look at the following tools for creating and using isolat
       - HPC2N has virtualenv.
       - More details in the separated sessions!
  
-Isolated environments at UPPMAX
--------------------------------
-
-.. note::
-   Isolated environments solve a couple of problems:
    
-   - You can install specific, also older, versions into them.
-   - You can create one for each project and no problem if the two projects require different versions.
-   - You can remove the environment and create a new one, if not needed or with errors.
-   
-``conda`` works as an isolated environment. Below we present the ``pip`` way with "virtual environments", as well as installing using setup.py! Installing with a virtual environment is the only recommended way at HPC2N! 
-
-.. questions::
-
-   - How to work with isolated environments at UPPMAX?
- 
-.. objectives:: 
-
-   - Give a introduction to isolated environments at UPPMAX
-   
-Virtual environment - venv    
-''''''''''''''''''''''''''
+Virtual environment - venv & virtualenv
+'''''''''''''''''''''''''''''''''''''''
 
 Example
 #######
 
 Create a ``venv``. First load the python version you want to base your virtual environment on:
 
-.. code-block:: sh
+.. tabs::
 
-    $ module load python/3.6.8
-    $ python -m venv --system-site-packages Example
+   .. tab:: UPPMAX
+
+      .. code-block:: sh
+
+         $ module load python/3.6.8
+         $ python -m venv --system-site-packages Example
     
-"Example" is the name of the virtual environment. The directory “Example” is created in the present working directory. The ``-m`` flag makes sure that you use the libraries from the python version you are using.
+      "Example" is the name of the virtual environment. The directory “Example” is created in the present working directory. The ``-m`` flag makes sure that you use the libraries from the python version you are using.
 
-.. note::
+      .. note::
 
-   ``--system-site-packages`` includes the packages already installed in the loaded python module.
+         ``--system-site-packages`` includes the packages already installed in the loaded python module.
+
+   .. tab:: HPC2N
+
+      .. code-block:: sh
+
+         $ module load python/<version>
+         $ virtualenv --system-site-packages vpyenv
+    
+      "vpyenv" is the name of the virtual environment. You can name it whatever you want. The directory “vpyenv” is created in the present working directory.
+
+      .. note::
+
+         ``--system-site-packages`` includes the packages already installed in the loaded python and python packages modules.
+
+
+**NOTE**: since it may take up a bit of space if you are installing many Python packages to your virtual environment, we **strongly** recommend you place it in your project storage! 
+
+**NOTE**: if you need are for instance working with both Python 2 and 3, then you can of course create more than one virtual environment, just name them so you can easily remember which one has what. 
+
+
+
+
 
 If you want it in a certain place like "~/test/":
 
@@ -292,24 +299,6 @@ Have a look on this manual https://www.uppmax.uu.se/support/user-guides/python-m
 Isolated environments at HPC2N
 ------------------------------
 
-.. note::
-   Isolated environments solve a couple of problems:
-   
-   - You can install specific, also older, versions into them.
-   - You can create one for each project and no problem if the two projects require different versions.
-   - You can remove the environment and create a new one, if not needed or with errors.
-
-.. questions::
-
-   - How to work with isolated environments at HPC2N?
-   
-.. objectives:: 
-
-   - Give a introduction to isolated environments at HPC2N
-
-.. warning::   
-
-   Installing with a virtual environment is the only recommended way at HPC2N! 
 
 Virtual environment - virtualenv
 ''''''''''''''''''''''''''''''''
