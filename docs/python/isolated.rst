@@ -18,7 +18,7 @@ Isolated environments
    
 .. objectives:: 
 
-   - Give a general 'theoretical* introduction to isolated environments 
+   - Give a general *theoretical* introduction to isolated environments 
    - Site-specific procedures are given at the separated sessions.
 
 General procedures   
@@ -139,6 +139,37 @@ If you want it in a certain place...
 
 Note that your prompt is changing to start with (name of your vitual environment) to show that you are within it.
 
+Example
+#######
+
+**Example**
+
+I load Python 3.9.5 and create a virtual environment called "vpyenv" in my personal project storage directory (/proj/nobackup/support-hpc2n/bbrydsoe): 
+
+.. admonition:: Load Python 3.9.5 and its prerequisites, then create the virtual environment 
+    :class: dropdown
+   
+        .. code-block:: sh
+      
+           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ module load GCCcore/10.3.0 Python/3.9.5
+           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ virtualenv --system-site-packages vpyenv
+             created virtual environment CPython3.9.5.final.0-64 in 6490ms
+             creator CPython3Posix(dest=/pfs/proj/nobackup/fs/projnb10/support-hpc2n/bbrydsoe/vpyenv, clear=False, no_vcs_ignore=False, global=True)
+             seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/pfs/stor10/users/home/b/bbrydsoe/.local/share/virtualenv)
+               added seed packages: pip==22.1.2, setuptools==62.6.0, wheel==0.37.1
+             activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ 
+
+
+Activate the environment.
+
+.. code-block:: sh
+
+    $ source <path/to/virt-environment>/vpyenv/bin/activate
+
+Note that your prompt is changing to start with (vpyenv) to show that you are within an environment.
+
+
 Using pip
 '''''''''
 
@@ -181,6 +212,7 @@ Everytime you need the tools available in the virtual environment you activate i
 
 Prepare the course environment
 ''''''''''''''''''''''''''''''
+
 **Examples**
 
 Create a virtual environment. First load the python version you want to base your virtual environment on:
@@ -268,7 +300,7 @@ Create a virtual environment. First load the python version you want to base you
 
       .. code-block:: sh
 
-         $ source <path/to/virt-environment>/vpyenv/bin/activate
+         $ source <path/to/virt-environment>/bin/activate
     
      
       
@@ -278,7 +310,7 @@ Create a virtual environment. First load the python version you want to base you
 Using setup.py
 ''''''''''''''
 
-Some Python packages are only available as downloads, for intsance via github, to install with setup.py or similar file. If that is the case for the package you need, this is how you do it: 
+Some Python packages are only available as downloads, for instance via github, to install with setup.py or similar file. If that is the case for the package you need, this is how you do it: 
 
 - Pick a location for your installation (change below to fit - I am installing under a project storage)
 
@@ -384,84 +416,6 @@ Have a look on this manual https://www.uppmax.uu.se/support/user-guides/python-m
 Isolated environments at HPC2N
 ------------------------------
 
-
-
-
-
-**Example**
-
-I load Python 3.9.5 and create a virtual environment called "vpyenv" in my personal project storage directory (/proj/nobackup/support-hpc2n/bbrydsoe): 
-
-.. admonition:: Load Python 3.9.5 and its prerequisites, then create the virtual environment 
-    :class: dropdown
-   
-        .. code-block:: sh
-      
-           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ module load GCCcore/10.3.0 Python/3.9.5
-           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ virtualenv --system-site-packages vpyenv
-             created virtual environment CPython3.9.5.final.0-64 in 6490ms
-             creator CPython3Posix(dest=/pfs/proj/nobackup/fs/projnb10/support-hpc2n/bbrydsoe/vpyenv, clear=False, no_vcs_ignore=False, global=True)
-             seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/pfs/stor10/users/home/b/bbrydsoe/.local/share/virtualenv)
-               added seed packages: pip==22.1.2, setuptools==62.6.0, wheel==0.37.1
-             activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
-           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ 
-
-
-Activate the environment.
-
-.. code-block:: sh
-
-    $ source <path/to/virt-environment>/vpyenv/bin/activate
-
-Note that your prompt is changing to start with (vpyenv) to show that you are within an environment.
-
-Using pip
-'''''''''
-
-Install your packages with ``pip``. While not always needed, it is often a good idea to give the correct versions you want, to ensure compatibility with other packages you use: 
-
-.. code-block:: sh
-
-    (vpyenv) $ pip install --no-cache-dir --no-build-isolation <package>==<version>
-    
-The "--no-cache-dir" option is required to avoid it from reusing earlier installations from the same user in a different environment. The "--no-build-isolation" is to make sure that it uses the loaded modules from the module system when building any Cython libraries.
-
-**Examples**
-
-1) Installing spacy. Using existing modules for numpy (in SciPy-bundle) and the vpyenv we created under Python 3.9.5. Note that you need to load Python again if you have been logged out, etc. but the virtual environment remains, of course 
-
-.. admonition:: Load modules for Python, numpy (in SciPy-bundle), activate the environment, and install spacy on Kebnekaise at HPC2N 
-    :class: dropdown
-   
-        .. code-block:: sh
-           
-           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ module load GCC/10.3.0 OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05
-           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ source vpyenv/bin/activate
-           (vpyenv) b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ pip install --no-cache-dir --no-build-isolation spacy 
-   
-2) Installing seaborn. Using existing modules for numpy (in SciPy-bundle), matplotlib, and the vpyenv we created under Python 3.9.5. Note that you need to load Python again if you have been logged out, etc. but the virtual environment remains, of course   
-
-.. admonition:: Load modules for Python, numpy (in SciPy-bundle), matplotlib, activate the environment, and install seaborn on Kebnekaise at HPC2N 
-    :class: dropdown
-   
-        .. code-block:: sh
-           
-           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ module load GCC/10.3.0 OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 matplotlib/3.4.2
-           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ source vpyenv/bin/activate
-           (vpyenv) b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ pip install --no-cache-dir --no-build-isolation seaborn 
-
-Deactivating a virtual environment.
-
-.. code-block:: sh
-
-   (vpyenv) $ deactivate
-
-Every time you need the tools available in the virtual environment you activate it as above (after first loading the modules for Python, Python packages, and prerequisites)
-
-.. code-block:: sh
-
-    $ source <path/to/virt-environment>/vpyenv/bin/activate
-    
 
 
 Using setup.py
