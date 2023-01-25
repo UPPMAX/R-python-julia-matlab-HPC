@@ -10,7 +10,7 @@ Introduction Python
    - Create a virtual environment
    - Install Python packages with pip (Kebnekaise, Rackham, Snowy)
    - Install Python packages with conda (Bianca)
-   - Write a batchscript for running Python
+   - Write a batch script for running Python
 
   
 .. admonition:: Exercises
@@ -66,14 +66,17 @@ Preliminary schedule
      - SLURM Batch scripts for Python jobs  
      - Lecture+code along + exercise
    * - 11.10
-     - Interactive
-     - Lecture+code along
-   * - 11.40
      - **Short leg stretch**
      - 
+   * - 11.15
+     - Interactive
+     - Lecture+code along
    * - 11.45
      - Additional exercises 
      -
+   * - 12.05
+     - **Short leg stretch**
+     - 
    * - 12.10
      - Summary 
      -
