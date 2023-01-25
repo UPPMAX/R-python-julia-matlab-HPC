@@ -81,10 +81,6 @@ Create a ``venv``. First load the python version you want to base your virtual e
     
       "Example" is the name of the virtual environment. The directory “Example” is created in the present working directory. The ``-m`` flag makes sure that you use the libraries from the python version you are using.
 
-      .. note::
-
-         ``--system-site-packages`` includes the packages already installed in the loaded python module.
-
    .. tab:: HPC2N
 
       .. code-block:: sh
@@ -94,34 +90,58 @@ Create a ``venv``. First load the python version you want to base your virtual e
     
       "vpyenv" is the name of the virtual environment. You can name it whatever you want. The directory “vpyenv” is created in the present working directory.
 
-      .. note::
 
-         ``--system-site-packages`` includes the packages already installed in the loaded python and python packages modules.
+.. note::
 
+   To save space, you should load any other Python modules you will need that are system installed before installing your own packages! Remember to choose ones that are compatible with the Python version you picked! 
+   ``--system-site-packages`` includes the packages already installed in the loaded python module.
 
 **NOTE**: since it may take up a bit of space if you are installing many Python packages to your virtual environment, we **strongly** recommend you place it in your project storage! 
 
 **NOTE**: if you need are for instance working with both Python 2 and 3, then you can of course create more than one virtual environment, just name them so you can easily remember which one has what. 
+      
 
+If you want it in a certain place...
 
+.. tabs::
 
+   .. tab:: UPPMAX
 
+      To place it in a directory called test
+      
+      .. code-block:: sh
 
-If you want it in a certain place like "~/test/":
-
-.. code-block:: sh
-
-    $ python -m venv ~/test/Example 
+         $ python -m venv --system-site-packages ~/test/Example 
     
-Activate it.
+      Activate it.
 
-.. code-block:: sh
+      .. code-block:: sh
 
-    $ source <path/>Example/bin/activate
+          $ source ~/test/Example/bin/activate
 
-Note that your prompt is changing to start with (Example) to show that you are within an environment.
+      Note that your prompt is changing to start with (Example) to show that you are within an environment.
+
+   .. tab:: HPC2N
+
+      To place it in a directory below your project storage (again calling it "vpyenv"): 
+
+      .. code-block:: sh
+
+         $ virtualenv --system-site-packages /proj/nobackup/<your-project-storage>/vpyenv 
+    
+      Activate it.
+
+      .. code-block:: sh
+
+          $ source /proj/nobackup/<your-project-storage>/vpyenv/bin/activate
+
+
+
+Note that your prompt is changing to start with (name of your vitual environment) to show that you are within it.
 
 Install your packages with ``pip`` and the correct versions, like:
+
+
 
 .. prompt:: 
     :language: bash
@@ -300,26 +320,6 @@ Isolated environments at HPC2N
 ------------------------------
 
 
-Virtual environment - virtualenv
-''''''''''''''''''''''''''''''''
-
-Create a ``vpyenv``. First load the python version you want to base your virtual environment on:
-
-.. code-block:: sh
-
-    $ module load python/<version>
-    $ virtualenv --system-site-packages vpyenv
-    
-"vpyenv" is the name of the virtual environment. You can name it whatever you want. The directory “vpyenv” is created in the present working directory.
-
-.. note::
-
-   ``--system-site-packages`` includes the packages already installed in the loaded python and python packages modules.
-
-
-**NOTE**: since it may take up a bit of space if you are installing many Python packages to your virtual environment, we **strongly** recommend you place it in your project storage! 
-
-**NOTE**: if you need are for instance working with both Python 2 and 3, then you can of course create more than one virtual environment, just name them so you can easily remember which one has what. 
 
 To place it in a directory below your project storage (again calling it "vpyenv"): 
 
