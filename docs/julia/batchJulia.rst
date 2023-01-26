@@ -203,7 +203,7 @@ cluster and install the ``CUDA`` package in Julia as in the next sequence of com
         .. code-block:: sh
 
             $ ml Julia/1.8.5-linux-x86_64   # Julia version
-            $ ml CUDA/11.7.0                # CUDA toolkit module
+            $ ml CUDA/11.4.1                # CUDA toolkit module
             $ julia
             (v1.8) pkg> add CUDA 
                 Updating registry at `~/.julia/registries/General.toml`
@@ -242,7 +242,7 @@ reference point, we show the simulation on CPUs as well.
 
             ml purge  > /dev/null 2>&1
             ml Julia/1.8.5-linux-x86_64
-            ml CUDA/11.7.0
+            ml CUDA/11.4.1
 
             export JULIA_CUDA_USE_BINARYBUILDER=false
 
@@ -283,9 +283,18 @@ reference point, we show the simulation on CPUs as well.
 Exercises
 ---------
 
-.. challenge:: Run the serial script
+.. challenge:: Run a serial script
     
-    Run the script ``serial.jl`` that is given above.
+    Run the serial script ``serial-sum.jl``: 
+
+            .. code-block:: julia
+
+                x = parse( Int32, ARGS[1] )
+                y = parse( Int32, ARGS[2] )
+                sum = x + y
+                println("The sum of the two numbers is ", sum)
+
+    This scripts accepts two integers as command line arguments.
 
     .. solution:: Solution for HPC2N
         :class: dropdown
@@ -305,7 +314,7 @@ Exercises
                 ml purge  > /dev/null 2>&1   # recommended purge
                 ml Julia/1.8.5-linux-x86_64  # Julia module
                         
-                julia serial.jl              # run the serial script
+                julia serial-sum.jl Arg1 Arg2    # run the serial script
 
     .. solution:: Solution for UPPMAX
         :class: dropdown
@@ -353,7 +362,7 @@ Exercises
 
                 ml purge  > /dev/null 2>&1
                 ml Julia/1.8.5-linux-x86_64
-                ml CUDA/11.7.0
+                ml CUDA/11.4.1
 
                 export JULIA_CUDA_USE_BINARYBUILDER=false
 
