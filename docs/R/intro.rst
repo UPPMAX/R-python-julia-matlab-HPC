@@ -32,10 +32,10 @@ Preliminary schedule
      - Syllabus 
      - 10m
    * - 9.10
-     - Introduction 
+     - Introduction to R
      - Lecture 10 m 
    * - 9.20
-     - Loading modules and running Python codes 
+     - Load and run R 
      - Lecture+code along 20m
    * - 9.40
      - Dealing with packages  
@@ -44,19 +44,19 @@ Preliminary schedule
      - **Coffee**
      - 
    * - 10.15
-     - Dealing with packages (Conda)
+     - Dealing with packages (Conda) **Omit??**
      - Lecture+code along 15m
    * - 10.30
-     - Isolated environments (together)
+     - RStudio???
      - Lecture+code along 30m
    * - 11.00
      - **Short leg stretch**
      - 
    * - 11.05
-     - SLURM Batch scripts for Python jobs  
+     - SLURM Batch scripts for R jobs  
      - Lecture+code along + exercise 25m
    * - 11.30
-     - Interactive
+     - Interactive 
      - Lecture+code along 15m
    * - 11.45
      - Additional exercises 
