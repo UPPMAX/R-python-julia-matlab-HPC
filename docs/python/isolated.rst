@@ -416,11 +416,36 @@ pyenv
 This approach is more advanced and should be, in our opinion, used only if the above are not enough for the purpose. 
 This approach allows you to install your **own python version**, like 3.10, and much more… 
 
+.. admonition:: Summary of workflow
+
+   In addition to loading Python, you will also often need to load site-installed modules for Python packages, or use own-installed Python packages. The work-flow would be something like this: 
+   
+ 
+   1) Load Python and prerequisites: `module load <pre-reqs> Python/<version>``
+   2) Load site-installed Python packages (optional): ``module load <pre-reqs> <python-package>/<version>``
+   3) Activate your virtual environment (optional): ``source <path-to-virt-env>/bin/activate``
+   4) Install any extra Python packages (optional): ``pip install --no-cache-dir --no-build-isolation <python-package>``
+   5) Start Python or run python script: ``python``
+
+   Installed Python modules (modules and own-installed) can be accessed within Python with ``import <package>`` as usual. 
+
+   The command ``pip list`` given within Python will list the available modules to import. 
+
+   More about packages and virtual/isolated environment to follow in later sections of the course! 
+
+
+
+
+
+
 More info
 '''''''''
 
 - UPPMAX's documentation pages about installing Python packages and virtual environments: https://www.uppmax.uu.se/support/user-guides/python-user-guide/#tocjump_8703728512506487_10
 - HPC2N's documentation pages about installing Python packages and virtual environments: https://www.hpc2n.umu.se/resources/software/user_installed/python
+
+
+
 
 
 .. keypoints::
