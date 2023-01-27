@@ -2,18 +2,9 @@
    sphinx-quickstart on Fri Jan 21 18:24:04 2022.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
-   
-Welcome to Introduction to running R, Python, and Julia in HPC
+
+Introduction to running R, Python, and Julia in HPC
 ==============================================================
-
-.. admonition:: This material
-   
-   Here you will find the content of the workshop Using Python in an HPC environment.
-   
-   - Documentation at the HPC centres UPPMAX and HPC2N
-      - UPPMAX: https://www.uppmax.uu.se/support/user-guides/python-user-guide/
-      - HPC2N: https://www.hpc2n.umu.se/resources/software/user_installed/python
-
 
 .. admonition:: Content
 
@@ -59,16 +50,15 @@ Preliminary schedule
 Some practicals
 ---------------
 
-.. warning:: Course has already been given (TOFIX)
+.. info:: Earlier courses 
 
-   - Q/A are public at the HackMD pages
-      - https://hackmd.io/@bclaremar/HPC-python
-      - https://hackmd.io/IoseeprATrWH0ZI7z6wJ-w?view
+   - HPC-Python: https://uppmax.github.io/HPC-python
+     - Q/A are public at the HackMD pages
+       - https://hackmd.io/@bclaremar/HPC-python
+       - https://hackmd.io/IoseeprATrWH0ZI7z6wJ-w?view
+   - R: https://www.hpc2n.umu.se/events/courses/2022/R-in-HPC
    
-   
-
-
-
+ 
 .. admonition:: Zoom
 
     - The course is run over Zoom. You should have gotten an email with the links
@@ -88,7 +78,7 @@ Some practicals
 .. admonition:: Collabration document HackMD (TOFIX)
 
     - Use the HackMD page for the workshop with your questions.
-        - https://hackmd.io/@bclaremar/HPC-python
+        - see links in sepeate session
 
     - Depending on how many helpers there are we'll see how fast there are answers. 
         - Some answers may come after the workshop.
@@ -97,36 +87,18 @@ Some practicals
         - "-" means new bullet and <tab> indents the level.
         - don't focus too much on the formatting if you are new to "Markdown" language!
     
-    - **Have a try with the Icebreaker question**
-
-.. admonition:: Exercises (TOFIX)
-
-    - You can download the exercises from the course GitHub repo, under the "Exercises" directory: https://github.com/UPPMAX/HPC-python/tree/main/Exercises 
-    - On HPC2N, you can copy the exercises in a tarball from ``/proj/nobackup/snic2022-22-641/bbrydsoe/examples.tar.gz``
-    - On UPPMAX you can copy the exercises in a tarball from ``/proj/snic2022-22-641/nobackup/examples.tar.gz``
-    
-.. admonition:: **Your expectations?**
-   
-    - find best practices for using Julia at UPPMAX and HPC2N
-    - packages
-    - use the HPC performance with Julia
-
-    
-    **Not covered**
-    
-    - improve Julia *coding* skills 
-    - Other clusters
-
-
+ 
 .. warning::
 
     - It is good to have a familiarity with the LINUX command line. 
     - Short introductions : https://uppsala.instructure.com/courses/67267/pages/using-the-command-line-bash?module_item_id=455632
     - Linux "cheat sheet": https://www.hpc2n.umu.se/documentation/guides/linux-cheat-sheet
-    - UPPMAX software library: https://uppsala.instructure.com/courses/67267/pages/uppmax-basics-software?module_item_id=455641
-    - Whole intro course material (UPPMAX): https://www.uppmax.uu.se/support/courses-and-workshops/introductory-course-winter-2022/
-    - HPC2N's intro course material (including link to recordings): https://github.com/hpc2n/intro-course
-    - HPC2N's YouTube channel video on Linux: https://www.youtube.com/watch?v=gq4Dvt2LeDg
+    - UPPMAX
+      - UPPMAX software library: https://uppsala.instructure.com/courses/67267/pages/uppmax-basics-software?module_item_id=455641
+      - Whole intro course material (UPPMAX): https://www.uppmax.uu.se/support/courses-and-workshops/introductory-course-winter-2022/
+    - HPC2N
+      - HPC2N's intro course material (including link to recordings): https://github.com/hpc2n/intro-course
+      - HPC2N's YouTube channel video on Linux: https://www.youtube.com/watch?v=gq4Dvt2LeDg
 
 .. admonition:: Prepare your environment now!
   
@@ -173,8 +145,6 @@ Example of arrangement for the "worst case"!
 - your own terminal
 
 
-
-
 The two HPC centers UPPMAX and HPC2N
 ------------------------------------
 
@@ -201,7 +171,6 @@ The two HPC centers UPPMAX and HPC2N
 .. admonition:: How is the workshop run?
   
    - General sessions with small differences shown in UPPMAX vs. HPC2N in tabs
-   - Separated sessions for UPPMAX and HPC users, respectively.
 
 .. warning:: 
 
