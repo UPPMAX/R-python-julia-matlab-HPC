@@ -19,6 +19,20 @@ Introduction Julia
     - Use the HackMD page for the workshop with your questions.
         - https://hackmd.io/@bclaremar/HPC-python **FIX**
         
+    
+.. admonition:: **Your expectations?**
+   
+    - find best practices for using Julia at UPPMAX and HPC2N
+    - packages
+    - use the HPC performance with Julia
+
+    
+    **Not covered**
+    
+    - improve Julia *coding* skills 
+    - Other clusters
+
+        
 
 Preliminary schedule
 --------------------
