@@ -196,29 +196,208 @@ Parallel code
 
    .. tab:: HPC2N
 
-        Short serial example for running on Kebnekaise with Julia v. 1.8.5
+        In order to use MPI with Julia you will need to follow the next steps (only the first time): 
        
         .. code-block:: sh
-   
-            #!/bin/bash            
+      
+            # Load the tool chain which contains a MPI library
+            $ ml foss/2021b
+            # Load Julia
+            $ ml Julia/1.8.5-linux-x86_64
+            # Start Julia on the command line
+            $ julia 
+            # Change to ``package mode`` and add the ``MPI`` package 
+            (v1.8) pkg> add MPI 
+            # In the ``julian`` mode run these commands:
+            julia> using MPI 
+            julia> MPI.install_mpiexecjl() 
+                 [ Info: Installing `mpiexecjl` to `/home/u/username/.julia/bin`...
+                 [ Info: Done!
+            # Add the installed ``mpiexecjl`` wrapper to your path on the Linux command line
+            $ export PATH=/home/u/username/.julia/bin:$PATH
+            # Now the wrapper should be available on the command line 
 
         .. tabs:: 
 
-           .. tab:: Serial 
+           .. tab:: serial.jl 
               
-                serial case 
+                # nr. of grid points
+                n = 100000                                                                                                                                           
+                        
+                function integration2d_julia(n)
+                # interval size
+                h = π/n 
+                # cummulative variable
+                mysum = 0.0
+                # regular integration in the X axis
+                for i in 0:n-1
+                    x = h*(i+0.5)
+                #   regular integration in the Y axis
+                    for j in 0:n-1
+                    y = h*(j + 0.5)
+                    mysum = mysum + sin(x+y)
+                    end   
+                end        
+                return mysum*h*h
+                end          
+                    
+                res = integration2d_julia(n)
+                println(res)
 
-           .. tab:: Threaded
 
-                threaded 
+           .. tab:: threaded.jl
 
-           .. tab:: Distributed
+                using .Threads                                                                                                                                       
+                
+                # nr. of grid points
+                n = 100000
+                
+                # nr. of threads
+                numthreads = nthreads()
+                
+                # array for storing partial sums from threads
+                partial_integrals = zeros(Float64, numthreads)
+                
+                function integration2d_julia_threaded(n,numthreads,threadindex)
+                # interval size
+                h = π/convert(Float64,n)
+                # cummulative variable
+                mysum = 0.0
+                # workload for each thread
+                workload = convert(Int64, n/numthreads)
+                # lower and upper integration limits for each thread
+                lower_lim = workload * (threadindex - 1)
+                upper_lim  = workload * threadindex -1
+                
+                ## regular integration in the X axis
+                for i in lower_lim:upper_lim
+                    x = h*(i + 0.5)
+                #   regular integration in the Y axis
+                    for j in 0:n-1
+                    y = h*(j + 0.5)
+                    mysum = mysum + sin(x+y)
+                    end
+                end
+                partial_integrals[threadindex] = mysum*h*h
+                return
+                end
+                
+                # The threads can compute now the partial summations
+                @threads for i in 1:numthreads
+                    integration2d_julia_threaded(n,numthreads,threadid())
+                end
+                
+                # The main thread now reduces the array
+                total_sum = sum(partial_integrals)
+                
+                println("The integral value is $total_sum")
 
-                Distributed
+           .. tab:: distributed.jl
 
-           .. tab:: MPI 
+                @everywhere begin                                                                                                                                    
+                using Distributed
+                using SharedArrays
+                end
+                
+                # nr. of grid points
+                n = 100000
+                
+                # nr. of workers
+                numworkers = nworkers()
+                
+                # array for storing partial sums from workers
+                partial_integrals = SharedArray( zeros(Float64, numworkers) )
+                
+                @everywhere function integration2d_julia_distributed(n,numworkers,workerid,A::SharedArray)
+                # interval size
+                h = π/convert(Float64,n)
+                # cummulative variable
+                mysum = 0.0
+                # workload for each worker
+                workload = convert(Int64, n/numworkers)
+                # lower and upper integration limits for each thread
+                lower_lim = workload * (workerid - 2)
+                upper_lim = workload * (workerid - 1) -1
+                
+                # regular integration in the X axis
+                for i in lower_lim:upper_lim
+                    x = h*(i + 0.5)
+                #   regular integration in the Y axis
+                    for j in 0:n-1
+                    y = h*(j + 0.5)
+                    mysum = mysum + sin(x+y)
+                    end
+                end
+                A[workerid-1] = mysum*h*h
+                return
+                end
+                
+                # The workers can compute now the partial summations
+                @sync @distributed for i in 1:numworkers
+                    integration2d_julia_distributed(n,numworkers,myid(),partial_integrals)
+                end
+                
+                # The main process now reduces the array
+                total_sum = sum(partial_integrals)
+                
+                println("The integral value is $total_sum")
 
-                distributed 
+
+           .. tab:: mpi.jl
+
+                using MPI
+                MPI.Init()
+                
+                # Initialize the communicator
+                comm = MPI.COMM_WORLD
+                # Get the ranks of the processes
+                rank = MPI.Comm_rank(comm)
+                # Get the size of the communicator
+                size = MPI.Comm_size(comm)
+                
+                # root process
+                root = 0
+                
+                # nr. of grid points
+                n = 100000
+                
+                function integration2d_julia_mpi(n,numworkers,workerid)
+                
+                # interval size
+                h = π/convert(Float64,n)
+                # cummulative variable
+                mysum = 0.0                                                                                                                                        
+                # workload for each worker
+                workload = convert(Int64, n/numworkers)
+                # lower and upper integration limits for each thread
+                lower_lim = workload * workerid
+                upper_lim = workload * (workerid + 1) -1
+                
+                # regular integration in the X axis
+                for i in lower_lim:upper_lim
+                    x = h*(i + 0.5)
+                #   regular integration in the Y axis
+                    for j in 0:n-1
+                    y = h*(j + 0.5)
+                    mysum = mysum + sin(x+y)
+                    end
+                end
+                partial_integrals = mysum*h*h
+                return partial_integrals
+                end
+                
+                # The workers can compute now the partial summations
+                p = integration2d_julia_mpi(n,size,rank)
+                
+                # The root process now reduces the array
+                integral = MPI.Reduce(p,+,root, comm)
+                
+                if rank == root
+                println("The integral value is $integral")
+                end
+                
+                MPI.Finalize()
+
 
         The corresponding batch scripts for these examples are given here:
 
