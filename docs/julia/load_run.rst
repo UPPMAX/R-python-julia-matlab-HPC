@@ -36,7 +36,7 @@ Check for Julia versions
 
    .. tab:: UPPMAX
 
-     Check all available Python versions with:
+     Check all available Julia versions with:
 
       .. code-block:: sh
 
@@ -84,7 +84,7 @@ Check for Julia versions
 
         .. code-block:: tcl
 
-           b-an01 [~]$ module spider Python
+           b-an01 [~]$ module spider julia
            ------------------------------------------------------------------------------------------------
              Julia:
            ------------------------------------------------------------------------------------------------
@@ -117,7 +117,7 @@ For this course, we recommend using Julia 1.8.X
 
    .. tab:: UPPMAX
    
-      Go back and check which Python modules were available. To load version 1.8.5, do:
+      Go back and check which Julia modules were available. To load version 1.8.5, do:
 
       .. code-block:: sh
 
@@ -152,7 +152,7 @@ Run
 Run Julia script
 ################
 
-You can run a python script in the shell like this:
+You can run a julia script in the shell like this:
 
 .. code-block:: sh
 
@@ -167,7 +167,7 @@ Run Julia as a session
 
    $ julia 
 
-The julia prompt looks like this:
+The Julia prompt (``julian`` mode) looks like this:
 
 .. code-block:: julia
    
@@ -183,11 +183,12 @@ Exit with
 
 .. admonition:: Workflow  FIX and perhaps MOVE TO LATER
 
-   In addition to loading Julia, you will also often need to load site-installed modules for Python packages, or use own-installed Julia packages. The work-flow would be something like this: 
+   In addition to loading Julia, you will also often need to load site-installed modules for Julia packages, 
+   or use own-installed Julia packages. The work-flow would be something like this: 
    
  
    1) Load Julia: `module load julia/<version>`` ``Julia`` at HPC2N
-   2) Activate your virtual environment (optional): `` ``
+   2) Activate your virtual environment (optional) (this will be discussed in **Isolated environments**)
    3) Start Julia or run Julia script: ``julia``
    4) Install any extra Julia packages (optional): ``> Pkg.add <julia package>``
 
@@ -206,7 +207,7 @@ Running IJulia from Jupyter notebook on UPPMAX
 ##############################################
 
 For more interactiveness you can run IJulia.
-Like for python it is possible to run a Julia in a notebook, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the python module as well. In shell:
+Like for Python it is possible to run a Julia in a notebook, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the python module as well. In shell:
 
 .. code-block:: sh
 
