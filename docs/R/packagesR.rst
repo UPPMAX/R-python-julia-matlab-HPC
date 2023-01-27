@@ -46,7 +46,7 @@ us look at a very simple example
 
    $ git clone git@github.com:MatPiq/R_example.git
 
-   $ cd R_example.git
+   $ cd R_example
 
    $ tree
    .
@@ -87,24 +87,44 @@ https://nbisweden.github.io/RaukR-2021/rpackages_Sebastian/presentation/rpackage
 Package libraries
 #################
 
-    In R, a library is a directory containing installed packages, sort of like a
-    library for books. Unfortunately, in the R world, you will frequently encounter
-    confused usage of the words “library” and “package”. It’s common for someone to
-    refer to dplyr, for example, as a library when it is actually a package. ()
+    In R, a library is a directory containing installed packages, sort of like
+    a library for books. Unfortunately, in the R world, you will frequently
+    encounter confused usage of the words “library” and “package”. It’s common
+    for someone to refer to dplyr, for example, as a library when it is
+    actually a package (Wickham & Hadley, 2023).
 
-We might want to know which 
-
-.. code-block:: R
-
-   .libPaths()
-
-
-General for both centers
-########################
+We might want to know where the ``R`` interpreter will be searching for
+packages, i.e. where the libraries are located (could be several). The easiest
+way to check if probably starting the inerpreter and running
 
 
-    
-Using ``module spider`` lets you search regardless of upper- or lowercase characters.
+.. tabs::
+
+   .. tab:: UPPMAX
+
+  Load ``R``, e.g. version 4.1.1 and start the Interpreter
+
+	.. code-block:: sh 
+
+	   $ ml R/4.1.1
+     $ R
+
+	.. code-block:: R
+     > .libPaths()
+     [1] "/sw/apps/R/4.1.1/rackham/lib64/R/library"
+	
+   .. tab:: HPC2N
+   
+  Load ``R``, e.g. version 4.1.1 and start the Interpreter
+
+	.. code-block:: sh 
+
+	   $ ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
+     $ R
+
+	.. code-block:: R
+     > .libPaths()
+     [1] "/cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/R/4.0.4-foss-2020b/lib/R/library"
 
 
 
@@ -112,106 +132,29 @@ Using ``module spider`` lets you search regardless of upper- or lowercase charac
 
    .. tab:: UPPMAX
 
-	Check the pre-installed packages of a specific python module:
+  Load ``R``, e.g. version 4.1.1 and start the Interpreter
 
 	.. code-block:: sh 
 
-	   $ module help python/<version> 
-  
-	
+	   $ ml R/4.1.1
+     $ R
+
+	.. code-block:: R
+     > .libPaths()
+     [1] "/sw/apps/R/4.1.1/rackham/lib64/R/library"
 	
    .. tab:: HPC2N
    
-	At HPC2N, a way to find Python packages that you are unsure how are names, would be to do
+  Load ``R``, e.g. version 4.1.1 and start the Interpreter
 
 	.. code-block:: sh 
 
-	   $ module -r spider ’.*Python.*’
-   
-	or
+	   $ ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
+     $ R
 
-	.. code-block:: sh 
-
-	   $ module -r spider ’.*python.*’
-   
-	Do be aware that the output of this will not just be Python packages, some will just be programs that are compiled with Python, so you need to check the list carefully.   
-   
-Check the pre-installed packages of a loaded python module, in shell:
-
-.. code-block:: sh 
-
-   $ pip list
-
-To see which Python packages you, yourself, has installed, you can use ``pip list --user`` while the environement you have installed the packages in are active.
-
-You can also test from within python to make sure that the package is not already installed:
-
-.. code-block:: python 
-
-    >>> import <package>
-    
-Does it work? Then it is there!
-Otherwise, you can either use ``pip`` or ``conda``.
-
-
-**NOTE**: at HPC2N, the available Python packages needs to be loaded as modules before using! See a list of some of them here: https://uppmax.github.io/HPC-python/intro.html#python-at-hpc2n or find more as mentioned above, using ``module spider -r ....```
-
-A selection of the Python packages and libraries installed on UPPMAX and HPC2N are:
-
-.. tabs::
-
-   .. tab:: UPPMAX
-
-	The python application at UPPMAX comes with several preinstalled packages.
-	A selection of the Python packages and libraries installed on UPPMAX are:
-	
-	  - ``Numpy``
-	  - ``Pandas``
- 	  - ``Scipy``
-	  - ``Matplotlib``
-	  - ``Jupyter notebook``
-	  - ``pip``
-	  - ``cython``
-	  - ``ipython``
-	  - ``networkx``
-	  - ``graphviz/0.16``
-	In addition there are packages available from the module system
-  	  - ``biopython``
-  	  - ``python_ML_packages``
-    	  - ``sklearn/scikit-learn``
-	  - ``TensorFlow`` 
-	  - ``torch``
-    	  - ``mpi``
-    	  - ``mpi4py``
-  	  - ``bwa``
-  	  - ``Graphviz/2.40.1``
-  	  - ``HiChipper``
-  	  - ``Homer``
-  	  - ``pysam``
-
-   .. tab:: HPC2N
-
-	The python application at HPC2N comes with several preinstalled packages - check first before installing yourself!. HPC2N has both Python 2.7.x and Python 3.x installed. We will be using Python 3.x in this course.  For this course, the recommended version of Python to use on Kebnekaise is 3.9.5
-
-	NOTE:  HPC2N do NOT recommend (and do not support) using Anaconda/Conda on our systems. You can read more about this here: https://www.hpc2n.umu.se/documentation/guides/anaconda
-
-
-	This is a selection of the packages and libraries installed at HPC2N. These are all installed as **modules** and need to be loaded before use. 
-	  - ``ASE``
-	  - ``Keras``
-	  - ``PyTorch``
-	  - ``SciPy-bundle`` (Bottleneck, deap, mpi4py, mpmath, numexpr, numpy, pandas, scipy - some of the versions have more)
-	  - ``TensorFlow``
-	  - ``Theano``
-	  - ``matplotlib``
-	  - ``scikit-learn``
-	  - ``scikit-image``
-	  - ``pip``
-	  - ``iPython``
-	  - ``Cython``
-	  - ``Flask``
-
-
+	.. code-block:: R
+     > .libPaths()
+     [1] "/cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/R/4.0.4-foss-2020b/lib/R/library"
 
 Installing your own packages
 ----------------------------
