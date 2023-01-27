@@ -109,11 +109,13 @@ way to check if probably starting the inerpreter and running
          $ ml R/4.1.1
          $ R
 
+      Then check find the path of the library using the ``libPaths()`` function.
+
       .. code-block:: R
          > .libPaths()
          [1] "/sw/apps/R/4.1.1/rackham/lib64/R/library"
 	
-   .. tab:: HPC2N
+    .. tab:: HPC2N
    
       Load ``R``, e.g. version 4.1.1 and start the Interpreter
 
@@ -122,39 +124,11 @@ way to check if probably starting the inerpreter and running
          $ ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
          $ R
 
+      Then check find the path of the library using the ``libPaths()`` function.
+
       .. code-block:: R
          > .libPaths()
          [1] "/cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/R/4.0.4-foss-2020b/lib/R/library"
-
-
-
-.. tabs::
-   
-   .. tab:: UPPMAX
-
-     Load ``R``, e.g. version 4.1.1 and start the Interpreter
-
-	    .. code-block:: sh 
-
-	       $ ml R/4.1.1
-         $ R
-
-	.. code-block:: R
-     > .libPaths()
-     [1] "/sw/apps/R/4.1.1/rackham/lib64/R/library"
-	
-   .. tab:: HPC2N
-   
-  Load ``R``, e.g. version 4.1.1 and start the Interpreter
-
-	.. code-block:: sh 
-
-	   $ ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
-     $ R
-
-	.. code-block:: R
-     > .libPaths()
-     [1] "/cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/R/4.0.4-foss-2020b/lib/R/library"
 
 
 
