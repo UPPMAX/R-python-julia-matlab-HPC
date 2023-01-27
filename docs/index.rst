@@ -313,8 +313,6 @@ Material for improving your programming skills
    julia/isolatedJulia.rst
    julia/batchJulia.md
    julia/interactivePython.md
-   julia/uppmaxPython.rst
-   julia/kebnekaisePython.md
    
 .. toctree::
    :maxdepth: 2
