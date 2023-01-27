@@ -180,6 +180,70 @@ Serial code + self-installed package in virt. env.
             Pkg.status()
 
 
+Parallel code
+'''''''''''''
+
+.. tabs::
+
+   .. tab:: UPPMAX
+
+        Short serial example script for Rackham. Loading Python 3.9.5. Numpy is preinstalled and does not need to be loaded. 
+
+        .. code-block:: sh
+
+            #!/bin/bash  
+            
+
+   .. tab:: HPC2N
+
+        Short serial example for running on Kebnekaise with Julia v. 1.8.5
+       
+        .. code-block:: sh
+   
+            #!/bin/bash            
+
+        .. tabs:: 
+
+           .. tab:: Serial 
+              
+                serial case 
+
+           .. tab:: Threaded
+
+                threaded 
+
+           .. tab:: Distributed
+
+                Distributed
+
+           .. tab:: MPI 
+
+                distributed 
+
+        The corresponding batch scripts for these examples are given here:
+
+        .. tabs:: 
+
+           .. tab:: job-serial.sh  
+
+                #! ou  
+
+           .. tab:: job-threaded.sh 
+
+                script 
+
+           .. tab:: job-distributed.sh 
+
+                script 
+
+           .. tab:: job-mpi.sh 
+
+                script 
+
+
+
+
+
 GPU code
 ''''''''
 
@@ -248,7 +312,8 @@ reference point, we show the simulation on CPUs as well.
 
             julia script-gpu.jl
 
-        Setting the environment variable ``JULIA_CUDA_USE_BINARYBUILDER`` is a best practice.
+        Setting the environment variable ``JULIA_CUDA_USE_BINARYBUILDER`` to ``false`` is a best practice,
+        otherwise Julia would try to download binaries for CUDA compatible libraries.
 
    .. tab:: script-gpu.jl 
    
@@ -291,8 +356,8 @@ Exercises
 
                 x = parse( Int32, ARGS[1] )
                 y = parse( Int32, ARGS[2] )
-                sum = x + y
-                println("The sum of the two numbers is ", sum)
+                summ = x + y
+                println("The sum of the two numbers is ", summ)
 
     This scripts accepts two integers as command line arguments.
 
@@ -370,8 +435,11 @@ Exercises
 
             Output:
                 0.689096 seconds (2.72 M allocations: 132.617 MiB, 6.27% gc time, 99.62% compilation time)
+
                 1.194153 seconds (1.24 M allocations: 62.487 MiB, 3.41% gc time, 55.13% compilation time)
+
                 0.000933 seconds (2 allocations: 512.047 KiB)
+
                 0.000311 seconds (5 allocations: 192 bytes)
 
     .. solution:: Solution for UPPMAX
@@ -399,6 +467,7 @@ Exercises
 
    - The SLURM scheduler handles allocations to the calculation nodes
    - Batch jobs runs without interaction with user
-   - A batch script consists of a part with SLURM parameters describing the allocation and a second part describing the actual work within the job, for instance one or several Julia scripts.
+   - A batch script consists of a part with SLURM parameters describing the allocation and a second part describing 
+     the actual work within the job, for instance one or several Julia scripts.
 
     
