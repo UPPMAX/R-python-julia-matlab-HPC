@@ -52,7 +52,7 @@ Preliminary schedule
      - Interactive
      - Lecture+code along 15m
    * - 11.30
-     - Additional exercises 
+     - Additional exercises 20m
      -
    * - 11.50
      - **Short leg stretch**
