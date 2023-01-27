@@ -1,7 +1,7 @@
 Introduction Python
 ===================
 
-`Welcome page and syllabus <https://uppmax.github.io/HPC-python/index.html>`_
+`Welcome page and syllabus <https://uppmax.github.io/R-python-julia-HPC/index.html>`_
    - Also link at House symbol |:house:| at top of page 
 
 .. admonition:: **Learning outcomes**
@@ -15,7 +15,7 @@ Introduction Python
   
 .. admonition:: Exercises
 
-    - You can download the exercises from the course GitHub repo, under the "Exercises" directory: https://github.com/UPPMAX/HPC-python/tree/main/Exercises 
+    - You can download the exercises from the course GitHub repo, under the "Exercises" directory: https://github.com/UPPMAX/R-python-julia-HPC/tree/main/Exercises 
     - On HPC2N, you can copy the exercises in a tarball from ``/proj/nobackup/snic2022-22-641/bbrydsoe/examples.tar.gz``
     - On UPPMAX you can copy the exercises in a tarball from ``/proj/snic2022-22-641/nobackup/examples.tar.gz``
     
@@ -43,34 +43,34 @@ Preliminary schedule
      - Activity
    * - 9:00
      - Syllabus 
-     -
+     - 10m
    * - 9.10
      - Introduction 
-     - Lecture
-   * - 9.25
+     - Lecture 10 m 
+   * - 9.20
      - Loading modules and running Python codes 
-     - Lecture+code along
-   * - 9.50
+     - Lecture+code along 20m
+   * - 9.40
      - Dealing with packages  
-     - Lecture+code along
+     - Lecture+code along 20m
    * - 10.00
      - **Coffee**
-     - packages cont'd
+     - 
    * - 10.15
-     - Dealing with packages  
-     - Lecture+code along
+     - Dealing with packages (Conda)
+     - Lecture+code along 15m
    * - 10.30
-     - Isolated environments (general)
-     - Lecture+code along
-   * - 10.50
-     - SLURM Batch scripts for Python jobs  
-     - Lecture+code along + exercise
-   * - 11.10
+     - Isolated environments (together)
+     - Lecture+code along 30m
+   * - 11.00
      - **Short leg stretch**
      - 
-   * - 11.15
+   * - 11.05
+     - SLURM Batch scripts for Python jobs  
+     - Lecture+code along + exercise 25m
+   * - 11.30
      - Interactive
-     - Lecture+code along
+     - Lecture+code along 15
    * - 11.45
      - Additional exercises 
      -
