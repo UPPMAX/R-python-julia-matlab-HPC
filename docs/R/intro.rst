@@ -12,7 +12,11 @@ Introduction R
    - Write a batchscript for running R
    - Using Rstudio
    
-.. admonition:: Exercises
+.. admonition:: Collabration document HackMD
+
+    - Use the HackMD page for the workshop with your questions.
+        - https://hackmd.io/@bclaremar/HPC-python **FIX**
+        .. admonition:: Exercises
 
     - You can download the exercises from the course GitHub repo, under the "Exercises" directory: https://github.com/UPPMAX/R-python-julia-HPC/tree/main/Exercises
     - On HPC2N, you can copy the exercises in a tarball from TBC
