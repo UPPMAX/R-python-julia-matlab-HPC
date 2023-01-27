@@ -102,12 +102,42 @@ way to check if probably starting the inerpreter and running
 
    .. tab:: UPPMAX
 
-  Load ``R``, e.g. version 4.1.1 and start the Interpreter
+      Load ``R``, e.g. version 4.1.1 and start the Interpreter
 
-	.. code-block:: sh 
+      .. code-block:: sh 
 
-	   $ ml R/4.1.1
-     $ R
+         $ ml R/4.1.1
+         $ R
+
+      .. code-block:: R
+         > .libPaths()
+         [1] "/sw/apps/R/4.1.1/rackham/lib64/R/library"
+	
+   .. tab:: HPC2N
+   
+      Load ``R``, e.g. version 4.1.1 and start the Interpreter
+
+      .. code-block:: sh 
+
+         $ ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
+         $ R
+
+      .. code-block:: R
+         > .libPaths()
+         [1] "/cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/R/4.0.4-foss-2020b/lib/R/library"
+
+
+
+.. tabs::
+   
+   .. tab:: UPPMAX
+
+     Load ``R``, e.g. version 4.1.1 and start the Interpreter
+
+	    .. code-block:: sh 
+
+	       $ ml R/4.1.1
+         $ R
 
 	.. code-block:: R
      > .libPaths()
@@ -132,29 +162,41 @@ way to check if probably starting the inerpreter and running
 
    .. tab:: UPPMAX
 
-  Load ``R``, e.g. version 4.1.1 and start the Interpreter
+     Check all available R versions with:
 
-	.. code-block:: sh 
+      .. code-block:: sh
+ 
+           $ module spider R
 
-	   $ ml R/4.1.1
-     $ R
+     OR
 
-	.. code-block:: R
-     > .libPaths()
-     [1] "/sw/apps/R/4.1.1/rackham/lib64/R/library"
-	
+      .. code-block:: sh
+
+           $ module avail R
+ 
+     Note that the latter option also lists other software modules matching the string "R". 
+
+
    .. tab:: HPC2N
    
-  Load ``R``, e.g. version 4.1.1 and start the Interpreter
+      Check all available version R versions with:
 
-	.. code-block:: sh 
+      .. code-block:: sh
+ 
+         $ module spider R
+      
+      To see how to load a specific version of R, including the prerequisites, do 
 
-	   $ ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
-     $ R
+      .. code-block:: sh
+   
+         $ module spider R/<version>
 
-	.. code-block:: R
-     > .libPaths()
-     [1] "/cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/R/4.0.4-foss-2020b/lib/R/library"
+      Example for R 4.0.4 (recommended version)
+
+      .. code-block:: sh
+
+         $ module spider R/4.0.4 
+
 
 Installing your own packages
 ----------------------------
