@@ -14,6 +14,63 @@ Introduction Julia
    - Use Julia for ML
    - Use GPUs with Julia
    
+Preliminary schedule
+--------------------
+
+.. list-table:: Preliminary times
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Time
+     - Topic
+     - Activity
+   * - 9:00
+     - Syllabus 
+     - 10m
+   * - 9.10
+     - Introduction 
+     - Lecture 10 m 
+   * - 9.20
+     - Loading modules and running Python codes 
+     - Lecture+code along 20m
+   * - 9.40
+     - Dealing with packages  
+     - Lecture+code along 20m
+   * - 10.00
+     - **Coffee**
+     - 
+   * - 10.15
+     - Dealing with packages (Conda)
+     - Lecture+code along 15m
+   * - 10.30
+     - Isolated environments (together)
+     - Lecture+code along 30m
+   * - 11.00
+     - **Short leg stretch**
+     - 
+   * - 11.05
+     - SLURM Batch scripts for Python jobs  
+     - Lecture+code along + exercise 25m
+   * - 11.30
+     - Interactive
+     - Lecture+code along 15m
+   * - 11.45
+     - Additional exercises 
+     -
+   * - 12.05
+     - **Short leg stretch**
+     - 
+   * - 12.10
+     - Summary 
+     -
+   * - 12.20
+     - Q&A on-demand
+     -
+   * - 12.30
+     - END
+     -
+
+
 
 What is Julia?
 --------------
