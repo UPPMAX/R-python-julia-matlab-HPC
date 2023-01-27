@@ -181,21 +181,6 @@ Exit with
    exit()
 
 
-.. admonition:: Workflow  FIX and perhaps MOVE TO LATER
-
-   In addition to loading Julia, you will also often need to load site-installed modules for Julia packages, 
-   or use own-installed Julia packages. The work-flow would be something like this: 
-   
- 
-   1) Load Julia: `module load julia/<version>`` ``Julia`` at HPC2N
-   2) Activate your virtual environment (optional) (this will be discussed in **Isolated environments**)
-   3) Start Julia or run Julia script: ``julia``
-   4) Install any extra Julia packages (optional): ``> Pkg.add <julia package>``
-
-   Installed Julia packages can be accessed within Julia with ``using <package>`. `
-
-   More about packages and virtual/isolated environment to follow in later sections of the course! 
-
 
 .. keypoints::
 
