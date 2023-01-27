@@ -244,8 +244,6 @@ For more interactiveness you can run Ipython
 
          $ jupyter-notebook 
          
-      More info to be given in the UPPMAX session.
-       
     
    .. tab:: HPC2N
       
@@ -270,23 +268,6 @@ Exit Python or IPython with <Ctrl-D>, "quit()" or 'exit()’ in the python promp
     In [2]: <Ctrl-D>
     In [12]: quit()
     In [17]: exit()
-
-.. admonition:: Workflow
-
-   In addition to loading Python, you will also often need to load site-installed modules for Python packages, or use own-installed Python packages. The work-flow would be something like this: 
-   
- 
-   1) Load Python and prerequisites: `module load <pre-reqs> Python/<version>``
-   2) Load site-installed Python packages (optional): ``module load <pre-reqs> <python-package>/<version>``
-   3) Activate your virtual environment (optional): ``source <path-to-virt-env>/bin/activate``
-   4) Install any extra Python packages (optional): ``pip install --no-cache-dir --no-build-isolation <python-package>``
-   5) Start Python or run python script: ``python``
-
-   Installed Python modules (modules and own-installed) can be accessed within Python with ``import <package>`` as usual. 
-
-   The command ``pip list`` given within Python will list the available modules to import. 
-
-   More about packages and virtual/isolated environment to follow in later sections of the course! 
 
 
 .. keypoints::
