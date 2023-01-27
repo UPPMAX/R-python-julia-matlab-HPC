@@ -40,36 +40,32 @@ Preliminary schedule
      - **Coffee**
      - 
    * - 10.15
-     - Dealing with packages (Conda)
-     - Lecture+code along 15m
-   * - 10.30
      - Isolated environments (together)
      - Lecture+code along 30m
-   * - 11.00
-     - **Short leg stretch**
-     - 
-   * - 11.05
+   * - 10.45
      - SLURM Batch scripts for Python jobs  
      - Lecture+code along + exercise 25m
-   * - 11.30
-     - Interactive
-     - Lecture+code along 15m
-   * - 11.45
-     - Additional exercises 
-     -
-   * - 12.05
+   * - 11.10
      - **Short leg stretch**
      - 
-   * - 12.10
+   * - 11.15
+     - Interactive
+     - Lecture+code along 15m
+   * - 11.30
+     - Additional exercises 
+     -
+   * - 11.50
+     - **Short leg stretch**
+     - 
+   * - 11.55
      - Summary 
      -
-   * - 12.20
+   * - 12.05
      - Q&A on-demand
      -
-   * - 12.30
+   * - 12.15
      - END
      -
-
 
 
 What is Julia?
