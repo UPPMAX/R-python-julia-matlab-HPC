@@ -24,7 +24,7 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
     - Unload all modules except the 'sticky' modules: ``module purge`` or ``ml purge``
     
 .. warning::
-   Note that the module systems at UPPMAX and HPC2 are slightly different. While all modules at UPPMAX not directly related to bio-informatics are shown by ``ml avail``, modules at HPC2N are hidden until one has loaded a prerequisite like the compiler ``GCC``.
+   Note that the module systems at UPPMAX and HPC2N are slightly different. While all modules at UPPMAX not directly related to bio-informatics are shown by ``ml avail``, modules at HPC2N are hidden until one has loaded a prerequisite like the compiler ``GCC``.
 
 - For reproducibility reasons, you should always load a specific version of a module instead of just the default version (often the latest)
 
@@ -79,7 +79,7 @@ Check for Julia versions
           Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 
 
-.. admonition:: Output at HPC2N as of 27 July 2022
+.. admonition:: Output at HPC2N as of Jan 27th
     :class: dropdown
 
         .. code-block:: tcl
