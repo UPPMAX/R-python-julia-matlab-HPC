@@ -34,7 +34,7 @@ Introduction Python
 Preliminary schedule
 --------------------
 
-.. list-table:: Preliminary schedule
+.. list-table:: Preliminary times
    :widths: 25 25 50
    :header-rows: 1
 
