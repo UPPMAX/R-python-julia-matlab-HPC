@@ -14,6 +14,12 @@ Introduction Julia
    - Use Julia for ML
    - Use GPUs with Julia
    
+.. admonition:: Collabration document HackMD
+
+    - Use the HackMD page for the workshop with your questions.
+        - https://hackmd.io/@bclaremar/HPC-python **FIX**
+        
+
 Preliminary schedule
 --------------------
 
@@ -52,8 +58,8 @@ Preliminary schedule
      - Interactive
      - Lecture+code along 15m
    * - 11.30
-     - Additional exercises 20m
-     -
+     - Additional exercises
+     - Exercises 20m
    * - 11.50
      - **Short leg stretch**
      - 
