@@ -36,11 +36,10 @@ General for both centers
 	   $ module help julia/<version> 
   
 	
-	
    .. tab:: HPC2N
 
-   The Julia versions installed at HPC2N include only the Base and Standard library
-   modules.
+        The Julia versions installed at HPC2N include only the Base and Standard library
+        modules.
       
 Check the pre-installed packages of a loaded Julia module, in shell:
 
@@ -85,8 +84,8 @@ A selection of the Julia packages and libraries installed on UPPMAX and HPC2N ar
 
    .. tab:: HPC2N
 
-   The Julia versions installed at HPC2N include only the Base and Standard library
-   modules.
+        The Julia versions installed at HPC2N include only the Base and Standard library
+        modules.
 
 
 Install own packages
