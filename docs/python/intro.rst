@@ -70,7 +70,7 @@ Preliminary schedule
      - Lecture+code along + exercise 25m
    * - 11.30
      - Interactive
-     - Lecture+code along 15
+     - Lecture+code along 15m
    * - 11.45
      - Additional exercises 
      -
