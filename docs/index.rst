@@ -300,9 +300,9 @@ Material for improving your programming skills
    python/isolated.rst
    python/batchPython.md
    python/interactivePython.md
-   python/uppmaxPython.rst
-   python/kebnekaisePython.md
-
+   python/exercises.rst
+   python/summaryPython.rst
+   
 .. toctree::
    :maxdepth: 2
    :caption: julia Lessons:
@@ -313,6 +313,8 @@ Material for improving your programming skills
    julia/isolatedJulia.rst
    julia/batchJulia.md
    julia/interactivePython.md
+   julia/exercises.rst
+   julia/summaryPython.rst
    
 .. toctree::
    :maxdepth: 2
@@ -323,9 +325,8 @@ Material for improving your programming skills
    R/packagesR.rst
    R/batchR.rst
    R/interactivePython.md
-   R/uppmaxPython.rst
-   R/kebnekaisePython.md
    R/exercises.rst
+   R/summaryPython.rst
 
 
 .. Indices and tables
