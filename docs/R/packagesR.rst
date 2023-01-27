@@ -17,12 +17,14 @@ Packages
      see: `R packages <https://r-pkgs.org>`_
 
 .. questions::
+   
    - What is an R package?
    - How do I find which packages and versions are available?
    - What to do if I need other packages?
    - Are there differences between HPC2N and UPPMAX?
    
 .. objectives:: 
+
    - Understand the basics of what an R package is
    - Show how to check for R packages
    - show how to install own packages on the different clusters
@@ -31,42 +33,76 @@ Packages
 R packages: A short Primer
 --------------------------
 
-Whats is a package?
-###################
+What is a package, really?
+##########################
 
 An R package is essentialy a contained folder and file structure containing R
 code (and possibly C/C++ or other code) and other files relevant for the
-package e.g. documentation, licensing and configuration files. Let us look at a
-very simple example
+package e.g. documentation(vignettes), licensing and configuration files. Let
+us look at a very simple example 
 
 
 .. code-block:: sh
 
-   git clone 
+   $ git clone git@github.com:MatPiq/R_example.git
 
+   $ cd R_example.git
 
-Packages can be 
-
+   $ tree
+   .
+   ├── DESCRIPTION
+   ├── NAMESPACE
+   ├── R
+   │   └── hello.R
+   ├── man
+   │   └── hello.Rd
+   └── r_example.Rproj
 
 Package states
 ##############
+
+An R packages can exist in five possible states
+
+- Source: The example above - "source code" or "source files". Development
+  form.
+- Bundled: The source code compressed into a single file, usually `tar.gz` and
+  sometimes refered to as "source tarballs". Files in `.Rbuildignore` are
+  excluded.
+- Binary: A compressed and pre-compiled version of a bundle built for a
+  specific architecture. Usually how the package is provided by CRAN. Much
+  faster than having to compile yourself and no need for dev/build tools.
+- Installed: A decompressed binary package located in a package _library_ (more
+  on this later).
+- In-memory: When the installed package has been loaded from the library into
+  memory, using `require(pkg)` or `library(pkg)`.
+
 
 .. figure:: ../../img/R-pkg-states.png
    :width: 450
    :align: center
 
+source: https://r-pkgs.org/structure.html and
+https://nbisweden.github.io/RaukR-2021/rpackages_Sebastian/presentation/rpackages_Sebastian.html
 
-Check current available packages
---------------------------------
+Package libraries
+#################
+
+    In R, a library is a directory containing installed packages, sort of like a
+    library for books. Unfortunately, in the R world, you will frequently encounter
+    confused usage of the words “library” and “package”. It’s common for someone to
+    refer to dplyr, for example, as a library when it is actually a package. ()
+
+We might want to know which 
+
+.. code-block:: R
+
+   .libPaths()
+
 
 General for both centers
 ########################
 
-Some python packages are working as stand-alone tools, for instance in bioinformatics. The tool may be already installed as a module. Check if it is there by:
 
-.. code-block:: sh 
-
-   $ module spider <tool-name or tool-name part> 
     
 Using ``module spider`` lets you search regardless of upper- or lowercase characters.
 
