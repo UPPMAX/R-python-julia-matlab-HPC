@@ -240,6 +240,9 @@ When you have finished using the allocation, either wait for it to end, or close
                   salloc: Job allocation 20174806 has been revoked.
                   b-an01 [~]$
 
+.. admonition:: Running Jupyter on compute nodes at UPPMAX
+
+   https://uppmax.github.io/HPC-python/jupyter.html
 
 .. keypoints::
 
