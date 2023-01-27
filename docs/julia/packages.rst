@@ -3,7 +3,7 @@ Packages
 
 .. admonition::  Julia modules AKA Julia packages
 
-   - Julia **packages broaden the use of Julia** to almost infinity! 
+   - Julia **packages broaden the use of Julia** considerably! 
 
    - Instead of writing code yourself there may be others that have done the same!
 
@@ -29,7 +29,7 @@ General for both centers
 
    .. tab:: UPPMAX
 
-	Check the pre-installed packages of a specific python module:
+	Check the pre-installed packages of a specific Julia module:
 
 	.. code-block:: sh 
 
@@ -38,13 +38,16 @@ General for both centers
 	
 	
    .. tab:: HPC2N
+
+   The Julia versions installed at HPC2N include only the Base and Standard library
+   modules.
       
-Check the pre-installed packages of a loaded julia module, in shell:
+Check the pre-installed packages of a loaded Julia module, in shell:
 
 UPPMAX
 ######
 
-You may control the present "central library" by typing in julia shell :
+You may control the present "central library" by typing in Julia shell :
 
 .. code-block:: julia 
 
@@ -64,8 +67,8 @@ A selection of the Julia packages and libraries installed on UPPMAX and HPC2N ar
 
    .. tab:: UPPMAX
 
-	The python application at UPPMAX comes with several preinstalled packages.
-	A selection of the Python packages and libraries installed on UPPMAX are:
+	The Julia application at UPPMAX comes with several preinstalled packages.
+	A selection of the Julia packages and libraries installed on UPPMAX are:
 
           - BenchmarkTools
           - CSV
@@ -81,6 +84,9 @@ A selection of the Julia packages and libraries installed on UPPMAX and HPC2N ar
           - PlotlyJS
 
    .. tab:: HPC2N
+
+   The Julia versions installed at HPC2N include only the Base and Standard library
+   modules.
 
 
 Install own packages
