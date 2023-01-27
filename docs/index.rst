@@ -300,7 +300,7 @@ Material for improving your programming skills
    python/isolated.rst
    python/batchPython.md
    python/interactivePython.md
-   python/exercises.rst
+   python/exercisesPython.rst
    python/summaryPython.rst
    
 .. toctree::
@@ -313,7 +313,7 @@ Material for improving your programming skills
    julia/isolatedJulia.rst
    julia/batchJulia.md
    julia/interactivePython.md
-   julia/exercises.rst
+   julia/exercisesPython.rst
    julia/summaryPython.rst
    
 .. toctree::
