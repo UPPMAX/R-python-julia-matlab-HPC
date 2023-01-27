@@ -44,33 +44,27 @@ Preliminary schedule
      - **Coffee**
      - 
    * - 10.15
-     - Dealing with packages (Conda) **Omit??**
+     - RStudio???
      - Lecture+code along 15m
    * - 10.30
-     - RStudio???
-     - Lecture+code along 30m
-   * - 11.00
-     - **Short leg stretch**
-     - 
-   * - 11.05
      - SLURM Batch scripts for R jobs  
      - Lecture+code along + exercise 25m
-   * - 11.30
-     - Interactive 
-     - Lecture+code along 15m
-   * - 11.45
-     - Additional exercises 
-     -
-   * - 12.05
+   * - 10.55
      - **Short leg stretch**
      - 
-   * - 12.10
+   * - 11.00
+     - Interactive 
+     - Lecture+code along 15m
+   * - 11.15
+     - Additional exercises 25
+     -
+   * - 11.40
      - Summary 
      -
-   * - 12.20
+   * - 11.50
      - Q&A on-demand
      -
-   * - 12.30
+   * - 12.00
      - END
      -
 
