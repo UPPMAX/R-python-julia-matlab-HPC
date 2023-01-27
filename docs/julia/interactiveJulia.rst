@@ -3,8 +3,8 @@ Interactive work on the compute nodes
 
 .. note::
 
-   - It is possible to run Python directly on the login (including ThinLinc) nodes.
-   - But this should *only* be done for shorter jobs or jobs that do not use a lot of resources, as the login nodes can otherwise become slow for all users. Both Python and IPython exists as modules to load and run.
+   - It is possible to run Julia directly on the login (including ThinLinc) nodes.
+   - But this should *only* be done for shorter jobs or jobs that do not use a lot of resources, as the login nodes can otherwise become slow for all users. 
    - If you want to work interactively with your code or data, you should start an interactive session.
    - If you rather will run a script which won't use any interactive user input while running, you can instead start a batch job, see next session.
    
@@ -18,7 +18,7 @@ Interactive work on the compute nodes
    - Show how to reach the calculation nodes on UPPMAX and HPC2N
    - Test some commands on the calculation nodes
 
-There are several ways to run Python interactively
+There are several ways to run Julia interactively
 
 - Directly on the login nodes: **only** do this for short jobs that do not take a lot of resources
 - As an interactive job on the computer nodes, launched via the batch system
@@ -29,17 +29,17 @@ General
 
 In order to run interactively, you need to have compute nodes allocated to run on, and this is done through the batch system.  
 
-Because you will have to wait until the nodes are allocated, and because you cannot know when this happens, this is not usually a recommended way to run Python, but it is possible. 
+Because you will have to wait until the nodes are allocated, and because you cannot know when this happens, this is not usually a recommended way to run Julia, but it is possible. 
 
 .. warning::
 
-    (HPC2N) Do note that it is not *real* interactivity as you probably mean it, as you will have to run it as a Python script instead of by starting Python and giving commands inside it. The reason for this is that you are not actually logged into the compute node and only sees the output of the commands you run. 
+    (HPC2N) Do note that it is not *real* interactivity as you probably mean it, as you will have to run it as a Julia script instead of by starting Julia and giving commands inside it. The reason for this is that you are not actually logged into the compute node and only sees the output of the commands you run. 
 
-Another option would be to use Jupyter notebooks. This option will be covered under the UPPMAX separate sessions.
-This is somewhat convoluted to get to work correctly at HPC2N, but possible. Please contact us at support@hpc2n.umu.se if you want to go this route at HPC2N. 
+    Another option would be to use Jupyter notebooks. 
+    This is somewhat convoluted to get to work correctly at HPC2N, but possible. Please contact us at support@hpc2n.umu.se if you want to go this route at HPC2N. 
 
 
-Python "interactively" on the compute nodes 
+Julia "interactively" on the compute nodes 
 -------------------------------------------
 
 To run interactively, you need to allocate resources on the cluster first. 
@@ -75,7 +75,7 @@ Your request enters the job queue just like any other job, and interactive/sallo
       If you do not preface with ``srun`` the command is run on the login node! 
       
 
-You can now run Python scripts on the allocated resources directly instead of waiting for 
+You can now run Julia scripts on the allocated resources directly instead of waiting for 
       your batch job to return a result. This is an advantage if you want to test your Python 
       script or perhaps figure out which parameters are best.
                   
@@ -100,7 +100,7 @@ Example **Code along**
           Waiting for job 29556505 to start...
           Starting job now -- you waited for 1 second.
           
-          [bjornc@r484 ~]$ module load python/3.9.5
+          [bjornc@r484 ~]$ module load julia/1.8.5
 
       Let us check that we actually run on the compute node: 
 
@@ -125,7 +125,7 @@ Example **Code along**
           salloc: Granted job allocation 20174806
           salloc: Waiting for resource configuration
           salloc: Nodes b-cn0241 are ready for job
-          b-an01 [~]$ module load GCC/10.3.0 OpenMPI/4.1.1 Python/3.9.5
+          b-an01 [~]$ module load GCC/10.3.0 OpenMPI/4.1.1 julia/1.8.5
           b-an01 [~]$ 
                   
       
@@ -142,7 +142,9 @@ Example **Code along**
       We are. Notice that we got a response from all four cores we have allocated.   
       
       
-**I am going to use the following two Python codes for the examples:**
+**I am going to use the following two Julia codes for the examples:**
+      
+      **FIX**
       
       Adding two numbers from user input (add2.py)
          
@@ -240,7 +242,7 @@ When you have finished using the allocation, either wait for it to end, or close
                   salloc: Job allocation 20174806 has been revoked.
                   b-an01 [~]$
 
-.. admonition:: Running Jupyter on compute nodes at UPPMAX
+.. admonition:: Running Jupyter on compute nodes from local browserat UPPMAX
 
    https://uppmax.github.io/HPC-python/jupyter.html
 
