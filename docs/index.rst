@@ -294,6 +294,7 @@ Material for improving your programming skills
    R/packagesR.rst
    R/batchR.rst
    R/interactivePython.md
+   R/Rstudio.rst
    R/exercises.rst
    R/summaryPython.rst
 
