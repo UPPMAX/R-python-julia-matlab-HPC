@@ -9,10 +9,11 @@ Introduction Julia
    - Load Julia modules and site-installed Julia packages
    - Create a Julia environment
    - Install Julia packages with **Pkg**
-   - Write a batchscript for running Julia
+   - Write a batch script for running Julia
    - Use Julia in parallel mode
-   - Use Julia for ML
    - Use GPUs with Julia
+   - Use Julia for ML **??**
+
    
 .. admonition:: Collabration document HackMD
 
@@ -99,7 +100,7 @@ productivity (fast deployment, fast prototyping) or performance (fast numerical
 computations). 
 
 This pattern created the so called **two-language problem** where programmers
-had to choose between productivity (R, Python) or performance (Fortran, C/C++)
+had to choose between **productivity** (R, Python) or **performance** (Fortran, C/C++)
 and when both were needed programmers had to learn the language that offered 
 the desired capability and use some interface between different languages. 
 Performant languages traditionally needed to be compiled while languages focusing
@@ -116,7 +117,7 @@ focus to learn a new language.
    :align: center
 
    Two-language problem where Julia is shown as a bridge between the languages
-   in the traditional paradigm. 
+   in the traditional paradigms, productivity vs. performance. 
 
 Workflow in Julia
 -----------------
@@ -128,9 +129,20 @@ read-eval-print-loop (REPL) command line by typing ``julia``:
 
    .. tab:: UPPMAX 
 
-        .. code-block:: sh
+        .. code-block:: julia-repl
+         
+         $ ml Julia/1.8.5-linux-x86_64
+         $ julia 
 
-         ml ...
+            _       _ _(_)_     |  Documentation: https://docs.julialang.org
+           (_)     | (_) (_)    |
+            _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+           | | | | | | |/ _` |  |
+           | | |_| | | | (_| |  |  Version 1.8.5 (2023-01-08)
+          _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+         |__/                   |
+
+         julia> 
 
 
    .. tab:: HPC2N
@@ -219,8 +231,8 @@ Shortcomings of Julia
 More on Julia?
 --------------
 
-- Documentation at the HPC centres UPPMAx and HPC2N
-   - UPPMAX: https://www.uppmax.uu.se/support/user-guides/julia-user-guide/e/
+- Documentation at the HPC centres UPPMAX and HPC2N
+   - UPPMAX: https://www.uppmax.uu.se/support/user-guides/julia-user-guide/
    - HPC2N: https://www.hpc2n.umu.se/resources/software/julia
 - Official Julia documentation is found here: https://docs.julialang.org/en/v1/
 - Slack channel for Julia and instructions for joining it are found here: https://julialang.org/slack/
