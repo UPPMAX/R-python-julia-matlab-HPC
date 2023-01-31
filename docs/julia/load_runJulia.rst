@@ -63,14 +63,15 @@ Check for Julia versions
 
          $ module spider Julia/1.8.5
 
-.. admonition:: Output at UPPMAX as of Jan 23 2023 **FIX**
+.. admonition:: Output at UPPMAX as of Jan 31 2023
    :class: dropdown
     
        .. code-block::  tcl
     
           $ module av julia
-          ------------------------------------- /sw/mf/rackham/compilers -------------------------------------
-             julia/1.0.5_LTS    julia/1.1.1    julia/1.4.2    julia/1.6.1    julia/1.6.3    julia/1.7.2 (D)
+          --------------------------------------- /sw/mf/rackham/compilers ---------------------------------------
+             julia/1.0.5_LTS    julia/1.4.2    julia/1.6.3        julia/1.7.2
+             julia/1.1.1        julia/1.6.1    julia/1.6.7_LTS    julia/1.8.5 (D)
 
            Where:
             D:  Default Module
@@ -171,7 +172,7 @@ The Julia prompt (``julian`` mode) looks like this:
 
 .. code-block:: julia
    
-   julia> 
+   > julia> 
 
 Exit with 
 
@@ -196,15 +197,34 @@ Like for Python it is possible to run a Julia in a notebook, i.e. in a web inter
 
 .. code-block:: sh
 
-   $ module load julia/1.7.2
-   $ module load python/3.9.5
+   $ module load julia/1.8.5
+   $ module load python/3.10.8
    $ julia
 
 In Julia:
 
 .. code-block:: julia
 
-   using IJulia
-   notebook(dir="</path/to/work/dir/>")
+   > using IJulia
+   > notebook(dir="</path/to/work/dir/>")
 
-A Firefox session will start with the Jupyter notebook interface.
+A Firefox session should start with the Jupyter notebook interface.
+**If not**, you may have to build IJulia the first time with Pkg.build("IJulia"). Since "IJulia" is *pre-installed centrally* on UPPMAX you must activate the central environment by following these steps belo. This should only be needed the first time like this
+
+.. code-block:: julia
+  
+   > using Pkg
+   > Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");
+   > Pkg.build("IJulia")
+   > notebook(dir="</path/to/work/dir/>")
+
+This builds the package also locally before starting the notebook. If not done, Jupyter will not find the julia kernel of that version.
+With notebook(detached=true) the notebook wil not be killed when you exit your REPL julia session in the terminal.
+
+.. keypoints::
+
+   - Before you can run julia scripts or work in a julia shell, first load a julia module.
+   - Start a Python shell session either with ``julia``
+   - Run scripts with ``julia <script.jl>``
+    
+
