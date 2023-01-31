@@ -24,6 +24,25 @@ itself. Julia distinguishes between **project environments** and **package direc
 Tom's Obvious Minimal Language (TOML) files (Project.toml, Manifest.toml) are present while in the
 latter also source files are included with some specific layout. 
 
+If you have have started Julia once you will get the folders like this in the ~/.julia folder.
+
+.. code-block:: bash
+   
+   $ tree .julia/ -d -L 1
+   .
+   ├── artifacts
+   ├── bin
+   ├── compiled
+   ├── conda
+   ├── environments
+   ├── logs
+   ├── packages
+   ├── prefs
+   ├── registries
+   └── scratchspaces
+
+
+
 Packages in Julia work as decentralized units which can be connected through their 
 universally unique identifiers (UUIDs) in the so-called federated package management. 
 The active environments can be seen with the command:
@@ -38,6 +57,8 @@ The active environments can be seen with the command:
 
 where ``@`` is the current environment, ``@v#.#`` is the default environment for the 
 Julia version that is being in use, and ``@stdlib`` is the standard library. 
+At UPPMAX the central environment adds to the list with the element
+  "/sw/comp/julia/1.8.5/rackham/lib/glob_pkg/environments/v1.8"
 Thus, by default in addition to the current environment other environments are present
 which can potentially create conflicts for reproducibility if you are not aware of what
 Julia is doing under the hood. Later on, we will see possible strategies to avoid this
