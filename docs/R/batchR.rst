@@ -1,10 +1,10 @@
-Running Python in batch mode
-============================
+Running R in batch mode
+=======================
 
 .. questions::
 
    - What is a batch job?
-   - How to make a batch job?
+   - How to write a batch script and submit a batch job?
 
    
    
@@ -12,7 +12,7 @@ Running Python in batch mode
 
    - Short introduction to SLURM scheduler
    - Show structure of a batch script
-   - Try example
+   - Example to try
 
 
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
@@ -33,12 +33,12 @@ Guides and documentation at: http://www.hpc2n.umu.se/support and https://www.upp
 
 - Write a batch script
 
-  - Inside the batch script you need to load the modules you need (Python, Python packages ... )
-  - Possibly activate an isolated/virtual environment to access own-installed packages
+  - Inside the batch script you need to load the modules you need (R and any prerequisites) 
+  - If you are using any own-installed packages, make sure R_LIBS_USER is set (export R_LIBS_USER=/path/to/my/R-packages) 
   - Ask for resources depending on if it is a parallel job or a serial job, if you need GPUs or not, etc.
-  - Give the command(s) to your Python script
+  - Give the command(s) to your R script
 
-- Submit batch script with ``sbatch <my-python-script.sh>`` 
+- Submit batch script with ``sbatch <my-R-script.sh>`` 
 
 Common file extensions for batch scripts are ``.sh`` or ``.batch``, but they are not necessary. You can choose any name that makes sense to you. 
 
@@ -52,7 +52,7 @@ Useful commands to the batch system
 - Useful info about a job: ``sacct -l -j <job-id> | less -S``
 - Url to a page with info about the job (Kebnekaise only): ``job-usage <job-id>``
          
-Example Python batch scripts
+Example R batch scripts
 ---------------------------- 
 
 Serial code
@@ -80,20 +80,20 @@ Serial code
 
    .. tab:: HPC2N
 
-        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2021.05 and Python/3.9.5  
+        Short serial example for running on Kebnekaise. Loading R/4.0.4 and prerequisites   
        
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+            #SBATCH -A hpc2nXXXX-YYY # Change to your own project ID
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here for Python 3.9.5 and compatible SciPy-bundle
-            module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05
+            # Load any modules you need, here R/4.0.4 and prerequisites 
+            module load GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
             
-            # Run your Python script 
-            python mmmult.py    
+            # Run your R script 
+            R --no-save --quiet < Rscript.R
             
             
    .. tab:: mmmult.py 
