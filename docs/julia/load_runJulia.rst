@@ -112,7 +112,7 @@ Load a Julia module
 
 For reproducibility, we recommend ALWAYS loading a specific module instad of using the default version! 
 
-For this course, we recommend using Julia 1.8.X
+For this course, we recommend using Julia 1.8.5.
 
 .. tabs::
 
