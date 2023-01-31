@@ -94,7 +94,7 @@ In short; R has statistics-related libraries of a great variety and provides a g
 - Official R documentation is found here: https://cran.r-project.org/manuals.html
 - A list of CRAN (The Comprehensive R Archive Network) is here: https://cran.r-project.org/mirrors.html
 - Data analysis workflows with R and Python: https://aaltoscicomp.github.io/data-analysis-workflows-course/
-- CodeRefinery develops and maintains training material on software best practices for researchers that already write code. Ther material addresses all academic disciplines and tries to be as programming language-independent as possible. https://coderefinery.org/lessons/
+- CodeRefinery develops and maintains training material on software best practices for researchers that already write code. Their material addresses all academic disciplines and tries to be as programming language-independent as possible. https://coderefinery.org/lessons/
     
 
 .. objectives:: 
