@@ -92,41 +92,18 @@ Serial code
             # Load any modules you need, here R/4.0.4 and prerequisites 
             module load GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
             
-            # Run your R script 
-            R --no-save --quiet < Rscript.R
+            # Run your R script (here 'hello.R')
+            R --no-save --quiet < hello.R
             
             
-   .. tab:: mmmult.py 
+   .. tab:: hello.R
    
-        Python example code
+        R example code
    
-        .. code-block:: python
+        .. code-block:: R
         
-            import timeit
-            import numpy as np
-            
-            starttime = timeit.default_timer()
-            
-            np.random.seed(1701)
-            
-            A = np.random.randint(-1000, 1000, size=(8,4))
-            B = np.random.randint(-1000, 1000, size =(4,4))
-            
-            print("This is matrix A:\n", A)
-            print("The shape of matrix A is ", A.shape)
-            print()
-            print("This is matrix B:\n", B)
-            print("The shape of matrix B is ", B.shape)
-            print()
-            print("Doing matrix-matrix multiplication...")
-            print()
-            
-            C = np.matmul(A, B)
-            
-            print("The product of matrices A and B is:\n", C)
-            print("The shape of the resulting matrix is ", C.shape)
-            print()
-            print("Time elapsed for generating matrices and multiplying them is ", timeit.default_timer() - starttime)
+            message <-"Hello World!"
+            print(message)  
 
 
         
