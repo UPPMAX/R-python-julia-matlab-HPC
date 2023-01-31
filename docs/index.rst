@@ -277,7 +277,7 @@ Material for improving your programming skills
    :caption: julia Lessons:
 
    julia/introJulia.rst
-   julia/load_run.rst
+   julia/load_runJulia.rst
    julia/packages.rst
    julia/isolatedJulia.rst
    julia/batchJulia.md
