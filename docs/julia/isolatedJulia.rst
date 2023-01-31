@@ -241,7 +241,7 @@ Customizing the set of visible environments
 -------------------------------------------
 
 We saw previously that by default some enviroments are visible to new environments.
-One can customize this setting with the variable ``JULIA_LOAD_PATH``, this can be
+One can customize (DON'T DO THAT NOW!) this setting with the variable ``JULIA_LOAD_PATH``, this can be
 done on the Linux command line:
 
 
@@ -280,7 +280,7 @@ Environment stacks
 
 As we saw before, ``LOAD_PATH`` shows that environments can be stacked and we can place
 the environments we want in the path so that they are visible in our current environment.
-To illustrate this concept, let's create a second environment and firts we can remove the
+To illustrate this concept, let's create a second environment and first we can remove the
 content of ``LOAD_PATH``:
 
 .. code-block:: julia
@@ -305,7 +305,7 @@ If we try to use the ``DFTK`` package we will see the error message:
       └ (y/n/o) [y]: n
        ERROR: ArgumentError: Package DFTK not found in current path.
 
-if you remember this package was installed in the first environment (``my-first-env``). In order
+If you remember this package was installed in the first environment (``my-first-env``). In order
 to make this package available in our second environment we can push the corresponding folder's
 path to ``LOAD_PATH``:
 
