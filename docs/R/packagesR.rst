@@ -112,6 +112,7 @@ way to check is probably starting the interpreter and running the ``libPaths()``
       Then check find the path of the library using the ``libPaths()`` function.
 
       .. code-block:: R
+      
          > .libPaths()
          [1] "/sw/apps/R/4.1.1/rackham/lib64/R/library"
 	
@@ -127,6 +128,7 @@ way to check is probably starting the interpreter and running the ``libPaths()``
       Then check find the path of the library using the ``libPaths()`` function.
 
       .. code-block:: R
+      
          > .libPaths()
          [1] "/cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/R/4.0.4-foss-2020b/lib/R/library"
 
