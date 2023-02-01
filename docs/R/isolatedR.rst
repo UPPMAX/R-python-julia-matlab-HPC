@@ -13,13 +13,10 @@ Isolated environments
 .. questions::
 
    - How to work with isolated environments at HPC2N and UPPMAX?
-   - How do you structure a lesson effectively for teaching?
-
-   
+ 
 .. objectives:: 
 
-   - Give a general 'theoretical* introduction to isolated environments 
-   - Site-specific procedures are given at the separated sessions.
+   - Give a general 'theoretical* introduction to isolated environments .
 
 General procedures   
 ------------------
@@ -40,28 +37,8 @@ There are different tools for creating an isolated environement, but they all ha
 
 **The tools**
 
-In this course we will look at the following tools for creating and using isolated environments: 
-
-   - venv   
-   - *virtualenv*
-   - Conda
 
 
-.. admonition:: venv vs. virtualenv
-
-   - These are almost completely interchangeable
-   - the difference being that **virtualenv supports older python versions** and has a few more minor unique features, while **venv is in the standard library**.
-
-
-Virtual environment - venv (UPPMAX)
------------------------------------
-
-Separate session at <https://uppmax.github.io/HPC-python/isolatedUPPMAX.html>
-
-Virtual environment - virtualenv (HPC2N)
-----------------------------------------
-
-Separate session at <https://uppmax.github.io/HPC-python/isolatedHPC2N.html>
 
 .. keypoints::
 
