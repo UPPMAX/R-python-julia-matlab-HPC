@@ -95,7 +95,7 @@ Package libraries
 
 We might want to know where the ``R`` interpreter will be searching for
 packages, i.e. where the libraries are located (could be several). The easiest
-way to check if probably starting the inerpreter and running
+way to check is probably starting the interpreter and running the ``libPaths()`` function.
 
 
 .. tabs::
