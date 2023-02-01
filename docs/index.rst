@@ -292,11 +292,11 @@ Material for improving your programming skills
    R/intro.rst
    R/load_runR.rst
    R/packagesR.rst
+   R/isolatedR
    R/batchR.rst
-   R/interactivePython.md
-   R/rstudio.rst
+   R/interactiveRstudio.md
    R/exercises.rst
-   R/summaryPython.rst
+   R/summaryR.rst
 
 
 .. Indices and tables
