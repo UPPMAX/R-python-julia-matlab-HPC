@@ -198,25 +198,52 @@ Automatical download and install from CRAN
 
           install.packages('<r-package>', repos='<repo>')
    
-   
+      You find the name of the package in CRAN (https://cran.r-project.org/) and a list of repos here: https://cran.r-project.org/mirrors.html 
+
+      Please choose a location close to you when picking a repo. 
+      
+In either case, the dependencies of the package will be downloaded and installed as well. 
+
+      
 Example
 *******
 
 In this example, we will install the R package ``stringr`` and use the repository http://ftp.acc.umu.se/mirror/CRAN/ 
 
-.. code-block:: sh 
+.. tabs::
 
-    R --quiet --no-save --no-restore -e "install.packages('stringr', repos='http://ftp.acc.umu.se/mirror/CRAN/')"
+   .. tab:: From command line
+
+      .. code-block:: sh 
+
+          R --quiet --no-save --no-restore -e "install.packages('stringr', repos='http://ftp.acc.umu.se/mirror/CRAN/')"
+    
+    
+      You find the name of the package in CRAN (https://cran.r-project.org/) and a list of repos here: https://cran.r-project.org/mirrors.html 
+
+      Please choose a location close to you when picking a repo. 
+
+   .. tab:: From inside R
+
+      .. code-block:: sh 
+
+          install.packages('stringr', repos='http://ftp.acc.umu.se/mirror/CRAN/')
 
 
 
 Manual download and install
 ###########################
 
-R CMD INSTALL -l <path-to-R-package>/R-package.tar.gz
+If the package is not on CRAN or you for other reason want to install a package you already downloaded, then this is how to install from the command line: 
+
+.. code-block:: sh 
+
+    R CMD INSTALL -l <path-to-R-package>/R-package.tar.gz
 
 Example
 *******
+
+
 
 .. note::
    
