@@ -151,13 +151,13 @@ R reads the ``$HOME/.Renviron`` file to setup its environment. It should be crea
 
 **NOTE**: In this example we are going to assume you have chosen to place the R packages in a directory under your home directory. As mentioned, you will need separate ones for each R version.
 
-If you have not yet installed any packages to R yourself, the environment file should be empty: 
+If you have not yet installed any packages to R yourself, the environment file should be empty and you can update it like this: 
 
 .. code-block:: sh 
 
     echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron
 
-If it is not empty, you can edit ``$HOME/.Renviron`` with your favorite editor so that ``R_LIBS_USER`` contain the path to your chosen directory for own-installed R packages. It should look something like this when you are done:
+If it is **not** empty, you can edit ``$HOME/.Renviron`` with your favorite editor so that ``R_LIBS_USER`` contain the path to your chosen directory for own-installed R packages. It should look something like this when you are done:
 
 .. code-block:: sh 
 
@@ -173,6 +173,22 @@ For each version of R you are using, create a directory matching the pattern use
 
     mkdir -p $HOME/R-packages-4.0.4
 
+
+Automatical download and install from CRAN
+##########################################
+
+R --quiet --no-save --no-restore -e "install.packages('<r-package>', repos='http://ftp.acc.umu.se/mirror/CRAN/')"
+
+Example
+*******
+
+Manual download and install
+###########################
+
+R CMD INSTALL -l <path-to-R-package>/R-package.tar.gz
+
+Example
+*******
 
 .. note::
    
