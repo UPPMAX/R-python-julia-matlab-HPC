@@ -82,8 +82,8 @@ An R packages can exist in five possible states
    :align: left
 
 
-source: https://r-pkgs.org/structure.html and
-https://nbisweden.github.io/RaukR-2021/rpackages_Sebastian/presentation/rpackages_Sebastian.html
+ | source: https://r-pkgs.org/structure.html and
+ | https://nbisweden.github.io/RaukR-2021/rpackages_Sebastian/presentation/rpackages_Sebastian.html
 
 Package libraries
 #################
@@ -157,17 +157,19 @@ If you have not yet installed any packages to R yourself, the environment file s
 
     echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron
 
-However if it is not empty, you can edit $HOME/.Renviron with your favorite editor so that R_LIBS contain the path to your chosen add-on directory. It should look something like this when you are done:
+If it is not empty, you can edit $HOME/.Renviron with your favorite editor so that R_LIBS contain the path to your chosen directory for own-installed R packages. It should look something like this when you are done:
+
+.. code-block:: sh 
 
     R_LIBS_USER="/home/u/user/R-packages-%V"
 
     NOTE: Replace "/home/u/user" with the value of $HOME. Run 'echo $HOME' to see its value.
     NOTE: The %V should be written as-is, it's substituted at runtime with the active R version.
 
-    For each version of R you are using, create a directory matching the pattern used in .Renviron to store your packages in. This example is shown for R version 3.6.0:
 
-    mkdir -p $HOME/R-packages-3.6.0
+For each version of R you are using, create a directory matching the pattern used in .Renviron to store your packages in. This example is shown for R version 4.0.4:
 
+    mkdir -p $HOME/R-packages-4.0.4
 
 
 .. note::
