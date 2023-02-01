@@ -115,7 +115,7 @@ way to check if probably starting the inerpreter and running
          > .libPaths()
          [1] "/sw/apps/R/4.1.1/rackham/lib64/R/library"
 	
-    .. tab:: HPC2N
+   .. tab:: HPC2N
    
       Load ``R``, e.g. version 4.1.1 and start the Interpreter
 
@@ -132,44 +132,6 @@ way to check if probably starting the inerpreter and running
 
 
 
-.. tabs::
-
-   .. tab:: UPPMAX
-
-     Check all available R versions with:
-
-      .. code-block:: sh
- 
-           $ module spider R
-
-     OR
-
-      .. code-block:: sh
-
-           $ module avail R
- 
-     Note that the latter option also lists other software modules matching the string "R". 
-
-
-   .. tab:: HPC2N
-   
-      Check all available version R versions with:
-
-      .. code-block:: sh
- 
-         $ module spider R
-      
-      To see how to load a specific version of R, including the prerequisites, do 
-
-      .. code-block:: sh
-   
-         $ module spider R/<version>
-
-      Example for R 4.0.4 (recommended version)
-
-      .. code-block:: sh
-
-         $ module spider R/4.0.4 
 
 
 Installing your own packages
