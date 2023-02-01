@@ -82,8 +82,8 @@ An R packages can exist in five possible states
    :align: left
 
 
- | source: https://r-pkgs.org/structure.html and
- | https://nbisweden.github.io/RaukR-2021/rpackages_Sebastian/presentation/rpackages_Sebastian.html
+source: https://r-pkgs.org/structure.html and
+https://nbisweden.github.io/RaukR-2021/rpackages_Sebastian/presentation/rpackages_Sebastian.html
 
 Package libraries
 #################
@@ -164,8 +164,8 @@ If it is **not** empty, you can edit ``$HOME/.Renviron`` with your favorite edit
     R_LIBS_USER="/home/u/user/R-packages-%V"
 
 
-NOTE: Replace ``/home/u/user`` with the value of ``$HOME``. Run ``echo $HOME`` to see its value.
-NOTE: The ``%V`` should be written as-is, it's substituted at runtime with the active R version.
+| NOTE: Replace ``/home/u/user`` with the value of ``$HOME``. Run ``echo $HOME`` to see its value.
+| NOTE: The ``%V`` should be written as-is, it's substituted at runtime with the active R version.
 
 For each version of R you are using, create a directory matching the pattern used in ``.Renviron`` to store your packages in. This example is shown for R version 4.0.4:
 
