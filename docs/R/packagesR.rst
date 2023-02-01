@@ -157,17 +157,19 @@ If you have not yet installed any packages to R yourself, the environment file s
 
     echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron
 
-If it is not empty, you can edit $HOME/.Renviron with your favorite editor so that R_LIBS contain the path to your chosen directory for own-installed R packages. It should look something like this when you are done:
+If it is not empty, you can edit ``$HOME/.Renviron`` with your favorite editor so that ``R_LIBS_USER`` contain the path to your chosen directory for own-installed R packages. It should look something like this when you are done:
 
 .. code-block:: sh 
 
     R_LIBS_USER="/home/u/user/R-packages-%V"
 
-    NOTE: Replace "/home/u/user" with the value of $HOME. Run 'echo $HOME' to see its value.
-    NOTE: The %V should be written as-is, it's substituted at runtime with the active R version.
 
+NOTE: Replace ``/home/u/user`` with the value of ``$HOME``. Run ``echo $HOME`` to see its value.
+NOTE: The ``%V`` should be written as-is, it's substituted at runtime with the active R version.
 
-For each version of R you are using, create a directory matching the pattern used in .Renviron to store your packages in. This example is shown for R version 4.0.4:
+For each version of R you are using, create a directory matching the pattern used in ``.Renviron`` to store your packages in. This example is shown for R version 4.0.4:
+
+.. code-block:: sh 
 
     mkdir -p $HOME/R-packages-4.0.4
 
