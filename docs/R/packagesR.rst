@@ -140,6 +140,34 @@ way to check is probably starting the interpreter and running the ``libPaths()``
 Installing your own packages
 ----------------------------
 
+Sometimes you will need R packages that are not already installed. The solution to this is to install your own packages. These packages will usually come from CRAN (https://cran.r-project.org/) - the Comprehensive R Archive Network, or sometimes from other places, like GitHub. 
+
+Setup
+#####
+
+We need to create a place for the own-installed packages to be and to tell R where to find them. The initial setup only needs to be done once, but separate package directories need to be created for each R version used. 
+
+R reads the ``$HOME/.Renviron`` file to setup its environment. It should be created by R on first run, or you can create it with the command: ``touch $HOME/.Renviron``
+
+**NOTE**: In this example we are going to assume you have chosen to place the R packages in a directory under your home directory. As mentioned, you will need separate ones for each R version.
+
+If you have not yet installed any packages to R yourself, the environment file should be empty: 
+
+.. code-block:: sh 
+
+    echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron
+
+However if it is not empty, you can edit $HOME/.Renviron with your favorite editor so that R_LIBS contain the path to your chosen add-on directory. It should look something like this when you are done:
+
+    R_LIBS_USER="/home/u/user/R-packages-%V"
+
+    NOTE: Replace "/home/u/user" with the value of $HOME. Run 'echo $HOME' to see its value.
+    NOTE: The %V should be written as-is, it's substituted at runtime with the active R version.
+
+    For each version of R you are using, create a directory matching the pattern used in .Renviron to store your packages in. This example is shown for R version 3.6.0:
+
+    mkdir -p $HOME/R-packages-3.6.0
+
 
 
 .. note::
