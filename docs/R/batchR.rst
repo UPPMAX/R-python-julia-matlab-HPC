@@ -38,7 +38,7 @@ Guides and documentation at: http://www.hpc2n.umu.se/support and https://www.upp
   - Ask for resources depending on if it is a parallel job or a serial job, if you need GPUs or not, etc.
   - Give the command(s) to your R script
 
-- Submit batch script with ``sbatch <my-R-script.sh>`` 
+- Submit batch script with ``sbatch <my-batch-script-for-R.sh>`` 
 
 Common file extensions for batch scripts are ``.sh`` or ``.batch``, but they are not necessary. You can choose any name that makes sense to you. 
 
