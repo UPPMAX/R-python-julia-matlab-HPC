@@ -142,6 +142,8 @@ Installing your own packages
 
 Sometimes you will need R packages that are not already installed. The solution to this is to install your own packages. These packages will usually come from CRAN (https://cran.r-project.org/) - the Comprehensive R Archive Network, or sometimes from other places, like GitHub. 
 
+Here we will look at installing R packages with automatic download and with manual download. It is also possible to install from inside Rstudio. 
+
 Setup
 #####
 
@@ -177,10 +179,36 @@ For each version of R you are using, create a directory matching the pattern use
 Automatical download and install from CRAN
 ##########################################
 
-R --quiet --no-save --no-restore -e "install.packages('<r-package>', repos='http://ftp.acc.umu.se/mirror/CRAN/')"
+.. tabs::
 
+   .. tab:: From command line
+
+      .. code-block:: sh 
+
+          R --quiet --no-save --no-restore -e "install.packages('<r-package>', repos='<repo>')"
+    
+    
+      You find the name of the package in CRAN (https://cran.r-project.org/) and a list of repos here: https://cran.r-project.org/mirrors.html 
+
+      Please choose a location close to you when picking a repo. 
+
+   .. tab:: From inside R
+
+      .. code-block:: sh 
+
+          install.packages('<r-package>', repos='<repo>')
+   
+   
 Example
 *******
+
+In this example, we will install the R package ``stringr`` and use the repository http://ftp.acc.umu.se/mirror/CRAN/ 
+
+.. code-block:: sh 
+
+    R --quiet --no-save --no-restore -e "install.packages('stringr', repos='http://ftp.acc.umu.se/mirror/CRAN/')"
+
+
 
 Manual download and install
 ###########################
