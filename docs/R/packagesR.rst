@@ -78,7 +78,7 @@ An R packages can exist in five possible states
 
 
 .. figure:: ../../img/R-pkg-states.png
-   :width: 450
+   :width: 550
    :align: center
 
 source: https://r-pkgs.org/structure.html and
