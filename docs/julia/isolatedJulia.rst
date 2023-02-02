@@ -1,20 +1,31 @@
-Isolated environments
-=====================
+Packages and isolated environments
+==================================
 
-.. note::
-   Isolated environments solve a couple of problems:
+.. admonition:: Julia packages and environments
    
-   - You can install specific, also older, versions into them.
-   - You can create one for each project and no problem if the two projects require different versions.
-   - You can remove the environment and create a new one, if not needed or with errors.
+   - Julia **packages broaden the use of Julia** considerably! 
+   - Instead of writing code yourself there may be others that have done the same!
+
+   - Isolated environments solve a couple of problems:
+     - You can install specific, also older, versions into them.
+     - You can create one for each project and no problem if the two projects require different versions.
+     - You can remove the environment and create a new one, if not needed or with errors.
    
 .. questions::
 
+   - How to install packages
    - How to work with isolated environments?
+   - How to check for and use the UPPMAX pre-installed packages
+   
 
 .. objectives:: 
 
    - Give a general *theoretical* introduction to isolated environments 
+   - Show how to install own packages
+   - Show how to check for Julia packages at UPPMAX
+   
+- Before going into installing packages let's have a background to the Julia environments and ecosystem!
+
 
 In the Python's lesson on environments, we saw that there are different ways to deal with isolated 
 environments in this language, for instance, ``conda`` and ``pip``. This situation is simplified
