@@ -339,7 +339,7 @@ UPPMAX Central library
 
 .. admonition:: Please notice
 
-   - At UPPMAX there is a central library with instaleld packages.
+   - At UPPMAX there is a central library with installed packages.
    - This is good, especially when woreking on Bianca, since you donät need to install via the Wharf.
 
 - You may control the present "central library" by typing ``ml help julia/<version>`` in the BASH shell.
