@@ -280,19 +280,21 @@ Here is an example of running a short, serial R program at Kebnekaise:
       - NOTE that the latter option generates a LOT of output, but also gives versions of the R packages (Extensions, as they are called by the module system). 
       
    3) Install any extra R packages you need (optional): 
-    - Automatical download and install: ``R --quiet --no-save --no-restore -e "install.packages('<r-package>', repos='http://ftp.acc.umu.se/mirror/CRAN/')"`` 
-    - Manual download and install: ``R CMD INSTALL -l <path-to-R-package>/R-package.tar.gz``
+    
+      - Automatical download and install: ``R --quiet --no-save --no-restore -e "install.packages('<r-package>', repos='http://ftp.acc.umu.se/mirror/CRAN/')"`` 
+      - Manual download and install: ``R CMD INSTALL -l <path-to-R-package>/R-package.tar.gz``
     
    4) 
-    - Start R: ``R``
-    - run ``Rscript <program.R>``
-    - batch job for R program: ``sbatch <my-R-batch-job.sh>``
+    
+      - Start R: ``R``
+      - run ``Rscript <program.R>``
+      - batch job for R program: ``sbatch <my-R-batch-job.sh>``
 
-   Installed R packages can be accessed within R with ``library("package")`` as usual. 
+   - Installed R packages can be accessed within R with ``library("package")`` as usual. 
 
-   The command ``installed.packages()`` given within R will list the available packages to import. 
+   - The command ``installed.packages()`` given within R will list the available packages to import. 
 
-   More about installing your own R packages to follow in later sections of the course! 
+   - More about installing your own R packages to follow in later sections of the course! 
 
 
 .. keypoints::
