@@ -140,7 +140,7 @@ way to check is probably starting the interpreter and running the ``libPaths()``
 Installing your own packages
 ----------------------------
 
-Sometimes you will need R packages that are not already installed. The solution to this is to install your own packages. These packages will usually come from CRAN (https://cran.r-project.org/) - the Comprehensive R Archive Network, or sometimes from other places, like GitHub. 
+Sometimes you will need R packages that are not already installed. The solution to this is to install your own packages. These packages will usually come from CRAN (https://cran.r-project.org/) - the Comprehensive R Archive Network, or sometimes from other places, like GitHub or R-Forge
 
 Here we will look at installing R packages with automatic download and with manual download. It is also possible to install from inside Rstudio. 
 
@@ -225,31 +225,67 @@ In this example, we will install the R package ``stringr`` and use the repositor
 
 
 
-Manual download and install
-###########################
+Automatic download and install from GitHub
+##########################################
 
-If the package is not on CRAN or you for other reason want to install a package you already downloaded, then this is how to install from the command line: 
+If you want to install a package that is not on CRAN, but which do have a GitHub page, then there is an automatic way of installing, but you need to handle prerequsites yourself by installing those first. It can also be that the package is not in as finished a state as those on CRAN, so be careful. 
 
-.. code-block:: sh 
+To install packages from GitHub directly, from inside R, you first need to install the devtools package. Note that you only need to install this **once**. 
 
-    R CMD INSTALL -l <path-to-R-package>/R-package.tar.gz
+This is how you install a package from GitHub, inside R:
+
+ .. code-block:: R
+ 
+    install.packages("devtools")   # ONLY ONCE
+    devtools::install_github("DeveloperName/package")
+    
 
 Example
 *******
 
+In this example we want to install the package ``quantstrat``. It is not on CRAN, so let's get it from the GitHub page for the project: https://github.com/braverock/quantstrat 
 
+We also need to install devtools so we can install packages from GitHub. In addition, ``quantstrat`` has some prerequisites, some on CRAN, some on GitHub, so we need to install those as well. 
 
-.. note::
+.. code-block:: sh 
+
+   install.packages("devtools") # ONLY ONCE
+   install.packages("FinancialInstrument") 
+   install.packages("PerformanceAnalytics") 
    
-   You will test this in the separated sessions about isolated environments in a while.
+   devtools::install_github("braverock/blotter")
+   devtools::install_github("braverock/quantstrat")
+
+    
+Manual download and install
+###########################
+
+If the package is not on CRAN or you want the development version, or you for other reason want to install a package you downloaded, then this is how to install from the command line: 
+
+.. code-block:: sh 
+
+    R CMD INSTALL -l <path-to-R-package>/R-package.tar.gz
+    
+
+**NOTE** that if you install a package this way, you need to handle any dependencies yourself. 
+
+
+.. note:: 
+
+   Places to look for R packages
+   
+   - CRAN (https://cran.r-project.org/)
+   - R-Forge (https://r-forge.r-project.org/)
+   - Project's own GitHub page
+   - etc.
+   
 
 .. keypoints::
 
-   - You can check for packages 
-   	- from the Python shell with the ``import`` command
+   - You can check for installed packages 
+   	- from inside R with ``installed.packages()``
 	- from BASH shell with the 
-		- ``pip list`` command at both centers
-		- ``ml help python/3.9.5`` at UPPMAX
-   - Installation of Python packages can be done either with **PYPI** or **Conda**
-   - You install own packages with the ``pip install`` command (This is the recommended way on HPC2N)
-   - At UPPMAX Conda is also available (See Conda section)
+		- ``ml help R/<version>`` at UPPMAX
+		- ``ml spider R/<version>`` at HPC2N
+   - Installation of R packages can be done either from within R or from the command line (BASH shell)
+   - CRAN is the recommended place to look for R-packages, but many packages can be found on GitHub and if you want the development version of a package you likely need to get it from GitHub or other place outside CRAN. You would then either download and install manually or install with something like devtools, from within R. 
