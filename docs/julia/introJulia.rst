@@ -228,6 +228,59 @@ Shortcomings of Julia
 - Previous situation is more noticeable upon running simple tasks in parallel mode (MPI, Threads)
   
 
+Exercises
+---------
+
+
+.. challenge:: Getting familiar with Julia REPL
+    
+    Is is important in this course that you know how to navigate on the 
+    Julia command line. This exercise will help you to become more familiar
+    with the REPL. Do the following steps: 
+
+       * Start a Julia session. In the ``Julian`` mode, compute the sum the numbers 
+         5 and 6
+       * Change to the ``shell`` mode and display the current directory
+       * Now, go to the ``package`` mode and list the currently installed packages
+       * Finally, display help information of the function ``println`` in ``help`` mode.
+
+
+
+    .. solution:: Solution for HPC2N
+        :class: dropdown
+            
+            .. code-block:: julia
+    
+                $ julia 
+                julia> 5 + 6
+                julia>;
+                shell> pwd 
+                julia>]
+                pkg> status 
+                julia>?
+                help?> println 
+
+
+    .. solution:: Solution for UPPMAX
+        :class: dropdown
+        
+            This batch script is for UPPMAX. Adding the numbers 2 and 3. 
+            
+            .. code-block:: sh
+    
+                #!/bin/bash
+                #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+                #SBATCH --time=00:05:00 # Asking for 5 minutes
+                #SBATCH -n 1 # Asking for 1 core
+                
+                # Load any modules you need, here for Python 3.9.5
+                module load Python/3.9.5
+                
+                # Run your Python script 
+                python sum-2args.py 2 3 
+
+
+
 More on Julia?
 --------------
 
