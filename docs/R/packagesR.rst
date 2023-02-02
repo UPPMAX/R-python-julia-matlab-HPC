@@ -179,6 +179,13 @@ For each version of R you are using, create a directory matching the pattern use
 Automatical download and install from CRAN
 ##########################################
 
+.. note:: 
+
+    You find a list of packages in CRAN (https://cran.r-project.org/) and a list of repos here: https://cran.r-project.org/mirrors.html 
+
+    Please choose a location close to you when picking a repo. 
+
+
 .. tabs::
 
    .. tab:: From command line
@@ -187,22 +194,12 @@ Automatical download and install from CRAN
 
           R --quiet --no-save --no-restore -e "install.packages('<r-package>', repos='<repo>')"
     
-    
-      You find a list of packages in CRAN (https://cran.r-project.org/) and a list of repos here: https://cran.r-project.org/mirrors.html 
-
-      Please choose a location close to you when picking a repo. 
-
    .. tab:: From inside R
 
       .. code-block:: sh 
 
           install.packages('<r-package>', repos='<repo>')
-   
-   
-      You find a list of packages in CRAN (https://cran.r-project.org/) and a list of repos here: https://cran.r-project.org/mirrors.html 
-
-      Please choose a location close to you when picking a repo. 
-      
+       
 
 In either case, the dependencies of the package will be downloaded and installed as well. 
 
@@ -211,10 +208,6 @@ Example
 *******
 
 In this example, we will install the R package ``stringr`` and use the repository http://ftp.acc.umu.se/mirror/CRAN/ 
-
-You find a list of packages in CRAN (https://cran.r-project.org/) and a list of repos here: https://cran.r-project.org/mirrors.html 
-
-Please choose a location close to you when picking a repo. 
 
 .. tabs::
 
