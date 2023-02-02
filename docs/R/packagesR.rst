@@ -286,15 +286,15 @@ Exercises
 
    .. tabs:: 
 
-   .. tab:: HPC2N
+      .. tab:: HPC2N
    
-       :class: dropdown
+         :class: dropdown
     
-          This is for Kebnekaise.
+            This is for Kebnekaise.
           
-          .. code-block:: sh
+            .. code-block:: sh
 	  
-	     stuff
+         stuff
 	     
 	     
  	    
