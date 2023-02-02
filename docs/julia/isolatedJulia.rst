@@ -68,8 +68,12 @@ The active environments can be seen with the command:
 
 where ``@`` is the current environment, ``@v#.#`` is the default environment for the 
 Julia version that is being in use, and ``@stdlib`` is the standard library. 
-At UPPMAX the central environment adds to the list with the element
-  "/sw/comp/julia/1.8.5/rackham/lib/glob_pkg/environments/v1.8"
+At UPPMAX the central environment adds to the list with the element:
+
+.. code-block:: bash
+
+   "/sw/comp/julia/1.8.5/rackham/lib/glob_pkg/environments/v1.8"
+
 Thus, by default in addition to the current environment other environments are present
 which can potentially create conflicts for reproducibility if you are not aware of what
 Julia is doing under the hood. Later on, we will see possible strategies to avoid this
@@ -333,7 +337,7 @@ and now the package can be loaded from the first environment without errors.
 UPPMAX Central library
 ######################
 
-.. info::
+.. admonition:: Please notice
 
    - At UPPMAX there is a central library with instaleld packages.
    - This is good, especially when woreking on Bianca, since you donät need to install via the Wharf.
@@ -379,6 +383,51 @@ A selection of the Julia packages and libraries installed on UPPMAX and HPC2N ar
 
         The Julia versions installed at HPC2N include only the Base and Standard library
         modules.
+
+
+Exercises
+---------
+
+
+.. challenge:: Project environment
+    
+    Create a project environment called ``new-env`` and activate it. Then, install the
+    package ``CSV`` in this environment. For your knowledge, ``CSV`` is a package that
+    offers tools for dealing with ``.csv`` files. After this, check that this package
+    was installed. 
+
+    .. solution:: Solution for HPC2N
+        :class: dropdown
+            
+            .. code-block:: julia
+    
+                shell> mkdir new-env
+                shell> cd new-env
+                (@v1.8) pkg> activate .
+                      Activating new project at `path-to-folder\new-env`
+                (new-env) pkg> add CSV
+                (new-env) pkg> status
+                      Status `path-to-folder\new-env\Project.toml`
+                      [336ed68f] CSV v0.10.9
+
+
+    .. solution:: Solution for UPPMAX
+        :class: dropdown
+        
+            This batch script is for UPPMAX. Adding the numbers 2 and 3. 
+            
+            .. code-block:: sh
+    
+                #!/bin/bash
+                #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+                #SBATCH --time=00:05:00 # Asking for 5 minutes
+                #SBATCH -n 1 # Asking for 1 core
+                
+                # Load any modules you need, here for Python 3.9.5
+                module load Python/3.9.5
+                
+                # Run your Python script 
+                python sum-2args.py 2 3 
 
 
 
