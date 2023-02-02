@@ -252,7 +252,7 @@ Customizing the set of visible environments
 -------------------------------------------
 
 We saw previously that by default some enviroments are visible to new environments.
-One can customize (DON'T DO THAT NOW!) this setting with the variable ``JULIA_LOAD_PATH``, this can be
+One can customize this setting with the variable ``JULIA_LOAD_PATH``, this can be
 done on the Linux command line:
 
 
