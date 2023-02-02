@@ -278,7 +278,6 @@ Material for improving your programming skills
 
    julia/introJulia.rst
    julia/load_runJulia.rst
-   julia/packages.rst
    julia/isolatedJulia.rst
    julia/batchJulia.md
    julia/interactiveJulia.md
