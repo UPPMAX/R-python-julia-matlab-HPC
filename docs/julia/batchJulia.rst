@@ -66,16 +66,15 @@ Serial code
 
         .. code-block:: sh
 
-            #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+            #!/bin/bash -l       # -l cleans the environment in the batch job, recommended at UPPMAX
+            #SBATCH -A naiss2023-22-44 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
-            
-            # Load any modules you need, here Python 3.9.5. 
-            module load python/3.9.5 
-            
-            # Run your Python script 
-            python mmmult.py   
+            #SBATCH --error=job.%J.err   # error file
+            #SBATCH --output=job.%J.out  # output file                                                                                                        
+            ml Julia/1.8.5 # Julia module
+           
+            julia serial.jl              # run the serial script
             
 
    .. tab:: HPC2N
@@ -120,22 +119,27 @@ Serial code + self-installed package in virt. env.
 
         .. code-block:: sh
         
-            #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+             #!/bin/bash -l       # -l cleans the environment in the batch job, recommended at UPPMAX
+            #SBATCH -A naiss2023-22-44 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
+            #SBATCH --error=job.%J.err   # error file
+            #SBATCH --output=job.%J.out  # output file                                                                                             
             
-            # Load any modules you need, here for Python 3.9.5 
-            module load python/3.9.5
-            
-            # Activate your virtual environment. 
-            # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
-            # Example: /proj/snic2022-22-641/nobackup/mrspock/pythonUPPMAX 
-            source <path-to-virt-env>/bin/activate
-            
-            # Run your Python script
-            python <my_program.py>
+            ml Julia/1.8.5               # Julia module
+             
+            # Move to the directory where the ".toml" files 
+            # for the environment are located
+            julia --project=. serial-env.jl  # run the script 
 
+        If this works, you will see the installed packages in the output file. In the present case
+        because I installed the ``DFTK`` package only in ``my-third-env`` environment, I can 
+        see the following output:
+
+        .. code-block:: sh
+
+            Status `path/Julia-Test/my-third-env/Project.toml`
+            [acf6eb54] DFTK v0.6.2
 
    .. tab:: HPC2N
 
@@ -151,9 +155,7 @@ Serial code + self-installed package in virt. env.
             #SBATCH -n 1                 # nr. tasks  
             #SBATCH --time=00:03:00      # requested time
             #SBATCH --error=job.%J.err   # error file
-            #SBATCH --output=job.%J.out  # output file                                                                                                                                                                         
-
-
+            #SBATCH --output=job.%J.out  # output file                               
             ml purge  > /dev/null 2>&1   # recommended purge
             ml Julia/1.8.5-linux-x86_64  # Julia module
                        
