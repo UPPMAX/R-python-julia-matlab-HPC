@@ -189,11 +189,27 @@ Parallel code
 
    .. tab:: UPPMAX
 
-        Short serial example script for Rackham. Loading Python 3.9.5. Numpy is preinstalled and does not need to be loaded. 
+        The ``Threaded`` and ``Distributed`` packages are included in the Base installation. However, 
+        in order to use MPI with Julia you will need to follow the next steps (only the first time): 
 
         .. code-block:: sh
 
-            #!/bin/bash  
+            # Load the tool chain which contains a MPI library
+            $ ml gcc/11.3.0 openmpi/4.1.3
+            # Load Julia
+            $ ml Julia/1.8.5
+            # Start Julia on the command line
+            $ julia 
+            # Change to ``package mode`` and add the ``MPI`` package 
+            (v1.8) pkg> add MPI 
+            # In the ``julian`` mode run these commands:
+            julia> using MPI 
+            julia> MPI.install_mpiexecjl() 
+                 [ Info: Installing `mpiexecjl` to `/home/u/username/.julia/bin`...
+                 [ Info: Done!
+            # Add the installed ``mpiexecjl`` wrapper to your path on the Linux command line
+            $ export PATH=/home/u/username/.julia/bin:$PATH
+            # Now the wrapper should be available on the command line 
             
 
    .. tab:: HPC2N
