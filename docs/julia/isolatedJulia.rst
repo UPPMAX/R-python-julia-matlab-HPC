@@ -319,14 +319,72 @@ path to ``LOAD_PATH``:
 
 and now the package can be loaded from the first environment without errors.
 
+UPPMAX Central library
+######################
+
+.. info::
+
+   - At UPPMAX there is a central library with instaleld packages.
+   - This is good, especially when woreking on Bianca, since you donät need to install via the Wharf.
+
+- You may control the present "central library" by typing ``ml help julia/<version>`` in the BASH shell.
+- A possibly more up-to-date status can be found from the Julia shell:
+
+.. code-block:: julia 
+
+   using Pkg
+   Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");     #change version accordingly
+   Pkg.status()
+   Pkg.activate(DEPOT_PATH[1]*"/environments/v1.8");     #to return to user library
+
+Packages are imported or loaded by the commands ``import`` and ``using``, respectively. The difference is shown here. Or briefly:
+
+    To use module functions, use import Module to import the module, and Module.fn(x) to use the functions.
+    Alternatively, using Module will import all exported Module functions into the current namespace.
+
+A selection of the Julia packages and libraries installed on UPPMAX and HPC2N are:
+
+.. tabs::
+
+   .. tab:: UPPMAX
+
+	The Julia application at UPPMAX comes with several preinstalled packages.
+	A selection of the Julia packages and libraries installed on UPPMAX are:
+
+          - BenchmarkTools
+          - CSV
+          - CUDA
+          - MPI
+          - Distributed
+          - IJulia
+          - Plots
+          - PyPlot
+          - Gadfly
+          - DataFrames
+          - DistributedArrays
+          - PlotlyJS
+
+   .. tab:: HPC2N
+
+        The Julia versions installed at HPC2N include only the Base and Standard library
+        modules.
+
+
 
 .. keypoints::
 
+   - Installation of Julia packages can be done with Julia package manager.
+   - You install packages with the ``add`` command
    - With a virtual environment you can tailor an environment with specific versions for Julia
      and packages, not interfering with other installed Julia versions and packages.
    - Make it for each project you have for reproducibility.
    - The environments in Julia are lightweight so it is recommended to start a new environment
      for each project that you are developing. 
    - Environments in Julia created by Julia itself so third party software are not required.
+   - You can check for centrally installed packages at UPPMAX
+   	- from the Julia shell 
+      - from BASH shell with ``ml help julia/1.8.5``
+
+   
  
    
