@@ -7,9 +7,9 @@ Packages and isolated environments
    - Instead of writing code yourself there may be others that have done the same!
 
    - Isolated environments solve a couple of problems:
-     - You can install specific, also older, versions into them.
-     - You can create one for each project and no problem if the two projects require different versions.
-     - You can remove the environment and create a new one, if not needed or with errors.
+      - You can install specific, also older, versions into them.
+      - You can create one for each project and no problem if the two projects require different versions.
+      - You can remove the environment and create a new one, if not needed or with errors.
    
 .. questions::
 
@@ -393,7 +393,7 @@ A selection of the Julia packages and libraries installed on UPPMAX and HPC2N ar
      for each project that you are developing. 
    - Environments in Julia created by Julia itself so third party software are not required.
    - You can check for centrally installed packages at UPPMAX
-   	- from the Julia shell 
+      - from the Julia shell 
       - from BASH shell with ``ml help julia/1.8.5``
 
    
