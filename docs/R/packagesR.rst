@@ -198,10 +198,12 @@ Automatical download and install from CRAN
 
           install.packages('<r-package>', repos='<repo>')
    
+   
       You find the name of the package in CRAN (https://cran.r-project.org/) and a list of repos here: https://cran.r-project.org/mirrors.html 
 
       Please choose a location close to you when picking a repo. 
       
+
 In either case, the dependencies of the package will be downloaded and installed as well. 
 
       
