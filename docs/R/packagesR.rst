@@ -269,6 +269,37 @@ If the package is not on CRAN or you want the development version, or you for ot
 
 **NOTE** that if you install a package this way, you need to handle any dependencies yourself. 
 
+Exercises
+---------
+
+.. challenge:: Something about the exercise
+    
+    .. code-block:: R
+    
+        What should go here
+	
+    Some comment 	
+
+
+
+.. solution:: Solution
+
+   .. tabs:: 
+
+   .. tab:: HPC2N
+   
+       :class: dropdown
+    
+          This is for Kebnekaise.
+          
+          .. code-block:: sh
+	  
+	     stuff
+	     
+	     
+ 	    
+Summary
+-------
 
 .. note:: 
 
