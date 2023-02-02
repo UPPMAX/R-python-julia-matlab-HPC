@@ -394,7 +394,7 @@ Exercises
     Create a project environment called ``new-env`` and activate it. Then, install the
     package ``CSV`` in this environment. For your knowledge, ``CSV`` is a package that
     offers tools for dealing with ``.csv`` files. After this, check that this package
-    was installed. 
+    was installed. Finally, deactivate the environment.
 
     .. solution:: Solution for HPC2N
         :class: dropdown
@@ -409,6 +409,7 @@ Exercises
                 (new-env) pkg> status
                       Status `path-to-folder\new-env\Project.toml`
                       [336ed68f] CSV v0.10.9
+                (new-env) pkg> activate 
 
 
     .. solution:: Solution for UPPMAX
@@ -428,6 +429,54 @@ Exercises
                 
                 # Run your Python script 
                 python sum-2args.py 2 3 
+
+.. challenge:: Package environment
+    
+    Create a package environment called ``new_pack`` and activate it. Then, install the
+    package ``CSV`` in this environment. For your knowledge, ``CSV`` is a package that
+    offers tools for dealing with ``.csv`` files. After this, check that this package
+    was installed. Finally, deactivate the environment.
+
+    .. solution:: Solution for HPC2N
+        :class: dropdown
+            
+            .. code-block:: julia
+    
+                shell> pwd            #Check were you are currently located
+                (@v1.8) pkg> generate new_pack
+                     Generating  project new_pack:
+                     new_pack\Project.toml
+                     new_pack\src\new_pack.jl
+                shell> cd new_pack
+                     `path-to-folder\new_pack`
+                (@v1.8) pkg> activate .
+                       Activating project at `path-to-folder\new_pack`
+                (new_pack) pkg> add CSV 
+                (new_pack) pkg> status
+                       Project new_pack v0.1.0
+                       Status `path-to-folder\new_pack\Project.toml`
+                       [336ed68f] CSV v0.10.9
+                (new_pack) pkg> activate
+
+
+    .. solution:: Solution for UPPMAX
+        :class: dropdown
+        
+            This batch script is for UPPMAX. Adding the numbers 2 and 3. 
+            
+            .. code-block:: sh
+    
+                #!/bin/bash
+                #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+                #SBATCH --time=00:05:00 # Asking for 5 minutes
+                #SBATCH -n 1 # Asking for 1 core
+                
+                # Load any modules you need, here for Python 3.9.5
+                module load Python/3.9.5
+                
+                # Run your Python script 
+                python sum-2args.py 2 3 
+
 
 
 
