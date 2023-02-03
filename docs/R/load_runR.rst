@@ -304,3 +304,32 @@ Here is an example of running a short, serial R program at Kebnekaise:
    - Run scripts with ``Rscript <script.R>``
     
 
+Exercises
+---------
+
+.. challenge:: Something about the exercise
+    
+    .. code-block:: R
+    
+        What should go here
+	
+    Some comment 	
+
+
+
+.. solution:: Solution
+
+   .. tabs:: 
+
+      .. tab:: HPC2N
+   
+         :class: dropdown
+    
+            This is for Kebnekaise.
+          
+            .. code-block:: sh
+	  
+         stuff
+	     
+	     
+ 	    
