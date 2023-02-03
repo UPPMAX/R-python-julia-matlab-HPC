@@ -325,8 +325,6 @@ Exercises
 
       .. tab:: UPPMAX
  
-         :class: dropdown
-    
             This is for Rackham.
           
             .. code-block:: sh
@@ -401,8 +399,6 @@ Exercises
 	     
       .. tab:: HPC2N
    
-         :class: dropdown
-    
             This is for Kebnekaise.
           
             .. code-block:: sh
