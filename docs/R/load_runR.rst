@@ -464,3 +464,48 @@ Exercises
          
 	    As you can see above, the main differences here compared to Rackham is that you need to load some prerequisites before you can load R and that doing ``ml spider R/<version>`` will give you a long list of "extensions" which is what the module system calls the system installed R packages. 
  	    
+
+.. challenge:: Load R and run a short R script from the command line
+    
+    .. code-block:: sh
+    
+        1) Load R version 4.0.4 (if you have not done so already)
+	2) Run the small R script called ``hello.R``, using ``Rscript``
+	
+    Remember to check if a module you are loading has prerequisites, and load those first if it does. In this case it depends on whether you do the exercises on Kebnekaise or Rackham. 
+
+.. admonition:: ``hello.R`` (it can also be found under ``R`` in the ``Exercises`` directory on the course GitHub repository (https://github.com/UPPMAX/R-python-julia-HPC). 
+
+   .. code-block:: R
+   
+      message <-"Hello World!"
+      print(message) 
+
+
+.. solution:: Solution
+
+   .. tabs:: 
+
+      .. tab:: UPPMAX
+ 
+            This is for Rackham.
+          
+            .. code-block:: sh
+	    
+	       [bbrydsoe@rackham2 bbrydsoe]$ Rscript hello.R
+	       [1] "Hello World!"
+	       [bbrydsoe@rackham2 bbrydsoe]$
+
+      .. tab:: HPC2N
+ 
+            This is for Kebnekaise. 
+          
+            .. code-block:: sh
+	    
+	       b-an01 [~]$ Rscript hello.R
+	       [1] "Hello World!"
+	       b-an01 [~]$ 
+
+	    
+      As you can see, it is working the same. 
+      
