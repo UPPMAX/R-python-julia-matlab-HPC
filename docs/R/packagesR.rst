@@ -317,29 +317,29 @@ Exercises
 	       [bbrydsoe@rackham3 bbrydsoe]$ mkdir -p $HOME/R-packages-4.0.4
 	    
 
-            .. tab:: From command line. Installing package "anomalize". Using the repo http://ftp.acc.umu.se/mirror/CRAN/
+      .. tab:: From command line. Installing package "anomalize". Using the repo http://ftp.acc.umu.se/mirror/CRAN/
          
-                  .. code-block:: sh
+            .. code-block:: sh
 	 
-	             [bbrydsoe@rackham3 bbrydsoe]$ R --quiet --no-save --no-restore -e "install.packages('anomalize', repo='http://ftp.acc.umu.se/mirror/CRAN/')"
+	       [bbrydsoe@rackham3 bbrydsoe]$ R --quiet --no-save --no-restore -e "install.packages('anomalize', repo='http://ftp.acc.umu.se/mirror/CRAN/')"
 	  
-                  This assumes you have already loaded the R module. If not, then do so first. 
+            This assumes you have already loaded the R module. If not, then do so first. 
 	 
-            .. tab:: From inside R. Installing package "tidyr"
+      .. tab:: From inside R. Installing package "tidyr"
 
-                  .. code-block:: R 
+            .. code-block:: R 
 
-                     > install.packages('tidyr', repos='http://ftp.acc.umu.se/mirror/CRAN/')	     
+               > install.packages('tidyr', repos='http://ftp.acc.umu.se/mirror/CRAN/')	     
 	     
-            .. tab:: Check if the package can be loaded
+      .. tab:: Check if the package can be loaded
 
-                  .. code-block:: R
+            .. code-block:: R
 	 
-	             [bbrydsoe@rackham3 bbrydsoe]$ R
-	             > library("anomalize")
-	             > library("tidyr")
+	       [bbrydsoe@rackham3 bbrydsoe]$ R
+	       > library("anomalize")
+	       > library("tidyr")
 	    
-	    "anomalize" outputs some text/advertisment when loaded. You can ignore this. 
+	   "anomalize" outputs some text/advertisment when loaded. You can ignore this. 
 	 
 
  	    
