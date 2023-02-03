@@ -307,13 +307,15 @@ Here is an example of running a short, serial R program at Kebnekaise:
 Exercises
 ---------
 
-.. challenge:: Something about the exercise
+.. challenge:: Try yourself to load R, start it, check libraries, load a library, quit R
     
     .. code-block:: R
     
-        What should go here
+        1) Load R version 4.0.4 
+	2) Start R. Check which libraries are installed. Load one of them.
+	3) Quit R
 	
-    Some comment 	
+    Remember to check if a module you are loading has prerequisites, and load those first if it does. In this case it depends on whether you do the exercises on Kebnekaise or Rackham. 
 
 
 
@@ -321,6 +323,81 @@ Exercises
 
    .. tabs:: 
 
+      .. tab:: UPPMAX
+   
+         :class: dropdown
+    
+            This is for Rackham.
+          
+            .. code-block:: sh
+	    
+	    [bbrydsoe@rackham3 bbrydsoe]$ ml spider R/4.0.4
+	    
+	    ----------------------------------------------------------------------------
+	      R: R/4.0.4
+	    ----------------------------------------------------------------------------
+	    
+	         This module can be loaded directly: module load R/4.0.4
+		 
+		 Help:
+		     R - use R Version 4.0.4
+		     
+		     https://www.r-project.org
+		     
+		   Many, many R and Bioconductor packages are available in the module 'R_packages/4.0.4'
+
+	    [bbrydsoe@rackham3 bbrydsoe]$ module load R/4.0.4
+	    Nearly all CRAN and BioConductor packages are installed and available by
+	    loading the module R_packages/4.0.4 
+	    [bbrydsoe@rackham3 bbrydsoe]$
+	    
+	    [bbrydsoe@rackham3 bbrydsoe]$ R
+
+            R version 4.0.4 (2021-02-15) -- "Lost Library Book"
+	    Copyright (C) 2021 The R Foundation for Statistical Computing
+	    Platform: x86_64-pc-linux-gnu (64-bit)
+	    
+	    R is free software and comes with ABSOLUTELY NO WARRANTY.
+	    You are welcome to redistribute it under certain conditions.
+	    Type 'license()' or 'licence()' for distribution details.
+	    
+	      Natural language support but running in an English locale
+	      
+	    R is a collaborative project with many contributors.
+	    Type 'contributors()' for more information and
+	    'citation()' on how to cite R or R packages in publications.
+	    
+	    Type 'demo()' for some demos, 'help()' for on-line help, or
+	    'help.start()' for an HTML browser interface to help.
+	    Type 'q()' to quit R.
+	    
+	    > installed.packages()
+                       Package      LibPath
+            base       "base"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+	    boot       "boot"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+	    class      "class"      "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+	    cluster    "cluster"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+	    codetools  "codetools"  "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+	    compiler   "compiler"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+	    datasets   "datasets"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+	    foreign    "foreign"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+	    graphics   "graphics"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+	    grDevices  "grDevices"  "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+	    grid       "grid"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+	    KernSmooth "KernSmooth" "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+	    lattice    "lattice"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+	    MASS       "MASS"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+	    Matrix     "Matrix"     "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+	    ...
+	    
+	    > library("parallel")
+	    > quit()
+	    Save workspace image? [y/n/c]: 
+	    
+
+         The list of installed packages is very long, as you will see for yourself. 
+	 
+	     
       .. tab:: HPC2N
    
          :class: dropdown
@@ -330,6 +407,5 @@ Exercises
             .. code-block:: sh
 	  
          stuff
-	     
 	     
  	    
