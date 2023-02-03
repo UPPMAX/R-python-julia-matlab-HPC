@@ -436,16 +436,15 @@ The corresponding batch scripts for these examples are given here:
 
             .. code-block:: sh
         
-               #!/bin/bash
-               #SBATCH -A hpc2n20xx-xyz
+               #!/bin/bash -l
+               #SBATCH -A naiss2023-22-44
                #SBATCH -J job
                #SBATCH -n 1
                #SBATCH --time=00:10:00
                #SBATCH --error=job.%J.err
                #SBATCH --output=job.%J.out
    
-               ml purge  > /dev/null 2>&1
-               ml Julia/1.8.5-linux-x86_64
+               ml julia/1.8.5
    
                # "time" command is optional
                time julia serial.jl
@@ -456,15 +455,14 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: sh
             
                #!/bin/bash
-               #SBATCH -A hpc2n20xx-xyz
+               #SBATCH -A naiss2023-22-44
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
                #SBATCH --error=job.%J.err
                #SBATCH --output=job.%J.out
    
-               ml purge  > /dev/null 2>&1
-               ml Julia/1.8.5-linux-x86_64
+               ml julia/1.8.5
    
                # "time" command is optional
                time julia -t 8 threaded.jl               
@@ -475,15 +473,14 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: sh
            
                #!/bin/bash
-               #SBATCH -A hpc2n20xx-xyz
+               #SBATCH -A naiss2023-22-44
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
                #SBATCH --error=job.%J.err
                #SBATCH --output=job.%J.out
    
-               ml purge  > /dev/null 2>&1
-               ml Julia/1.8.5-linux-x86_64
+               ml julia/1.8.5
    
                # "time" command is optional
                time julia -p 8 distributed.jl  
@@ -493,17 +490,17 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: sh
            
                #!/bin/bash
-               #SBATCH -A hpc2n20xx-xyz
+               #SBATCH -A naiss2023-22-44
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
                #SBATCH --error=job.%J.err
                #SBATCH --output=job.%J.out
    
-               ml purge  > /dev/null 2>&1
-               ml Julia/1.8.5-linux-x86_64
-               ml foss/2021b
-   
+               ml julia/1.8.5
+               ml gcc/11.3.0 openmpi/4.1.3
+               # "time" command is optional
+
                # export the PATH of the Julia MPI wrapper
                export PATH=/home/u/username/.julia/bin:$PATH
    
