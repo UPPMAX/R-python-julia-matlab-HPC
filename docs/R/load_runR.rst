@@ -395,7 +395,7 @@ Exercises
 	       Save workspace image? [y/n/c]: 
 	    
 
-         The list of installed packages is very long, as you will see for yourself. 
+            The list of installed packages is very long, as you will see for yourself. 
 	 
 	     
       .. tab:: HPC2N
@@ -405,7 +405,68 @@ Exercises
             This is for Kebnekaise.
           
             .. code-block:: sh
-	  
-         stuff
-	     
+	    
+	       b-an01 [~]$ ml spider R/4.0.4
+
+               ----------------------------------------------------------------------------
+	         R: R/4.0.4
+	       ----------------------------------------------------------------------------
+	           Description:
+		     R is a free software environment for statistical computing and
+		     graphics.
+		     
+		     
+		   You will need to load all module(s) on any one of the lines below before the "R/4.0.4" module is available to load.
+		   
+		     GCC/10.2.0  CUDA/11.1.1  OpenMPI/4.0.5
+		     GCC/10.2.0  OpenMPI/4.0.5
+		     
+	           This module provides the following extensions:
+
+                      abc.data/1.0 (E), abc/2.1 (E), abe/3.0.1 (E), abind/1.4-5 (E), acepack/1.4.1 (E), adabag/4.2 (E), ade4/1.7-16 (E), 
+		      ADGofTest/0.3 (E), aggregation/1.0.1 (E), AICcmodavg/2.3-1 (E), akima/0.6-2.1 (E), AlgDesign/1.2.0 (E), AnalyzeFMRI/1.1-23 (E),
+		      animation/2.6 (E), aod/1.3.1 (E), ape/5.4-1 (E), argparse/2.0.3 (E), arm/1.11-2 (E), askpass/1.1 (E), asnipe/1.1.15 (E),
+		      assertive.base/0.0-9 (E), assertive.code/0.0-3 (E), assertive.data.uk/0.0-2 (E), assertive.data.us/0.0-2 (E), 
+		      assertive.data/0.0-3 (E), assertive.datetimes/0.0-3 (E), assertive.files/0.0-2 (E), assertive.matrices/0.0-2 (E), 
+		      assertive.models/0.0-2 (E), assertive.numbers/0.0-2 (E), assertive.properties/0.0-4 (E), assertive.reflection/0.0-5 (E),
+		      assertive.sets/0.0-3 (E), assertive.strings/0.0-3 (E), assertive.types/0.0-3 (E), assertive/0.3-6 (E), assertthat/0.2.1 (E),
+		      AUC/0.3.0 (E), audio/0.1-7 (E), aws/2.5-1 (E), awsMethods/1.1-1 (E), backports/1.2.1 (E), bacr/1.0.1 (E), bartMachine/1.2.6 (E), 
+		      bartMachineJARs/1.1 (E), base (E), base64/2.0 (E), base64enc/0.1-3 (E), BatchJobs/1.8 (E), batchmeans/1.0-4 (E), 
+		      BayesianTools/0.1.7 (E), bayesm/3.1-4 (E), BayesPen/1.0 (E), bayesplot/1.8.0 (E), BB/2019.10-1 (E), BBmisc/1.11 (E), 
+		      bbmle/1.0.23.1 (E), BCEE/1.3.0 (E), BDgraph/2.63 (E), bdsmatrix/1.3-4 (E), beanplot/1.2 (E), beeswarm/0.3.1 (E), 
+		      betareg/3.1-4 (E), BH/1.75.0-0 (E), BiasedUrn/1.07 (E), bibtex/0.4.2.3 (E), BIGL/1.6.1 (E), bigmemory.sri/0.1.3 (E), 
+		      bigmemory/4.5.36 (E), bindr/0.1.1 (E), bindrcpp/0.2.2 (E), bio3d/2.4-1 (E), biom/0.3.12 (E), biomod2/3.4.6 (E), 
+		      bit/4.0.4 (E), bit64/4.0.5 (E), bitops/1.0-6 (E), blavaan/0.3-15 (E), blob/1.2.1 (E), BMA/3.18.14 (E), bmp/0.3 (E), 
+		      ...
+		      
+		      b-an01 [~]$ module load GCC/10.2.0  OpenMPI/4.0.5 R/4.0.4
+		      b-an01 [~]$ R
+		      
+		      R version 4.0.4 (2021-02-15) -- "Lost Library Book"
+		      Copyright (C) 2021 The R Foundation for Statistical Computing
+		      Platform: x86_64-pc-linux-gnu (64-bit)
+		      
+		      R is free software and comes with ABSOLUTELY NO WARRANTY.
+		      You are welcome to redistribute it under certain conditions.
+		      Type 'license()' or 'licence()' for distribution details.
+		      
+		        Natural language support but running in an English locale
+			
+		      R is a collaborative project with many contributors.
+		      Type 'contributors()' for more information and
+		      'citation()' on how to cite R or R packages in publications.
+		      
+		      Type 'demo()' for some demos, 'help()' for on-line help, or
+		      'help.start()' for an HTML browser interface to help.
+		      Type 'q()' to quit R.
+		      
+		      > installed.packages()
+		      ... 
+		      
+		      > library("parallel")
+		      > quit()
+		      Save workspace image? [y/n/c]: 
+
+         
+	    As you can see above, the main differences here compared to Rackham is that you need to load some prerequisites before you can load R and that doing ``ml spider R/<version>`` will give you a long list of "extensions" which is what the module system calls the system installed R packages. 
  	    
