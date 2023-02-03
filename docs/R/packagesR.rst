@@ -315,6 +315,7 @@ Exercises
             [bbrydsoe@rackham3 bbrydsoe]$ echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron
 	    R_LIBS_USER="/home/bbrydsoe/R-packages-%V"
 	    [bbrydsoe@rackham3 bbrydsoe]$ mkdir -p $HOME/R-packages-4.0.4
+	    
 
       .. tab:: From the command line. Installing package "anomalize". I am using the repo http://ftp.acc.umu.se/mirror/CRAN/
          
