@@ -317,7 +317,7 @@ Exercises
 	       [bbrydsoe@rackham3 bbrydsoe]$ mkdir -p $HOME/R-packages-4.0.4
 	    
 
-      .. tab:: From command line
+      .. tab:: Command line
       
             Installing package "anomalize". Using the repo http://ftp.acc.umu.se/mirror/CRAN/
          
@@ -327,13 +327,15 @@ Exercises
 	  
             This assumes you have already loaded the R module. If not, then do so first. 
 	 
-      .. tab:: From inside R. Installing package "tidyr"
+      .. tab:: Inside R
+      
+            Installing package "tidyr". Using the repo http://ftp.acc.umu.se/mirror/CRAN/
 
             .. code-block:: R 
 
                > install.packages('tidyr', repos='http://ftp.acc.umu.se/mirror/CRAN/')	     
 	     
-      .. tab:: Check if the package can be loaded
+      .. tab:: Load library
 
             .. code-block:: R
 	 
