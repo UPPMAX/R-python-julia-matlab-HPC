@@ -269,6 +269,26 @@ If the package is not on CRAN or you want the development version, or you for ot
 
 **NOTE** that if you install a package this way, you need to handle any dependencies yourself. 
 
+.. note:: 
+
+   Places to look for R packages
+   
+   - CRAN (https://cran.r-project.org/)
+   - R-Forge (https://r-forge.r-project.org/)
+   - Project's own GitHub page
+   - etc.
+   
+
+.. keypoints::
+
+   - You can check for installed packages 
+   	- from inside R with ``installed.packages()``
+	- from BASH shell with the 
+		- ``ml help R/<version>`` at UPPMAX
+		- ``ml spider R/<version>`` at HPC2N
+   - Installation of R packages can be done either from within R or from the command line (BASH shell)
+   - CRAN is the recommended place to look for R-packages, but many packages can be found on GitHub and if you want the development version of a package you likely need to get it from GitHub or other place outside CRAN. You would then either download and install manually or install with something like devtools, from within R. 
+
 Exercises
 ---------
 
@@ -298,25 +318,3 @@ Exercises
 	     
 	     
  	    
-Summary
--------
-
-.. note:: 
-
-   Places to look for R packages
-   
-   - CRAN (https://cran.r-project.org/)
-   - R-Forge (https://r-forge.r-project.org/)
-   - Project's own GitHub page
-   - etc.
-   
-
-.. keypoints::
-
-   - You can check for installed packages 
-   	- from inside R with ``installed.packages()``
-	- from BASH shell with the 
-		- ``ml help R/<version>`` at UPPMAX
-		- ``ml spider R/<version>`` at HPC2N
-   - Installation of R packages can be done either from within R or from the command line (BASH shell)
-   - CRAN is the recommended place to look for R-packages, but many packages can be found on GitHub and if you want the development version of a package you likely need to get it from GitHub or other place outside CRAN. You would then either download and install manually or install with something like devtools, from within R. 
