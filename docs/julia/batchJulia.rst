@@ -235,281 +235,278 @@ Parallel code
             # Add the installed ``mpiexecjl`` wrapper to your path on the Linux command line
             $ export PATH=/home/u/username/.julia/bin:$PATH
             # Now the wrapper should be available on the command line 
+.. tabs:: 
 
-        .. tabs:: 
+   .. tab:: serial.jl 
 
-           .. tab:: serial.jl 
+        .. code-block:: julia 
 
-                .. code-block:: julia 
-
-                    # nr. of grid points
-                    n = 100000                                                                                                                                           
-                            
-                    function integration2d_julia(n)
-                    # interval size
-                    h = π/n 
-                    # cummulative variable
-                    mysum = 0.0
-                    # regular integration in the X axis
-                    for i in 0:n-1
-                        x = h*(i+0.5)
-                    #   regular integration in the Y axis
-                        for j in 0:n-1
-                        y = h*(j + 0.5)
-                        mysum = mysum + sin(x+y)
-                        end   
-                    end        
-                    return mysum*h*h
-                    end          
-                        
-                    res = integration2d_julia(n)
-                    println(res)
-
-
-           .. tab:: threaded.jl
-
-                .. code-block:: julia 
-
-                    using .Threads                                                                                                                                       
+            # nr. of grid points
+            n = 100000                                                                                                                                           
                     
-                    # nr. of grid points
-                    n = 100000
-                    
-                    # nr. of threads
-                    numthreads = nthreads()
-                    
-                    # array for storing partial sums from threads
-                    partial_integrals = zeros(Float64, numthreads)
-                    
-                    function integration2d_julia_threaded(n,numthreads,threadindex)
-                    # interval size
-                    h = π/convert(Float64,n)
-                    # cummulative variable
-                    mysum = 0.0
-                    # workload for each thread
-                    workload = convert(Int64, n/numthreads)
-                    # lower and upper integration limits for each thread
-                    lower_lim = workload * (threadindex - 1)
-                    upper_lim  = workload * threadindex -1
-                    
-                    ## regular integration in the X axis
-                    for i in lower_lim:upper_lim
-                        x = h*(i + 0.5)
-                    #   regular integration in the Y axis
-                        for j in 0:n-1
-                        y = h*(j + 0.5)
-                        mysum = mysum + sin(x+y)
-                        end
-                    end
-                    partial_integrals[threadindex] = mysum*h*h
-                    return
-                    end
-                    
-                    # The threads can compute now the partial summations
-                    @threads for i in 1:numthreads
-                        integration2d_julia_threaded(n,numthreads,threadid())
-                    end
-                    
-                    # The main thread now reduces the array
-                    total_sum = sum(partial_integrals)
-                    
-                    println("The integral value is $total_sum")
-
-           .. tab:: distributed.jl
-
-                .. code-block:: julia 
-
-                    @everywhere begin                                                                                                                                    
-                    using Distributed
-                    using SharedArrays
-                    end
-                    
-                    # nr. of grid points
-                    n = 100000
-                    
-                    # nr. of workers
-                    numworkers = nworkers()
-                    
-                    # array for storing partial sums from workers
-                    partial_integrals = SharedArray( zeros(Float64, numworkers) )
-                    
-                    @everywhere function integration2d_julia_distributed(n,numworkers,workerid,A::SharedArray)
-                    # interval size
-                    h = π/convert(Float64,n)
-                    # cummulative variable
-                    mysum = 0.0
-                    # workload for each worker
-                    workload = convert(Int64, n/numworkers)
-                    # lower and upper integration limits for each thread
-                    lower_lim = workload * (workerid - 2)
-                    upper_lim = workload * (workerid - 1) -1
-                    
-                    # regular integration in the X axis
-                    for i in lower_lim:upper_lim
-                        x = h*(i + 0.5)
-                    #   regular integration in the Y axis
-                        for j in 0:n-1
-                        y = h*(j + 0.5)
-                        mysum = mysum + sin(x+y)
-                        end
-                    end
-                    A[workerid-1] = mysum*h*h
-                    return
-                    end
-                    
-                    # The workers can compute now the partial summations
-                    @sync @distributed for i in 1:numworkers
-                        integration2d_julia_distributed(n,numworkers,myid(),partial_integrals)
-                    end
-                    
-                    # The main process now reduces the array
-                    total_sum = sum(partial_integrals)
-                    
-                    println("The integral value is $total_sum")
-
-
-           .. tab:: mpi.jl
-
-                .. code-block:: julia 
-
-                    using MPI
-                    MPI.Init()
-                    
-                    # Initialize the communicator
-                    comm = MPI.COMM_WORLD
-                    # Get the ranks of the processes
-                    rank = MPI.Comm_rank(comm)
-                    # Get the size of the communicator
-                    size = MPI.Comm_size(comm)
-                    
-                    # root process
-                    root = 0
-                    
-                    # nr. of grid points
-                    n = 100000
-                    
-                    function integration2d_julia_mpi(n,numworkers,workerid)
-                    
-                    # interval size
-                    h = π/convert(Float64,n)
-                    # cummulative variable
-                    mysum = 0.0                                                                                                                                        
-                    # workload for each worker
-                    workload = convert(Int64, n/numworkers)
-                    # lower and upper integration limits for each thread
-                    lower_lim = workload * workerid
-                    upper_lim = workload * (workerid + 1) -1
-                    
-                    # regular integration in the X axis
-                    for i in lower_lim:upper_lim
-                        x = h*(i + 0.5)
-                    #   regular integration in the Y axis
-                        for j in 0:n-1
-                        y = h*(j + 0.5)
-                        mysum = mysum + sin(x+y)
-                        end
-                    end
-                    partial_integrals = mysum*h*h
-                    return partial_integrals
-                    end
-                    
-                    # The workers can compute now the partial summations
-                    p = integration2d_julia_mpi(n,size,rank)
-                    
-                    # The root process now reduces the array
-                    integral = MPI.Reduce(p,+,root, comm)
-                    
-                    if rank == root
-                    println("The integral value is $integral")
-                    end
-                    
-                    MPI.Finalize()
-
-
-        The corresponding batch scripts for these examples are given here:
-
-        .. tabs:: 
-
-           .. tab:: job-serial.sh  
-
-                .. code-block:: sh
+            function integration2d_julia(n)
+            # interval size
+            h = π/n 
+            # cummulative variable
+            mysum = 0.0
+            # regular integration in the X axis
+            for i in 0:n-1
+                x = h*(i+0.5)
+            #   regular integration in the Y axis
+                for j in 0:n-1
+                y = h*(j + 0.5)
+                mysum = mysum + sin(x+y)
+                end   
+            end        
+            return mysum*h*h
+            end          
                 
-                    #!/bin/bash
-                    #SBATCH -A hpc2n20xx-xyz
-                    #SBATCH -J job
-                    #SBATCH -n 1
-                    #SBATCH --time=00:10:00
-                    #SBATCH --error=job.%J.err
-                    #SBATCH --output=job.%J.out
-
-                    ml purge  > /dev/null 2>&1
-                    ml Julia/1.8.5-linux-x86_64
-
-                    # "time" command is optional
-                    time julia serial.jl
+            res = integration2d_julia(n)
+            println(res)
 
 
-           .. tab:: job-threaded.sh 
+   .. tab:: threaded.jl
 
-                .. code-block:: sh
-                
-                    #!/bin/bash
-                    #SBATCH -A hpc2n20xx-xyz
-                    #SBATCH -J job
-                    #SBATCH -n 8
-                    #SBATCH --time=00:10:00
-                    #SBATCH --error=job.%J.err
-                    #SBATCH --output=job.%J.out
+        .. code-block:: julia 
 
-                    ml purge  > /dev/null 2>&1
-                    ml Julia/1.8.5-linux-x86_64
+            using .Threads                                                                                                                                       
+            
+            # nr. of grid points
+            n = 100000
+            
+            # nr. of threads
+            numthreads = nthreads()
+            
+            # array for storing partial sums from threads
+            partial_integrals = zeros(Float64, numthreads)
+            
+            function integration2d_julia_threaded(n,numthreads,threadindex)
+            # interval size
+            h = π/convert(Float64,n)
+            # cummulative variable
+            mysum = 0.0
+            # workload for each thread
+            workload = convert(Int64, n/numthreads)
+            # lower and upper integration limits for each thread
+            lower_lim = workload * (threadindex - 1)
+            upper_lim  = workload * threadindex -1
+            
+            ## regular integration in the X axis
+            for i in lower_lim:upper_lim
+                x = h*(i + 0.5)
+            #   regular integration in the Y axis
+                for j in 0:n-1
+                y = h*(j + 0.5)
+                mysum = mysum + sin(x+y)
+                end
+            end
+            partial_integrals[threadindex] = mysum*h*h
+            return
+            end
+            
+            # The threads can compute now the partial summations
+            @threads for i in 1:numthreads
+                integration2d_julia_threaded(n,numthreads,threadid())
+            end
+            
+            # The main thread now reduces the array
+            total_sum = sum(partial_integrals)
+            
+            println("The integral value is $total_sum")
 
-                    # "time" command is optional
-                    time julia -t 8 threaded.jl               
+   .. tab:: distributed.jl
 
-           .. tab:: job-distributed.sh 
+        .. code-block:: julia 
+
+            @everywhere begin                                                                                                                                    
+            using Distributed
+            using SharedArrays
+            end
+            
+            # nr. of grid points
+            n = 100000
+            
+            # nr. of workers
+            numworkers = nworkers()
+            
+            # array for storing partial sums from workers
+            partial_integrals = SharedArray( zeros(Float64, numworkers) )
+            
+            @everywhere function integration2d_julia_distributed(n,numworkers,workerid,A::SharedArray)
+            # interval size
+            h = π/convert(Float64,n)
+            # cummulative variable
+            mysum = 0.0
+            # workload for each worker
+            workload = convert(Int64, n/numworkers)
+            # lower and upper integration limits for each thread
+            lower_lim = workload * (workerid - 2)
+            upper_lim = workload * (workerid - 1) -1
+            
+            # regular integration in the X axis
+            for i in lower_lim:upper_lim
+                x = h*(i + 0.5)
+            #   regular integration in the Y axis
+                for j in 0:n-1
+                y = h*(j + 0.5)
+                mysum = mysum + sin(x+y)
+                end
+            end
+            A[workerid-1] = mysum*h*h
+            return
+            end
+            
+            # The workers can compute now the partial summations
+            @sync @distributed for i in 1:numworkers
+                integration2d_julia_distributed(n,numworkers,myid(),partial_integrals)
+            end
+            
+            # The main process now reduces the array
+            total_sum = sum(partial_integrals)
+            
+            println("The integral value is $total_sum")
 
 
-                .. code-block:: sh
-                
-                    #!/bin/bash
-                    #SBATCH -A hpc2n20xx-xyz
-                    #SBATCH -J job
-                    #SBATCH -n 8
-                    #SBATCH --time=00:10:00
-                    #SBATCH --error=job.%J.err
-                    #SBATCH --output=job.%J.out
+   .. tab:: mpi.jl
 
-                    ml purge  > /dev/null 2>&1
-                    ml Julia/1.8.5-linux-x86_64
+        .. code-block:: julia 
 
-                    # "time" command is optional
-                    time julia -p 8 distributed.jl  
+            using MPI
+            MPI.Init()
+            
+            # Initialize the communicator
+            comm = MPI.COMM_WORLD
+            # Get the ranks of the processes
+            rank = MPI.Comm_rank(comm)
+            # Get the size of the communicator
+            size = MPI.Comm_size(comm)
+            
+            # root process
+            root = 0
+            
+            # nr. of grid points
+            n = 100000
+            
+            function integration2d_julia_mpi(n,numworkers,workerid)
+            
+            # interval size
+            h = π/convert(Float64,n)
+            # cummulative variable
+            mysum = 0.0                                                                                                                                        
+            # workload for each worker
+            workload = convert(Int64, n/numworkers)
+            # lower and upper integration limits for each thread
+            lower_lim = workload * workerid
+            upper_lim = workload * (workerid + 1) -1
+            
+            # regular integration in the X axis
+            for i in lower_lim:upper_lim
+                x = h*(i + 0.5)
+            #   regular integration in the Y axis
+                for j in 0:n-1
+                y = h*(j + 0.5)
+                mysum = mysum + sin(x+y)
+                end
+            end
+            partial_integrals = mysum*h*h
+            return partial_integrals
+            end
+            
+            # The workers can compute now the partial summations
+            p = integration2d_julia_mpi(n,size,rank)
+            
+            # The root process now reduces the array
+            integral = MPI.Reduce(p,+,root, comm)
+            
+            if rank == root
+            println("The integral value is $integral")
+            end
+            
+            MPI.Finalize()
 
-           .. tab:: job-mpi.sh 
+The corresponding batch scripts for these examples are given here:
 
-                .. code-block:: sh
-                
-                    #!/bin/bash
-                    #SBATCH -A hpc2n20xx-xyz
-                    #SBATCH -J job
-                    #SBATCH -n 8
-                    #SBATCH --time=00:10:00
-                    #SBATCH --error=job.%J.err
-                    #SBATCH --output=job.%J.out
+.. tabs:: 
 
-                    ml purge  > /dev/null 2>&1
-                    ml Julia/1.8.5-linux-x86_64
-                    ml foss/2021b
+   .. tab:: job-serial.sh  
 
-                    # export the PATH of the Julia MPI wrapper
-                    export PATH=/home/u/username/.julia/bin:$PATH
+        .. code-block:: sh
+        
+            #!/bin/bash
+            #SBATCH -A hpc2n20xx-xyz
+            #SBATCH -J job
+            #SBATCH -n 1
+            #SBATCH --time=00:10:00
+            #SBATCH --error=job.%J.err
+            #SBATCH --output=job.%J.out
 
-                    time mpiexecjl -np 8 julia mpi.jl
+            ml purge  > /dev/null 2>&1
+            ml Julia/1.8.5-linux-x86_64
+
+            # "time" command is optional
+            time julia serial.jl
 
 
+   .. tab:: job-threaded.sh 
+
+        .. code-block:: sh
+        
+            #!/bin/bash
+            #SBATCH -A hpc2n20xx-xyz
+            #SBATCH -J job
+            #SBATCH -n 8
+            #SBATCH --time=00:10:00
+            #SBATCH --error=job.%J.err
+            #SBATCH --output=job.%J.out
+
+            ml purge  > /dev/null 2>&1
+            ml Julia/1.8.5-linux-x86_64
+
+            # "time" command is optional
+            time julia -t 8 threaded.jl               
+
+   .. tab:: job-distributed.sh 
 
 
+        .. code-block:: sh
+        
+            #!/bin/bash
+            #SBATCH -A hpc2n20xx-xyz
+            #SBATCH -J job
+            #SBATCH -n 8
+            #SBATCH --time=00:10:00
+            #SBATCH --error=job.%J.err
+            #SBATCH --output=job.%J.out
+
+            ml purge  > /dev/null 2>&1
+            ml Julia/1.8.5-linux-x86_64
+
+            # "time" command is optional
+            time julia -p 8 distributed.jl  
+
+   .. tab:: job-mpi.sh 
+
+        .. code-block:: sh
+        
+            #!/bin/bash
+            #SBATCH -A hpc2n20xx-xyz
+            #SBATCH -J job
+            #SBATCH -n 8
+            #SBATCH --time=00:10:00
+            #SBATCH --error=job.%J.err
+            #SBATCH --output=job.%J.out
+
+            ml purge  > /dev/null 2>&1
+            ml Julia/1.8.5-linux-x86_64
+            ml foss/2021b
+
+            # export the PATH of the Julia MPI wrapper
+            export PATH=/home/u/username/.julia/bin:$PATH
+
+            time mpiexecjl -np 8 julia mpi.jl
+
+
+ 
 GPU code
 ''''''''
 
@@ -521,11 +518,26 @@ cluster and install the ``CUDA`` package in Julia as in the next sequence of com
 
    .. tab:: UPPMAX
 
-        Short GPU example for running on Snowy.         
+      - This can only be done on Snowy or Bianca. 
+      - Then either create an interactive session or make a batch job
+      - CUDA is installed at system level so they do not need to be loaded. 
+        
+      - On snowy 
+        
+      .. code-block:: sh
+            
+         $ interactive -A <proj> -n 1 -M snowy --gres=gpu:1  -t 3:00:00
+         
+            $ ml Julia/1.8.5   # Julia version
+            $ julia
+            (v1.8) pkg> add CUDA 
+                Updating registry at `~/.julia/registries/General.toml`
+                Resolving package versions...
+                Installed CEnum ───────── v0.4.2
+                ...
+        
        
-        .. code-block:: sh
-
-            FIX for UPPMAX ...
+        
             
 
    .. tab:: HPC2N
@@ -554,7 +566,23 @@ reference point, we show the simulation on CPUs as well.
        
         .. code-block:: sh
 
-            FIX for UPPMAX ...
+          
+            #!/bin/bash -l
+            #SBATCH -A naiss2023-22-44    # your project_ID  
+            #SBATCH -M snowy
+            #SBATCH -p node
+            ##SBATCH -C gpu   #NB: Only for Bianca
+            #SBATCH -N 1
+            #SBATCH --job-name=juliaGPU         # create a short name for your job
+            #SBATCH --gpus-per-node=1             # number of gpus per node (Bianca 2, Snowy 1)
+            #SBATCH --time=00:15:00          # total run time limit (HH:MM:SS)
+            #SBATCH --qos=short              # if test run t<15 min
+            #SBATCH --mail-type=begin        # send email when job begins
+            #SBATCH --mail-type=end          # send email when job ends
+            #SBATCH --mail-user=bjorn.claremar@uppmax.uu.se
+            
+            module load julia/1.8.5      # system CUDA works as of today
+            julia script-gpu.jl
             
 
    .. tab:: HPC2N
@@ -654,17 +682,17 @@ Exercises
             
             .. code-block:: sh
     
-                #!/bin/bash
-                #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+                #!/bin/bash -l
+                #SBATCH -A naiss2023-22-44 # Change to your own after the course
+                #SBATCH -J job-serial        # name of the job         
+                #SBATCH -n 1                 # nr. tasks  
                 #SBATCH --time=00:05:00 # Asking for 5 minutes
-                #SBATCH -n 1 # Asking for 1 core
+                #SBATCH --error=job.%J.err   # error file
+                #SBATCH --output=job.%J.out  # output file                                                                                    
+                module load julia/1.8.5
                 
-                # Load any modules you need, here for Python 3.9.5
-                module load Python/3.9.5
+                julia serial-sum.jl Arg1 Arg2    # run the serial script
                 
-                # Run your Python script 
-                python sum-2args.py 2 3 
-
 
 
 .. challenge:: Run the GPU script
@@ -716,15 +744,13 @@ Exercises
             .. code-block:: sh
     
                 #!/bin/bash
-                #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+                #SBATCH -A naiss2023-22-44 # Change to your own after the course
                 #SBATCH --time=00:05:00 # Asking for 5 minutes
                 #SBATCH -n 1 # Asking for 1 core
                 
-                # Load any modules you need, here for Python 3.9.5
-                module load Python/3.9.5
-                
-                # Run your Python script 
-                python sum-2args.py 2 3 
+                ml Julia/1.8.5-linux-x86_64
+
+                julia script-gpu.jl
 
  
 
