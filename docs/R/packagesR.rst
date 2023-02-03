@@ -333,7 +333,7 @@ Exercises
 
             .. code-block:: R 
 
-               > install.packages('tidyr', repos='http://ftp.acc.umu.se/mirror/CRAN/')	     
+               > install.packages('tidyr', repo='http://ftp.acc.umu.se/mirror/CRAN/')	     
 	     
       .. tab:: Load library
 
