@@ -292,29 +292,53 @@ If the package is not on CRAN or you want the development version, or you for ot
 Exercises
 ---------
 
-.. challenge:: Something about the exercise
-    
-    .. code-block:: R
-    
-        What should go here
-	
-    Some comment 	
+.. challenge:: Install a package with automatic download
 
+   1) First do the setup of .Renviron and create the directory for installing R packages
+   2) From the command line. Suggestion: "anomalize"
+   3) From inside R. Suggestion: "tidyr"
+   4) Start R and see if the library can be loaded. 
+   
+   These are both on CRAN, and this way any dependencies will be installed as well. 
+   
+   Remember to pick a repo that is nearby, to install from: https://cran.r-project.org/mirrors.html 
 
 
 .. solution:: Solution
 
    .. tabs:: 
 
-      .. tab:: HPC2N
-   
-         :class: dropdown
-    
-            This is for Kebnekaise.
-          
-            .. code-block:: sh
+      .. tab:: Setup
+      
+         .. code-block:: sh
+	 
+            [bbrydsoe@rackham3 bbrydsoe]$ echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron
+	    R_LIBS_USER="/home/bbrydsoe/R-packages-%V"
+	    [bbrydsoe@rackham3 bbrydsoe]$ mkdir -p $HOME/R-packages-4.0.4
+
+      .. tab:: From the command line. Installing package "anomalize". I am using the repo http://ftp.acc.umu.se/mirror/CRAN/
+         
+         .. code-block:: sh
+	 
+	    [bbrydsoe@rackham3 bbrydsoe]$ R --quiet --no-save --no-restore -e "install.packages('anomalize', repo='http://ftp.acc.umu.se/mirror/CRAN/')"
 	  
-         stuff
+         This assumes you have already loaded the R module. If not, then do so first. 
+	 
+      .. tab:: From inside R. Installing package "tidyr"
+
+         .. code-block:: R 
+
+            install.packages('tidyr', repos='http://ftp.acc.umu.se/mirror/CRAN/')	     
 	     
-	     
+      .. tab:: Check if the package can be loaded
+
+         .. code-block:: R
+	 
+	    [bbrydsoe@rackham3 bbrydsoe]$ R
+	    > library("anomalize")
+	    > library("tidyr")
+	    
+	 "anomalize" outputs some text/advertisment when loaded. You can ignore this. 
+	 
+
  	    
