@@ -208,7 +208,7 @@ Parallel code
                  [ Info: Installing `mpiexecjl` to `/home/u/username/.julia/bin`...
                  [ Info: Done!
             # Add the installed ``mpiexecjl`` wrapper to your path on the Linux command line
-            $ export PATH=/home/u/username/.julia/bin:$PATH
+            $ export PATH=~/.julia/bin:$PATH
             # Now the wrapper should be available on the command line 
             
 
