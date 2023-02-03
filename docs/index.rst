@@ -50,7 +50,7 @@ Preliminary schedule
 Some practicals
 ---------------
 
-.. info:: Earlier courses 
+.. admonition:: Earlier courses 
 
    - HPC-Python: https://uppmax.github.io/HPC-python
      - Q/A are public at the HackMD pages
