@@ -474,7 +474,7 @@ Exercises
 	
     Remember to check if a module you are loading has prerequisites, and load those first if it does. In this case it depends on whether you do the exercises on Kebnekaise or Rackham. 
 
-.. admonition:: ``hello.R`` (it can also be found under ``R`` in the ``Exercises`` directory on the course GitHub repository (https://github.com/UPPMAX/R-python-julia-HPC). 
+.. admonition:: "hello.R" (it can also be found under "R" in the "Exercises" directory on the course GitHub repository (https://github.com/UPPMAX/R-python-julia-HPC). 
 
    .. code-block:: R
    
