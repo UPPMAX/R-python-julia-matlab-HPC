@@ -317,7 +317,9 @@ Exercises
 	       [bbrydsoe@rackham3 bbrydsoe]$ mkdir -p $HOME/R-packages-4.0.4
 	    
 
-      .. tab:: From command line. Installing package "anomalize". Using the repo http://ftp.acc.umu.se/mirror/CRAN/
+      .. tab:: From command line
+      
+            Installing package "anomalize". Using the repo http://ftp.acc.umu.se/mirror/CRAN/
          
             .. code-block:: sh
 	 
