@@ -428,83 +428,167 @@ The corresponding batch scripts for these examples are given here:
 
 .. tabs:: 
 
-   .. tab:: job-serial.sh  
+   .. tab:: UPPMAX 
+   
+      .. tabs::
 
-        .. code-block:: sh
+         .. tab:: job-serial.sh  
+
+            .. code-block:: sh
         
-            #!/bin/bash
-            #SBATCH -A hpc2n20xx-xyz
-            #SBATCH -J job
-            #SBATCH -n 1
-            #SBATCH --time=00:10:00
-            #SBATCH --error=job.%J.err
-            #SBATCH --output=job.%J.out
+               #!/bin/bash
+               #SBATCH -A hpc2n20xx-xyz
+               #SBATCH -J job
+               #SBATCH -n 1
+               #SBATCH --time=00:10:00
+               #SBATCH --error=job.%J.err
+               #SBATCH --output=job.%J.out
+   
+               ml purge  > /dev/null 2>&1
+               ml Julia/1.8.5-linux-x86_64
+   
+               # "time" command is optional
+               time julia serial.jl
 
-            ml purge  > /dev/null 2>&1
-            ml Julia/1.8.5-linux-x86_64
 
-            # "time" command is optional
-            time julia serial.jl
+         .. tab:: job-threaded.sh 
+   
+            .. code-block:: sh
+            
+               #!/bin/bash
+               #SBATCH -A hpc2n20xx-xyz
+               #SBATCH -J job
+               #SBATCH -n 8
+               #SBATCH --time=00:10:00
+               #SBATCH --error=job.%J.err
+               #SBATCH --output=job.%J.out
+   
+               ml purge  > /dev/null 2>&1
+               ml Julia/1.8.5-linux-x86_64
+   
+               # "time" command is optional
+               time julia -t 8 threaded.jl               
+   
+         .. tab:: job-distributed.sh 
+   
+   
+            .. code-block:: sh
+           
+               #!/bin/bash
+               #SBATCH -A hpc2n20xx-xyz
+               #SBATCH -J job
+               #SBATCH -n 8
+               #SBATCH --time=00:10:00
+               #SBATCH --error=job.%J.err
+               #SBATCH --output=job.%J.out
+   
+               ml purge  > /dev/null 2>&1
+               ml Julia/1.8.5-linux-x86_64
+   
+               # "time" command is optional
+               time julia -p 8 distributed.jl  
+   
+         .. tab:: job-mpi.sh 
+   
+            .. code-block:: sh
+           
+               #!/bin/bash
+               #SBATCH -A hpc2n20xx-xyz
+               #SBATCH -J job
+               #SBATCH -n 8
+               #SBATCH --time=00:10:00
+               #SBATCH --error=job.%J.err
+               #SBATCH --output=job.%J.out
+   
+               ml purge  > /dev/null 2>&1
+               ml Julia/1.8.5-linux-x86_64
+               ml foss/2021b
+   
+               # export the PATH of the Julia MPI wrapper
+               export PATH=/home/u/username/.julia/bin:$PATH
+   
+               time mpiexecjl -np 8 julia mpi.jl
+   
+   .. tab:: HPC2N 
+   
+      .. tabs::
 
+         .. tab:: job-serial.sh  
 
-   .. tab:: job-threaded.sh 
-
-        .. code-block:: sh
+            .. code-block:: sh
         
-            #!/bin/bash
-            #SBATCH -A hpc2n20xx-xyz
-            #SBATCH -J job
-            #SBATCH -n 8
-            #SBATCH --time=00:10:00
-            #SBATCH --error=job.%J.err
-            #SBATCH --output=job.%J.out
-
-            ml purge  > /dev/null 2>&1
-            ml Julia/1.8.5-linux-x86_64
-
-            # "time" command is optional
-            time julia -t 8 threaded.jl               
-
-   .. tab:: job-distributed.sh 
+               #!/bin/bash
+               #SBATCH -A hpc2n20xx-xyz
+               #SBATCH -J job
+               #SBATCH -n 1
+               #SBATCH --time=00:10:00
+               #SBATCH --error=job.%J.err
+               #SBATCH --output=job.%J.out
+   
+               ml purge  > /dev/null 2>&1
+               ml Julia/1.8.5-linux-x86_64
+   
+               # "time" command is optional
+               time julia serial.jl
 
 
-        .. code-block:: sh
-        
-            #!/bin/bash
-            #SBATCH -A hpc2n20xx-xyz
-            #SBATCH -J job
-            #SBATCH -n 8
-            #SBATCH --time=00:10:00
-            #SBATCH --error=job.%J.err
-            #SBATCH --output=job.%J.out
-
-            ml purge  > /dev/null 2>&1
-            ml Julia/1.8.5-linux-x86_64
-
-            # "time" command is optional
-            time julia -p 8 distributed.jl  
-
-   .. tab:: job-mpi.sh 
-
-        .. code-block:: sh
-        
-            #!/bin/bash
-            #SBATCH -A hpc2n20xx-xyz
-            #SBATCH -J job
-            #SBATCH -n 8
-            #SBATCH --time=00:10:00
-            #SBATCH --error=job.%J.err
-            #SBATCH --output=job.%J.out
-
-            ml purge  > /dev/null 2>&1
-            ml Julia/1.8.5-linux-x86_64
-            ml foss/2021b
-
-            # export the PATH of the Julia MPI wrapper
-            export PATH=/home/u/username/.julia/bin:$PATH
-
-            time mpiexecjl -np 8 julia mpi.jl
-
+         .. tab:: job-threaded.sh 
+   
+            .. code-block:: sh
+            
+               #!/bin/bash
+               #SBATCH -A hpc2n20xx-xyz
+               #SBATCH -J job
+               #SBATCH -n 8
+               #SBATCH --time=00:10:00
+               #SBATCH --error=job.%J.err
+               #SBATCH --output=job.%J.out
+   
+               ml purge  > /dev/null 2>&1
+               ml Julia/1.8.5-linux-x86_64
+   
+               # "time" command is optional
+               time julia -t 8 threaded.jl               
+   
+         .. tab:: job-distributed.sh 
+   
+   
+            .. code-block:: sh
+           
+               #!/bin/bash
+               #SBATCH -A hpc2n20xx-xyz
+               #SBATCH -J job
+               #SBATCH -n 8
+               #SBATCH --time=00:10:00
+               #SBATCH --error=job.%J.err
+               #SBATCH --output=job.%J.out
+   
+               ml purge  > /dev/null 2>&1
+               ml Julia/1.8.5-linux-x86_64
+   
+               # "time" command is optional
+               time julia -p 8 distributed.jl  
+   
+         .. tab:: job-mpi.sh 
+   
+            .. code-block:: sh
+           
+               #!/bin/bash
+               #SBATCH -A hpc2n20xx-xyz
+               #SBATCH -J job
+               #SBATCH -n 8
+               #SBATCH --time=00:10:00
+               #SBATCH --error=job.%J.err
+               #SBATCH --output=job.%J.out
+   
+               ml purge  > /dev/null 2>&1
+               ml Julia/1.8.5-linux-x86_64
+               ml foss/2021b
+   
+               # export the PATH of the Julia MPI wrapper
+               export PATH=/home/u/username/.julia/bin:$PATH
+   
+               time mpiexecjl -np 8 julia mpi.jl
 
  
 GPU code
