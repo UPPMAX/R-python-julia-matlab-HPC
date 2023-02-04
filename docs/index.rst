@@ -281,14 +281,14 @@ Material for improving your programming skills
    julia/isolatedJulia.rst
    julia/batchJulia.md
    julia/interactiveJulia.md
-   julia/exercisesPython.rst
-   julia/summaryPython.rst
+   julia/exercisesJulia.rst
+   julia/summaryJulia.rst
    
 .. toctree::
    :maxdepth: 2
    :caption: R Lessons:
 
-   R/intro.rst
+   R/introR.rst
    R/load_runR.rst
    R/packagesR.rst
    R/isolatedR
