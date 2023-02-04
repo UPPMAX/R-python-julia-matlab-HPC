@@ -1,5 +1,7 @@
 Summary
-==============
+=======
+
+**FIX**
 
 .. keypoints::
 
@@ -54,11 +56,6 @@ Summary
       -  You deploy GPU nodes via SLURM, either in interactive mode or batch
       -  In Python the numba package is handy
 
-   - Machine Learning
-      - At all clusters you will find PyTorch, TensorFlow, Scikit-learn
-      - The loading are slightly different at the clusters
-         - UPPMAX: All tools are available from the module ``python_ML_packages``
-         - HPC2N: ``module load GCC/10.3.0  OpenMPI/4.1.1 TensorFlow/2.6.0-CUDA-11.3.1``
 
 
 
