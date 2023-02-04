@@ -825,7 +825,7 @@ Exercises
             
             .. code-block:: sh
     
-                :wq#SBATCH -A <project with Snowy/Bianca access    # your project_ID  
+                #SBATCH -A <project with Snowy/Bianca access    # your project_ID  
                 #SBATCH -M snowy
                 #SBATCH -p node
                 ##SBATCH -C gpu   #NB: Only for Bianca
