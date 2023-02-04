@@ -1,5 +1,5 @@
-Interactive work on the compute nodes and RStudio
-=================================================
+Running RStudio and interactive work on the compute nodes
+=========================================================
 
 .. note::
 
@@ -23,6 +23,13 @@ There are several ways to run Python interactively
 - Directly on the login nodes: **only** do this for short jobs that do not take a lot of resources
 - As an interactive job on the computer nodes, launched via the batch system
 - Jupyter notebooks (UPPMAX)
+
+Running RStudio
+---------------
+
+* Start
+* To think about
+* 
 
 General
 -------
