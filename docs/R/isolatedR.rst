@@ -8,7 +8,11 @@ Isolated environments
    - You can create one for each project and no problem if the two projects require different versions.
    - You can remove the environment and create a new one, if not needed or with errors.
    
-``conda`` works as an isolated environment. Below we present the ``pip`` way with "virtual environments", as well as installing using setup.py! Installing with a virtual environment is the only recommended way at HPC2N! 
+R is not very well known for virtual environments like Python and Julia. However:
+
+>The ``renv`` package is a new effort to bring project-local R dependency management to your projects. The goal is for renv to be a robust, stable replacement for the Packrat package, with fewer surprises and better default behaviors.
+
+
 
 .. questions::
 
@@ -21,21 +25,33 @@ Isolated environments
 General procedures   
 ------------------
 
-You will often have the situation that your project(s) use different versions of Python and different versions of packages. This is great if you need different versions of a package for different tasks, for instance.
-As an example, maybe you have been using TensorFlow 1.x.x for your project and now you need to install a package that requires TensorFlow 2.x.x but you will still be needing the old version of TensorFlow for another package, for instance. This is easily solved with isolated environments.
+You will now and then  have the situation that your project(s) use different versions of R and different versions of packages. This is great if you need different versions of a package for different tasks, for instance. This is easily solved with isolated environments.
 
-Isolated environments lets you create separate workspaces for different versions of Python and/or different versions of packages. You can activate and deactivate them one at a time, and work as if the other workspace does not exist.
+Isolated environments lets you create separate workspaces for different versions of R and/or different versions of packages. You can activate and deactivate them one at a time, and work as if the other workspace does not exist.
 
-There are different tools for creating an isolated environement, but they all have some things in common. At both UPPMAX and HPC2N the workflow is: 
+>Underlying the philosophy of ``renv`` is that any of your existing workflows should just work as they did before – ``renv`` helps manage library paths (and other project-specific state) to help isolate your project’s R dependencies, and the existing tools you’ve used for managing R packages (e.g. ``install.packages()``, ``remove.packages()``) should work as they did before.
+https://rstudio.github.io/renv/articles/renv.html
 
-- You load the Python module you will be using, as well as any site-installed package modules (requires the ``--system-site-packages`` option)
-- You create the isolated environment with something like venv, virtualenv, or conda
-- You activate the environment
-- You install (or update) the environment with the packages you need
-- You work in the isolated environment
-- You deactivate the environment after use 
+Workflow
+--------
 
-**The tools**
+The general workflow when working with ``renv`` is:
+
+    1. Call ``renv::init()`` to initialize a new project-local environment with a private R library,
+
+    2. Work in the project as normal, installing and removing new R packages as they are needed in the project,
+
+    3. Call ``renv::snapshot()`` to save the state of the project library to the lockfile (called ``renv.lock``),
+
+    4. Continue working on your project, installing and updating R packages as needed.
+
+    5. Call ``renv::snapshot()`` again to save the state of your project library if your attempts to update R packages were successful, or call ``renv::restore()`` to revert to the previous state as encoded in the lockfile if your attempts to update packages introduced some new problems.
+
+The ``renv::init()`` function attempts to ensure the newly-created project library includes all R packages currently used by the project. It does this by crawling R files within the project for dependencies with the ``renv::dependencies()`` function. The discovered packages are then installed into the project library with the r``env::hydrate()`` function, which will also attempt to save time by copying packages from your user library (rather than reinstalling from CRAN) as appropriate.
+
+Calling ``renv::init()`` will also write out the infrastructure necessary to automatically load and use the private library for new R sessions launched from the project root directory. This is accomplished by creating (or amending) a project-local .Rprofile with the necessary code to load the project when the R session is started.
+
+If you’d like to initialize a project without attempting dependency discovery and installation – that is, you’d prefer to manually install the packages your project requires on your own – you can use ``renv::init(bare = TRUE)`` to initialize a project with an empty project library.
 
 
 
