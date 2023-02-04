@@ -293,7 +293,7 @@ Material for improving your programming skills
    R/packagesR.rst
    R/isolatedR
    R/batchR.rst
-   R/interactiveRstudio.md
+   R/interactiveRstudio.rst
    R/exercises.rst
    R/summaryR.rst
 
