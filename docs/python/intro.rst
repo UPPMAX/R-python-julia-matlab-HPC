@@ -13,11 +13,6 @@ Introduction Python
    - Write a batch script for running Python
 
   
-.. admonition:: Collabration document HackMD
-
-    - Use the HackMD page for the workshop with your questions.
-        - https://hackmd.io/@bclaremar/HPC-python **FIX**
-
 .. admonition:: Exercises
 
     - You can download the exercises from the course GitHub repo, under the "Exercises" directory: https://github.com/UPPMAX/R-python-julia-HPC/tree/main/Exercises 
@@ -30,8 +25,7 @@ Introduction Python
     - packages
     - use the HPC performance with Python
 
-    
-    **Not covered**
+ **Not covered**
     
     - improve python *coding* skills 
     - Other clusters
@@ -48,13 +42,13 @@ Preliminary schedule
      - Activity
    * - 9:00
      - Syllabus 
-     - 10m
-   * - 9.10
+     - 15m
+   * - 9.15
      - Introduction 
      - Lecture 10 m 
-   * - 9.20
+   * - 9.25
      - Loading modules and running Python codes 
-     - Lecture+code along 20m
+     - Lecture+code along 15m
    * - 9.40
      - Dealing with packages  
      - Lecture+code along 20m
@@ -65,29 +59,29 @@ Preliminary schedule
      - Dealing with packages (Conda)
      - Lecture+code along 15m
    * - 10.30
-     - Isolated environments (together)
+     - Isolated environments
      - Lecture+code along 30m
    * - 11.00
      - **Short leg stretch**
      - 
    * - 11.05
      - SLURM Batch scripts for Python jobs  
-     - Lecture+code along + exercise 25m
+     - Lecture+code along 25m
    * - 11.30
-     - Interactive
+     - Interactive work on the compute nodes
      - Lecture+code along 15m
    * - 11.45
      - Additional exercises 
-     -
+     - exercises 20m
    * - 12.05
      - **Short leg stretch**
      - 
    * - 12.10
      - Summary 
-     -
+     - 10m
    * - 12.20
      - Q&A on-demand
-     -
+     - 10m
    * - 12.30
      - END
      -
