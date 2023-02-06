@@ -5,16 +5,162 @@ Exercises
 Isolated
 --------
 
+.. challenge:: Project environment
+    
+    Create a project environment called ``new-env`` and activate it. Then, install the
+    package ``CSV`` in this environment. For your knowledge, ``CSV`` is a package that
+    offers tools for dealing with ``.csv`` files. After this, check that this package
+    was installed. Finally, deactivate the environment.
+
+    .. solution:: Solution for HPC2N
+        :class: dropdown
+            
+            .. code-block:: julia
+    
+                shell> mkdir new-env
+                shell> cd new-env
+                (@v1.8) pkg> activate .
+                      Activating new project at `path-to-folder\new-env`
+                (new-env) pkg> add CSV
+                (new-env) pkg> status
+                      Status `path-to-folder\new-env\Project.toml`
+                      [336ed68f] CSV v0.10.9
+                (new-env) pkg> activate 
+
+
+    .. solution:: Solution for UPPMAX
+        :class: dropdown
+        
+            This batch script is for UPPMAX. Adding the numbers 2 and 3. (FIX)
+            
+            .. code-block:: sh
+    
+                #!/bin/bash
+                #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+                #SBATCH --time=00:05:00 # Asking for 5 minutes
+                #SBATCH -n 1 # Asking for 1 core
+                
+                # Load any modules you need, here for Python 3.9.5
+                module load Python/3.9.5
+                
+                # Run your Python script 
+                python sum-2args.py 2 3 
+
+.. challenge:: Package environment
+    
+    Create a package environment called ``new_pack`` and activate it. Then, install the
+    package ``CSV`` in this environment. For your knowledge, ``CSV`` is a package that
+    offers tools for dealing with ``.csv`` files. After this, check that this package
+    was installed. Finally, deactivate the environment.
+
+    .. solution:: Solution for HPC2N
+        :class: dropdown
+            
+            .. code-block:: julia
+    
+                shell> pwd            #Check were you are currently located
+                (@v1.8) pkg> generate new_pack
+                     Generating  project new_pack:
+                     new_pack\Project.toml
+                     new_pack\src\new_pack.jl
+                shell> cd new_pack
+                     `path-to-folder\new_pack`
+                (@v1.8) pkg> activate .
+                       Activating project at `path-to-folder\new_pack`
+                (new_pack) pkg> add CSV 
+                (new_pack) pkg> status
+                       Project new_pack v0.1.0
+                       Status `path-to-folder\new_pack\Project.toml`
+                       [336ed68f] CSV v0.10.9
+                (new_pack) pkg> activate
+
+
+    .. solution:: Solution for UPPMAX
+        :class: dropdown
+        
+            This batch script is for UPPMAX. Adding the numbers 2 and 3.  (FIX)
+            
+            .. code-block:: sh
+    
+                #!/bin/bash
+                #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+                #SBATCH --time=00:05:00 # Asking for 5 minutes
+                #SBATCH -n 1 # Asking for 1 core
+                
+                # Load any modules you need, here for Python 3.9.5
+                module load Python/3.9.5
+                
+                # Run your Python script 
+                python sum-2args.py 2 3 
+
+
+
+
 
 Interactive
-------------
+-----------
+
+
 
 
 Batch mode
 ----------
 
+
 Serial code
 '''''''''''
+
+.. challenge:: Run a serial script
+    
+    Run the serial script ``serial-sum.jl``: 
+
+            .. code-block:: julia
+
+                x = parse( Int32, ARGS[1] )
+                y = parse( Int32, ARGS[2] )
+                summ = x + y
+                println("The sum of the two numbers is ", summ)
+
+    This scripts accepts two integers as command line arguments.
+
+    .. solution:: Solution for HPC2N
+        :class: dropdown
+        
+            This batch script is for Kebnekaise. 
+            
+            .. code-block:: sh
+    
+                #!/bin/bash            
+                #SBATCH -A hpc2n20xx-xyz     # your project_ID       
+                #SBATCH -J job-serial        # name of the job         
+                #SBATCH -n 1                 # nr. tasks  
+                #SBATCH --time=00:03:00      # requested time
+                #SBATCH --error=job.%J.err   # error file
+                #SBATCH --output=job.%J.out  # output file                                                                                                                                                                         
+
+                ml purge  > /dev/null 2>&1   # recommended purge
+                ml Julia/1.8.5-linux-x86_64  # Julia module
+                        
+                julia serial-sum.jl Arg1 Arg2    # run the serial script
+
+    .. solution:: Solution for UPPMAX
+        :class: dropdown
+        
+            This batch script is for UPPMAX. Adding the numbers 2 and 3. (FIX)
+            
+            .. code-block:: sh
+    
+                #!/bin/bash -l
+                #SBATCH -A naiss2023-22-44 # Change to your own after the course
+                #SBATCH -J job-serial        # name of the job         
+                #SBATCH -n 1                 # nr. tasks  
+                #SBATCH --time=00:05:00 # Asking for 5 minutes
+                #SBATCH --error=job.%J.err   # error file
+                #SBATCH --output=job.%J.out  # output file                                                                                    
+                module load julia/1.8.5
+                
+                julia serial-sum.jl Arg1 Arg2    # run the serial script
+
 
 Serial code + self-installed package in virt. env. 
 ''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -22,42 +168,124 @@ Serial code + self-installed package in virt. env.
 GPU code
 '''''''' 
 
-General
-#######
-
-
-Running several jobs from within one job
-''''''''''''''''''''''''''''''''''''''''
-
-.. challenge:: Run the first serial example from further up on the page for this short Python code (sum-2args.py)
+.. challenge:: Run the GPU script
     
-    .. code-block:: python
-    
-        import sys
-            
-        x = int(sys.argv[1])
-        y = int(sys.argv[2])
-            
-        sum = x + y
-            
-        print("The sum of the two numbers is: {0}".format(sum))
+    Run the following script ``script-gpu.jl``. Why are we running the simulations
+    twice?
+    Note that at UPPMAX you will need a project will access to Snowy (or Bianca)
+
+        .. code-block:: julia
+         
+            using CUDA 
+
+            CUDA.versioninfo()
+
+            N = 2^8
+            x = rand(N, N)
+            y = rand(N, N)
+
+            A = CuArray(x)
+            B = CuArray(y)
+
+            # Calculation on CPU
+            @time x*y
+            # Calculation on GPU
+            @time A*B
+
+            # Calculation on CPU
+            @time x*y
+            # Calculation on GPU
+            @time A*B
+
+    .. solution:: Solution for HPC2N
+        :class: dropdown
         
-    Remember to give the two arguments to the program in the batch script.
+            This batch script is for Kebnekaise. We run the simulation twice because
+            in this way, the reported time is more reliable for the computing time as
+            in the first simulation, data transfer and other settings could be added to
+            the reported time.
+            
+            .. code-block:: sh
+                
+                #!/bin/bash            
+                #SBATCH -A hpc2n20xx-xyz     # your project_ID       
+                #SBATCH -J job-serial        # name of the job         
+                #SBATCH -n 1                 # nr. tasks  
+                #SBATCH --time=00:03:00      # requested time
+                #SBATCH --error=job.%J.err   # error file
+                #SBATCH --output=job.%J.out  # output file  
+                #SBATCH --gres=gpu:k80:1     # 1 GPU K80 card
 
-.. solution::
-    :class: dropdown
+                ml purge  > /dev/null 2>&1
+                ml Julia/1.8.5-linux-x86_64
+                ml CUDA/11.4.1
+
+                export JULIA_CUDA_USE_BINARYBUILDER=false
+
+                julia script-gpu.jl
+
+            Output:
+                0.689096 seconds (2.72 M allocations: 132.617 MiB, 6.27% gc time, 99.62% compilation time)
+
+                1.194153 seconds (1.24 M allocations: 62.487 MiB, 3.41% gc time, 55.13% compilation time)
+
+                0.000933 seconds (2 allocations: 512.047 KiB)
+
+                0.000311 seconds (5 allocations: 192 bytes)
+
+    .. solution:: Solution for UPPMAX
+        :class: dropdown
+        
+            This batch script is for UPPMAX. Adding the numbers 2 and 3.  (FIX)
+            
+            .. code-block:: sh
     
-          This is for Kebnekaise. Adding the numbers 2 and 3. 
-          
-          .. code-block:: sh
- 
-            #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
-            #SBATCH --time=00:05:00 # Asking for 5 minutes
-            #SBATCH -n 1 # Asking for 1 core
-            
-            # Load any modules you need, here for Python 3.9.5
-            module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5
-            
-            # Run your Python script 
-            python sum-2args.py 2 3 
+                #SBATCH -A <project with Snowy/Bianca access    # your project_ID  
+                #SBATCH -M snowy
+                #SBATCH -p node
+                ##SBATCH -C gpu   #NB: Only for Bianca
+                #SBATCH -N 1
+                #SBATCH --job-name=juliaGPU         # create a short name for your job
+                #SBATCH --gpus-per-node=1             # number of gpus per node (Bianca 2, Snowy 1)
+                #SBATCH --time=00:15:00          # total run time limit (HH:MM:SS)
+                #SBATCH --qos=short              # if test run t<15 min
+                
+                ml Julia/1.8.5-linux-x86_64
+
+                julia script-gpu.jl
+
+            Output:
+
+                Downloading artifact: CUDNN
+                Downloading artifact: CUTENSOR
+                CUDA toolkit 11.7, artifact installation
+                NVIDIA driver 525.85.12, for CUDA 12.0
+                CUDA driver 12.0
+                
+                Libraries:
+                - CUBLAS: 11.10.1
+                - CURAND: 10.2.10
+                - CUFFT: 10.7.2
+                - CUSOLVER: 11.3.5
+                - CUSPARSE: 11.7.3
+                - CUPTI: 17.0.0
+                - NVML: 12.0.0+525.85.12
+                - CUDNN: 8.30.2 (for CUDA 11.5.0)
+                - CUTENSOR: 1.4.0 (for CUDA 11.5.0)
+                
+                Toolchain:
+                - Julia: 1.8.5
+                - LLVM: 13.0.1
+                - PTX ISA support: 3.2, 4.0, 4.1, 4.2, 4.3, 5.0, 6.0, 6.1, 6.3, 6.4, 6.5, 7.0, 7.1, 7.2
+                - Device capability support: sm_35, sm_37, sm_50, sm_52, sm_53, sm_60, sm_61, sm_62, sm_70, sm_72, sm_75, sm_80, sm_86
+
+                1 device:
+                  0: Tesla T4 (sm_75, 14.605 GiB / 15.000 GiB available)
+                  0.988437 seconds (2.72 M allocations: 132.556 MiB, 4.72% gc time, 99.10% compilation time)
+                  5.707402 seconds (1.30 M allocations: 65.564 MiB, 0.72% gc time, 19.70% compilation time)
+                  0.000813 seconds (2 allocations: 512.047 KiB)
+                  0.000176 seconds (16 allocations: 384 bytes)
+                
+
+
+

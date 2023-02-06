@@ -415,7 +415,7 @@ Exercises
     .. solution:: Solution for UPPMAX
         :class: dropdown
         
-            This batch script is for UPPMAX. Adding the numbers 2 and 3. 
+            This batch script is for UPPMAX. Adding the numbers 2 and 3. (FIX)
             
             .. code-block:: sh
     
@@ -462,7 +462,7 @@ Exercises
     .. solution:: Solution for UPPMAX
         :class: dropdown
         
-            This batch script is for UPPMAX. Adding the numbers 2 and 3. 
+            This batch script is for UPPMAX. Adding the numbers 2 and 3.  (FIX)
             
             .. code-block:: sh
     

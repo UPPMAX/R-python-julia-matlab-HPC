@@ -759,7 +759,7 @@ Exercises
     .. solution:: Solution for UPPMAX
         :class: dropdown
         
-            This batch script is for UPPMAX. Adding the numbers 2 and 3. 
+            This batch script is for UPPMAX. Adding the numbers 2 and 3. (FIX)
             
             .. code-block:: sh
     
@@ -778,9 +778,32 @@ Exercises
 
 .. challenge:: Run the GPU script
     
-    Run the script ``script-gpu.jl`` that is given above. Why are we running the simulations
+    Run the following script ``script-gpu.jl``. Why are we running the simulations
     twice?
     Note that at UPPMAX you will need a project will access to Snowy (or Bianca)
+
+        .. code-block:: julia
+         
+            using CUDA 
+
+            CUDA.versioninfo()
+
+            N = 2^8
+            x = rand(N, N)
+            y = rand(N, N)
+
+            A = CuArray(x)
+            B = CuArray(y)
+
+            # Calculation on CPU
+            @time x*y
+            # Calculation on GPU
+            @time A*B
+
+            # Calculation on CPU
+            @time x*y
+            # Calculation on GPU
+            @time A*B
 
     .. solution:: Solution for HPC2N
         :class: dropdown
@@ -821,7 +844,7 @@ Exercises
     .. solution:: Solution for UPPMAX
         :class: dropdown
         
-            This batch script is for UPPMAX. Adding the numbers 2 and 3. 
+            This batch script is for UPPMAX. Adding the numbers 2 and 3.  (FIX)
             
             .. code-block:: sh
     
