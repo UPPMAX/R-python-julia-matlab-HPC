@@ -246,18 +246,6 @@ Common features
      - Nvidia T4 
      - 2 NVIDIA A100
 
-
-.. objectives:: 
-
-    We will:
-    
-    - teach you how to navigate the module system at HPC2N and UPPMAX
-    - show you how to find out which versions of R/Python/Julia and packages are installed
-    - look at the package handler **pip** (and **Conda** for UPPMAX)
-    - explain how to create and use virtual environments
-    - show you how to run batch jobs 
-    - show some examples with parallel computing and using GPUs
-    - guide you in how to start R/Python/Julia tools for Machine Learning
  
 Material for improving your programming skills
 ----------------------------------------------
