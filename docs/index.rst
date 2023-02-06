@@ -165,28 +165,23 @@ The two HPC centers UPPMAX and HPC2N
 
 .. admonition:: Two HPC centers
 
-   - We run this course as a collaboration between the HPC centers HPC2N in Umeå and UPPMAX in Uppsala.
-      - There are many similarities:
-         - Login vs. calculation/compute nodes
-         - Environmental module system with software hidden until loaded with ``module load``
-         - Slurm batch job and scheduling system
-         - ``pip install`` procedure
-      - ... and small differences:
-         - commands to load Python and python packages
-         - isolated environments ``virtualenv`` vs ``venv``
-         - slightly different flags to Slurm
-      - ... and some bigger differences:
-         - UPPMAX has three different clusters 
-            - Rackham for general purpose computing on CPUs only
-            - Snowy available for local projects and suits long jobs (< 1 month) and has GPUs
-            - Bianca for sensitive data and has GPUs
-         - HPC2N has Kebnekaise with GPUs (and KNLs) 
-         - Conda is recommended only for UPPMAX users
+   - There are many similarities:
+     - Login vs. calculation/compute nodes
+     - Environmental module system with software hidden until loaded with ``module load``
+     - Slurm batch job and scheduling system
+     - ``pip install`` procedure
+   - ... and small differences:
+     - commands to load Python and python packages
+     - isolated environments ``virtualenv`` vs ``venv``
+     - slightly different flags to Slurm
+   - ... and some bigger differences:
+     - UPPMAX has three different clusters 
+       - Rackham for general purpose computing on CPUs only
+       - Snowy available for local projects and suits long jobs (< 1 month) and has GPUs
+       - Bianca for sensitive data and has GPUs
+   - HPC2N has Kebnekaise with GPUs (and KNLs) 
+   - Conda is recommended only for UPPMAX users
     
-.. admonition:: How is the workshop run?
-  
-   - General sessions with small differences shown in UPPMAX vs. HPC2N in tabs
-
 .. warning:: 
 
    - At both HPC2N UPPMAX we call the applications available via the *module system* **modules**. 
