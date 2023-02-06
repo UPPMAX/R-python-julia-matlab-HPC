@@ -14,38 +14,35 @@ Introduction to running R, Python, and Julia in HPC
       - find site installed packages/libraries
       - install packages/libraries yourself
       - use virtual environments
-      - work interactivly
-      - write batch scripts 
-    - This course will consist of lectures interspersed with hands-on sessions where you get to try out what you have just learned.    
+      - use the calculation nodes
+        - write batch scripts 
+        - work interactivly
+
+   - This course will consist of lectures interspersed with hands-on sessions where you get to try out what you have just learned.    
 
 
 .. admonition:: Cluster-specific approaches
 
-   - The course is a cooperation between UPPMAX (Rackham, Snowy, Bianca) and HPC2N (Kebnekaise) and will focus on the compute systems at both centres. 
-   - For the site-specific part of the course you will be divided into groups depending on which center you will be running your code, as the approach is somewhat different. 
+   - The course is a cooperation between UPPMAX (Rackham, Snowy, Bianca) and HPC2N (Kebnekaise) and will focus on the compute systems at both centres.
+   - Although there are differences we will this time not have seperate sessions.
 
 
 Preliminary schedule
 ====================
 
 .. list-table:: Preliminary schedule
-   :widths: 25 25 50
+   :widths: 25 25
    :header-rows: 1
 
    * - Day
      - Language
-     - Activity
    * - Wednesday 8 Feb
      - Python 
-     -
    * - Thursday 9 Feb
      - Julia
-     - 
    * - Friday 10 Feb
      - R 
-     - 
-
-    
+   
 
 Some practicals
 ---------------
@@ -66,30 +63,48 @@ Some practicals
 
     - The course is run over Zoom. You should have gotten an email with the links
         
-    - There will be a zoom for the lectures, a zoom for the HPC2N sessions, and a zoom for the UPPMAX sessions. 
-        - The exercises will be done in the separate sessions.
+    - There will be a zoom for the lectures
    
     - When you join the Zoom meeting, use your REAL NAME.
     
-    - The lectures and demos will be recorded, but NOT the exercises. If you ask questions during the lectures, you may thus be recorded. If you do not wish to be recorded, then please keep your microphone muted and your camera off during lectures and write your questions in the Q/A document (see below about HackMD collaboration document).
+    - The lectures and demos will be recorded, but NOT the exercises. 
+      - If you ask questions during the lectures, you may thus be recorded. 
+      - If you do not wish to be recorded, then please keep your microphone muted and your camera off during lectures and write your questions in the Q/A document (see below about Microsoft-365 collaboration document).
     
     - Please MUTE your microphone when you are not speaking and use the “Raise hand” functionality under the “Participants” window during the lecture. Please do not clutter the Zoom chat. Behave politely!
 
-    - There may be breakout rooms used in the Zoom for the hands-ons. You will be randomly assigned to one of them.  
+    - There will be breakout rooms used in the Zoom for the exercises. 
+      - You may enter there and you will get personal help
+      
     
-    
-.. admonition:: Collabration document HackMD (TOFIX)
+.. admonition:: Collabration document (Microsoft-365)
 
-    - Use the HackMD page for the workshop with your questions.
-        - see links in sepeate session
+    - https://umeauniversity.sharepoint.com/:w:/s/HPC2N630/EbHWglWYU_VNpTpdD2CtSfYBlpsAF6DyD_4RMwWCie_B0g?rtime=uSWfqzII20g
+    
+    - Use this page for the workshop with your questions.
 
     - Depending on how many helpers there are we'll see how fast there are answers. 
-        - Some answers may come after the workshop.
- 
-    - Type in the left frame 
-        - "-" means new bullet and <tab> indents the level.
-        - don't focus too much on the formatting if you are new to "Markdown" language!
-    
+        - Some answers may come after the workshop day.
+        
+.. hint::
+
+   - Project ID: naiss2023-22-44 
+
+   - Directory name on rackham: /proj/py-r-jl 
+
+   - Please create a suitably named subdirectory below /proj/py-r-jl, for your own exercises. 
+   
+   
+Example of arrangement for the "worst case"!
+############################################
+- HackMD
+- ZOOM view
+- web browser with course material
+- your own terminal
+
+
+
+
  
 .. warning::
 
@@ -103,51 +118,48 @@ Some practicals
       - HPC2N's intro course material (including link to recordings): https://github.com/hpc2n/intro-course
       - HPC2N's YouTube channel video on Linux: https://www.youtube.com/watch?v=gq4Dvt2LeDg
 
-.. admonition:: Prepare your environment now!
+Prepare your environment now!
+-----------------------------
   
-   - Please log in to Rackham, Kebnekaise or other cluster that you are using.
+- Please log in to Rackham, Kebnekaise or other cluster that you are using.
 
-    
+.. admonition:: Use Thinlinc or terminal?
+
+   - It is up to you!
+   - Graphics come easier with Thinlinc
+   - For this course, when having many windows open, it may be better to run in terminal, for screen space issues.
+
+
 .. tabs::
 
    .. tab:: UPPMAX
 
-      - Rackham: ``ssh <user>@rackham.uppmax.uu.se`` 
+      1. Log in to Rackham!
+        - terminal: ``ssh -Y <user>@rackham.uppmax.uu.se`` 
       
-      - Rackham through ThinLinc, use: ``<user>@rackham-gui.uppmax.uu.se``
-      - Create a working directory where you can code along. We recommend creating it under the course project storage directory
+        - ThinLinc app: ``<user>@rackham-gui.uppmax.uu.se``
+        - ThinLinc in web browser: https://rackham-gui.uppmax.uu.se
+      
+      2. If not already: create a working directory where you can code along.
+         - We recommend creating it under the course project storage directory
    
-         
-      - Example. If your username is "mrspock" and you are at UPPMAX, this we recommend you create this folder: 
+      3. Example. If your username is "mrspock" and you are at UPPMAX, this we recommend you create this folder: 
      
-         /proj/snic2022-22-641/nobackup/mrspock/pythonUPPMAX
+         .. code-block:: sh
+         
+            $ mkdir proj/py-r-jl/mrspock/<language>
 
    .. tab:: HPC2N
 
       - Kebnekaise: ``<user>@kebnekaise.hpc2n.umu.se``     
       - Kebnekaise through ThinLinc, use: ``<user>@kebnekaise-tl.hpc2n.umu.se``
    
-      - Create a working directory where you can code along. We recommend creating it under the course project storage directory
-   
-       - Example. If your username is bbrydsoe and you are at HPC2N, then we recommend you create this folder: 
+      - Create a working directory where you can code along.    
+        - Example. If your username is bbrydsoe and you are at HPC2N, then we recommend you create this folder: 
      
-         /proj/nobackup/snic2022-22-641/bbrydsoe/pythonHPC2N (TOFIX)
+           /proj/nobackup/snic2022-22-641/bbrydsoe/pythonHPC2N (TOFIX)
          
-.. admonition:: Use Thinlinc or terminal?
-
-   - It is up to you!
-   - Graphics come easier with Thinlinc
-   - For this course, when having many windows open, it may be better to run in terminal, for space issues.
    
-   
-Example of arrangement for the "worst case"!
-############################################
-- HackMD
-- ZOOM view
-- web browser with course material
-- your own terminal
-
-
 The two HPC centers UPPMAX and HPC2N
 ------------------------------------
 
