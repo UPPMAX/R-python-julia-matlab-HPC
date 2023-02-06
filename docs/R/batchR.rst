@@ -115,48 +115,83 @@ Parallel code
 
    .. tab:: UPPMAX
 
-        Short serial example for running on Rackham. Loading Python/3.9.5 + using any Python packages you have installed yourself with venv. More information will follow under the separate session for UPPMAX. 
+        Short parallel example (using packages "foreach" and "doParallel" which you may have to install first) for running on Rackham. Loading R/4.0.4. 
 
         .. code-block:: sh
         
             #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
-            #SBATCH --time=00:10:00 # Asking for 10 minutes
-            #SBATCH -n 1 # Asking for 1 core
+            #SBATCH -A naiss2023-22-44
+            #SBATCH -t 00:10:00
+            #SBATCH -N 1
+            #SBATCH -c 4
             
-            # Load any modules you need, here for Python 3.9.5 
-            module load python/3.9.5
+            ml purge > /dev/null 2>&1
+            ml R/4.0.4
             
-            # Activate your virtual environment. 
-            # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
-            # Example: /proj/snic2022-22-641/nobackup/mrspock/pythonUPPMAX 
-            source <path-to-virt-env>/bin/activate
-            
-            # Run your Python script
-            python <my_program.py>
+            # Batch script to submit the R program parallel_foreach.R 
+            R -q --slave -f parallel_foreach.R
 
 
    .. tab:: HPC2N
 
-        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2021.05, Python/3.9.5 + using any Python packages you have installed yourself with virtual environment. During the separate session for HPC2N there will more about how to install something yourself this way. 
+        Short parallel example (using packages "foreach" and "doParallel") for running on Kebnekaise. Loading R/4.0.4 and its prerequisites. 
        
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
-            #SBATCH --time=00:10:00 # Asking for 10 minutes
-            #SBATCH -n 1 # Asking for 1 core
+            #SBATCH -A hpc2nXXXX-YYY # Change to your own project ID
+            #SBATCH -t 00:10:00
+            #SBATCH -N 1
+            #SBATCH -c 4
             
-            # Load any modules you need, here for Python 3.9.5 and compatible SciPy-bundle
-            module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05
+            ml purge > /dev/null 2>&1
+            ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
             
-            # Activate your virtual environment. 
-            # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
-            # Example: /proj/nobackup/snic2022-22-641/bbrydsoe/pythonHPC2N 
-            source <path-to-virt-env>/bin/activate
-            
-            # Run your Python script 
-            python <my_program.py>
+            # Batch script to submit the R program parallel_foreach.R 
+            R -q --slave -f parallel_foreach.R
+
+
+   .. tab:: parallel_foreach.R
+
+        This R script uses packages "foreach" and "doParallel" which you may or may not have to install yourself first. 
+       
+        .. code-block:: R
+
+            library(parallel)
+            library(foreach)
+            library(doParallel)
+            # Function for calculating PI with no values
+            calcpi <- function(no) {
+              y <- runif(no)
+              x <- runif(no)
+              z <- sqrt(x^2+y^2)
+              length(which(z<=1))*4/length(z)
+            }
+            # Detect the number of cores
+            no_cores <- detectCores() - 1
+            # Loop to max number of cores
+            for (n in 1:no_cores) {
+              # print how many cores we are using
+              print(n)
+              # Set start time
+              start_time <- Sys.time()
+              # Create a cluster
+              nproc <- makeCluster(n)
+              registerDoParallel(nproc)
+              # Create a vector 1000 length with 100 randomizations
+              input <- rep(100, 1000)
+              # Use foreach on n cores
+              registerDoParallel(nproc)
+              res <- foreach(i = input, .combine = '+') %dopar%
+                calcpi(i)
+              # Print the mean of the results
+              print(res/length(input))
+              # Stop the cluster
+              stopCluster(nproc)
+              # print end time
+              print(Sys.time() - start_time)
+              }
+
 
 
 GPU code
