@@ -1,60 +1,71 @@
 Summary
 =======
 
-**FIX**
+**FIX UPPMAX**
 
 .. keypoints::
 
    - Load and run
-      - Use python from module system
-      - Start a Python shell session either with ``python`` or ``ipython``
-      - run scripts with ``python3 <script.py>``
+      - Use Julia from module system
+      - Start a Julia shell session either with ``julia``
+      - run scripts with ``julia <script.jl>``
    - Packages
       - Check for preinstalled packages
-         - from the Python shell with the ``import`` command
-         - from BASH shell with the
+  
+         - from the Julia REPL with the ``using`` or ``import`` command
+         - from BASH shell with the  (FIX UPPMAX, info for installed packages??)
+  
             - ``pip list`` command at both centers
             - ``ml help python/3.9.5`` at UPPMAX
             - ``module -r spider '.*Python.*'`` at HPC2N
-      - Installation with *PYPI*
-         - You install own packages with the ``pip install --user`` command
-      - At UPPMAX Conda is also available 
-         - Conda is an installer of packages but also bigger toolkits
 
          - Rackham: Pip or secondary conda
          - Bianca: conda and secondary wharf + (pip or conda)
      
    - Isolated environments 
-      - With a virtual environment you can tailor an environment with specific versions for Python and packages, not interfering with other installed python versions and packages.
+
+      - With a virtual environment you can tailor an environment with specific versions 
+        for Julia and packages, not interfering with other installed Julia versions and 
+        packages.
       - Make it for each project you have for reproducibility.
-      - There are different tools to create virtual environemnts.
-         - HPC2N has ``virtualenv``
-            - install packages with ``pip``.
-            - the flag ``--system-site-packages`` includes preinstalled packages as well
-         - UPPMAX has ``venv`` and ``Conda`` 
+      - Julia has its own mechanism to create virtual environemnts. 
+  
+         - HPC2N 
+  
+            - The Julia installation is lean, no additional package besides the Base and
+              and Standard Libraries are installed.
+         
+         - UPPMAX has ``venv`` and ``Conda`` (FIX UPPMAX, info for installed packages??)
+  
             - venv is very similar to ``virtualenv``
-            - Conda creates isolated environments as well
+            - Conda creates isolated environments as well 
+  
               - requires that you install all packages needed. 
 
    - Batch mode
       - The SLURM scheduler handles allocations to the calculation nodes
       - Batch jobs runs without interaction with user
-      - A batch script consists of a part with *SLURM parameters* describing the allocation and a second part describing the actual work within the job, for instance one or several Python scripts.
-      - Remember to include possible input arguments to the Python script in the batch script.
+      - A batch script consists of a part with *SLURM parameters* describing 
+        the allocation and a second part describing the actual work within the job, 
+        for instance one or several Julia scripts.
+      - Remember to include possible input arguments to the Julia script in the batch script.
    
    - Interactive work on calculation nodes
-      - Start an interactive session on a calculation node by a SLURM allocation (similar flags)
+      - Start an interactive session on a calculation node by a SLURM allocation 
+        (similar flags)
+      
          - At HPC2N: ``salloc`` ...
          - At UPPMAX: ``interactive`` ...
-      - Follow the same procedure as usual by loading the Python module and possible prerequisites.
+
+      - Follow the same procedure as usual by loading the Julia module and possible prerequisites.
 
    - Parallel
       - You deploy cores and nodes via SLURM, either in interactive mode or batch
-      - In Python, threads, distributed and MPI parallelization can be used.
+      - In Julia, threads, distributed and MPI parallelization can be used.
 
    - GPUs
       -  You deploy GPU nodes via SLURM, either in interactive mode or batch
-      -  In Python the numba package is handy
+      -  In Julia the CUDA package is handy
 
 
 
@@ -66,16 +77,22 @@ Summary
 
 .. seealso::
 
-    - For other topics, see python documentation https://www.python.org/doc/. 
-    - Python forum is found here https://python-forum.io/.
-    - A nice introduction to packages can be found here: https://aaltoscicomp.github.io/python-for-scicomp/dependencies/
-    - CodeRefinery develops and maintains training material on software best practices for researchers that already write code. 
-    
-      - Their material addresses all academic disciplines and tries to be as programming language-independent as possible. https://coderefinery.org/lessons/
-    
+
+     - Documentation at the HPC centres UPPMAX and HPC2N
+        - UPPMAX: https://www.uppmax.uu.se/support/user-guides/julia-user-guide/
+        - HPC2N: https://www.hpc2n.umu.se/resources/software/julia
+     - Official Julia documentation is found here: https://docs.julialang.org/en/v1/
+     - Slack channel for Julia and instructions for joining it are found here: https://julialang.org/slack/
+     - HPC2N YouTube video on Julia in HPC: https://www.youtube.com/watch?v=bXHe7Kj3Xxg
+     - Julia for High Performance Computing course material from ENCCS: https://enccs.github.io/Julia-for-HPC/
+
+
 .. note::
     
     - Julia language becomes increasingly popular.
-    - We also have a web page for Julia at UPPMAX: https://uppmax.uu.se/support/user-guides/julia-user-guide/
+    - We also have a web page for Julia: 
+  
+       - UPPMAX https://uppmax.uu.se/support/user-guides/julia-user-guide/
+       - HPC2N https://www.hpc2n.umu.se/resources/software/julia
     
     
