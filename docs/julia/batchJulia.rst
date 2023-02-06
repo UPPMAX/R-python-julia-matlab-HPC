@@ -841,8 +841,8 @@ Exercises
 
             Output:
 
-                 Downloading artifact: CUDNN
-                 Downloading artifact: CUTENSOR
+                Downloading artifact: CUDNN
+                Downloading artifact: CUTENSOR
                 CUDA toolkit 11.7, artifact installation
                 NVIDIA driver 525.85.12, for CUDA 12.0
                 CUDA driver 12.0
@@ -850,7 +850,7 @@ Exercises
                 Libraries:
                 - CUBLAS: 11.10.1
                 - CURAND: 10.2.10
-                                - CUFFT: 10.7.2
+                - CUFFT: 10.7.2
                 - CUSOLVER: 11.3.5
                 - CUSPARSE: 11.7.3
                 - CUPTI: 17.0.0

@@ -53,9 +53,12 @@ Some practicals
 .. admonition:: Earlier courses 
 
    - HPC-Python: https://uppmax.github.io/HPC-python
+  
      - Q/A are public at the HackMD pages
+  
        - https://hackmd.io/@bclaremar/HPC-python
        - https://hackmd.io/IoseeprATrWH0ZI7z6wJ-w?view
+  
    - R: https://www.hpc2n.umu.se/events/courses/2022/R-in-HPC
    
  
