@@ -13,7 +13,7 @@ Introduction Python
    - Write a batch script for running Python
 
   
-.. admonition:: Exercises
+.. admonition:: Exercises **FIX**
 
     - You can download the exercises from the course GitHub repo, under the "Exercises" directory: https://github.com/UPPMAX/R-python-julia-HPC/tree/main/Exercises 
     - On HPC2N, you can copy the exercises in a tarball from ``/proj/nobackup/snic2022-22-641/bbrydsoe/examples.tar.gz``
@@ -104,19 +104,9 @@ libraries like NumPy, SciPy, scikit-learn and Pytorch.
 - Python forum is found here https://python-forum.io/ .
 - A nice introduction to packages can be found here: https://aaltoscicomp.github.io/python-for-scicomp/dependencies/
 - CodeRefinery develops and maintains training material on software best practices for researchers that already write code. Ther material addresses all academic disciplines and tries to be as programming language-independent as possible. https://coderefinery.org/lessons/
-- The youtube video `Thinking about Concurrency <https://www.youtube.com/watch?v=Bv25Dwe84g0>`_ is a good introduction to writing concurrent programs in Python and the book `High Performance Python <https://www.oreilly.com/library/view/high-performance-python/9781492055013/>`_ is a good resource for ways of speeding up Python code.
+- The youtube video `Thinking about Concurrency <https://www.youtube.com/watch?v=Bv25Dwe84g0>`_ is a good introduction to writing concurrent programs in Python 
+- The book `High Performance Python <https://www.oreilly.com/library/view/high-performance-python/9781492055013/>` is a good resource for ways of speeding up Python code.
     
-    - And, if you feel a little unfamiliar to the LINUX world, have a look at the Introduction to UPPMAX course material here: https://www.uppmax.uu.se/support/courses-and-workshops/introductory-course-winter-2022/
-    
-More python?
-------------
-
-- CodeRefinery develops and maintains training material on software best practices for researchers that already write code. Their material addresses all academic disciplines and tries to be as programming language-independent as possible. https://coderefinery.org/lessons/
-- General introduction to Python at https://www.uppmax.uu.se/support/courses-and-workshops/introductory-course-summer-2022/
-
-- **This course:** Introduction to HPC (High performance computing) python at UPPMAX and HPC2N in September. 
-
-
 
 .. objectives:: 
 
@@ -128,6 +118,6 @@ More python?
     - explain how to create and use virtual environments
     - show you how to run batch jobs 
     - show some examples with parallel computing and using GPUs
-    - guide you in how to start Python tools for Machine Learning
+
  
 
