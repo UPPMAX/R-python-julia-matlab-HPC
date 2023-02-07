@@ -72,7 +72,7 @@ Example
 
 .. tip::
     
-   **Code along!**
+   **Do not code along!**
 
 Create a ``venv``. First load the python version you want to base your virtual environment on:
 
@@ -91,10 +91,10 @@ Create a ``venv``. First load the python version you want to base your virtual e
 
       .. code-block:: sh
 
-         $ module load python/<version>
-         $ virtualenv --system-site-packages vpyenv
+         $ module load python/3.7.2
+         $ virtualenv --system-site-packages Example
     
-      "vpyenv" is the name of the virtual environment. You can name it whatever you want. The directory “vpyenv” is created in the present working directory.
+      "vpyenv" is the name of the virtual environment. You can name it whatever you want. The directory “Example” is created in the present working directory.
 
 
 .. note::
@@ -113,65 +113,36 @@ If you want it in a certain place...
 
    .. tab:: UPPMAX
 
-      To place it in a directory called test
+      To place it in the course project folder
       
       .. code-block:: sh
 
-         $ python -m venv --system-site-packages ~/test/Example 
+         $ python -m venv --system-site-packages /proj/py-r-jl/<user>/python
     
       Activate it.
 
       .. code-block:: sh
 
-          $ source ~/test/Example/bin/activate
+          $ source /proj/py-r-jl/<user>/python/Example/bin/activate
 
       Note that your prompt is changing to start with (Example) to show that you are within an environment.
 
    .. tab:: HPC2N
 
-      To place it in a directory below your project storage (again calling it "vpyenv"): 
+      To place it in a directory below your project storage (again calling it "Example"): 
 
       .. code-block:: sh
 
-         $ virtualenv --system-site-packages /proj/nobackup/<your-project-storage>/vpyenv 
+         $ virtualenv --system-site-packages /proj/nobackup/<your-project-storage>/Example 
     
       Activate it.
 
       .. code-block:: sh
 
-          $ source /proj/nobackup/<your-project-storage>/vpyenv/bin/activate
-
+          $ source /proj/nobackup/<your-project-storage>/Example/bin/activate
 
 
 Note that your prompt is changing to start with (name of your vitual environment) to show that you are within it.
-
-Example
-#######
-
-I load Python 3.9.5 and create a virtual environment called "vpyenv" in my personal project storage directory (/proj/nobackup/support-hpc2n/bbrydsoe): 
-
-.. admonition:: Load Python 3.9.5 and its prerequisites, then create the virtual environment 
-    :class: dropdown
-   
-        .. code-block:: sh
-      
-           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ module load GCCcore/10.3.0 Python/3.9.5
-           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ virtualenv --system-site-packages vpyenv
-             created virtual environment CPython3.9.5.final.0-64 in 6490ms
-             creator CPython3Posix(dest=/pfs/proj/nobackup/fs/projnb10/support-hpc2n/bbrydsoe/vpyenv, clear=False, no_vcs_ignore=False, global=True)
-             seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/pfs/stor10/users/home/b/bbrydsoe/.local/share/virtualenv)
-               added seed packages: pip==22.1.2, setuptools==62.6.0, wheel==0.37.1
-             activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
-           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ 
-
-
-Activate the environment.
-
-.. code-block:: sh
-
-    $ source <path/to/virt-environment>/vpyenv/bin/activate
-
-Note that your prompt is changing to start with (vpyenv) to show that you are within an environment.
 
 
 Using pip
@@ -179,32 +150,21 @@ Using pip
 
 Install your packages with ``pip``. While not always needed, it is often a good idea to give the correct versions you want, to ensure compatibility with other packages you use: 
 
-.. tabs::
-
-   .. tab:: UPPMAX
-
-      .. prompt:: 
-          :language: bash
-          :prompts: (Example) $
+.. prompt:: 
+    :language: bash
+    :prompts: (Example) $
       
-          pip install numpy==1.15.4 matplotlib==2.2.2
+    pip install numpy==1.15.4 matplotlib==2.2.2
 
-      Deactivate it.
+Deactivate it.
 
-      .. prompt:: 
-          :language: bash
-          :prompts: (Example) $
+.. prompt:: 
+   :language: bash
+   :prompts: (Example) $
    
-          deactivate
-
-   .. tab:: HPC2N
-
-.. code-block:: sh
-
-    (vpyenv) $ pip install --no-cache-dir --no-build-isolation <package>==<version>
+   deactivate
     
 The "--no-cache-dir" option is required to avoid it from reusing earlier installations from the same user in a different environment. The "--no-build-isolation" is to make sure that it uses the loaded modules from the module system when building any Cython libraries.
-
 
 
 Everytime you need the tools available in the virtual environment you activate it as above.
@@ -217,9 +177,12 @@ Everytime you need the tools available in the virtual environment you activate i
 Prepare the course environment
 ''''''''''''''''''''''''''''''
 
-**Examples**
+.. tip::
+    
+   **Code along!**
 
-Create a virtual environment. First load the python version you want to base your virtual environment on:
+
+Create a virtual environment called ``venv-python-course``. First load the python version you want to base your virtual environment on:
 
 .. tabs::
 
@@ -228,13 +191,13 @@ Create a virtual environment. First load the python version you want to base you
       .. code-block:: sh
 
           $ module load python/3.9.5
-          $ python -m venv --system-site-packages /proj/snic2022-22-641/nobackup/<user>/venv-python-course
+          $ python -m venv --system-site-packages /proj/py-r-jl/<user>/python/venv-python-course
     
       Activate it.
 
       .. code-block:: sh
 
-         $ source /proj/snic2022-22-641/nobackup/<user>/venv-python-course/bin/activate
+         $ source /proj/py-r-jl/<user>/python/venv-python-course/bin/activate
 
       Note that your prompt is changing to start with (venv-python-course) to show that you are within an environment.
 
@@ -266,7 +229,7 @@ Create a virtual environment. First load the python version you want to base you
 
       .. prompt:: bash $
 
-         source /proj/snic2022-22-641/nobackup/<user>/venv-python-course/bin/activate
+         source /proj/py-r-jl/<user>/python/venv-python-course/bin/activate
 
       More on virtual environment: https://docs.python.org/3/tutorial/venv.html 
       
