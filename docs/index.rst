@@ -271,7 +271,7 @@ Material for improving your programming skills
    
 .. toctree::
    :maxdepth: 2
-   :caption: julia Lessons:
+   :caption: Julia Lessons:
 
    julia/introJulia.rst
    julia/load_runJulia.rst
