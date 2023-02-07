@@ -66,7 +66,7 @@ run on the allocated nodes instead of the login node.
       
 where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in 
       hours, minutes, and seconds (maximum T168 hours), and then you give the id for your project 
-      (**SNIC2022-22-641** for this course)
+      (**naiss2023-22-44** for this course)
 
 Your request enters the job queue just like any other job, and interactive/salloc will tell you that it is
       waiting for the requested resources. When salloc tells you that your job has been allocated 
