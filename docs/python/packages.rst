@@ -399,17 +399,17 @@ Exercises
     
     
 .. solution:: Solution for UPPMAX
-    :class: dropdown
+   :class: dropdown
     
-    .. code-block:: bash $
+      .. code-block:: bash $
  
-       module load conda
-       export CONDA_ENVS_PATH=/proj/py-r-jl/<user>/python
-       conda create --name HPC-python23 python=3.7 numpy=1.15
-       source activate HPC-python23
-       pip list
-       python -V
-       source deactivate
+          module load conda
+          export CONDA_ENVS_PATH=/proj/py-r-jl/<user>/python
+          conda create --name HPC-python23 python=3.7 numpy=1.15
+          source activate HPC-python23
+          pip list
+          python -V
+          source deactivate
 
 
 .. keypoints::
