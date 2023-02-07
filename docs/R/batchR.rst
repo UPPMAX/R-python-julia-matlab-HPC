@@ -205,7 +205,7 @@ Parallel code
             #SBATCH -A naiss2023-22-44
             #Asking for 10 min.
             #SBATCH -t 00:10:00
-            #SBATCH -n 28
+            #SBATCH -n 8
             
             export OMPI_MCA_mpi_warn_on_fork=0
             
@@ -226,7 +226,7 @@ Parallel code
             #SBATCH -A hpc2nXXXX-YYY # Change to your own project ID
             #Asking for 10 min.
             #SBATCH -t 00:10:00
-            #SBATCH -n 28
+            #SBATCH -n 8
             
             export OMPI_MCA_mpi_warn_on_fork=0
             
@@ -279,37 +279,35 @@ Parallel code
 
 
 
-GPU code
+ML code
 ''''''''
 
 .. tabs::
 
    .. tab:: UPPMAX
 
-        Short GPU example for running on Snowy.         
+        Short ML example for running on Rackham.         
        
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A SNICXXXX-YY-ZZZ
+            #SBATCH -A naiss2023-22-44
+            #Asking for 10 min.
             #SBATCH -t 00:10:00
-            #SBATCH --exclusive
-            #SBATCH -p node
-            #SBATCH -N 1
-            #SBATCH -M snowy
-            #SBATCH --gpus=1
-            #SBATCH --gpus-per-node=1
+            #SBATCH -n 1
+            #Writing output and error files
+            #SBATCH --output=output%J.out
+            #SBATCH --error=error%J.error
             
-            # Load any modules you need, here loading Python 3.9.5 
-            module load python/3.9.5
+            ml purge > /dev/null 2>&1
+            ml R/4.0.4
             
-            # Run your code
-            python <my-gpu-code>.py 
-            
+            R --no-save --no-restore -f Rscript.R
+           
 
    .. tab:: HPC2N
 
-        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2021.05, Python/3.9.5 + Python package you have installed yourself with virtual environment. The full example can be found under "Using Python for Machine Learning jobs".       
+        Short ML example for running on Kebnekaise.       
        
         .. code-block:: sh
 
