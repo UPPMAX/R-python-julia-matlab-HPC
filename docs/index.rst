@@ -157,7 +157,7 @@ Prepare your environment now!
       - Create a working directory where you can code along.    
         - Example. If your username is bbrydsoe and you are at HPC2N, then we recommend you create this folder: 
      
-           /proj/nobackup/snic2022-22-641/bbrydsoe/pythonHPC2N (TOFIX)
+           /proj/nobackup/<your-project-id>/bbrydsoe/<language> 
          
    
 The two HPC centers UPPMAX and HPC2N
@@ -171,7 +171,7 @@ The two HPC centers UPPMAX and HPC2N
      - Slurm batch job and scheduling system
      - ``pip install`` procedure
    - ... and small differences:
-     - commands to load Python and python packages
+     - commands to load Python, Python packages, R, Julia
      - isolated environments ``virtualenv`` vs ``venv``
      - slightly different flags to Slurm
    - ... and some bigger differences:
@@ -186,7 +186,7 @@ The two HPC centers UPPMAX and HPC2N
     
 .. warning:: 
 
-   - At both HPC2N UPPMAX we call the applications available via the *module system* **modules**. 
+   - At both HPC2N and UPPMAX we call the applications available via the *module system* **modules**. 
    - https://www.uppmax.uu.se/resources/software/module-system/ 
    - https://www.hpc2n.umu.se/documentation/environment/lmod
    
