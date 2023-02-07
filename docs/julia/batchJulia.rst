@@ -683,12 +683,8 @@ reference point, we show the simulation on CPUs as well.
             ml Julia/1.8.5-linux-x86_64
             ml CUDA/11.4.1
 
-            export JULIA_CUDA_USE_BINARYBUILDER=false
-
             julia script-gpu.jl
 
-        Setting the environment variable ``JULIA_CUDA_USE_BINARYBUILDER`` to ``false`` is a best practice,
-        otherwise Julia would try to download binaries for CUDA compatible libraries.
 
    .. tab:: script-gpu.jl 
    
@@ -827,8 +823,6 @@ Exercises
                 ml purge  > /dev/null 2>&1
                 ml Julia/1.8.5-linux-x86_64
                 ml CUDA/11.4.1
-
-                export JULIA_CUDA_USE_BINARYBUILDER=false
 
                 julia script-gpu.jl
 

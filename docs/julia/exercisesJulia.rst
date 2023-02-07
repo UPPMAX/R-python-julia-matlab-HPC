@@ -305,8 +305,6 @@ GPU code
                 ml Julia/1.8.5-linux-x86_64
                 ml CUDA/11.4.1
 
-                export JULIA_CUDA_USE_BINARYBUILDER=false
-
                 julia script-gpu.jl
 
             Output:
