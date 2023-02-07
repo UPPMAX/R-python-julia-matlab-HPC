@@ -182,7 +182,7 @@ Prepare the course environment
    **Code along!**
 
 
-Create a virtual environment called ``venv-python-course``. First load the python version you want to base your virtual environment on:
+Create a virtual environment called ``vpyenv`. First load the python version you want to base your virtual environment on:
 
 .. tabs::
 
@@ -191,21 +191,21 @@ Create a virtual environment called ``venv-python-course``. First load the pytho
       .. code-block:: sh
 
           $ module load python/3.9.5
-          $ python -m venv --system-site-packages /proj/py-r-jl/<user>/python/venv-python-course
+          $ python -m venv --system-site-packages /proj/py-r-jl/<user>/python/vpyenv
     
       Activate it.
 
       .. code-block:: sh
 
-         $ source /proj/py-r-jl/<user>/python/venv-python-course/bin/activate
+         $ source /proj/py-r-jl/<user>/python/vpyenv/bin/activate
 
-      Note that your prompt is changing to start with (venv-python-course) to show that you are within an environment.
+      Note that your prompt is changing to start with (vpyenve) to show that you are within an environment.
 
-      Install your packages with ``pip`` (`--user` not needed)and the correct versions, like:
+      Install your packages with ``pip`` (``--user`` not needed) and the correct versions, like:
 
       .. prompt:: 
          :language: bash
-         :prompts: (venv-python-course) $
+         :prompts: (vpyenv) $
 
          pip install spacy seaborn
 
@@ -213,7 +213,7 @@ Create a virtual environment called ``venv-python-course``. First load the pytho
 
       .. prompt:: 
          :language: bash
-         :prompts: (venv-python-course) $
+         :prompts: (vvpyenv) $
 
          pip list
 
@@ -221,7 +221,7 @@ Create a virtual environment called ``venv-python-course``. First load the pytho
 
       .. prompt:: 
          :language: bash
-         :prompts: (venv-python-course) $
+         :prompts: (vpyenv) $
 
          deactivate
 
@@ -229,13 +229,14 @@ Create a virtual environment called ``venv-python-course``. First load the pytho
 
       .. prompt:: bash $
 
-         source /proj/py-r-jl/<user>/python/venv-python-course/bin/activate
+         source /proj/py-r-jl/<user>/python/vpyenv/bin/activate
 
       More on virtual environment: https://docs.python.org/3/tutorial/venv.html 
       
    .. tab:: HPC2N
      
-      1) Installing spacy. Using existing modules for numpy (in SciPy-bundle) and the vpyenv we created under Python 3.9.5. Note that you need to load Python again if you have been logged out, etc. but the virtual environment remains, of course 
+      1) **First go to the directory you want your environment in.**
+      Installing spacy. Using existing modules for numpy (in SciPy-bundle) and the vpyenv we created under Python 3.9.5. Note that you need to load Python again if you have been logged out, etc. but the virtual environment remains, of course.
 
       .. admonition:: Load modules for Python, numpy (in SciPy-bundle), activate the environment, and install spacy on Kebnekaise at HPC2N 
          :class: dropdown
