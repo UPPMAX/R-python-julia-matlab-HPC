@@ -136,30 +136,121 @@ way to check is probably starting the interpreter and running the ``libPaths()``
 
 
 
+Preinstalled package libraries
+------------------------------
+
+Both UPPMAX and HPC2N offer a large amount of preinstalled packages. On HPC2N
+most of these (around 750 packages) come with the ``R`` module and additional
+ones in the ``R-bundle-Bioconductor``. On UPPMAX the module ``R_packages`` is a
+package library containing almost all packages in the CRAN and BioConductor
+repositories. As of 2021-11-11 there are a total of 21659 R packages installed
+in ``R_packages/4.1.1``. A total of 21740 packages are available in CRAN and
+BioConductor. 
+
+There are many different ways to check if the package you are after is already
+installed - chances are it is! The simplest way is probably to simply try
+loading the package from within ``R``
+
+.. code-block:: R
+   library(package-name)
+
+Another option would be to create a dataframe of all the installed packages
+
+.. code-block:: R
+   ip <- as.data.frame(installed.packages()[,c(1,3:4)])
+
+   rownames(ip) <- NULL
+
+   ip <- ip[is.na(ip$Priority),1:2,drop=FALSE]
+
+   print(ip, row.names=FALSE)
+
+However, this might not be so helpful unless you do aditional filtering.
+Another simple option is to ``grep`` the library directory. For example, both
+when loading ``R_packages`` at UPPMAX and ``R-bundle-Bioconductor`` at HPC2N
+the environment variable ``R_LIBS_SITE`` will be set to the path of the package
+library.
+
+
+.. tabs::
+
+   .. tab:: UPPMAX
+
+      Load ``R_packages``
+
+      .. code-block:: sh 
+
+         $ ml R_packages/4.1.1
+
+      Then grep for some package
+
+      .. code-block:: sh
+
+         $ ls -l $R_LIBS_SITE | grep glmnet
+         dr-xr-sr-x  9 douglas sw  4096 Sep  6  2021 EBglmnet
+         dr-xr-sr-x 11 douglas sw  4096 Nov 11  2021 glmnet
+         dr-xr-sr-x  8 douglas sw  4096 Sep  7  2021 glmnetcr
+         dr-xr-sr-x  7 douglas sw  4096 Sep  7  2021 glmnetUtils
+	
+   .. tab:: HPC2N
+   
+      Load ``R-bundle-Bioconductor``
+
+      .. code-block:: sh 
+
+         $ ml GCC/11.2.0  OpenMPI/4.1.1 R-bundle-Bioconductor/3.14-R-4.1.2
+
+      Check the ``R_LIBS_SITE`` environment variable
+
+      .. code-block:: sh
+         $ echo $R_LIBS_SITE
+         /hpc2n/eb/software/R-bundle-Bioconductor/3.14-foss-2021b-R-4.1.2:/hpc2n/eb/software/arrow-R/6.0.0.2-foss-2021b-R-4.1.2
+
+      Then grep for some package in the BioConductor package library
+
+      .. code-block:: sh 
+
+         $ ls -l $/hpc2n/eb/software/R-bundle-Bioconductor/3.14-foss-2021b-R-4.1.2 | grep RNA
+         drwxr-xr-x  9 easybuild easybuild 4096 Dec 30  2021 DeconRNASeq/
+         drwxr-xr-x  7 easybuild easybuild 4096 Dec 30  2021 RNASeqPower/
+
 
 Installing your own packages
 ----------------------------
 
-Sometimes you will need R packages that are not already installed. The solution to this is to install your own packages. These packages will usually come from CRAN (https://cran.r-project.org/) - the Comprehensive R Archive Network, or sometimes from other places, like GitHub or R-Forge
+Sometimes you will need R packages that are not already installed. The solution
+to this is to install your own packages. These packages will usually come from
+CRAN (https://cran.r-project.org/) - the Comprehensive R Archive Network, or
+sometimes from other places, like GitHub or R-Forge
 
-Here we will look at installing R packages with automatic download and with manual download. It is also possible to install from inside Rstudio. 
+Here we will look at installing R packages with automatic download and with
+manual download. It is also possible to install from inside Rstudio. 
 
 Setup
 #####
 
-We need to create a place for the own-installed packages to be and to tell R where to find them. The initial setup only needs to be done once, but separate package directories need to be created for each R version used. 
+We need to create a place for the own-installed packages to be and to tell R
+where to find them. The initial setup only needs to be done once, but separate
+package directories need to be created for each R version used. 
 
-R reads the ``$HOME/.Renviron`` file to setup its environment. It should be created by R on first run, or you can create it with the command: ``touch $HOME/.Renviron``
+R reads the ``$HOME/.Renviron`` file to setup its environment. It should be
+created by R on first run, or you can create it with the command: ``touch
+$HOME/.Renviron``
 
-**NOTE**: In this example we are going to assume you have chosen to place the R packages in a directory under your home directory. As mentioned, you will need separate ones for each R version.
+**NOTE**: In this example we are going to assume you have chosen to place the R
+packages in a directory under your home directory. As mentioned, you will need
+separate ones for each R version.
 
-If you have not yet installed any packages to R yourself, the environment file should be empty and you can update it like this: 
+If you have not yet installed any packages to R yourself, the environment file
+should be empty and you can update it like this: 
 
 .. code-block:: sh 
 
     echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron
 
-If it is **not** empty, you can edit ``$HOME/.Renviron`` with your favorite editor so that ``R_LIBS_USER`` contain the path to your chosen directory for own-installed R packages. It should look something like this when you are done:
+If it is **not** empty, you can edit ``$HOME/.Renviron`` with your favorite
+editor so that ``R_LIBS_USER`` contain the path to your chosen directory for
+own-installed R packages. It should look something like this when you are done:
 
 .. code-block:: sh 
 
@@ -169,7 +260,9 @@ If it is **not** empty, you can edit ``$HOME/.Renviron`` with your favorite edit
 | NOTE: Replace ``/home/u/user`` with the value of ``$HOME``. Run ``echo $HOME`` to see its value.
 | NOTE: The ``%V`` should be written as-is, it's substituted at runtime with the active R version.
 
-For each version of R you are using, create a directory matching the pattern used in ``.Renviron`` to store your packages in. This example is shown for R version 4.0.4:
+For each version of R you are using, create a directory matching the pattern
+used in ``.Renviron`` to store your packages in. This example is shown for R
+version 4.0.4:
 
 .. code-block:: sh 
 
@@ -201,13 +294,15 @@ Automatical download and install from CRAN
           install.packages('<r-package>', repos='<repo>')
        
 
-In either case, the dependencies of the package will be downloaded and installed as well. 
+In either case, the dependencies of the package will be downloaded and
+installed as well. 
 
       
 Example
 *******
 
-In this example, we will install the R package ``stringr`` and use the repository http://ftp.acc.umu.se/mirror/CRAN/ 
+In this example, we will install the R package ``stringr`` and use the
+repository http://ftp.acc.umu.se/mirror/CRAN/ 
 
 .. tabs::
 
@@ -228,9 +323,13 @@ In this example, we will install the R package ``stringr`` and use the repositor
 Automatic download and install from GitHub
 ##########################################
 
-If you want to install a package that is not on CRAN, but which do have a GitHub page, then there is an automatic way of installing, but you need to handle prerequsites yourself by installing those first. It can also be that the package is not in as finished a state as those on CRAN, so be careful. 
+If you want to install a package that is not on CRAN, but which do have a
+GitHub page, then there is an automatic way of installing, but you need to
+handle prerequsites yourself by installing those first. It can also be that the
+package is not in as finished a state as those on CRAN, so be careful. 
 
-To install packages from GitHub directly, from inside R, you first need to install the devtools package. Note that you only need to install this **once**. 
+To install packages from GitHub directly, from inside R, you first need to
+install the devtools package. Note that you only need to install this **once**. 
 
 This is how you install a package from GitHub, inside R:
 
@@ -243,9 +342,13 @@ This is how you install a package from GitHub, inside R:
 Example
 *******
 
-In this example we want to install the package ``quantstrat``. It is not on CRAN, so let's get it from the GitHub page for the project: https://github.com/braverock/quantstrat 
+In this example we want to install the package ``quantstrat``. It is not on
+CRAN, so let's get it from the GitHub page for the project:
+https://github.com/braverock/quantstrat 
 
-We also need to install devtools so we can install packages from GitHub. In addition, ``quantstrat`` has some prerequisites, some on CRAN, some on GitHub, so we need to install those as well. 
+We also need to install devtools so we can install packages from GitHub. In
+addition, ``quantstrat`` has some prerequisites, some on CRAN, some on GitHub,
+so we need to install those as well. 
 
 .. code-block:: sh 
 
@@ -260,14 +363,17 @@ We also need to install devtools so we can install packages from GitHub. In addi
 Manual download and install
 ###########################
 
-If the package is not on CRAN or you want the development version, or you for other reason want to install a package you downloaded, then this is how to install from the command line: 
+If the package is not on CRAN or you want the development version, or you for
+other reason want to install a package you downloaded, then this is how to
+install from the command line: 
 
 .. code-block:: sh 
 
     R CMD INSTALL -l <path-to-R-package>/R-package.tar.gz
     
 
-**NOTE** that if you install a package this way, you need to handle any dependencies yourself. 
+**NOTE** that if you install a package this way, you need to handle any
+dependencies yourself. 
 
 .. note:: 
 
@@ -286,22 +392,30 @@ If the package is not on CRAN or you want the development version, or you for ot
 	- from BASH shell with the 
 		- ``ml help R/<version>`` at UPPMAX
 		- ``ml spider R/<version>`` at HPC2N
-   - Installation of R packages can be done either from within R or from the command line (BASH shell)
-   - CRAN is the recommended place to look for R-packages, but many packages can be found on GitHub and if you want the development version of a package you likely need to get it from GitHub or other place outside CRAN. You would then either download and install manually or install with something like devtools, from within R. 
+   - Installation of R packages can be done either from within R or from the
+     command line (BASH shell)
+   - CRAN is the recommended place to look for R-packages, but many packages
+     can be found on GitHub and if you want the development version of a
+     package you likely need to get it from GitHub or other place outside CRAN.
+     You would then either download and install manually or install with
+     something like devtools, from within R. 
 
 Exercises
 ---------
 
 .. challenge:: Install a package with automatic download
 
-   1) First do the setup of .Renviron and create the directory for installing R packages
+   1) First do the setup of .Renviron and create the directory for installing R
+   packages
    2) From the command line. Suggestion: "anomalize"
    3) From inside R. Suggestion: "tidyr"
    4) Start R and see if the library can be loaded. 
    
-   These are both on CRAN, and this way any dependencies will be installed as well. 
+   These are both on CRAN, and this way any dependencies will be installed as
+   well. 
    
-   Remember to pick a repo that is nearby, to install from: https://cran.r-project.org/mirrors.html 
+   Remember to pick a repo that is nearby, to install from:
+   https://cran.r-project.org/mirrors.html 
 
 
 .. solution:: Solution
@@ -344,6 +458,3 @@ Exercises
 	       > library("tidyr")
 	    
 	   "anomalize" outputs some text/advertisment when loaded. You can ignore this. 
-	 
-
- 	    
