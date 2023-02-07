@@ -137,7 +137,12 @@ Load a Python module
 
 For reproducibility, we recommend ALWAYS loading a specific module instad of using the default version! 
 
-For this course, we recommend using Python 3.9.5
+For this course, we recommend using Python 3.9.5.
+
+.. tip::
+    
+   **Code along!**
+
 
 .. tabs::
 
@@ -213,16 +218,9 @@ since python is a symbolic link to python3 in this case.
 
 NOTE: *only* run jobs that are short and/or do not use a lot of resources from the command line. Otherwise use the batch system!
     
-More information will follow later in the course on running Python from within a **batch job**. 
+.. note::
 
-Exit Python with <Ctrl-D>, "quit()" or 'exit()’ in the python prompt
-
-.. code-block:: python
-
-    >>> <Ctrl-D>
-    >>> quit()
-    >>> exit()
-
+   Real cases will be tested in the `**batch session**<https://uppmax.github.io/R-python-julia-HPC/python/batchPython.html>`_. 
 
 Run an interactive Python shell
 ###############################
@@ -267,9 +265,28 @@ For more interactiveness you can run Ipython
 
          $ ipython 
 
+**Example**
 
-Exit Python or IPython with <Ctrl-D>, "quit()" or 'exit()’ in the python prompt
+.. code-block:: python
 
+   >>> a=3
+   >>> b=7
+   >>> c=a+b
+   >>> c
+   10
+
+
+- Exit Python or IPython with <Ctrl-D>, "quit()" or 'exit()’ in the python prompt
+
+
+Python
+.. code-block:: python
+
+    >>> <Ctrl-D>
+    >>> quit()
+    >>> exit()
+
+iPython
 .. code-block:: ipython
 
     In [2]: <Ctrl-D>
