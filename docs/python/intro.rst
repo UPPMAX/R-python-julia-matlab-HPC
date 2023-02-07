@@ -15,7 +15,7 @@ Introduction Python
   
 .. admonition:: Exercises **FIX**
 
-    - You can download the exercises from the course GitHub repo, under the "Exercises" directory: https://github.com/UPPMAX/R-python-julia-HPC/tree/main/Exercises 
+    - You can download the exercises from the course GitHub repo, under the "Exercises" directory: https://github.com/UPPMAX/R-python-julia-HPC 
     
 .. admonition:: **Your expectations?**
    
