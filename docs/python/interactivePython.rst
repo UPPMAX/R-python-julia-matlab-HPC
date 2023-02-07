@@ -80,10 +80,14 @@ You can now run Python scripts on the allocated resources directly instead of wa
       script or perhaps figure out which parameters are best.
                   
 
-Example **Code along**
-######################
+Example
+#######
 
-**Requesting 4 cores for 30 minutes, then running Python**
+.. tip::
+    
+   **Code along!**
+
+**Requesting 4 cores for 10 minutes, then running Python**
 
 .. tabs::
 
@@ -91,7 +95,7 @@ Example **Code along**
 
       .. code-block:: sh
       
-          [bjornc@rackham2 ~]$ interactive -A snic2022-22-641 -p core -n 4 -t 30:00
+          [bjornc@rackham2 ~]$ interactive -A naiss2023-22-44 -p devcore -n 4 -t 10:00
           You receive the high interactive priority.
           There are free cores, so your job is expected to start at once.
       
@@ -118,7 +122,7 @@ Example **Code along**
          
       .. code-block:: sh
       
-          b-an01 [~]$ salloc -n 4 --time=00:30:00 -A SNIC2022-22-641
+          b-an01 [~]$ salloc -n 4 --time=00:10:00 -A SNIC2022-22-641
           salloc: Pending job allocation 20174806
           salloc: job 20174806 queued and waiting for resources
           salloc: job 20174806 has been allocated resources
