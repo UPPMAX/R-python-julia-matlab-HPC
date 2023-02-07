@@ -133,12 +133,15 @@ A selection of the Python packages and libraries installed on UPPMAX and HPC2N a
 
    .. tab:: HPC2N
 
-	The python application at HPC2N comes with several preinstalled packages - check first before installing yourself!. HPC2N has both Python 2.7.x and Python 3.x installed. We will be using Python 3.x in this course.  For this course, the recommended version of Python to use on Kebnekaise is 3.9.5
+      - The python application at HPC2N comes with several preinstalled packages - check first before installing yourself!. 
+      - HPC2N has both Python 2.7.x and Python 3.x installed. 
+      - We will be using Python 3.x in this course.  For this course, the recommended version of Python to use on Kebnekaise is 3.9.5
 
 	NOTE:  HPC2N do NOT recommend (and do not support) using Anaconda/Conda on our systems. You can read more about this here: https://www.hpc2n.umu.se/documentation/guides/anaconda
 
 
-	This is a selection of the packages and libraries installed at HPC2N. These are all installed as **modules** and need to be loaded before use. 
+      - This is a selection of the packages and libraries installed at HPC2N. These are all installed as **modules** and need to be loaded before use. 
+	
 	  - ``ASE``
 	  - ``Keras``
 	  - ``PyTorch``
@@ -201,6 +204,21 @@ Conda
    - Learn pros and cons with Conda
    - Learn how to install packages and work with the Conda (isolated) environment
 
+Using Conda
+'''''''''''
+      
+.. admonition:: Conda cheat sheet    
+   
+   - List packages in present environment:	``conda list``
+   - List all environments:			``conda info -e`` or ``conda env list``
+   - Install a package: ``conda install somepackage``
+   - Install from certain channel (conda-forge): ``conda install -c conda-forge somepackage``
+   - Install a specific version: ``conda install somepackage=1.2.3``
+   - Create a new environment: ``conda create --name myenvironment``
+   - Create a new environment from requirements.txt: ``conda create --name myenvironment --file requirements.txt``
+   - On e.g. HPC systems where you don’t have write access to central installation directory: conda create --prefix /some/path/to/env``
+   - Activate a specific environment: ``conda activate myenvironment``
+   - Deactivate current environment: ``conda deactivate``
 
 
 Install with conda (UPPMAX)
@@ -228,6 +246,10 @@ Install with conda (UPPMAX)
 First steps
 '''''''''''
 
+.. tip::
+    
+   There will be an exercise in the end! 
+
 1. First load our conda module (there is no need to install you own miniconda, for instance)
 
   .. prompt:: bash $
@@ -239,7 +261,7 @@ First steps
   - Check the text output as conda is loaded, especially the first time, see below
   
    .. admonition:: Conda load output
-       :class: dropdown
+          :class: dropdown
 
        - The variable CONDA_ENVS_PATH contains the location of your environments. Set it to your project's environments folder if you have one.
 
@@ -267,22 +289,7 @@ First steps
  
       Run ``source conda_init.sh`` to initialise your shell (bash) to be able to run ``conda activate`` and ``conda deactivate`` etcetera instead of ``source activate``. It will modify (append) your ``.bashrc`` file.
       
-Using Conda
-'''''''''''
-      
-.. admonition:: Conda cheat sheet    
-   
-   - List packages in present environment:	``conda list``
-   - List all environments:			``conda info -e`` ot ``conda env list``
-   - Install a package: ``conda install somepackage``
-   - Install from certain channel (conda-forge): ``conda install -c conda-forge somepackage``
-   - Install a specific version: ``conda install somepackage=1.2.3``
-   - Create a new environment: ``conda create --name myenvironment``
-   - Create a new environment from requirements.txt: ``conda create --name myenvironment --file requirements.txt``
-   - On e.g. HPC systems where you don’t have write access to central installation directory: conda create --prefix /some/path/to/env``
-   - Activate a specific environment: ``conda activate myenvironment``
-   - Deactivate current environment: ``conda deactivate``
-   
+  
    - When conda is loaded you will by default be in the base environment, which works in the same way as other conda environments. include a Python installation and some core system libraries and dependencies of Conda. It is a “best practice” to avoid installing additional packages into your base software environment.
 
 
@@ -329,20 +336,19 @@ Using Conda
     - Do a ``conda clean -a`` once in a while to remove unused and unnecessary files
     
     
-- `More info about Conda on UPPMAX
-<https://uppmax.uu.se/support/user-guides/conda-user-guide/>`_
+- `More info about Conda on UPPMAX <https://uppmax.uu.se/support/user-guides/conda-user-guide/>`_
 
 
 Working with Conda environments defined by files
 ''''''''''''''''''''''''''''''''''''''''''''''''
 
-- Create an environment based on dependencies given in an environment file ::
+- Create an environment based on dependencies given in an environment file:: 
 
    $ conda env create --file environment.yml
    
 - Create file from present conda environment::
 
-  $ conda env export > environment.yml
+   $ conda env export > environment.yml
   
 
 ``environments.yml`` (for conda) is a yaml-file which looks like this:
@@ -374,12 +380,13 @@ Working with Conda environments defined by files
 
 .. admonition:: More on dependencies
 
-   - `Dependency management from coursePython for Scientific computing <https://aaltoscicomp.github.io/python-for-scicomp/dependencies/>`_
+   - Dependency management from course `Python for Scientific computing <https://aaltoscicomp.github.io/python-for-scicomp/dependencies/>`_
 
 
 .. keypoints::
 
    - Conda is an installer of packages but also bigger toolkits
-   - Conda creates isolated environments not clashing with other installations of python and other versions of packages
-   - Conda environment requires that you install all packges needed by yourself. That is,  you cannot load the python module and use the packages therein inside you Conda environment.
+   - Conda creates isolated environments (see next section) not clashing with other installations of python and other versions of packages
+   - Conda environment requires that you install all packages needed by yourself. 
+     - That is, you cannot load the python module and use the packages therein inside you Conda environment.
     
