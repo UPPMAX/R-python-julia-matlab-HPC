@@ -55,13 +55,13 @@ run on the allocated nodes instead of the login node.
 
       .. code-block:: sh
           
-         $ interactive -n <tasks> --time=HHH:MM:SS -A SNICXXXX-YY-ZZZ 
+         $ interactive -n <tasks> --time=HHH:MM:SS -A naiss2023-22-44
       
    .. tab:: HPC2N (salloc)
 
       .. code-block:: sh
           
-         $ salloc -n <tasks> --time=HHH:MM:SS -A SNICXXXX-YY-ZZZ 
+         $ salloc -n <tasks> --time=HHH:MM:SS -A hpc2nXXXX-YYY  
          
       
 where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in 
@@ -122,7 +122,7 @@ Example
          
       .. code-block:: sh
       
-          b-an01 [~]$ salloc -n 4 --time=00:10:00 -A SNIC2022-22-641
+          b-an01 [~]$ salloc -n 4 --time=00:10:00 -A hpc2nXXXX-YYY 
           salloc: Pending job allocation 20174806
           salloc: job 20174806 queued and waiting for resources
           salloc: job 20174806 has been allocated resources
