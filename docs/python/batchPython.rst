@@ -67,7 +67,7 @@ Serial code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+            #SBATCH -A naiss2023-22-44 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -85,7 +85,7 @@ Serial code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+            #SBATCH -A hpc2nXXXX-YYY # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -142,7 +142,7 @@ Serial code + self-installed package in virt. env.
         .. code-block:: sh
         
             #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+            #SBATCH -A naiss2023-22-44 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -151,7 +151,7 @@ Serial code + self-installed package in virt. env.
             
             # Activate your virtual environment. 
             # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
-            # Example: /proj/snic2022-22-641/nobackup/mrspock/pythonUPPMAX 
+            # Example: /proj/py-r-jl/<user>/python/vpyenv 
             source <path-to-virt-env>/bin/activate
             
             # Run your Python script
@@ -165,7 +165,7 @@ Serial code + self-installed package in virt. env.
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+            #SBATCH -A hpc2nXXXX-YYY # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -183,6 +183,7 @@ Serial code + self-installed package in virt. env.
 
 GPU code
 ''''''''
+**We'll not test this live, but you can try if you have Snowy access**
 
 .. tabs::
 
@@ -216,7 +217,7 @@ GPU code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+            #SBATCH -A hpc2nXXXX-YYY # Change to your own after the course
             #SBATCH --reservation=hpc-python  # Only valid during the course 
             #SBATCH --time=00:10:00  # Asking for 10 minutes
             # Asking for one K80 card
@@ -263,7 +264,7 @@ Exercises
           .. code-block:: sh
  
             #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+            #SBATCH -A hpc2nXXXX-YYY # Change to your own after the course
             #SBATCH --time=00:05:00 # Asking for 5 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -281,7 +282,7 @@ Exercises
           .. code-block:: sh
  
             #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
+            #SBATCH -A naiss2023-22-44 # Change to your own after the course
             #SBATCH --time=00:05:00 # Asking for 5 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -297,5 +298,6 @@ Exercises
    - Interactive sessions was presented in last slide
    - Batch jobs runs without interaction with user
    - A batch script consists of a part with SLURM parameters describing the allocation and a second part describing the actual work within the job, for instance one or several Python scripts.
+      
       - Remember to include possible input arguments to the Python script in the batch script.
     
