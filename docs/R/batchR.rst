@@ -193,6 +193,49 @@ Parallel code
               }
 
 
+.. tabs::
+
+   .. tab:: UPPMAX
+
+        Short parallel example (using packages "Rmpi"). Loading R/4.0.4. 
+
+        .. code-block:: sh
+        
+            #!/bin/bash
+            #SBATCH -A naiss2023-22-44
+            #SBATCH -t 00:10:00
+            #SBATCH -n 8
+
+            ml purge > /dev/null 2>&1
+            ml R/4.0.4
+            
+            # Batch script to submit an R program that uses Rmpi
+            mpirun R -q -f <program>.R
+
+
+   .. tab:: HPC2N
+
+        Short parallel example (using packages "Rmpi"). Loading R/4.0.4 and its prerequisites. 
+       
+        .. code-block:: sh
+
+            #!/bin/bash
+            #SBATCH -A hpc2nXXXX-YYY # Change to your own project ID
+            #SBATCH -t 00:10:00
+            #SBATCH -n 8
+            
+            ml purge > /dev/null 2>&1
+            ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
+            
+            # Batch script to submit the R program parallel_foreach.R 
+            mpirun R -q -f <program>.R
+
+   
+   Note! 
+       - You must NOT spawn slaves with mpi.spawn.Rslaves()!
+       - You must use "mpirun R" in your script.
+
+
 
 GPU code
 ''''''''
