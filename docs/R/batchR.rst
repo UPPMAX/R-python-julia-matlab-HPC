@@ -51,7 +51,18 @@ Useful commands to the batch system
 - Delete a specific job: ``scancel <job-id>``
 - Useful info about a job: ``sacct -l -j <job-id> | less -S``
 - Url to a page with info about the job (Kebnekaise only): ``job-usage <job-id>``
-         
+
+
+.. keypoints::
+
+   - The SLURM scheduler handles allocations to the calculation nodes
+   - Interactive sessions was presented in the previous presentation
+   - Batch jobs runs without interaction with the user
+   - A batch script consists of a part with SLURM parameters describing the allocation and a second part describing the actual work within the job, for instance one or several R scripts.
+      - Remember to include possible input arguments to the R script in the batch script.
+    
+
+
 Example R batch scripts
 ---------------------------- 
 
@@ -430,11 +441,3 @@ Exercises
             # Run your Python script 
             python sum-2args.py 2 3 
 
-.. keypoints::
-
-   - The SLURM scheduler handles allocations to the calculation nodes
-   - Interactive sessions was presented in last slide
-   - Batch jobs runs without interaction with user
-   - A batch script consists of a part with SLURM parameters describing the allocation and a second part describing the actual work within the job, for instance one or several Python scripts.
-      - Remember to include possible input arguments to the Python script in the batch script.
-    
