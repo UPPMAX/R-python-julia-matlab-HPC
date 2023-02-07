@@ -225,7 +225,13 @@ NOTE: *only* run jobs that are short and/or do not use a lot of resources from t
 Run an interactive Python shell
 ###############################
 
-For more interactiveness you can run Ipython
+For more interactiveness you can run Ipython.
+
+.. tip::
+    
+   **Code along!**
+
+
 
 .. tabs::
 
@@ -278,8 +284,8 @@ For more interactiveness you can run Ipython
 
 - Exit Python or IPython with <Ctrl-D>, "quit()" or 'exit()’ in the python prompt
 
-
 Python
+
 .. code-block:: python
 
     >>> <Ctrl-D>
@@ -287,6 +293,7 @@ Python
     >>> exit()
 
 iPython
+
 .. code-block:: ipython
 
     In [2]: <Ctrl-D>
