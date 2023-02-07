@@ -135,7 +135,7 @@ Prepare your environment now!
    .. tab:: UPPMAX
 
       1. Log in to Rackham!
-        - terminal: ``ssh -Y <user>@rackham.uppmax.uu.se`` 
+        - Terminal: ``ssh -Y <user>@rackham.uppmax.uu.se`` 
       
         - ThinLinc app: ``<user>@rackham-gui.uppmax.uu.se``
         - ThinLinc in web browser: https://rackham-gui.uppmax.uu.se
@@ -147,11 +147,11 @@ Prepare your environment now!
      
          .. code-block:: sh
          
-            $ mkdir proj/py-r-jl/mrspock/<language>
+            $ mkdir /proj/py-r-jl/mrspock/<language>
 
    .. tab:: HPC2N
 
-      - Kebnekaise: ``<user>@kebnekaise.hpc2n.umu.se``     
+      - Kebnekaise through terminal: ``<user>@kebnekaise.hpc2n.umu.se``     
       - Kebnekaise through ThinLinc, use: ``<user>@kebnekaise-tl.hpc2n.umu.se``
    
       - Create a working directory where you can code along.    
