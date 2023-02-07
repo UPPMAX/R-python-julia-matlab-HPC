@@ -133,13 +133,13 @@ If you want it in a certain place...
 
       .. code-block:: sh
 
-         $ virtualenv --system-site-packages /proj/nobackup/<your-project-storage>/Example 
+         $ virtualenv --system-site-packages /proj/nobackup/your-project-id/<your-project-storage>/Example 
     
       Activate it.
 
       .. code-block:: sh
 
-          $ source /proj/nobackup/<your-project-storage>/Example/bin/activate
+          $ source /proj/nobackup/your-project-id/<your-project-storage>/Example/bin/activate
 
 
 Note that your prompt is changing to start with (name of your vitual environment) to show that you are within it.
@@ -171,7 +171,7 @@ Everytime you need the tools available in the virtual environment you activate i
 
 .. prompt:: bash $
 
-   source <path/>Example/bin/activate
+   source /proj/nobackup/your-project-id/Example/bin/activate
     
 
 Prepare the course environment
@@ -254,9 +254,9 @@ Create a virtual environment called ``vpyenv`. First load the python version you
    
          .. code-block:: sh
            
-            b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ module load GCC/10.3.0 OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 matplotlib/3.4.2
-            b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ source vpyenv/bin/activate
-            (vpyenv) b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ pip install --no-cache-dir --no-build-isolation seaborn 
+            $ module load GCC/10.3.0 OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 matplotlib/3.4.2
+            $ source vpyenv/bin/activate
+            (vpyenv) $ pip install --no-cache-dir --no-build-isolation seaborn 
 
          Deactivating a virtual environment.
 
@@ -268,7 +268,7 @@ Create a virtual environment called ``vpyenv`. First load the python version you
 
       .. code-block:: sh
 
-         $ source <path/to/virt-environment>/bin/activate
+         $ source vpyenv/bin/activate
     
 Using setup.py
 ''''''''''''''
