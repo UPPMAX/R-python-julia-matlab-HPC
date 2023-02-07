@@ -152,11 +152,13 @@ installed - chances are it is! The simplest way is probably to simply try
 loading the package from within ``R``
 
 .. code-block:: R
+
    library(package-name)
 
 Another option would be to create a dataframe of all the installed packages
 
 .. code-block:: R
+
    ip <- as.data.frame(installed.packages()[,c(1,3:4)])
 
    rownames(ip) <- NULL
