@@ -221,6 +221,39 @@ A Firefox session should start with the Jupyter notebook interface.
 This builds the package also locally before starting the notebook. If not done, Jupyter will not find the julia kernel of that version.
 With notebook(detached=true) the notebook wil not be killed when you exit your REPL julia session in the terminal.
 
+.. challenge:: Loading modules and running scripts
+    
+    Load the Julia version 1.8.5 and run the following serial script (``serial-sum.jl``) which accepts two integer arguments as input: 
+
+            .. code-block:: julia
+
+                x = parse( Int32, ARGS[1] )
+                y = parse( Int32, ARGS[2] )
+                summ = x + y
+                println("The sum of the two numbers is ", summ)
+
+    .. solution:: Solution for HPC2N
+        :class: dropdown
+        
+            This batch script is for Kebnekaise. 
+            
+            .. code-block:: sh
+    
+                $ ml purge  > /dev/null 2>&1       # recommended purge
+                $ ml Julia/1.8.5-linux-x86_64      # Julia module
+                        
+                $ julia serial-sum.jl Arg1 Arg2    # run the serial script
+
+    .. solution:: Solution for UPPMAX
+        :class: dropdown
+        
+            This batch script is for UPPMAX. Adding the numbers 2 and 3. (FIX)
+            
+            .. code-block:: sh
+    
+                
+                julia serial-sum.jl Arg1 Arg2    # run the serial script
+
 .. keypoints::
 
    - Before you can run julia scripts or work in a julia shell, first load a julia module.
