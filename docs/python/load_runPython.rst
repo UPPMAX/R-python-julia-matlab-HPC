@@ -25,7 +25,7 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
     
 .. warning::
    
-   - Note that the module systems at UPPMAX and HPC2 are slightly different. 
+   - Note that the module systems at UPPMAX and HPC2N are slightly different. 
    - While all modules at UPPMAX not directly related to bio-informatics are shown by ``ml avail``, modules at HPC2N are hidden until one has loaded a prerequisite like the compiler ``GCC``.
 
 
@@ -180,7 +180,7 @@ For this course, we recommend using Python 3.9.5.
 
    + UPPMAX: Don’t use system-installed python (2.7.5)
    + UPPMAX: Don't use system installed python3 (3.6.8)
-   + HPC2N: Don’t use system-installed python (2.7.18
+   + HPC2N: Don’t use system-installed python (2.7.18)
    + HPC2N: Don’t use system-installed python3  (3.8.10)
    + ALWAYS use python module
 
@@ -220,7 +220,7 @@ NOTE: *only* run jobs that are short and/or do not use a lot of resources from t
     
 .. note::
 
-   Real cases will be tested in the `**batch session**<https://uppmax.github.io/R-python-julia-HPC/python/batchPython.html>`_. 
+   Real cases will be tested in the **batch session** (https://uppmax.github.io/R-python-julia-HPC/python/batchPython.html). 
 
 Run an interactive Python shell
 ###############################
@@ -237,7 +237,7 @@ For more interactiveness you can run Ipython.
 
    .. tab:: UPPMAX
 
-      NOTE: remember to load a python module first. The start IPython from terminal
+      NOTE: remember to load a python module first. Then start IPython from the terminal
       
       .. code-block:: sh
 
