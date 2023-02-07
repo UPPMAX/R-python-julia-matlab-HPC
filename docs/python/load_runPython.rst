@@ -24,7 +24,9 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
     - Unload all modules except the 'sticky' modules: ``module purge`` or ``ml purge``
     
 .. warning::
-   Note that the module systems at UPPMAX and HPC2 are slightly different. While all modules at UPPMAX not directly related to bio-informatics are shown by ``ml avail``, modules at HPC2N are hidden until one has loaded a prerequisite like the compiler ``GCC``.
+   
+   - Note that the module systems at UPPMAX and HPC2 are slightly different. 
+   - While all modules at UPPMAX not directly related to bio-informatics are shown by ``ml avail``, modules at HPC2N are hidden until one has loaded a prerequisite like the compiler ``GCC``.
 
 
 - For reproducibility reasons, you should always load a specific version of a module instead of just the default version
@@ -34,6 +36,9 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
 Check for Python versions
 -------------------------
 
+.. Attention::
+    
+   **Code along!**
 
 .. tabs::
 
@@ -66,7 +71,7 @@ Check for Python versions
 
          $ module spider Python/3.9.5 
 
-.. admonition:: Output at UPPMAX as of March 9 2022
+.. admonition:: Output at UPPMAX as of Feb 7 2023
    :class: dropdown
     
        .. code-block::  tcl
@@ -75,10 +80,10 @@ Check for Python versions
            python_ML_packages/3.9.5    wrf-python/1.3.1
 
            --------------------------------------- /sw/mf/rackham/compilers ----------------------------------------
-           python/2.7.6     python/3.3      python/3.6.0    python/3.9.5  (D)    python3/3.8.7
-           python/2.7.9     python/3.3.1    python/3.6.8    python3/3.6.0        python3/3.9.5 (D)
-           python/2.7.11    python/3.4.3    python/3.7.2    python3/3.6.8
-           python/2.7.15    python/3.5.0    python/3.8.7    python3/3.7.2
+           python/2.7.6     python/3.3      python/3.6.0    python/3.9.5           python3/3.7.2
+           python/2.7.9     python/3.3.1    python/3.6.8    python/3.10.8 (L,D)    python3/3.8.7
+           python/2.7.11    python/3.4.3    python/3.7.2    python3/3.6.0          python3/3.9.5
+           python/2.7.15    python/3.5.0    python/3.8.7    python3/3.6.8          python3/3.10.8 (D)
 
            Where:
            D:  Default Module
@@ -86,7 +91,7 @@ Check for Python versions
            Use module spider" to find all possible modules and extensions.
            Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 
-.. admonition:: Output at HPC2N as of 27 July 2022
+.. admonition:: Output at HPC2N as of 7 Feb 2023
     :class: dropdown
 
         .. code-block:: tcl
@@ -112,6 +117,8 @@ Check for Python versions
                 Python/3.9.5   
                 Python/3.9.6-bare  
                 Python/3.9.6   
+                Python/3.10.4-bare
+                Python/3.10.4
             Other possible modules matches:
                 Biopython  Boost.Python  GitPython  IPython  flatbuffers-python  ...
            ----------------------------------------------------------------------------
@@ -166,8 +173,10 @@ For this course, we recommend using Python 3.9.5
 
 .. warning::
 
-   + UPPMAX: Don’t use system-installed python/2.7.5
-   + HPC2N: Don’t use system-installed python/2.7.18
+   + UPPMAX: Don’t use system-installed python (2.7.5)
+   + UPPMAX: Don't use system installed python3 (3.6.8)
+   + HPC2N: Don’t use system-installed python (2.7.18
+   + HPC2N: Don’t use system-installed python3  (3.8.10)
    + ALWAYS use python module
 
 .. admonition:: Why are there both Python/2.X.Y and Python/3.Z.W modules?
@@ -181,13 +190,11 @@ For this course, we recommend using Python 3.9.5
     
     + You can run two python modules at the same time if ONE of the module is ``python/2.X.Y`` and the other module is ``python3/3.X.Y`` (not ``python/3.X.Y``).
     
-
-
 Run
 ---
 
 Run Python script
-#####################
+#################
 
     
 You can run a python script in the shell like this:
