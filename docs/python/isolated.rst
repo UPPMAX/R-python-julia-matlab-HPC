@@ -25,9 +25,11 @@ General procedures
 ------------------
 
 You will often have the situation that your project(s) use different versions of Python and different versions of packages. This is great if you need different versions of a package for different tasks, for instance.
+
 As an example, maybe you have been using TensorFlow 1.x.x for your project and now you need to install a package that requires TensorFlow 2.x.x but you will still be needing the old version of TensorFlow for another package, for instance. This is easily solved with isolated environments.
 
-Isolated environments lets you create separate workspaces for different versions of Python and/or different versions of packages. You can activate and deactivate them one at a time, and work as if the other workspace does not exist.
+- Isolated environments lets you create separate workspaces for different versions of Python and/or different versions of packages. 
+- You can activate and deactivate them one at a time, and work as if the other workspace does not exist.
 
 There are different tools for creating an isolated environement, but they all have some things in common. At both UPPMAX and HPC2N the workflow is: 
 
@@ -42,9 +44,9 @@ There are different tools for creating an isolated environement, but they all ha
 
 In this course we will look at the following tools for creating and using isolated environments: 
 
-   - venv   
-   - *virtualenv*
-   - Conda
+   - venv            UPPMAX
+   - virtualenv      UPPMAX+HPC2N
+   - Conda           UPPMAX
 
 
 .. admonition:: venv vs. virtualenv
@@ -57,7 +59,7 @@ In this course we will look at the following tools for creating and using isolat
    - With a virtual environment you can tailor an environment with specific versions for Python and packages, not interfering with other installed python versions and packages.
    - Make it for each project you have for reproducibility.
    - There are different tools to create virtual environemnts.
-      - UPPMAX has  Conda and venv
+      - UPPMAX has  Conda and venv and virtualenv
       - HPC2N has virtualenv.
       - More details in the separated sessions!
  
@@ -67,6 +69,10 @@ Virtual environment - venv & virtualenv
 
 Example
 #######
+
+.. tip::
+    
+   **Code along!**
 
 Create a ``venv``. First load the python version you want to base your virtual environment on:
 
@@ -141,8 +147,6 @@ Note that your prompt is changing to start with (name of your vitual environment
 
 Example
 #######
-
-**Example**
 
 I load Python 3.9.5 and create a virtual environment called "vpyenv" in my personal project storage directory (/proj/nobackup/support-hpc2n/bbrydsoe): 
 
