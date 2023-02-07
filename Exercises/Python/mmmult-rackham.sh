@@ -1,4 +1,3 @@
-
 #!/bin/bash
 # Batch script for running mmmult.py on Rackham
 #SBATCH -A naiss2023-22-44 # Change to your own project ID after the course
