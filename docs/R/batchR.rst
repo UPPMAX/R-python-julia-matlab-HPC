@@ -231,7 +231,8 @@ Parallel code
             mpirun R -q -f <program>.R
 
    
-   Note! 
+
+Note! 
        - You must NOT spawn slaves with mpi.spawn.Rslaves()!
        - You must use "mpirun R" in your script.
 
