@@ -16,8 +16,6 @@ Introduction Python
 .. admonition:: Exercises **FIX**
 
     - You can download the exercises from the course GitHub repo, under the "Exercises" directory: https://github.com/UPPMAX/R-python-julia-HPC/tree/main/Exercises 
-    - On HPC2N, you can copy the exercises in a tarball from ``/proj/nobackup/snic2022-22-641/bbrydsoe/examples.tar.gz``
-    - On UPPMAX you can copy the exercises in a tarball from ``/proj/snic2022-22-641/nobackup/examples.tar.gz``
     
 .. admonition:: **Your expectations?**
    
@@ -112,7 +110,7 @@ libraries like NumPy, SciPy, scikit-learn and Pytorch.
 
     We will:
     
-    - teach you how to navigate the module system at HPC2N and UPPMAX
+    - teach you how to navigate the module system at UPPMAX (and HPC2N)
     - show you how to find out which versions of Python and packages are installed
     - look at the package handler **pip** (and **Conda** for UPPMAX)
     - explain how to create and use virtual environments
