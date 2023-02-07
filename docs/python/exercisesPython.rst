@@ -49,13 +49,13 @@ Isolated
      .. code-block:: sh
 
           $ module load GCC/10.3.0 Python/3.9.5 
-          $ virtualenv --system-site-packages /proj/nobackup/<your-project-storage>/analysis 
+          $ virtualenv --system-site-packages /proj/nobackup/your-project-id/analysis 
       
       Activate it.
 
       .. code-block:: sh
 
-         $ source /proj/nobackup/analysis/bin/activate
+         $ source /proj/nobackup/your-project-id/analysis/bin/activate
 
       - Note that your prompt is changing to start with (analysis) to show that you are within an environment.
       - Install the packages from the file::
