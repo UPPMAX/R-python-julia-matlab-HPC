@@ -312,26 +312,75 @@ ML code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
-            #SBATCH --reservation=hpc-python  # Only valid during the course 
-            #SBATCH --time=00:10:00  # Asking for 10 minutes
-            # Asking for one K80 card
-            #SBATCH --gres=gpu:k80:1
+            #SBATCH -A hpc2nXXXX-YYY # Change to your own project ID
+            #Asking for 10 min.
+            #SBATCH -t 00:10:00
+            #SBATCH -n 1
+            #Writing output and error files
+            #SBATCH --output=output%J.out
+            #SBATCH --error=error%J.error
             
-            # Remove any loaded modules and load the ones we need
-            module purge  > /dev/null 2>&1
-            module load GCC/10.3.0  OpenMPI/4.1.1 TensorFlow/2.6.0-CUDA-11.3.1
+            ml purge > /dev/null 2>&1
+            ml GCC/10.2.0  OpenMPI/4.0.5
+            ml R/4.0.4
             
-            # Activate the virtual environment we installed to
-            # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
-            # Example: /proj/snic2022-22-641/nobackup/mrspock/pythonUPPMAX
-            source <path-to-virt-env>/bin/activate
-            
-            # Run your Python script
-            python example-tf.py
-           
+            R --no-save --no-restore -f Rscript.R
 
-The recommended TensorFlow version for this course is 2.6.0 on Kebnekaise. The module is compatible with Python 3.9.5 (automatically loaded when you load TensorFlow and its other prerequisites).            
+
+   .. tab:: Rscript.R
+
+        Short ML example.       
+       
+        .. code-block:: sh
+
+            #Example taken from https://github.com/lgreski/datasciencectacontent/blob/master/markdown/pml-randomForestPerformance.md
+            library(mlbench)
+            data(Sonar)
+            library(caret)
+            set.seed(95014)
+            
+            # create training & testing data sets
+            inTraining <- createDataPartition(Sonar$Class, p = .75, list=FALSE)
+            training <- Sonar[inTraining,]
+            testing <- Sonar[-inTraining,]
+            
+            # set up training run for x / y syntax because model format performs poorly
+            x <- training[,-61]
+            y <- training[,61]
+            
+            #Serial mode
+            fitControl <- trainControl(method = "cv",
+                                       number = 25,
+                                       allowParallel = FALSE)
+            
+            stime <- system.time(fit <- train(x,y, method="rf",data=Sonar,trControl = fitControl))
+            
+            
+            #Parallel mode
+            library(parallel)
+            library(doParallel)
+            cluster <- makeCluster(1) 
+            registerDoParallel(cluster)
+            
+            fitControl <- trainControl(method = "cv",
+                                       number = 25,
+                                       allowParallel = TRUE)
+
+            ptime <- system.time(fit <- train(x,y, method="rf",data=Sonar,trControl = fitControl))
+            
+            stopCluster(cluster)
+            registerDoSEQ()
+            
+            fit
+            fit$resample
+            confusionMatrix.train(fit)
+            
+            #Timings
+            timing <- rbind(sequential = stime, parallel = ptime)
+            timing
+
+
+
 
 Exercises
 ---------
