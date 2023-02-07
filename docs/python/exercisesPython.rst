@@ -8,15 +8,16 @@ Isolated
 .. challenge:: Create a virtual environment with a requirements file below
 
    - Create a virtual environment with the name ``analysis``.
-   - Insatll packages define by the requirements.txt file
-   ``requirements.txt``::
-
-    numpy==1.18.1
-    matplotlib==3.1.3
-    pandas==1.1.2
+   - Install packages definde by the ``requirements.txt`` file (save it).
+  
+   .. code-block:: sh
+   
+      numpy==1.18.1
+      matplotlib==3.1.3
+      pandas==1.1.2
     
-    - Check that the packages were installed.
-    - Don't forget to deactivate afterwards.
+   - Check that the packages were installed.
+   - Don't forget to deactivate afterwards.
 
 .. solution:: Solution for UPPMAX
     :class: dropdown
