@@ -36,7 +36,7 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
 Check for Python versions
 -------------------------
 
-.. Attention::
+.. tip::
     
    **Code along!**
 
