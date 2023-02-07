@@ -408,7 +408,7 @@ More info
    3) Activate your virtual environment (optional): ``source <path-to-virt-env>/bin/activate``
    4) Install any extra Python packages (optional): ``pip install --no-cache-dir --no-build-isolation <python-package>``
    5) Start Python or run python script: ``python``
-   6) DO your work
+   6) Do your work
    7) Deactivate
 
    - Installed Python modules (modules and own-installed) can be accessed within Python with ``import <package>`` as usual. 
@@ -421,5 +421,6 @@ More info
    - With a virtual environment you can tailor an environment with specific versions for Python and packages, not interfering with other installed python versions and packages.
    - Make it for each project you have for reproducibility.
    - There are different tools to create virtual environemnts.
-      - UPPMAX has Conda and venv
+   
+      - UPPMAX has Conda and venv and virtualenv
       - HPC2N has virtualenv
