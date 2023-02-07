@@ -213,7 +213,7 @@ Create a virtual environment called ``vpyenv`. First load the python version you
 
       .. prompt:: 
          :language: bash
-         :prompts: (vvpyenv) $
+         :prompts: (vpyenv) $
 
          pip list
 
