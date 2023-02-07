@@ -407,20 +407,21 @@ Exercises
    	- Which version of Python did you get?
 	
    - Don't forget to deactivate the Conda environment before doing other exercises!
-    
-    
+
 .. solution:: Solution for UPPMAX
     :class: dropdown
     
+          Write this in the terminal
+          
           .. code-block:: bash $
- 
-             module load conda
-             export CONDA_ENVS_PATH=/proj/py-r-jl/<user>/python
-             conda create --name HPC-python23 python=3.7 numpy=1.15
-             source activate HPC-python23
-             pip list
-             python -V
-             source deactivate
+
+            module load conda
+            export CONDA_ENVS_PATH=/proj/py-r-jl/<user>/python
+            conda create --name HPC-python23 python=3.7 numpy=1.15
+            source activate HPC-python23
+            pip list
+            python -V
+            source deactivate
 
 
 .. keypoints::
