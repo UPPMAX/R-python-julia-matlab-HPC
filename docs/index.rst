@@ -79,7 +79,7 @@ Some practicals
     
 .. admonition:: Collabration document (Microsoft-365)
 
-    - https://umeauniversity.sharepoint.com/:w:/s/HPC2N630/EbHWglWYU_VNpTpdD2CtSfYBlpsAF6DyD_4RMwWCie_B0g?rtime=uSWfqzII20g
+    - `Q/A collaboration document <https://umeauniversity.sharepoint.com/:w:/s/HPC2N630/EbHWglWYU_VNpTpdD2CtSfYBlpsAF6DyD_4RMwWCie_B0g?rtime=uSWfqzII20g>`_
     
     - Use this page for the workshop with your questions.
 
