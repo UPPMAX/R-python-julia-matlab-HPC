@@ -194,7 +194,7 @@ GPU code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A SNICXXXX-YY-ZZZ
+            #SBATCH -A naiss2023-22-44
             #SBATCH -t 00:10:00
             #SBATCH --exclusive
             #SBATCH -p node
@@ -229,7 +229,7 @@ GPU code
             
             # Activate the virtual environment we installed to
             # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
-            # Example: /proj/snic2022-22-641/nobackup/mrspock/pythonUPPMAX
+            # Example: /proj/py-r-jl/mrspock/pythonUPPMAX
             source <path-to-virt-env>/bin/activate
             
             # Run your Python script
@@ -292,7 +292,7 @@ Exercises
 
 .. tip::
 
-   -For parallel computing, you may get an introduction `here<https://uppmax.github.io/HPC-python/parallel.html`_.
+   -For parallel computing, you may get an introduction here: (https://uppmax.github.io/HPC-python/parallel.html)
 
 
 
