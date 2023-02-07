@@ -77,7 +77,7 @@ Some practicals
       - You may enter there and you will get personal help
       
     
-.. admonition:: Collabration document (Microsoft-365)
+.. admonition:: Collaboration document (Microsoft-365)
 
     - `Q/A collaboration document <https://umeauniversity.sharepoint.com/:w:/s/HPC2N630/EbHWglWYU_VNpTpdD2CtSfYBlpsAF6DyD_4RMwWCie_B0g?rtime=uSWfqzII20g>`_
     
