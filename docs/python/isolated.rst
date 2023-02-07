@@ -414,6 +414,69 @@ More info
    - The command ``pip list`` given within Python will list the available modules to import. 
    - More about packages and virtual/isolated environment to follow in later sections of the course! 
 
+.. challenge:: Create a virtual environment with a requirements file below
+
+   - Create a virtual environment with the name ``analysis``.
+   - Install packages definde by the ``requirements.txt`` file (save it).
+  
+   .. code-block:: sh
+   
+      numpy==1.18.1
+      matplotlib==3.1.3
+      pandas==1.1.2
+    
+   - Check that the packages were installed.
+   - Don't forget to deactivate afterwards.
+
+.. solution:: Solution for UPPMAX
+    :class: dropdown
+    
+     .. code-block:: sh
+
+          $ module load python/3.9.5
+          $ python -m venv --system-site-packages /proj/py-r-jl/<user>/python/analysis
+    
+      Activate it.
+
+      .. code-block:: sh
+
+         $ source /proj/py-r-jl/<user>/python/analysis/bin/activate
+
+      - Note that your prompt is changing to start with (analysis) to show that you are within an environment.
+      - Install the packages from the file::
+      
+        pip install -r requirements.txt
+      
+      .. code-block:: sh
+
+         $ pip list
+	 $ deactivate
+      
+.. solution:: Solution for HPC2N
+    :class: dropdown
+    
+     .. code-block:: sh
+
+          $ module load GCC/10.3.0 Python/3.9.5 
+          $ virtualenv --system-site-packages /proj/nobackup/<your-project-storage>/analysis 
+      
+      Activate it.
+
+      .. code-block:: sh
+
+         $ source /proj/nobackup/analysis/bin/activate
+
+      - Note that your prompt is changing to start with (analysis) to show that you are within an environment.
+      - Install the packages from the file::
+      
+        pip install -r requirements.txt
+      
+      .. code-block:: sh
+
+         $ pip list
+	 $ deactivate
+      
+
 
 .. keypoints::
 
