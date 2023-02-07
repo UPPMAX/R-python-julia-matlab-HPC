@@ -183,10 +183,13 @@ We HIGHLY recommend using a virtual environment during installation, since this 
 .. keypoints::
 
    - You can check for packages 
+   
    	- from the Python shell with the ``import`` command
 	- from BASH shell with the 
+	
 		- ``pip list`` command at both centers
 		- ``ml help python/3.9.5`` at UPPMAX
+		
    - Installation of Python packages can be done either with **PYPI** or **Conda**
    - You install own packages with the ``pip install`` command (This is the recommended way on HPC2N)
    - At UPPMAX Conda is also available (See Conda section)
@@ -203,6 +206,10 @@ Conda
 
    - Learn pros and cons with Conda
    - Learn how to install packages and work with the Conda (isolated) environment
+   
+.. hint::
+
+   - On Bianca (with no internet), Conda is the first choice when installing packages, because there is a local mirror of most of the Conda repositories.
 
 Using Conda
 '''''''''''
@@ -387,33 +394,33 @@ Exercises
 
 .. challenge:: UPPMAX: Create a conda environment and install some packages
     
-   - First check the current installed packages while having python/3.9.5 loaded
+   - First check the current installed packages while having ``python/3.9.5`` loaded
    - Open a new terminal and have the old one available for later comparison
-   - Use the conda module on Rackham and create an environment with name `HPC-python23` with python 3.7 and numpy 1.15 
+   - Use the conda module on Rackham and create an environment with name ``HPC-python23`` with ``python 3.7``  and ``numpy 1.15``
    
-   	- Use your a path for `CONDA_ENVS_PATH` of your own choice or `/proj/py-r-jl/<user>/python`
+   	- Use your a path for ``CONDA_ENVS_PATH`` of your own choice or ``/proj/py-r-jl/<user>/python``
         - (It may take a minute or so)
 	
    - Activate!
-   - Check with `pip list` what is there. Compare with the environment given from the python module in the first terminal window. 
+   - Check with ``pip list`` what is there. Compare with the environment given from the python module in the first terminal window. 
    
    	- Which version of Python did you get?
 	
-   - Don't forget to exit the Conda environment before doing other exercises!
+   - Don't forget to deactivate the Conda environment before doing other exercises!
     
     
 .. solution:: Solution for UPPMAX
-   :class: dropdown
+    :class: dropdown
     
-      .. code-block:: bash $
+          .. code-block:: bash $
  
-          module load conda
-          export CONDA_ENVS_PATH=/proj/py-r-jl/<user>/python
-          conda create --name HPC-python23 python=3.7 numpy=1.15
-          source activate HPC-python23
-          pip list
-          python -V
-          source deactivate
+             module load conda
+             export CONDA_ENVS_PATH=/proj/py-r-jl/<user>/python
+             conda create --name HPC-python23 python=3.7 numpy=1.15
+             source activate HPC-python23
+             pip list
+             python -V
+             source deactivate
 
 
 .. keypoints::
