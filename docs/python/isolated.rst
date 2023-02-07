@@ -301,7 +301,7 @@ Using the self-installed packages in Python
 - To use the Python packages you have installed under your virtual environment, load your Python module + prerequisites, load any site-installed Python packages you used, and then activate the environment.
 - Now your own packages can be accessed from within Python, just like any other Python package. 
 
-**Example**
+**Test it!**
 
 .. tip::
     
@@ -310,13 +310,13 @@ Using the self-installed packages in Python
 
 Using the virtual environment created earlier and the ``spacy`` we installed under example 1) above. 
 
-.. admonition:: Load modules for Python, activate the environment 
+.. admonition:: UPPMAX:Load modules for Python, activate the environment 
    :class: dropdown
    
    .. code-block:: sh
            
       $ module load Python/3.9.5
-      $ source //proj/py-r-jl/<user>/python/vpyenv/bin/activate
+      $ source /proj/py-r-jl/<user>/python/vpyenv/bin/activate
       (vpyenv) $ python
            Python 3.9.5 (default, Jun  3 2021, 15:06:34)
            [GCC 9.3.0] on linux
@@ -326,7 +326,7 @@ Using the virtual environment created earlier and the ``spacy`` we installed und
            >>> 
 
 
-.. admonition:: Load modules for Python, numpy (in SciPy-bundle), activate the environment (on Kebnekaise at HPC2N) 
+.. admonition:: HPC2N: Load modules for Python, numpy (in SciPy-bundle), activate the environment 
     :class: dropdown
    
         .. code-block:: sh
@@ -339,8 +339,7 @@ Using the virtual environment created earlier and the ``spacy`` we installed und
            Type "help", "copyright", "credits" or "license" for more information.
            >>> import spacy
            >>> 
-           
-           
+          
 
 - To use self-installed Python packages in a batch script, you also need to load the above mentioned modules and activate the environment. An example of this will follow later in the course. 
 
