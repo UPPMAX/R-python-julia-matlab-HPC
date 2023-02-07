@@ -236,8 +236,6 @@ GPU code
             python example-tf.py
            
 
-The recommended TensorFlow version for this course is 2.6.0 on Kebnekaise. The module is compatible with Python 3.9.5 (automatically loaded when you load TensorFlow and its other prerequisites).            
-
 Exercises
 ---------
 
@@ -291,6 +289,12 @@ Exercises
             
             # Run your Python script 
             python sum-2args.py 2 3 
+
+.. tip::
+
+   -For parallel computing, you may get an introduction `here<https://uppmax.github.io/HPC-python/parallel.html`_.
+
+
 
 .. keypoints::
 
