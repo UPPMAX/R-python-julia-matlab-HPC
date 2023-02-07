@@ -292,14 +292,13 @@ Exercises
 
 .. tip::
 
-   -For parallel computing, you may get an introduction here: (https://uppmax.github.io/HPC-python/parallel.html)
+   - For parallel computing, you may get an introduction here: (https://uppmax.github.io/HPC-python/parallel.html)
 
 
 
 .. keypoints::
 
    - The SLURM scheduler handles allocations to the calculation nodes
-   - Interactive sessions was presented in last slide
    - Batch jobs runs without interaction with user
    - A batch script consists of a part with SLURM parameters describing the allocation and a second part describing the actual work within the job, for instance one or several Python scripts.
       
