@@ -212,7 +212,7 @@ GPU code
 
    .. tab:: HPC2N
 
-        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2021.05, Python/3.9.5 + Python package you have installed yourself with virtual environment. The full example can be found under "Using Python for Machine Learning jobs".       
+        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2021.05, Python/3.9.5 + Python package you have installed yourself with virtual environment.        
        
         .. code-block:: sh
 
