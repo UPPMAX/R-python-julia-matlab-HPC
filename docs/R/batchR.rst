@@ -385,43 +385,35 @@ ML code
 Exercises
 ---------
 
-.. challenge:: Run the first serial example script from further up on the page for this short Python code (sum-2args.py)
+.. challenge:: Run the serial example script from further up on the page for the hello.R code. 
     
-    .. code-block:: python
+.. solution:: Solution for UPPMAX
+    :class: dropdown
     
-        import sys
+          Submitting "serial.sh" on Rackham  
+          
+          .. code-block:: sh
+ 
+            [bbrydsoe@rackham3 Python]$ sbatch serial.sh 
+            Submitted batch job 33571948
             
-        x = int(sys.argv[1])
-        y = int(sys.argv[2])
+            [bbrydsoe@rackham3 Python]$ ls
+            hello.R  serial.sh  slurm-33571948.out
+            [bbrydsoe@rackham3 Python]$
             
-        sum = x + y
-            
-        print("The sum of the two numbers is: {0}".format(sum))
-        
-    Remember to give the two arguments to the program in the batch script.
+            [bbrydsoe@rackham3 Python]$ cat slurm-33571948.out 
+            Nearly all CRAN and BioConductor packages are installed and available by
+            loading the module R_packages/4.0.4 
+            > message <-"Hello World!"
+            > print(message)
+            [1] "Hello World!"
+            > 
+
 
 .. solution:: Solution for HPC2N
     :class: dropdown
     
-          This batch script is for Kebnekaise. Adding the numbers 2 and 3. 
-          
-          .. code-block:: sh
- 
-            #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
-            #SBATCH --time=00:05:00 # Asking for 5 minutes
-            #SBATCH -n 1 # Asking for 1 core
-            
-            # Load any modules you need, here for Python 3.9.5
-            module load GCC/10.3.0  Python/3.9.5
-            
-            # Run your Python script 
-            python sum-2args.py 2 3 
-
-.. solution:: Solution for UPPMAX
-    :class: dropdown
-    
-          This batch script is for UPPMAX. Adding the numbers 2 and 3. 
+          Submitting "serial.sh" on Kebnekaise 
           
           .. code-block:: sh
  
