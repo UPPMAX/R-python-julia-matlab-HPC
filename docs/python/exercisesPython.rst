@@ -1,12 +1,71 @@
 Exercises
 =========
 
+
 Isolated
 --------
 
-.. challenge::
+.. challenge:: Create a virtual environment with a requirements file below
 
+   - Create a virtual environment with the name ``analysis``.
+   - Insatll packages define by the requirements.txt file
+   ``requirements.txt``::
 
+    numpy==1.18.1
+    matplotlib==3.1.3
+    pandas==1.1.2
+    
+    - Check that the packages were installed.
+    - Don't forget to deactivate afterwards.
+
+.. solution:: Solution for UPPMAX
+    :class: dropdown
+    
+     .. code-block:: sh
+
+          $ module load python/3.9.5
+          $ python -m venv --system-site-packages /proj/py-r-jl/<user>/python/analysis
+    
+      Activate it.
+
+      .. code-block:: sh
+
+         $ source /proj/py-r-jl/<user>/python/analysis/bin/activate
+
+      - Note that your prompt is changing to start with (analysis) to show that you are within an environment.
+      - Install the packages from the file::
+      
+        pip install -r requirements.txt
+      
+      .. code-block:: sh
+
+         $ pip list
+	 $ deactivate
+      
+.. solution:: Solution for HPC2N
+    :class: dropdown
+    
+     .. code-block:: sh
+
+          $ module load GCC/10.3.0 Python/3.9.5 
+          $ virtualenv --system-site-packages /proj/nobackup/<your-project-storage>/analysis 
+      
+      Activate it.
+
+      .. code-block:: sh
+
+         $ source /proj/nobackup/analysis/bin/activate
+
+      - Note that your prompt is changing to start with (analysis) to show that you are within an environment.
+      - Install the packages from the file::
+      
+        pip install -r requirements.txt
+      
+      .. code-block:: sh
+
+         $ pip list
+	 $ deactivate
+      
 
 
 Conda (UPPMAX)
@@ -14,6 +73,7 @@ Conda (UPPMAX)
 
 .. challenge:: UPPMAX: Create a conda environment and install some packages
     
+   - Be sure to deactivate any virtual environment. 
    - First check the current installed packages while having ``python/3.9.5`` loaded
    - Open a new terminal and have the old one available for later comparison
    - Use the conda module on Rackham and create an environment with name ``HPC-python23`` with ``python 3.7``  and ``numpy 1.15``
