@@ -126,7 +126,7 @@ Parallel code
 
    .. tab:: UPPMAX
 
-        Short parallel example (using packages "foreach" and "doParallel" which you may have to install first) for running on Rackham. Loading R/4.0.4. 
+        Short parallel example (Since we are using packages "foreach" and "doParallel", you need to use module R_packages/4.0.4 instead of R/4.0.4. 
 
         .. code-block:: sh
         
@@ -137,7 +137,7 @@ Parallel code
             #SBATCH -c 4
             
             ml purge > /dev/null 2>&1
-            ml R/4.0.4
+            ml R_packages/4.0.4
             
             # Batch script to submit the R program parallel_foreach.R 
             R -q --slave -f parallel_foreach.R
@@ -145,7 +145,7 @@ Parallel code
 
    .. tab:: HPC2N
 
-        Short parallel example (using packages "foreach" and "doParallel") for running on Kebnekaise. Loading R/4.0.4 and its prerequisites. 
+        Short parallel example (using packages "foreach" and "doParallel" which are included in the R module) for running on Kebnekaise. Loading R/4.0.4 and its prerequisites. 
        
         .. code-block:: sh
 
@@ -164,7 +164,7 @@ Parallel code
 
    .. tab:: parallel_foreach.R
 
-        This R script uses packages "foreach" and "doParallel" which you may or may not have to install yourself first. 
+        This R script uses packages "foreach" and "doParallel". 
        
         .. code-block:: R
 
@@ -208,7 +208,7 @@ Parallel code
 
    .. tab:: UPPMAX
 
-        Short parallel example (using packages "Rmpi"). Loading R/4.0.4. 
+        Short parallel example (using package "Rmpi", so we need to load the module R_packages/4.0.4 instead of R/4.0.4 and we need to load a suitable openmpi module, openmpi/3.1.5)
 
         .. code-block:: sh
         
@@ -221,7 +221,8 @@ Parallel code
             export OMPI_MCA_mpi_warn_on_fork=0
             
             ml purge > /dev/null 2>&1
-            ml R/4.0.4
+            ml R_packages/4.0.4
+            ml openmpi/3.1.5
             
             mpirun -np 1 R CMD BATCH --no-save --no-restore Rmpi.R output.out 
            
