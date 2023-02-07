@@ -385,7 +385,9 @@ ML code
 Exercises
 ---------
 
-.. challenge:: Run the serial example script from further up on the page for the hello.R code. 
+.. challenge:: Serial batch script for R
+
+   Run the serial example script from further up on the page for the hello.R code. 
     
 .. solution:: Solution for UPPMAX
     :class: dropdown
