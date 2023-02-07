@@ -270,11 +270,6 @@ Create a virtual environment called ``vpyenv`. First load the python version you
 
          $ source <path/to/virt-environment>/bin/activate
     
-     
-      
-      
-      
-
 Using setup.py
 ''''''''''''''
 
@@ -303,9 +298,15 @@ You can use it as normal inside Python (remember to load dependent modules as we
 Using the self-installed packages in Python
 '''''''''''''''''''''''''''''''''''''''''''
 
-To use the Python packages you have installed under your virtual environment, load your Python module + prerequisites, load any site-installed Python packages you used, and then activate the environment. Now your own packages can be accessed from within Python, just like any other Python package. 
+- To use the Python packages you have installed under your virtual environment, load your Python module + prerequisites, load any site-installed Python packages you used, and then activate the environment.
+- Now your own packages can be accessed from within Python, just like any other Python package. 
 
 **Example**
+
+.. tip::
+    
+   **Code along!**
+
 
 Using the virtual environment created earlier and the ``spacy`` we installed under example 1) above. 
 
@@ -315,8 +316,8 @@ Using the virtual environment created earlier and the ``spacy`` we installed und
    .. code-block:: sh
            
       $ module load Python/3.9.5
-      $ source /proj/snic2022-22-641/nobackup/<user>/venv-python-course/bin/activate
-      (<name of environment>) $ python
+      $ source //proj/py-r-jl/<user>/python/vpyenv/bin/activate
+      (vpyenv) $ python
            Python 3.9.5 (default, Jun  3 2021, 15:06:34)
            [GCC 9.3.0] on linux
            Type "help", "copyright", "credits" or "license" for more information.
@@ -341,9 +342,9 @@ Using the virtual environment created earlier and the ``spacy`` we installed und
            
            
 
-To use self-installed Python packages in a batch script, you also need to load the above mentioned modules and activate the environment. An example of this will follow later in the course. 
+- To use self-installed Python packages in a batch script, you also need to load the above mentioned modules and activate the environment. An example of this will follow later in the course. 
 
-To see which Python packages you, yourself, have installed, you can use ``pip list --user`` while the environment you have installed the packages in are active. 
+- To see which Python packages you, yourself, have installed, you can use ``pip list --user`` while the environment you have installed the packages in are active. 
 
 
 Working with virtual environments defined from files
@@ -354,7 +355,7 @@ Working with virtual environments defined from files
   
   $ pip install -r requirements.txt
    
-- Create file from present virtual environment::
+- - Create file from present virtual environment::
 
   $ pip freeze > requirements.txt
   
@@ -378,11 +379,24 @@ text file which looks like this::
    - `Dependency management from coursePython for Scientific computing <https://aaltoscicomp.github.io/python-for-scicomp/dependencies/>`_
 
 
-pyenv
-'''''
+.. note:: 
 
-This approach is more advanced and should be, in our opinion, used only if the above are not enough for the purpose. 
-This approach allows you to install your **own python version**, like 3.10, and much more… 
+   **pyenv**
+
+   - This approach is more advanced and should be, in our opinion, used only if the above are not enough for the purpose. 
+   - ``pyenv`` allows you to install your **own python version**, like 3.10.2, and much more… 
+   - Probably Conda will work well four you.
+   - https://www.uppmax.uu.se/support/user-guides/python-user-guide/#tocjump_9931546434791352_12
+
+
+More info
+'''''''''
+
+- UPPMAX's documentation pages about installing Python packages and virtual environments: https://www.uppmax.uu.se/support/user-guides/python-user-guide/
+- HPC2N's documentation pages about installing Python packages and virtual environments: https://www.hpc2n.umu.se/resources/software/user_installed/python
+
+
+
 
 .. admonition:: Summary of workflow
 
@@ -394,26 +408,12 @@ This approach allows you to install your **own python version**, like 3.10, and 
    3) Activate your virtual environment (optional): ``source <path-to-virt-env>/bin/activate``
    4) Install any extra Python packages (optional): ``pip install --no-cache-dir --no-build-isolation <python-package>``
    5) Start Python or run python script: ``python``
+   6) DO your work
+   7) Deactivate
 
-   Installed Python modules (modules and own-installed) can be accessed within Python with ``import <package>`` as usual. 
-
-   The command ``pip list`` given within Python will list the available modules to import. 
-
-   More about packages and virtual/isolated environment to follow in later sections of the course! 
-
-
-
-
-
-
-More info
-'''''''''
-
-- UPPMAX's documentation pages about installing Python packages and virtual environments: https://www.uppmax.uu.se/support/user-guides/python-user-guide/#tocjump_8703728512506487_10
-- HPC2N's documentation pages about installing Python packages and virtual environments: https://www.hpc2n.umu.se/resources/software/user_installed/python
-
-
-
+   - Installed Python modules (modules and own-installed) can be accessed within Python with ``import <package>`` as usual. 
+   - The command ``pip list`` given within Python will list the available modules to import. 
+   - More about packages and virtual/isolated environment to follow in later sections of the course! 
 
 
 .. keypoints::
