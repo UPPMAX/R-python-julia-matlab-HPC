@@ -13,13 +13,11 @@ Isolated environments
 .. questions::
 
    - How to work with isolated environments at HPC2N and UPPMAX?
-   - How do you structure a lesson effectively for teaching?
-
    
 .. objectives:: 
 
    - Give a general *theoretical* introduction to isolated environments 
-   - Site-specific procedures are given at the separated sessions.
+   - Site-specific procedures.
 
 General procedures   
 ------------------
