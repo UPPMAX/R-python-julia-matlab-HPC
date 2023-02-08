@@ -112,7 +112,7 @@ Now, the project information tells us about the new installed package:
 Create a project environment
 ----------------------------
 
-Let's now create a **project environment**, this can be done as follows:
+Let's now create a **project environment**, this can be done as follows (if typing along, you have to change the path to your environment, like ``/proj/py-r-jl/$USER/julia`` on rackham):
 
 .. code-block:: julia
 
@@ -214,9 +214,9 @@ activate the environment inside the Julia script by calling these lines in your 
 Besides the previous two options for activating an environment, you can also activate it on the Linux
 command line (assuming that you are located in the environment directory): 
 
-.. code-block:: julia
+.. code-block:: sh
 
-   julia --project=. 
+   $ julia --project=. 
 
 Create a package environment
 ----------------------------
@@ -275,16 +275,16 @@ One can customize this setting with the variable ``JULIA_LOAD_PATH``, this can b
 done on the Linux command line:
 
 
-.. code-block:: julia
+.. code-block:: bash
 
-   export JULIA_LOAD_PATH="path1:path2:..."
+   $ export JULIA_LOAD_PATH="path1:path2:..."
 
 For instance, for including just the current environment we can set the value of 
 this variable as:
 
-.. code-block:: julia
+.. code-block:: bash
 
-   export JULIA_LOAD_PATH="@"
+   $ export JULIA_LOAD_PATH="@"
 
 Then, when we start a ``julia`` session the default option will be the current
 environment:
@@ -311,7 +311,7 @@ Environment stacks
 As we saw before, ``LOAD_PATH`` shows that environments can be stacked and we can place
 the environments we want in the path so that they are visible in our current environment.
 To illustrate this concept, let's create a second environment and first we can remove the
-content of ``LOAD_PATH``:
+content of ``LOAD_PATH`` (which path will be different for you):
 
 .. code-block:: julia
 
@@ -356,6 +356,7 @@ UPPMAX Central library
 
    - At UPPMAX there is a central library with installed packages.
    - This is good, especially when working on Bianca, since you don't need to install via the Wharf.
+   - If you work on Rackham you can actually ignore it and do all installations by yourself. The reason is that you need some more steps.
 
 - You may control the present "central library" by typing ``ml help julia/<version>`` in the BASH shell.
 - A possibly more up-to-date status can be found from the Julia shell:
@@ -363,14 +364,14 @@ UPPMAX Central library
 .. code-block:: julia 
 
    using Pkg
-   Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");     #change version accordingly
+   Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");     #change version (1.8) accordingly if you have another main version of Julia
    Pkg.status()
    Pkg.activate(DEPOT_PATH[1]*"/environments/v1.8");     #to return to user library
 
-Packages are imported or loaded by the commands ``import`` and ``using``, respectively. The difference is shown here. Or briefly:
+Packages are imported or loaded by the commands ``import`` and ``using``, respectively. The difference is briefly:
 
-    To use module functions, use import Module to import the module, and Module.fn(x) to use the functions.
-    Alternatively, using Module will import all exported Module functions into the current namespace.
+    To use "module" functions, use ``import <module>`` to import the "module", and ``Module.fn(x)`` to use the functions.
+    Alternatively, ``using <Module`` will import *all* exported Module functions into the *current namespace*, i.e. ``Module.fn(x)`` becomes ``fn(x)``.
 
 A selection of the Julia packages and libraries installed on UPPMAX and HPC2N are:
 
@@ -411,7 +412,7 @@ Exercises
     offers tools for dealing with ``.csv`` files. After this, check that this package
     was installed. Finally, deactivate the environment.
 
-    .. solution:: Solution for HPC2N
+    .. solution:: Solution for both centres
         :class: dropdown
             
             .. code-block:: julia
@@ -426,25 +427,6 @@ Exercises
                       [336ed68f] CSV v0.10.9
                 (new-env) pkg> activate 
 
-
-    .. solution:: Solution for UPPMAX
-        :class: dropdown
-        
-            This batch script is for UPPMAX. Adding the numbers 2 and 3. (FIX)
-            
-            .. code-block:: sh
-    
-                #!/bin/bash
-                #SBATCH -A SNIC2022-22-641 # Change to your own after the course
-                #SBATCH --time=00:05:00 # Asking for 5 minutes
-                #SBATCH -n 1 # Asking for 1 core
-                
-                # Load any modules you need, here for Python 3.9.5
-                module load Python/3.9.5
-                
-                # Run your Python script 
-                python sum-2args.py 2 3 
-
 .. challenge:: Package environment
     
     Create a package environment called ``new_pack`` and activate it. Then, install the
@@ -452,7 +434,7 @@ Exercises
     offers tools for dealing with ``.csv`` files. After this, check that this package
     was installed. Finally, deactivate the environment.
 
-    .. solution:: Solution for HPC2N
+    .. solution:: Solution for both centres
         :class: dropdown
             
             .. code-block:: julia
@@ -472,27 +454,6 @@ Exercises
                        Status `path-to-folder\new_pack\Project.toml`
                        [336ed68f] CSV v0.10.9
                 (new_pack) pkg> activate
-
-
-    .. solution:: Solution for UPPMAX
-        :class: dropdown
-        
-            This batch script is for UPPMAX. Adding the numbers 2 and 3.  (FIX)
-            
-            .. code-block:: sh
-    
-                #!/bin/bash
-                #SBATCH -A SNIC2022-22-641 # Change to your own after the course
-                #SBATCH --time=00:05:00 # Asking for 5 minutes
-                #SBATCH -n 1 # Asking for 1 core
-                
-                # Load any modules you need, here for Python 3.9.5
-                module load Python/3.9.5
-                
-                # Run your Python script 
-                python sum-2args.py 2 3 
-
-
 
 
 .. keypoints::
