@@ -172,7 +172,7 @@ The Julia prompt (``julian`` mode) looks like this:
 
 .. code-block:: julia
    
-   > julia> 
+   julia> 
 
 Exit with 
 
@@ -250,14 +250,15 @@ With notebook(detached=true) the notebook wil not be killed when you exit your R
             This batch script is for UPPMAX. Adding the numbers 2 and 3. (FIX)
             
             .. code-block:: sh
-    
-                
+   
+                $ ml julia/1.8.5      # Julia module
+               
                 julia serial-sum.jl Arg1 Arg2    # run the serial script
 
 .. keypoints::
 
    - Before you can run julia scripts or work in a julia shell, first load a julia module.
-   - Start a Python shell session either with ``julia``
+   - Start a Julia shell session either with ``julia``
    - Run scripts with ``julia <script.jl>``
     
 
