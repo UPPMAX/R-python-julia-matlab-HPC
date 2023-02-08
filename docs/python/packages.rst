@@ -84,7 +84,7 @@ Check the pre-installed packages of a loaded python module, in shell:
 
    $ pip list
 
-To see which Python packages you, yourself, has installed, you can use ``pip list --user`` while the environement you have installed the packages in are active.
+To see which Python packages you, yourself, has installed, you can use ``pip list --user`` while the environment you have installed the packages in are active.
 
 You can also test from within python to make sure that the package is not already installed:
 
@@ -171,7 +171,7 @@ Use ``pip3`` if you loaded python3.
 
 Then the package ends up in ``~/.local/lib/python<version>/site-packages/`` .
 
-Note that python<version> is imitting the last number (bug fix), like 3.8 for python-3.8.7.
+Note that python<version> is omitting the last number (bug fix), like 3.8 for python-3.8.7.
 We HIGHLY recommend using a virtual environment during installation, since this makes it easier to install for different versions of Python.  More information will follow later in this course (https://uppmax.github.io/HPC-python/isolated.html). 
 
 
