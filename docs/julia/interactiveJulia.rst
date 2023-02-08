@@ -193,12 +193,10 @@ Running a script
  
          $ julia -p 4
          
-      ..code-block:: julia
+      .. code-block:: julia
 
         julia> nworkers()
         4
-
-
 
 
 **Exit**
