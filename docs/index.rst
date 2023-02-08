@@ -68,12 +68,14 @@ Some practicals
     - When you join the Zoom meeting, use your REAL NAME.
     
     - The lectures and demos will be recorded, but NOT the exercises. 
+    
       - If you ask questions during the lectures, you may thus be recorded. 
       - If you do not wish to be recorded, then please keep your microphone muted and your camera off during lectures and write your questions in the Q/A document (see below about Microsoft-365 collaboration document).
     
     - Please MUTE your microphone when you are not speaking and use the “Raise hand” functionality under the “Participants” window during the lecture. Please do not clutter the Zoom chat. Behave politely!
 
     - There will be breakout rooms used in the Zoom for the exercises. 
+    
       - You may enter there and you will get personal help
       
     
@@ -112,9 +114,12 @@ Example of arrangement for the "worst case"!
     - Short introductions : https://uppsala.instructure.com/courses/67267/pages/using-the-command-line-bash?module_item_id=455632
     - Linux "cheat sheet": https://www.hpc2n.umu.se/documentation/guides/linux-cheat-sheet
     - UPPMAX
+    
       - UPPMAX software library: https://uppsala.instructure.com/courses/67267/pages/uppmax-basics-software?module_item_id=455641
       - Whole intro course material (UPPMAX): https://www.uppmax.uu.se/support/courses-and-workshops/introductory-course-winter-2022/
+      
     - HPC2N
+    
       - HPC2N's intro course material (including link to recordings): https://github.com/hpc2n/intro-course
       - HPC2N's YouTube channel video on Linux: https://www.youtube.com/watch?v=gq4Dvt2LeDg
 
@@ -155,6 +160,7 @@ Prepare your environment now!
       - Kebnekaise through ThinLinc, use: ``<user>@kebnekaise-tl.hpc2n.umu.se``
    
       - Create a working directory where you can code along.    
+      
         - Example. If your username is bbrydsoe and you are at HPC2N, then we recommend you create this folder: 
      
            /proj/nobackup/<your-project-id>/bbrydsoe/<language> 
@@ -166,15 +172,20 @@ The two HPC centers UPPMAX and HPC2N
 .. admonition:: Two HPC centers
 
    - There are many similarities:
+   
      - Login vs. calculation/compute nodes
      - Environmental module system with software hidden until loaded with ``module load``
      - Slurm batch job and scheduling system
      - ``pip install`` procedure
+     
    - ... and small differences:
+   
      - commands to load Python, Python packages, R, Julia
      - isolated environments ``virtualenv`` vs ``venv``
      - slightly different flags to Slurm
+     
    - ... and some bigger differences:
+   
      - UPPMAX has three different clusters 
 
        - Rackham for general purpose computing on CPUs only
