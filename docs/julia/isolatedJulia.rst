@@ -202,6 +202,21 @@ layout. Notice the message regarding editing for the latter. Let's leave this en
 
    (v1.8) pkg> 
 
+Once you have created an environment, it can be activated in several manners. For instance, the one we
+saw before is by activating it in ``package`` mode with the command ``activate .``. You may also be able to
+activate the environment inside the Julia script by calling these lines in your ``.jl`` file:
+
+.. code-block:: julia
+
+   using Pkg
+   Pkg.activate(".")
+
+Besides the previous two options for activating an environment, you can also activate it on the Linux
+command line (assuming that you are located in the environment directory): 
+
+.. code-block:: julia
+
+   julia --project=. 
 
 Create a package environment
 ----------------------------
