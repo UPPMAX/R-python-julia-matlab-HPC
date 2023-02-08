@@ -898,7 +898,7 @@ Exercises
         - Fetch the ``vgg_cifar10.jl`` test case from ``Flux`` repo (wget https://raw.githubusercontent.com/FluxML/model-zoo/master/vision/vgg_cifar10/vgg_cifar10.jl)
         - Load CUDA toolkit 11.4.1
         - Install (add) the following packages: CUDA, MLDatasets, MLUtils
-        - The first time you use the data set CIFAR10, it will ask you to download it. Do this in ``Julian`` mode:
+        - The first time you use the data set CIFAR10, it will ask you to download it and accept. Do this in ``Julian`` mode:
 
         .. code-block:: julia
          
