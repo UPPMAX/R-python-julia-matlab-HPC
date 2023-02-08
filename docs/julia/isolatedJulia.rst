@@ -35,7 +35,7 @@ itself. Julia distinguishes between **project environments** and **package direc
 Tom's Obvious Minimal Language (TOML) files (Project.toml, Manifest.toml) are present while in the
 latter also source files are included with some specific layout. 
 
-If you have have started Julia once you will get the folders like this in the ~/.julia folder.
+If you have started Julia once you will get the folders like this in the ~/.julia folder.
 
 .. code-block:: bash
    
@@ -231,7 +231,7 @@ or ``Pkg.generate()`` in ``Julian`` mode:
      myfirstpackage/Project.toml
      myfirstpackage/src/myfirstpackage.jl
 
-One can activate this enviroment in the following way:
+One can activate this environment in the following way:
 
 .. code-block:: julia
 
@@ -270,7 +270,7 @@ in the current environment, for instance the ``Flux`` version that we just insta
 Customizing the set of visible environments
 -------------------------------------------
 
-We saw previously that by default some enviroments are visible to new environments.
+We saw previously that by default some environments are visible to new environments.
 One can customize this setting with the variable ``JULIA_LOAD_PATH``, this can be
 done on the Linux command line:
 
@@ -287,7 +287,7 @@ this variable as:
    export JULIA_LOAD_PATH="@"
 
 Then, when we start a ``julia`` session the default option will be the current
-enviroment:
+environment:
 
 .. code-block:: julia
    
@@ -355,7 +355,7 @@ UPPMAX Central library
 .. admonition:: Please notice
 
    - At UPPMAX there is a central library with installed packages.
-   - This is good, especially when woreking on Bianca, since you donät need to install via the Wharf.
+   - This is good, especially when working on Bianca, since you don't need to install via the Wharf.
 
 - You may control the present "central library" by typing ``ml help julia/<version>`` in the BASH shell.
 - A possibly more up-to-date status can be found from the Julia shell:
