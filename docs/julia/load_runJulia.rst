@@ -180,25 +180,8 @@ Exit with
 
    <Ctrl-D> or 
    exit()
-
-
-
-.. keypoints::
-
-   - Before you can run Julia scripts or work in a Julia shell, first load a julia module
-   - Start a Julia shell session with ``julia`` (note lower case even at HPC2N)
-   - Run scripts with ``julia <script.jl>``
+   
     
-.. code-block:: julia
-  
-   > using Pkg
-   > Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");
-   > Pkg.build("IJulia")
-   > notebook(dir="</path/to/work/dir/>")
-
-This builds the package also locally before starting the notebook. If not done, Jupyter will not find the julia kernel of that version.
-With notebook(detached=true) the notebook wil not be killed when you exit your REPL julia session in the terminal.
-
 .. challenge:: Loading modules and running scripts
     
     Load the Julia version 1.8.5 and run the following serial script (``serial-sum.jl``) which accepts two integer arguments as input: 
@@ -239,4 +222,3 @@ With notebook(detached=true) the notebook wil not be killed when you exit your R
    - Start a Julia shell session either with ``julia``
    - Run scripts with ``julia <script.jl>``
     
-
