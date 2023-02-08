@@ -205,6 +205,7 @@ library.
       Check the ``R_LIBS_SITE`` environment variable
 
       .. code-block:: sh
+         
          $ echo $R_LIBS_SITE
          /hpc2n/eb/software/R-bundle-Bioconductor/3.14-foss-2021b-R-4.1.2:/hpc2n/eb/software/arrow-R/6.0.0.2-foss-2021b-R-4.1.2
 
