@@ -72,7 +72,7 @@ Serial code
             #SBATCH -n 1 # Asking for 1 core
             #SBATCH --error=job.%J.err   # error file
             #SBATCH --output=job.%J.out  # output file                                                                                                        
-            ml Julia/1.8.5 # Julia module
+            ml julia/1.8.5 # Julia module
            
             julia serial.jl              # run the serial script
             
@@ -126,7 +126,7 @@ Serial code + self-installed package in virt. env.
             #SBATCH --error=job.%J.err   # error file
             #SBATCH --output=job.%J.out  # output file                                                                                             
             
-            ml Julia/1.8.5               # Julia module
+            ml julia/1.8.5               # Julia module
              
             # Move to the directory where the ".toml" files 
             # for the environment are located
@@ -852,7 +852,7 @@ Exercises
                 #SBATCH --time=00:15:00          # total run time limit (HH:MM:SS)
                 #SBATCH --qos=short              # if test run t<15 min
                 
-                ml Julia/1.8.5-linux-x86_64
+                ml julia/1.8.5-linux-x86_64
 
                 julia script-gpu.jl
 
