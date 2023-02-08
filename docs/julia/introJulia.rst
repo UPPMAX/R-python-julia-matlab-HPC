@@ -12,7 +12,7 @@ Introduction Julia
    - Write a batch script for running Julia
    - Use Julia in parallel mode
    - Use GPUs with Julia
-   - Use Julia for ML **??**
+   - Use Julia for ML 
 
    
 .. admonition:: Collabration document HackMD
@@ -93,7 +93,7 @@ What is Julia?
 --------------
 
 Julia is a relatively new Programming language (pre-released 1.0 announced in
-2012) compared to well-known and standard languages such as Fortran, C, C++, R,
+1)    compared to well-known and standard languages such as Fortran, C, C++, R,
 and Python (some of them dated back to the 70's). A common pattern in those
 well-stablished languages (traditional paradigm) is that they look after either 
 productivity (fast deployment, fast prototyping) or performance (fast numerical 

@@ -887,7 +887,115 @@ Exercises
                   5.707402 seconds (1.30 M allocations: 65.564 MiB, 0.72% gc time, 19.70% compilation time)
                   0.000813 seconds (2 allocations: 512.047 KiB)
                   0.000176 seconds (16 allocations: 384 bytes)
+
+  
+.. challenge:: Machine Learning job on GPUs
+    
+    Julia has already several packages for ML, one of them is ``Flux`` (https://fluxml.ai/). We will work with one of
+    the test cases provided by ``Flux`` which deals with a data set of tiny images (CIFAR10). Follow this steps:
+
+        - Create an environment called ``ML``, move to that environment directory and activate it 
+        - Fetch the ``vgg_cifar10.jl`` test case from ``Flux`` repo (wget https://raw.githubusercontent.com/FluxML/model-zoo/master/vision/vgg_cifar10/vgg_cifar10.jl)
+        - Load CUDA toolkit 11.4.1
+        - Install (add) the following packages: CUDA, MLDatasets, MLUtils
+        - The first time you use the data set CIFAR10, it will ask you to download it. Do this in ``Julian`` mode:
+
+        .. code-block:: julia
+         
+            julia> using MLDatasets: CIFAR10
+            julia> x, y = CIFAR10(:train)[:]
+
+        - Change the number of epochs in the ``vgg_cifar10.jl`` script from 50 to something shorter like 5.
+        - Submit the job with the script: 
+
+        .. code-block:: sh
+        
+        #!/bin/bash            
+        #SBATCH -A Project-ID        # your project_ID       
+        #SBATCH -J job-serial        # name of the job         
+        #SBATCH -n 1                 # nr. tasks  
+        #SBATCH --time=00:20:00      # requested time
+        #SBATCH --error=job.%J.err   # error file
+        #SBATCH --output=job.%J.out  # output file  
+        #SBATCH --gres=gpu:k80:1     # 1 GPU K80 card
+
+        ml purge  > /dev/null 2>&1
+        ml Julia/1.8.5-linux-x86_64
+        ml CUDA/11.4.1
+
+        julia <fix-name-script>.jl 
+
+    .. solution:: Solution for HPC2N
+        :class: dropdown
+        
+            .. code-block:: sh
+
+               ml Julia/1.8.5-linux-x86_64
+               ml CUDA/11.4.1 
+               mkdir ML
+               cd ML
+               wget https://raw.githubusercontent.com/FluxML/model-zoo/master/vision/vgg_cifar10/vgg_cifar10.jl
+
+               julia
+               (v1.8) pkg> activate .
+               (ML) pkg> add CUDA
+               (ML) pkg> add Flux 
+               (ML) pkg> add MLDatasets
+               (ML) pkg> add MLUtils
+               julia> using MLDatasets: CIFAR10
+               julia> x, y = CIFAR10(:train)[:] 
+ 
+            The batch script looks like:
+            
+            .. code-block:: sh
                 
+                #!/bin/bash            
+                #SBATCH -A hpc2n20xx-xyz     # your project_ID       
+                #SBATCH -J job-serial        # name of the job         
+                #SBATCH -n 1                 # nr. tasks  
+                #SBATCH --time=00:20:00      # requested time
+                #SBATCH --error=job.%J.err   # error file
+                #SBATCH --output=job.%J.out  # output file  
+                #SBATCH --gres=gpu:k80:1     # 1 GPU K80 card
+
+                ml purge  > /dev/null 2>&1
+                ml Julia/1.8.5-linux-x86_64
+                ml CUDA/11.4.1
+
+                julia --project=. vgg_cifar10.jl
+
+            At HPC2N you can use the tool ``job-usage`` on the command line: 
+
+            .. code-block:: sh
+                
+                job-usage job_ID   # job_ID number you get upon using sbatch      
+
+            This will give you a URL that you can paste on your local browser. It would display
+            statistics after a couple of minutes the job started.
+
+    
+    .. solution:: Solution for UPPMAX
+        :class: dropdown
+        
+            This batch script is for UPPMAX. Adding the numbers 2 and 3.  (FIX)
+            
+            .. code-block:: sh
+    
+                #SBATCH -A <project with Snowy/Bianca access    # your project_ID  
+                #SBATCH -M snowy
+                #SBATCH -p node
+                ##SBATCH -C gpu   #NB: Only for Bianca
+                #SBATCH -N 1
+                #SBATCH --job-name=juliaGPU         # create a short name for your job
+                #SBATCH --gpus-per-node=1             # number of gpus per node (Bianca 2, Snowy 1)
+                #SBATCH --time=00:15:00          # total run time limit (HH:MM:SS)
+                #SBATCH --qos=short              # if test run t<15 min
+                
+                ml Julia/1.8.5-linux-x86_64
+
+                julia script-gpu.jl
+
+            Output:
 
 
 .. keypoints::
