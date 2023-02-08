@@ -52,7 +52,7 @@ In this course we will look at the following tools for creating and using isolat
 .. admonition:: venv vs. virtualenv
 
    - These are almost completely interchangeable
-   - the difference being that **virtualenv supports older python versions** and has a few more minor unique features, while **venv is in the standard library**.
+   - The difference being that **virtualenv supports older python versions** and has a few more minor unique features, while **venv is in the standard library**.
 
 .. keypoints::
 
