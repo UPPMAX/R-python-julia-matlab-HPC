@@ -755,7 +755,7 @@ Exercises
     .. solution:: Solution for UPPMAX
         :class: dropdown
         
-            This batch script is for UPPMAX. Adding the numbers 2 and 3. (FIX)
+            This batch script is for UPPMAX.
             
             .. code-block:: sh
     
@@ -838,7 +838,7 @@ Exercises
     .. solution:: Solution for UPPMAX
         :class: dropdown
         
-            This batch script is for UPPMAX. Adding the numbers 2 and 3.  (FIX)
+            This batch script is for UPPMAX. Adding the numbers 2 and 3.
             
             .. code-block:: sh
     
@@ -889,7 +889,7 @@ Exercises
                   0.000176 seconds (16 allocations: 384 bytes)
 
   
-.. challenge:: Machine Learning job on GPUs
+.. challenge:: Machine Learning job on GPUs (on HPC2N)
     
     Julia has already several packages for ML, one of them is ``Flux`` (https://fluxml.ai/). We will work with one of
     the test cases provided by ``Flux`` which deals with a data set of tiny images (CIFAR10). Follow this steps:
@@ -973,30 +973,7 @@ Exercises
             This will give you a URL that you can paste on your local browser. It would display
             statistics after a couple of minutes the job started.
 
-    
-    .. solution:: Solution for UPPMAX
-        :class: dropdown
-        
-            This batch script is for UPPMAX. Adding the numbers 2 and 3.  (FIX)
-            
-            .. code-block:: sh
-    
-                #SBATCH -A <project with Snowy/Bianca access    # your project_ID  
-                #SBATCH -M snowy
-                #SBATCH -p node
-                ##SBATCH -C gpu   #NB: Only for Bianca
-                #SBATCH -N 1
-                #SBATCH --job-name=juliaGPU         # create a short name for your job
-                #SBATCH --gpus-per-node=1             # number of gpus per node (Bianca 2, Snowy 1)
-                #SBATCH --time=00:15:00          # total run time limit (HH:MM:SS)
-                #SBATCH --qos=short              # if test run t<15 min
-                
-                ml Julia/1.8.5-linux-x86_64
-
-                julia script-gpu.jl
-
-            Output:
-
+  
 
 .. keypoints::
 
