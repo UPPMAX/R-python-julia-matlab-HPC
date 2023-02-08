@@ -67,7 +67,7 @@ run on the allocated nodes instead of the login node.
       
 where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in 
       hours, minutes, and seconds (maximum T168 hours), and then you give the id for your project 
-      (**Snaiss2023-22-44** for this course)
+      (**naiss2023-22-44** for this course)
 
 Your request enters the job queue just like any other job, and interactive/salloc will tell you that it is
       waiting for the requested resources. When salloc tells you that your job has been allocated 
@@ -165,7 +165,7 @@ Running a script
 
 - Note that the commands are the same for both HPC2N and UPPMAX!
       
-      Running a Python script in the allocation we made further up. Notice that since we asked for 4 cores, the script is run 4 times, since it is a serial script
+      Running a PytJuliahon script in the allocation we made further up. Notice that since we asked for 4 cores, the script is run 4 times, since it is a serial script
          
       .. code-block:: sh
       
@@ -176,14 +176,12 @@ Running a script
           The sum of the two numbers is: 7
           b-an01 [~]$             
                         
-      As you can see, it is possible, but it will not show any interaction it otherwise would have. This is how it would look on the login node: 
+      Without the srun commadn, Julia won't understand that it can use several cores. Therefor the program is run only once.
                   
       .. code-block:: sh 
                   
-                  b-an01 [~]$ python add2.py 
-                  Enter the first number: 2
-                  Enter the second number: 3
-                  The sum of 2 and 3 is 5
+                  b-an01 [~]$ julia serial-sum.jl 3 4 
+                  The sum of the two numbers is: 7
 
 **Running julia REPL (UPPMAX)**
 
@@ -216,9 +214,7 @@ When you have finished using the allocation, either wait for it to end, or close
                   Connection to r484 closed.
       
                   [bjornc@rackham2 ~]$
-      
-      It is also possible to run IPython or (on UPPMAX) jupyter-notebook 
-
+     
    .. tab:: HPC2N
    
       .. code-block:: sh 
@@ -239,5 +235,5 @@ When you have finished using the allocation, either wait for it to end, or close
    
       - At HPC2N: ``salloc`` ...
       - At UPPMAX: ``interactive`` ...
-   - Follow the same procedure as usual by loading the Python module and possible prerequisites.
+   - Follow the same procedure as usual by loading the julia module and possible prerequisites.
     
