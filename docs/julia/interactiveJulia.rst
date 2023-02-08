@@ -176,7 +176,7 @@ Running a script
           The sum of the two numbers is: 7
           b-an01 [~]$             
                         
-      Without the srun commadn, Julia won't understand that it can use several cores. Therefor the program is run only once.
+      Without the ``srun`` command, Julia won't understand that it can use several cores. Therefor the program is run only once.
                   
       .. code-block:: sh 
                   
@@ -228,7 +228,7 @@ When you have finished using the allocation, either wait for it to end, or close
 .. admonition:: Running IJulia in Jupyter on compute nodes at UPPMAX
 
    - Jupyter is rather slow on the compute nodes. 
-   - This can be fixed by opening jupyter in a web browers on you local computer.
+   - This can be fixed by opening jupyter in a web browsers on you local computer.
    
    https://uppmax.github.io/HPC-python/jupyter.html
 
