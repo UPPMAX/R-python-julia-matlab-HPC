@@ -255,7 +255,7 @@ A Firefox session should start with the Jupyter notebook interface.
    > notebook(dir="</path/to/work/dir/>")
 
 This builds the package also locally before starting the notebook. If not done, Jupyter will not find the julia kernel of that version.
-With notebook(detached=true) the notebook wil not be killed when you exit your REPL julia session in the terminal.
+With ``notebook(ir="</path/to/work/dir/>", detached=true)`` the notebook will not be killed when you exit your REPL julia session in the terminal.
 
 .. admonition:: Running IJulia in Jupyter on compute nodes at UPPMAX
 
