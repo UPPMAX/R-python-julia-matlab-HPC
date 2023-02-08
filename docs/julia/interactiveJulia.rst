@@ -225,10 +225,43 @@ When you have finished using the allocation, either wait for it to end, or close
                   salloc: Job allocation 20174806 has been revoked.
                   b-an01 [~]$
 
+Running IJulia from Jupyter notebook on UPPMAX 
+##############################################
+
+- For more interactiveness you can run IJulia.
+- Like for Python it is possible to run a Julia in a notebook, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the python module as well. In shell:
+
+.. code-block:: sh
+
+   $ module load julia/1.8.5
+   $ module load python/3.10.8
+   $ julia
+
+In Julia:
+
+.. code-block:: julia
+
+   > using IJulia
+   > notebook(dir="</path/to/work/dir/>")
+
+A Firefox session should start with the Jupyter notebook interface.
+**If not**, you may have to build IJulia the first time with Pkg.build("IJulia"). Since "IJulia" is *pre-installed centrally* on UPPMAX you must activate the central environment by following these steps belo. This should only be needed the first time like this
+
+.. code-block:: julia
+  
+   > using Pkg
+   > Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");
+   > Pkg.build("IJulia")
+   > notebook(dir="</path/to/work/dir/>")
+
+This builds the package also locally before starting the notebook. If not done, Jupyter will not find the julia kernel of that version.
+With notebook(detached=true) the notebook wil not be killed when you exit your REPL julia session in the terminal.
+
 .. admonition:: Running IJulia in Jupyter on compute nodes at UPPMAX
 
    - Jupyter is rather slow on the compute nodes. 
    - This can be fixed by opening jupyter in a web browsers on you local computer.
+   - Remember to load python as well and to go via the ``julia -p <number of cores>`` and ``notebook(<options>)`` inside the julia session instead of starting ``jupiter-notebook`` in the bash shell.
    
    https://uppmax.github.io/HPC-python/jupyter.html
 
