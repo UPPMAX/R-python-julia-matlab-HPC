@@ -71,5 +71,5 @@ Summary
     - A nice introduction to packages can be found here: https://aaltoscicomp.github.io/python-for-scicomp/dependencies/
     - CodeRefinery develops and maintains training material on software best practices for researchers that already write code. 
     
-      - Their material addresses all academic disciplines and tries to be as programming language-independent as possible. https://coderefinery.org/lessons/
+      - This material addresses all academic disciplines and tries to be as programming language-independent as possible. https://coderefinery.org/lessons/
     

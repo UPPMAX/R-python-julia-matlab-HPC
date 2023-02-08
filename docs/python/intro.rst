@@ -19,13 +19,13 @@ Introduction Python
     
 .. admonition:: **Your expectations?**
    
-    - find best practices for using Python at UPPMAX and HPC2N
-    - packages
-    - use the HPC performance with Python
+    - Find best practices for using Python at UPPMAX and HPC2N
+    - Packages
+    - Use the HPC performance with Python
 
  **Not covered**
     
-    - improve python *coding* skills 
+    - Improve python *coding* skills 
     - Other clusters
 
 Preliminary schedule
@@ -103,19 +103,19 @@ libraries like NumPy, SciPy, scikit-learn and Pytorch.
 - A nice introduction to packages can be found here: https://aaltoscicomp.github.io/python-for-scicomp/dependencies/
 - CodeRefinery develops and maintains training material on software best practices for researchers that already write code. Ther material addresses all academic disciplines and tries to be as programming language-independent as possible. https://coderefinery.org/lessons/
 - The youtube video `Thinking about Concurrency <https://www.youtube.com/watch?v=Bv25Dwe84g0>`_ is a good introduction to writing concurrent programs in Python 
-- The book `High Performance Python <https://www.oreilly.com/library/view/high-performance-python/9781492055013/>` is a good resource for ways of speeding up Python code.
+- The book `High Performance Python <https://www.oreilly.com/library/view/high-performance-python/9781492055013/>`_ is a good resource for ways of speeding up Python code.
     
 
 .. objectives:: 
 
     We will:
     
-    - teach you how to navigate the module system at UPPMAX (and HPC2N)
-    - show you how to find out which versions of Python and packages are installed
-    - look at the package handler **pip** (and **Conda** for UPPMAX)
-    - explain how to create and use virtual environments
-    - show you how to run batch jobs 
-    - show some examples with parallel computing and using GPUs
+    - Teach you how to navigate the module system at UPPMAX (and HPC2N)
+    - Show you how to find out which versions of Python and packages are installed
+    - Look at the package handler **pip** (and **Conda** for UPPMAX)
+    - Explain how to create and use virtual environments
+    - Show you how to run batch jobs 
+    - Show some examples with parallel computing and using GPUs
 
  
 
