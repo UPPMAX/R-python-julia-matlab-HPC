@@ -289,7 +289,7 @@ First steps
   
       .. prompt:: bash $
  
-          export CONDA_ENVS_PATH=/proj/snic2022-22-641/nobackup/<username>
+          export CONDA_ENVS_PATH=/proj/<your-project-id>/nobackup/<username>
   
    .. admonition:: By choice
       :class: dropdown
