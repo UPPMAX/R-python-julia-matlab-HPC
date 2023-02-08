@@ -14,12 +14,7 @@ Introduction Julia
    - Use GPUs with Julia
    - Use Julia for ML 
 
-   
-.. admonition:: Collabration document HackMD
-
-    - Use the HackMD page for the workshop with your questions.
-        - https://hackmd.io/@bclaremar/HPC-python **FIX**
-        
+          
     
 .. admonition:: **Your expectations?**
    
@@ -52,28 +47,28 @@ Preliminary schedule
      - Introduction 
      - Lecture 10 m 
    * - 9.20
-     - Loading modules and running Python codes 
+     - Loading modules and running Julia codes 
      - Lecture+code along 20m
    * - 9.40
-     - Dealing with packages  
+     - Packages and isolated environments   
      - Lecture+code along 20m
    * - 10.00
      - **Coffee**
      - 
    * - 10.15
-     - Isolated environments (together)
+     - More on Packages
      - Lecture+code along 30m
    * - 10.45
-     - SLURM Batch scripts for Python jobs  
+     - SLURM Batch scripts for Julia jobs  
      - Lecture+code along + exercise 25m
    * - 11.10
      - **Short leg stretch**
      - 
    * - 11.15
-     - Interactive
+     - Interactive work on the compute nodes
      - Lecture+code along 15m
    * - 11.30
-     - Additional exercises
+     - Exercises
      - Exercises 20m
    * - 11.50
      - **Short leg stretch**
@@ -131,7 +126,7 @@ read-eval-print-loop (REPL) command line by typing ``julia``:
 
         .. code-block:: julia-repl
          
-         $ ml Julia/1.8.5-linux-x86_64
+         $ ml julia/1.8.5
          $ julia 
 
             _       _ _(_)_     |  Documentation: https://docs.julialang.org
@@ -246,7 +241,7 @@ Exercises
 
 
 
-    .. solution:: Solution for HPC2N
+    .. solution:: Solution for centres
         :class: dropdown
             
             .. code-block:: julia
@@ -258,27 +253,7 @@ Exercises
                 julia>]
                 pkg> status 
                 julia>?
-                help?> println 
-
-
-    .. solution:: Solution for UPPMAX
-        :class: dropdown
-        
-            This batch script is for UPPMAX. Adding the numbers 2 and 3.  (FIX)
-            
-            .. code-block:: sh
-    
-                #!/bin/bash
-                #SBATCH -A SNIC2022-22-641 # Change to your own after the course
-                #SBATCH --time=00:05:00 # Asking for 5 minutes
-                #SBATCH -n 1 # Asking for 1 core
-                
-                # Load any modules you need, here for Python 3.9.5
-                module load Python/3.9.5
-                
-                # Run your Python script 
-                python sum-2args.py 2 3 
-
+                help?> println
 
 
 More on Julia?
