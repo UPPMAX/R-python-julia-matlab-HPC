@@ -8,7 +8,7 @@ Isolated
 .. challenge:: Create a virtual environment with a requirements file below
 
    - Create a virtual environment with the name ``analysis``.
-   - Install packages definde by the ``requirements.txt`` file (save it).
+   - Install packages defined by the ``requirements.txt`` file (save it).
   
    .. code-block:: sh
    
