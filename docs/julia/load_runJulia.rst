@@ -189,28 +189,6 @@ Exit with
    - Start a Julia shell session with ``julia`` (note lower case even at HPC2N)
    - Run scripts with ``julia <script.jl>``
     
-Running IJulia from Jupyter notebook on UPPMAX 
-##############################################
-
-For more interactiveness you can run IJulia.
-Like for Python it is possible to run a Julia in a notebook, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the python module as well. In shell:
-
-.. code-block:: sh
-
-   $ module load julia/1.8.5
-   $ module load python/3.10.8
-   $ julia
-
-In Julia:
-
-.. code-block:: julia
-
-   > using IJulia
-   > notebook(dir="</path/to/work/dir/>")
-
-A Firefox session should start with the Jupyter notebook interface.
-**If not**, you may have to build IJulia the first time with Pkg.build("IJulia"). Since "IJulia" is *pre-installed centrally* on UPPMAX you must activate the central environment by following these steps belo. This should only be needed the first time like this
-
 .. code-block:: julia
   
    > using Pkg
