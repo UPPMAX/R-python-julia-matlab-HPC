@@ -119,7 +119,7 @@ Example **Code along**
          
       .. code-block:: sh
       
-          b-an01 [~]$ salloc -n 4 --time=00:30:00 -A hpc2nXXXX-YY
+          b-an01 [~]$ salloc -n 4 --time=00:30:00 -A hpc2nXXXX-YYY
           salloc: Pending job allocation 20174806
           salloc: job 20174806 queued and waiting for resources
           salloc: job 20174806 has been allocated resources
@@ -143,66 +143,39 @@ Example **Code along**
       We are. Notice that we got a response from all four cores we have allocated.   
       
       
-**I am going to use the following two Julia codes for the examples:**
-      
-      **FIX**
-      
-      Adding two numbers from user input (add2.py)
+Running a script
+''''''''''''''''
+
+**The script** 
+      Adding two numbers from user input (serial-sum.jl)
          
       .. code-block:: julia
       
           # This program will add two numbers that are provided by the user
           
           # Get the numbers
-          a = int(input("Enter the first number: ")) 
-          b = int(input("Enter the second number: "))
-          
+          x = parse( Int32, ARGS[1] )
+          y = parse( Int32, ARGS[2] )
           # Add the two numbers together
-          sum = a + b
+          summ = x + y
+          println("The sum of the two numbers is ", summ)
           
-          # Output the sum
-          print("The sum of {0} and {1} is {2}".format(a, b, sum))
       
-      Adding two numbers given as arguments (sum-2args.py)
-         
-      .. code-block:: python
-      
-          import sys
-          
-          x = int(sys.argv[1])
-          y = int(sys.argv[2])
-          
-          sum = x + y
-          
-          print("The sum of the two numbers is: {0}".format(sum))
-      
-**Now for running the examples:**
+**Running the script**
 
 - Note that the commands are the same for both HPC2N and UPPMAX!
       
-      1. Running a Python script in the allocation we made further up. Notice that since we asked for 4 cores, the script is run 4 times, since it is a serial script
+      Running a Python script in the allocation we made further up. Notice that since we asked for 4 cores, the script is run 4 times, since it is a serial script
          
       .. code-block:: sh
       
-          b-an01 [~]$ srun python sum-2args.py 3 4
+          b-an01 [~]$ srun julia serial-sum.jl 3 4
           The sum of the two numbers is: 7
           The sum of the two numbers is: 7
           The sum of the two numbers is: 7
           The sum of the two numbers is: 7
           b-an01 [~]$             
-                  
-      2. Running a Python script in the above allocation, but this time a script that expects input from you.
-         
-      .. code-block:: sh            
-          
-          b-an01 [~]$ srun python add2.py 
-          2
-          3
-          Enter the first number: Enter the second number: The sum of 2 and 3 is 5
-          Enter the first number: Enter the second number: The sum of 2 and 3 is 5
-          Enter the first number: Enter the second number: The sum of 2 and 3 is 5
-          Enter the first number: Enter the second number: The sum of 2 and 3 is 5
-      
+                        
       As you can see, it is possible, but it will not show any interaction it otherwise would have. This is how it would look on the login node: 
                   
       .. code-block:: sh 
@@ -211,7 +184,22 @@ Example **Code along**
                   Enter the first number: 2
                   Enter the second number: 3
                   The sum of 2 and 3 is 5
-      
+
+**Running julia REPL (UPPMAX)**
+
+- First start julia using the 4 cores and check if workers are available
+
+      .. code-block:: sh 
+ 
+         $ julia -p 4
+         
+      ..code-block:: julia
+
+        julia> nworkers()
+        4
+
+
+
 
 **Exit**
 
