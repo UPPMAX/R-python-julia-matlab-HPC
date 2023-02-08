@@ -18,7 +18,7 @@ Introduction
 
 
 
-    .. solution:: Solution for HPC2N
+    .. solution:: Solution for the centres
         :class: dropdown
             
             .. code-block:: julia
@@ -32,24 +32,6 @@ Introduction
                 julia>?
                 help?> println 
 
-
-    .. solution:: Solution for UPPMAX
-        :class: dropdown
-        
-            This batch script is for UPPMAX. Adding the numbers 2 and 3.  (FIX)
-            
-            .. code-block:: sh
-    
-                #!/bin/bash
-                #SBATCH -A SNIC2022-22-641 # Change to your own after the course
-                #SBATCH --time=00:05:00 # Asking for 5 minutes
-                #SBATCH -n 1 # Asking for 1 core
-                
-                # Load any modules you need, here for Python 3.9.5
-                module load Python/3.9.5
-                
-                # Run your Python script 
-                python sum-2args.py 2 3 
 
 Load and run
 ------------
