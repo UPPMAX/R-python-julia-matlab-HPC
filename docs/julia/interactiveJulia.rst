@@ -165,7 +165,7 @@ Running a script
 
 - Note that the commands are the same for both HPC2N and UPPMAX!
       
-      Running a PytJuliahon script in the allocation we made further up. Notice that since we asked for 4 cores, the script is run 4 times, since it is a serial script
+      Running a Julia script in the allocation we made further up. Notice that since we asked for 4 cores, the script is run 4 times, since it is a serial script
          
       .. code-block:: sh
       
@@ -225,8 +225,11 @@ When you have finished using the allocation, either wait for it to end, or close
                   salloc: Job allocation 20174806 has been revoked.
                   b-an01 [~]$
 
-.. admonition:: Running Jupyter on compute nodes at UPPMAX
+.. admonition:: Running IJulia in Jupyter on compute nodes at UPPMAX
 
+   - Jupyter is rather slow on the compute nodes. 
+   - This can be fixed by opening jupyter in a web browers on you local computer.
+   
    https://uppmax.github.io/HPC-python/jupyter.html
 
 .. keypoints::
