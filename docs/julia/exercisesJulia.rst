@@ -62,11 +62,14 @@ Load and run
     .. solution:: Solution for UPPMAX
         :class: dropdown
         
-            This batch script is for UPPMAX. Adding the numbers 2 and 3. (FIX)
+            This batch script is for UPPMAX. Adding the numbers 2 and 3. 
             
             .. code-block:: sh
     
-                julia serial-sum.jl Arg1 Arg2    # run the serial script
+                $ ml julia/1.8.5      # Julia module
+               
+                $ julia serial-sum.jl Arg1 Arg2    # run the serial script
+
 
 
 Packages and isolated environments
@@ -79,7 +82,7 @@ Packages and isolated environments
     offers tools for dealing with ``.csv`` files. After this, check that this package
     was installed. Finally, deactivate the environment.
 
-    .. solution:: Solution for HPC2N
+    .. solution:: Solution for both centres
         :class: dropdown
             
             .. code-block:: julia
@@ -95,24 +98,6 @@ Packages and isolated environments
                 (new-env) pkg> activate 
 
 
-    .. solution:: Solution for UPPMAX
-        :class: dropdown
-        
-            This batch script is for UPPMAX. Adding the numbers 2 and 3. (FIX)
-            
-            .. code-block:: sh
-    
-                #!/bin/bash
-                #SBATCH -A SNIC2022-22-641 # Change to your own after the course
-                #SBATCH --time=00:05:00 # Asking for 5 minutes
-                #SBATCH -n 1 # Asking for 1 core
-                
-                # Load any modules you need, here for Python 3.9.5
-                module load Python/3.9.5
-                
-                # Run your Python script 
-                python sum-2args.py 2 3 
-
 .. challenge:: Package environment
     
     Create a package environment called ``new_pack`` and activate it. Then, install the
@@ -120,7 +105,7 @@ Packages and isolated environments
     offers tools for dealing with ``.csv`` files. After this, check that this package
     was installed. Finally, deactivate the environment.
 
-    .. solution:: Solution for HPC2N
+    .. solution:: Solution for both centres
         :class: dropdown
             
             .. code-block:: julia
@@ -140,35 +125,6 @@ Packages and isolated environments
                        Status `path-to-folder\new_pack\Project.toml`
                        [336ed68f] CSV v0.10.9
                 (new_pack) pkg> activate
-
-
-    .. solution:: Solution for UPPMAX
-        :class: dropdown
-        
-            This batch script is for UPPMAX. Adding the numbers 2 and 3.  (FIX)
-            
-            .. code-block:: sh
-    
-                #!/bin/bash
-                #SBATCH -A SNIC2022-22-641 # Change to your own after the course
-                #SBATCH --time=00:05:00 # Asking for 5 minutes
-                #SBATCH -n 1 # Asking for 1 core
-                
-                # Load any modules you need, here for Python 3.9.5
-                module load Python/3.9.5
-                
-                # Run your Python script 
-                python sum-2args.py 2 3 
-
-
-
-
-
-Interactive
------------
-
-
-
 
 Batch mode
 ----------
@@ -213,7 +169,7 @@ Serial code
     .. solution:: Solution for UPPMAX
         :class: dropdown
         
-            This batch script is for UPPMAX. Adding the numbers 2 and 3. (FIX)
+            This batch script is for UPPMAX. Adding the numbers 2 and 3.
             
             .. code-block:: sh
     
@@ -227,10 +183,6 @@ Serial code
                 module load julia/1.8.5
                 
                 julia serial-sum.jl Arg1 Arg2    # run the serial script
-
-
-Serial code + self-installed package in virt. env. 
-''''''''''''''''''''''''''''''''''''''''''''''''''
 
 GPU code
 '''''''' 
@@ -301,7 +253,7 @@ GPU code
     .. solution:: Solution for UPPMAX
         :class: dropdown
         
-            This batch script is for UPPMAX. Adding the numbers 2 and 3.  (FIX)
+            This batch script is for UPPMAX. Adding the numbers 2 and 3. 
             
             .. code-block:: sh
     
@@ -351,7 +303,7 @@ GPU code
                   0.000813 seconds (2 allocations: 512.047 KiB)
                   0.000176 seconds (16 allocations: 384 bytes)
                 
-.. challenge:: Machine Learning job on GPUs
+.. challenge:: Machine Learning job on GPUs (HPC2N)
     
     Julia has already several packages for ML, one of them is ``Flux`` (https://fluxml.ai/). We will work with one of
     the test cases provided by ``Flux`` which deals with a data set of tiny images (CIFAR10). Follow this steps:
@@ -436,28 +388,3 @@ GPU code
             statistics after a couple of minutes the job started.
 
     
-    .. solution:: Solution for UPPMAX
-        :class: dropdown
-        
-            This batch script is for UPPMAX. Adding the numbers 2 and 3.  (FIX)
-            
-            .. code-block:: sh
-    
-                #SBATCH -A <project with Snowy/Bianca access    # your project_ID  
-                #SBATCH -M snowy
-                #SBATCH -p node
-                ##SBATCH -C gpu   #NB: Only for Bianca
-                #SBATCH -N 1
-                #SBATCH --job-name=juliaGPU         # create a short name for your job
-                #SBATCH --gpus-per-node=1             # number of gpus per node (Bianca 2, Snowy 1)
-                #SBATCH --time=00:15:00          # total run time limit (HH:MM:SS)
-                #SBATCH --qos=short              # if test run t<15 min
-                
-                ml Julia/1.8.5-linux-x86_64
-
-                julia script-gpu.jl
-
-            Output:
-
-
-
