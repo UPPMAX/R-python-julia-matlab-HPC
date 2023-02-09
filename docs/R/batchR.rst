@@ -399,46 +399,54 @@ Exercises
 
 .. challenge:: Serial batch script for R
 
-   Run the serial example script from further up on the page for the hello.R code. 
+   Run the serial batch script from further up on the page, but for the add2.R code. Remember the arguments.
     
 .. solution:: Solution for UPPMAX
     :class: dropdown
     
-          Submitting "serial.sh" on Rackham  
+          Serial script on Rackham  
           
           .. code-block:: sh
  
-            [bbrydsoe@rackham3 Python]$ sbatch serial.sh 
-            Submitted batch job 33571948
-            
-            [bbrydsoe@rackham3 Python]$ ls
-            hello.R  serial.sh  slurm-33571948.out
-            [bbrydsoe@rackham3 Python]$
-            
-            [bbrydsoe@rackham3 Python]$ cat slurm-33571948.out 
-            Nearly all CRAN and BioConductor packages are installed and available by
-            loading the module R_packages/4.0.4 
-            > message <-"Hello World!"
-            > print(message)
-            [1] "Hello World!"
-            > 
+             #!/bin/bash
+             #SBATCH -A naiss2023-22-44 # Change to your own after the course
+             #SBATCH --time=00:10:00 # Asking for 10 minutes
+             #SBATCH -n 1 # Asking for 1 core
+             
+             # Load any modules you need, here for R/4.0.4
+             module load R/4.0.4
+             
+             # Run your R script 
+             R --no-save --quiet < add2.R 2 3 
 
 
 .. solution:: Solution for HPC2N
     :class: dropdown
     
-          Submitting "serial.sh" on Kebnekaise 
+          Serial script on Kebnekaise 
           
           .. code-block:: sh
  
-            #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
-            #SBATCH --time=00:05:00 # Asking for 5 minutes
-            #SBATCH -n 1 # Asking for 1 core
-            
-            # Load any modules you need, here for Python 3.9.5
-            module load Python/3.9.5
-            
-            # Run your Python script 
-            python sum-2args.py 2 3 
+             #!/bin/bash
+             #SBATCH -A hpc2nXXXX-YYY # Change to your own project ID
+             #SBATCH --time=00:10:00 # Asking for 10 minutes
+             #SBATCH -n 1 # Asking for 1 core
+             
+             # Load any modules you need, here for R/4.0.4
+             module load R/4.0.4
+             
+             # Run your R script 
+             R --no-save --quiet < add2.R 2 3 
+
+
+
+
+.. challenge:: Parallel job run
+
+   Try running the parallel example with "foreach" from further up on the page. 
+
+
+.. challenge:: R for ML
+
+   Run the ML example shown in this session. 
 
