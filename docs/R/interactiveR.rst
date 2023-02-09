@@ -172,6 +172,7 @@ Running a script
       Running a R script in the allocation we made further up. Notice that since we asked for 4 cores, the script is run 4 times, since it is a serial script
          
       .. code-block:: sh
+
           ❯ srun Rscript serial_sum.R 3 4
           [1] "The sum of the two numbers is 7"
           [1] "The sum of the two numbers is 7"
@@ -188,16 +189,16 @@ Running a script
 
 **Running R interpreter (UPPMAX)**
 
-- First start R using the 4 cores and check if workers are available
+- First start R and check available workers with ``future``
 
       .. code-block:: sh 
- 
-         $ R -p 4
-         
-      .. code-block:: R
 
-        R> nworkers()
-        4
+         > library(future)
+         > availableWorkers()
+         [1] "r483" "r483" "r483" "r483"
+         > availableCores()
+         nproc
+             4
 
 
 **Exit**
