@@ -286,7 +286,7 @@ this variable as:
 
    $ export JULIA_LOAD_PATH="@"
 
-Then, when we start a ``julia`` session the default option will be the current
+Then, when we start a Julia session the default option will be the current
 environment:
 
 .. code-block:: julia

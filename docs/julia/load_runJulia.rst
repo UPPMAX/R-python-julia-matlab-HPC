@@ -153,7 +153,7 @@ Run
 Run Julia script
 ################
 
-You can run a julia script in the shell like this:
+You can run a Julia script in the shell like this:
 
 .. code-block:: sh
 
@@ -218,7 +218,7 @@ Exit with
 
 .. keypoints::
 
-   - Before you can run julia scripts or work in a julia shell, first load a julia module.
+   - Before you can run Julia scripts or work in a Julia shell, first load a Julia module.
    - Start a Julia shell session either with ``julia``
    - Run scripts with ``julia <script.jl>``
     
