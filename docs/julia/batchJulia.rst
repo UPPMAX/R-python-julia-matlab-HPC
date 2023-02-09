@@ -502,7 +502,7 @@ The corresponding batch scripts for these examples are given here:
                # "time" command is optional
 
                # export the PATH of the Julia MPI wrapper
-               export PATH=/home/u/username/.julia/bin:$PATH
+               export PATH=~/.julia/bin:$PATH
    
                time mpiexecjl -np 8 julia mpi.jl
    
