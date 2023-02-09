@@ -1,12 +1,16 @@
-Running RStudio and interactive work on the compute nodes
+Interactive work on the compute nodes
 =========================================================
 
 .. note::
 
    - It is possible to run R directly on the login (including ThinLinc) nodes.
-   - But this should *only* be done for shorter jobs or jobs that do not use a lot of resources, as the login nodes can otherwise become slow for all users. Both Python and IPython exists as modules to load and run.
-   - If you want to work interactively with your code or data, you should start an interactive session.
-   - If you rather will run a script which won't use any interactive user input while running, you can instead start a batch job, see next session.
+   - But this should *only* be done for shorter jobs or jobs that do not use a
+     lot of resources, as the login nodes can otherwise become slow for all
+     users. Both Python and IPython exists as modules to load and run.
+   - If you want to work interactively with your code or data, you should start
+     an interactive session.
+   - If you rather will run a script which won't use any interactive user input
+     while running, you should instead start a batch job, see previous session.
    
 .. questions::
 
@@ -20,66 +24,41 @@ Running RStudio and interactive work on the compute nodes
 
 There are several ways to run Python interactively
 
-- Directly on the login nodes: **only** do this for short jobs that do not take a lot of resources
+- Directly on the login nodes: **only** do this for short jobs that do not take
+  a lot of resources
 - As an interactive job on the computer nodes, launched via the batch system
 - Jupyter notebooks (UPPMAX)
-
-Running RStudio
----------------
-
-There is a system installed version, available via the "rstudio" command (you will get RStudio/1.1.423). 
-
-However, we recommend you to use a RStudio module.
-
-Also, we recommend to use ThinLinc.
-
-- start a command line window
-- load R_packages/4.1.1, use 'module help R_packages/4.1.1' to see what is available in this certain version
-    module load RStudio/1.4.1106
-- run 'rstudio &' from the command line, and wait
-  - it might take 5-10 minutes for RStudio to start, but once it starts, there should be no further delays
-  - do *not* start RStudio through the graphical menu system in ThinLinc, this will not have access to loaded modules.
-  - if it takes a long time and might be due to that you have saved a lot of workspace
-  
-Example:
-
-.. code:: bash 
-
-   $ module load R_packages/4.1.1
-   $ module load RStudio/2022.02.0-443
-   $ rstudio &
-
-
-If you're going to run heavier computations within RStudio then you have to remember that you need to do it inside an interactive session on one of the computation nodes, and not on a login node. But if you mostly want to use it as a pretty code editor then you can run it on the login node as well. 
-RStudio on Bianca
-
-On Bianca
-''''''''''
-
-When logging onto Bianca, you are placed on a login node, which nowadays has 2 CPU and a few GB of RAM. This is sufficient for doing some lightweight calculations, but interactive sessions and batch jobs provide access to much more resources and should be requested via the SLURM system.
 
 General
 -------
 
-In order to run interactively, you need to have compute nodes allocated to run on, and this is done through the batch system.  
+In order to run interactively, you need to have compute nodes allocated to run
+on, and this is done through the batch system.  
 
-Because you will have to wait until the nodes are allocated, and because you cannot know when this happens, this is not usually a recommended way to run Python, but it is possible. 
+Because you will have to wait until the nodes are allocated, and because you
+cannot know when this happens, this is not usually a recommended way to run
+Python, but it is possible. 
 
 .. warning::
 
-    (HPC2N) Do note that it is not *real* interactivity as you probably mean it, as you will have to run it as a Python script instead of by starting Python and giving commands inside it. The reason for this is that you are not actually logged into the compute node and only sees the output of the commands you run. 
+    (HPC2N) Do note that it is not *real* interactivity as you probably mean
+    it, as you will have to run it as a Python script instead of by starting
+    Python and giving commands inside it. The reason for this is that you are
+    not actually logged into the compute node and only sees the output of the
+    commands you run. 
 
-Another option would be to use Jupyter notebooks. This option will be covered under the UPPMAX separate sessions.
-This is somewhat convoluted to get to work correctly at HPC2N, but possible. Please contact us at support@hpc2n.umu.se if you want to go this route at HPC2N. 
+    Another option would be to use Jupyter notebooks. This option will be covered
+    under the UPPMAX separate sessions. This is somewhat convoluted to get to work
+    correctly at HPC2N, but possible. Please contact us at support@hpc2n.umu.se if
+    you want to go this route at HPC2N. 
 
-
-Python "interactively" on the compute nodes 
+R "interactively" on the compute nodes 
 -------------------------------------------
 
-To run interactively, you need to allocate resources on the cluster first. 
-You can use the command salloc to allow interactive use of resources allocated to your job. 
-When the resources are allocated, you need to preface commands with ``srun`` in order to 
-run on the allocated nodes instead of the login node. 
+To run interactively, you need to allocate resources on the cluster first. You
+can use the command salloc to allow interactive use of resources allocated to
+your job. When the resources are allocated, you need to preface commands with
+``srun`` in order to run on the allocated nodes instead of the login node. 
       
 - First, you make a request for resources with ``interactive``/``salloc``, like this:
 
