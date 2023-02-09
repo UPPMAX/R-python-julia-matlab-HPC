@@ -312,7 +312,7 @@ ML code
             #SBATCH --error=error%J.error
             
             ml purge > /dev/null 2>&1
-            ml R/4.0.4
+            ml R_packages/4.0.4
             
             R --no-save --no-restore -f Rscript.R
            
