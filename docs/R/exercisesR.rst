@@ -212,7 +212,7 @@ Packages
 .. challenge:: Install a package with automatic download
 
    1) First do the setup of .Renviron and create the directory for installing R
-   packages. Remember to load any modules you need. 
+   packages. Remember to load any modules you need.
    
    2) Install a package from the command line. Suggestion: the package "anomalize"
    
@@ -262,7 +262,7 @@ Packages
 
             .. code-block:: R
 	 
-  	           [bbrydsoe@rackham3 bbrydsoe]$ R
+  	       [bbrydsoe@rackham3 bbrydsoe]$ R
                > library("anomalize")
                > library("tidyr")
 	    
