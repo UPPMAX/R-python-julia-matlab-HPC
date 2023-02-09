@@ -164,12 +164,10 @@ Load and run
 
 .. challenge:: Load R and run a short R script from the command line
     
-    .. code-block:: sh
-    
-        1) Load R version 4.0.4 (if you have not done so already)
- 	    2) Run the small R script called ``hello.R``, using ``Rscript``
+   1) Load R version 4.0.4 (if you have not done so already)
+   2) Run the small R script called ``hello.R``, using ``Rscript``
 	
-    Remember to check if a module you are loading has prerequisites, and load those first if it does. In this case it depends on whether you do the exercises on Kebnekaise or Rackham. 
+   Remember to check if a module you are loading has prerequisites, and load those first if it does. In this case it depends on whether you do the exercises on Kebnekaise or Rackham. 
 
 .. admonition:: "hello.R" (it can also be found under "R" in the "Exercises" directory on the course GitHub repository (https://github.com/UPPMAX/R-python-julia-HPC). 
 
@@ -215,8 +213,11 @@ Packages
 
    1) First do the setup of .Renviron and create the directory for installing R
    packages. Remember to load any modules you need. 
+   
    2) Install a package from the command line. Suggestion: the package "anomalize"
+   
    3) Install a package from inside R. Suggestion: the package "tidyr"
+   
    4) Start R and see if the library can be loaded. 
    
    These are both on CRAN, and this way any dependencies will be installed as
