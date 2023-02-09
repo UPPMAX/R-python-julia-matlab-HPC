@@ -12,14 +12,6 @@ Summary
       - Check for preinstalled packages
   
          - from the Julia REPL with the ``using`` or ``import`` command
-         - from BASH shell with the  (FIX UPPMAX, info for installed packages??)
-  
-            - ``pip list`` command at both centers
-            - ``ml help python/3.9.5`` at UPPMAX
-            - ``module -r spider '.*Python.*'`` at HPC2N
-
-         - Rackham: Pip or secondary conda
-         - Bianca: conda and secondary wharf + (pip or conda)
      
    - Isolated environments 
 
@@ -34,12 +26,9 @@ Summary
             - The Julia installation is lean, no additional package besides the Base and
               and Standard Libraries are installed.
          
-         - UPPMAX has ``venv`` and ``Conda`` (FIX UPPMAX, info for installed packages??)
+         - UPPMAX 
   
-            - venv is very similar to ``virtualenv``
-            - Conda creates isolated environments as well 
-  
-              - requires that you install all packages needed. 
+            - Several packages are already installed
 
    - Batch mode
       - The SLURM scheduler handles allocations to the calculation nodes
