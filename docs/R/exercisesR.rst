@@ -271,53 +271,56 @@ Packages
 Batch mode
 ##########
 
-Serial code
-'''''''''''
+.. challenge:: Serial batch script for R
 
-
-
-
-Serial code + self-installed package in virt. env. 
-''''''''''''''''''''''''''''''''''''''''''''''''''
-
-GPU code
-'''''''' 
-
-Serial  
-.. challenge:: Run the first serial example from further up on the page for this short Python code (sum-2args.py)
+   Run the serial batch script shown in the session "Running R in batch mode", but for the add2.R code (see the `Exercise/R directory on GitHub <https://github.com/UPPMAX/R-python-julia-HPC/blob/main/Exercises/R/add2.R>`_). Remember the arguments.
     
-    .. code-block:: python
-    
-        import sys
-            
-        x = int(sys.argv[1])
-        y = int(sys.argv[2])
-            
-        sum = x + y
-            
-        print("The sum of the two numbers is: {0}".format(sum))
-        
-    Remember to give the two arguments to the program in the batch script.
-
-.. solution::
+.. solution:: Solution for UPPMAX
     :class: dropdown
     
-          This is for Kebnekaise. Adding the numbers 2 and 3. 
+          Serial script on Rackham  
           
           .. code-block:: sh
  
-            #!/bin/bash
-            #SBATCH -A SNIC2022-22-641 # Change to your own after the course
-            #SBATCH --time=00:05:00 # Asking for 5 minutes
-            #SBATCH -n 1 # Asking for 1 core
-            
-            # Load any modules you need, here for Python 3.9.5
-            module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5
-            
-            # Run your Python script 
-            python sum-2args.py 2 3 
+             #!/bin/bash
+             #SBATCH -A naiss2023-22-44 # Change to your own after the course
+             #SBATCH --time=00:10:00 # Asking for 10 minutes
+             #SBATCH -n 1 # Asking for 1 core
+             
+             # Load any modules you need, here for R/4.0.4
+             module load R/4.0.4
+             
+             # Run your R script 
+             R --no-save --quiet < add2.R 2 3 
+
+
+.. solution:: Solution for HPC2N
+    :class: dropdown
+    
+          Serial script on Kebnekaise 
+          
+          .. code-block:: sh
+ 
+             #!/bin/bash
+             #SBATCH -A hpc2nXXXX-YYY # Change to your own project ID
+             #SBATCH --time=00:10:00 # Asking for 10 minutes
+             #SBATCH -n 1 # Asking for 1 core
+             
+             # Load any modules you need, here for R/4.0.4
+             module load R/4.0.4
+             
+             # Run your R script 
+             R --no-save --quiet < add2.R 2 3 
 
 
 
-Interactive
-###########
+
+.. challenge:: Parallel job run
+
+   Try running the parallel example with "foreach" from the session "Running R in batch mode". 
+
+
+.. challenge:: R for ML
+
+   Run the ML example shown in the session "Running R in batch mode". 
+
