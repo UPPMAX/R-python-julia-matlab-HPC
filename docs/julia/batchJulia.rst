@@ -62,7 +62,7 @@ Serial code
 
    .. tab:: UPPMAX
 
-        Short serial example script for Rackham. Loading Python 3.9.5. Numpy is preinstalled and does not need to be loaded. 
+        Short serial example script for running on Rackham with Julia v. 1.8.5 
 
         .. code-block:: sh
 
@@ -115,7 +115,8 @@ Serial code + self-installed package in virt. env.
 
    .. tab:: UPPMAX
 
-        Short serial example for running on Rackham. Loading Python/3.9.5 + using any Python packages you have installed yourself with venv. More information will follow under the separate session for UPPMAX. 
+        Short serial example for running on Rackham. Loading Julia v. 1.8.5 and using any Julia packages you have installed
+        yourself with virtual environment. 
 
         .. code-block:: sh
         
@@ -144,8 +145,7 @@ Serial code + self-installed package in virt. env.
    .. tab:: HPC2N
 
         Short serial example for running on Kebnekaise. Loading Julia v. 1.8.5 and using any Julia packages you have installed
-        yourself with virtual environment. During the separate session for HPC2N there will more about how to install 
-        something yourself this way. 
+        yourself with virtual environment. 
        
         .. code-block:: sh
 
