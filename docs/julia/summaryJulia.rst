@@ -1,7 +1,6 @@
 Summary
 =======
 
-**FIX UPPMAX**
 
 .. keypoints::
 
