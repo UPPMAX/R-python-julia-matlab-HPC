@@ -1,5 +1,5 @@
-Isolated environments
-=====================
+Isolated environments with ``renv``
+===================================
 
 .. note::
    Isolated environments solve a couple of problems:
@@ -12,20 +12,20 @@ Isolated environments
    
 R is not very well known for virtual environments like Python and Julia. However:
 
->The ``renv`` package is a new effort to bring project-local R dependency
-management to your projects. The goal is for renv to be a robust, stable
-replacement for the Packrat package, with fewer surprises and better default
-behaviors.
-
+> The ``renv`` package is a new effort to bring project-local R dependency
+> management to your projects. The goal is for renv to be a robust, stable
+> replacement for the Packrat package, with fewer surprises and better default
+> behaviors.
 
 
 .. questions::
 
-   - How to work with isolated environments at HPC2N and UPPMAX?
+   - How to work with isolated R environments at HPC2N and UPPMAX?
  
 .. objectives:: 
 
-   - Give a general 'theoretical* introduction to isolated environments .
+   - Give a general an introduction to isolated environments in R.
+
 
 General procedures   
 ------------------
@@ -40,12 +40,12 @@ versions of R and/or different versions of packages. You can activate and
 deactivate them one at a time, and work as if the other workspace does not
 exist.
 
->Underlying the philosophy of ``renv`` is that any of your existing workflows
-should just work as they did before – ``renv`` helps manage library paths (and
-other project-specific state) to help isolate your project’s R dependencies,
-and the existing tools you’ve used for managing R packages (e.g.
-``install.packages()``, ``remove.packages()``) should work as they did before.
-https://rstudio.github.io/renv/articles/renv.html
+> Underlying the philosophy of ``renv`` is that any of your existing workflows
+> should just work as they did before – ``renv`` helps manage library paths (and
+> other project-specific state) to help isolate your project’s R dependencies,
+> and the existing tools you’ve used for managing R packages (e.g.
+> ``install.packages()``, ``remove.packages()``) should work as they did before.
+> https://rstudio.github.io/renv/articles/renv.html
 
 Workflow
 --------
@@ -162,7 +162,8 @@ shared across environments. However, having this cached in the home directory
 might be suboptimal because of limited storage. We can change this behavior by
 setting ``use.cache:: FALSE`` in the ``renv/settings.dcf`` file. Another option
 is to set the ``RENV_PATHS_CACHE`` to someplace else, for example
-``R_LIBS_SITE`` if the R_packages module is loaded.
+``R_LIBS_SITE`` if the R_packages module is loaded. See more here:
+https://rstudio.github.io/renv/articles/renv.html#cache.
 
 *Note*: You can also do all of this directly through Rstudio when initializing a
 project.
@@ -204,7 +205,7 @@ directory (recommended), we can define the environmental variable
 
 Benefits of using Conda:
 
-- Easy to install a specific R version
+- Easy to install a specific R version (Not bound to module system)
 - Good integration with Jupyter
 - Should be familiar to people with a Python background
 
@@ -212,9 +213,7 @@ Benefits of using Conda:
 .. keypoints::
 
    - With a virtual environment you can tailor an environment with specific
-     versions for Python and packages, not interfering with other installed
-     python versions and packages.
+     versions for R and packages, not interfering with other installed
+     versions.
    - Make it for each project you have for reproducibility.
-   - There are different tools to create virtual environemnts.
-      - UPPMAX has Conda as an alternative to ``renv``
-      - More details in the separated sessions!
+   - UPPMAX has Conda as an alternative to ``renv``
