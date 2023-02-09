@@ -144,6 +144,8 @@ directory and try installing  ``knitr``
 
 And check what was installed
 
+.. code-block:: sh
+
    $ ls -l renv/library/R-4.1/x86_64-pc-linux-gnu
    lrwxrwxrwx  1 matpiq p_py-r-jl  121 Feb  9 16:44 evaluate -> /domus/h1/matpiq/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/evaluate/0.20/4b68aa51edd89a0e044a66e75ae3cc6c/evaluate
    lrwxrwxrwx  1 matpiq p_py-r-jl  115 Feb  9 16:44 highr -> /domus/h1/matpiq/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/highr/0.10/06230136b2d2b9ba5805e1963fa6e890/highr
