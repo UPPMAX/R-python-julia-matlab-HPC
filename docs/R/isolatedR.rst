@@ -99,7 +99,6 @@ environment. For example, create an environment ``yaml`` file. Let's call it
 
 .. code-block:: yaml
 
-   $ R -p 4
    name: my_r_env
    channels:
     - conda-forge
