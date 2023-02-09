@@ -53,6 +53,7 @@ Preliminary schedule
      - Lecture+code along + exercise 15m
    * - 10.55
      - **Short leg stretch**
+     -
    * - 11.00
      - Rstudio
      - Lecture+code along 10m
