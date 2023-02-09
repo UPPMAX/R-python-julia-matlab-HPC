@@ -22,12 +22,13 @@ Interactive work on the compute nodes
    - Show how to reach the calculation nodes on UPPMAX and HPC2N
    - Test some commands on the calculation nodes
 
-There are several ways to run Python interactively
+There are several ways to run R interactively
 
 - Directly on the login nodes: **only** do this for short jobs that do not take
-  a lot of resources
+  a lot of resources. E.g. a simple visualization.
 - As an interactive job on the computer nodes, launched via the batch system
-- Jupyter notebooks (UPPMAX)
+- Using Rstudio (more on this later)
+
 
 General
 -------
@@ -47,10 +48,6 @@ Python, but it is possible.
     not actually logged into the compute node and only sees the output of the
     commands you run. 
 
-    Another option would be to use Jupyter notebooks. This option will be covered
-    under the UPPMAX separate sessions. This is somewhat convoluted to get to work
-    correctly at HPC2N, but possible. Please contact us at support@hpc2n.umu.se if
-    you want to go this route at HPC2N. 
 
 R "interactively" on the compute nodes 
 -------------------------------------------
@@ -68,18 +65,18 @@ your job. When the resources are allocated, you need to preface commands with
 
       .. code-block:: sh
           
-         $ interactive -n <tasks> --time=HHH:MM:SS -A SNICXXXX-YY-ZZZ 
+         $ interactive -n <tasks> --time=HHH:MM:SS -A naiss2023-22-44 
       
    .. tab:: HPC2N (salloc)
 
       .. code-block:: sh
           
-         $ salloc -n <tasks> --time=HHH:MM:SS -A SNICXXXX-YY-ZZZ 
+         $ salloc -n <tasks> --time=HHH:MM:SS -A hpc2nXXXX-YYY 
          
       
 where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in 
       hours, minutes, and seconds (maximum T168 hours), and then you give the id for your project 
-      (**SNIC2022-22-641** for this course)
+      (**naiss2023-22-44** for this course)
 
 Your request enters the job queue just like any other job, and interactive/salloc will tell you that it is
       waiting for the requested resources. When salloc tells you that your job has been allocated 
@@ -88,15 +85,15 @@ Your request enters the job queue just like any other job, and interactive/sallo
       If you do not preface with ``srun`` the command is run on the login node! 
       
 
-You can now run Python scripts on the allocated resources directly instead of waiting for 
-      your batch job to return a result. This is an advantage if you want to test your Python 
+You can now run R scripts on the allocated resources directly instead of waiting for 
+      your batch job to return a result. This is an advantage if you want to test your R 
       script or perhaps figure out which parameters are best.
                   
 
 Example **Code along**
 ######################
 
-**Requesting 4 cores for 30 minutes, then running Python**
+**Requesting 4 cores for 10 minutes, then running R**
 
 .. tabs::
 
@@ -104,7 +101,7 @@ Example **Code along**
 
       .. code-block:: sh
       
-          [bjornc@rackham2 ~]$ interactive -A snic2022-22-641 -p core -n 4 -t 30:00
+          [bjornc@rackham2 ~]$ interactive -A naiss2023-22-44 -p devcore -n 4 -t 10:00
           You receive the high interactive priority.
           There are free cores, so your job is expected to start at once.
       
@@ -113,7 +110,7 @@ Example **Code along**
           Waiting for job 29556505 to start...
           Starting job now -- you waited for 1 second.
           
-          [bjornc@r484 ~]$ module load python/3.9.5
+          [bjornc@r484 ~]$ module load R/1.8.5
 
       Let us check that we actually run on the compute node: 
 
@@ -131,14 +128,14 @@ Example **Code along**
          
       .. code-block:: sh
       
-          b-an01 [~]$ salloc -n 4 --time=00:30:00 -A SNIC2022-22-641
+          b-an01 [~]$ salloc -n 4 --time=00:30:00 -A hpc2nXXXX-YYY
           salloc: Pending job allocation 20174806
           salloc: job 20174806 queued and waiting for resources
           salloc: job 20174806 has been allocated resources
           salloc: Granted job allocation 20174806
           salloc: Waiting for resource configuration
           salloc: Nodes b-cn0241 are ready for job
-          b-an01 [~]$ module load GCC/10.3.0 OpenMPI/4.1.1 Python/3.9.5
+          b-an01 [~]$ module load GCC/10.3.0 OpenMPI/4.1.1 R/1.8.5
           b-an01 [~]$ 
                   
       
@@ -155,73 +152,53 @@ Example **Code along**
       We are. Notice that we got a response from all four cores we have allocated.   
       
       
-**I am going to use the following two Python codes for the examples:**
-      
-      Adding two numbers from user input (add2.py)
+Running a script
+''''''''''''''''
+
+**The script** 
+      Adding two numbers from user input (serial_sum.R)
          
-      .. code-block:: python
+      .. code-block:: R
       
           # This program will add two numbers that are provided by the user
-          
-          # Get the numbers
-          a = int(input("Enter the first number: ")) 
-          b = int(input("Enter the second number: "))
-          
-          # Add the two numbers together
-          sum = a + b
-          
-          # Output the sum
-          print("The sum of {0} and {1} is {2}".format(a, b, sum))
+          args = commandArgs(trailingOnly = TRUE)
+          res = as.numeric(args[1]) + as.numeric(args[2])
+          print(paste("The sum of the two numbers is", res))
       
-      Adding two numbers given as arguments (sum-2args.py)
-         
-      .. code-block:: python
-      
-          import sys
-          
-          x = int(sys.argv[1])
-          y = int(sys.argv[2])
-          
-          sum = x + y
-          
-          print("The sum of the two numbers is: {0}".format(sum))
-      
-**Now for running the examples:**
+**Running the script**
 
 - Note that the commands are the same for both HPC2N and UPPMAX!
       
-      1. Running a Python script in the allocation we made further up. Notice that since we asked for 4 cores, the script is run 4 times, since it is a serial script
+      Running a R script in the allocation we made further up. Notice that since we asked for 4 cores, the script is run 4 times, since it is a serial script
          
       .. code-block:: sh
-      
-          b-an01 [~]$ srun python sum-2args.py 3 4
-          The sum of the two numbers is: 7
-          The sum of the two numbers is: 7
-          The sum of the two numbers is: 7
-          The sum of the two numbers is: 7
-          b-an01 [~]$             
-                  
-      2. Running a Python script in the above allocation, but this time a script that expects input from you.
-         
-      .. code-block:: sh            
-          
-          b-an01 [~]$ srun python add2.py 
-          2
-          3
-          Enter the first number: Enter the second number: The sum of 2 and 3 is 5
-          Enter the first number: Enter the second number: The sum of 2 and 3 is 5
-          Enter the first number: Enter the second number: The sum of 2 and 3 is 5
-          Enter the first number: Enter the second number: The sum of 2 and 3 is 5
-      
-      As you can see, it is possible, but it will not show any interaction it otherwise would have. This is how it would look on the login node: 
+          ❯ srun Rscript serial_sum.R 3 4
+          [1] "The sum of the two numbers is 7"
+          [1] "The sum of the two numbers is 7"
+          [1] "The sum of the two numbers is 7"
+          [1] "The sum of the two numbers is 7"
+ 
+      Without the ``srun`` command, R won't understand that it can use several
+      cores. Therefor the program is run only once.
                   
       .. code-block:: sh 
                   
-                  b-an01 [~]$ python add2.py 
-                  Enter the first number: 2
-                  Enter the second number: 3
-                  The sum of 2 and 3 is 5
-      
+          ❯ Rscript serial_sum.R 3 4
+          [1] "The sum of the two numbers is 7"
+
+**Running R interpreter (UPPMAX)**
+
+- First start R using the 4 cores and check if workers are available
+
+      .. code-block:: sh 
+ 
+         $ R -p 4
+         
+      .. code-block:: R
+
+        R> nworkers()
+        4
+
 
 **Exit**
 
@@ -240,9 +217,7 @@ When you have finished using the allocation, either wait for it to end, or close
                   Connection to r484 closed.
       
                   [bjornc@rackham2 ~]$
-      
-      It is also possible to run IPython or (on UPPMAX) jupyter-notebook 
-
+     
    .. tab:: HPC2N
    
       .. code-block:: sh 
@@ -253,11 +228,11 @@ When you have finished using the allocation, either wait for it to end, or close
                   salloc: Job allocation 20174806 has been revoked.
                   b-an01 [~]$
 
-
 .. keypoints::
 
    - Start an interactive session on a calculation node by a SLURM allocation
+   
       - At HPC2N: ``salloc`` ...
       - At UPPMAX: ``interactive`` ...
-   - Follow the same procedure as usual by loading the Python module and possible prerequisites.
+   - Follow the same procedure as usual by loading the R module and possible prerequisites.
     
