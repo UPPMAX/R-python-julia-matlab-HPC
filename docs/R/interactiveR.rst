@@ -6,7 +6,7 @@ Interactive work on the compute nodes
    - It is possible to run R directly on the login (including ThinLinc) nodes.
    - But this should *only* be done for shorter jobs or jobs that do not use a
      lot of resources, as the login nodes can otherwise become slow for all
-     users. Both Python and IPython exists as modules to load and run.
+     users. 
    - If you want to work interactively with your code or data, you should start
      an interactive session.
    - If you rather will run a script which won't use any interactive user input
@@ -38,13 +38,13 @@ on, and this is done through the batch system.
 
 Because you will have to wait until the nodes are allocated, and because you
 cannot know when this happens, this is not usually a recommended way to run
-Python, but it is possible. 
+R, but it is possible. 
 
 .. warning::
 
     (HPC2N) Do note that it is not *real* interactivity as you probably mean
-    it, as you will have to run it as a Python script instead of by starting
-    Python and giving commands inside it. The reason for this is that you are
+    it, as you will have to run it as a R script instead of by starting
+    R and giving commands inside it. The reason for this is that you are
     not actually logged into the compute node and only sees the output of the
     commands you run. 
 
