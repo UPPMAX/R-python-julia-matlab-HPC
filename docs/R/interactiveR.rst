@@ -90,6 +90,21 @@ You can now run R scripts on the allocated resources directly instead of waiting
       script or perhaps figure out which parameters are best.
                   
 
+.. tip::
+   
+   If you haven´t done already:
+   
+   .. code-block:: sh
+   
+      $ git clone https://github.com/UPPMAX/R-python-julia-HPC.git                 
+   
+   or update, standing in the ``R-python-julia-HPC`` directory:
+   
+   .. code-block:: sh
+   
+      $ git pull                
+   
+
 Example **Code along**
 ######################
 
