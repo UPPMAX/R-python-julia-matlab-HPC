@@ -68,9 +68,6 @@ run and login to ThinLinc in the browser:
 On HPC2N
 --------
 
-On HPC2N
---------
-
 Rstudio also exists on Kebnekaise but is only installed on the ThinLinc login nodes and not on the compute nodes (and also not on the regular login nodes accessible with SSH). 
 Thus, Rstudio should only be used for development and very light analysis, since there is no way to submit a job to the compute nodes.
 
