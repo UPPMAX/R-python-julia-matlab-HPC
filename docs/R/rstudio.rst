@@ -68,8 +68,11 @@ run and login to ThinLinc in the browser:
 On HPC2N
 --------
 
-Rstudio also exists on Kebenekaise but is only installed on the login nodes.
-Thus, Rstudio should only be used for development and very light analysis.
+On HPC2N
+--------
+
+Rstudio also exists on Kebnekaise but is only installed on the ThinLinc login nodes and not on the compute nodes (and also not on the regular login nodes accessible with SSH). 
+Thus, Rstudio should only be used for development and very light analysis, since there is no way to submit a job to the compute nodes.
 
 Login to ThinLinc desktop application by providing the following 
 
@@ -79,3 +82,4 @@ Login to ThinLinc desktop application by providing the following
 
 Alternatively, you can use ThinLinc in the browser: https://kebnekaise-tl.hpc2n.umu.se:300/
 
+When in ThinLinc, you can start Rstudio either from the menu (version 4.0.4) or from the command line. If you start it from the command line you first need to load R and its prerequisites, but you can pick between several versions this way. 
