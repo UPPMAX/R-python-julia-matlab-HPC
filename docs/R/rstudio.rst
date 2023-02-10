@@ -47,7 +47,7 @@ To use Rstudio on a compute node, start by asking SLURM for an interactive
 allocation (within the ThinLink session). E.g.
 
 
-... code:: bash
+.. code:: bash
 
    $ interactive -A naiss2023-22-44 -p devcore -n 4 -t 10:00
 
