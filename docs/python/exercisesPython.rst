@@ -7,7 +7,7 @@ Isolated
 
 .. challenge:: Create a virtual environment with a requirements file below
 
-   - Create a virtual environment with python-3.8.7 with the name ``analysis``.
+   - Create a virtual environment with python-3.8.X (check what is available on your cluster) with the name ``analysis``.
    - Install packages defined by the ``requirements.txt`` file (save it).
   
    .. code-block:: sh
