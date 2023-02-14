@@ -7,7 +7,7 @@ Isolated
 
 .. challenge:: Create a virtual environment with a requirements file below
 
-   - Create a virtual environment with the name ``analysis``.
+   - Create a virtual environment with python-3.8.7 with the name ``analysis``.
    - Install packages defined by the ``requirements.txt`` file (save it).
   
    .. code-block:: sh
@@ -24,7 +24,7 @@ Isolated
     
      .. code-block:: sh
 
-          $ module load python/3.9.5
+          $ module load python/3.8.7
           $ python -m venv --system-site-packages /proj/py-r-jl/<user>/python/analysis
     
       Activate it.
@@ -48,7 +48,7 @@ Isolated
     
      .. code-block:: sh
 
-          $ module load GCC/10.3.0 Python/3.9.5 
+          $ module load GCC/10.2.0 Python/3.8.6
           $ virtualenv --system-site-packages /proj/nobackup/your-project-id/analysis 
       
       Activate it.
