@@ -382,18 +382,21 @@ text file which looks like this::
 
    - This approach is more advanced and should be, in our opinion, used only if the above are not enough for the purpose. 
    - ``pyenv`` allows you to install your **own python version**, like 3.10.2, and much more… 
-   - Probably Conda will work well four you.
+   - Probably Conda will work well for you.
    - https://www.uppmax.uu.se/support/user-guides/python-user-guide/#tocjump_9931546434791352_12
 
-.. warning:: Running Jupyter in a virtual environment
+.. warning:: 
 
-   You could also use ``jupyter-`` (``lab`` or ``notebook``) in a virtual environment.
+   **Running Jupyter in a virtual environment**
 
-   If you decide to use the **``--system-site-packages``** configuration you will get ``jupyter`` from the python modules you created you virtual environment with.
-   However, you **won't find your locally installed packages** from that jupyter session. To solve this reinstall jupyter within the virtual environment by force:
+   You could also use ``jupyter`` (``-lab`` or ``-notebook``) in a virtual environment.
+
+   If you decide to use the --system-site-packages configuration you will get ``jupyter`` from the python modules you created your virtual environment with.
+   However, you **won't find your locally installed packages** from that jupyter session. To solve this reinstall jupyter within the virtual environment by force::
 
       $ pip install -I jupyter
-and run:
+
+   and run::
 
       $ jupyter-notebook
    
