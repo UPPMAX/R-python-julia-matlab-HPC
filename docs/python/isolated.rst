@@ -385,6 +385,20 @@ text file which looks like this::
    - Probably Conda will work well four you.
    - https://www.uppmax.uu.se/support/user-guides/python-user-guide/#tocjump_9931546434791352_12
 
+.. warning:: Running Jupyter in a virtual environment
+
+   You could also use ``jupyter-`` (``lab`` or ``notebook``) in a virtual environment.
+
+   If you decide to use the **``--system-site-packages``** configuration you will get ``jupyter`` from the python modules you created you virtual environment with.
+   However, you **won't find your locally installed packages** from that jupyter session. To solve this reinstall jupyter within the virtual environment by force:
+
+      $ pip install -I jupyter
+and run:
+
+      $ jupyter-notebook
+   
+   Be sure to start the **kernel with the virtual environment name**, like "Example", and not "Python 3 (ipykernel)".
+
 
 More info
 '''''''''
