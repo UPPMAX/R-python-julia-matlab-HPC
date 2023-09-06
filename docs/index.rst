@@ -36,18 +36,18 @@ Preliminary schedule
 
    * - Day
      - Language
-   * - Wednesday 8 Feb
+   * - Tuesday 17 Oct
      - Python 
-   * - Thursday 9 Feb
+   * - Wednesday 18 Oct
      - Julia
-   * - Friday 10 Feb
+   * - Thursday 19 Feb
      - R 
    
 
 Some practicals
 ---------------
 
-.. admonition:: Earlier courses 
+.. admonition:: Other courses 
 
    - HPC-Python: https://uppmax.github.io/HPC-python
   
@@ -90,7 +90,7 @@ Some practicals
         
 .. hint::
 
-   - Project ID: naiss2023-22-44 
+   - Project ID: naiss2023-22-YY 
 
    - Directory name on rackham: /proj/py-r-jl 
 
