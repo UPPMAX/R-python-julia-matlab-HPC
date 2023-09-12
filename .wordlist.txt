@@ -239,4 +239,12 @@ readthedocs
 Subdirectories
 umu
 uplogix
+IPython
+aeee
+ec
+fbfc
+interactiveness
+ipython
+localhost
+py
 

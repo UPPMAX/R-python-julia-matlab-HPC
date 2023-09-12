@@ -128,7 +128,7 @@ Check for Python versions
 Load a Python module
 --------------------
 
-For reproducibility, we recommend ALWAYS loading a specific module instad of using the default version! 
+For reproducibility, we recommend ALWAYS loading a specific module instead of using the default version! 
 
 For this course, we recommend using Python 3.9.5
 
