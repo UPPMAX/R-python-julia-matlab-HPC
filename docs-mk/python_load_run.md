@@ -291,7 +291,7 @@ Exit Python or IPython with <Ctrl-D>, "quit()" or 'exit()’ in the python promp
 
 .. keypoints::
 
-   - Before you can run Python scripts or work in a Python shell, first load a python module and prroble prerequisites
+   - Before you can run Python scripts or work in a Python shell, first load a python module and its prerequisites
    - Start a Python shell session either with ``python`` or ``ipython``
    - Run scripts with ``python <script.py>``
     

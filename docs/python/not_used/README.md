@@ -1,1 +1,1 @@
-# These files aren't used but are memories from earlier course mateial
+# These files aren't used but are memories from earlier course material
