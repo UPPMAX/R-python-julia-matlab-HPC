@@ -14,7 +14,7 @@ Introduction to running R, Python, and Julia in HPC
       - find site installed packages/libraries
       - install packages/libraries yourself
       - use virtual environments
-      - use the calculation nodes
+      - use the computation/calculation nodes
         - write batch scripts 
         - work interactivly
 
@@ -24,7 +24,8 @@ Introduction to running R, Python, and Julia in HPC
 .. admonition:: Cluster-specific approaches
 
    - The course is a cooperation between UPPMAX (Rackham, Snowy, Bianca) and HPC2N (Kebnekaise) and will focus on the compute systems at both centres.
-   - Although there are differences we will this time not have seperate sessions.
+   - Although there are differences we will only have few seperate sessions.
+   - Most participants will use UPPMAX's systems for the course, as Kebnekaise is only for local (UmU, IRF, MIUN, SLU, LTU) users. 
 
 
 Preliminary schedule
@@ -40,7 +41,7 @@ Preliminary schedule
      - Python 
    * - Wednesday 18 Oct
      - Julia
-   * - Thursday 19 Feb
+   * - Thursday 19 Oct
      - R 
    
 
@@ -74,14 +75,15 @@ Some practicals
     
     - Please MUTE your microphone when you are not speaking and use the “Raise hand” functionality under the “Participants” window during the lecture. Please do not clutter the Zoom chat. Behave politely!
 
-    - There will be breakout rooms used in the Zoom for the exercises. 
+    - There will be breakout rooms created in the Zoom for the exercises. 
     
       - You may enter there and you will get personal help
+      - There will be a "silent" room for those who just want to sit and work
       
     
 .. admonition:: Collaboration document (Microsoft-365)
 
-    - `Q/A collaboration document <https://umeauniversity.sharepoint.com/:w:/s/HPC2N630/EbHWglWYU_VNpTpdD2CtSfYBlpsAF6DyD_4RMwWCie_B0g?rtime=uSWfqzII20g>`_
+    - `Q/A collaboration document <https://umeauniversity.sharepoint.com/:w:/s/HPC2N630/EZaIVorUBXZEj89dNxYEaQcBAV0H4yQz-soWF_imIeNHUw?e=azbezP>`_
     
     - Use this page for the workshop with your questions.
 
@@ -90,24 +92,30 @@ Some practicals
         
 .. hint::
 
-   - Project ID: naiss2023-22-YY 
-
-   - Directory name on rackham: /proj/py-r-jl 
-
-   - Please create a suitably named subdirectory below /proj/py-r-jl, for your own exercises. 
+   - Main project on UPPMAX:
+     
+        - Project ID: NAISS2023-22-914 
+        - Directory name on rackham: /proj/naiss2023-22-914
+        - Please create a suitably named subdirectory below /proj/naiss2023-22-914, for your own exercises. 
    
+
+   - Local project on HPC2N: 
+
+        - Project ID: hpc2n2023-110
+        - Directory name on Kebnekaise: /proj/nobackup/hpc2n2023-110
+        - Please create a suitably named subdirectory below /proj/nobackup/hpc2n2023-110, for your own exercises.
+
    
-Example of arrangement for the "worst case"!
-############################################
+Example of screen arrangement for the "worst case"!
+###################################################
+
+If you only have one screen to work with for the course, try to fit: 
+
 - HackMD
 - ZOOM view
 - web browser with course material
 - your own terminal
 
-
-
-
- 
 .. warning::
 
     - It is good to have a familiarity with the LINUX command line. 
@@ -152,7 +160,7 @@ Prepare your environment now!
      
          .. code-block:: sh
          
-            $ mkdir /proj/py-r-jl/mrspock/<language>
+            $ mkdir /proj/naiss2023-22-914/mrspock/
 
    .. tab:: HPC2N
 
@@ -163,7 +171,7 @@ Prepare your environment now!
       
         - Example. If your username is bbrydsoe and you are at HPC2N, then we recommend you create this folder: 
      
-           /proj/nobackup/<your-project-id>/bbrydsoe/<language> 
+           /proj/nobackup/hpc2n2023-110/bbrydsoe/
          
    
 The two HPC centers UPPMAX and HPC2N
@@ -181,7 +189,6 @@ The two HPC centers UPPMAX and HPC2N
    - ... and small differences:
    
      - commands to load Python, Python packages, R, Julia
-     - isolated environments ``virtualenv`` vs ``venv``
      - slightly different flags to Slurm
      
    - ... and some bigger differences:
@@ -192,7 +199,7 @@ The two HPC centers UPPMAX and HPC2N
        - Snowy available for local projects and suits long jobs (< 1 month) and has GPUs
        - Bianca for sensitive data and has GPUs
 
-   - HPC2N has Kebnekaise with GPUs (and KNLs) 
+   - HPC2N has Kebnekaise with GPUs  
    - Conda is recommended only for UPPMAX users
     
 .. warning:: 
@@ -208,7 +215,7 @@ Briefly about the cluster hardware and system at UPPMAX and HPC2N
 
 **What is a cluster?**
 
-- Login nodes and calculations nodes
+- Login nodes and calculations/computation nodes
 
 - A network of computers, each computer working as a **node**.
      
