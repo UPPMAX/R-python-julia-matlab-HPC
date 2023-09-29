@@ -85,8 +85,10 @@ Preliminary schedule
      - 
    * - 14:00  
      - Parallel session: Parallel and multi-threaded functions
-       Parallel session: Bianca: Conda and interactive work on the compute nodes
      - 25m
+   * -    
+     - Parallel session: Bianca: Conda and interactive work on the compute nodes
+     - 
    * - 14:25
      - Conclusion & Q/A
      - 20m
