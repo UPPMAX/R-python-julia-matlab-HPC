@@ -75,7 +75,7 @@ Preliminary schedule
      - Using GPUs 
      - 10m
    * - 13:30
-     - Parallel session: Kebnekaise: Jupyter
+     - Parallel session: Kebnekaise: Jupyter<br>
        Parallel session: Rackham: Jupyter
      - 15m
    * - 13:45
