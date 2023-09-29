@@ -156,7 +156,7 @@ Prepare your environment now!
       2. If not already: create a working directory where you can code along.
          - We recommend creating it under the course project storage directory
    
-      3. Example. If your username is "mrspock" and you are at UPPMAX, this we recommend you create this folder: 
+      3. Example. If your username is "mrspock" and you are at UPPMAX, then we recommend you create this folder: 
      
          .. code-block:: sh
          
@@ -261,7 +261,7 @@ Common features
      - 128-4096 GB
      - 128-512 GB
    * - GPU
-     - NVidia K80 and V100 
+     - NVidia V100, A100 (and some old K80s)
      - None
      - Nvidia T4 
      - 2 NVIDIA A100
