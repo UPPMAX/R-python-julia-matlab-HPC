@@ -39,48 +39,59 @@ Preliminary schedule
      - Topic
      - Activity
    * - 9:00
+     - Course intro
+     - 5m  
+   * - 9:05
      - Syllabus 
-     - 15m
-   * - 9.15
-     - Introduction 
+     - 5m
+   * - 9.10
+     - Python in general 
      - Lecture 10 m 
-   * - 9.25
+   * - 9.20
      - Loading modules and running Python codes 
-     - Lecture+code along 15m
-   * - 9.40
-     - Dealing with packages  
-     - Lecture+code along 20m
-   * - 10.00
-     - **Coffee**
-     - 
-   * - 10.15
-     - Dealing with packages (Conda)
-     - Lecture+code along 15m
-   * - 10.30
-     - Isolated environments
-     - Lecture+code along 30m
-   * - 11.00
-     - **Short leg stretch**
-     - 
-   * - 11.05
-     - SLURM Batch scripts for Python jobs  
      - Lecture+code along 25m
-   * - 11.30
-     - Interactive work on the compute nodes
-     - Lecture+code along 15m
-   * - 11.45
-     - Additional exercises 
-     - exercises 20m
-   * - 12.05
-     - **Short leg stretch**
+   * - 9.45
+     - **Leg stretch**
      - 
-   * - 12.10
-     - Summary 
+   * - 10:00
+     - Packages  
+     - Lecture+code along 45m
+   * - 10.45
+     - **Coffee break**
+     - 
+   * - 11:00
+     - Isolated environments
+     - Lecture+code along 45m
+   * - 11.45
+     - **Break or informal chat**
+     - 
+   * - 12:00
+     - **LUNCH BREAK**
+     - 
+   * - 13:00  
+     - SLURM Batch scripts for Python jobs  
+     - Lecture+code along 20m
+   * - 13.20
+     - Using GPUs 
      - 10m
-   * - 12.20
-     - Q&A on-demand
-     - 10m
-   * - 12.30
+   * - 13:30
+     - Parallel session: Kebnekaise: Jupyter
+       Parallel session: Rackham: Jupyter
+     - 15m
+   * - 13:45
+     - **Break**
+     - 
+   * - 14:00  
+     - Parallel session: Parallel and multi-threaded functions
+       Parallel session: Bianca: Conda and interactive work on the compute nodes
+     - 25m
+   * - 14:25
+     - Conclusion & Q/A
+     - 20m
+   * - 14:45
+     - Evaluation of today's course 
+     - 15m
+   * - 15:00
      - END
      -
     
