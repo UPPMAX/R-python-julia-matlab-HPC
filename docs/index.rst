@@ -284,6 +284,7 @@ Material for improving your programming skills
    python/isolated.rst
    python/batchPython.md
    python/interactivePython.md
+   python/parallel.rst
    python/exercisesPython.rst
    python/summaryPython.rst
    
