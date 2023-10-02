@@ -1,5 +1,5 @@
-Introduction Python
-===================
+Parallel Programming
+====================
 
 `Welcome page and syllabus <https://uppmax.github.io/R-python-julia-HPC/index.html>`_
    - Also link at House symbol |:house:| at top of page 
