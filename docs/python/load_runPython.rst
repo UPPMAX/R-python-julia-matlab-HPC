@@ -65,11 +65,11 @@ Check for Python versions
    
          $ module spider Python/<version>
 
-      Example for Python 3.9.5
+      Example for Python 3.10.4
 
       .. code-block:: sh
 
-         $ module spider Python/3.9.5 
+         $ module spider Python/3.10.4 
 
 .. admonition:: Output at UPPMAX as of Feb 7 2023
    :class: dropdown
@@ -91,7 +91,7 @@ Check for Python versions
            Use module spider" to find all possible modules and extensions.
            Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 
-.. admonition:: Output at HPC2N as of 7 Feb 2023
+.. admonition:: Output at HPC2N as of 4 Oct 2023 
     :class: dropdown
 
         .. code-block:: tcl
@@ -120,7 +120,7 @@ Check for Python versions
                 Python/3.10.4-bare
                 Python/3.10.4
             Other possible modules matches:
-                Biopython  Boost.Python  GitPython  IPython  flatbuffers-python  ...
+                Biopython  Boost.Python  GitPython  IPython  flatbuffers-python intervaltree-python  libxml2-python  netcdf4-python  protobuf-python ...
            ----------------------------------------------------------------------------
            To find other possible module matches execute:
                $ module -r spider '.*Python.*'
@@ -129,7 +129,7 @@ Check for Python versions
                Note that names that have a trailing (E) are extensions provided by other modules.
        
            For example:
-            $ module spider Python/3.9.5
+            $ module spider Python/3.10.4
            ----------------------------------------------------------------------------
 
 Load a Python module
@@ -137,7 +137,7 @@ Load a Python module
 
 For reproducibility, we recommend ALWAYS loading a specific module instead of using the default version! 
 
-For this course, we recommend using Python 3.9.5.
+For this course, we recommend using Python 3.10.X at UPPMAX and Python 3.10.4 at HPC2N.
 
 .. tip::
     
@@ -167,14 +167,14 @@ For this course, we recommend using Python 3.9.5.
  
       .. code-block:: sh
 
-         $ module load GCC/10.3.0 Python/3.9.5
+         $ module load GCC/11.3.0 Python/3.10.4
 
       Note: Uppercase ``P``.   
       For short, you can also use: 
 
       .. code-block:: sh
 
-         $ ml GCC/10.3.0 Python/3.9.5
+         $ ml GCC/11.3.0 Python/3.10.4
 
 .. warning::
 
