@@ -263,26 +263,56 @@ For more interactiveness you can run Ipython.
       .. code-block:: sh
 
          $ module spider IPython
-         $ ml IPython/7.25.0
+
+      Then load one of them, for instance 8.5.0
+
+      .. code-block:: sh
+		      
+         $ ml GCCcore/11.3.0 IPython/8.5.0
          
       Then start Ipython with (lowercase):
       
       .. code-block:: sh
 
-         $ ipython 
+         $ ipython
 
-**Example**
+      HPC2N also has Jupyter notebook. More about that in the specific session. 
+
+**Examples**
+
+Python
 
 .. code-block:: python
 
+   b-an01 [~]$ python
+   Python 3.10.4 (main, Sep 21 2022, 11:17:23) [GCC 11.3.0] on linux
+   Type "help", "copyright", "credits" or "license" for more information.
    >>> a=3
    >>> b=7
    >>> c=a+b
    >>> c
    10
 
+ iPython
 
-- Exit Python or IPython with <Ctrl-D>, "quit()" or 'exit()’ in the python prompt
+ .. code-block::ipython
+
+    b-an01 [~]$ ipython
+    Python 3.10.4 (main, Sep 21 2022, 11:17:23) [GCC 11.3.0]
+    Type 'copyright', 'credits' or 'license' for more information
+    IPython 8.5.0 -- An enhanced Interactive Python. Type '?' for help.
+
+    In [1]: a=3
+
+    In [2]: b=7
+
+    In [3]: c=a+b
+
+    In [4]: c
+    Out[4]: 10
+
+
+- Exit Python or IPython with <Ctrl-D>, "quit()" or "exit()" in the python prompt
 
 Python
 
