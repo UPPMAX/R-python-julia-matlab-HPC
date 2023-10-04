@@ -21,6 +21,16 @@ Parallel Programming
 What is python?
 ---------------
 
+.. figure:: ../../img/workflow-hpc.svg
+   :width: 450
+   :align: center
+
+   Two-language problem where Julia is shown as a bridge between the languages
+   in the traditional paradigms, productivity vs. performance. 
+
+
+
+
 .. figure:: ../../img/shared-distributed-mem.svg
    :width: 450
    :align: center
@@ -38,6 +48,50 @@ What is python?
 
 As you probably already know…
     
+            
+.. tabs::
+
+   .. tab:: Serial
+
+        Short serial example script for Rackham. Loading Python 3.9.5. Numpy is preinstalled and does not need to be loaded. 
+
+        .. code-block:: sh
+
+            #!/bin/bash
+            #SBATCH -A naiss2023-22-44 # Change to your own after the course
+            #SBATCH --time=00:10:00 # Asking for 10 minutes
+            #SBATCH -n 1 # Asking for 1 core
+            
+
+   .. tab:: Python
+
+        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2021.05 and Python/3.9.5  
+       
+        .. code-block:: sh
+
+            #!/bin/bash
+            #SBATCH -A hpc2nXXXX-YYY # Change to your own after the course
+            #SBATCH --time=00:10:00 # Asking for 10 minutes
+            
+            
+   .. tab:: Julia 
+   
+        Python example code
+   
+        .. code-block:: python
+        
+            import timeit
+            import numpy as np
+
+
+   .. tab:: R 
+   
+        Python example code
+   
+        .. code-block:: python
+        
+            import timeit
+            import numpy as np
 
 
 - Official Python documentation is found here https://www.python.org/doc/ .
