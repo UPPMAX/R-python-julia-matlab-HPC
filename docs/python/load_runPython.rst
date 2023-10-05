@@ -264,12 +264,20 @@ For more interactiveness you can run Ipython.
 
          $ module spider IPython
 
-      Then load one of them, for instance 8.5.0
+      Then load one of them, for instance 8.5.0:
 
       .. code-block:: sh
 
          $ ml GCCcore/11.3.0 IPython/8.5.0
-	 
+
+      Then start Ipython with (lowercase):
+
+      .. code-block:: sh
+
+         $ ipython
+
+      HPC2N also has Jupyter notebook. More about that in the specific session.
+
 
 .. keypoints::
 
