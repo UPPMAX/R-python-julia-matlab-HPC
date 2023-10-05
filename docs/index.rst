@@ -25,7 +25,8 @@ Introduction to running R, Python, and Julia in HPC
 
    - The course is a cooperation between UPPMAX (Rackham, Snowy, Bianca) and HPC2N (Kebnekaise) and will focus on the compute systems at both centres.
    - Although there are differences we will only have few seperate sessions.
-   - Most participants will use UPPMAX's systems for the course, as Kebnekaise is only for local (UmU, IRF, MIUN, SLU, LTU) users. 
+   - Most participants will use UPPMAX's systems for the course, as Kebnekaise is only for local (UmU, IRF, MIUN, SLU, LTU) users.
+   - The general information given in the course will be true for all/most HPC centres in Sweden. The examples will often have _specific_ information, like module names and versions, which may vary. What you learn here should help you to make any changes needed for the other centres. 
 
 
 Preliminary schedule

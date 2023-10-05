@@ -17,7 +17,7 @@ Running Python in batch mode
 
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
 
-The batch system used at both UPPMAX and HPC2N is called SLURM. 
+The batch system used at both UPPMAX and HPC2N is called SLURM. The same is the case at most of the Swedish HPC centres. 
 
 SLURM is an Open Source job scheduler, which provides three key functions
 
@@ -67,12 +67,12 @@ Serial code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A naiss2023-22-44 # Change to your own after the course
+            #SBATCH -A naiss2023-22-914 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here Python 3.9.5. 
-            module load python/3.9.5 
+            # Load any modules you need, here Python 3.10.x. 
+            module load python/3.10 
             
             # Run your Python script 
             python mmmult.py   
@@ -85,12 +85,12 @@ Serial code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2nXXXX-YYY # Change to your own after the course
+            #SBATCH -A hpc2n2023-110 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here for Python 3.9.5 and compatible SciPy-bundle
-            module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05
+            # Load any modules you need, here for Python 3.10.4 and compatible SciPy-bundle
+            module load GCC/11.3.0 OpenMPI/4.1.4 Python/3.10.4 SciPy-bundle/2022.05
             
             # Run your Python script 
             python mmmult.py    
@@ -137,22 +137,22 @@ Serial code + self-installed package in virt. env.
 
    .. tab:: UPPMAX
 
-        Short serial example for running on Rackham. Loading Python/3.9.5 + using any Python packages you have installed yourself with venv. More information will follow under the separate session for UPPMAX. 
+        Short serial example for running on Rackham. Loading Python 3.10.x + using any Python packages you have installed yourself with venv. More information under the separate session for UPPMAX. Change to your directory name and venv name below. 
 
         .. code-block:: sh
         
             #!/bin/bash
-            #SBATCH -A naiss2023-22-44 # Change to your own after the course
+            #SBATCH -A naiss2023-22-914 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here for Python 3.9.5 
-            module load python/3.9.5
+            # Load any modules you need, here for Python 3.10.x 
+            module load python/3.10
             
             # Activate your virtual environment. 
             # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
-            # Example: /proj/py-r-jl/<user>/python/vpyenv 
-            source <path-to-virt-env>/bin/activate
+            # Example: /proj/naiss2023-22-914/<user>/python/<venv-name>
+            source /proj/naiss2023-22-914/<user>/python/<venv-name>/bin/activate
             
             # Run your Python script
             python <my_program.py>
@@ -160,22 +160,22 @@ Serial code + self-installed package in virt. env.
 
    .. tab:: HPC2N
 
-        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2021.05, Python/3.9.5 + using any Python packages you have installed yourself with virtual environment. During the separate session for HPC2N there will more about how to install something yourself this way. 
+        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2022.05, Python/3.10.4 + using any Python packages you have installed yourself with virtual environment - the one we named "Example2" should work well here. During the isolated environments session there was more about how to install something yourself this way. 
        
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2nXXXX-YYY # Change to your own after the course
+            #SBATCH -A hpc2n2023-110 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here for Python 3.9.5 and compatible SciPy-bundle
-            module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05
+            # Load any modules you need, here for Python 3.10.4 and compatible SciPy-bundle
+            module load GCC/11.3.0  OpenMPI/4.1.4 Python/3.10.4 SciPy-bundle/2022.05
             
             # Activate your virtual environment. 
             # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
-            # Example: /proj/nobackup/<your-project-id>/bbrydsoe/pythonHPC2N 
-            source <path-to-virt-env>/bin/activate
+            # Example: /proj/nobackup/hpc2n2023-110/bbrydsoe/python/Example2 
+            source /proj/nobackup/hpc2n2023-110/bbrydsoe/python/Example2/bin/activate
             
             # Run your Python script 
             python <my_program.py>
