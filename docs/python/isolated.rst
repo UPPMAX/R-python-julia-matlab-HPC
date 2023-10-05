@@ -42,7 +42,7 @@ There are different tools for creating an isolated environement, but they all ha
 
 In this course we will look at the following tools for creating and using isolated environments: 
 
-   - venv            UPPMAX
+   - venv            UPPMAX+HPC2N
    - virtualenv      UPPMAX+HPC2N
    - Conda           UPPMAX
 
@@ -58,7 +58,7 @@ In this course we will look at the following tools for creating and using isolat
    - Make it for each project you have for reproducibility.
    - There are different tools to create virtual environemnts.
       - UPPMAX has  Conda and venv and virtualenv
-      - HPC2N has virtualenv.
+      - HPC2N has venv and virtualenv.
       - More details in the separated sessions!
  
    
@@ -89,10 +89,10 @@ Create a ``venv``. First load the python version you want to base your virtual e
 
       .. code-block:: sh
 
-         $ module load python/3.7.2
+         $ module load GCCcore/11.3.0 Python/3.10.4
          $ virtualenv --system-site-packages Example
     
-      "vpyenv" is the name of the virtual environment. You can name it whatever you want. The directory “Example” is created in the present working directory.
+      Where "Example" is the name of the virtual environment. You can name it whatever you want. The directory “Example” is created in the present working directory - to change that, give the full path.
 
 
 .. note::
@@ -111,33 +111,33 @@ If you want it in a certain place...
 
    .. tab:: UPPMAX
 
-      To place it in the course project folder
+      To place it in (your own subdirectory named <user>/python) in the course project folder
       
       .. code-block:: sh
 
-         $ python -m venv --system-site-packages /proj/py-r-jl/<user>/python
+         $ python -m venv --system-site-packages /proj/naiss2023-22-914/<user>/python
     
       Activate it.
 
       .. code-block:: sh
 
-          $ source /proj/py-r-jl/<user>/python/Example/bin/activate
+          $ source /proj/naiss2023-22-914/<user>/python/Example/bin/activate
 
       Note that your prompt is changing to start with (Example) to show that you are within an environment.
 
    .. tab:: HPC2N
 
-      To place it in a directory below your project storage (again calling it "Example"): 
+      To place it in a directory you created below your project storage (again calling it "Example"): 
 
       .. code-block:: sh
 
-         $ virtualenv --system-site-packages /proj/nobackup/your-project-id/<your-project-storage>/Example 
+         $ virtualenv --system-site-packages /proj/nobackup/hpc2n2023-110/<your-directory>/python/Example 
     
       Activate it.
 
       .. code-block:: sh
 
-          $ source /proj/nobackup/your-project-id/<your-project-storage>/Example/bin/activate
+          $ source /proj/nobackup/hpc2n2023-110/<your-directory>/python/Example/bin/activate
 
 
 Note that your prompt is changing to start with (name of your vitual environment) to show that you are within it.
@@ -146,7 +146,7 @@ Note that your prompt is changing to start with (name of your vitual environment
 Using pip
 '''''''''
 
-Install your packages with ``pip``. While not always needed, it is often a good idea to give the correct versions you want, to ensure compatibility with other packages you use: 
+Install your packages (here numpy and matplotlib, both with specific versions) with ``pip``. While not always needed, it is often a good idea to give the correct versions you want, to ensure compatibility with other packages you use: 
 
 .. prompt:: 
     :language: bash
@@ -169,7 +169,7 @@ Everytime you need the tools available in the virtual environment you activate i
 
 .. prompt:: bash $
 
-   source /proj/nobackup/your-project-id/Example/bin/activate
+   source /proj/nobackup/hpc2n2023-110/<your-directory>/python/Example/bin/activate
     
 
 Prepare the course environment
@@ -189,13 +189,13 @@ Create a virtual environment called ``vpyenv`. First load the python version you
       .. code-block:: sh
 
           $ module load python/3.9.5
-          $ python -m venv --system-site-packages /proj/py-r-jl/<user>/python/vpyenv
+          $ python -m venv --system-site-packages /proj/naiss2023-22-914/<user>/python/vpyenv
     
       Activate it.
 
       .. code-block:: sh
 
-         $ source /proj/py-r-jl/<user>/python/vpyenv/bin/activate
+         $ source /proj/naiss2023-22-914/<user>/python/vpyenv/bin/activate
 
       Note that your prompt is changing to start with (vpyenve) to show that you are within an environment.
 
@@ -227,7 +227,7 @@ Create a virtual environment called ``vpyenv`. First load the python version you
 
       .. prompt:: bash $
 
-         source /proj/py-r-jl/<user>/python/vpyenv/bin/activate
+         source /proj/naiss2023-22-914/<user>/python/vpyenv/bin/activate
 
       More on virtual environment: https://docs.python.org/3/tutorial/venv.html 
       
