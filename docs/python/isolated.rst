@@ -234,7 +234,7 @@ Create a virtual environment called ``vpyenv`. First load the python version you
    .. tab:: HPC2N
      
       1) **First go to the directory you want your environment in.**
-      Installing spacy. Using existing modules for numpy (in SciPy-bundle) and the vpyenv we created under Python 3.9.5. Note that you need to load Python again if you have been logged out, etc. but the virtual environment remains, of course.
+      Installing spacy. Using existing modules for numpy (in SciPy-bundle) and the virtualenv named "Example" we created under Python 3.10.4. Note that you need to load Python again if you have been logged out, etc. but the virtual environment remains, of course.
 
       .. admonition:: Load modules for Python, numpy (in SciPy-bundle), activate the environment, and install spacy on Kebnekaise at HPC2N 
          :class: dropdown
