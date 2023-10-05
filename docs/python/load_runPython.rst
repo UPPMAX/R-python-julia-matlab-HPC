@@ -295,7 +295,7 @@ Python
 
 iPython
 
-.. code-block::ipython
+.. code-block:: ipython
 
    b-an01 [~]$ ipython
    Python 3.10.4 (main, Sep 21 2022, 11:17:23) [GCC 11.3.0]
