@@ -349,7 +349,7 @@ Using the virtual environment created earlier and the ``spacy`` we installed und
 Working with virtual environments defined from files
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-- First create and activate and environment (see above)
+- First create and activate an environment (see above)
 - Create an environment based on dependencies given in an environment file::
   
   $ pip install -r requirements.txt
@@ -359,7 +359,7 @@ Working with virtual environments defined from files
   $ pip freeze > requirements.txt
   
 ``requirements.txt`` (used by virtual environment) is a simple
-text file which looks like this::
+text file which could look like this::
 
    numpy
    matplotlib
@@ -433,14 +433,14 @@ More info
 
 .. challenge:: Create a virtual environment with a requirements file below
 
-   - Create a virtual environment with Python 3.8.7 with the name ``analysis``.
-   - Install packages defined by the ``requirements.txt`` file (save it).
+   - Create a virtual environment with Python 3.10.x with the name ``analysis``.
+   - Install packages defined by a ``requirements.txt`` file (save it).
   
    .. code-block:: sh
    
-      numpy==1.18.1
-      matplotlib==3.1.3
-      pandas==1.1.2
+      numpy==1.22.3
+      matplotlib==3.5.2
+      pandas==1.4.2
     
    - Check that the packages were installed.
    - Don't forget to deactivate afterwards.
@@ -474,8 +474,8 @@ More info
     
      .. code-block:: sh
 
-          $ module load GCC/10.2.0 Python/3.8.6 
-          $ virtualenv --system-site-packages /proj/nobackup/hpc2n2023-110/<user-dre>/python/analysis 
+          $ module load GCCcore/11.3.0 Python/3.10.4 
+          $ virtualenv --system-site-packages /proj/nobackup/hpc2n2023-110/<user-dir>/python/analysis 
       
       Activate it.
 
