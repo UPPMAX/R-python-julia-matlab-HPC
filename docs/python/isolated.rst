@@ -234,39 +234,41 @@ Create a virtual environment called ``vpyenv`. First load the python version you
    .. tab:: HPC2N
      
       1) **First go to the directory you want your environment in.**
-      Installing spacy. Using existing modules for numpy (in SciPy-bundle) and the virtualenv named "Example" we created under Python 3.10.4. Note that you need to load Python again if you have been logged out, etc. but the virtual environment remains, of course.
+      Installing spacy. Using existing modules for numpy (in SciPy-bundle) and a virtualenv named "Example2", created under Python 3.10.4, but with a compatible SciPy-bundle loaded as well. Note that you need to load the modules again if you have been logged out, etc. but the virtual environment remains, of course.
 
-      .. admonition:: Load modules for Python, numpy (in SciPy-bundle), activate the environment, and install spacy on Kebnekaise at HPC2N 
+      .. admonition:: Load modules for Python, numpy (in SciPy-bundle), create a virtualenv named Example2, activate the environment, and install spacy on Kebnekaise at HPC2N 
          :class: dropdown
    
          .. code-block:: sh
            
-            b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ module load GCC/10.3.0 OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05
-            b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ source vpyenv/bin/activate
-            (vpyenv) b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ pip install --no-cache-dir --no-build-isolation spacy 
+            b-an01 [/proj/nobackup/hpc2n2023-110/bbrydsoe/python]$ module load GCC/11.3.0 OpenMPI/4.1.4 Python/3.10.4 SciPy-bundle/2022.05
+            b-an01 [/proj/nobackup/hpc2n2023-110/bbrydsoe/python]$ virtualenv --system-site-packages Example2
+	    b-an01 [/proj/nobackup/hpc2n2023-110/bbrydsoe/python]$ source Example2/bin/activate
+            (Example2) b-an01 [/proj/nobackup/hpc2n2023-110/bbrydsoe/python]$ pip install --no-cache-dir --no-build-isolation spacy 
    
-      2) Installing seaborn. Using existing modules for numpy (in SciPy-bundle), matplotlib, and the vpyenv we created under Python 3.9.5. Note that you need to load Python again if you have been logged out, etc. but the virtual environment remains, of course   
+      2) Installing seaborn. Using existing modules for numpy (in SciPy-bundle), matplotlib, and a new virtualenv containing the same as Example2 + matplotlib, under Python 3.10.4.    
 
-      .. admonition:: Load modules for Python, numpy (in SciPy-bundle), matplotlib, activate the environment, and install seaborn on Kebnekaise at HPC2N 
+      .. admonition:: Load modules for Python, numpy (in SciPy-bundle), matplotlib, activate the environment, create virtualenv "Example3", activate the environment, and install seaborn on Kebnekaise at HPC2N. Note: deactivate your virtualenv "Example2" first (using "deactivate")
          :class: dropdown
    
          .. code-block:: sh
            
-            $ module load GCC/10.3.0 OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 matplotlib/3.4.2
-            $ source vpyenv/bin/activate
-            (vpyenv) $ pip install --no-cache-dir --no-build-isolation seaborn 
+            b-an01 [/proj/nobackup/hpc2n2023-110/bbrydsoe/python]$ module load GCC/11.3.0 OpenMPI/4.1.4 Python/3.10.4 SciPy-bundle/2022.05 matplotlib/3.5.2
+	    b-an01 [/proj/nobackup/hpc2n2023-110/bbrydsoe/python]$ virtualenv --system-site-packages Example3
+            b-an01 [/proj/nobackup/hpc2n2023-110/bbrydsoe/python]$ source Example3/bin/activate
+            (Example3) $ pip install --no-cache-dir --no-build-isolation seaborn 
 
          Deactivating a virtual environment.
 
          .. code-block:: sh
 
-            (vpyenv) $ deactivate
+            (Example3) $ deactivate
 
       Every time you need the tools available in the virtual environment you activate it as above (after first loading the modules for Python, Python packages, and prerequisites)
 
       .. code-block:: sh
 
-         $ source vpyenv/bin/activate
+         $ source Example3/bin/activate
     
 Using setup.py
 ''''''''''''''
@@ -314,8 +316,8 @@ Using the virtual environment created earlier and the ``spacy`` we installed und
    .. code-block:: sh
            
       $ module load Python/3.9.5
-      $ source /proj/py-r-jl/<user>/python/vpyenv/bin/activate
-      (vpyenv) $ python
+      $ source /proj/naiss2023-22-914/<user>/python/Example/bin/activate
+      (Example) $ python
            Python 3.9.5 (default, Jun  3 2021, 15:06:34)
            [GCC 9.3.0] on linux
            Type "help", "copyright", "credits" or "license" for more information.
@@ -324,22 +326,22 @@ Using the virtual environment created earlier and the ``spacy`` we installed und
            >>> 
 
 
-.. admonition:: HPC2N: Load modules for Python, numpy (in SciPy-bundle), activate the environment 
+.. admonition:: HPC2N: Load modules for Python, numpy (in SciPy-bundle), activate the environment "Example2". 
     :class: dropdown
    
         .. code-block:: sh
            
-           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ module load GCC/10.3.0 OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05
-           b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ source vpyenv/bin/activate
-           (vpyenv) b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ python
-           Python 3.9.5 (default, Jun  3 2021, 02:53:39) 
-           [GCC 10.3.0] on linux
+           b-an01 [/proj/nobackup/hpc2n2023-110/bbrydsoe/python]$ module load GCC/11.3.0 OpenMPI/4.1.4 Python/3.10.4 SciPy-bundle/2022.05
+           b-an01 [/proj/nobackup/hpc2n2023-110/bbrydsoe/python]$ source Example2/bin/activate
+           (Example2) b-an01 [/proj/nobackup/hpc2n2023-110/bbrydsoe/python]$ python
+           Python 3.10.4 (main, Sep 21 2022, 11:17:23) [GCC 11.3.0] on linux
            Type "help", "copyright", "credits" or "license" for more information.
            >>> import spacy
            >>> 
-          
 
-- To use self-installed Python packages in a batch script, you also need to load the above mentioned modules and activate the environment. An example of this will follow later in the course. 
+        Try and do the same for "Example3" and seaborn. Remember to deactivate virtualenv "Example2" first, and then load the extra matplotlib/3.5.2 before activating "Example3" and trying to import seaborn to Python. 
+
+- To use self-installed Python packages in a batch script, you always also need to load the above mentioned modules and activate the environment. An example of this will follow later in the course. 
 
 - To see which Python packages you, yourself, have installed, you can use ``pip list --user`` while the environment you have installed the packages in are active. 
 
@@ -431,8 +433,8 @@ More info
 
 .. challenge:: Create a virtual environment with a requirements file below
 
-   - Create a virtual environment with python-3.8.X with the name ``analysis``.
-   - Install packages definde by the ``requirements.txt`` file (save it).
+   - Create a virtual environment with Python 3.8.7 with the name ``analysis``.
+   - Install packages defined by the ``requirements.txt`` file (save it).
   
    .. code-block:: sh
    
@@ -449,13 +451,13 @@ More info
      .. code-block:: sh
 
           $ module load python/3.8.7
-          $ python -m venv --system-site-packages /proj/py-r-jl/<user>/python/analysis
+          $ python -m venv --system-site-packages /proj/naiss2023-22-914/<user>/python/analysis
     
       Activate it.
 
       .. code-block:: sh
 
-         $ source /proj/py-r-jl/<user>/python/analysis/bin/activate
+         $ source /proj/naiss2023-22-914/<user>/python/analysis/bin/activate
 
       - Note that your prompt is changing to start with (analysis) to show that you are within an environment.
       - Install the packages from the file::
@@ -473,13 +475,13 @@ More info
      .. code-block:: sh
 
           $ module load GCC/10.2.0 Python/3.8.6 
-          $ virtualenv --system-site-packages /proj/nobackup/<your-project-storage>/analysis 
+          $ virtualenv --system-site-packages /proj/nobackup/hpc2n2023-110/<user-dre>/python/analysis 
       
       Activate it.
 
       .. code-block:: sh
 
-         $ source /proj/nobackup/analysis/bin/activate
+         $ source /proj/nobackup/hpc2n2023-110/<user-dir>/python/analysis/bin/activate
 
       - Note that your prompt is changing to start with (analysis) to show that you are within an environment.
       - Install the packages from the file::
@@ -500,4 +502,4 @@ More info
    - There are different tools to create virtual environemnts.
    
       - UPPMAX has Conda and venv and virtualenv
-      - HPC2N has virtualenv
+      - HPC2N has venv and virtualenv
