@@ -96,7 +96,7 @@ Does it work? Then it is there!
 Otherwise, you can either use ``pip`` or ``conda``.
 
 
-**NOTE**: at HPC2N, the available Python packages needs to be loaded as modules before using! See a list of some of them here: https://uppmax.github.io/HPC-python/intro.html#python-at-hpc2n or find more as mentioned above, using ``module spider -r ....```
+**NOTE**: at HPC2N, the available Python packages needs to be loaded as modules before using! See a list of some of them below or find more as mentioned above, using ``module spider -r ....```
 
 A selection of the Python packages and libraries installed on UPPMAX and HPC2N are:
 
@@ -135,12 +135,12 @@ A selection of the Python packages and libraries installed on UPPMAX and HPC2N a
 
       - The python application at HPC2N comes with several preinstalled packages - check first before installing yourself!. 
       - HPC2N has both Python 2.7.x and Python 3.x installed. 
-      - We will be using Python 3.x in this course.  For this course, the recommended version of Python to use on Kebnekaise is 3.9.5
+      - We will be using Python 3.x in this course.  For this course, the recommended version of Python to use on Kebnekaise is 3.10.4
 
 	NOTE:  HPC2N do NOT recommend (and do not support) using Anaconda/Conda on our systems. You can read more about this here: https://www.hpc2n.umu.se/documentation/guides/anaconda
 
 
-      - This is a selection of the packages and libraries installed at HPC2N. These are all installed as **modules** and need to be loaded before use. 
+      - This is a selection of the packages and libraries installed at HPC2N. These are all installed as **modules** and need to be loaded before use. Some may also have **prerequisites** that needs to be loaded first. That will be listed when you check with module spider <package-module> 
 	
 	  - ``ASE``
 	  - ``Keras``
@@ -171,7 +171,7 @@ Use ``pip3`` if you loaded python3.
 
 Then the package ends up in ``~/.local/lib/python<version>/site-packages/`` .
 
-Note that python<version> is omitting the last number (bug fix), like 3.8 for python-3.8.7.
+Note that python<version> is omitting the last number (bug fix), like 3.9 for python-3.9.6.
 We HIGHLY recommend using a virtual environment during installation, since this makes it easier to install for different versions of Python.  More information will follow later in this course (https://uppmax.github.io/HPC-python/isolated.html). 
 
 
