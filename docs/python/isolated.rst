@@ -476,23 +476,28 @@ More info
 
           $ module load GCCcore/11.3.0 Python/3.10.4 
           $ virtualenv --system-site-packages /proj/nobackup/hpc2n2023-110/<user-dir>/python/analysis 
-      
-      Activate it.
 
-      .. code-block:: sh
+     Activate it.
 
-         $ source /proj/nobackup/hpc2n2023-110/<user-dir>/python/analysis/bin/activate
+     .. code-block:: sh
 
-      - Note that your prompt is changing to start with (analysis) to show that you are within an environment.
-      - Install the packages from the file::
-      
-        pip install -r requirements.txt
-      
-      .. code-block:: sh
+        $ source /proj/nobackup/hpc2n2023-110/<user-dir>/python/analysis/bin/activate
 
-         $ pip list
-	 $ deactivate
+     - Note that your prompt is changing to start with (analysis) to show that you are within an environment.
+     - Install the packages from the file::
       
+     .. code-block::
+
+	(analysis) $ pip install -r requirements.txt
+
+     Check that the packages were installed and then deactivate the virtual environment
+      
+     .. code-block:: sh
+
+        $ pip list
+        $ deactivate
+      
+     You could also have started Python and tried to import the package instead of using "pip list".
 
 
 .. keypoints::
