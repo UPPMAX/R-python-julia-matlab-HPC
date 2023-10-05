@@ -278,6 +278,7 @@ For more interactiveness you can run Ipython.
 
       HPC2N also has Jupyter notebook. More about that in the specific session.
 
+**Examples**
 
 .. keypoints::
 
