@@ -264,6 +264,12 @@ For more interactiveness you can run Ipython.
 
          $ module spider IPython
 
+      Then load one of them, for instance 8.5.0
+
+      .. code-block:: sh
+
+         $ ml GCCcore/11.3.0 IPython/8.5.0
+	 
 
 .. keypoints::
 
