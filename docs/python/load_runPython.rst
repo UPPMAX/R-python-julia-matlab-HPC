@@ -293,7 +293,7 @@ Python
    >>> c
    10
 
- iPython
+iPython
 
  .. code-block::ipython
 
