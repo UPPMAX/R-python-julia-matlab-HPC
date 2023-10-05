@@ -295,21 +295,21 @@ Python
 
 iPython
 
- .. code-block::ipython
+.. code-block::ipython
 
-    b-an01 [~]$ ipython
-    Python 3.10.4 (main, Sep 21 2022, 11:17:23) [GCC 11.3.0]
-    Type 'copyright', 'credits' or 'license' for more information
-    IPython 8.5.0 -- An enhanced Interactive Python. Type '?' for help.
+   b-an01 [~]$ ipython
+   Python 3.10.4 (main, Sep 21 2022, 11:17:23) [GCC 11.3.0]
+   Type 'copyright', 'credits' or 'license' for more information
+   IPython 8.5.0 -- An enhanced Interactive Python. Type '?' for help.
 
-    In [1]: a=3
+   In [1]: a=3
 
-    In [2]: b=7
+   In [2]: b=7
 
-    In [3]: c=a+b
+   In [3]: c=a+b
 
-    In [4]: c
-    Out[4]: 10
+   In [4]: c
+   Out[4]: 10
 
 
 - Exit Python or IPython with <Ctrl-D>, "quit()" or "exit()" in the python prompt
