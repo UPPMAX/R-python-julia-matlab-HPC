@@ -51,7 +51,8 @@ available for the cores, ranging from the L1 cache to the node's memory for a si
 node. In the former, the bandwidth can be TB/s while in the latter GB/s.
 
 Now you can see that on a single node you already have several computing units
-(cores) and also a hierarchy of memory resources.
+(cores) and also a hierarchy of memory resources which is denoted as Non Uniform
+Memory Access (NUMA).
 
 Why is parallel programming needed?
 -----------------------------------
@@ -77,7 +78,7 @@ HPC cluster is a shown in the figure below.
 
 Although a serial application can run in such a cluster, it would not gain much of the
 HPC resources. The situation would be similar to turn on many washing machines to wash
-a single item.
+a single item, we can waste energy easily.
 
 .. figure:: ../../img/laundry-machines.svg
    :width: 550
@@ -86,9 +87,28 @@ a single item.
    Under-using a cluster.
 
 
-As you probably already know…
+Common parallel programming paradigms
+-------------------------------------
+
+Now the question is how to take advantage of modern architectures which consist of many-cores,
+interconnected through networks, and that have different types of memory available?
+Python, Julia, and R languages have different tools and libraries that can help you
+to get more from your local machine or HPC cluster resources.
     
+To take advantage of the shared memory of the cores, **threaded** mechanisms can be used.
+Low-level programming languages, such as Fortra/C/C++, use OpenMP as the standard
+application programming interface (API) to parallelize programs by using a threaded mechanism.
+Here, all threads have access to the same data and can do computations simultaneously. 
+Higher-level languages have their own mechanisms to generate threads and this can be
+confusing especially if the code is using external libraries, linear algebra for instance
+(LAPACK, BLAS, ...). These libraries have their own threads (OpenMP for example) and
+the code you are writing can also have some threded mechanism such as `Julia threads`.
             
+From the previous paragraph we infere that without doing any modification to our code
+we can get the benefits from parallel computing by turning-on/off external libraries,
+by setting environment variables such as `OMP_NUM_THREADS`.
+
+
 .. tabs::
 
    .. tab:: Serial
