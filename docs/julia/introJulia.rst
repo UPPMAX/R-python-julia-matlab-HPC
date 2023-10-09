@@ -50,7 +50,7 @@ Preliminary schedule
      - Loading modules and running Julia codes 
      - Lecture+code along 30m
    * - 10.00
-     - **Coffee**
+     - **Coffee break**
      - 
    * - 10.15
      - Packages and isolated environments   
@@ -65,19 +65,19 @@ Preliminary schedule
      - Exercises and informal chat
      - 
    * - 12.00
-     - LUNCH
+     - **LUNCH**
      -
    * - 13.00
      - SLURM Batch scripts for Julia jobs  
      - Lecture+code along + exercise 25m
    * - 13.30
-     - Parallel session — UPPMAX: Jupyter and Interactive work on the compute nodes
+     - Parallel session — UPPMAX: Jupyter and interactive work
      - Lecture+code along 15m
    * - 13.30
      - Parallel session — HPC2N: Jupyter
      - Lecture+code along 15m   
    * - 13.45
-     - **Short leg stretch**
+     - **break**
      - 
    * - 14.00
      - Parallel session — UPPMAX: Bianca packages
@@ -90,6 +90,9 @@ Preliminary schedule
      -
    * - 14.45
      - Evaluation
+     -
+   * - 15.00
+     - END
      -
 
 What is Julia?
