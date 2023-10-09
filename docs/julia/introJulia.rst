@@ -66,7 +66,7 @@ Preliminary schedule
      - 
    * - 12.00
      - LUNCH
-
+     -
    * - 13.00
      - SLURM Batch scripts for Julia jobs  
      - Lecture+code along + exercise 25m
