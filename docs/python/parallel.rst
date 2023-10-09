@@ -4,47 +4,64 @@ Parallel Programming
 
 .. questions::
 
-   - What is a batch job?
-   - How to make a batch job?
+   - What is parallel programming?
+   - Why do we need it?
+   - Where I can use it?
 
    
    
 .. objectives:: 
 
-   - Short introduction to SLURM scheduler
-   - Show structure of a batch script
-   - Try example
-
+   - Short introduction to parallel programming
+   - Common paradigms to write a parallel code
 
     
 
-What is python?
----------------
+What is parallel programming?
+-----------------------------
 
-.. figure:: ../../img/workflow-hpc.svg
-   :width: 450
-   :align: center
+Parallel programming is the art of writing code that execute tasks on different
+computing units (cores) simultaneously. In the past computers were shiped with a
+single core per Central Processing Unit (CPU) and therefore it could only perform
+a single computation at the time (serial program).
 
-   Two-language problem where Julia is shown as a bridge between the languages
-   in the traditional paradigms, productivity vs. performance. 
-
-
-
+Nowadays computer architechures are more complex than the single core CPU mentioned
+already. For instance, common architectures include those where several cores in a
+CPU share a common memory space and also those where CPUs are connected through some
+network interconnect.
 
 .. figure:: ../../img/shared-distributed-mem.svg
    :width: 450
    :align: center
 
-   Two-language problem where Julia is shown as a bridge between the languages
-   in the traditional paradigms, productivity vs. performance. 
-
+   Shared Memory and Distributed Memory architectures.
+ 
+A more realistic picture of a computer architecture can be seen in the following 
+picture where we have 14 cores that shared a common memory of 64 GB. These cores
+form the socket and the two sockets shown in this picture constitute a node.
 
 .. figure:: ../../img/cpus.png
    :width: 450
    :align: center
 
+   1 standard node on Kebnekaise @HPC2N 
+
+Both architectures have their 
+
+Why is parallel programming needed?
+-----------------------------------
+
+
+
+.. figure:: ../../img/workflow-hpc.svg
+   :width: 550
+   :align: center
+
    Two-language problem where Julia is shown as a bridge between the languages
    in the traditional paradigms, productivity vs. performance. 
+
+
+
 
 As you probably already know…
     
@@ -95,10 +112,7 @@ As you probably already know…
 
 
 - Official Python documentation is found here https://www.python.org/doc/ .
-- Python forum is found here https://python-forum.io/ .
-- A nice introduction to packages can be found here: https://aaltoscicomp.github.io/python-for-scicomp/dependencies/
-- CodeRefinery develops and maintains training material on software best practices for researchers that already write code. Ther material addresses all academic disciplines and tries to be as programming language-independent as possible. https://coderefinery.org/lessons/
-- The youtube video `Thinking about Concurrency <https://www.youtube.com/watch?v=Bv25Dwe84g0>`_ is a good introduction to writing concurrent programs in Python 
+- `Wikipedias' article on Parallel Computing <https://en.wikipedia.org/wiki/Parallel_computing>`_ 
 - The book `High Performance Python <https://www.oreilly.com/library/view/high-performance-python/9781492055013/>`_ is a good resource for ways of speeding up Python code.
     
 
