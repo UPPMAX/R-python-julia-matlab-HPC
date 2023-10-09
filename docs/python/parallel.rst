@@ -31,7 +31,7 @@ CPU share a common memory space and also those where CPUs are connected through 
 network interconnect.
 
 .. figure:: ../../img/shared-distributed-mem.svg
-   :width: 450
+   :width: 550
    :align: center
 
    Shared Memory and Distributed Memory architectures.
@@ -41,17 +41,31 @@ picture where we have 14 cores that shared a common memory of 64 GB. These cores
 form the socket and the two sockets shown in this picture constitute a node.
 
 .. figure:: ../../img/cpus.png
-   :width: 450
+   :width: 550
    :align: center
 
    1 standard node on Kebnekaise @HPC2N 
 
-Both architectures have their 
+It is interesting to notice that there are different types of memory that are
+available for the cores, ranging from the L1 cache to the node's memory for a single
+node. In the former, the bandwidth can be TB/s while in the latter GB/s.
+
+Now you can see that on a single node you already have several computing units
+(cores) and also a hierarchy of memory resources.
 
 Why is parallel programming needed?
 -----------------------------------
 
+There is no "free lunch" when trying to use features (computing/memory resources) in
+modern architectures. If you want your code to be aware of those features, you will
+need to either add them explicitly (by coding them yourself) or implicitly (by using
+libraries that were coded by others).
 
+In your local machine, you may have some number of cores available and some memory 
+attached to them which can be exploited by using a parallell program. There can be
+some limited resources for running your data-production simulations as you may use
+your local machine for other purposes such as writing a manuscript, making a presentation,
+...  One 
 
 .. figure:: ../../img/workflow-hpc.svg
    :width: 550
