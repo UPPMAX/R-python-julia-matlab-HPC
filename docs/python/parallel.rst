@@ -107,6 +107,8 @@ confusing especially if the code is using external libraries, linear algebra for
 (LAPACK, BLAS, ...). These libraries have their own threads (OpenMP for example) and
 the code you are writing can also have some threded mechanism such as `Julia threads`.
 Due to a locking mechanism in Python, `Python threads` are not efficient for computation.
+However, the `Mojo project <https://docs.modular.com/mojo/notebooks/Mandelbrot.html#benchmarking>`_
+is striving to leverage the threaded parallelism in Python.
             
 From the previous paragraph we infere that without doing any modification to our code
 we can get the benefits from parallel computing by turning-on/off external libraries,
