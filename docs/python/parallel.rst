@@ -94,7 +94,10 @@ Now the question is how to take advantage of modern architectures which consist 
 interconnected through networks, and that have different types of memory available?
 Python, Julia, and R languages have different tools and libraries that can help you
 to get more from your local machine or HPC cluster resources.
-    
+
+Threaded programing
+'''''''''''''''''''
+
 To take advantage of the shared memory of the cores, **threaded** mechanisms can be used.
 Low-level programming languages, such as Fortra/C/C++, use OpenMP as the standard
 application programming interface (API) to parallelize programs by using a threaded mechanism.
@@ -103,11 +106,14 @@ Higher-level languages have their own mechanisms to generate threads and this ca
 confusing especially if the code is using external libraries, linear algebra for instance
 (LAPACK, BLAS, ...). These libraries have their own threads (OpenMP for example) and
 the code you are writing can also have some threded mechanism such as `Julia threads`.
+Due to a locking mechanism in Python, `Python threads` are not efficient for computation.
             
 From the previous paragraph we infere that without doing any modification to our code
 we can get the benefits from parallel computing by turning-on/off external libraries,
 by setting environment variables such as `OMP_NUM_THREADS`.
 
+Distributed programing
+''''''''''''''''''''''
 
 .. tabs::
 
