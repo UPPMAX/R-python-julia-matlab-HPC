@@ -65,16 +65,25 @@ In your local machine, you may have some number of cores available and some memo
 attached to them which can be exploited by using a parallell program. There can be
 some limited resources for running your data-production simulations as you may use
 your local machine for other purposes such as writing a manuscript, making a presentation,
-...  One 
+etc. One alternative to your local machine can be a High Performance Computing (HPC)
+cluster another could be a cloud service. A common layout for the resources in an
+HPC cluster is a shown in the figure below.
 
 .. figure:: ../../img/workflow-hpc.svg
    :width: 550
    :align: center
 
-   Two-language problem where Julia is shown as a bridge between the languages
-   in the traditional paradigms, productivity vs. performance. 
+   High Performance Computing (HPC) cluster.
 
+Although a serial application can run in such a cluster, it would not gain much of the
+HPC resources. The situation would be similar to turn on many washing machines to wash
+a single item.
 
+.. figure:: ../../img/laundry-machines.svg
+   :width: 550
+   :align: center
+
+   Under-using a cluster.
 
 
 As you probably already know…
