@@ -38,7 +38,7 @@ Check for Julia versions
 
      Check all available Julia versions with:
 
-      .. code-block:: console
+      .. code-block:: consol
 
           $ module avail julia
 
@@ -47,7 +47,7 @@ Check for Julia versions
    
       Check all available version Julia versions with:
 
-      .. code-block:: console
+      .. code-block:: consol
  
          $ module spider julia
       
