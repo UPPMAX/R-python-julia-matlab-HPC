@@ -363,10 +363,10 @@ UPPMAX Central library
 
 .. code-block:: julia-repl 
 
-   using Pkg
-   Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");     #change version (1.8) accordingly if you have another main version of Julia
-   Pkg.status()
-   Pkg.activate(DEPOT_PATH[1]*"/environments/v1.8");     #to return to user library
+   julia> using Pkg
+   julia>  Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");     #change version (1.8) accordingly if you have another main version of Julia
+   julia> Pkg.status()
+   julia> Pkg.activate(DEPOT_PATH[1]*"/environments/v1.8");     #to return to user library
 
 Packages are imported or loaded by the commands ``import`` and ``using``, respectively. The difference is briefly:
 
