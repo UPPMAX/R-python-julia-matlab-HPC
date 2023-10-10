@@ -214,7 +214,7 @@ activate the environment inside the Julia script by calling these lines in your 
 Besides the previous two options for activating an environment, you can also activate it on the Linux
 command line (assuming that you are located in the environment directory): 
 
-.. code-block:: sh
+.. code-block:: console
 
    $ julia --project=. 
 
