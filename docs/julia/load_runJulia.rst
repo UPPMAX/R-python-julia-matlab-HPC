@@ -38,7 +38,7 @@ Check for Julia versions
 
      Check all available Julia versions with:
 
-      .. code-block:: sh
+      .. code-block:: console
 
           $ module avail julia
 
@@ -47,19 +47,19 @@ Check for Julia versions
    
       Check all available version Julia versions with:
 
-      .. code-block:: sh
+      .. code-block:: console
  
          $ module spider julia
       
       To see how to load a specific version of Julia, including the prerequisites, do 
 
-      .. code-block:: sh
+      .. code-block:: console
    
          $ module spider Julia/<version>
 
       Example for Julia 1.8.5
 
-      .. code-block:: sh
+      .. code-block:: console
 
          $ module spider Julia/1.8.5
 
@@ -120,14 +120,14 @@ For this course, we recommend using Julia 1.8.5.
    
       Go back and check which Julia modules were available. To load version 1.8.5, do:
 
-      .. code-block:: sh
+      .. code-block:: console
 
         $ module load julia/1.8.5
         
       Note: Lowercase ``j``.
       For short, you can also use: 
 
-      .. code-block:: sh
+      .. code-block:: console
 
          $ ml julia/1.8.5
 
@@ -135,14 +135,14 @@ For this course, we recommend using Julia 1.8.5.
    .. tab:: HPC2N
 
  
-      .. code-block:: sh
+      .. code-block:: console
 
          $ module load Julia/1.8.5-linux-x86_64
 
       Note: Uppercase ``J``.   
       For short, you can also use: 
 
-      .. code-block:: sh
+      .. code-block:: console
 
          $ ml Julia/1.8.5-linux-x86_64
 
