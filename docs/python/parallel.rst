@@ -178,18 +178,17 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
             numprocesses = 6
 
             def sleep_serial(n):
-            for i in range(n):
-                sleep(1)
+                for i in range(n):
+                    sleep(1)
 
 
             def sleep_threaded(n,numprocesses,processindex):
-            # workload for each process
-            workload = n/numprocesses
-            begin = int(workload*processindex)
-            end = int(workload*(processindex+1))
-            # regular integration in the X axis
-            for i in range(begin,end):
-                sleep(1)
+                # workload for each process
+                workload = n/numprocesses
+                begin = int(workload*processindex)
+                end = int(workload*(processindex+1))
+                for i in range(begin,end):
+                    sleep(1)
 
             if __name__ == "__main__":
 
