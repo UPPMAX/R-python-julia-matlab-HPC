@@ -165,21 +165,21 @@ For this course, we recommend using Python 3.10.X at UPPMAX and Python 3.10.4 at
 
    .. tab:: UPPMAX
    
-      Go back and check which Python modules were available. To load version 3.9.5, do:
+      Go back and check which Python modules were available. To load version 3.10.8, do:
 
       .. code-block:: sh
 
-        $ module load python/3.9.5
+        $ module load python/3.10.8
         
       Note: Lowercase ``p``.
       For short, you can also use: 
 
       .. code-block:: sh
 
-         $ ml python/3.9.5
+         $ ml python/3.10.8
 
  
-   .. tab:: HPC2N
+   .. tab:: HPC2N 
 
  
       .. code-block:: sh
