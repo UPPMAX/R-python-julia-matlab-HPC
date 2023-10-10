@@ -114,7 +114,7 @@ Create a project environment
 
 Let's now create a **project environment**, this can be done as follows (if typing along, you have to change the path to your environment, like ``/proj/py-r-jl/$USER/julia`` on rackham):
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    julia> using Pkg
    julia>;
@@ -134,7 +134,7 @@ been added in the folder *my-first-env* as you can see from the empty output of 
 Notice that now that we are in this new environment, the default and standard library environments
 are also present as before:
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    julia> LOAD_PATH
    3-element Vector{String}:
@@ -146,7 +146,7 @@ This can be confirmed if we try to load the ``DFTK`` package that we installed p
 command ``using DFTK`` will execute without any complaints. If we install the ``DFTK`` package
 we will notice some differences w.r.t. the previous installation: 
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    (my-first-env) pkg> add DFTK 
    Resolving package versions...
@@ -160,7 +160,7 @@ a new installation but it just updated our environment with information of the a
 you will see the new files ``Project.toml`` and ``Manifest.toml``, the ``more`` command can display
 the content of these files:
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    shell> ls
    Manifest.toml  Project.toml
@@ -195,7 +195,7 @@ Here, we can observe that the ``Project.toml`` only gives us the UUID of the pro
 layout. Notice the message regarding editing for the latter. Let's leave this environment: 
 
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    (my-first-env) pkg> activate 
       Activating project at `~/.julia/environments/v1.8`
@@ -206,7 +206,7 @@ Once you have created an environment, it can be activated in several manners. Fo
 saw before is by activating it in ``package`` mode with the command ``activate .``. You may also be able to
 activate the environment inside the Julia script by calling these lines in your ``.jl`` file:
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    using Pkg
    Pkg.activate(".")
@@ -224,7 +224,7 @@ Create a package environment
 A package environment can be created by using the ``generate`` function in ``package mode``
 or ``Pkg.generate()`` in ``Julian`` mode:
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    (v1.8) pkg> generate myfirstpackage 
      Generating  project myfirstpackage:
@@ -233,7 +233,7 @@ or ``Pkg.generate()`` in ``Julian`` mode:
 
 One can activate this environment in the following way:
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    shell> cd myfirstpackage 
    (v1.8) pkg> activate . 
@@ -243,7 +243,7 @@ One can activate this environment in the following way:
 
 The ``project`` function tells us that the current project has an UUID assigned to it:
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    julia> Pkg.project()
    Pkg.API.ProjectInfo("myfirstpackage", UUID("ca799254-944c-4043-b9e3-b70b93409f34"), v"0.1.0", true, Dict{String, Base.UUID}(), "/pfs/proj/nobackup/path/Julia-Test/my-first-env/myfirstpackage/Project.toml")
@@ -253,7 +253,7 @@ the standard library environments.
 
 Let's add the package ``Flux`` for Machine Learning routines:
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    (myfirstpackage) pkg> add Flux
      Precompiling project...
@@ -289,7 +289,7 @@ this variable as:
 Then, when we start a Julia session the default option will be the current
 environment:
 
-.. code-block:: julia
+.. code-block:: julia-repl
    
    julia> LOAD_PATH
    1-element Vector{String}:
@@ -299,7 +299,7 @@ One can also modify the ``LOAD_PATH`` directly on the julian prompt with the fol
 functions:
 
 
-.. code-block:: julia
+.. code-block:: julia-repl
    
    julia> empty!(LOAD_PATH)        # this will clean out the path
    julia> push!(LOAD_PATH, "@")    # it will add the current environment
@@ -313,7 +313,7 @@ the environments we want in the path so that they are visible in our current env
 To illustrate this concept, let's create a second environment and first we can remove the
 content of ``LOAD_PATH`` (which path will be different for you):
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    julia> empty!(LOAD_PATH)
    shell> pwd
@@ -326,7 +326,7 @@ content of ``LOAD_PATH`` (which path will be different for you):
 
 If we try to use the ``DFTK`` package we will see the error message:
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    julia> using DFTK
       │ Package DFTK not found, but a package named DFTK is available from a registry. 
@@ -339,7 +339,7 @@ If you remember this package was installed in the first environment (``my-first-
 to make this package available in our second environment we can push the corresponding folder's
 path to ``LOAD_PATH``:
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    julia> push!(LOAD_PATH, "/pfs/proj/nobackup/path/Julia-Test/my-first-env/")
       1-element Vector{String}:
@@ -361,7 +361,7 @@ UPPMAX Central library
 - You may control the present "central library" by typing ``ml help julia/<version>`` in the BASH shell.
 - A possibly more up-to-date status can be found from the Julia shell:
 
-.. code-block:: julia 
+.. code-block:: julia-repl 
 
    using Pkg
    Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");     #change version (1.8) accordingly if you have another main version of Julia
@@ -415,7 +415,7 @@ Exercises
     .. solution:: Solution for both centres
         :class: dropdown
             
-            .. code-block:: julia
+            .. code-block:: julia-repl
     
                 shell> mkdir new-env
                 shell> cd new-env
@@ -437,7 +437,7 @@ Exercises
     .. solution:: Solution for both centres
         :class: dropdown
             
-            .. code-block:: julia
+            .. code-block:: julia-repl
     
                 shell> pwd            #Check were you are currently located
                 (@v1.8) pkg> generate new_pack
