@@ -38,7 +38,6 @@ extensions = ["sphinx_lesson",
     "sphinx_rtd_theme_ext_color_contrast",
     "sphinxemoji.sphinxemoji",
     'sphinx-prompt',
-    'sphinx-prompt',
     'sphinx_copybutton',
 ]
 jupyter_execute_notebooks = "cache"
@@ -56,6 +55,7 @@ myst_enable_extensions = [
     "tasklist",
 ]
 
+copybutton_exclude = '.linenos, .gp, .go'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
