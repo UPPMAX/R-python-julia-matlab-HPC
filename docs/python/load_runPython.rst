@@ -72,25 +72,41 @@ Check for Python versions
 
          $ module spider Python/3.10.4 
 
-.. admonition:: Output at UPPMAX as of Feb 7 2023
+.. admonition:: Output at UPPMAX as of Oct 10 2023
    :class: dropdown
     
        .. code-block::  tcl
     
-          -------------------------------------- /sw/mf/rackham/applications ---------------------------------------
-           python_ML_packages/3.9.5    wrf-python/1.3.1
+          [bbrydsoe@rackham4 ~]$ ml spider python
 
-           --------------------------------------- /sw/mf/rackham/compilers ----------------------------------------
-           python/2.7.6     python/3.3      python/3.6.0    python/3.9.5           python3/3.7.2
-           python/2.7.9     python/3.3.1    python/3.6.8    python/3.10.8 (L,D)    python3/3.8.7
-           python/2.7.11    python/3.4.3    python/3.7.2    python3/3.6.0          python3/3.9.5
-           python/2.7.15    python/3.5.0    python/3.8.7    python3/3.6.8          python3/3.10.8 (D)
+          ----------------------------------------------------------------------
+             python:
+          ----------------------------------------------------------------------
+                Versions:
+                   python/2.7.6
+                   python/2.7.9
+                   python/2.7.11
+                   python/2.7.15
+                   python/3.3
+                   python/3.3.1
+                   python/3.4.3
+                   python/3.5.0
+                   python/3.6.0
+                   python/3.6.8
+                   python/3.7.2
+                   python/3.8.7
+                   python/3.9.5
+                   python/3.10.8
+                   python/3.11.4
+                Other possible modules matches:
+                Biopython  GitPython  IPython  Python  biopython  netcdf4-python  
+          ...
 
-           Where:
-           D:  Default Module
+          ----------------------------------------------------------------------
+          To find other possible module matches execute:
 
-           Use module spider" to find all possible modules and extensions.
-           Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+          $ module -r spider '.*python.*'
+
 
 .. admonition:: Output at HPC2N as of 4 Oct 2023 
     :class: dropdown
