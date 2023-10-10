@@ -211,6 +211,9 @@ Parallel code
             julia> MPI.install_mpiexecjl() 
                  [ Info: Installing `mpiexecjl` to `/home/u/username/.julia/bin`...
                  [ Info: Done!
+
+        .. code-block:: console
+
             # Add the installed ``mpiexecjl`` wrapper to your path on the Linux command line
             $ export PATH=~/.julia/bin:$PATH
             # Now the wrapper should be available on the command line 
@@ -229,17 +232,19 @@ Parallel code
             $ ml Julia/1.8.5-linux-x86_64
             # Start Julia on the command line
             $ julia 
-
-         - Change to ``package mode`` and add the ``MPI`` package 
-
-         .. code-block:: julia-repl
-
+            # Change to ``package mode`` and add the ``MPI`` package 
             (v1.8) pkg> add MPI 
             # In the ``julian`` mode run these commands:
+
+         .. code-block:: julia-repl
+        
             julia> using MPI 
             julia> MPI.install_mpiexecjl() 
                  [ Info: Installing `mpiexecjl` to `/home/u/username/.julia/bin`...
                  [ Info: Done!
+
+         .. code-block:: console
+
             # Add the installed ``mpiexecjl`` wrapper to your path on the Linux command line
             $ export PATH=/home/u/username/.julia/bin:$PATH
             # Now the wrapper should be available on the command line 
