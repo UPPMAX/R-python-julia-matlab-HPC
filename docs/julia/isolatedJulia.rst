@@ -146,7 +146,7 @@ This can be confirmed if we try to load the ``DFTK`` package that we installed p
 command ``using DFTK`` will execute without any complaints. If we install the ``DFTK`` package
 we will notice some differences w.r.t. the previous installation: 
 
-.. code-block:: julia-repl
+.. code-block:: julia
 
    (my-first-env) pkg> add DFTK 
    Resolving package versions...
@@ -195,7 +195,7 @@ Here, we can observe that the ``Project.toml`` only gives us the UUID of the pro
 layout. Notice the message regarding editing for the latter. Let's leave this environment: 
 
 
-.. code-block:: julia-repl
+.. code-block:: julia
 
    (my-first-env) pkg> activate 
       Activating project at `~/.julia/environments/v1.8`
@@ -208,8 +208,8 @@ activate the environment inside the Julia script by calling these lines in your 
 
 .. code-block:: julia-repl
 
-   using Pkg
-   Pkg.activate(".")
+   julia> using Pkg
+   julia> Pkg.activate(".")
 
 Besides the previous two options for activating an environment, you can also activate it on the Linux
 command line (assuming that you are located in the environment directory): 
@@ -224,7 +224,7 @@ Create a package environment
 A package environment can be created by using the ``generate`` function in ``package mode``
 or ``Pkg.generate()`` in ``Julian`` mode:
 
-.. code-block:: julia-repl
+.. code-block:: julia
 
    (v1.8) pkg> generate myfirstpackage 
      Generating  project myfirstpackage:
@@ -233,7 +233,7 @@ or ``Pkg.generate()`` in ``Julian`` mode:
 
 One can activate this environment in the following way:
 
-.. code-block:: julia-repl
+.. code-block:: julia
 
    shell> cd myfirstpackage 
    (v1.8) pkg> activate . 
@@ -253,7 +253,7 @@ the standard library environments.
 
 Let's add the package ``Flux`` for Machine Learning routines:
 
-.. code-block:: julia-repl
+.. code-block:: julia
 
    (myfirstpackage) pkg> add Flux
      Precompiling project...
@@ -313,7 +313,7 @@ the environments we want in the path so that they are visible in our current env
 To illustrate this concept, let's create a second environment and first we can remove the
 content of ``LOAD_PATH`` (which path will be different for you):
 
-.. code-block:: julia-repl
+.. code-block:: julia
 
    julia> empty!(LOAD_PATH)
    shell> pwd
@@ -364,7 +364,7 @@ UPPMAX Central library
 .. code-block:: julia-repl 
 
    julia> using Pkg
-   julia>  Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");     #change version (1.8) accordingly if you have another main version of Julia
+   julia> Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");     #change version (1.8) accordingly if you have another main version of Julia
    julia> Pkg.status()
    julia> Pkg.activate(DEPOT_PATH[1]*"/environments/v1.8");     #to return to user library
 
@@ -415,7 +415,7 @@ Exercises
     .. solution:: Solution for both centres
         :class: dropdown
             
-            .. code-block:: julia-repl
+            .. code-block:: julia
     
                 shell> mkdir new-env
                 shell> cd new-env
@@ -437,7 +437,7 @@ Exercises
     .. solution:: Solution for both centres
         :class: dropdown
             
-            .. code-block:: julia-repl
+            .. code-block:: julia
     
                 shell> pwd            #Check were you are currently located
                 (@v1.8) pkg> generate new_pack
