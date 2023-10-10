@@ -203,8 +203,10 @@ Parallel code
             # Change to ``package mode`` and add the ``MPI`` package 
             (v1.8) pkg> add MPI 
 
-        # In the ``julian`` mode run these commands:
+        - In the ``julian`` mode run these commands:
+
         .. code-block:: julia-repl
+
             julia> using MPI 
             julia> MPI.install_mpiexecjl() 
                  [ Info: Installing `mpiexecjl` to `/home/u/username/.julia/bin`...
@@ -228,9 +230,10 @@ Parallel code
             # Start Julia on the command line
             $ julia 
 
-         # Change to ``package mode`` and add the ``MPI`` package 
+         - Change to ``package mode`` and add the ``MPI`` package 
 
          .. code-block:: julia-repl
+
             (v1.8) pkg> add MPI 
             # In the ``julian`` mode run these commands:
             julia> using MPI 
