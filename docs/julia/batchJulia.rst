@@ -618,25 +618,21 @@ cluster and install the ``CUDA`` package in Julia as in the next sequence of com
         
       - On snowy 
         
-      .. code-block:: sh
+      .. code-block:: console
             
          $ interactive -A <proj> -n 1 -M snowy --gres=gpu:1  -t 3:00:00
          
-            $ ml Julia/1.8.5   # Julia version
-            $ julia
-            (v1.8) pkg> add CUDA 
-                Updating registry at `~/.julia/registries/General.toml`
-                Resolving package versions...
-                Installed CEnum ───────── v0.4.2
-                ...
+         $ ml Julia/1.8.5   # Julia version
+         $ julia
+         (v1.8) pkg> add CUDA 
+             Updating registry at `~/.julia/registries/General.toml`
+             Resolving package versions...
+             Installed CEnum ───────── v0.4.2
+             ...
         
-       
-        
-            
-
    .. tab:: HPC2N
 
-        .. code-block:: sh
+        .. code-block:: console
 
             $ ml Julia/1.8.5-linux-x86_64   # Julia version
             $ ml CUDA/11.4.1                # CUDA toolkit module
