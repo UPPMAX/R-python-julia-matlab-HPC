@@ -128,17 +128,38 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
 
 .. tabs::
 
-   .. tab:: Serial
+   .. tab:: Julia
 
-        Short serial example script for Rackham. Loading Python 3.9.5. Numpy is preinstalled and does not need to be loaded. 
+        In the following example ``sleep.jl`` the `sleep()` function is called `n` times
+        first in serial mode and then by using `n` threads. The *BenchmarkTools* package
+        help us to time the code (this package is not in the base Julia installation).
 
-        .. code-block:: sh
+        .. code-block:: julia
 
-            #!/bin/bash
-            #SBATCH -A naiss2023-22-44 # Change to your own after the course
-            #SBATCH --time=00:10:00 # Asking for 10 minutes
-            #SBATCH -n 1 # Asking for 1 core
+            using BenchmarkTools
+            using .Threads
             
+            n = 6   # number of iterations
+             
+            function sleep_serial(n)   #Serial version
+                for i in 1:n
+                    sleep(1)
+                end
+            end
+            
+            @btime sleep_serial(n) evals=1 samples=1
+            
+            
+            function sleep_threaded(n) #Parallel version
+                @threads for i = 1:n
+                    sleep(1)
+                end
+            end
+            
+            @btime sleep_threaded(n) evals=1 samples=1
+            
+        This script can be run with the command  ``julia --threads 6 sleep.jl`` to use
+        6 Julia threads.
 
    .. tab:: Python
 
