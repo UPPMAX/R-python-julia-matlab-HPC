@@ -158,38 +158,99 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
             
             @btime sleep_threaded(n) evals=1 samples=1
             
-        This script can be run with the command  ``julia --threads 6 sleep.jl`` to use
-        6 Julia threads.
+        First load the Julia module ``ml Julia/1.8.5-linux-x86_64 `` and then run the script
+        with the command  ``julia --threads 6 sleep.jl`` to use 6 Julia threads.
 
    .. tab:: Python
 
-        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2021.05 and Python/3.9.5  
-       
-        .. code-block:: sh
+        In the following example ``sleep.py`` the `sleep()` function is called `n` times
+        first in serial mode and then by using `n` processes. 
 
-            #!/bin/bash
-            #SBATCH -A hpc2nXXXX-YYY # Change to your own after the course
-            #SBATCH --time=00:10:00 # Asking for 10 minutes
-            
-            
-   .. tab:: Julia 
-   
-        Python example code
-   
         .. code-block:: python
-        
-            import timeit
-            import numpy as np
 
+            import sys
+            from time import perf_counter,sleep
+            import multiprocessing
+
+            # number of iterations 
+            n = 6
+            # number of processes
+            numprocesses = 6
+
+            def sleep_serial(n):
+            for i in range(n):
+                sleep(1)
+
+
+            def sleep_threaded(n,numprocesses,processindex):
+            # workload for each process
+            workload = n/numprocesses
+            begin = int(workload*processindex)
+            end = int(workload*(processindex+1))
+            # regular integration in the X axis
+            for i in range(begin,end):
+                sleep(1)
+
+            if __name__ == "__main__":
+
+            starttime = perf_counter()   # Start timing serial code
+            sleep_serial(n)
+            endtime = perf_counter()
+
+            print("Time spent serial: %.2f sec" % (endtime-starttime))
+
+
+            starttime = perf_counter()   # Start timing parallel code
+            processes = []
+            for i in range(numprocesses):
+                p = multiprocessing.Process(target=sleep_threaded, args=(n,numprocesses,i))
+                processes.append(p)
+                p.start()
+
+            # waiting for the processes
+            for p in processes:
+                p.join()
+
+            endtime = perf_counter()
+
+            print("Time spent parallel: %.2f sec" % (endtime-starttime))
+
+        First load the modules ``ml GCCcore/10.3.0 Python/3.9.5`` and then run the script
+        with the command  ``python sleep.py`` to use 6 processes.
 
    .. tab:: R 
    
-        Python example code
-   
-        .. code-block:: python
+        In the following example ``sleep.R`` the `sleep()` function is called `n` times
+        first in serial mode and then by using `n` processes.    
+
+        .. code-block:: r
         
-            import timeit
-            import numpy as np
+            library(doParallel)
+
+            # number of iterations = number of processes
+            n <- 6
+
+            sleep_serial <- function(n) {
+              for (i in 1:n) {
+                  Sys.sleep(1)
+              }
+            }
+
+            serial_time <- system.time(   sleep_serial(n)   )[3]
+            serial_time
+
+            sleep_parallel <- function(n) {
+              r <- foreach(i=1:n) %dopar% Sys.sleep(1)
+            }
+              
+            cl <- makeCluster(n)
+            registerDoParallel(cl)
+            parallel_time <- system.time(    sleep_parallel(n)   )[3]
+            stopCluster(cl)
+            parallel_time
+
+        First load the modules ``ml GCC/10.2.0  OpenMPI/4.0.5 R/4.0.4`` and then run the script
+        with the command  ``Rscript --no-save --no-restore sleep.R`` to use 6 processes.
 
 
 - Official Python documentation is found here https://www.python.org/doc/ .
