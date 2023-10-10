@@ -64,7 +64,7 @@ Serial code
 
         Short serial example script for running on Rackham with Julia v. 1.8.5 
 
-        .. code-block:: sh
+        .. code-block:: bash
 
             #!/bin/bash -l       # -l cleans the environment in the batch job, recommended at UPPMAX
             #SBATCH -A naiss2023-22-44 # Change to your own after the course
@@ -81,7 +81,7 @@ Serial code
 
         Short serial example for running on Kebnekaise with Julia v. 1.8.5
        
-        .. code-block:: sh
+        .. code-block:: bash
    
             #!/bin/bash            
             #SBATCH -A hpc2n20xx-xyz     # your project_ID       
@@ -118,7 +118,7 @@ Serial code + self-installed package in virt. env.
         Short serial example for running on Rackham. Loading Julia v. 1.8.5 and using any Julia packages you have installed
         yourself with virtual environment. 
 
-        .. code-block:: sh
+        .. code-block:: bash
         
              #!/bin/bash -l       # -l cleans the environment in the batch job, recommended at UPPMAX
             #SBATCH -A naiss2023-22-44 # Change to your own after the course
@@ -147,7 +147,7 @@ Serial code + self-installed package in virt. env.
         Short serial example for running on Kebnekaise. Loading Julia v. 1.8.5 and using any Julia packages you have installed
         yourself with virtual environment. 
        
-        .. code-block:: sh
+        .. code-block:: bash
 
             #!/bin/bash            
             #SBATCH -A hpc2n20xx-xyz     # your project_ID       
@@ -192,7 +192,7 @@ Parallel code
         The ``Threaded`` and ``Distributed`` packages are included in the Base installation. However, 
         in order to use MPI with Julia you will need to follow the next steps (only the first time): 
 
-        .. code-block:: sh
+        .. code-block:: console
 
             # Load the tool chain which contains a MPI library
             $ ml gcc/11.3.0 openmpi/4.1.3
@@ -202,7 +202,9 @@ Parallel code
             $ julia 
             # Change to ``package mode`` and add the ``MPI`` package 
             (v1.8) pkg> add MPI 
-            # In the ``julian`` mode run these commands:
+
+        # In the ``julian`` mode run these commands:
+        .. code-block:: julia-repl
             julia> using MPI 
             julia> MPI.install_mpiexecjl() 
                  [ Info: Installing `mpiexecjl` to `/home/u/username/.julia/bin`...
@@ -217,7 +219,7 @@ Parallel code
         The ``Threaded`` and ``Distributed`` packages are included in the Base installation. However, 
         in order to use MPI with Julia you will need to follow the next steps (only the first time): 
        
-        .. code-block:: sh
+        .. code-block:: console
       
             # Load the tool chain which contains a MPI library
             $ ml foss/2021b
@@ -225,7 +227,10 @@ Parallel code
             $ ml Julia/1.8.5-linux-x86_64
             # Start Julia on the command line
             $ julia 
-            # Change to ``package mode`` and add the ``MPI`` package 
+
+         # Change to ``package mode`` and add the ``MPI`` package 
+
+         .. code-block:: julia-repl
             (v1.8) pkg> add MPI 
             # In the ``julian`` mode run these commands:
             julia> using MPI 
@@ -434,7 +439,7 @@ The corresponding batch scripts for these examples are given here:
 
          .. tab:: job-serial.sh  
 
-            .. code-block:: sh
+            .. code-block:: bash
         
                #!/bin/bash -l
                #SBATCH -A naiss2023-22-44
@@ -452,7 +457,7 @@ The corresponding batch scripts for these examples are given here:
 
          .. tab:: job-threaded.sh 
    
-            .. code-block:: sh
+            .. code-block:: bash
             
                #!/bin/bash
                #SBATCH -A naiss2023-22-44
@@ -470,7 +475,7 @@ The corresponding batch scripts for these examples are given here:
          .. tab:: job-distributed.sh 
    
    
-            .. code-block:: sh
+            .. code-block:: bash
            
                #!/bin/bash
                #SBATCH -A naiss2023-22-44
@@ -487,7 +492,7 @@ The corresponding batch scripts for these examples are given here:
    
          .. tab:: job-mpi.sh 
    
-            .. code-block:: sh
+            .. code-block:: bash
            
                #!/bin/bash
                #SBATCH -A naiss2023-22-44
@@ -512,7 +517,7 @@ The corresponding batch scripts for these examples are given here:
 
          .. tab:: job-serial.sh  
 
-            .. code-block:: sh
+            .. code-block:: bash
         
                #!/bin/bash
                #SBATCH -A hpc2n20xx-xyz
@@ -531,7 +536,7 @@ The corresponding batch scripts for these examples are given here:
 
          .. tab:: job-threaded.sh 
    
-            .. code-block:: sh
+            .. code-block:: bash
             
                #!/bin/bash
                #SBATCH -A hpc2n20xx-xyz
