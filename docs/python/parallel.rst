@@ -117,6 +117,15 @@ by setting environment variables such as `OMP_NUM_THREADS`.
 Distributed programing
 ''''''''''''''''''''''
 
+Although threaded programming is convenient because one can achieve considerable initial speedups
+with little code modifications, this approach does not scale for more than hundreds of 
+cores. Scalability can be achieved with distributed programming. Here, there is not
+a common shared memory but the individual `processes` (notice the different terminology
+with `threads` in shared memory) have their own memory space. Then, if a process requires
+data from or should transfer data to another process, it can do that by using `send` and
+`receive` to transfer messages. A standard API for distributed computing is the Message 
+Passing Interface (MPI). In general, MPI requires refactory of your code.
+
 .. tabs::
 
    .. tab:: Serial
