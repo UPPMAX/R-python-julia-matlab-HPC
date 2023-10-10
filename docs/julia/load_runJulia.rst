@@ -38,7 +38,7 @@ Check for Julia versions
 
      Check all available Julia versions with:
 
-      .. code-block:: consol
+      .. code-block:: console
 
           $ module avail julia
 
@@ -47,7 +47,7 @@ Check for Julia versions
    
       Check all available version Julia versions with:
 
-      .. code-block:: consol
+      .. code-block:: console
  
          $ module spider julia
       
@@ -155,7 +155,7 @@ Run Julia script
 
 You can run a Julia script in the shell like this:
 
-.. code-block:: sh
+.. code-block:: console
 
    $ julia example.jl
     
@@ -164,7 +164,7 @@ More information will follow later in the course on running Julia from within a 
 Run Julia as a session
 ######################
 
-.. code-block:: sh
+.. code-block:: console
 
    $ julia 
 
@@ -198,7 +198,7 @@ Exit with
         
             This batch script is for Kebnekaise. 
             
-            .. code-block:: sh
+            .. code-block:: console
     
                 $ ml purge  > /dev/null 2>&1       # recommended purge
                 $ ml Julia/1.8.5-linux-x86_64      # Julia module
@@ -210,7 +210,7 @@ Exit with
         
             This batch script is for UPPMAX. Adding the numbers 2 and 3. (FIX)
             
-            .. code-block:: sh
+            .. code-block:: console
    
                 $ ml julia/1.8.5      # Julia module
                
