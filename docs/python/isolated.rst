@@ -448,7 +448,7 @@ More info
     
      .. code-block:: sh
 
-          $ module load python/3.8.7
+          $ module load python/3.10.8
           $ python -m venv --system-site-packages /proj/naiss2023-22-914/<user>/python/analysis
     
       Activate it.
