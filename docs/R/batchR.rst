@@ -64,7 +64,7 @@ Useful commands to the batch system
 
 
 Example R batch scripts
----------------------------- 
+-----------------------
 
 Serial code
 '''''''''''
@@ -117,10 +117,18 @@ Serial code
             message <-"Hello World!"
             print(message)  
 
+Send the script to the batch:
+
+.. code-block:: console
+
+   $ sbatch <batch script>
 
         
 Parallel code 
 '''''''''''''
+
+foreach and doParallel
+::::::::::::::::::::::
 
 .. tabs::
 
@@ -203,6 +211,14 @@ Parallel code
               print(Sys.time() - start_time)
               }
 
+Send the script to the batch:
+
+.. code-block:: console
+
+   $ sbatch <batch script>
+
+Rmpi
+::::
 
 .. tabs::
 
@@ -289,7 +305,9 @@ Parallel code
            
            mpi.quit()
 
+.. code-block:: console
 
+   $ sbatch <batch script>
 
 ML code
 ''''''''
@@ -391,7 +409,9 @@ ML code
             timing <- rbind(sequential = stime, parallel = ptime)
             timing
 
+.. code-block:: console
 
+   $ sbatch <batch script>
 
 
 Exercises
