@@ -42,7 +42,7 @@ General for both centers
 
 Some python packages are working as stand-alone tools, for instance in bioinformatics. The tool may be already installed as a module. Check if it is there by:
 
-.. code-block:: sh 
+.. code-block:: console 
 
    $ module spider <tool-name or tool-name part> 
     
@@ -56,7 +56,7 @@ Using ``module spider`` lets you search regardless of upper- or lowercase charac
 
 	Check the pre-installed packages of a specific python module:
 
-	.. code-block:: sh 
+	.. code-block:: console 
 
 	   $ module help python/<version> 
   
@@ -66,13 +66,13 @@ Using ``module spider`` lets you search regardless of upper- or lowercase charac
    
 	At HPC2N, a way to find Python packages that you are unsure how are names, would be to do
 
-	.. code-block:: sh 
+	.. code-block:: console 
 
 	   $ module -r spider ’.*Python.*’
    
 	or
 
-	.. code-block:: sh 
+	.. code-block:: console 
 
 	   $ module -r spider ’.*python.*’
    
@@ -80,7 +80,7 @@ Using ``module spider`` lets you search regardless of upper- or lowercase charac
    
 Check the pre-installed packages of a loaded python module, in shell:
 
-.. code-block:: sh 
+.. code-block:: console 
 
    $ pip list
 
@@ -163,7 +163,7 @@ Install with pip
 
 You use ``pip`` this way, in a Linux shell OR a python shell: 
 
-.. code-block:: sh 
+.. code-block:: console 
 
     $ pip install --user <package>
     
@@ -259,9 +259,9 @@ First steps
 
 1. First load our conda module (there is no need to install you own miniconda, for instance)
 
-  .. prompt:: bash $
+  .. code-block:: console
 
-        module load conda
+     $ module load conda
     
   - This grants you access to the latest version of Conda and all major repositories on all UPPMAX systems.
 
@@ -287,9 +287,9 @@ First steps
   - Otherwise, the default is ~/.conda/envs. 
   - Example:
   
-      .. prompt:: bash $
+      .. code-block:: console
  
-          export CONDA_ENVS_PATH=/proj/<your-project-id>/nobackup/<username>
+         $ export CONDA_ENVS_PATH=/proj/<your-project-id>/nobackup/<username>
   
    .. admonition:: By choice
       :class: dropdown
@@ -304,25 +304,25 @@ First steps
 
   - Example:
   
-    .. prompt:: bash $
+  .. code-block:: console
 
-        conda create --name python36-env python=3.6 numpy=1.13.1 matplotlib=2.2.2
+     $ conda create --name python36-env python=3.6 numpy=1.13.1 matplotlib=2.2.2
 	
-    .. admonition:: The ``mamba`` alternative 
-        :class: dropdown
+  .. admonition:: The ``mamba`` alternative 
+     :clas   s: dropdown
     
-	- ``mamba`` is a fast drop-in alternative to conda, using "libsolv" for dependency resolution. It is available from the ``conda`` module.
-	- Example:  
+     - ``mamba`` is a fast drop-in alternative to conda, using "libsolv" for dependency resolution. It is available from the ``conda`` module.
+     - Example:  
 	
-          .. prompt:: bash $
+     .. code-block:: console
 
-	      mamba create --name python37-env python=3.7 numpy=1.13.1 matplotlib=2.2.2
+	$ mamba create --name python37-env python=3.7 numpy=1.13.1 matplotlib=2.2.2
 
 4. Activate the conda environment by:
 
-    .. prompt:: bash $
+  .. code-block:: console
 
-	source activate python36-env
+     $ source activate python36-env
 
     - You will see that your prompt is changing to start with ``(python-36-env)`` to show that you are within an environment.
     
