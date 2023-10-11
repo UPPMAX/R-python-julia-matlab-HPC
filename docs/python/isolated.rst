@@ -156,10 +156,8 @@ Install your packages (here numpy and matplotlib, both with specific versions) w
 
 Deactivate it.
 
-.. prompt:: 
-   :language: bash
-   :prompts: (Example) $
-   
+.. code-block:: console
+  
    deactivate
     
 The "--no-cache-dir" option is required to avoid it from reusing earlier installations from the same user in a different environment. The "--no-build-isolation" is to make sure that it uses the loaded modules from the module system when building any Cython libraries.
@@ -167,9 +165,9 @@ The "--no-cache-dir" option is required to avoid it from reusing earlier install
 
 Everytime you need the tools available in the virtual environment you activate it as above.
 
-.. prompt:: bash $
+.. code-block:: console
 
-   source /proj/nobackup/hpc2n2023-110/<your-directory>/python/Example/bin/activate
+   $ source /proj/nobackup/hpc2n2023-110/<your-directory>/python/Example/bin/activate
     
 
 Prepare the course environment
@@ -186,14 +184,14 @@ Create a virtual environment called ``vpyenv`. First load the python version you
 
    .. tab:: UPPMAX
       
-      .. code-block:: sh
+      .. code-block:: console
 
           $ module load python/3.10.8
           $ python -m venv --system-site-packages /proj/naiss2023-22-914/<user>/python/vpyenv
     
       Activate it.
 
-      .. code-block:: sh
+      .. code-block:: console
 
          $ source /proj/naiss2023-22-914/<user>/python/vpyenv/bin/activate
 
@@ -225,9 +223,9 @@ Create a virtual environment called ``vpyenv`. First load the python version you
 
       Everytime you need the tools available in the virtual environment you activate it as above.
 
-      .. prompt:: bash $
+      .. code-block:: console
 
-         source /proj/naiss2023-22-914/<user>/python/vpyenv/bin/activate
+         $ source /proj/naiss2023-22-914/<user>/python/vpyenv/bin/activate
 
       More on virtual environment: https://docs.python.org/3/tutorial/venv.html 
       
@@ -266,7 +264,7 @@ Create a virtual environment called ``vpyenv`. First load the python version you
 
       Every time you need the tools available in the virtual environment you activate it as above (after first loading the modules for Python, Python packages, and prerequisites)
 
-      .. code-block:: sh
+      .. code-block:: console
 
          $ source Example3/bin/activate
     
@@ -313,7 +311,7 @@ Using the virtual environment created earlier and the ``spacy`` we installed und
 .. admonition:: UPPMAX:Load modules for Python, activate the environment 
    :class: dropdown
    
-   .. code-block:: sh
+   .. code-block:: console
            
       $ module load Python/3.10.8
       $ source /proj/naiss2023-22-914/<user>/python/Example/bin/activate
@@ -350,11 +348,15 @@ Working with virtual environments defined from files
 - First create and activate an environment (see above)
 - Create an environment based on dependencies given in an environment file::
   
-  $ pip install -r requirements.txt
-   
-- - Create file from present virtual environment::
+.. code-block:: console
 
-  $ pip freeze > requirements.txt
+   $ pip install -r requirements.txt
+   
+- Create file from present virtual environment::
+
+.. code-block:: console
+
+   $ pip freeze > requirements.txt
   
 ``requirements.txt`` (used by virtual environment) is a simple
 text file which could look like this::
@@ -394,9 +396,13 @@ text file which could look like this::
    If you decide to use the --system-site-packages configuration you will get ``jupyter`` from the python modules you created your virtual environment with.
    However, you **won't find your locally installed packages** from that jupyter session. To solve this reinstall jupyter within the virtual environment by force::
 
+   .. code-block:: console
+
       $ pip install -I jupyter
 
    and run::
+
+   .. code-block:: console
 
       $ jupyter-notebook
    
@@ -446,51 +452,55 @@ More info
 .. solution:: Solution for UPPMAX
     :class: dropdown
     
-     .. code-block:: sh
+     .. code-block:: console
 
           $ module load python/3.10.8
           $ python -m venv --system-site-packages /proj/naiss2023-22-914/<user>/python/analysis
     
       Activate it.
 
-      .. code-block:: sh
+      .. code-block:: console
 
          $ source /proj/naiss2023-22-914/<user>/python/analysis/bin/activate
 
       - Note that your prompt is changing to start with (analysis) to show that you are within an environment.
       - Install the packages from the file::
       
-        pip install -r requirements.txt
-      
-      .. code-block:: sh
+      .. code-block:: console
 
-         $ pip list
-	 $ deactivate
+         (analysis) $ pip install -r requirements.txt
+      
+      - check the installation
+      
+       .. code-block:: sh
+
+         (analysis) $ pip list
+	 (analysis) $ deactivate
       
 .. solution:: Solution for HPC2N
     :class: dropdown
     
-     .. code-block:: sh
+     .. code-block:: console
 
           $ module load GCCcore/11.3.0 Python/3.10.4 
           $ virtualenv --system-site-packages /proj/nobackup/hpc2n2023-110/<user-dir>/python/analysis 
 
      Activate it.
 
-     .. code-block:: sh
+     .. code-block:: console
 
         $ source /proj/nobackup/hpc2n2023-110/<user-dir>/python/analysis/bin/activate
 
      - Note that your prompt is changing to start with (analysis) to show that you are within an environment.
      - Install the packages from the file::
       
-     .. code-block::
+     .. code-block:: console
 
 	(analysis) $ pip install -r requirements.txt
 
      Check that the packages were installed and then deactivate the virtual environment
       
-     .. code-block:: sh
+     .. code-block:: console
 
         $ pip list
         $ deactivate
