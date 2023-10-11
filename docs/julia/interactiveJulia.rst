@@ -54,13 +54,13 @@ run on the allocated nodes instead of the login node.
 
    .. tab:: UPPMAX (interactive)
 
-      .. code-block:: sh
+      .. code-block:: console
           
          $ interactive -n <tasks> --time=HHH:MM:SS -A naiss2023-22-44 
       
    .. tab:: HPC2N (salloc)
 
-      .. code-block:: sh
+      .. code-block:: console
           
          $ salloc -n <tasks> --time=HHH:MM:SS -A hpc2nXXXX-YYY 
          
@@ -90,7 +90,7 @@ Example **Code along**
 
    .. tab:: UPPMAX
 
-      .. code-block:: sh
+      .. code-block:: console
       
           [bjornc@rackham2 ~]$ interactive -A naiss2023-22-44 -p core -n 4 -t 10:00
           You receive the high interactive priority.
@@ -105,7 +105,7 @@ Example **Code along**
 
       Let us check that we actually run on the compute node: 
 
-      .. code-block:: sh
+      .. code-block:: console
       
           [bjornc@r483 ~]$ srun hostname
           r483.uppmax.uu.se
@@ -117,7 +117,7 @@ Example **Code along**
 
    .. tab:: HPC2N
          
-      .. code-block:: sh
+      .. code-block:: console
       
           b-an01 [~]$ salloc -n 4 --time=00:30:00 -A hpc2nXXXX-YYY
           salloc: Pending job allocation 20174806
@@ -132,7 +132,7 @@ Example **Code along**
       
       Let us check that we actually run on the compute node: 
       
-      .. code-block:: sh
+      .. code-block:: console
                   
            b-an01 [~]$ srun hostname
            b-cn0241.hpc2n.umu.se
@@ -167,7 +167,7 @@ Running a script
       
       Running a Julia script in the allocation we made further up. Notice that since we asked for 4 cores, the script is run 4 times, since it is a serial script
          
-      .. code-block:: sh
+      .. code-block:: console
       
           b-an01 [~]$ srun julia serial-sum.jl 3 4
           The sum of the two numbers is: 7
@@ -178,7 +178,7 @@ Running a script
                         
       Without the ``srun`` command, Julia won't understand that it can use several cores. Therefor the program is run only once.
                   
-      .. code-block:: sh 
+      .. code-block:: console 
                   
                   b-an01 [~]$ julia serial-sum.jl 3 4 
                   The sum of the two numbers is: 7
@@ -187,11 +187,11 @@ Running a script
 
 - First start julia using the 4 cores and check if workers are available
 
-      .. code-block:: sh 
+      .. code-block:: console 
  
          $ julia -p 4
          
-      .. code-block:: julia
+      .. code-block:: julia-repl
 
         julia> nworkers()
         4
@@ -205,7 +205,7 @@ When you have finished using the allocation, either wait for it to end, or close
 
    .. tab:: UPPMAX
    
-      .. code-block:: sh 
+      .. code-block:: console 
                   
                   [bjornc@r484 ~]$ exit
       
@@ -217,7 +217,7 @@ When you have finished using the allocation, either wait for it to end, or close
      
    .. tab:: HPC2N
    
-      .. code-block:: sh 
+      .. code-block:: console 
                   
                   b-an01 [~]$ exit
                   exit
@@ -231,7 +231,7 @@ Running IJulia from Jupyter notebook on UPPMAX
 - For more interactiveness you can run IJulia.
 - Like for Python it is possible to run a Julia in a notebook, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the python module as well. In shell:
 
-.. code-block:: sh
+.. code-block:: console
 
    $ module load julia/1.8.5
    $ module load python/3.10.8
@@ -239,7 +239,7 @@ Running IJulia from Jupyter notebook on UPPMAX
 
 In Julia:
 
-.. code-block:: julia
+.. code-block:: console
 
    > using IJulia
    > notebook(dir="</path/to/work/dir/>")
@@ -247,7 +247,7 @@ In Julia:
 A Firefox session should start with the Jupyter notebook interface.
 **If not**, you may have to build IJulia the first time with Pkg.build("IJulia"). Since "IJulia" is *pre-installed centrally* on UPPMAX you must activate the central environment by following these steps belo. This should only be needed the first time like this
 
-.. code-block:: julia
+.. code-block:: julia-repl
   
    > using Pkg
    > Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");
