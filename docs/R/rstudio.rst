@@ -1,5 +1,5 @@
-Using RStudio
-===============
+Using RStudio (own session)
+===========================
 
 On UPPMAX
 ----------
@@ -31,7 +31,7 @@ Also, we recommend to use ThinLinc. Login using
 
 Example:
 
-.. code:: bash 
+.. code:: console 
 
    $ module load R_packages/4.1.1
    $ module load RStudio/2022.02.0-443
@@ -47,7 +47,7 @@ To use Rstudio on a compute node, start by asking SLURM for an interactive
 allocation (within the ThinLink session). E.g.
 
 
-.. code:: bash
+.. code:: console
 
    $ interactive -A naiss2023-22-44 -p devcore -n 4 -t 10:00
 
