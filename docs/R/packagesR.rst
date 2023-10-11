@@ -42,7 +42,7 @@ package e.g. documentation(vignettes), licensing and configuration files. Let
 us look at a very simple example 
 
 
-.. code-block:: sh
+.. code-block:: console
 
    $ git clone git@github.com:MatPiq/R_example.git
 
@@ -105,7 +105,7 @@ way to check is probably starting the interpreter and running the ``libPaths()``
 
       Load ``R``, e.g. version 4.1.1 and start the Interpreter
 
-      .. code-block:: sh 
+      .. code-block:: console 
 
          $ ml R/4.1.1
          $ R
@@ -121,7 +121,7 @@ way to check is probably starting the interpreter and running the ``libPaths()``
    
       Load ``R``, e.g. version 4.1.1 and start the Interpreter
 
-      .. code-block:: sh 
+      .. code-block:: console 
 
          $ ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
          $ R
@@ -180,13 +180,13 @@ library.
 
       Load ``R_packages``
 
-      .. code-block:: sh 
+      .. code-block:: console 
 
          $ ml R_packages/4.1.1
 
       Then grep for some package
 
-      .. code-block:: sh
+      .. code-block:: console
 
          $ ls -l $R_LIBS_SITE | grep glmnet
          dr-xr-sr-x  9 douglas sw  4096 Sep  6  2021 EBglmnet
@@ -198,20 +198,20 @@ library.
    
       Load ``R-bundle-Bioconductor``
 
-      .. code-block:: sh 
+      .. code-block:: console 
 
          $ ml GCC/11.2.0  OpenMPI/4.1.1 R-bundle-Bioconductor/3.14-R-4.1.2
 
       Check the ``R_LIBS_SITE`` environment variable
 
-      .. code-block:: sh
+      .. code-block:: console
          
          $ echo $R_LIBS_SITE
          /hpc2n/eb/software/R-bundle-Bioconductor/3.14-foss-2021b-R-4.1.2:/hpc2n/eb/software/arrow-R/6.0.0.2-foss-2021b-R-4.1.2
 
       Then grep for some package in the BioConductor package library
 
-      .. code-block:: sh 
+      .. code-block:: console 
 
          $ ls -l $/hpc2n/eb/software/R-bundle-Bioconductor/3.14-foss-2021b-R-4.1.2 | grep RNA
          drwxr-xr-x  9 easybuild easybuild 4096 Dec 30  2021 DeconRNASeq/
@@ -247,17 +247,17 @@ separate ones for each R version.
 If you have not yet installed any packages to R yourself, the environment file
 should be empty and you can update it like this: 
 
-.. code-block:: sh 
+.. code-block:: console 
 
-    echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron
+   $ echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron
 
 If it is **not** empty, you can edit ``$HOME/.Renviron`` with your favorite
 editor so that ``R_LIBS_USER`` contain the path to your chosen directory for
 own-installed R packages. It should look something like this when you are done:
 
-.. code-block:: sh 
+.. code-block:: console 
 
-    R_LIBS_USER="/home/u/user/R-packages-%V"
+   $ R_LIBS_USER="/home/u/user/R-packages-%V"
 
 
 | NOTE: Replace ``/home/u/user`` with the value of ``$HOME``. Run ``echo $HOME`` to see its value.
@@ -269,7 +269,7 @@ version 4.0.4:
 
 .. code-block:: sh 
 
-    mkdir -p $HOME/R-packages-4.0.4
+   $ mkdir -p $HOME/R-packages-4.0.4
 
 
 Automatical download and install from CRAN
@@ -286,13 +286,13 @@ Automatical download and install from CRAN
 
    .. tab:: From command line
 
-      .. code-block:: sh 
+      .. code-block:: console 
 
-          R --quiet --no-save --no-restore -e "install.packages('<r-package>', repos='<repo>')"
+         $ R --quiet --no-save --no-restore -e "install.packages('<r-package>', repos='<repo>')"
     
    .. tab:: From inside R
 
-      .. code-block:: sh 
+      .. code-block:: R 
 
           install.packages('<r-package>', repos='<repo>')
        
@@ -311,13 +311,13 @@ repository http://ftp.acc.umu.se/mirror/CRAN/
 
    .. tab:: From command line
 
-      .. code-block:: sh 
+      .. code-block:: console 
 
-          R --quiet --no-save --no-restore -e "install.packages('stringr', repos='http://ftp.acc.umu.se/mirror/CRAN/')"
+         $ R --quiet --no-save --no-restore -e "install.packages('stringr', repos='http://ftp.acc.umu.se/mirror/CRAN/')"
        
    .. tab:: From inside R
 
-      .. code-block:: sh 
+      .. code-block:: R 
 
           install.packages('stringr', repos='http://ftp.acc.umu.se/mirror/CRAN/')
 
@@ -353,7 +353,7 @@ We also need to install devtools so we can install packages from GitHub. In
 addition, ``quantstrat`` has some prerequisites, some on CRAN, some on GitHub,
 so we need to install those as well. 
 
-.. code-block:: sh 
+.. code-block:: R 
 
    install.packages("devtools") # ONLY ONCE
    install.packages("FinancialInstrument") 
@@ -370,9 +370,9 @@ If the package is not on CRAN or you want the development version, or you for
 other reason want to install a package you downloaded, then this is how to
 install from the command line: 
 
-.. code-block:: sh 
+.. code-block:: console 
 
-    R CMD INSTALL -l <path-to-R-package>/R-package.tar.gz
+   $ R CMD INSTALL -l <path-to-R-package>/R-package.tar.gz
     
 
 **NOTE** that if you install a package this way, you need to handle any
@@ -427,7 +427,7 @@ Exercises
 
       .. tab:: Setup
       
-            .. code-block:: sh
+            .. code-block:: console
 	 
                [bbrydsoe@rackham3 bbrydsoe]$ echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron
 	       R_LIBS_USER="/home/bbrydsoe/R-packages-%V"
@@ -438,7 +438,7 @@ Exercises
       
             Installing package "anomalize". Using the repo http://ftp.acc.umu.se/mirror/CRAN/
          
-            .. code-block:: sh
+            .. code-block:: console
 	 
 	       [bbrydsoe@rackham3 bbrydsoe]$ R --quiet --no-save --no-restore -e "install.packages('anomalize', repo='http://ftp.acc.umu.se/mirror/CRAN/')"
 	  
