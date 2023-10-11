@@ -315,6 +315,16 @@ Material for improving your programming skills
    R/exercisesR.rst
    R/summaryR.rst
 
+.. toctree::
+   :maxdepth: 2
+   :caption: COMMON:
+
+   common/parallel.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Reference:
+
 
 .. Indices and tables
 .. ==================
