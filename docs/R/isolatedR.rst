@@ -12,10 +12,8 @@ Isolated environments with ``renv``
    
 R is not very well known for virtual environments like Python and Julia. However:
 
-> The ``renv`` package is a new effort to bring project-local R dependency
-> management to your projects. The goal is for renv to be a robust, stable
-> replacement for the Packrat package, with fewer surprises and better default
-> behaviors.
+The ``renv`` package is a new effort to bring project-local R dependency management to your projects. 
+The goal is for ``renv`` to be a robust, stable replacement for the Packrat package, with fewer surprises and better default behaviors.
 
 
 .. questions::
@@ -40,12 +38,10 @@ versions of R and/or different versions of packages. You can activate and
 deactivate them one at a time, and work as if the other workspace does not
 exist.
 
-> Underlying the philosophy of ``renv`` is that any of your existing workflows
-> should just work as they did before – ``renv`` helps manage library paths (and
-> other project-specific state) to help isolate your project’s R dependencies,
-> and the existing tools you’ve used for managing R packages (e.g.
-> ``install.packages()``, ``remove.packages()``) should work as they did before.
-> https://rstudio.github.io/renv/articles/renv.html
+Underlying the philosophy of ``renv`` is that any of your existing workflows should just work as they did before.
+– ``renv`` helps manage library paths (and other project-specific state) to help isolate your project’s R dependencies
+- the existing tools you’ve used for managing R packages (e.g. ``install.packages()``, ``remove.packages()``) should work as they did before. 
+- [Introduction to renv](https://rstudio.github.io/renv/articles/renv.html)
 
 Workflow
 --------
@@ -98,13 +94,13 @@ First create a project under the course project directory and cd to it
 
    .. tab:: UPPMAX
 
-      .. code-block:: sh
+      .. code-block:: console
 
          $ mkdir -v /proj/py-r-jl/matpiq/R/r_proj && cd $_
       
    .. tab:: HPC2N
 
-      .. code-block:: sh
+      .. code-block:: console
 
          $ mkdir -v /proj/nobackup/<your-project-id>/matpiq/<language>/r_proj &&  cd $_
 
@@ -120,9 +116,9 @@ launch the ``R`` interpreter and initialize an ``renv`` environment.
 
 Verify that the ``renv`` directory as well as lock file was created
 
-.. code-block:: sh
+.. code-block:: console
 
-   ❯ ls -l
+   $ ls -l
    drwxrwsr-x 4 matpiq p_py-r-jl 4096 Feb  9 16:32 renv
    -rw-rw-r-- 1 matpiq p_py-r-jl  354 Feb  9 16:32 renv.lock
 
@@ -144,7 +140,7 @@ directory and try installing  ``knitr``
 
 And check what was installed
 
-.. code-block:: sh
+.. code-block:: console
 
    $ ls -l renv/library/R-4.1/x86_64-pc-linux-gnu
    lrwxrwxrwx  1 matpiq p_py-r-jl  121 Feb  9 16:44 evaluate -> /domus/h1/matpiq/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/evaluate/0.20/4b68aa51edd89a0e044a66e75ae3cc6c/evaluate
@@ -186,14 +182,14 @@ environment. For example, create an environment ``yaml`` file. Let's call it
 
 Then load conda and create the environment
 
-.. code-block:: sh
+.. code-block:: console
 
    $ mamba env create -f r_env.yaml
 
 Next, we can activate the environment and verify that we have indeed have an
 isolated R environment
 
-.. code-block:: sh
+.. code-block:: console
 
    $ conda activate r_env
    $ which R
