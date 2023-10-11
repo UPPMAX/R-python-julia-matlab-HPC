@@ -176,9 +176,9 @@ Running a script
           The sum of the two numbers is: 7
           b-an01 [~]$             
                         
-      Without the ``srun`` command, Julia won't understand that it can use several cores. Therefor the program is run only once.
+      Without the ``srun`` command, Julia won't understand that it can use several cores. Therefore the program is run only once.
                   
-      .. code-block:: console 
+      .. code-block:: sh 
                   
                   b-an01 [~]$ julia serial-sum.jl 3 4 
                   The sum of the two numbers is: 7
@@ -187,14 +187,14 @@ Running a script
 
 - First start julia using the 4 cores and check if workers are available
 
-      .. code-block:: console 
+.. code-block:: console 
  
-         $ julia -p 4
+   $ julia -p 4
          
-      .. code-block:: julia-repl
+.. code-block:: julia-repl
 
-        julia> nworkers()
-        4
+   julia> nworkers()
+   4
 
 
 **Exit**
@@ -217,7 +217,7 @@ When you have finished using the allocation, either wait for it to end, or close
      
    .. tab:: HPC2N
    
-      .. code-block:: console 
+      .. code-block:: sh 
                   
                   b-an01 [~]$ exit
                   exit
@@ -239,20 +239,20 @@ Running IJulia from Jupyter notebook on UPPMAX
 
 In Julia:
 
-.. code-block:: console
+.. code-block:: julia-repl
 
-   > using IJulia
-   > notebook(dir="</path/to/work/dir/>")
+   julia> using IJulia
+   julia> notebook(dir="</path/to/work/dir/>")
 
 A Firefox session should start with the Jupyter notebook interface.
 **If not**, you may have to build IJulia the first time with Pkg.build("IJulia"). Since "IJulia" is *pre-installed centrally* on UPPMAX you must activate the central environment by following these steps belo. This should only be needed the first time like this
 
 .. code-block:: julia-repl
   
-   > using Pkg
-   > Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");
-   > Pkg.build("IJulia")
-   > notebook(dir="</path/to/work/dir/>")
+   julia> using Pkg
+   julia> Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");
+   julia> Pkg.build("IJulia")
+   julia> notebook(dir="</path/to/work/dir/>")
 
 This builds the package also locally before starting the notebook. If not done, Jupyter will not find the julia kernel of that version.
 With ``notebook(dir="</path/to/work/dir/>", detached=true)`` the notebook will not be killed when you exit your REPL julia session in the terminal.
