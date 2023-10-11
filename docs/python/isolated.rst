@@ -80,7 +80,7 @@ Create a ``venv``. First load the python version you want to base your virtual e
 
       .. code-block:: sh
 
-         $ module load python/3.6.8
+         $ module load python/3.10.8
          $ python -m venv --system-site-packages Example
     
       "Example" is the name of the virtual environment. The directory “Example” is created in the present working directory. The ``-m`` flag makes sure that you use the libraries from the python version you are using.
@@ -188,7 +188,7 @@ Create a virtual environment called ``vpyenv`. First load the python version you
       
       .. code-block:: sh
 
-          $ module load python/3.9.5
+          $ module load python/3.10.8
           $ python -m venv --system-site-packages /proj/naiss2023-22-914/<user>/python/vpyenv
     
       Activate it.
@@ -315,15 +315,13 @@ Using the virtual environment created earlier and the ``spacy`` we installed und
    
    .. code-block:: sh
            
-      $ module load Python/3.9.5
+      $ module load Python/3.10.8
       $ source /proj/naiss2023-22-914/<user>/python/Example/bin/activate
       (Example) $ python
-           Python 3.9.5 (default, Jun  3 2021, 15:06:34)
-           [GCC 9.3.0] on linux
-           Type "help", "copyright", "credits" or "license" for more information.
-
-           >>> import spacy
-           >>> 
+      Python 3.10.8 (main, Nov 15 2022, 21:16:40) [GCC 12.2.0] on linux
+      Type "help", "copyright", "credits" or "license" for more information.
+      >>> import spacy
+      >>> 
 
 
 .. admonition:: HPC2N: Load modules for Python, numpy (in SciPy-bundle), activate the environment "Example2". 
