@@ -72,7 +72,7 @@ Serial code
             #SBATCH -n 1 # Asking for 1 core
             
             # Load any modules you need, here Python 3.10.x. 
-            module load python/3.10 
+            module load python/3.10.8 
             
             # Run your Python script 
             python mmmult.py   
@@ -147,7 +147,7 @@ Serial code + self-installed package in virt. env.
             #SBATCH -n 1 # Asking for 1 core
             
             # Load any modules you need, here for Python 3.10.x 
-            module load python/3.10
+            module load python/3.10.8
             
             # Activate your virtual environment. 
             # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
@@ -194,7 +194,7 @@ GPU code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A naiss2023-22-44
+            #SBATCH -A naiss2023-22-914
             #SBATCH -t 00:10:00
             #SBATCH --exclusive
             #SBATCH -p node
@@ -203,7 +203,7 @@ GPU code
             #SBATCH --gpus=1
             #SBATCH --gpus-per-node=1
             
-            # Load any modules you need, here loading Python 3.9.5 
+            # Load any modules you need, here loading Python 3.10.8
             module load python/3.9.5
             
             # Run your code
@@ -212,20 +212,20 @@ GPU code
 
    .. tab:: HPC2N
 
-        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2021.05, Python/3.9.5 + Python package you have installed yourself with virtual environment.        
+        Short GPU example for running on Kebnekaise.         
        
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2nXXXX-YYY # Change to your own after the course
+            #SBATCH -A hpc2n2023-110 # Change to your own after the course
             #SBATCH --reservation=hpc-python  # Only valid during the course 
             #SBATCH --time=00:10:00  # Asking for 10 minutes
-            # Asking for one K80 card
-            #SBATCH --gres=gpu:k80:1
+            # Asking for one V100 card
+            #SBATCH --gres=gpu:v100:1
             
             # Remove any loaded modules and load the ones we need
             module purge  > /dev/null 2>&1
-            module load GCC/10.3.0  OpenMPI/4.1.1 TensorFlow/2.6.0-CUDA-11.3.1
+            module load GCC/10.3.0 OpenMPI/4.1.1 TensorFlow/2.6.0-CUDA-11.3.1
             
             # Activate the virtual environment we installed to
             # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
@@ -266,8 +266,8 @@ Exercises
             #SBATCH --time=00:05:00 # Asking for 5 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here for Python 3.9.5
-            module load GCC/10.3.0  Python/3.9.5
+            # Load any modules you need, here for Python 3.10.4
+            module load GCC/11.3.0  Python/3.10.4
             
             # Run your Python script 
             python sum-2args.py 2 3 
@@ -284,8 +284,8 @@ Exercises
             #SBATCH --time=00:05:00 # Asking for 5 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here for Python 3.9.5
-            module load Python/3.9.5
+            # Load any modules you need, here for Python 3.10.8
+            module load Python/3.10.8
             
             # Run your Python script 
             python sum-2args.py 2 3 
