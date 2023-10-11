@@ -78,7 +78,7 @@ Create a ``venv``. First load the python version you want to base your virtual e
 
    .. tab:: UPPMAX
 
-      .. code-block:: sh
+      .. code-block:: console
 
          $ module load python/3.10.8
          $ python -m venv --system-site-packages Example
@@ -87,7 +87,7 @@ Create a ``venv``. First load the python version you want to base your virtual e
 
    .. tab:: HPC2N
 
-      .. code-block:: sh
+      .. code-block:: console
 
          $ module load GCCcore/11.3.0 Python/3.10.4
          $ virtualenv --system-site-packages Example
@@ -113,13 +113,13 @@ If you want it in a certain place...
 
       To place it in (your own subdirectory named <user>/python) in the course project folder
       
-      .. code-block:: sh
+      .. code-block:: console
 
          $ python -m venv --system-site-packages /proj/naiss2023-22-914/<user>/python
     
       Activate it.
 
-      .. code-block:: sh
+      .. code-block:: console
 
           $ source /proj/naiss2023-22-914/<user>/python/Example/bin/activate
 
@@ -129,13 +129,13 @@ If you want it in a certain place...
 
       To place it in a directory you created below your project storage (again calling it "Example"): 
 
-      .. code-block:: sh
+      .. code-block:: console
 
          $ virtualenv --system-site-packages /proj/nobackup/hpc2n2023-110/<your-directory>/python/Example 
     
       Activate it.
 
-      .. code-block:: sh
+      .. code-block:: console
 
           $ source /proj/nobackup/hpc2n2023-110/<your-directory>/python/Example/bin/activate
 
