@@ -41,13 +41,13 @@ Check for R versions
 
      Check all available R versions with:
 
-      .. code-block:: sh
+      .. code-block:: console
  
            $ module spider R
 
      OR
 
-      .. code-block:: sh
+      .. code-block:: console
 
            $ module avail R
  
@@ -58,19 +58,19 @@ Check for R versions
    
       Check all available version R versions with:
 
-      .. code-block:: sh
+      .. code-block:: console
  
          $ module spider R
       
       To see how to load a specific version of R, including the prerequisites, do 
 
-      .. code-block:: sh
+      .. code-block:: console
    
          $ module spider R/<version>
 
       Example for R 4.0.4 (recommended version)
 
-      .. code-block:: sh
+      .. code-block:: console
 
          $ module spider R/4.0.4 
 
@@ -164,13 +164,13 @@ For this course, we recommend using R 4.0.4
    
       Go back and check which R modules were available. To load version 4.0.4, do:
 
-      .. code-block:: sh
+      .. code-block:: console
 
         $ module load R/4.0.4
         
       For short, you can also use: 
 
-      .. code-block:: sh
+      .. code-block:: console
 
          $ ml R/4.0.4
 
@@ -178,7 +178,7 @@ For this course, we recommend using R 4.0.4
    .. tab:: HPC2N
 
  
-      .. code-block:: sh
+      .. code-block:: console
 
          $ module load GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
       
@@ -186,7 +186,7 @@ For this course, we recommend using R 4.0.4
 
       For short, you can also use: 
 
-      .. code-block:: sh
+      .. code-block:: console
 
          $ ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
 
@@ -235,7 +235,7 @@ Run R script
     
 You can run an R script in the shell like this:
 
-.. code-block:: sh
+.. code-block:: console
 
    $ Rscript example.R
 
@@ -490,7 +490,7 @@ Exercises
  
             This is for Rackham.
           
-            .. code-block:: sh
+            .. code-block:: console
 	    
 	       [bbrydsoe@rackham2 bbrydsoe]$ Rscript hello.R
 	       [1] "Hello World!"
