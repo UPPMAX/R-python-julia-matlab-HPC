@@ -63,13 +63,13 @@ your job. When the resources are allocated, you need to preface commands with
 
    .. tab:: UPPMAX (interactive)
 
-      .. code-block:: sh
+      .. code-block:: console
           
          $ interactive -n <tasks> --time=HHH:MM:SS -A naiss2023-22-44 
       
    .. tab:: HPC2N (salloc)
 
-      .. code-block:: sh
+      .. code-block:: console
           
          $ salloc -n <tasks> --time=HHH:MM:SS -A hpc2nXXXX-YYY 
          
@@ -94,13 +94,13 @@ You can now run R scripts on the allocated resources directly instead of waiting
    
    If you haven´t done already:
    
-   .. code-block:: sh
+   .. code-block:: console
    
       $ git clone https://github.com/UPPMAX/R-python-julia-HPC.git                 
    
    or update, standing in the ``R-python-julia-HPC`` directory:
    
-   .. code-block:: sh
+   .. code-block:: console
    
       $ git pull                
    
@@ -114,7 +114,7 @@ Example **Code along**
 
    .. tab:: UPPMAX
 
-      .. code-block:: sh
+      .. code-block:: console
       
           [bjornc@rackham2 ~]$ interactive -A naiss2023-22-44 -p devcore -n 4 -t 10:00
           You receive the high interactive priority.
@@ -129,7 +129,7 @@ Example **Code along**
 
       Let us check that we actually run on the compute node: 
 
-      .. code-block:: sh
+      .. code-block:: console
       
           [bjornc@r483 ~]$ srun hostname
           r483.uppmax.uu.se
@@ -141,7 +141,7 @@ Example **Code along**
 
    .. tab:: HPC2N
          
-      .. code-block:: sh
+      .. code-block:: console
       
           b-an01 [~]$ salloc -n 4 --time=00:30:00 -A hpc2nXXXX-YYY
           salloc: Pending job allocation 20174806
@@ -156,7 +156,7 @@ Example **Code along**
       
       Let us check that we actually run on the compute node: 
       
-      .. code-block:: sh
+      .. code-block:: console
                   
            b-an01 [~]$ srun hostname
            b-cn0241.hpc2n.umu.se
@@ -186,9 +186,9 @@ Running a script
       
       Running a R script in the allocation we made further up. Notice that since we asked for 4 cores, the script is run 4 times, since it is a serial script
          
-      .. code-block:: sh
+      .. code-block:: console
 
-          ❯ srun Rscript serial_sum.R 3 4
+          $ srun Rscript serial_sum.R 3 4
           [1] "The sum of the two numbers is 7"
           [1] "The sum of the two numbers is 7"
           [1] "The sum of the two numbers is 7"
@@ -197,16 +197,16 @@ Running a script
       Without the ``srun`` command, R won't understand that it can use several
       cores. Therefor the program is run only once.
                   
-      .. code-block:: sh 
+      .. code-block:: console 
                   
-          ❯ Rscript serial_sum.R 3 4
+          $ Rscript serial_sum.R 3 4
           [1] "The sum of the two numbers is 7"
 
 **Running R interpreter (UPPMAX)**
 
 - First start R and check available workers with ``future``
 
-      .. code-block:: sh 
+      .. code-block:: R 
 
          > library(future)
          > availableWorkers()
@@ -224,7 +224,7 @@ When you have finished using the allocation, either wait for it to end, or close
 
    .. tab:: UPPMAX
    
-      .. code-block:: sh 
+      .. code-block:: console 
                   
                   [bjornc@r484 ~]$ exit
       
