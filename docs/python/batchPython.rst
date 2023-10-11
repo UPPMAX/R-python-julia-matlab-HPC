@@ -128,7 +128,11 @@ Serial code
             print()
             print("Time elapsed for generating matrices and multiplying them is ", timeit.default_timer() - starttime)
 
+Send the script to the batch:
 
+.. code-block:: console
+
+   $ sbatch <batch script>
         
 Serial code + self-installed package in virt. env. 
 ''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -180,7 +184,11 @@ Serial code + self-installed package in virt. env.
             # Run your Python script 
             python <my_program.py>
 
+Send the script to the batch:
 
+.. code-block:: console
+
+   $ sbatch <batch script>
 GPU code
 ''''''''
 **We'll not test this live, but you can try if you have Snowy access**
@@ -234,7 +242,12 @@ GPU code
             
             # Run your Python script
             python example-tf.py
-           
+
+Send the script to the batch:
+
+.. code-block:: console
+
+   $ sbatch <batch script>
 
 Exercises
 ---------
