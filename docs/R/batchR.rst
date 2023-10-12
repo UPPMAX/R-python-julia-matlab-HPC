@@ -16,8 +16,8 @@ Running R in batch mode
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: naiss2023-22-914
-   - Kebnekaise: hpc2n2023-110
+   - Rackham: ``naiss2023-22-914``
+   - Kebnekaise: ``hpc2n2023-110``
    
 
 
