@@ -247,4 +247,5 @@ interactiveness
 ipython
 localhost
 py
-
+PowerShell
+WSL
