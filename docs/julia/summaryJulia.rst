@@ -78,7 +78,7 @@ Summary
 .. note::
     
     - Julia language becomes increasingly popular.
-    - We also have a web page for Julia: 
+    - We also have a web pages for Julia: 
   
        - UPPMAX https://uppmax.uu.se/support/user-guides/julia-user-guide/
        - HPC2N https://www.hpc2n.umu.se/resources/software/julia
