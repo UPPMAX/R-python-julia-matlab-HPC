@@ -56,18 +56,18 @@ run on the allocated nodes instead of the login node.
 
       .. code-block:: console
           
-         $ interactive -n <tasks> --time=HHH:MM:SS -A naiss2023-22-44 
+         $ interactive -n <tasks> --time=HHH:MM:SS -A naiss2023-22-914 
       
    .. tab:: HPC2N (salloc)
 
       .. code-block:: console
           
-         $ salloc -n <tasks> --time=HHH:MM:SS -A hpc2nXXXX-YYY 
+         $ salloc -n <tasks> --time=HHH:MM:SS -A hpc2n2023-110
          
       
 where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in 
       hours, minutes, and seconds (maximum T168 hours), and then you give the id for your project 
-      (**naiss2023-22-44** for this course)
+      (**naiss2023-22-914** for this course)
 
 Your request enters the job queue just like any other job, and interactive/salloc will tell you that it is
       waiting for the requested resources. When salloc tells you that your job has been allocated 
@@ -92,7 +92,7 @@ Example **Code along**
 
       .. code-block:: console
       
-          [bjornc@rackham2 ~]$ interactive -A naiss2023-22-44 -p core -n 4 -t 10:00
+          [bjornc@rackham2 ~]$ interactive -A naiss2023-22-914 -p core -n 4 -t 10:00
           You receive the high interactive priority.
           There are free cores, so your job is expected to start at once.
       
@@ -119,7 +119,7 @@ Example **Code along**
          
       .. code-block:: console
       
-          b-an01 [~]$ salloc -n 4 --time=00:30:00 -A hpc2nXXXX-YYY
+          b-an01 [~]$ salloc -n 4 --time=00:30:00 -A hpc2n2023-110
           salloc: Pending job allocation 20174806
           salloc: job 20174806 queued and waiting for resources
           salloc: job 20174806 has been allocated resources
