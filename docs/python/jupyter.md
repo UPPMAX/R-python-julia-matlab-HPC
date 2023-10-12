@@ -5,7 +5,7 @@
     - Run python interactively and make a "story" document with text and code and figures woven together. 
     - Includes file manager
   - You run it in a **web browser** (``firefox`` at UPPMAX)
-  - This may be slow unless you run yput browser in ThinLinc or locally or on you own computer.
+  - This may be slow unless you run your browser in ThinLinc or locally or on you own computer.
 
   - The Jupyter project site contains a lot of information and inspiration. <https://jupyter.org/>
   - The Jupyter Notebook documentation. <https://jupyter-notebook.readthedocs.io/en/stable/>
@@ -42,7 +42,7 @@ Keep this session open and running. Note the node on which you are got the inter
         ``` console
         $ ssh -L 8888:r486:8888 username@rackham.uppmax.uu.se
         ```
-    - If you use Windows it may be better to do this in the PowerShell instead of a WSL2.
+    - If you use Windows it may be better to do this in the PowerShell instead of a WSL2 terminal.
     - If you use PuTTY - you need to change the settings in "Tunnels" accordingly (could be done for the current connection as well).
     ![](./img/putty.png)
     
