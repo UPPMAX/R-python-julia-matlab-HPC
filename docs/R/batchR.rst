@@ -14,6 +14,12 @@ Running R in batch mode
    - Show structure of a batch script
    - Example to try
 
+.. admonition:: Compute allocations in this workshop 
+
+   - Rackham: naiss2023-22-914
+   - Kebnekaise: hpc2n2023-110
+   
+
 
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
 
@@ -78,7 +84,7 @@ Serial code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A naiss2023-22-44 # Course project id. Change to your own project ID after the course
+            #SBATCH -A naiss2023-22-914 # Course project id. Change to your own project ID after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -97,7 +103,7 @@ Serial code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2nXXXX-YYY # Change to your own project ID
+            #SBATCH -A hpc2n2023-110 # Change to your own project ID
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -139,7 +145,7 @@ foreach and doParallel
         .. code-block:: sh
         
             #!/bin/bash
-            #SBATCH -A naiss2023-22-44
+            #SBATCH -A naiss2023-22-914
             #SBATCH -t 00:10:00
             #SBATCH -N 1
             #SBATCH -c 4
@@ -158,7 +164,7 @@ foreach and doParallel
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2nXXXX-YYY # Change to your own project ID
+            #SBATCH -A hpc2n2023-110 # Change to your own project ID
             #SBATCH -t 00:10:00
             #SBATCH -N 1
             #SBATCH -c 4
@@ -229,7 +235,7 @@ Rmpi
         .. code-block:: sh
         
             #!/bin/bash
-            #SBATCH -A naiss2023-22-44
+            #SBATCH -A naiss2023-22-914
             #Asking for 10 min.
             #SBATCH -t 00:10:00
             #SBATCH -n 8
@@ -251,7 +257,7 @@ Rmpi
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2nXXXX-YYY # Change to your own project ID
+            #SBATCH -A hpc2n2023-110 # Change to your own project ID
             #Asking for 10 min.
             #SBATCH -t 00:10:00
             #SBATCH -n 8
@@ -321,7 +327,7 @@ ML code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A naiss2023-22-44
+            #SBATCH -A naiss2023-22-914
             #Asking for 10 min.
             #SBATCH -t 00:10:00
             #SBATCH -n 1
@@ -342,7 +348,7 @@ ML code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2nXXXX-YYY # Change to your own project ID
+            #SBATCH -A hpc2n2023-110 # Change to your own project ID
             #Asking for 10 min.
             #SBATCH -t 00:10:00
             #SBATCH -n 1
@@ -429,7 +435,7 @@ Exercises
           .. code-block:: sh
  
              #!/bin/bash
-             #SBATCH -A naiss2023-22-44 # Change to your own after the course
+             #SBATCH -A naiss2023-22-914 # Change to your own after the course
              #SBATCH --time=00:10:00 # Asking for 10 minutes
              #SBATCH -n 1 # Asking for 1 core
              
@@ -448,7 +454,7 @@ Exercises
           .. code-block:: sh
  
              #!/bin/bash
-             #SBATCH -A hpc2nXXXX-YYY # Change to your own project ID
+             #SBATCH -A hpc2n2023-110 # Change to your own project ID
              #SBATCH --time=00:10:00 # Asking for 10 minutes
              #SBATCH -n 1 # Asking for 1 core
              
