@@ -124,15 +124,15 @@ Other NAISS centres
 -------------------
 
 - LUNARC
-   - `Python <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/>`
-   - `Jupyter <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/?query=jupyter#jupyter-lab>`
+   - `Python <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/>`_
+   - `Jupyter <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/?query=jupyter#jupyter-lab>`_
 - C3SE
-   - `Python <https://www.c3se.chalmers.se/documentation/applications/python/>`
-   - `Jupyter <https://www.c3se.chalmers.se/documentation/applications/jupyter/>`
+   - `Python <https://www.c3se.chalmers.se/documentation/applications/python/>`_
+   - `Jupyter <https://www.c3se.chalmers.se/documentation/applications/jupyter/>`_
 - NSC
-   - `Python <https://www.nsc.liu.se/software/python/>`
+   - `Python <https://www.nsc.liu.se/software/python/>`_
 - PDC
-   - `Python <https://www.pdc.kth.se/software/software/python/index_general.html>`
+   - `Python <https://www.pdc.kth.se/software/software/python/index_general.html>`_
 
 .. objectives:: 
 
