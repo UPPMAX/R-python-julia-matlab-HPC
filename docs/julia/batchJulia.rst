@@ -14,6 +14,10 @@ Running Julia in batch mode
    - Show structure of a batch script
    - Try example
 
+.. admonition:: Compute allocations in this workshop 
+
+   - Rackham: ``naiss2023-22-914``
+   - Kebnekaise: ``hpc2n2023-110``
 
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
 
