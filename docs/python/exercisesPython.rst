@@ -7,14 +7,14 @@ Isolated
 
 .. challenge:: Create a virtual environment with a requirements file below
 
-   - Create a virtual environment with python-3.8.X (check what is available on your cluster) with the name ``analysis``.
+   - Create a virtual environment with Python 3.10.X (check what is available on your cluster) with the name ``analysis``.
    - Install packages defined by the ``requirements.txt`` file (save it).
   
    .. code-block:: sh
    
-      numpy==1.18.1
-      matplotlib==3.1.3
-      pandas==1.1.2
+      numpy==1.22.3
+      matplotlib==3.5.2
+      pandas==1.4.2
     
    - Check that the packages were installed.
    - Don't forget to deactivate afterwards.
@@ -24,14 +24,14 @@ Isolated
     
      .. code-block:: sh
 
-          $ module load python/3.8.7
-          $ python -m venv --system-site-packages /proj/py-r-jl/<user>/python/analysis
+          $ module load python/3.10.8
+          $ python -m venv --system-site-packages /proj/naiss2023-22-914/<user>/python/analysis
     
       Activate it.
 
       .. code-block:: sh
 
-         $ source /proj/py-r-jl/<user>/python/analysis/bin/activate
+         $ source /proj/naiss2023-22-914/<user>/python/analysis/bin/activate
 
       - Note that your prompt is changing to start with (analysis) to show that you are within an environment.
       - Install the packages from the file::
@@ -48,14 +48,14 @@ Isolated
     
      .. code-block:: sh
 
-          $ module load GCC/10.2.0 Python/3.8.6
-          $ virtualenv --system-site-packages /proj/nobackup/your-project-id/analysis 
+          $ module load GCC/11.3.0 Python/3.10.4
+          $ virtualenv --system-site-packages /proj/nobackup/hpc2n2023-110/<your-directory>/analysis 
       
       Activate it.
 
       .. code-block:: sh
 
-         $ source /proj/nobackup/your-project-id/analysis/bin/activate
+         $ source /proj/nobackup/hpc2n2023-110/<your-directory>/analysis/bin/activate
 
       - Note that your prompt is changing to start with (analysis) to show that you are within an environment.
       - Install the packages from the file::
@@ -75,11 +75,11 @@ Conda (UPPMAX)
 .. challenge:: UPPMAX: Create a conda environment and install some packages
     
    - Be sure to deactivate any virtual environment. 
-   - First check the current installed packages while having ``python/3.9.5`` loaded
+   - First check the current installed packages while having ``python/3.10.8`` loaded
    - Open a new terminal and have the old one available for later comparison
    - Use the conda module on Rackham and create an environment with name ``HPC-python23`` with ``python 3.7``  and ``numpy 1.15``
    
-   	- Use your a path for ``CONDA_ENVS_PATH`` of your own choice or ``/proj/py-r-jl/<user>/python``
+   	- Use your a path for ``CONDA_ENVS_PATH`` of your own choice or ``/proj/naiss2023-22-914/<user>/python``
         - (It may take a minute or so)
 	
    - Activate!
@@ -97,7 +97,7 @@ Conda (UPPMAX)
           .. code-block:: sh
 
             $ module load conda
-            $ export CONDA_ENVS_PATH=/proj/py-r-jl/<user>/python
+            $ export CONDA_ENVS_PATH=/proj/naiss2023-22-914/<user>/python
             $ conda create --name HPC-python23 python=3.7 numpy=1.15
             $ source activate HPC-python23
             $ pip list
@@ -130,12 +130,12 @@ Batch
           .. code-block:: sh
  
             #!/bin/bash
-            #SBATCH -A hpc2nXXXX-YYY # Change to your own after the course
+            #SBATCH -A hpc2n2023-110 # Change to your own after the course
             #SBATCH --time=00:05:00 # Asking for 5 minutes
             #SBATCH -n 1 # Asking for 1 core
             
             # Load any modules you need, here for Python 3.9.5
-            module load GCC/10.3.0  Python/3.9.5
+            module load GCC/11.3.0  Python/3.10.4
             
             # Run your Python script 
             python sum-2args.py 2 3 
@@ -148,12 +148,12 @@ Batch
           .. code-block:: sh
  
             #!/bin/bash
-            #SBATCH -A naiss2023-22-44 # Change to your own after the course
+            #SBATCH -A naiss2023-22-914 # Change to your own after the course
             #SBATCH --time=00:05:00 # Asking for 5 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here for Python 3.9.5
-            module load Python/3.9.5
+            # Load any modules you need, here for Python 3.10.8
+            module load Python/3.10.8
             
             # Run your Python script 
             python sum-2args.py 2 3 
