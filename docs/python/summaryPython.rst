@@ -14,7 +14,7 @@ Summary
          - from BASH shell with the
          
             - ``pip list`` command at both centers
-            - ``ml help python/3.9.5`` at UPPMAX
+            - ``ml help python/3.10.8`` at UPPMAX
             - ``module -r spider '.*Python.*'`` at HPC2N
             
       - Installation with *PYPI*
@@ -33,7 +33,7 @@ Summary
       - Make it for each project you have for reproducibility.
       - There are different tools to create virtual environemnts.
       
-         - HPC2N has ``virtualenv``
+         - HPC2N has ``virtualenv`` and ``venv``
          
             - install packages with ``pip``.
             - the flag ``--system-site-packages`` includes preinstalled packages as well
