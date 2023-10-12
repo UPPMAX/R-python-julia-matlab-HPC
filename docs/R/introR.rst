@@ -122,6 +122,18 @@ language is very useful for data importing and cleaning.
   all academic disciplines and tries to be as programming language-independent
   as possible. https://coderefinery.org/lessons/
     
+Other NAISS centres
+-------------------
+
+- LUNARC
+   - https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Rscript/
+- C3SE
+   - https://www.c3se.chalmers.se/documentation/applications/r/
+- NSC
+   - https://ipv4.www.nsc.liu.se/software/catalogue/tetralith/modules/rstudio.html
+   - https://ipv4.www.nsc.liu.se/software/catalogue/tetralith/modules/r.html
+- PDC
+   - https://www.pdc.kth.se/software/software/R/index_general.html
 
 .. objectives:: 
 
