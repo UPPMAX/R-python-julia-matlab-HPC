@@ -65,13 +65,13 @@ your job. When the resources are allocated, you need to preface commands with
 
       .. code-block:: console
           
-         $ interactive -n <tasks> --time=HHH:MM:SS -A naiss2023-22-44 
+         $ interactive -n <tasks> --time=HHH:MM:SS -A naiss2023-22-914 
       
    .. tab:: HPC2N (salloc)
 
       .. code-block:: console
           
-         $ salloc -n <tasks> --time=HHH:MM:SS -A hpc2nXXXX-YYY 
+         $ salloc -n <tasks> --time=HHH:MM:SS -A hpc2n2023-110 
          
       
 where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in 
@@ -116,7 +116,7 @@ Example **Code along**
 
       .. code-block:: console
       
-          [bjornc@rackham2 ~]$ interactive -A naiss2023-22-44 -p devcore -n 4 -t 10:00
+          [bjornc@rackham2 ~]$ interactive -A naiss2023-22-914 -p devcore -n 4 -t 10:00
           You receive the high interactive priority.
           There are free cores, so your job is expected to start at once.
       
@@ -125,7 +125,7 @@ Example **Code along**
           Waiting for job 29556505 to start...
           Starting job now -- you waited for 1 second.
           
-          [bjornc@r484 ~]$ module load R/1.8.5
+          [bjornc@r484 ~]$ module load R/4.3.1
 
       Let us check that we actually run on the compute node: 
 
@@ -143,14 +143,14 @@ Example **Code along**
          
       .. code-block:: console
       
-          b-an01 [~]$ salloc -n 4 --time=00:30:00 -A hpc2nXXXX-YYY
+          b-an01 [~]$ salloc -n 4 --time=00:30:00 -A hpc2n2023-110
           salloc: Pending job allocation 20174806
           salloc: job 20174806 queued and waiting for resources
           salloc: job 20174806 has been allocated resources
           salloc: Granted job allocation 20174806
           salloc: Waiting for resource configuration
           salloc: Nodes b-cn0241 are ready for job
-          b-an01 [~]$ module load GCC/10.3.0 OpenMPI/4.1.1 R/1.8.5
+          b-an01 [~]$ module load GCC/10.3.0 OpenMPI/4.1.1 R/4.0.4
           b-an01 [~]$ 
                   
       
