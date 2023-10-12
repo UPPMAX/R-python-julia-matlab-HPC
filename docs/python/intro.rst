@@ -120,6 +120,19 @@ libraries like NumPy, SciPy, scikit-learn and Pytorch.
 - The youtube video `Thinking about Concurrency <https://www.youtube.com/watch?v=Bv25Dwe84g0>`_ is a good introduction to writing concurrent programs in Python 
 - The book `High Performance Python <https://www.oreilly.com/library/view/high-performance-python/9781492055013/>`_ is a good resource for ways of speeding up Python code.
     
+Other NAISS centres
+-------------------
+
+- LUNARC
+   - https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/
+   - https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/?query=jupyter#jupyter-lab 
+- C3SE
+   - https://www.c3se.chalmers.se/documentation/applications/python/
+   - https://www.c3se.chalmers.se/documentation/applications/jupyter/
+- NSC
+   - https://www.nsc.liu.se/software/python/
+- PDC
+   - https://www.pdc.kth.se/software/software/python/index_general.html
 
 .. objectives:: 
 
