@@ -126,14 +126,14 @@ Other NAISS centres
 -------------------
 
 - LUNARC
-   - https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Rscript/
+   - `R <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Rscript/>`_
 - C3SE
-   - https://www.c3se.chalmers.se/documentation/applications/r/
+   - `R <https://www.c3se.chalmers.se/documentation/applications/r/>`_
 - NSC
-   - https://ipv4.www.nsc.liu.se/software/catalogue/tetralith/modules/rstudio.html
-   - https://ipv4.www.nsc.liu.se/software/catalogue/tetralith/modules/r.html
+   - `R <https://ipv4.www.nsc.liu.se/software/catalogue/tetralith/modules/r.html>`_
+   - `RStudio < https://ipv4.www.nsc.liu.se/software/catalogue/tetralith/modules/rstudio.html>`_
 - PDC
-   - https://www.pdc.kth.se/software/software/R/index_general.html
+   - `R <https://www.pdc.kth.se/software/software/R/index_general.html>`_
 
 .. objectives:: 
 
