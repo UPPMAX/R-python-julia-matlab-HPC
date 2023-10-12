@@ -154,7 +154,7 @@ Serial code
             .. code-block:: sh
     
                 #!/bin/bash            
-                #SBATCH -A hpc2n20xx-xyz     # your project_ID       
+                #SBATCH -A hpc2n2023-110     # your project_ID       
                 #SBATCH -J job-serial        # name of the job         
                 #SBATCH -n 1                 # nr. tasks  
                 #SBATCH --time=00:03:00      # requested time
@@ -174,7 +174,7 @@ Serial code
             .. code-block:: sh
     
                 #!/bin/bash -l
-                #SBATCH -A naiss2023-22-44 # Change to your own after the course
+                #SBATCH -A naiss2023-22-914  # Change to your own after the course
                 #SBATCH -J job-serial        # name of the job         
                 #SBATCH -n 1                 # nr. tasks  
                 #SBATCH --time=00:05:00 # Asking for 5 minutes
@@ -227,7 +227,7 @@ GPU code
             .. code-block:: sh
                 
                 #!/bin/bash            
-                #SBATCH -A hpc2n20xx-xyz     # your project_ID       
+                #SBATCH -A hpc2n2023-110     # your project_ID       
                 #SBATCH -J job-serial        # name of the job         
                 #SBATCH -n 1                 # nr. tasks  
                 #SBATCH --time=00:03:00      # requested time
