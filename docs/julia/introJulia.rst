@@ -278,6 +278,14 @@ More on Julia?
 - HPC2N YouTube video on Julia in HPC: https://www.youtube.com/watch?v=bXHe7Kj3Xxg
 - Julia for High Performance Computing course material from ENCCS: https://enccs.github.io/Julia-for-HPC/
 
+Other NAISS centres
+-------------------
+
+- NSC
+   - https://www.nsc.liu.se/software/installed/tetralith/julia/
+- PDC
+   - https://www.pdc.kth.se/software/software/Julia/index_general.html
+
 .. keypoints::
 
    - Julia is a relatively new language with several attractive features.
