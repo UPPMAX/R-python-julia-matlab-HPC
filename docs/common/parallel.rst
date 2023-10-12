@@ -158,7 +158,7 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
             
             @btime sleep_threaded(n) evals=1 samples=1
             
-        First load the Julia module ``ml Julia/1.8.5-linux-x86_64 `` and then run the script
+        First load the Julia module ``ml Julia/1.8.5-linux-x86_64`` and then run the script
         with the command  ``julia --threads 6 sleep.jl`` to use 6 Julia threads.
 
    .. tab:: Python
@@ -251,6 +251,26 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
         First load the modules ``ml GCC/10.2.0  OpenMPI/4.0.5 R/4.0.4`` and then run the script
         with the command  ``Rscript --no-save --no-restore sleep.R`` to use 6 processes.
 
+DASK
+''''
+
+There are other strategies that are more automatic. 
+**Dask** is a array model extension and task scheduler. By using the new array classes, you can automatically distribute operations across multiple CPUs.
+
+Dask is very popular for data analysis and is used by a number of high-level Python libraries:
+
+    - Dask arrays scale NumPy (see also xarray)
+    - Dask dataframes scale Pandas workflows
+    - Dask-ML scales Scikit-Learn
+
+- Dask divides arrays into many small pieces (chunks), as small as necessary to fit it into memory. 
+- Operations are delayed (lazy computing) e.g. tasks are queue and no computation is performed until you actually ask values to be computed (for instance print mean values). 
+- Then data is loaded into memory and computation proceeds in a streaming fashion, block-by-block.
+
+.. admonition:: More info!
+
+   - `Introduction to Dask by Aalto Scientific Computing and CodeRefinery <https://aaltoscicomp.github.io/python-for-scicomp/parallel/#dask-and-task-queues>`_
+   - `Intermedieate level Dask by ENCCS <https://enccs.github.io/hpda-python/dask/>`_.
 
 - Official Python documentation is found here https://www.python.org/doc/ .
 - `Wikipedias' article on Parallel Computing <https://en.wikipedia.org/wiki/Parallel_computing>`_ 
