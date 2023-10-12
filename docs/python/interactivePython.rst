@@ -18,6 +18,11 @@ Interactive work on the compute nodes
    - Show how to reach the calculation nodes on UPPMAX and HPC2N
    - Test some commands on the calculation nodes
 
+.. admonition:: Compute allocations in this workshop 
+
+   - Rackham: ``naiss2023-22-914``
+   - Kebnekaise: ``hpc2n2023-110``
+
 There are several ways to run Python interactively
 
 - Directly on the login nodes: **only** do this for short jobs that do not take a lot of resources
