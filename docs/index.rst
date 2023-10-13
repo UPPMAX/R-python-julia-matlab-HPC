@@ -294,14 +294,14 @@ Material for improving your programming skills
 First level
 :::::::::::
 
-**`The Carpentries <https://carpentries.org/>`_** teaches basic lab skills for research computing.
+`The Carpentries <https://carpentries.org/>`_ teaches basic lab skills for research computing.
 
 - `Software carpentry courses/material <https://software-carpentry.org/lessons/>`_ 
 
 Second level
 ::::::::::::
 
-**`Code Refinery <https://coderefinery.org/>`_** develops and maintains training material on software best practices for researchers that already write code. 
+`Code Refinery <https://coderefinery.org/>`_ develops and maintains training material on software best practices for researchers that already write code. 
 
 - Their material addresses all academic disciplines and tries to be as programming language-independent as possible. 
 - `Code refinery lessons <https://coderefinery.org/lessons/>`_     
@@ -309,7 +309,7 @@ Second level
 Third level
 :::::::::::
 
-**`ENCCS (EuroCC National Competence Centre Sweden) <https://enccs.se/>`_** is a national centre that supports industry, public administration and academia accessing and using European supercomputers. They give higher-level training of programming and specific software.
+`ENCCS (EuroCC National Competence Centre Sweden) <https://enccs.se/>`_ is a national centre that supports industry, public administration and academia accessing and using European supercomputers. They give higher-level training of programming and specific software.
 
 - `ENCCS training material <https://enccs.se/lessons/>`_ 
 
