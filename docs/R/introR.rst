@@ -10,7 +10,11 @@ Introduction R
    - Install R packages from CRAN - automatic download and install
    - Write a batchscript for running R
    - Using Rstudio
-   
+
+    **Not covered**
+    
+    - improve R *coding* skills 
+    - Other clusters
         
 .. admonition:: Exercises
 
