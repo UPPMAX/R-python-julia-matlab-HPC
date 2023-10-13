@@ -135,6 +135,11 @@ CodeRefinery develops and maintains training material on software best practices
 
 - `Lessons <https://coderefinery.org/lessons/)>`_ 
 - `Data visualization using Python <https://coderefinery.github.io/data-visualization-python/>`_
+- `Jupyter <https://coderefinery.github.io/jupyter/>`_
+
+Aalto Scientific Computing
+
+- `Data analysis workflows with R and Python <https://aaltoscicomp.github.io/data-analysis-workflows-course/>`_
 
 - `Python for Scientific Computing <https://aaltoscicomp.github.io/python-for-scicomp/>`_ 
 
