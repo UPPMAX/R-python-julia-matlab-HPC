@@ -124,7 +124,7 @@ First level
 
 `The Carpentries <https://carpentries.org/>`_  teaches basic lab skills for research computing.
 
-- `Programming with Python <https://swcarpentry.github.io/python-novice-inflammation/)>`_ 
+- `Programming with Python <https://swcarpentry.github.io/python-novice-inflammation/>`_ 
 
 - `Plotting and Programming in Python <http://swcarpentry.github.io/python-novice-gapminder/>`_ 
 
