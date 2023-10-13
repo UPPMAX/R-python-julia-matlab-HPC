@@ -276,7 +276,29 @@ More on Julia?
 - Official Julia documentation is found here: https://docs.julialang.org/en/v1/
 - Slack channel for Julia and instructions for joining it are found here: https://julialang.org/slack/
 - HPC2N YouTube video on Julia in HPC: https://www.youtube.com/watch?v=bXHe7Kj3Xxg
-- Julia for High Performance Computing course material from ENCCS: https://enccs.github.io/Julia-for-HPC/
+
+Material for improving your programming skills
+::::::::::::::::::::::::::::::::::::::::::::::
+
+First level
+...........
+
+`The Carpentries <https://carpentries.org/>`_  teaches basic lab skills for research computing.
+
+- `Programming with Julia  <https://carpentries-incubator.github.io/julia-novice/>`_ (alpha)
+
+Second level
+::::::::::::
+
+CodeRefinery develops and maintains training material on software best practices for researchers that already write code. Their material addresses all academic disciplines and tries to be as **programming language-independent as possible**. 
+
+- Not yet anything Julia specific
+
+`ENCCS (EuroCC National Competence Centre Sweden) <https://enccs.se/>`_ is a national centre that supports industry, public administration and academia accessing and using European supercomputers. They give higher-level training of programming and specific software.
+
+- `Julia for high-performance Computing <https://enccs.github.io/julia-for-hpc/>`_ 
+- `Julia for High-performance data analytics <https://enccs.github.io/julia-for-hpda/>`_ 
+
 
 Other NAISS centres
 -------------------
