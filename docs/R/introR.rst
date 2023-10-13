@@ -115,13 +115,49 @@ language is very useful for data importing and cleaning.
   https://cran.r-project.org/manuals.html
 - A list of CRAN (The Comprehensive R Archive Network) is here:
   https://cran.r-project.org/mirrors.html
+    
+Material for improving your programming skills
+::::::::::::::::::::::::::::::::::::::::::::::
+
+First level
+...........
+
+`The Carpentries <https://carpentries.org/>`_  teaches basic lab skills for research computing.
+
+- `Programming with Python <https://swcarpentry.github.io/python-novice-inflammation/>`_ 
+
+- `Plotting and Programming in Python <http://swcarpentry.github.io/python-novice-gapminder/>`_ 
+
+Second level
+::::::::::::
+
+CodeRefinery develops and maintains training material on software best practices for researchers that already write code. Their material addresses all academic disciplines and tries to be as programming language-independent as possible. 
+
+- `Lessons <https://coderefinery.org/lessons/)>`_ 
+
+
 - Data analysis workflows with R and Python:
   https://aaltoscicomp.github.io/data-analysis-workflows-course/
-- CodeRefinery develops and maintains training material on software best
-  practices for researchers that already write code. Their material addresses
-  all academic disciplines and tries to be as programming language-independent
-  as possible. https://coderefinery.org/lessons/
+
+
+
+
+
+Third level
+:::::::::::
+
+`ENCCS (EuroCC National Competence Centre Sweden) <https://enccs.se/>`_ is a national centre that supports industry, public administration and academia accessing and using European supercomputers. They give higher-level training of programming and specific software.
+
+- `High Performance Data Analytics in Python <https://enccs.github.io/hpda-python/)>`_
+
+- The youtube video `Thinking about Concurrency <https://www.youtube.com/watch?v=Bv25Dwe84g0>`_ is a good introduction to writing concurrent programs in Python 
+
+- The book `High Performance Python <https://www.oreilly.com/library/view/high-performance-python/9781492055013/>`_ is a good resource for ways of speeding up Python code.
     
+
+
+
+
 Other NAISS centres
 -------------------
 
