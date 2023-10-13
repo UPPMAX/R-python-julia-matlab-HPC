@@ -142,19 +142,19 @@ A selection of the Python packages and libraries installed on UPPMAX and HPC2N a
 
       - This is a selection of the packages and libraries installed at HPC2N. These are all installed as **modules** and need to be loaded before use. Some may also have **prerequisites** that needs to be loaded first. That will be listed when you check with module spider <package-module> 
 	
-	  - ``ASE``
+	  - ``ASE``  (Not on AMD nodes yet)
 	  - ``Keras``
-	  - ``PyTorch``
+	  - ``PyTorch``   
 	  - ``SciPy-bundle`` (Bottleneck, deap, mpi4py, mpmath, numexpr, numpy, pandas, scipy - some of the versions have more)
 	  - ``TensorFlow``
-	  - ``Theano``
-	  - ``matplotlib``
-	  - ``scikit-learn``
-	  - ``scikit-image``
-	  - ``pip``
-	  - ``iPython``
-	  - ``Cython``
-	  - ``Flask``
+	  - ``Theano``  (Not on AMD nodes yet)
+	  - ``matplotlib`` 
+	  - ``scikit-learn`` 
+	  - ``scikit-image``  (Not on AMD nodes yet)
+	  - ``pip``  
+	  - ``iPython``  (Not on AMD nodes yet)
+	  - ``Cython``   
+	  - ``Flask``   (Not on AMD nodes yet)
 
 
 
