@@ -10,11 +10,11 @@ Introduction to running R, Python, and Julia in HPC
 
    - This course aims to give a brief, but comprehensive introduction to using Python, Julia and R in an HPC environment.
    - You will learn how to
-      - start the interpreters of Python, Julia and R by the HPC module system
-      - find site installed packages/libraries
-      - install packages/libraries yourself
-      - use virtual environments
-      - use the computation/calculation nodes
+      - start the **interpreters** of Python, Julia and R by the HPC module system
+      - find site **installed packages/libraries**
+      - **install packages/libraries** yourself
+      - use **virtual** environments
+      - use the **computation nodes**
         - write batch scripts 
         - work interactivly
 
@@ -23,10 +23,12 @@ Introduction to running R, Python, and Julia in HPC
 
 .. admonition:: Cluster-specific approaches
 
-   - The course is a cooperation between UPPMAX (Rackham, Snowy, Bianca) and HPC2N (Kebnekaise) and will focus on the compute systems at both centres.
-   - Although there are differences we will only have few seperate sessions.
+   - The course is a cooperation between **UPPMAX** (Rackham, Snowy, Bianca) and **HPC2N** (Kebnekaise) and will focus on the compute systems at both centres.
+   - Although there are differences we will only have **few seperate sessions**.
    - Most participants will use UPPMAX's systems for the course, as Kebnekaise is only for local (UmU, IRF, MIUN, SLU, LTU) users.
-   - The general information given in the course will be true for all/most HPC centres in Sweden. The examples will often have _specific_ information, like module names and versions, which may vary. What you learn here should help you to make any changes needed for the other centres. 
+   - The general information given in the course will be true for all/most HPC centres in Sweden. 
+      - The examples will often have _specific_ information, like module names and versions, which may vary. What you learn here should help you to make any changes needed for the other centres. 
+      - When present, links to the Python/Julia/R documentation at other NAISS centres are given in the corresponding session.
 
 
 Preliminary schedule
@@ -49,17 +51,30 @@ Preliminary schedule
 Some practicals
 ---------------
 
-.. admonition:: Other courses 
+Code of Conduct
+:::::::::::::::
 
-   - HPC-Python: https://uppmax.github.io/HPC-python
-  
-     - Q/A are public at the HackMD pages
-  
-       - https://hackmd.io/@bclaremar/HPC-python
-       - https://hackmd.io/IoseeprATrWH0ZI7z6wJ-w?view
-  
-   - R: https://www.hpc2n.umu.se/events/courses/2022/R-in-HPC
-   
+We strive to follow the Contributor Covenant Code of Conduct to foster an inclusive and welcoming environment for everyone.
+
+In short:
+- Use welcoming and inclusive language
+- Be respectful of different viewpoints and experiences
+- Gracefully accept constructive criticism
+- Focus on what is best for the community
+- Show courtesy and respect towards other community members
+- Contact details to report CoC violations can be [found here](https://enccs.se/kjartan-thor-wikfeldt).
+
+Furthermore, as this is a hands-on, interactive workshop:
+- Be kind to each other and help each other as best you can.
+- If you can't help someone or there is some problem, let someone know.
+
+Finally, if you notice something that prevents you from learning as well as you can, let us know and don't suffer silently, even the "little things":
+  - Volume too low?
+  - Font size too small?
+  - Generally confusing instructor?
+  - Not enough breaks?
+
+---   
  
 .. admonition:: Zoom
 
@@ -76,7 +91,7 @@ Some practicals
     
     - Please MUTE your microphone when you are not speaking and use the “Raise hand” functionality under the “Participants” window during the lecture. Please do not clutter the Zoom chat. Behave politely!
 
-    - There will be breakout rooms created in the Zoom for the exercises. 
+    - There will be **breakout rooms for the exercises**. 
     
       - You may enter there and you will get personal help
       - There will be a "silent" room for those who just want to sit and work
@@ -112,10 +127,14 @@ Example of screen arrangement for the "worst case"!
 
 If you only have one screen to work with for the course, try to fit: 
 
-- HackMD
-- ZOOM view
-- web browser with course material
-- your own terminal
+╔════════════╗ ╔══════════════╗
+║            ║ ║  TERMINAL    ║
+║            ║ ║   WINDOW     ║
+║   ZOOM     ║ ╚══════════════╝
+║  WINDOW    ║ ╔══════════════╗
+║            ║ ║   BROWSER    ║
+║            ║ ║  W/MATERIAL  ║
+╚════════════╝ ╚══════════════╝
 
 .. warning::
 
@@ -271,8 +290,27 @@ Common features
 Material for improving your programming skills
 ----------------------------------------------
 
-- CodeRefinery develops and maintains training material on software best practices for researchers that already write code. 
-    - Their material addresses all academic disciplines and tries to be as programming language-independent as possible. https://coderefinery.org/lessons/    
+First level
+:::::::::::
+
+**The Carpentries** teaches basic lab skills for research computing.
+
+`Software carpentry courses/material <https://software-carpentry.org/lessons/>`_ 
+
+Second level
+::::::::::::
+
+CodeRefinery develops and maintains training material on software best practices for researchers that already write code. 
+   - Their material addresses all academic disciplines and tries to be as programming language-independent as possible. 
+
+`Code refinery lessons <https://coderefinery.org/lessons/>`_     
+
+Third level
+:::::::::::
+
+`ENCCS (EuroCC National Competence Centre Sweden) <https://enccs.se/>`_ is a national centre that supports industry, public administration and academia accessing and using European supercomputers. They give higher-level training of programming and specific software.
+
+`ENCCS training material <https://enccs.se/lessons/>`_ 
 
 
 .. toctree::
