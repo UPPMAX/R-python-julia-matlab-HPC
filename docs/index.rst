@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Introduction to running R, Python, and Julia in HPC
-==============================================================
+===================================================
 
 .. admonition:: Content
 
@@ -20,6 +20,8 @@ Introduction to running R, Python, and Julia in HPC
 
    - This course will consist of lectures interspersed with hands-on sessions where you get to try out what you have just learned.    
 
+   - We aim to give this course in **spring and fall every year**.
+
 
 .. admonition:: Cluster-specific approaches
 
@@ -31,10 +33,10 @@ Introduction to running R, Python, and Julia in HPC
       - When present, links to the Python/Julia/R documentation at other NAISS centres are given in the corresponding session.
 
 
-Preliminary schedule
-====================
+Schedule Fall 2023
+==================
 
-.. list-table:: Preliminary schedule
+.. list-table:: 
    :widths: 25 25
    :header-rows: 1
 
