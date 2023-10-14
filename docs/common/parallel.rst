@@ -1,5 +1,5 @@
-Parallel Programming
-====================
+Parallel Programming (parallel session)
+=======================================
 
 
 .. questions::
