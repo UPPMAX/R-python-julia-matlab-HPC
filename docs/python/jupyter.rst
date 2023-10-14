@@ -77,6 +77,30 @@ or
     This should bring the jupyter interface on your computer and all calculations and files will be on Rackham.
 
 
+.. warning:: 
+
+   **Running Jupyter in a virtual environment**
+
+   You could also use ``jupyter`` (``-lab`` or ``-notebook``) in a virtual environment.
+
+   If you decide to use the --system-site-packages configuration you will get ``jupyter`` from the python modules you created your virtual environment with.
+   However, you **won't find your locally installed packages** from that jupyter session. To solve this reinstall jupyter within the virtual environment by force::
+
+   .. code-block:: console
+
+      $ pip install -I jupyter
+
+   and run::
+
+   .. code-block:: console
+
+      $ jupyter-notebook
+   
+   Be sure to start the **kernel with the virtual environment name**, like "Example", and not "Python 3 (ipykernel)".
+
+
+
+
 Kebnekaise
 ----------
 
