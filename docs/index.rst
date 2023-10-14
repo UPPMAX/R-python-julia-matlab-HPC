@@ -15,8 +15,9 @@ Introduction to running R, Python, and Julia in HPC
       - **install packages/libraries** yourself
       - use **virtual** environments
       - use the **computation nodes**
-        - write batch scripts 
-        - work interactivly
+        
+         - write batch scripts 
+         - work interactivly
 
    - This course will consist of lectures interspersed with hands-on sessions where you get to try out what you have just learned.    
 
@@ -29,7 +30,8 @@ Introduction to running R, Python, and Julia in HPC
    - Although there are differences we will only have **few seperate sessions**.
    - Most participants will use UPPMAX's systems for the course, as Kebnekaise is only for local (UmU, IRF, MIUN, SLU, LTU) users.
    - The general information given in the course will be true for all/most HPC centres in Sweden. 
-      - The examples will often have _specific_ information, like module names and versions, which may vary. What you learn here should help you to make any changes needed for the other centres. 
+
+      - The examples will often have specific information, like module names and versions, which may vary. What you learn here should help you to make any changes needed for the other centres. 
       - When present, links to the Python/Julia/R documentation at other NAISS centres are given in the corresponding session.
 
 
@@ -75,7 +77,6 @@ Finally, if you notice something that prevents you from learning as well as you 
   - Generally confusing instructor?
   - Not enough breaks?
 
----   
  
 .. admonition:: Zoom
 
@@ -100,11 +101,14 @@ Finally, if you notice something that prevents you from learning as well as you 
     
 .. admonition:: Collaboration document (Microsoft-365)
 
-    - <a target='_blank' href="https://umeauniversity.sharepoint.com/:w:/s/HPC2N630/EZaIVorUBXZEj89dNxYEaQcBAV0H4yQz-soWF_imIeNHUw?e=azbezP">Q/A collaboration document</a>
+   - .. raw:: html
 
-    - Use this page for the workshop with your questions.
-    - It becomes part of the course and some Q/A:s may be **more relevant to you at a later occasion!!**
-    - Depending on how many helpers there are we'll see how fast there are answers. 
+        <a target='_blank' href="https://umeauniversity.sharepoint.com/:w:/s/HPC2N630/EZaIVorUBXZEj89dNxYEaQcBAV0H4yQz-soWF_imIeNHUw?e=azbezP">Q/A collaboration document</a>
+
+   - Use this page for the workshop with your questions.
+   - It becomes part of the course and some Q/A:s may be **more relevant to you at a later occasion!!**
+   - Depending on how many helpers there are we'll see how fast there are answers. 
+
         - Some answers may come after the workshop day.
 
         
@@ -129,7 +133,7 @@ Example of screen arrangement for the "worst case"!
 
 If you only have one screen to work with for the course, try to fit: 
 
-.. code-bock:: sh
+.. code-bock:: bash
 
    ╔════════════╗ ╔══════════════╗
    ║            ║ ║  TERMINAL    ║
