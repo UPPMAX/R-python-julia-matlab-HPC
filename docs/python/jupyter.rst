@@ -169,11 +169,11 @@ Or, to access the server you can copy and paste this URLs from the file:
 
 5. Start a webbrowser within HPC2N (ThinLinc interface). Open the html or put in the URL you grabbed, including the token:
 
-![](../img/jupyterlab-start.png)
+![](../../../img/jupyterlab-start.png)
 
 After a few moments JupyterLab starts up:
 
-![](../img/jupyterlab_started.png)
+![](../img/../../jupyterlab_started.png)
 
 You shut it down from the menu with "File" > "Shut Down"
 
@@ -310,4 +310,4 @@ If a kernel is running (shown under kernels), then shut down that kernel and cli
 
 12. You can now run your files etc. with the own-installed Python packages available.
 
-**NOTE*! Sometimes it is still running on the default kernel. If so, Click the 3 little dots in the right side of the editor-window for the program and *pick your kernel*. Then rerun your files.
+**NOTE**! Sometimes it is still running on the default kernel. If so, Click the 3 little dots in the right side of the editor-window for the program and *pick your kernel*. Then rerun your files.
