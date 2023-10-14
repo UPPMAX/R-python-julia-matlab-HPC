@@ -9,8 +9,8 @@ Jupyter on compute nodes
   - You run it in a **web browser** (``firefox`` at UPPMAX and HPC2N)
   - This may be slow unless you run your browser in ThinLinc or locally or on you own computer (on HPC2N the JupyterLab is only accessible from within HPC2N's domain, which makes it easiest to use from inside ThinLinc).
 
-  - The Jupyter project site contains a lot of information and inspiration. <https://jupyter.org/>
-  - The Jupyter Notebook documentation. <https://jupyter-notebook.readthedocs.io/en/stable/>
+  - The Jupyter project site contains a lot of information and inspiration. https://jupyter.org/
+  - The Jupyter Notebook documentation. https://jupyter-notebook.readthedocs.io/en/stable/
   
 
 UPPMAX
@@ -54,12 +54,14 @@ On own computer
 
 - If you use ssh to connect to Rackham, you need to forward the port of the interactive node to your local computer.
     - On Linux or Mac this is done by running in another terminal. Make sure you have the ports changed if they are not at the default ``8888``.
-        ``` console
-        $ ssh -L 8888:r486:8888 username@rackham.uppmax.uu.se
-        ```
+
+.. code-block:: sh
+		
+   $ ssh -L 8888:r486:8888 username@rackham.uppmax.uu.se
+
     - If you use Windows it may be better to do this in the PowerShell instead of a WSL2 terminal.
     - If you use PuTTY - you need to change the settings in "Tunnels" accordingly (could be done for the current connection as well).
-    ![](./img/putty.png)
+    ![](../../img/putty.png)
     
     [SSH port forwarding](https://uplogix.com/docs/local-manager-user-guide/advanced-features/ssh-port-forwarding)
     
@@ -75,70 +77,59 @@ or
 Kebnekaise
 ----------
 
-Since the JupyterLab will only be accessible from within HPC2N's domain, it is by far easiest to do this from inside ThinLinc, so **this is highly recommended**. You can find information about using ThinLinc at HPC2N here: <a href="https://www.hpc2n.umu.se/documentation/guides/thinlinc">https://www.hpc2n.umu.se/documentation/guides/thinlinc</a>
+Since the JupyterLab will only be accessible from within HPC2N's domain, it is by far easiest to do this from inside ThinLinc, so **this is highly recommended**. You can find information about using ThinLinc at HPC2N here: https://www.hpc2n.umu.se/documentation/guides/thinlinc
 
-<p>1) At HPC2N, you currently need to start JupyterLab on a specific compute node. To do that you need a submit file and inside that you load the JupyterLab module and its prerequisites (and possibly other Python modules if you need them - more about that later).</p>
+1. At HPC2N, you currently need to start JupyterLab on a specific compute node. To do that you need a submit file and inside that you load the JupyterLab module and its prerequisites (and possibly other Python modules if you need them - more about that later).
 
-<p><strong>NOTE</strong>: HPC2N and most other HPC centers in Sweden use <strong>modules</strong> to handle their software. You can read more about modules here: <a href="https://www.hpc2n.umu.se/documentation/environment/lmod">https://www.hpc2n.umu.se/documentation/environment/lmod</a></p>
+To see the currently available versions, do
 
-<p>To see the currently available versions, do</p>
+``module spider JupyterLab``
 
-<pre>
-module spider JupyterLab</pre>
+You then do
 
-<p>You then do</p>
+``module spider JupyterLab/<version>``
 
-<pre>
-module spider JupyterLab/&lt;version&gt;</pre>
+for a specific <version> to see which prerequisites should be loaded first.
 
-<p>for a specific &lt;version&gt; to see which prerequisites should be loaded first.</p>
+**Example, loading ``JupyterLab/3.2.8``**
 
-<p><strong>Example, loading JupyterLab/3.2.8</strong></p>
+``module load GCC/10.3.0 JupyterLab/3.2.8``
 
-<pre>
-module load GCC/10.3.0 JupyterLab/3.2.8</pre>
+2. Making the submit file
 
-<p>2) Making the submit file</p>
+Something like the file below will work. Remember to change the project id after the course, how many cores you need, and how long you want the JupyterLab to be available:
 
-<p>Something like the file below will work. Remember to change the project id, how many cores you need, and how long you want the JupyterLab to be available:</p>
-
-<pre>
-#!/bin/bash
-# Here you should put your own project id
-#SBATCH -A hpc2nXXXX-YYY
-# This example asks for 1 core
-#SBATCH -n 1
-# Ask for a suitable amount of time. Remember, this is the time the Jupyter notebook will be available! HHH:MM:SS.
-#SBATCH --time=05:00:00
+.. code-block:: slurm
+		
+   #!/bin/bash
+   #SBATCH -A hpc2n2023-110
+   # This example asks for 1 core
+   #SBATCH -n 1
+   # Ask for a suitable amount of time. Remember, this is the time the Jupyter notebook will be available! HHH:MM:SS.
+   #SBATCH --time=05:00:00
  
-# Clear the environment from any previously loaded modules
-module purge &gt; /dev/null 2&gt;&amp;1
+   # Clear the environment from any previously loaded modules
+   module purge > /dev/null 2>&1
  
-# Load the module environment suitable for the job
-module load GCC/10.3.0 JupyterLab/3.2.8
+   # Load the module environment suitable for the job
+   module load GCC/10.3.0 JupyterLab/3.2.8
 
-# Start JupyterLab
-jupyter lab --no-browser --ip $(hostname)
-</pre>
+   # Start JupyterLab
+   jupyter lab --no-browser --ip $(hostname)
 
-<p>&nbsp;</p>
+Where the flags used to the Jupyter command has the following meaning (you can use ``Jupyter --help`` and ``Jupyter lab --help``> to see extra options):
 
-<p><a id="flags" name="flags"></a>Where the flags used to the Jupyter command has the following meaning (you can use <kbd>Jupyter --help</kbd> and <kbd>Jupyter lab --help</kbd> to see extra options):</p>
+- **lab**: This launches JupyterLab computational environment for Jupyter.
+- **--no-browser**: Prevent the opening of the default url in the browser.
+- **--ip=<IP address>**: The IP address the JupyterLab server will listen on. Default is 'localhost'. In the above example script I use ``$(hostname)`` to get the content of the environment variable for the hostname for the node I am allocated by the job.
 
-<ul>
-	<li><strong>lab</strong>: This launches JupyterLab computational environment for Jupyter.</li>
-	<li><strong>--no-browser</strong>: Prevent the opening of the default url in the browser.</li>
-	<li><strong>--ip=&lt;IP address&gt;</strong>: The IP address the JupyterLab server will listen on. Default is 'localhost'. In the above example script I use $(hostname) to get the content of the environment variable for the hostname for the node I am allocated by the job.</li>
-</ul>
+**Note** again that the JupyterLab is *only* accessible from within the HPC2N domain, so it is easiest to work on the ThinLinc.
 
-<p>Note again that the JupyterLab is <u>only</u> accessible from within the HPC2N domain, so it is easiest to work on the ThinLinc.</p>
+3. Submit the above submit file. Here I am calling it ``MyJupyterLab.sh``
 
-<p>3) Submit the above submit file. Here I am calling it MyJupyterLab.sh</p>
+``sbatch MyJupyterLab.sh``
 
-<pre>
-sbatch MyJupyterLab.sh</pre>
-
-<p>4) Get the URL from the SLURM output file.</p>
+4. Get the URL from the SLURM output file.
 
 <p>Wait until the job gets resources allocated. Check the SLURM output file; when the job has resources allocated it will have a number of URLs inside at the bottom.</p>
 
