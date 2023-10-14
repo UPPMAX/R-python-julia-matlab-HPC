@@ -133,7 +133,7 @@ Example of screen arrangement for the "worst case"!
 
 If you only have one screen to work with for the course, try to fit: 
 
-.. code-bock:: bash
+.. code-bock:: mark-down
 
    ╔════════════╗ ╔══════════════╗
    ║            ║ ║  TERMINAL    ║
@@ -280,18 +280,18 @@ Common features
      - Rackham
      - Snowy
      - Bianca
-   * - Cores per calculation node
+   * - Cores per compute node
      - 28 (72 for largemem part)
      - 20
      - 16
      - 16
-   * - Memory per calculation node
+   * - Memory per compute node
      - 128-3072 GB 
      - 128-1024 GB
      - 128-4096 GB
      - 128-512 GB
    * - GPU
-     - NVidia V100, A100 (and some old K80s)
+     - NVidia V100, A100 + old K80s
      - None
      - Nvidia T4 
      - 2 NVIDIA A100
@@ -334,7 +334,7 @@ Third level
    python/batchPython.md
    python/jupyter.md
    python/interactivePython.md
-   python/parallel.rst
+   common/parallel.rst
    python/exercisesPython.rst
    python/summaryPython.rst
    
@@ -347,6 +347,8 @@ Third level
    julia/isolatedJulia.rst
    julia/batchJulia.rst
    julia/interactiveJulia.rst
+   julia/packagesUPPMAX.rst
+   common/parallel.rst
    julia/exercisesJulia.rst
    julia/summaryJulia.rst
    
@@ -359,6 +361,7 @@ Third level
    R/packagesR.rst
    R/isolatedR
    R/batchR.rst
+   common/parallel.rst
    R/interactiveR.rst
    R/rstudio.rst
    R/exercisesR.rst
