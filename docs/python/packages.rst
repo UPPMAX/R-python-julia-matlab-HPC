@@ -212,7 +212,7 @@ Conda
    - On Bianca (with no internet), Conda is the first choice when installing packages, because there is a local mirror of most of the Conda repositories.
 
 Using Conda
-'''''''''''
+###########
       
 .. admonition:: Conda cheat sheet    
    
@@ -229,7 +229,7 @@ Using Conda
 
 
 Install with conda (UPPMAX)
-'''''''''''''''''''''''''''
+###########################
 
 .. Note::
 
@@ -251,7 +251,7 @@ Install with conda (UPPMAX)
     You reach them all by loading the conda module. You don't have to state the specific channel when using UPPMAX. Otherwise you do with ``conda -c <channel> ...``
     
 First steps
-'''''''''''
+###########
 
 .. tip::
     
@@ -347,7 +347,7 @@ First steps
 
 
 Working with Conda environments defined by files
-''''''''''''''''''''''''''''''''''''''''''''''''
+################################################
 
 - Create an environment based on dependencies given in an environment file:: 
 
