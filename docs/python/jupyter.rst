@@ -131,30 +131,33 @@ Where the flags used to the Jupyter command has the following meaning (you can u
 
 4. Get the URL from the SLURM output file.
 
-<p>Wait until the job gets resources allocated. Check the SLURM output file; when the job has resources allocated it will have a number of URLs inside at the bottom.</p>
+Wait until the job gets resources allocated. Check the SLURM output file; when the job has resources allocated it will have a number of URLs inside at the bottom.
 
-<p>The SLURM output file is as default named <kdc>slurm-&lt;job-id&gt;.out where you get the &lt;job-id&gt; when you submit the SLURM submit file (as in item 3) here).&nbsp; </kdc></p>
+The SLURM output file is as default named ``slurm-<job-id>.out`` where you get the ``<job-id>`` when you submit the SLURM submit file (as in item 3. here).
 
-<p><strong>NOTE</strong>: Grab the URL with the <u>hostname</u> since the localhost one requires you to login to the compute node and so will not work!</p>
+**NOTE**: Grab the URL with the *hostname* since the localhost one requires you to login to the compute node and so will not work!
 
-<p>The file will look similar to this:</p>
+The file will look similar to this:
 
-<pre>
-b-an01 [~]$ cat slurm-22422626.out
-[I 2023-05-11 15:06:23.597 ServerApp] jupyterlab | extension was successfully linked.
-[I 2023-05-11 15:06:23.756 LabApp] JupyterLab extension loaded from /hpc2n/eb/software/JupyterLab/3.2.8-GCCcore-10.3.0/lib/python3.9/site-packages/jupyterlab
-[I 2023-05-11 15:06:23.756 LabApp] JupyterLab application directory is /cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/JupyterLab/3.2.8-GCCcore-10.3.0/share/jupyter/lab
-[I 2023-05-11 15:06:23.760 ServerApp] jupyterlab | extension was successfully loaded.
-[I 2023-05-11 15:06:23.761 ServerApp] Serving notebooks from local directory: /pfs/stor10/users/home/b/bbrydsoe
-[I 2023-05-11 15:06:23.761 ServerApp] Jupyter Server 1.13.4 is running at:
-[I 2023-05-11 15:06:23.761 ServerApp] http://b-cn0232.hpc2n.umu.se:8888/lab?token=4e369c85f797f7de0c4e15723af75e93ad6bbe7cba11ae59
-[I 2023-05-11 15:06:23.761 ServerApp]  or http://127.0.0.1:8888/lab?token=4e369c85f797f7de0c4e15723af75e93ad6bbe7cba11ae59
-[I 2023-05-11 15:06:23.761 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[C 2023-05-11 15:06:23.778 ServerApp]
+.. code-block:: sh
+		
+   b-an01 [~]$ cat slurm-22422626.out
+   [I 2023-05-11 15:06:23.597 ServerApp] jupyterlab | extension was successfully linked.
+   [I 2023-05-11 15:06:23.756 LabApp] JupyterLab extension loaded from /hpc2n/eb/software/JupyterLab/3.2.8-GCCcore-10.3.0/lib/python3.9/site-packages/jupyterlab
+   [I 2023-05-11 15:06:23.756 LabApp] JupyterLab application directory is /cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/JupyterLab/3.2.8-GCCcore-10.3.0/share/jupyter/lab
+   [I 2023-05-11 15:06:23.760 ServerApp] jupyterlab | extension was successfully loaded.
+   [I 2023-05-11 15:06:23.761 ServerApp] Serving notebooks from local directory: /pfs/stor10/users/home/b/bbrydsoe
+   [I 2023-05-11 15:06:23.761 ServerApp] Jupyter Server 1.13.4 is running at:
+   [I 2023-05-11 15:06:23.761 ServerApp] http://b-cn0232.hpc2n.umu.se:8888/lab?token=4e369c85f797f7de0c4e15723af75e93ad6bbe7cba11ae59
+   [I 2023-05-11 15:06:23.761 ServerApp]  or http://127.0.0.1:8888/lab?token=4e369c85f797f7de0c4e15723af75e93ad6bbe7cba11ae59
+   [I 2023-05-11 15:06:23.761 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+   [C 2023-05-11 15:06:23.778 ServerApp]
     
-    To access the server, open this file in a browser:
-        file:///pfs/stor10/users/home/b/bbrydsoe/.local/share/jupyter/runtime/jpserver-173465-open.html
-    Or copy and paste one of these URLs:
+To access the server, open this file in a browser :
+
+``file:///pfs/stor10/users/home/b/bbrydsoe/.local/share/jupyter/runtime/jpserver-173465-open.html``
+
+Or copy and paste one of these URLs:
         http://b-cn0232.hpc2n.umu.se:8888/lab?token=4e369c85f797f7de0c4e15723af75e93ad6bbe7cba11ae59
      or http://127.0.0.1:8888/lab?token=4e369c85f797f7de0c4e15723af75e93ad6bbe7cba11ae59</pre>
 
