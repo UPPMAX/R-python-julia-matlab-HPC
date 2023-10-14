@@ -153,34 +153,34 @@ The file will look similar to this:
    [I 2023-05-11 15:06:23.761 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
    [C 2023-05-11 15:06:23.778 ServerApp]
     
-To access the server, open this file in a browser :
+To access the server, go to
 
-``file:///pfs/stor10/users/home/b/bbrydsoe/.local/share/jupyter/runtime/jpserver-173465-open.html``
+``file:///.local/share/jupyter/runtime/jpserver-<newest>-open.html``
 
-Or copy and paste one of these URLs:
-        http://b-cn0232.hpc2n.umu.se:8888/lab?token=4e369c85f797f7de0c4e15723af75e93ad6bbe7cba11ae59
-     or http://127.0.0.1:8888/lab?token=4e369c85f797f7de0c4e15723af75e93ad6bbe7cba11ae59</pre>
+from a browser within the ThinLinc session. <newest> is a number that you find by looking in the directory ``.local/share/jupyter/runtime/`` under your home directory.
 
-<p>&nbsp;</p>
+Or, to access the server you can copy and paste this URLs from the file:
 
-<p>In this case you should use this one:</p>
+.. code-block:: sh
 
-<pre>
-http://b-cn0232.hpc2n.umu.se:8888/lab?token=4e369c85f797f7de0c4e15723af75e93ad6bbe7cba11ae59</pre>
+   http://b-cn0232.hpc2n.umu.se:8888/lab?token=4e369c85f797f7de0c4e15723af75e93ad6bbe7cba11ae59
 
-<p>5) Start a webbrowser within HPC2N (ThinLinc interface). Put in the URL you grabbed, including the token:</p>
+**NOTE** of course, do not copy the above, but the similar looking one from the file you get from running the batch script!!!
 
-<p><img alt="jupyterlab-start.png" src="/sites/default/files/Documentation/Guides/JupyterLab/jupyterlab-start.png" width="800px" /></p>
+5. Start a webbrowser within HPC2N (ThinLinc interface). Open the html or put in the URL you grabbed, including the token:
 
-<p>After a few moments JupyterLab starts up:</p>
+![](../../img/jupyterlab-start.png)
 
-<p><img alt="jupyterlab_started.png" src="/sites/default/files/Documentation/Guides/JupyterLab/jupyterlab_started.png" width="800px" /></p>
+After a few moments JupyterLab starts up:
 
-<p>You shut it down from the menu with "File" -&gt; "Shut Down"</p>
+![](../../img/jupyterlab_started.png)
 
-<h2>Running JupyterLab at HPC2N - extra Python modules</h2>
+You shut it down from the menu with "File" > "Shut Down"
 
-<h3>Already installed at HPC2N</h3>
+Running JupyterLab at HPC2N - extra Python package
+''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Already installed package at HPC2N
 
 <p>If you need extra Python modules and these modules are already installed at HPC2N, you can just load them. It is easiest to do so before you start the JupyterLab, inside the submit file.</p>
 
