@@ -131,8 +131,8 @@ Finally, if you notice something that prevents you from learning as well as you 
         - Please create a suitably named subdirectory below ``/proj/nobackup/hpc2n2023-110``, for your own exercises.
 
    
-Example of screen arrangement for the "worst case"!
-###################################################
+Example of screen arrangement
+#############################
 
 If you only have one screen to work with for the course, try to fit: 
 
