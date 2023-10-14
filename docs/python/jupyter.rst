@@ -19,21 +19,25 @@ UPPMAX
 1. Start an interactive session from the login node
   
 **For Rackham**
-```sh
-$ interactive -A snic-project  -t 4:00:00
-```
+
+.. code-block:: sh
+
+   $ interactive -A snic-project  -t 4:00:00
 
 **For Snowy**
-```sh
-$ interactive -M snowy -A snic-project  -t 4:00:00
-```
 
-2. Start jupyter notebook (from python/3.10 also jupyter-lab) from the interactive session (*when it gets allocated*)
+.. code-block:: sh
 
-```sh
-$ module load python/3.9.5
-$ jupyter-notebook --ip 0.0.0.0 --no-browser
-```
+   $ interactive -M snowy -A snic-project  -t 4:00:00
+   
+
+2. Start jupyter notebook (from ``python/3.10`` also ``jupyter-lab``) from the interactive session (*when it gets allocated*)
+
+.. code-block:: sh``
+		
+   $ module load python/3.9.5
+   $ jupyter-notebook --ip 0.0.0.0 --no-browser
+
 
 3. Connect to the running notebook 
 
