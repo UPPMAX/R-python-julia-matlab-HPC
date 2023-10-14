@@ -100,12 +100,13 @@ Finally, if you notice something that prevents you from learning as well as you 
     
 .. admonition:: Collaboration document (Microsoft-365)
 
-    - `Q/A collaboration document <https://umeauniversity.sharepoint.com/:w:/s/HPC2N630/EZaIVorUBXZEj89dNxYEaQcBAV0H4yQz-soWF_imIeNHUw?e=azbezP>`_
-    
-    - Use this page for the workshop with your questions.
+    - <a target='_blank' href="https://umeauniversity.sharepoint.com/:w:/s/HPC2N630/EZaIVorUBXZEj89dNxYEaQcBAV0H4yQz-soWF_imIeNHUw?e=azbezP">Q/A collaboration document</a>
 
+    - Use this page for the workshop with your questions.
+    - It becomes part of the course and some Q/A:s may be **more relevant to you at a later occasion!!**
     - Depending on how many helpers there are we'll see how fast there are answers. 
         - Some answers may come after the workshop day.
+
         
 .. hint::
 
