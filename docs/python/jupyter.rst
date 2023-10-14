@@ -62,9 +62,11 @@ On own computer
     - If you use Windows it may be better to do this in the PowerShell instead of a WSL2 terminal.
     - If you use PuTTY - you need to change the settings in "Tunnels" accordingly (could be done for the current connection as well).
 
-.. figure:: ../../img/putty.png)
+.. figure:: ../../img/putty.png
+   :width: 450
+   :align: center
     
-    [SSH port forwarding](https://uplogix.com/docs/local-manager-user-guide/advanced-features/ssh-port-forwarding)
+   [SSH port forwarding](https://uplogix.com/docs/local-manager-user-guide/advanced-features/ssh-port-forwarding)
     
 
     On your computer open  the address you got but replace r486 with localhost i.e. 
