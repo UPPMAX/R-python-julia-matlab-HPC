@@ -4,7 +4,7 @@ Introduction Julia
 `Welcome page and syllabus <https://uppmax.github.io/HPC-python/index.html>`_
    - Also link at House symbol |:house:| at top of page 
 
-.. admonition:: **Learning outcomes**
+.. admonition:: Learning outcomes
    
    - Load Julia modules and site-installed Julia packages
    - Create a Julia environment
@@ -16,16 +16,16 @@ Introduction Julia
 
           
     
-.. admonition:: **Your expectations?**
+.. admonition:: Your expectations?
    
-    - find best practices for using Julia at UPPMAX and HPC2N
-    - packages
-    - use the HPC performance with Julia
+    - Find best practices for using Julia at UPPMAX and HPC2N
+    - Packages
+    - Use the HPC performance with Julia
 
     
     **Not covered**
     
-    - improve Julia *coding* skills 
+    - Improve Julia *coding* skills 
     - Other clusters
 
         
@@ -98,24 +98,16 @@ Preliminary schedule
 What is Julia?
 --------------
 
-Julia is a relatively new Programming language (pre-released 1.0 announced in
-1)    compared to well-known and standard languages such as Fortran, C, C++, R,
-and Python (some of them dated back to the 70's). A common pattern in those
-well-stablished languages (traditional paradigm) is that they look after either 
-productivity (fast deployment, fast prototyping) or performance (fast numerical 
-computations). 
+Julia is a relatively new Programming language (pre-released 1.0 announced in 2018), compared to well-known and standard languages such as Fortran, C, C++, R, and Python (some of them dated back to the 70's). 
+A common pattern in those well-stablished languages (traditional paradigm) is that they look after either:
 
-This pattern created the so called **two-language problem** where programmers
-had to choose between **productivity** (R, Python) or **performance** (Fortran, C/C++)
-and when both were needed programmers had to learn the language that offered 
-the desired capability and use some interface between different languages. 
-Performant languages traditionally needed to be compiled while languages focusing
-on productivity are interpreted.
+  - productivity (fast deployment, fast prototyping) or,
+  - performance (fast numerical computations). 
 
-Among the different features of Julia, is its capability of integrating
-both aspects productivity and performance into a single language. In this way,
-Julia programmers can in principle write software without changing their
-focus to learn a new language. 
+This pattern created the so called **two-language problem** where programmers had to choose between **productivity** (R, Python) or **performance** (Fortran, C/C++) and when both were needed programmers had to learn the language that offered the desired capability and use some interface between different languages. 
+Performant languages traditionally needed to be compiled while languages focusing on productivity are interpreted.
+
+Among the different features of Julia, is its capability of integrating both aspects **productivity and performance into a single language**. In this way, Julia programmers can in principle write software without changing their focus to learn a new language. 
 
 
 .. figure:: ../../img/two-language.png
@@ -203,7 +195,8 @@ typing ``?``, then you may type some string from which you need more information
 
    julia>?
    help?> ans
-   search: ans transpose transcode contains expanduser instances MathConstants readlines LinearIndices leading_ones leading_zeros
+   search: ans transpose transcode contains expanduser instances MathConstants readlines 
+   LinearIndices leading_ones leading_zeros
 
    ans
 
@@ -234,37 +227,6 @@ Shortcomings of Julia
 - Previous situation is more noticeable upon running simple tasks in parallel mode (MPI, Threads)
   
 
-Exercises
----------
-
-
-.. challenge:: Getting familiar with Julia REPL
-    
-    Is is important in this course that you know how to navigate on the 
-    Julia command line. This exercise will help you to become more familiar
-    with the REPL. Do the following steps: 
-
-       * Start a Julia session. In the ``Julian`` mode, compute the sum the numbers 
-         5 and 6
-       * Change to the ``shell`` mode and display the current directory
-       * Now, go to the ``package`` mode and list the currently installed packages
-       * Finally, display help information of the function ``println`` in ``help`` mode.
-
-
-
-    .. solution:: Solution for centres
-        :class: dropdown
-            
-            .. code-block:: julia
-    
-                $ julia 
-                julia> 5 + 6
-                julia>;
-                shell> pwd 
-                julia>]
-                pkg> status 
-                julia>?
-                help?> println
 
 
 More on Julia?
