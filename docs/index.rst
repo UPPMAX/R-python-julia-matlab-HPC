@@ -111,16 +111,16 @@ Finally, if you notice something that prevents you from learning as well as you 
 
    - Main project on UPPMAX:
      
-        - Project ID: NAISS2023-22-914 
-        - Directory name on rackham: /proj/naiss2023-22-914
-        - Please create a suitably named subdirectory below /proj/naiss2023-22-914, for your own exercises. 
+        - Project ID: ``NAISS2023-22-914``
+        - Directory name on rackham: ``/proj/naiss2023-22-914``
+        - Please create a suitably named subdirectory below ``/proj/naiss2023-22-914``, for your own exercises. 
    
 
    - Local project on HPC2N: 
 
-        - Project ID: hpc2n2023-110
-        - Directory name on Kebnekaise: /proj/nobackup/hpc2n2023-110
-        - Please create a suitably named subdirectory below /proj/nobackup/hpc2n2023-110, for your own exercises.
+        - Project ID: ``hpc2n2023-110``
+        - Directory name on Kebnekaise: ``/proj/nobackup/hpc2n2023-110``
+        - Please create a suitably named subdirectory below ``/proj/nobackup/hpc2n2023-110``, for your own exercises.
 
    
 Example of screen arrangement for the "worst case"!
@@ -128,29 +128,31 @@ Example of screen arrangement for the "worst case"!
 
 If you only have one screen to work with for the course, try to fit: 
 
-╔════════════╗ ╔══════════════╗
-║            ║ ║  TERMINAL    ║
-║            ║ ║   WINDOW     ║
-║   ZOOM     ║ ╚══════════════╝
-║  WINDOW    ║ ╔══════════════╗
-║            ║ ║   BROWSER    ║
-║            ║ ║  W/MATERIAL  ║
-╚════════════╝ ╚══════════════╝
+.. code-bock:: sh
+
+   ╔════════════╗ ╔══════════════╗
+   ║            ║ ║  TERMINAL    ║
+   ║            ║ ║   WINDOW     ║
+   ║   ZOOM     ║ ╚══════════════╝
+   ║  WINDOW    ║ ╔══════════════╗
+   ║            ║ ║   BROWSER    ║
+   ║            ║ ║  W/MATERIAL  ║
+   ╚════════════╝ ╚══════════════╝
 
 .. warning::
 
     - It is good to have a familiarity with the LINUX command line. 
-    - Short introductions : https://uppsala.instructure.com/courses/67267/pages/using-the-command-line-bash?module_item_id=455632
-    - Linux "cheat sheet": https://www.hpc2n.umu.se/documentation/guides/linux-cheat-sheet
+    - `Short introductions <https://uppsala.instructure.com/courses/67267/pages/using-the-command-line-bash?module_item_id=455632>`_
+    - `Linux "cheat sheet" <https://www.hpc2n.umu.se/documentation/guides/linux-cheat-sheet>`_
     - UPPMAX
     
-      - UPPMAX software library: https://uppsala.instructure.com/courses/67267/pages/uppmax-basics-software?module_item_id=455641
-      - Whole intro course material (UPPMAX): https://www.uppmax.uu.se/support/courses-and-workshops/introductory-course-winter-2022/
+      - `UPPMAX software library <https://uppsala.instructure.com/courses/67267/pages/uppmax-basics-software?module_item_id=455641>`_
+      - `Whole intro course material <https://www.uppmax.uu.se/support/courses-and-workshops/introductory-course-winter-2022/>`_
       
     - HPC2N
     
-      - HPC2N's intro course material (including link to recordings): https://github.com/hpc2n/intro-course
-      - HPC2N's YouTube channel video on Linux: https://www.youtube.com/watch?v=gq4Dvt2LeDg
+      - `HPC2N's intro course material (including link to recordings) <https://github.com/hpc2n/intro-course>`_
+      - `HPC2N's YouTube channel video on Linux <https://www.youtube.com/watch?v=gq4Dvt2LeDg>`_
 
 Prepare your environment now!
 -----------------------------
@@ -172,14 +174,14 @@ Prepare your environment now!
         - Terminal: ``ssh -Y <user>@rackham.uppmax.uu.se`` 
       
         - ThinLinc app: ``<user>@rackham-gui.uppmax.uu.se``
-        - ThinLinc in web browser: https://rackham-gui.uppmax.uu.se
+        - ThinLinc in web browser: ``https://rackham-gui.uppmax.uu.se``
       
-      2. If not already: create a working directory where you can code along.
+      2. If not already: `**create a working directory** where you can code along.
          - We recommend creating it under the course project storage directory
    
       3. Example. If your username is "mrspock" and you are at UPPMAX, then we recommend you create this folder: 
      
-         .. code-block:: sh
+         .. code-block:: console
          
             $ mkdir /proj/naiss2023-22-914/mrspock/
 
@@ -192,7 +194,9 @@ Prepare your environment now!
       
         - Example. If your username is bbrydsoe and you are at HPC2N, then we recommend you create this folder: 
      
-           /proj/nobackup/hpc2n2023-110/bbrydsoe/
+         .. code-block:: console
+         
+            $ /proj/nobackup/hpc2n2023-110/bbrydsoe/
          
    
 The two HPC centers UPPMAX and HPC2N
