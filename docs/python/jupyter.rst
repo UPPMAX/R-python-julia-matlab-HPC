@@ -210,97 +210,104 @@ With some own-installed Python packages
 
 Running JupyterLab with some own-installed Python packages requires you to use a virtual environment and your own Jupyter kernel. This is not as difficult as it may sound.
 
-<p><strong>Example Own-installed pyDOE and torch. Using JupyterLab/3.4.2</strong></p>
+**Example Own-installed pyDOE and torch. Using JupyterLab/3.4.2**
 
-<p>1) First we need to load the modules that we need for our own-installed packages, and for the JupyterLab.</p>
+1. First we need to load the modules that we need for our own-installed packages, and for the JupyterLab.
 
-<p>pyDOE and torch has some prerequisites, some of which are already installed at HPC2N. We will start by loading the available prerequisite modules:</p>
+pyDOE and torch has some prerequisites, some of which are already installed at HPC2N. We will start by loading the available prerequisite modules:
 
-<pre>
-module load GCC/10.3.0 JupyterLab/3.2.8 OpenMPI/4.1.1 SciPy-bundle/2021.05 matplotlib/3.4.2</pre>
+.. code-block:: sh
 
-<p>2) We now need to create a virtual environment (venv) to install our own packages in. I am placing it in the Public directory under my home directory ($HOME), but you could instead place it in your project storage. I am calling the venv "jupvenv", but you can call it what you want:</p>
+   module load GCC/10.3.0 JupyterLab/3.2.8 OpenMPI/4.1.1 SciPy-bundle/2021.05 matplotlib/3.4.2
 
-<pre>
-python -m venv $HOME/Public/jupvenv</pre>
+2. We now need to create a virtual environment (venv) to install our own packages in. I am placing it in the Public directory under my home directory ($HOME), but you could instead place it in your project storage. I am calling the venv "jupvenv", but you can call it what you want: 
 
-<p>3) Activate the venv</p>
+.. code-block:: sh
 
-<pre>
-source $HOME/Public/jupvenv/bin/activate</pre>
+   python -m venv $HOME/Public/jupvenv
 
-<p>4) Install ipykernel in the venv. This is needed to be able to make your own Jupyter kernel which can use the own-installed Python packages</p>
+3. Activate the venv
 
-<pre>
-pip install --no-cache-dir --no-build-isolation ipykernel</pre>
+.. code-block:: sh
 
-<p><strong>NOTE</strong>! It may complain of missing prerequisites. If so, instead install:</p>
+   source $HOME/Public/jupvenv/bin/activate
 
-<pre>
-pip install --no-cache-dir --no-build-isolation pyparsing pytz jinja2 packaging webencodings cffi babel jsonschema requests tomlkit wheel ipykernel</pre>
+4. Install ipykernel in the venv. This is needed to be able to make your own Jupyter kernel which can use the own-installed Python packages
 
-<p>5) Install your Python packages in the venv, here pyDOE and torch</p>
+.. code-block:: sh
 
-<pre>
-pip install --no-cache-dir --no-build-isolation pyDOE torch</pre>
+   pip install --no-cache-dir --no-build-isolation ipykernel
 
-<p>6) Install the new kernel in Jupyter (here called jupvenv)</p>
+**NOTE**! It may complain of missing prerequisites. If so, instead install:
 
-<pre>
-python -m ipykernel install --user --name=jupvenv</pre>
+.. code-block:: sh
 
-<p>7) Check list of kernels to see your new kernel</p>
+   pip install --no-cache-dir --no-build-isolation pyparsing pytz jinja2 packaging webencodings cffi babel jsonschema requests tomlkit wheel ipykernel
 
-<pre>
-jupyter kernelspec list</pre>
+5. Install your Python packages in the venv, here pyDOE and torch
 
-<p>Later you can remove the kernel if you feel like, using this:</p>
+.. code-block:: sh
 
-<pre>
-jupyter kernelspec uninstall jupvenv</pre>
+   pip install --no-cache-dir --no-build-isolation pyDOE torch
 
-<p>8) Now make a submit file as before. Something like this should work:</p>
+6. Install the new kernel in Jupyter (here called jupvenv)
 
-<pre>
-#!/bin/bash
-# Here you should put your own project id
-#SBATCH -A hpc2nXXXX-YYY
-# Here allocating 1 core - change as suitable for your case
-#SBATCH -n 1
-# Ask for a suitable amount of time. Remember, this is the time the Jupyter notebook will be available!
-#SBATCH --time=05:00:00
+.. code-block:: sh
+
+   python -m ipykernel install --user --name=jupvenv
+
+7. Check list of kernels to see your new kernel
+
+.. code-block:: sh
+
+   jupyter kernelspec list
+
+Later you can remove the kernel if you feel like, using this:
+
+.. code-block:: sh
+
+   jupyter kernelspec uninstall jupvenv
+
+8. Now make a submit file as before. Something like this should work:
+
+.. code-block:: sh
+		
+   #!/bin/bash
+   #SBATCH -A hpc2n2023-110
+   # Here allocating 1 core - change as suitable for your case
+   #SBATCH -n 1
+   # Ask for a suitable amount of time. Remember, this is the time the Jupyter notebook will be available!
+   #SBATCH --time=01:00:00
  
-# Clear the environment from any previously loaded modules
-module purge &gt; /dev/null 2&gt;&amp;1
+   # Clear the environment from any previously loaded modules
+   module purge > /dev/null 2>&1
  
-# Load the module environment suitable for the job
-module load GCC/10.3.0 JupyterLab/3.2.8 OpenMPI/4.1.1 SciPy-bundle/2021.05 matplotlib/3.4.2
+   # Load the module environment suitable for the job
+   module load GCC/10.3.0 JupyterLab/3.2.8 OpenMPI/4.1.1 SciPy-bundle/2021.05 matplotlib/3.4.2
 
-# Activate the venv you installed your own Python packages to
-source $HOME/Public/jupvenv/bin/activate
+   # Activate the venv you installed your own Python packages to
+   source $HOME/Public/jupvenv/bin/activate
 
-# Start JupyterLab
-jupyter lab --no-browser --ip $(hostname)
+   # Start JupyterLab
+   jupyter lab --no-browser --ip $(hostname)
 
-</pre>
 
-<p>See <a href="#flags">here for an explanation of the options</a> to jupyter.</p>
+9. Submit the above submit file (here I named it MyJupvenv.sh).
 
-<p>9) Submit the above submit file (here I named it MyJupvenv.sh).</p>
+.. code-block:: sh
 
-<pre>
-sbatch MyJupvenv.sh</pre>
+   sbatch MyJupvenv.sh
 
-<p>You get the &lt;job-id&gt; when you do the above command.</p>
+You get the <job-id> when you do the above command.
 
-<p>Check the SLURM output file (slurm-&lt;job.id&gt;.out); grab the URL <u>with the hostname</u> as described in the first part of this document, since the localhost one requires you to login to the compute node.</p>
+<p>Check the SLURM output file (slurm-<job.id>.out); grab the URL **with the hostname** as described in the first part of this document, since the localhost one requires you to login to the compute node.
 
-<p>10) Start a webbrowser within HPC2N (ThinLinc interface). Put in the URL you grabbed, including the token.</p>
+10. Start a webbrowser within HPC2N (ThinLinc interface). Put in the URL you grabbed, including the token.
 
-<p>11) Inside JupyterLab, start the new kernel. Just click the launcher for that one if no other kernel is running.</p>
+11. Inside JupyterLab, start the new kernel. Just click the launcher for that one if no other kernel is running.
 
-<p>If a kernel is running (shown under kernels), then shut down that kernel and click "Kernel" in the menu, and then "Change kernel". Pick your kernel from the drop-down menu.</p>
+If a kernel is running (shown under kernels), then shut down that kernel and click "Kernel" in the menu, and then "Change kernel". Pick your kernel from the drop-down menu.
 
-<p>12) You can now run your files etc. with the own-installed Python packages available.</p>
+12. You can now run your files etc. with the own-installed Python packages available.
 
-<p><strong>NOTE</strong>! Sometimes it is still running on the default kernel. If so, Click the 3 little dots in the right side of the editor-window for the program and <u>pick your kernel</u>. Then rerun your files.</p>
+**NOTE*! Sometimes it is still running on the default kernel. If so, Click the 3 little dots in the right side of the editor-window for the program and *pick your kernel*. Then rerun your files.
