@@ -65,11 +65,11 @@ On own computer
 .. figure:: ../../img/putty.png
    :width: 450
    :align: center
-    
-   [SSH port forwarding](https://uplogix.com/docs/local-manager-user-guide/advanced-features/ssh-port-forwarding)
-    
 
-    On your computer open  the address you got but replace r486 with localhost i.e. 
+[SSH port forwarding](https://uplogix.com/docs/local-manager-user-guide/advanced-features/ssh-port-forwarding)
+    
+On your computer open  the address you got but replace r486 with localhost i.e.
+
 ``http://localhost:8888/?token=5c3aeee9fbfc75f7a11c4a64b2b5b7ec49622231388241c2``
 or 
 ``http://127.0.0.0:8888/?token=5c3aeee9fbfc75f7a11c4a64b2b5b7ec49622231388241c2``
