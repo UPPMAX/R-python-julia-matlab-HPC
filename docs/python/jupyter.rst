@@ -61,7 +61,7 @@ On own computer
 
     - If you use Windows it may be better to do this in the PowerShell instead of a WSL2 terminal.
     - If you use PuTTY - you need to change the settings in "Tunnels" accordingly (could be done for the current connection as well).
-    ![](../../img/putty.png)
+    ![](../img/putty.png)
     
     [SSH port forwarding](https://uplogix.com/docs/local-manager-user-guide/advanced-features/ssh-port-forwarding)
     
@@ -169,49 +169,46 @@ Or, to access the server you can copy and paste this URLs from the file:
 
 5. Start a webbrowser within HPC2N (ThinLinc interface). Open the html or put in the URL you grabbed, including the token:
 
-![](../../img/jupyterlab-start.png)
+![](../img/jupyterlab-start.png)
 
 After a few moments JupyterLab starts up:
 
-![](../../img/jupyterlab_started.png)
+![](../img/jupyterlab_started.png)
 
 You shut it down from the menu with "File" > "Shut Down"
 
 Running JupyterLab at HPC2N - extra Python package
-''''''''''''''''''''''''''''''''''''''''''''''''''
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Already installed package at HPC2N
+''''''''''''''''''''''''''''''''''
 
-<p>If you need extra Python modules and these modules are already installed at HPC2N, you can just load them. It is easiest to do so before you start the JupyterLab, inside the submit file.</p>
+If you need extra Python modules and these modules are already installed at HPC2N, you can just load them. It is easiest to do so before you start the JupyterLab, inside the submit file.
 
-<p><strong>Example, loading JupyterLab/3.2.8, its prerequisites, and the modules for SciPy-bundle (mpi4py, numpy, pandas, scipy etc.) and matplotlib </strong>:</p>
+**Example, loading JupyterLab/3.2.8, its prerequisites, and the modules for SciPy-bundle (mpi4py, numpy, pandas, scipy etc.) and matplotlib**:
 
-<pre>
-#!/bin/bash
-# Here you should put your own project id
-#SBATCH -A hpc2nXXXX-YYY
-# This example use 1 core
-#SBATCH -n 1
-# Ask for a suitable amount of time. Remember, this is the time the Jupyter notebook will be available! HHH:MM:SS.
-#SBATCH --time=05:00:00
+.. code-block:: sh
 
-# Clear the environment from any previously loaded modules
-module purge &gt; /dev/null 2&gt;&amp;1
+   #!/bin/bash
+   #SBATCH -A hpc2n2023-110
+   # This example use 1 core
+   #SBATCH -n 1
+   # Ask for a suitable amount of time. Remember, this is the time the Jupyter notebook will be available! HHH:MM:SS.
+   #SBATCH --time=01:00:00
 
-# Load the module environment suitable for the job
-module load GCC/10.3.0 JupyterLab/3.2.8 OpenMPI/4.1.1 SciPy-bundle/2021.05 matplotlib/3.4.2
+   # Clear the environment from any previously loaded modules
+module purge > /dev/null 2>&1
 
-# Start JupyterLab
-jupyter lab --no-browser --ip $(hostname)</pre>
+   # Load the module environment suitable for the job
+   module load GCC/10.3.0 JupyterLab/3.2.8 OpenMPI/4.1.1 SciPy-bundle/2021.05 matplotlib/3.4.2
 
-<h3>&nbsp;</h3>
+   # Start JupyterLab
+   jupyter lab --no-browser --ip $(hostname)
 
-<p>See <a href="#flags">here for an explanation of the options</a> to jupyter.</p>
+With some own-installed Python packages
+'''''''''''''''''''''''''''''''''''''''
 
-<h3><br />
-With some own-installed Python packages</h3>
-
-<p>Running JupyterLab with some own-installed Python packages requires you to use a virtual environment and your own Jupyter kernel. This is not as difficult as it may sound.</p>
+Running JupyterLab with some own-installed Python packages requires you to use a virtual environment and your own Jupyter kernel. This is not as difficult as it may sound.
 
 <p><strong>Example Own-installed pyDOE and torch. Using JupyterLab/3.4.2</strong></p>
 
