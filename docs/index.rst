@@ -61,6 +61,7 @@ Code of Conduct
 We strive to follow the Contributor Covenant Code of Conduct to foster an inclusive and welcoming environment for everyone.
 
 In short:
+
 - Use welcoming and inclusive language
 - Be respectful of different viewpoints and experiences
 - Gracefully accept constructive criticism
@@ -68,10 +69,12 @@ In short:
 - Show courtesy and respect towards other community members
 
 Furthermore, as this is a hands-on, interactive workshop:
+
 - Be kind to each other and help each other as best you can.
 - If you can't help someone or there is some problem, let someone know.
 
 Finally, if you notice something that prevents you from learning as well as you can, let us know and don't suffer silently, even the "little things":
+
   - Volume too low?
   - Font size too small?
   - Generally confusing instructor?
@@ -133,7 +136,7 @@ Example of screen arrangement for the "worst case"!
 
 If you only have one screen to work with for the course, try to fit: 
 
-.. code-bock:: mark-down
+.. code-block:: sh
 
    ╔════════════╗ ╔══════════════╗
    ║            ║ ║  TERMINAL    ║
@@ -181,7 +184,7 @@ Prepare your environment now!
         - ThinLinc app: ``<user>@rackham-gui.uppmax.uu.se``
         - ThinLinc in web browser: ``https://rackham-gui.uppmax.uu.se``
       
-      2. If not already: `**create a working directory** where you can code along.
+      2. If not already: **create a working directory** where you can code along.
          - We recommend creating it under the course project storage directory
    
       3. Example. If your username is "mrspock" and you are at UPPMAX, then we recommend you create this folder: 
@@ -280,21 +283,21 @@ Common features
      - Rackham
      - Snowy
      - Bianca
-   * - Cores per compute node
+   * - Cores/compute node
      - 28 (72 for largemem part)
      - 20
      - 16
      - 16
-   * - Memory per compute node
+   * - Memory/compute node
      - 128-3072 GB 
      - 128-1024 GB
      - 128-4096 GB
      - 128-512 GB
    * - GPU
-     - NVidia V100, A100 + old K80s
+     - NVidia V100, A100, old K80s
      - None
-     - Nvidia T4 
-     - 2 NVIDIA A100
+     - NVidia T4 
+     - NVidia A100
 
  
 Material for improving your programming skills
