@@ -74,7 +74,7 @@ Check for R versions
 
          $ module spider R/4.0.4 
 
-.. admonition:: Output at UPPMAX as of January 24 2023
+.. admonition:: Output at UPPMAX as of October 15 2023
    :class: dropdown
     
        .. code-block::  tcl
@@ -92,7 +92,6 @@ Check for R versions
                 R/3.4.3
                 R/3.5.0
                 R/3.5.2
-                R/3.6.0-foss-2019a
                 R/3.6.0
                 R/3.6.1
                 R/4.0.0
@@ -116,7 +115,7 @@ Check for R versions
           ----------------------------------------------------------------------------
 
 
-.. admonition:: Output at HPC2N as of 20 January 2023
+.. admonition:: Output at HPC2N as of 15 October 2023
     :class: dropdown
 
         .. code-block:: tcl
@@ -134,8 +133,9 @@ Check for R versions
                  R/4.0.4
                  R/4.1.0
                  R/4.1.2
+                 R/4.1.3
               Other possible modules matches:
-                 AMPtorch  Amber  Armadillo  Arrow  Bader  BerkeleyGW  BioPerl  Brotli  CUDAcore  ChimeraX  CloudCompare  CubeWriter  DendroPy  ESPResSo  ...
+                 AMPtorch  Amber  Armadillo  Arrow  Bader  BerkeleyGW  BioPerl  ...
                     
            -----------------------------------------------------------------------------------------------------------------------------------------------
              To find other possible module matches execute:
@@ -147,7 +147,7 @@ Check for R versions
              Note that names that have a trailing (E) are extensions provided by other modules.
              For example:
              
-                $ module spider R/4.1.2
+                $ module spider R/4.1.3
            -----------------------------------------------------------------------------------------------------------------------------------------------
 
 
