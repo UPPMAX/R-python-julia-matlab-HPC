@@ -96,16 +96,60 @@ First create a project under the course project directory and cd to it
 
       .. code-block:: console
 
-         $ mkdir -v /proj/py-r-jl/matpiq/R/r_proj && cd $_
+         $ mkdir -v /proj/naiss2023-22-914/<your-dir>/R/r_proj && cd $_
       
    .. tab:: HPC2N
-
+ 
       .. code-block:: console
 
-         $ mkdir -v /proj/nobackup/<your-project-id>/matpiq/<language>/r_proj &&  cd $_
+         $ mkdir -v /proj/nobackup/hpc2n2023-110/<your-dir>/R/r_proj && cd $_
 
-Make sure you have loaded ``R_packages`` on UPPMAX or ``R`` on keb. Next,
+Make sure you have loaded ``R_packages`` on UPPMAX or ``R`` on HPC2N. Next,
 launch the ``R`` interpreter and initialize an ``renv`` environment.
+
+NOTE: ``renv`` is not available on HPC2N, and you need to install it yourself: 
+
+.. admonition:: Install renv
+    
+     :class: dropdown   
+      .. code-block:: console
+
+         $ module load GCC/11.2.0  OpenMPI/4.1.1 R-bundle-Bioconductor/3.14-R-4.1.2
+         $ R
+         R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+         Copyright (C) 2021 The R Foundation for Statistical Computing
+         Platform: x86_64-pc-linux-gnu (64-bit)
+
+         R is free software and comes with ABSOLUTELY NO WARRANTY.
+         You are welcome to redistribute it under certain conditions.
+         Type 'license()' or 'licence()' for distribution details.
+
+         Natural language support but running in an English locale
+
+         R is a collaborative project with many contributors.
+         Type 'contributors()' for more information and
+         'citation()' on how to cite R or R packages in publications.
+
+         Type 'demo()' for some demos, 'help()' for on-line help, or
+         'help.start()' for an HTML browser interface to help.
+         Type 'q()' to quit R.
+
+         > install.packages('renv')
+         Installing package into ‘/cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/R-bundle-Bioconductor/3.14-foss-2021b-R-4.1.2’
+         (as ‘lib’ is unspecified)
+         Warning in install.packages("renv") :
+         'lib = "/cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/R-bundle-Bioconductor/3.14-foss-2021b-R-4.1.2"' is not writable
+         Would you like to use a personal library instead? (yes/No/cancel) yes
+         Would you like to create a personal library
+         ‘/home/b/bbrydsoe/R-packages-4.1.2’
+         to install packages into? (yes/No/cancel) yes
+         --- Please select a CRAN mirror for use in this session ---
+         Secure CRAN mirrors
+
+         ...
+
+
+      Pick 62: Sweden (Umeå) [https]
 
 
 .. code-block:: R
