@@ -112,13 +112,13 @@ NOTE: ``renv`` is not available on HPC2N, and you need to install it yourself:
 .. admonition:: Install renv
     
      :class: dropdown   
-      .. code-block:: console
+           .. code-block:: console
 
-         $ module load GCC/11.2.0  OpenMPI/4.1.1 R-bundle-Bioconductor/3.14-R-4.1.2
-         $ R
-         R version 4.1.2 (2021-11-01) -- "Bird Hippie"
-         Copyright (C) 2021 The R Foundation for Statistical Computing
-         Platform: x86_64-pc-linux-gnu (64-bit)
+              $ module load GCC/11.2.0  OpenMPI/4.1.1 R-bundle-Bioconductor/3.14-R-4.1.2
+              $ R
+              R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+              Copyright (C) 2021 The R Foundation for Statistical Computing
+              Platform: x86_64-pc-linux-gnu (64-bit)
 
          R is free software and comes with ABSOLUTELY NO WARRANTY.
          You are welcome to redistribute it under certain conditions.
