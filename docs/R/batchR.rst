@@ -23,7 +23,7 @@ Running R in batch mode
 
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
 
-The batch system used at both UPPMAX and HPC2N is called SLURM. 
+The batch system used at both UPPMAX and HPC2N (and most other HPC centres in Sweden) is called SLURM. 
 
 SLURM is an Open Source job scheduler, which provides three key functions
 
