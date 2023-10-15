@@ -85,7 +85,7 @@ and installation – that is, you’d prefer to manually install the packages yo
 project requires on your own – you can use ``renv::init(bare = TRUE)`` to
 initialize a project with an empty project library.
 
-Example - Installing ``stringr``
+Example - Installing ``knitr``
 ********************************
 
 First create a project under the course project directory and cd to it
@@ -111,6 +111,7 @@ NOTE: ``renv`` is not available on HPC2N, and you need to install it yourself:
 
 .. admonition:: Install renv    
     :class: dropdown   
+
           .. code-block:: console
 
              $ module load GCC/11.2.0  OpenMPI/4.1.1 R-bundle-Bioconductor/3.14-R-4.1.2
@@ -148,7 +149,7 @@ NOTE: ``renv`` is not available on HPC2N, and you need to install it yourself:
              ...
 
 
-           Pick 62: Sweden (Umeå) [https]
+         Pick 62: Sweden (Umeå) [https]
 
 
 .. code-block:: R
