@@ -1,6 +1,6 @@
 #!/bin/bash
 # Serial batch script for Python, Scientific Python packages, and loading your virtual environment
-#SBATCH -A hpc2nXXXX-YYY # Change to your own project ID
+#SBATCH -A hpc2n2023-110 # Change to your own project ID
 #SBATCH --time=00:10:00 # Asking for 10 minutes
 #SBATCH -n 1 # Asking for 1 core
 
