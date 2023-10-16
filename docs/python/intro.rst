@@ -75,10 +75,10 @@ Preliminary schedule
      - Using GPUs 
      - 10m
    * - 13:30
-     - Parallel session: Kebnekaise: Jupyter
+     - Parallel session — HPC2N: Jupyter
      - 15m
    * - 
-     - Parallel session: Rackham: Jupyter
+     - Parallel session — UPPMAX: Jupyter + interactive
      - 
    * - 13:45
      - **Break**
@@ -87,7 +87,7 @@ Preliminary schedule
      - Parallel session: Parallel and multi-threaded functions
      - 25m
    * -    
-     - Parallel session: Bianca: Conda & interactive work on the compute nodes
+     - Parallel session — UPPMAX: Conda
      - 
    * - 14:25
      - Conclusion & Q/A
