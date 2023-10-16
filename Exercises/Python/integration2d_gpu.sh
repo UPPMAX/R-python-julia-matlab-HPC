@@ -9,10 +9,7 @@
 #SBATCH --exclusive
 
 ml purge > /dev/null 2>&1
-ml GCCcore/11.2.0 Python/3.9.6
-ml GCC/11.2.0 OpenMPI/4.1.1
-ml CUDA/11.4.1
-
-source /proj/nobackup/hpc2n2023-110/<your-dir>/<path-to-your-venv-dir>/bin/activate
+module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1
 
 python integration2d_gpu.py
+python integration2d_gpu_shared.py
