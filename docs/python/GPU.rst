@@ -345,6 +345,8 @@ Exercises
    Prepare a batch script to run these two versions of the integration 2D with Numba support
    and monitor the timings for both cases.
 
+Here follows a solution for HPC2N. Try and make it run on Snowy, by using a numba you install in a virtual environment and doing the changes suggested by the UPPMAX solution for add-list.py above. 
+   
 .. solution:: Solution for HPC2N
     :class: dropdown
 
