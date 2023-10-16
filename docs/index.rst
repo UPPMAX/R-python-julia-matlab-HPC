@@ -351,7 +351,7 @@ Third level
    julia/batchJulia.rst
    julia/interactiveJulia.rst
    common/parallel.rst
-   julia/packagesUPPMAX.rst
+   julia/packagesBianca.rst
    julia/exercisesJulia.rst
    julia/summaryJulia.rst
    
