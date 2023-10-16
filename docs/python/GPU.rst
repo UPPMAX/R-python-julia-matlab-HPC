@@ -32,6 +32,7 @@ racing cars can drive whereas a GPU would be a broader road where plenty of slow
 
 
 .. figure:: ../../img/cpu-gpu-highway.png
+   :width: 450
    :align: center
 
    Cars and roads analogy for the CPU and GPU behavior. The compact road is analogous to the CPU
