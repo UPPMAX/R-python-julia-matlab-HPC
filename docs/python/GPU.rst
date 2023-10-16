@@ -57,37 +57,8 @@ and GPU processing internally without the programmer needing to do so.
 Numba example
 -------------
 
-Numba is installed as a module at HPC2N, but not in a version compatible with the Python we 
-are using in this course (3.9.5), so we will have to install it ourselves. The process is the same
-as in the examples given for the isolated/virtual environment, and we will be using the virtual 
-environment created earlier here. We also need numpy, so we are loading SciPy-bundle as we have done before: 
+Numba is installed on both HPC2N and UPPMAX. We also need numpy, so we are loading SciPy-bundle as we have done before: 
 
-.. admonition::  Python 3.9.5 as the basis
-    :class: dropdown
-   
-        Load Python 3.9.5 and its prerequisites + SciPy-bundle + CUDA, then activate the virtual environment before installing numba
-        If you code-along, then remember to change the path to your own in the example below!
-   
-        .. code-block:: console
-      
-             $ module load GCC/10.3.0 OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1
-             $ source /proj/nobackup/support-hpc2n/bbrydsoe/vpyenv/bin/activate 
-             (vpyenv) b-an01 [/proj/nobackup/support-hpc2n/bbrydsoe]$ pip install --no-cache-dir --no-build-isolation numba
-             Collecting numba
-               Downloading numba-0.56.0-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.5 MB)
-                    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.5/3.5 MB 38.7 MB/s eta 0:00:00
-             Requirement already satisfied: setuptools in /pfs/proj/nobackup/fs/projnb10/support-hpc2n/bbrydsoe/vpyenv/lib/python3.9/site-packages (from numba) (63.1.0)
-             Requirement already satisfied: numpy<1.23,>=1.18 in /cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/SciPy-bundle/2021.05-foss-2021a/lib/python3.9/site-packages (from numba) (1.20.3)
-             Collecting llvmlite<0.40,>=0.39.0dev0
-               Downloading llvmlite-0.39.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (34.6 MB)
-                    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 34.6/34.6 MB 230.0 MB/s eta 0:00:00
-             Installing collected packages: llvmlite, numba
-             Successfully installed llvmlite-0.39.0 numba-0.56.0
-           
-             [notice] A new release of pip available: 22.1.2 -> 22.2.2
-             [notice] To update, run: pip install --upgrade pip
-
-We can ignore the comment about pip. The package was successfully installed. now let us try using it. 
 We are going to use the following program for testing (it was taken from 
 https://linuxhint.com/gpu-programming-python/ but there are also many great examples at 
 https://numba.readthedocs.io/en/stable/cuda/examples.html): 
@@ -140,7 +111,7 @@ https://numba.readthedocs.io/en/stable/cuda/examples.html):
              if __name__ == "__main__":
                main()
                  
-As before, we need a batch script to run the code. There are no GPUs on the login node. 
+As before, we need the batch system to run the code. There are no GPUs on the login nodes. 
 
 .. tabs::
 
@@ -148,7 +119,7 @@ As before, we need a batch script to run the code. There are no GPUs on the logi
       
       .. code-block:: console
       
-         [bjornc@rackham3 ~]$ interactive -A naiss2023-22-500 -n 1 -M snowy --gres=gpu:1  -t 1:00:01 --mail-type=BEGIN --mail-user=bjorn.claremar@uppmax.uu.se
+         [bjornc@rackham3 ~]$ interactive -A naiss2023-22-914 -n 1 -M snowy --gres=gpu:1  -t 1:00:01 --mail-type=BEGIN --mail-user=bbrydsoe@hpc2n.umu.se
          You receive the high interactive priority.
 
          Please, use no more than 8 GB of RAM.
@@ -192,21 +163,19 @@ As before, we need a batch script to run the code. There are no GPUs on the logi
 
           #!/bin/bash
           # Remember to change this to your own project ID after the course!
-          #SBATCH -A hpc2n2023-089     # HPC2N ID - change to naiss2023-22-500 for UPPMAX
+          #SBATCH -A hpc2n2023-110     # HPC2N ID - change to naiss2023-22-914 for UPPMAX
           # We are asking for 5 minutes
           #SBATCH --time=00:05:00
-          # Asking for one K80
-          #SBATCH --gres=gpu:k80:1     # For HPC2N. Remove if on UPPMAX
+          # Asking for one GPU
+          #SBATCH --gres=gpu:v100:1     # For HPC2N. Remove/comment out if on UPPMAX
           ##SBATCH -M snowy            # For UPPMAX. Remove leading # to use
           ##SBATCH --gres=gpu:1        # For UPPMAX. Remove leading # to use
 
           # Remove any loaded modules and load the ones we need
           module purge  > /dev/null 2>&1
-          module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1
-
-          # Activate the virtual environment we installed to
-          source /proj/nobackup/support-hpc2n/bbrydsoe/vpyenv/bin/activate
-
+          module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1 # For HPC2N. Comment out/remove if on UPPMAX
+          # module load python/3.9.5    # For UPPMAX. Remove leading # to use 
+		      
           # Run your Python script
           python add-list.py
 
