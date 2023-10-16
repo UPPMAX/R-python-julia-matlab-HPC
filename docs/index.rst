@@ -335,6 +335,7 @@ Third level
    python/packages.rst
    python/isolated.rst
    python/batchPython.md
+   python/GPU.rst
    python/interactivePython.md
    python/jupyter.md
    common/parallel.rst
