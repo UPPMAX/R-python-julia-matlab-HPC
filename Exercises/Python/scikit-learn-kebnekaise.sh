@@ -10,6 +10,18 @@
 module purge  > /dev/null 2>&1
 module load GCC/10.3.0  OpenMPI/4.1.1 TensorFlow/2.6.0-CUDA-11.3.1
 
+# DO THIS BEFORE SUBMITTING!
+# BEGIN
+# Create a virtual environment and install sklearn
+# Do the following on Kebnekaise:
+# ml GCC/10.3.0  OpenMPI/4.1.1 TensorFlow/2.6.0-CUDA-11.3.1
+# python -m venv --system-site-packages scikit-venv
+# source vpyenv/bin/activate
+# pip install --no-cache-dir --no-build-isolation sklearn
+# deactivate
+# Now you can submit with "sbatch scikit-learn-kebnekaise.sh" 
+# END 
+
 # Activate the virtual environment we installed to
 source vpyenv/bin/activate
 
