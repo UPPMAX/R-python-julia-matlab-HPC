@@ -81,7 +81,11 @@ HPC resources. The situation would be similar to turn on many washing machines t
 a single item, we can waste energy easily.
 
 .. figure:: ../../img/laundry-machines.svg
-   :width: 550
+   :width: 350
+   :align: center
+
+.. figure:: ../../img/laundry-machines.svg
+   :width: 350
    :align: center
 
    Under-using a cluster.
