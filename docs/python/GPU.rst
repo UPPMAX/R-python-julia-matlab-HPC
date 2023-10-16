@@ -34,7 +34,7 @@ racing cars can drive whereas a GPU would be a broader road where plenty of slow
    :width: 450
    :align: center
 
-   Schematics of a hybrid CPU-GPU architecture. A GPU K80 card consisting of two engines is attached to a NUMA island which in turn contains 14 cores. The NUMA island and the GPUs are connected through a PCI-E interconnect which makes the data transfer between both components rather slow.
+   Cars and roads analogy for the CPU and GPU behavior. The compact road is analogous to the CPU (low latency, low throughput) and the broader road is analogous to the GPU (high latency, high throughput)
 
 Not every Python program is suitable for GPU acceleration. GPUs process simple functions rapidly, 
 and are best suited for repetitive and highly-parallel computing tasks. GPUs were originally 
