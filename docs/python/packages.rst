@@ -432,3 +432,10 @@ Exercises
    
       - That is, you cannot load the python module and use the packages therein inside you Conda environment.
     
+Links
+---------
+
+* `Video: Load and use Python packages on the UPPMAX and HPC2N HPC clusters (YouTube) <https://youtu.be/novRJfAa2QA>`_
+
+    
+    
