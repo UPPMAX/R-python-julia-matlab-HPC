@@ -35,9 +35,6 @@ racing cars can drive whereas a GPU would be a broader road where plenty of slow
    :width: 450
    :align: center
 
-   Cars and roads analogy for the CPU and GPU behavior. The compact road is analogous to the CPU
-   (low latency, low throughput) and the broader road is analogous to the GPU (high latency, high throughput).
-
 Not every Python program is suitable for GPU acceleration. GPUs process simple functions rapidly, 
 and are best suited for repetitive and highly-parallel computing tasks. GPUs were originally 
 designed to render high-resolution images and video concurrently and fast, but since they can 
