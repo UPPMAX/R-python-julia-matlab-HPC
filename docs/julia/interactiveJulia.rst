@@ -270,6 +270,14 @@ With ``notebook(dir="</path/to/work/dir/>", detached=true)`` the notebook will n
    
    https://uppmax.github.io/HPC-python/jupyter.html
 
+.. admonition:: Running IJulia in Jupyter on compute nodes at HPC2N
+
+   - Jupyter is rather slow on the compute nodes. 
+   - This can be fixed by opening jupyter in a web browsers on you local computer.
+   - Remember to load python as well and to go via the ``julia -p <number of cores>`` and ``notebook(<options>)`` inside the julia session instead of starting ``jupiter-notebook`` in the bash shell.
+   
+   https://www.hpc2n.umu.se/resources/software/jupyter
+
 .. keypoints::
 
    - Start an interactive session on a calculation node by a SLURM allocation
