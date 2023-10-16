@@ -115,7 +115,7 @@ If you want it in a certain place...
       
       .. code-block:: console
 
-         $ python -m venv --system-site-packages /proj/naiss2023-22-914/<user>/python
+         $ python -m venv --system-site-packages /proj/naiss2023-22-914/<user>/python/Example
     
       Activate it.
 
@@ -496,3 +496,13 @@ Exercises
    
       - UPPMAX has Conda and venv and virtualenv
       - HPC2N has venv and virtualenv
+
+
+Links
+---------
+
+* `Video: How to use a Python venv on the Rackham UPPAX cluster (YouTube) <https://youtu.be/OjftEQ23xYk>`_
+* `Presentation: How to use a Python venv on the Rackham UPPAX cluster (PDF) <https://github.com/UPPMAX/R-python-julia-HPC/blob/main/docs/python/isolated.pdf>`_
+* `Presentation: How to use a Python venv on the Rackham UPPAX cluster (ODP) <https://github.com/UPPMAX/R-python-julia-HPC/blob/main/docs/python/isolated.odp>`_
+    
+
