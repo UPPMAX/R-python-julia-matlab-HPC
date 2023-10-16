@@ -350,8 +350,8 @@ Third level
    julia/isolatedJulia.rst
    julia/batchJulia.rst
    julia/interactiveJulia.rst
-   julia/packagesUPPMAX.rst
    common/parallel.rst
+   julia/packagesUPPMAX.rst
    julia/exercisesJulia.rst
    julia/summaryJulia.rst
    
@@ -364,9 +364,10 @@ Third level
    R/packagesR.rst
    R/isolatedR
    R/batchR.rst
-   common/parallel.rst
    R/interactiveR.rst
    R/rstudio.rst
+   common/parallel.rst
+   R/packagesBianca.rst
    R/exercisesR.rst
    R/summaryR.rst
 
