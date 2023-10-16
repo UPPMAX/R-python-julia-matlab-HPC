@@ -17,13 +17,13 @@ module load GCC/10.3.0  OpenMPI/4.1.1 TensorFlow/2.6.0-CUDA-11.3.1
 # ml GCC/10.3.0  OpenMPI/4.1.1 TensorFlow/2.6.0-CUDA-11.3.1
 # python -m venv --system-site-packages scikit-venv
 # source vpyenv/bin/activate
-# pip install --no-cache-dir --no-build-isolation sklearn
+# pip install --no-cache-dir --no-build-isolation scikit-learn
 # deactivate
 # Now you can submit with "sbatch scikit-learn-kebnekaise.sh" 
 # END 
 
 # Activate the virtual environment we installed to
-source vpyenv/bin/activate
+source scikit-venv/bin/activate
 
 # Run your Python script
 python scikit-learn-kebnekaise.py
