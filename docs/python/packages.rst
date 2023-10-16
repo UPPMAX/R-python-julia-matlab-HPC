@@ -437,6 +437,7 @@ Links
 ---------
 
 * `Video: Load and use Python packages on the UPPMAX and HPC2N HPC clusters using pip (YouTube) <https://youtu.be/novRJfAa2QA>`_
-
+* `Presentation: Load and use Python packages on the UPPMAX and HPC2N HPC clusters using pip (PDF) <find_and_use_packages.pdf>`_
+* `Presentation: Load and use Python packages on the UPPMAX and HPC2N HPC clusters using pip (ODP) <find_and_use_packages.odp>`_
     
     
