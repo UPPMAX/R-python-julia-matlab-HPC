@@ -35,7 +35,7 @@ itself. Julia distinguishes between **project environments** and **package direc
 Tom's Obvious Minimal Language (TOML) files (Project.toml, Manifest.toml) are present while in the
 latter also source files are included with some specific layout. 
 
-If you have started Julia once you will get the folders like this in the ~/.julia folder.
+If you have started Julia previously, you will get the folders like this in the ~/.julia folder.
 
 .. code-block:: bash
    
@@ -89,7 +89,7 @@ In a fresh Julia installation, we can see the following project information:
    Pkg.API.ProjectInfo(nothing, nothing, nothing, false, Dict{String, Base.UUID}(), "/pfs/stor10/users/home/p/pojedama/.julia/environments/v1.8/Project.toml")
 
 Here, we can see among other things that nothing (any package) has been added to project,
-the UUID of the project, and the location of the toml file.  
+the UUID of the project, and the location of the *.toml* file.  
 Let's install a package ``DFTK``, for instance, that performs Density Functional Theory
 routines (https://juliapackages.com/p/dftk):
 
@@ -101,7 +101,7 @@ routines (https://juliapackages.com/p/dftk):
    Precompiling project...
    104 dependencies successfully precompiled in 43 seconds
 
-Now, the project information tells us about the new installed package:
+Now, the project information tells us about the recently installed package:
 
 .. code-block:: julia-repl
 
@@ -190,7 +190,7 @@ the content of these files:
 
    ...
 
-Here, we can observe that the ``Project.toml`` only gives us the UUID of the project while the
+Here, we notice that the ``Project.toml`` only gives us the UUID of the project while the
 ``Manifest.toml`` file contains the full information about the dependencies versions and organization
 layout. Notice the message regarding editing for the latter. Let's leave this environment: 
 
@@ -202,7 +202,7 @@ layout. Notice the message regarding editing for the latter. Let's leave this en
 
    (v1.8) pkg> 
 
-Once you have created an environment, it can be activated in several manners. For instance, the one we
+Once you have created an environment, it can be activated in several manners. The one we
 saw before is by activating it in ``package`` mode with the command ``activate .``. You may also be able to
 activate the environment inside the Julia script by calling these lines in your ``.jl`` file:
 
@@ -231,6 +231,8 @@ or ``Pkg.generate()`` in ``Julian`` mode:
      myfirstpackage/Project.toml
      myfirstpackage/src/myfirstpackage.jl
 
+In contrast to the ``project environment``, the ``package environment`` has a default file
+structure, see for instance the **src** directory that is created.
 One can activate this environment in the following way:
 
 .. code-block:: julia

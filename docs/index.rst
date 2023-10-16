@@ -335,9 +335,11 @@ Third level
    python/packages.rst
    python/isolated.rst
    python/batchPython.md
-   python/jupyter.md
+   python/GPU.rst
    python/interactivePython.md
+   python/jupyter.md
    common/parallel.rst
+   python/condaUPPMAX.rst
    python/exercisesPython.rst
    python/summaryPython.rst
    
@@ -351,7 +353,7 @@ Third level
    julia/batchJulia.rst
    julia/interactiveJulia.rst
    common/parallel.rst
-   julia/packagesUPPMAX.rst
+   julia/packagesBianca.rst
    julia/exercisesJulia.rst
    julia/summaryJulia.rst
    

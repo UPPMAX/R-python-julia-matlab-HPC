@@ -64,9 +64,6 @@ Preliminary schedule
    * - 13.00
      - SLURM Batch scripts for R jobs  
      - Lecture+code along + exercise 25m
-   * - 13.20
-     - Parallel computing, ML  
-     - Lecture+code along + exercise 25m
    * - 13.30
      - Parallel session — UPPMAX: Thinlinc and RStudio 
      - Lecture+code along 15m
@@ -77,10 +74,10 @@ Preliminary schedule
      - **break**
      - 
    * - 14.00
-     - Parallel session — UPPMAX: Interactive
+     - Parallel session — UPPMAX: Packages on Bianca
      - Lecture+code along 15m
    * - 14.00
-     - Parallel session — HPC2N: Interactive
+     - Parallel session — HPC2N: Parallel and multi-threaded functions
      - Lecture+code along 15m   
    * - 14.25
      - Summary and Q&A on-demand

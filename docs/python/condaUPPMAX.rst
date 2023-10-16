@@ -1,5 +1,5 @@
-Conda
-=====
+Conda at UPPMAX
+===============
 
 .. questions::
 

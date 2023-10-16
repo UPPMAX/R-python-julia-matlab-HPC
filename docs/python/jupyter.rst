@@ -84,13 +84,13 @@ or
    You could also use ``jupyter`` (``-lab`` or ``-notebook``) in a virtual environment.
 
    If you decide to use the --system-site-packages configuration you will get ``jupyter`` from the python modules you created your virtual environment with.
-   However, you **won't find your locally installed packages** from that jupyter session. To solve this reinstall jupyter within the virtual environment by force::
+   However, you **won't find your locally installed packages** from that jupyter session. To solve this reinstall jupyter within the virtual environment by force:
 
    .. code-block:: console
 
       $ pip install -I jupyter
 
-   and run::
+   and run:
 
    .. code-block:: console
 

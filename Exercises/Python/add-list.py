@@ -32,11 +32,11 @@ def main():
   vector_add_gpu(a_source, b_source)
   vector_add_gpu_time = timer() - start
 
-   # Report times
-   print("CPU function took %f seconds." % vector_add_cpu_time)
-   print("GPU function took %f seconds." % vector_add_gpu_time)
+  # Report times
+  print("CPU function took %f seconds." % vector_add_cpu_time)
+  print("GPU function took %f seconds." % vector_add_gpu_time)
 
-   return 0
+  return 0
 
 if __name__ == "__main__":
   main()
