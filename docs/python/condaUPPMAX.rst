@@ -216,7 +216,7 @@ Exercises
     
           Write this in the terminal
           
-          .. code-block:: sh
+          .. code-block:: console
 
             $ module load conda
             $ export CONDA_ENVS_PATH=/proj/py-r-jl/<user>/python
@@ -226,6 +226,12 @@ Exercises
             $ python -V
             $ source deactivate
 
+.. admonition:: Using pip on Bianca
+
+   - Since Bianca 
+   If not available on Bianca already (like Conda repositories) you may have to use the wharf to install your tools
+
+   https://uppmax.github.io/bianca_workshop/pip/
 
 .. keypoints::
 
