@@ -57,7 +57,7 @@ GPUs on UPPMAX and HPC2N systems
 
 There are generally either not GPUs on the login nodes or they cannot be accessed for computations. To use them you need to either launch an interactive job or submit a batch job.
 
-**UPPMAX**
+**UPPMAX only**
 
 Rackham's compute nodes do not have GPUs. You need to use Snowy for that. A useful module on Snowy is ``python_ML_packages/3.9.5-gpu``.
 
