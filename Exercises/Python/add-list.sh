@@ -10,8 +10,8 @@
 module purge  > /dev/null 2>&1
 module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1
 
-# Activate the virtual environment we installed to
-source /proj/nobackup/support-hpc2n/bbrydsoe/vpyenv/bin/activate
+# Activate the virtual environment we installed to (change to your path and venv dir name)
+source /proj/nobackup/support-hpc2n/bbrydsoe/Example-cuda/bin/activate
 
 # Run your Python script
 python add-list.py
