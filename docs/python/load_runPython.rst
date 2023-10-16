@@ -108,7 +108,7 @@ Check for Python versions
           $ module -r spider '.*python.*'
 
 
-.. admonition:: Output at HPC2N as of 4 Oct 2023 
+.. admonition:: Output at HPC2N (Skylake nodes) as of 4 Oct 2023 
     :class: dropdown
 
         .. code-block:: tcl

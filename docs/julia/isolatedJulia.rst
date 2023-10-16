@@ -5,17 +5,17 @@ Packages and isolated environments
    
    - Julia **packages broaden the use of Julia** considerably! 
    - Instead of writing code yourself there may be others that have done the same!
-
    - Isolated environments solve a couple of problems:
+
       - You can install specific, also older, versions into them.
       - You can create one for each project and no problem if the two projects require different versions.
       - You can remove the environment and create a new one, if not needed or with errors.
    
 .. questions::
 
-   - How to install packages
+   - How to install packages?
    - How to work with isolated environments?
-   - How to check for and use the UPPMAX pre-installed packages
+   - How to check for and use the UPPMAX pre-installed packages?
    
 
 .. objectives:: 

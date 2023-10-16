@@ -284,7 +284,7 @@ Batch mode
           .. code-block:: sh
  
              #!/bin/bash
-             #SBATCH -A naiss2023-22-44 # Change to your own after the course
+             #SBATCH -A naiss2023-22-914 # Change to your own after the course
              #SBATCH --time=00:10:00 # Asking for 10 minutes
              #SBATCH -n 1 # Asking for 1 core
              
@@ -303,7 +303,7 @@ Batch mode
           .. code-block:: sh
  
              #!/bin/bash
-             #SBATCH -A hpc2nXXXX-YYY # Change to your own project ID
+             #SBATCH -A hpc2n2023-110 # Change to your own project ID
              #SBATCH --time=00:10:00 # Asking for 10 minutes
              #SBATCH -n 1 # Asking for 1 core
              

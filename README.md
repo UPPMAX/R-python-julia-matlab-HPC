@@ -1,6 +1,6 @@
 # R, Python and Julia in HPC
 
-This repository contains the source code for the UPPMAX [R, Python and Julia in HPC course](https://uppmax.github.io/R-python-julia-HPC/)
+This repository contains the source code for the UPPMAX/HPC2N [R, Python and Julia in HPC course](https://uppmax.github.io/R-python-julia-HPC/)
 
 ## Credits
 

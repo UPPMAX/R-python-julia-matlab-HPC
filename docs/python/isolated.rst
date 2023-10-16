@@ -63,10 +63,10 @@ In this course we will look at the following tools for creating and using isolat
  
    
 Virtual environment - venv & virtualenv
-'''''''''''''''''''''''''''''''''''''''
+---------------------------------------
 
 Example
-#######
+'''''''
 
 .. tip::
     
@@ -144,7 +144,7 @@ Note that your prompt is changing to start with (name of your vitual environment
 
 
 Using pip
-'''''''''
+---------
 
 Install your packages (here numpy and matplotlib, both with specific versions) with ``pip``. While not always needed, it is often a good idea to give the correct versions you want, to ensure compatibility with other packages you use: 
 
@@ -171,7 +171,7 @@ Everytime you need the tools available in the virtual environment you activate i
     
 
 Prepare the course environment
-''''''''''''''''''''''''''''''
+------------------------------
 
 .. tip::
     
@@ -269,7 +269,7 @@ Create a virtual environment called ``vpyenv`. First load the python version you
          $ source Example3/bin/activate
     
 Using setup.py
-''''''''''''''
+--------------
 
 Some Python packages are only available as downloads, for instance via github, to install with setup.py or similar file. If that is the case for the package you need, this is how you do it: 
 
@@ -294,7 +294,7 @@ You can use it as normal inside Python (remember to load dependent modules as we
 
 
 Using the self-installed packages in Python
-'''''''''''''''''''''''''''''''''''''''''''
+-------------------------------------------
 
 - To use the Python packages you have installed under your virtual environment, load your Python module + prerequisites, load any site-installed Python packages you used, and then activate the environment.
 - Now your own packages can be accessed from within Python, just like any other Python package. 
@@ -343,7 +343,7 @@ Using the virtual environment created earlier and the ``spacy`` we installed und
 
 
 Working with virtual environments defined from files
-''''''''''''''''''''''''''''''''''''''''''''''''''''
+----------------------------------------------------
 
 - First create and activate an environment (see above)
 - Create an environment based on dependencies given in an environment file::
@@ -387,36 +387,12 @@ text file which could look like this::
    - Probably Conda will work well for you.
    - https://www.uppmax.uu.se/support/user-guides/python-user-guide/#tocjump_9931546434791352_12
 
-.. warning:: 
-
-   **Running Jupyter in a virtual environment**
-
-   You could also use ``jupyter`` (``-lab`` or ``-notebook``) in a virtual environment.
-
-   If you decide to use the --system-site-packages configuration you will get ``jupyter`` from the python modules you created your virtual environment with.
-   However, you **won't find your locally installed packages** from that jupyter session. To solve this reinstall jupyter within the virtual environment by force::
-
-   .. code-block:: console
-
-      $ pip install -I jupyter
-
-   and run::
-
-   .. code-block:: console
-
-      $ jupyter-notebook
-   
-   Be sure to start the **kernel with the virtual environment name**, like "Example", and not "Python 3 (ipykernel)".
-
 
 More info
-'''''''''
+---------
 
 - UPPMAX's documentation pages about installing Python packages and virtual environments: https://www.uppmax.uu.se/support/user-guides/python-user-guide/
 - HPC2N's documentation pages about installing Python packages and virtual environments: https://www.hpc2n.umu.se/resources/software/user_installed/python
-
-
-
 
 .. admonition:: Summary of workflow
 
@@ -434,6 +410,10 @@ More info
    - Installed Python modules (modules and own-installed) can be accessed within Python with ``import <package>`` as usual. 
    - The command ``pip list`` given within Python will list the available modules to import. 
    - More about packages and virtual/isolated environment to follow in later sections of the course! 
+
+Exercises
+---------
+
 
 .. challenge:: Create a virtual environment with a requirements file below
 

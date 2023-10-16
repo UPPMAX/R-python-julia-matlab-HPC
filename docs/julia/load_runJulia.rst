@@ -9,7 +9,8 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
 .. objectives:: 
 
    - Show how to load Julia
-   - Show how to run Julia scripts and start the Julia command line
+   - show how to start and use the Julia command line
+   - Show how to run Julia scripts and 
 
 .. admonition:: Short cheat sheet
     :class: dropdown 
@@ -63,15 +64,16 @@ Check for Julia versions
 
          $ module spider Julia/1.8.5
 
-.. admonition:: Output at UPPMAX as of Jan 31 2023
+.. admonition:: Output at UPPMAX as of Oct 14 2023
    :class: dropdown
     
        .. code-block::  tcl
     
           $ module av julia
-          --------------------------------------- /sw/mf/rackham/compilers ---------------------------------------
-             julia/1.0.5_LTS    julia/1.4.2    julia/1.6.3        julia/1.7.2
-             julia/1.1.1        julia/1.6.1    julia/1.6.7_LTS    julia/1.8.5 (D)
+          ----------------------------- /sw/mf/rackham/compilers -----------------------------
+             julia/1.0.5_LTS    julia/1.6.1        julia/1.7.2        julia/1.9.3 (D)
+             julia/1.1.1        julia/1.6.3        julia/1.8.5 (L)
+             julia/1.4.2        julia/1.6.7_LTS    julia/1.9.1
 
            Where:
             D:  Default Module
@@ -80,7 +82,7 @@ Check for Julia versions
           Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 
 
-.. admonition:: Output at HPC2N as of Jan 27th
+.. admonition:: Output at HPC2N as of Oct 14 2023
     :class: dropdown
 
         .. code-block:: tcl
@@ -146,6 +148,40 @@ For this course, we recommend using Julia 1.8.5.
 
          $ ml Julia/1.8.5-linux-x86_64
 
+Exercises
+---------
+
+
+.. challenge:: Getting familiar with Julia REPL
+    
+    Is is important in this course that you know how to navigate on the 
+    Julia command line. This exercise will help you to become more familiar
+    with the REPL. Do the following steps: 
+
+       * Start a Julia session. In the ``Julian`` mode, compute the sum the numbers 
+         5 and 6
+       * Change to the ``shell`` mode and display the current directory
+       * Now, go to the ``package`` mode and list the currently installed packages
+       * Finally, display help information of the function ``println`` in ``help`` mode.
+
+
+
+    .. solution:: Solution for centres
+        :class: dropdown
+            
+            .. code-block:: julia
+    
+                $ julia 
+                julia> 5 + 6
+                julia>;
+                shell> pwd 
+                julia>]
+                pkg> status 
+                julia>?
+                help?> println
+
+
+
 
 Run
 ---
@@ -170,16 +206,20 @@ Run Julia as a session
 
 The Julia prompt (``julian`` mode) looks like this:
 
-.. code-block:: julia
+.. code-block:: julia-repl
    
    julia> 
 
 Exit with 
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
-   <Ctrl-D> or 
-   exit()
+   julia> <Ctrl-D> 
+or 
+
+.. code-block:: julia-repl
+
+   julia> exit()
    
     
 .. challenge:: Loading modules and running scripts

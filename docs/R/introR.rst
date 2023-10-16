@@ -10,7 +10,11 @@ Introduction R
    - Install R packages from CRAN - automatic download and install
    - Write a batchscript for running R
    - Using Rstudio
-   
+
+    **Not covered**
+    
+    - improve R *coding* skills 
+    - Other clusters
         
 .. admonition:: Exercises
 
@@ -115,13 +119,33 @@ language is very useful for data importing and cleaning.
   https://cran.r-project.org/manuals.html
 - A list of CRAN (The Comprehensive R Archive Network) is here:
   https://cran.r-project.org/mirrors.html
-- Data analysis workflows with R and Python:
-  https://aaltoscicomp.github.io/data-analysis-workflows-course/
-- CodeRefinery develops and maintains training material on software best
-  practices for researchers that already write code. Their material addresses
-  all academic disciplines and tries to be as programming language-independent
-  as possible. https://coderefinery.org/lessons/
     
+Material for improving your programming skills
+::::::::::::::::::::::::::::::::::::::::::::::
+
+First level
+...........
+
+`The Carpentries <https://carpentries.org/>`_  teaches basic lab skills for research computing.
+
+- `Programming with R <swcarpentry.github.io/r-novice-inflammation/>`_ 
+
+- `R for reproducible scientific analysis <https://swcarpentry.github.io/r-novice-gapminder/>`_ 
+
+Second level
+::::::::::::
+
+CodeRefinery develops and maintains training material on software best practices for researchers that already write code. Their material addresses all academic disciplines and tries to be as programming language-independent as possible. 
+
+- `Lessons <https://coderefinery.org/lessons/)>`_ 
+- Not yet anything R specific
+
+
+Aalto Scientific Computing
+
+- `Data analysis workflows with R and Python <https://aaltoscicomp.github.io/data-analysis-workflows-course/>`_
+
+
 Other NAISS centres
 -------------------
 

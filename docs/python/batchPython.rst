@@ -84,7 +84,7 @@ Serial code
 
    .. tab:: HPC2N
 
-        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2021.05 and Python/3.9.5  
+        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2022.05 and Python/3.10.4 (+ prerequisites)  
        
         .. code-block:: sh
 

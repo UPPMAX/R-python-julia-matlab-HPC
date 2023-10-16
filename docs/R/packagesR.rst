@@ -119,7 +119,7 @@ way to check is probably starting the interpreter and running the ``libPaths()``
 	
    .. tab:: HPC2N
    
-      Load ``R``, e.g. version 4.1.1 and start the Interpreter
+      Load ``R``, e.g. version 4.0.4 and start the Interpreter
 
       .. code-block:: console 
 
@@ -146,6 +146,8 @@ package library containing almost all packages in the CRAN and BioConductor
 repositories. As of 2021-11-11 there are a total of 21659 R packages installed
 in ``R_packages/4.1.1``. A total of 21740 packages are available in CRAN and
 BioConductor. 
+
+NOTE: that on HPC2N, there are currently only two versions of the ``R-bundle-Bioconductor`` module, one that is compatible with ``R/4.0.0`` and one with ``R/4.1.2``. Thus, if you need the extra packages included in the ``R-bundle-Bioconductor`` module, you should use one of the compatible R versions. Use ``module spider <module>/<version>`` to check for prerequisites, as usual. 
 
 There are many different ways to check if the package you are after is already
 installed - chances are it is! The simplest way is probably to simply try
@@ -240,8 +242,7 @@ R reads the ``$HOME/.Renviron`` file to setup its environment. It should be
 created by R on first run, or you can create it with the command: ``touch
 $HOME/.Renviron``
 
-**NOTE**: In this example we are going to assume you have chosen to place the R
-packages in a directory under your home directory. As mentioned, you will need
+**NOTE**: In this example we are going to assume you have chosen to place the R packages in a directory under your home directory, but in general it might be good to use the project storage for space reasons. As mentioned, you will need
 separate ones for each R version.
 
 If you have not yet installed any packages to R yourself, the environment file
