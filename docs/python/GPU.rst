@@ -137,9 +137,11 @@ As before, we need the batch system to run the code. There are no GPUs on the lo
 
 .. tabs::
 
-   .. tab:: UPPMAX - here we need to install numba because of some temporary error (otherwise we would use the module ``python_ML_packages/3.9.5-gpu`` on Snowy)
+   .. tab:: UPPMAX
       
-      .. code-block:: console
+       Here we need to install numba because of some temporary error (otherwise we would use the module ``python_ML_packages/3.9.5-gpu`` on Snowy)
+
+       .. code-block:: console
       
          [bbrydsoe@rackham3 Python]$ module load python/3.9.5
          [bbrydsoe@rackham3 Python]$ python -m venv --system-site-packages Example-gpu
