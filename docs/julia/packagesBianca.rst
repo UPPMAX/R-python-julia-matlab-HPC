@@ -1,4 +1,4 @@
-Packages at UPPMAX and Bianca (parallel session)
+Packages at Bianca (parallel session)
 ================================================
 
 .. admonition::  Julia modules AKA Julia packages
