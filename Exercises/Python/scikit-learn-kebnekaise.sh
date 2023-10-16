@@ -11,7 +11,7 @@ module purge  > /dev/null 2>&1
 module load GCC/10.3.0  OpenMPI/4.1.1 TensorFlow/2.6.0-CUDA-11.3.1
 
 # Activate the virtual environment we installed to
-#source <path-to-install-dir>/vpyenv/bin/activate
+source vpyenv/bin/activate
 
 # Run your Python script
 python scikit-learn-kebnekaise.py

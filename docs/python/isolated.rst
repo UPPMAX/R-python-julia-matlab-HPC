@@ -271,7 +271,7 @@ Create a virtual environment called ``vpyenv`. First load the python version you
 
 **UPPMAX**
 
-Create a virtual environment called ``Example-gpu` for using on UPPMAX for the numba example under GPUs. First load the python version you want to base your virtual environment on (3.9.5 in this example since that is what is on Snowy):
+Create a virtual environment called ``Example-gpu`` for using on UPPMAX for the numba example under GPUs. First load the python version you want to base your virtual environment on (3.9.5 in this example since that is what is on Snowy):
 
       .. code-block:: console
 
