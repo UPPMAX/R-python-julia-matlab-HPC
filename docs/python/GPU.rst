@@ -30,9 +30,11 @@ In the case of GPUs, the latency is high and the throughput is also high. We can
 of the CPUs and GPUs with cars as in the figure below. A CPU would be compact road where only a few 
 racing cars can drive whereas a GPU would be a broader road where plenty of slow cars can drive.
 
-.. figure:: ../../img/cpu-gpu-highway.png
+.. image:: ../../img/cpu-gpu-highway.png
    :width: 450
    :align: center
+
+   Schematics of a hybrid CPU-GPU architecture. A GPU K80 card consisting of two engines is attached to a NUMA island which in turn contains 14 cores. The NUMA island and the GPUs are connected through a PCI-E interconnect which makes the data transfer between both components rather slow.
 
 Not every Python program is suitable for GPU acceleration. GPUs process simple functions rapidly, 
 and are best suited for repetitive and highly-parallel computing tasks. GPUs were originally 
