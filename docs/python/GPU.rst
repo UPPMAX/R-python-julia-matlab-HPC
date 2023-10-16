@@ -54,6 +54,30 @@ One of the most common use of GPUs with Python is for machine learning or deep l
 these cases you would use something like Tensorflow or PyTorch libraries which can handle CPU
 and GPU processing internally without the programmer needing to do so. 
 
+GPUs on UPPMAX and HPC2N systems
+--------------------------------
+
+There are generally either not GPUs on the login nodes or they cannot be accessed for computations. To use them you need to either launch an interactive job or submit a batch job.
+
+**UPPMAX**
+
+Rackham's compute nodes do not have GPUs. You need to use Snowy for that. A useful module on Snowy is ``python_ML_packages/3.9.5-gpu``.
+
+You need to use this batch command (for x being the number of cards, 1 or 2):
+
+.. code-block::
+
+   #SBATCH -M snowy
+   #SBATCH --gres=gpu:x
+
+**HPC2N**
+
+Kebnekaise's GPU nodes are considered a separate resource, and the regular compute nodes do not have GPUs.
+
+You need to use this to the batch system: ``#SBATCH --gres=gpu:<card>:x``, for <card>=v100 or a100 and x=1 or 2. 
+
+And for the A100 GPUs you also need to use ``#SBATCH -p amd_gpu``
+   
 Numba example
 -------------
 
