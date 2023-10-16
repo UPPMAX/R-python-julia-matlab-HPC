@@ -57,7 +57,7 @@ and GPU processing internally without the programmer needing to do so.
 Numba example
 -------------
 
-Numba is installed on both HPC2N and UPPMAX. We also need numpy, so we are loading SciPy-bundle as we have done before: 
+Numba is installed on HPC2N. We also need numpy, so we are loading SciPy-bundle as we have done before: 
 
 We are going to use the following program for testing (it was taken from 
 https://linuxhint.com/gpu-programming-python/ but there are also many great examples at 
@@ -115,20 +115,25 @@ As before, we need the batch system to run the code. There are no GPUs on the lo
 
 .. tabs::
 
-   .. tab:: UPPMAX
+   .. tab:: UPPMAX - here we need to install numba because of some temporary error (otherwise we would use the module ``python_ML_packages/3.9.5-gpu`` on Snowy)
       
       .. code-block:: console
       
-         [bjornc@rackham3 ~]$ interactive -A naiss2023-22-914 -n 1 -M snowy --gres=gpu:1  -t 1:00:01 --mail-type=BEGIN --mail-user=bbrydsoe@hpc2n.umu.se
+         [bbrydsoe@rackham3 Python]$ module load python/3.9.5
+         [bbrydsoe@rackham3 Python]$ python -m venv --system-site-packages Example-gpu
+         [bbrydsoe@rackham3 Python]$ source Example-gpu/bin/activate
+         (Example-gpu) [bbrydsoe@rackham3 Python]$ pip install --no-cache-dir --no-build-isolation numba
+         (Example-gpu) [bbrydsoe@rackham3 Python]$ interactive -A naiss2023-22-914 -n 1 -M snowy --gres=gpu:1  -t 1:00:01--gres=gpu:1  -t 1:00:01 
          You receive the high interactive priority.
 
          Please, use no more than 8 GB of RAM.
 
-         Waiting for job 6907137 to start...
-         Starting job now -- you waited for 90 seconds.
+         Waiting for job 8483006 to start...
+         Starting job now -- you waited for 10 seconds.
 
-         [bjornc@s160 ~]$  ml python/3.9.5
-         [bjornc@s160 ~]$ python add-list.py
+         [bbrydsoe@s156 Python]$ ml python/3.9.5
+	 [bbrydsoe@s156 Python]$ source Example-gpu/bin/activate
+         (Example-gpu) [bbrydsoe@s156 Python]$ python add-list.py
          CPU function took 36.849201 seconds.
          GPU function took 1.574953 seconds.
 
@@ -139,17 +144,16 @@ As before, we need the batch system to run the code. There are no GPUs on the lo
 
       .. code-block:: console
 
-         $ salloc -A hpc2n2023-089 --time=00:30:00 -n 1 --gres=gpu:k80:1 
+         $ salloc -A hpc2n2023-110 --time=00:30:00 -n 1 --gres=gpu:v100:1 
          salloc: Pending job allocation 20346979
          salloc: job 20346979 queued and waiting for resources
          salloc: job 20346979 has been allocated resources
          salloc: Granted job allocation 20346979
          salloc: Waiting for resource configuration
-         salloc: Nodes b-cn1101 are ready for job
+         salloc: Nodes b-cn1504 are ready for job
          $
          $ module load GCC/10.3.0 OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1
-         $ source /proj/nobackup/support-hpc2n/bbrydsoe/vpyenv/bin/activate
-         (vpyenv) b-an01 [~/store/bbrydsoe/Python-in-HPC/gpu]$ srun python add-list.py
+         $ srun python add-list.py
          CPU function took 31.905025 seconds.
          GPU function took 0.684060 seconds.
 
@@ -163,19 +167,16 @@ As before, we need the batch system to run the code. There are no GPUs on the lo
 
           #!/bin/bash
           # Remember to change this to your own project ID after the course!
-          #SBATCH -A hpc2n2023-110     # HPC2N ID - change to naiss2023-22-914 for UPPMAX
+          #SBATCH -A hpc2n2023-110     
           # We are asking for 5 minutes
           #SBATCH --time=00:05:00
           # Asking for one GPU
-          #SBATCH --gres=gpu:v100:1     # For HPC2N. Remove/comment out if on UPPMAX
-          ##SBATCH -M snowy            # For UPPMAX. Remove leading # to use
-          ##SBATCH --gres=gpu:1        # For UPPMAX. Remove leading # to use
+          #SBATCH --gres=gpu:v100:1    
 
           # Remove any loaded modules and load the ones we need
           module purge  > /dev/null 2>&1
-          module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1 # For HPC2N. Comment out/remove if on UPPMAX
-          # module load python/3.9.5    # For UPPMAX. Remove leading # to use 
-		      
+          module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1 
+
           # Run your Python script
           python add-list.py
 
