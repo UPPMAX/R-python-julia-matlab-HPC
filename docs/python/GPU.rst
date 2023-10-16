@@ -30,7 +30,7 @@ In the case of GPUs, the latency is high and the throughput is also high. We can
 of the CPUs and GPUs with cars as in the figure below. A CPU would be compact road where only a few 
 racing cars can drive whereas a GPU would be a broader road where plenty of slow cars can drive.
 
-.. image:: ../../img/cpu-gpu-highway.png
+.. figure:: ../../img/cpu-gpu-highway.png
    :width: 450
    :align: center
 
