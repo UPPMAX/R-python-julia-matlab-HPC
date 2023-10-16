@@ -1,10 +1,10 @@
 #!/bin/bash
 # This is a batch script for running several programs or variations of programs sequentially, on Kebnekaise
-#SBATCH -A hpc2nXXXX-YYY # Remember to change this to your own project ID
+#SBATCH -A hpc2n2023-110 # Remember to change this to your own project ID
 # We are asking for 5 minutes
 #SBATCH --time=00:05:00
-# Asking for one K80
-#SBATCH --gres=gpu:k80:1
+# Asking for one GPU
+#SBATCH --gres=gpu:v100:1
 
 # Remove any loaded modules and load the ones we need
 module purge  > /dev/null 2>&1
