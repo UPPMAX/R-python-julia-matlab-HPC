@@ -14,40 +14,15 @@ Using GPUs with Python
    - Learn common schemes for GPU code acceleration
    - Learn about the GPU nodes at HPC2N and UPPMAX
 
+GPU-accelerated computing is when you use a graphics processing unit (GPU) along with a computer processing unit (CPU) to facilitate processing-intensive operations such as deep learning, analytics and engineering applications.
 
-In order to understand the capabilities of a GPU, it is instructive to compare a pure CPU
-architecture with a GPU based architecture. Here, there is a schemematics of the former:
-
-.. figure:: img/cpus.png
-   :align: center
-
-   Pure CPU architecture (single node). In the present case there are 28 cores, each with 
-   its own cache memory (LX). There is a shared memory (64 GB/NUMA node) for all these cores.
-   The base frequency for each core is 2.6 GHz.
-
-As for the GPU architecture, a K80 engine looks like this:
-
-.. figure:: img/gpu.png
-   :align: center
-
-   A single GPU engine of a K80 card. Each green dot represents a core (single precision) which
-   runs at a frequency of 562 MHz. The cores are arranged in slots called streaming multiprocessors (SMX)
-   in the figure. Cores in the same SMX share some local and fast cache memory.
+A GPU is a processor which is from many smaller and more specialized cores. When these cores work together, you can get a large performance boost for tasks that can be divided up and processed across many cores.
 
 In a typical cluster, some GPUs are attached to a single node resulting in a CPU-GPU
 hybrid architecture. The CPU component is called the host and the GPU part the device.
-One possible layout (Kebnekaise) is as follows:
-
-
-.. figure:: img/cpu-gpu.png
-   :align: center
-
-   Schematics of a hybrid CPU-GPU architecture. A GPU K80 card consisting of two engines is attached
-   to a NUMA island which in turn contains 14 cores. The NUMA island and the GPUs are
-   connected through a PCI-E interconnect which makes the data transfer between both components rather
-   slow.
 
 We can characterize the CPU and GPU performance with two quantities: the **latency** and the **througput**.
+
 **Latency** refers to the time spent in a sole computation. **Throughput** denotes the number of 
 computations that can be performed in parallel. Then, we can say that a CPU has low latency
 (able to do fast computations) but low throughput (only a few computations simultaneously).
@@ -56,7 +31,7 @@ of the CPUs and GPUs with cars as in the figure below. A CPU would be compact ro
 racing cars can drive whereas a GPU would be a broader road where plenty of slow cars can drive.
 
 
-.. figure:: img/cpu-gpu-highway.png
+.. figure:: ../..img/cpu-gpu-highway.png
    :align: center
 
    Cars and roads analogy for the CPU and GPU behavior. The compact road is analogous to the CPU
