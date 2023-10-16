@@ -338,6 +338,7 @@ Third level
    python/jupyter.md
    python/interactivePython.md
    common/parallel.rst
+   python/condaUPPMAX.rst
    python/exercisesPython.rst
    python/summaryPython.rst
    
