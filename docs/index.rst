@@ -335,8 +335,8 @@ Third level
    python/packages.rst
    python/isolated.rst
    python/batchPython.md
-   python/jupyter.md
    python/interactivePython.md
+   python/jupyter.md
    common/parallel.rst
    python/condaUPPMAX.rst
    python/exercisesPython.rst
