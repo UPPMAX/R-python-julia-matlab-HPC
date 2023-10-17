@@ -54,6 +54,41 @@ Now you can see that on a single node you already have several computing units
 (cores) and also a hierarchy of memory resources which is denoted as Non Uniform
 Memory Access (NUMA).
 
+Besides the standard CPUs, nowadays one finds Graphic Processing Units (GPUs) 
+architectures in HPC clusters, a K80 engine looks like this:
+
+.. figure:: ../../img/gpu.png
+   :align: center
+
+   A single GPU engine of a K80 card. Each green dot represents a core (single precision) which
+   runs at a frequency of 562 MHz. The cores are arranged in slots called streaming multiprocessors (SMX)
+   in the figure. Cores in the same SMX share some local and fast cache memory.
+
+In a typical cluster, some GPUs are attached to a single node resulting in a CPU-GPU
+hybrid architecture. The CPU component is called the host and the GPU part the device.
+One possible layout (Kebnekaise) is as follows:
+
+
+.. figure:: ../../img/cpu-gpu.png
+   :align: center
+
+   Schematics of a hybrid CPU-GPU architecture. A GPU K80 card consisting of two engines is attached
+   to a NUMA island which in turn contains 14 cores. The NUMA island and the GPUs are
+   connected through a PCI-E interconnect which makes the data transfer between both components rather
+   slow.
+
+One can characterize the CPU and GPU performance with two quantities: the **latency** and the **througput**.
+**Latency** refers to the time spent in a sole computation. **Throughput** denotes the number of 
+computations that can be performed in parallel.
+
+
+.. figure:: ../../img/cpu-gpu-highway.png
+   :align: center
+
+   Cars and roads analogy for the CPU and GPU behavior. The compact road is analogous to the CPU
+   (low latency, low throughput) and the broader road is analogous to the GPU (high latency, high throughput).
+
+
 Why is parallel programming needed?
 -----------------------------------
 
