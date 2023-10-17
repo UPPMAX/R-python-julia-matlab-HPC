@@ -350,10 +350,10 @@ Third level
    julia/introJulia.rst
    julia/load_runJulia.rst
    julia/isolatedJulia.rst
-   julia/batchJulia.rst
-   julia/interactiveJulia.rst
    common/parallel.rst
    julia/packagesBianca.rst
+   julia/batchJulia.rst
+   julia/interactiveJulia.rst
    julia/exercisesJulia.rst
    julia/summaryJulia.rst
    
@@ -365,11 +365,11 @@ Third level
    R/load_runR.rst
    R/packagesR.rst
    R/isolatedR
+   common/parallel.rst
+   R/packagesBianca.rst
    R/batchR.rst
    R/interactiveR.rst
    R/rstudio.rst
-   common/parallel.rst
-   R/packagesBianca.rst
    R/exercisesR.rst
    R/summaryR.rst
 
