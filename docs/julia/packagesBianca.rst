@@ -1,9 +1,9 @@
-Packages at Bianca (parallel session)
-================================================
+Packages at UPPMAX (parallel session)
+=====================================
 
 .. admonition::  Julia modules AKA Julia packages
 
-   - UPPAMX have some pre-installed packages
+   - UPPMAX have some pre-installed packages
    - This is helpful especially for Bianca (with no internet)
    - You can install own packages on Bianca as well.
 
@@ -21,81 +21,49 @@ Packages at Bianca (parallel session)
 Check current available packages
 --------------------------------
 
-General for both centers
-########################
+- Check the pre-installed packages of a specific Julia module:
 
-.. tabs::
+.. code-block:: sh 
 
-   .. tab:: UPPMAX
-
-	Check the pre-installed packages of a specific Julia module:
-
-	.. code-block:: sh 
-
-	   $ module help julia/<version> 
+   $ module help julia/<version> 
   
 	
-   .. tab:: HPC2N
-
-        The Julia versions installed at HPC2N include only the Base and Standard library
-        modules.
-      
-Check the pre-installed packages of a loaded Julia module, in shell:
-
-UPPMAX
-######
-
 You may control the present "central library" by typing in Julia shell :
 
 .. code-block:: julia 
 
    using Pkg
-   Pkg.activate(DEPOT_PATH[2]*"/environments/v1.7");     #change version accordingly
+   Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");     #change version accordingly
    Pkg.status()
-   Pkg.activate(DEPOT_PATH[1]*"/environments/v1.7");     #to return to user library
+   Pkg.activate(DEPOT_PATH[1]*"/environments/v1.8");     #to return to user library
 
-Packages are imported or loaded by the commands ``import`` and ``using``, respectively. The difference is shown here. Or briefly:
+A selection of the Julia packages and libraries installed on UPPMAX are:
 
-    To use module functions, use import Module to import the module, and Module.fn(x) to use the functions.
-    Alternatively, using Module will import all exported Module functions into the current namespace.
-
-A selection of the Julia packages and libraries installed on UPPMAX and HPC2N are:
-
-.. tabs::
-
-   .. tab:: UPPMAX
-
-	The Julia application at UPPMAX comes with several preinstalled packages.
-	A selection of the Julia packages and libraries installed on UPPMAX are:
-
-          - BenchmarkTools
-          - CSV
-          - CUDA
-          - MPI
-          - Distributed
-          - IJulia
-          - Plots
-          - PyPlot
-          - Gadfly
-          - DataFrames
-          - DistributedArrays
-          - PlotlyJS
-
-   .. tab:: HPC2N
-
-        The Julia versions installed at HPC2N include only the Base and Standard library
-        modules.
+- BenchmarkTools
+- CSV
+- CUDA
+- MPI
+- Distributed
+- IJulia
+- Plots
+- PyPlot
+- Gadfly
+- DataFrames
+- DistributedArrays
+- PlotlyJS
 
 
 Install own packages
 --------------------
+
+- On Rackham this works in the same way as gone through in the `Packages and isolated environments <https://uppmax.github.io/R-python-julia-HPC/julia/isolatedJulia.html>`_ 
 
 To make sure that the package is not already installed, type in Julia:
 
 .. code-block:: julia 
 
    using Pkg
-   Pkg.activate(DEPOT_PATH[2]*"/environments/v1.7");  #change version accordingly
+   Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");  #change version accordingly
 
    Pkg.status()
 
@@ -103,10 +71,8 @@ To go back to your own personal packages:
 
 .. code-block:: julia 
      
-   Pkg.activate(DEPOT_PATH[1]*"/environments/v1.7");
+   Pkg.activate(DEPOT_PATH[1]*"/environments/v1.8");
    Pkg.status()
-
-You can load (using/import) ANY package from both local and central installation irrespective to which environment you activate. However, the setup is that your package is prioritized if there are similar names.
 
 To install personal packages you type within Julia:
 
@@ -135,10 +101,6 @@ Exit "package prompt" with <backspace>:
 .. code-block:: julia 
 
    julia> 
-
-.. note::
-   
-   You will test this in the separated sessions about isolated environments in a while.
    
 .. admonition:: Summary of workflow
 
@@ -155,6 +117,11 @@ Exit "package prompt" with <backspace>:
 
    More about packages and virtual/isolated environment to follow in later sections of the course! 
 
+Installing on Bianca
+--------------------
+
+- `Introduction <https://uppmax.github.io/bianca_workshop/install/#julia-packages>`_ 
+- `Installing <https://uppmax.github.io/bianca_workshop/julia/>`_ 
 
 
 .. keypoints::
