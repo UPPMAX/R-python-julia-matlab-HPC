@@ -159,8 +159,8 @@ Serial code + self-installed package in virt. env.
             
             # Activate your virtual environment. 
             # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
-            # Example: /proj/naiss2023-22-914/<user>/python/<venv-name>
-            source /proj/naiss2023-22-914/<user>/python/<venv-name>/bin/activate
+            # Example: /proj/naiss2023-22-914/<user-dir>/python/<venv-name>
+            source /proj/naiss2023-22-914/<user-dir>/<path-to-virt-env>/<venv-name>/bin/activate
             
             # Run your Python script
             python <my_program.py>
@@ -183,7 +183,7 @@ Serial code + self-installed package in virt. env.
             # Activate your virtual environment. 
             # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
             # Example: /proj/nobackup/hpc2n2023-110/bbrydsoe/python/Example2 
-            source /proj/nobackup/hpc2n2023-110/bbrydsoe/python/Example2/bin/activate
+            source /proj/nobackup/hpc2n2023-110/<user-dir>/<path-to-virt-env>/Example2/bin/activate
             
             # Run your Python script 
             python <my_program.py>
@@ -241,7 +241,7 @@ GPU code
             
             # Activate the virtual environment we installed to
             # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
-            # Example: /proj/py-r-jl/mrspock/pythonUPPMAX
+            # Example: /proj/hpc2n2023-110/mrspock/python
             source <path-to-virt-env>/bin/activate
             
             # Run your Python script
