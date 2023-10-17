@@ -188,9 +188,9 @@ Running a script
                   b-an01 [~]$ julia serial-sum.jl 3 4 
                   The sum of the two numbers is: 7
 
-**Running julia REPL (UPPMAX)**
+**Running Julia REPL (UPPMAX)**
 
-- First start julia using the 4 cores and check if workers are available
+- First start Julia using the 4 cores and check if workers are available
 
 .. code-block:: console 
  
@@ -259,14 +259,14 @@ A Firefox session should start with the Jupyter notebook interface.
    julia> Pkg.build("IJulia")
    julia> notebook(dir="</path/to/work/dir/>")
 
-This builds the package also locally before starting the notebook. If not done, Jupyter will not find the julia kernel of that version.
-With ``notebook(dir="</path/to/work/dir/>", detached=true)`` the notebook will not be killed when you exit your REPL julia session in the terminal.
+This builds the package also locally before starting the notebook. If not done, Jupyter will not find the Julia kernel of that version.
+With ``notebook(dir="</path/to/work/dir/>", detached=true)`` the notebook will not be killed when you exit your REPL Julia session in the terminal.
 
 .. admonition:: Running IJulia in Jupyter on compute nodes at UPPMAX
 
    - Jupyter is rather slow on the compute nodes. 
    - This can be fixed by opening jupyter in a web browsers on you local computer.
-   - Remember to load python as well and to go via the ``julia -p <number of cores>`` and ``notebook(<options>)`` inside the julia session instead of starting ``jupiter-notebook`` in the bash shell.
+   - Remember to load python as well and to go via the ``julia -p <number of cores>`` and ``notebook(<options>)`` inside the Julia session instead of starting ``jupiter-notebook`` in the bash shell.
    
    https://uppmax.github.io/HPC-python/jupyter.html
 
@@ -286,7 +286,6 @@ In Julia `package` mode:
 .. code-block:: julia-repl
 
    (v1.8) pkg>add IJulia
-
 
 Write a bash script similar  to this (call it `job_jupyter.sh`, for instance):
 
@@ -324,5 +323,5 @@ version from the module you loaded (in this case 1.8.5).
    
       - At HPC2N: ``salloc`` ...
       - At UPPMAX: ``interactive`` ...
-   - Follow the same procedure as usual by loading the julia module and possible prerequisites.
+   - Follow the same procedure as usual by loading the Julia module and possible prerequisites.
     
