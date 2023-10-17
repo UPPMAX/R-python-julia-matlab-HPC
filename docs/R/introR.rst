@@ -1,5 +1,5 @@
 Introduction R
-===================
+==============
 
 `Welcome page and syllabus <https://uppmax.github.io/R-python-julia-HPC/index.html>`_
    - Also link by clicking the logo at the top left of the page 
@@ -155,7 +155,7 @@ Other NAISS centres
    - `R <https://www.c3se.chalmers.se/documentation/applications/r/>`_
 - NSC
    - `R <https://ipv4.www.nsc.liu.se/software/catalogue/tetralith/modules/r.html>`_
-   - `RStudio < https://ipv4.www.nsc.liu.se/software/catalogue/tetralith/modules/rstudio.html>`_
+   - `RStudio <https://ipv4.www.nsc.liu.se/software/catalogue/tetralith/modules/rstudio.html>`_
 - PDC
    - `R <https://www.pdc.kth.se/software/software/R/index_general.html>`_
 
