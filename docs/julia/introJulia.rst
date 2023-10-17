@@ -13,8 +13,6 @@ Introduction Julia
    - Use Julia in parallel mode
    - Use GPUs with Julia
    - Use Julia for ML 
-
-          
     
 .. admonition:: Your expectations?
    
@@ -27,9 +25,7 @@ Introduction Julia
     
     - Improve Julia *coding* skills 
     - Other clusters
-
-        
-
+      
 Preliminary schedule
 --------------------
 
@@ -94,6 +90,14 @@ Preliminary schedule
    * - 15.00
      - END
      -
+
+.. instructor-note::
+
+   - Intro 10 min 
+   - Lecture and demo 10 min
+   - Exercise 0 min
+
+
 
 What is Julia?
 --------------
