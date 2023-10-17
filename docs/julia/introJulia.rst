@@ -121,8 +121,8 @@ Among the different features of Julia, is its capability of integrating both asp
    Two-language problem where Julia is shown as a bridge between the languages
    in the traditional paradigms, productivity vs. performance. 
 
-Workflow in Julia
------------------
+Workflow in Julia (DEMO)
+------------------------
 
 After loading the appropriate modules for Julia, you will have access to the
 read-eval-print-loop (REPL) command line by typing ``julia``: 
