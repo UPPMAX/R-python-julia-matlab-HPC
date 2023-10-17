@@ -267,6 +267,56 @@ Create a virtual environment called ``vpyenv`. First load the python version you
       .. code-block:: console
 
          $ source Example3/bin/activate
+
+
+**UPPMAX**
+
+Create a virtual environment called ``Example-gpu`` for using on UPPMAX for the numba example under GPUs. First load the python version you want to base your virtual environment on (3.9.5 in this example since that is what is on Snowy):
+
+      .. code-block:: console
+
+          $ module load python/3.9.5
+          $ python -m venv --system-site-packages /proj/naiss2023-22-914/<user>/python/Example-gpu
+    
+      Activate it.
+
+      .. code-block:: console
+
+         $ source /proj/naiss2023-22-914/<user>/python/Example-gpu/bin/activate
+
+      Note that your prompt is changing to start with (Example-gpu) to show that you are within an environment.
+
+      Install your packages with ``pip`` (``--user`` not needed) and the correct versions, like:
+
+      .. prompt:: 
+         :language: bash
+         :prompts: (Example-gpu) $
+
+         pip install numba
+
+      Check what was installed
+
+      .. prompt:: 
+         :language: bash
+         :prompts: (vpyenv) $
+
+         pip list
+
+      Deactivate it.
+
+      .. prompt:: 
+         :language: bash
+         :prompts: (Example-gpu) $
+
+         deactivate
+
+      Everytime you need the tools available in the virtual environment you activate it as above.
+
+      .. code-block:: console
+
+         $ source /proj/naiss2023-22-914/<user>/python/Example-gpu/bin/activate
+
+      
     
 Using setup.py
 --------------

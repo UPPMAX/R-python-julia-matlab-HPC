@@ -30,12 +30,11 @@ In the case of GPUs, the latency is high and the throughput is also high. We can
 of the CPUs and GPUs with cars as in the figure below. A CPU would be compact road where only a few 
 racing cars can drive whereas a GPU would be a broader road where plenty of slow cars can drive.
 
-
 .. figure:: ../../img/cpu-gpu-highway.png
+   :width: 450
    :align: center
 
-   Cars and roads analogy for the CPU and GPU behavior. The compact road is analogous to the CPU
-   (low latency, low throughput) and the broader road is analogous to the GPU (high latency, high throughput).
+Cars and roads analogy for the CPU and GPU behavior. The compact road is analogous to the CPU (low latency, low throughput) and the broader road is analogous to the GPU (high latency, high throughput)
 
 Not every Python program is suitable for GPU acceleration. GPUs process simple functions rapidly, 
 and are best suited for repetitive and highly-parallel computing tasks. GPUs were originally 
@@ -54,6 +53,30 @@ One of the most common use of GPUs with Python is for machine learning or deep l
 these cases you would use something like Tensorflow or PyTorch libraries which can handle CPU
 and GPU processing internally without the programmer needing to do so. 
 
+GPUs on UPPMAX and HPC2N systems
+--------------------------------
+
+There are generally either not GPUs on the login nodes or they cannot be accessed for computations. To use them you need to either launch an interactive job or submit a batch job.
+
+**UPPMAX only**
+
+Rackham's compute nodes do not have GPUs. You need to use Snowy for that. A useful module on Snowy is ``python_ML_packages/3.9.5-gpu``.
+
+You need to use this batch command (for x being the number of cards, 1 or 2):
+
+.. code-block::
+
+   #SBATCH -M snowy
+   #SBATCH --gres=gpu:x
+
+**HPC2N**
+
+Kebnekaise's GPU nodes are considered a separate resource, and the regular compute nodes do not have GPUs.
+
+You need to use this to the batch system: ``#SBATCH --gres=gpu:<card>:x``, for <card>=v100 or a100 and x=1 or 2. 
+
+And for the A100 GPUs you also need to use ``#SBATCH -p amd_gpu``
+   
 Numba example
 -------------
 
@@ -115,9 +138,11 @@ As before, we need the batch system to run the code. There are no GPUs on the lo
 
 .. tabs::
 
-   .. tab:: UPPMAX - here we need to install numba because of some temporary error (otherwise we would use the module ``python_ML_packages/3.9.5-gpu`` on Snowy)
+   .. tab:: UPPMAX
       
-      .. code-block:: console
+       Here we need to install numba because of some temporary error (otherwise we would use the module ``python_ML_packages/3.9.5-gpu`` on Snowy)
+
+       .. code-block:: console
       
          [bbrydsoe@rackham3 Python]$ module load python/3.9.5
          [bbrydsoe@rackham3 Python]$ python -m venv --system-site-packages Example-gpu
@@ -321,6 +346,8 @@ Exercises
    Prepare a batch script to run these two versions of the integration 2D with Numba support
    and monitor the timings for both cases.
 
+Here follows a solution for HPC2N. Try and make it run on Snowy, by using a numba you install in a virtual environment and doing the changes suggested by the UPPMAX solution for add-list.py above. 
+   
 .. solution:: Solution for HPC2N
     :class: dropdown
 
@@ -333,23 +360,18 @@ Exercises
 
             #!/bin/bash
             # Remember to change this to your own project ID after the course!
-            #SBATCH -A hpc2n20XX-XYZ
+            #SBATCH -A hpc2n2023-110
             #SBATCH -t 00:08:00
             #SBATCH -N 1
             #SBATCH -n 28
             #SBATCH -o output_%j.out   # output file
             #SBATCH -e error_%j.err    # error messages
-            #SBATCH --gres=gpu:k80:2
+            #SBATCH --gres=gpu:v100:1
             #SBATCH --exclusive
      
             ml purge > /dev/null 2>&1
-            ml GCCcore/11.2.0 Python/3.9.6
-            ml GCC/11.2.0 OpenMPI/4.1.1
-            ml CUDA/11.4.1
+            module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1
     
-            # CHANGE TO YOUR OWN PATH! 
-            source /proj/nobackup/<your-project-storage>/vpyenv-python-course/bin/activate
-       
             python integration2d_gpu.py
             python integration2d_gpu_shared.py
 
