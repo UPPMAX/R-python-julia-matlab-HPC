@@ -77,17 +77,6 @@ One possible layout (Kebnekaise) is as follows:
    connected through a PCI-E interconnect which makes the data transfer between both components rather
    slow.
 
-One can characterize the CPU and GPU performance with two quantities: the **latency** and the **througput**.
-**Latency** refers to the time spent in a sole computation. **Throughput** denotes the number of 
-computations that can be performed in parallel.
-
-
-.. figure:: ../../img/cpu-gpu-highway.png
-   :align: center
-
-   Cars and roads analogy for the CPU and GPU behavior. The compact road is analogous to the CPU
-   (low latency, low throughput) and the broader road is analogous to the GPU (high latency, high throughput).
-
 
 Why is parallel programming needed?
 -----------------------------------
