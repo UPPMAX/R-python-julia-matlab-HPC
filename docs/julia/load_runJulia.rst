@@ -195,6 +195,7 @@ Exit with
 .. code-block:: julia-repl
 
    julia> <Ctrl-D> 
+
 or 
 
 .. code-block:: julia-repl
@@ -270,6 +271,6 @@ Exercises
 .. keypoints::
 
    - Before you can run Julia scripts or work in a Julia shell, first load a Julia module.
-   - Start a Julia shell session either with ``julia``
+   - Start a Julia shell session with ``julia``
    - Run scripts with ``julia <script.jl>``
     
