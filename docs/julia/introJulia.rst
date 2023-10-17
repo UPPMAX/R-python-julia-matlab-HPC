@@ -55,9 +55,6 @@ Preliminary schedule
    * - 10.15
      - Packages and isolated environments   
      - Lecture+code along 45m
-   * - 10.15
-     - More on Packages
-     - Lecture+code along 30m
    * - 11.00
      - **break**
      - 
