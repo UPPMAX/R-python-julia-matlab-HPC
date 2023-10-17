@@ -12,7 +12,7 @@ module purge  > /dev/null 2>&1
 module load python/3.9.5  
 
 # Load virtual environment 
-source Example-gpu/bin/activate   
+source <path-to-virt-env>/<virt-env>/bin/activate   
 	  
 # Run your Python script
 python add-list.py
