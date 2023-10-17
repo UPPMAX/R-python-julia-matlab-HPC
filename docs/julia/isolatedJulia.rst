@@ -120,7 +120,7 @@ Create a project environment
 
 Let's now create a **project environment**, this can be done as follows (if typing along, you have to change the path to your environment, like ``/proj/py-r-jl/$USER/julia`` on rackham):
 
-.. code-block:: julia-repl
+.. code-block:: julia
 
    julia> using Pkg
    julia>;
@@ -166,7 +166,7 @@ a new installation but it just updated our environment with information of the a
 you will see the new files ``Project.toml`` and ``Manifest.toml``, the ``more`` command can display
 the content of these files:
 
-.. code-block:: julia-repl
+.. code-block:: julia
 
    shell> ls
    Manifest.toml  Project.toml
@@ -334,7 +334,7 @@ content of ``LOAD_PATH`` (which path will be different for you):
 
 If we try to use the ``DFTK`` package we will see the error message:
 
-.. code-block:: julia-repl
+.. code-block:: julia
 
    julia> using DFTK
       │ Package DFTK not found, but a package named DFTK is available from a registry. 
@@ -347,7 +347,7 @@ If you remember this package was installed in the first environment (``my-first-
 to make this package available in our second environment we can push the corresponding folder's
 path to ``LOAD_PATH``:
 
-.. code-block:: julia-repl
+.. code-block:: julia
 
    julia> push!(LOAD_PATH, "/pfs/proj/nobackup/path/Julia-Test/my-first-env/")
       1-element Vector{String}:
