@@ -251,17 +251,29 @@ In Julia:
    julia> notebook(dir="</path/to/work/dir/>")
 
 A Firefox session should start with the Jupyter notebook interface.
-**If not**, you may have to build IJulia the first time with Pkg.build("IJulia"). Since "IJulia" is *pre-installed centrally* on UPPMAX you must activate the central environment by following these steps belo. This should only be needed the first time like this
+<br>
+.. figure:: ../../img/Jupyter_julia.png
+<br>
 
-.. code-block:: julia-repl
+.. warning:: 
+
+   **If not**, you may have to build IJulia the first time with Pkg.build("IJulia"). Since "IJulia" is *pre-installed centrally* on UPPMAX you must activate the central environment by following these steps below. This should only be needed the first time like this
+
+   .. code-block:: julia-repl
   
-   julia> using Pkg
-   julia> Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");
-   julia> Pkg.build("IJulia")
-   julia> notebook(dir="</path/to/work/dir/>")
+      julia> using Pkg
+      julia> Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");
+      julia> Pkg.build("IJulia")
+      julia> notebook(dir="</path/to/work/dir/>")
 
-This builds the package also locally before starting the notebook. If not done, Jupyter will not find the Julia kernel of that version.
-With ``notebook(dir="</path/to/work/dir/>", detached=true)`` the notebook will not be killed when you exit your REPL Julia session in the terminal.
+   This builds the package also locally before starting the notebook. If not done, Jupyter will not find the Julia kernel of that version.
+
+.. tip::
+
+   With ``notebook(dir="</path/to/work/dir/>", detached=true)`` the notebook will not be killed when you exit your REPL Julia session in the terminal.
+
+
+
 
 .. admonition:: Running IJulia in Jupyter on compute nodes at UPPMAX
 
@@ -284,8 +296,6 @@ If IJulia is precompiled once then you can run Julia from Jupyter directly from 
 - Start the browser from the ThinLinc menu.
 - Copy-paste one of the address lines from the jupyter output
 - You can start the Julia kernel in the upper right corner!
-
-.. figure:: ../../img/Jupyter_julia.png
 
 
 
