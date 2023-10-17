@@ -120,7 +120,6 @@ Exit "package prompt" with <backspace>:
 Installing on Bianca
 --------------------
 
-- `Introduction <https://uppmax.github.io/bianca_workshop/install/#julia-packages>`_ 
 - `Installing <https://uppmax.github.io/bianca_workshop/julia/>`_ 
 
 
