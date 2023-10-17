@@ -112,7 +112,7 @@ First steps
      $ conda create --name python36-env python=3.6 numpy=1.13.1 matplotlib=2.2.2
 	
   .. admonition:: The ``mamba`` alternative 
-     :clas   s: dropdown
+     :class: dropdown
     
      - ``mamba`` is a fast drop-in alternative to conda, using "libsolv" for dependency resolution. It is available from the ``conda`` module.
      - Example:  
