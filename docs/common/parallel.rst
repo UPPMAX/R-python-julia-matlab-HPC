@@ -166,38 +166,6 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
 
 .. tabs::
 
-   .. tab:: Julia
-
-        In the following example ``sleep.jl`` the `sleep()` function is called `n` times
-        first in serial mode and then by using `n` threads. The *BenchmarkTools* package
-        help us to time the code (this package is not in the base Julia installation).
-
-        .. code-block:: julia
-
-            using BenchmarkTools
-            using .Threads
-            
-            n = 6   # number of iterations
-             
-            function sleep_serial(n)   #Serial version
-                for i in 1:n
-                    sleep(1)
-                end
-            end
-            
-            @btime sleep_serial(n) evals=1 samples=1
-            
-            
-            function sleep_threaded(n) #Parallel version
-                @threads for i = 1:n
-                    sleep(1)
-                end
-            end
-            
-            @btime sleep_threaded(n) evals=1 samples=1
-            
-        First load the Julia module ``ml Julia/1.8.5-linux-x86_64`` and then run the script
-        with the command  ``julia --threads 6 sleep.jl`` to use 6 Julia threads.
 
    .. tab:: Python
 
@@ -254,6 +222,40 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
 
         First load the modules ``ml GCCcore/10.3.0 Python/3.9.5`` and then run the script
         with the command  ``python sleep.py`` to use 6 processes.
+
+   .. tab:: Julia
+
+        In the following example ``sleep.jl`` the `sleep()` function is called `n` times
+        first in serial mode and then by using `n` threads. The *BenchmarkTools* package
+        help us to time the code (this package is not in the base Julia installation).
+
+        .. code-block:: julia
+
+            using BenchmarkTools
+            using .Threads
+            
+            n = 6   # number of iterations
+             
+            function sleep_serial(n)   #Serial version
+                for i in 1:n
+                    sleep(1)
+                end
+            end
+            
+            @btime sleep_serial(n) evals=1 samples=1
+            
+            
+            function sleep_threaded(n) #Parallel version
+                @threads for i = 1:n
+                    sleep(1)
+                end
+            end
+            
+            @btime sleep_threaded(n) evals=1 samples=1
+            
+        First load the Julia module ``ml Julia/1.8.5-linux-x86_64`` and then run the script
+        with the command  ``julia --threads 6 sleep.jl`` to use 6 Julia threads.
+
 
    .. tab:: R 
    
