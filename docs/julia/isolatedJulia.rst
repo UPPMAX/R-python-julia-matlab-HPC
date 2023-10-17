@@ -35,6 +35,12 @@ itself. Julia distinguishes between **project environments** and **package direc
 Tom's Obvious Minimal Language (TOML) files (Project.toml, Manifest.toml) are present while in the
 latter also source files are included with some specific layout. 
 
+Packages are imported or loaded by the commands ``import`` and ``using``, respectively. The difference is briefly:
+
+    To use "module" functions, use ``import <module>`` to import the "module", and ``Module.fn(x)`` to use the functions.
+    Alternatively, ``using <Module`` will import *all* exported Module functions into the *current namespace*, i.e. ``Module.fn(x)`` becomes ``fn(x)``.
+
+
 If you have started Julia previously, you will get the folders like this in the ~/.julia folder.
 
 .. code-block:: bash
@@ -369,11 +375,6 @@ UPPMAX Central library
    julia> Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");     #change version (1.8) accordingly if you have another main version of Julia
    julia> Pkg.status()
    julia> Pkg.activate(DEPOT_PATH[1]*"/environments/v1.8");     #to return to user library
-
-Packages are imported or loaded by the commands ``import`` and ``using``, respectively. The difference is briefly:
-
-    To use "module" functions, use ``import <module>`` to import the "module", and ``Module.fn(x)`` to use the functions.
-    Alternatively, ``using <Module`` will import *all* exported Module functions into the *current namespace*, i.e. ``Module.fn(x)`` becomes ``fn(x)``.
 
 A selection of the Julia packages and libraries installed on UPPMAX and HPC2N are:
 
