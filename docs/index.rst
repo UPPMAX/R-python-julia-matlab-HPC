@@ -36,7 +36,7 @@ Introduction to running R, Python, and Julia in HPC
 
 
 Schedule Fall 2023
-==================
+------------------
 
 .. list-table:: 
    :widths: 25 25
@@ -132,7 +132,7 @@ Finally, if you notice something that prevents you from learning as well as you 
 
    
 Example of screen arrangement
-#############################
+:::::::::::::::::::::::::::::
 
 If you only have one screen to work with for the course, try to fit: 
 
@@ -244,7 +244,7 @@ The two HPC centers UPPMAX and HPC2N
    To distinguish these modules from the **python** *modules* that work as libraries we refer to the later ones as **packages**.
    
 Briefly about the cluster hardware and system at UPPMAX and HPC2N
------------------------------------------------------------------
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 **What is a cluster?**
 
