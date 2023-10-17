@@ -7,7 +7,7 @@
 
 # Remove any loaded modules and load the ones we need
 module purge  > /dev/null 2>&1
-module load Python/3.9.5 
+module load GCC/10.3.0 Python/3.9.5 
 
 # Run your Python script
 python multiproc.py
