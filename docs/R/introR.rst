@@ -8,7 +8,7 @@ Introduction R
    
    - Load R modules and site-installed R packages
    - Install R packages from CRAN - automatic download and install
-   - Write a batchscript for running R
+   - Write a batch script for running R
    - Using Rstudio
 
     **Not covered**
