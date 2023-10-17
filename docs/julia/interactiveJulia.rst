@@ -273,7 +273,7 @@ With ``notebook(dir="</path/to/work/dir/>", detached=true)`` the notebook will n
 Running Julia from Jupyter notebook on HPC2N 
 ############################################
 
-- Like for Python it is possible to run a Julia in a notebook, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the python module as well. In shell:
+- Like for Python it is possible to run a Julia in a notebook, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the *JupyterLab* and *Julia* modules. In shell:
 
 .. code-block:: console
 
@@ -281,7 +281,7 @@ Running Julia from Jupyter notebook on HPC2N
    $ module load Julia/1.8.5-linux-x86_64
    $ julia
 
-This will load the *JupyterLab* and *Julia* modules. In Julia package mode:
+In Julia `package` mode:
 
 .. code-block:: julia-repl
 
@@ -308,7 +308,7 @@ Write a bash script similar  to this (call it `job_jupyter.sh`, for instance):
    # Start JupyterLab
    jupyter lab --no-browser --ip $(hostname)
 
-Then, in the output file *slurm-x.out* file, copy the url that starts with *http://b-cn1403.hpc2n.umu.se:8888/lab* and 
+Then, in the output file *slurm-<jobID>.out* file, copy the url that starts with *http://b-cn1403.hpc2n.umu.se:8888/lab* and 
 paste it in a Firefox browser on Kebnekaise. When the Jupyter notebook interface starts, you can choose the Julia
 version from the module you loaded (in this case 1.8.5).
 
@@ -316,7 +316,7 @@ version from the module you loaded (in this case 1.8.5).
 
    - On Kebnekaise, you can run Jupyter notebooks with Julia kernels by using batch scripts
    
-   https://www.hpc2n.umu.se/resources/software/jupyter
+   https://www.hpc2n.umu.se/resources/software/jupyter-julia
 
 .. keypoints::
 
