@@ -251,9 +251,8 @@ In Julia:
    julia> notebook(dir="</path/to/work/dir/>")
 
 A Firefox session should start with the Jupyter notebook interface.
-<br>
+
 .. figure:: ../../img/Jupyter_julia.png
-<br>
 
 .. warning:: 
 
