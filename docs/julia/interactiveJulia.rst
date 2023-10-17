@@ -276,19 +276,16 @@ Jupyter from terminal
 
 If IJulia is precompiled once then you can run Julia from Jupyter directly from the terminal
 
-   .. code-block: console
+.. code-block: console
 
-      $ ml julia/1.8.5 python/3.10.8
-      $ jupyter-notebook --no-browser
+   $ ml julia/1.8.5 python/3.10.8
+   $ jupyter-notebook --no-browser
 
-   - Start the browser from the ThinLinc menu.
-   - Copy-paste one of the address lines from the jupyter output
-   - you can start the Julia kernel in the upper right corner!
+- Start the browser from the ThinLinc menu.
+- Copy-paste one of the address lines from the jupyter output
+- You can start the Julia kernel in the upper right corner!
 
 .. figure:: ../../img/Jupyter_julia.png
-   :width: 450
-   :align: center
-
 
 
 
