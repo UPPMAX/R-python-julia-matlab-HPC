@@ -193,8 +193,10 @@ Send the script to the batch:
 .. code-block:: console
 
    $ sbatch <batch script>
+
 GPU code
 ''''''''
+
 **We'll not test this live, but you can try if you have Snowy access**
 
 .. tabs::
