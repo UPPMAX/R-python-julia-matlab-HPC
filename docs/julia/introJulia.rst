@@ -230,7 +230,10 @@ Shortcomings of Julia
 - Currently, using Julia for simple tasks (for instance, opening a file and writing text, plotting) is not as
   efficient as using Linux tools (AWK, GREP) or compiled languages (Fortran, C/C++, Rust)
 - Previous situation is more noticeable upon running simple tasks in parallel mode (MPI, Threads)
-  
+- An initial code version can be fast (compared to base Python) with a code that is clear to
+  novices and without spending a long time writing. However, if one needs to get a more optimized code, 
+  it would most likely increase its complexity (readability) and one would need to spend more time 
+  (learning,programming) as in the case of C/C++/Fortran.  
 
 
 
