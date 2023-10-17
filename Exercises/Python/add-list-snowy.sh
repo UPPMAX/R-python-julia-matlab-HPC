@@ -1,4 +1,4 @@
- #!/bin/bash
+#!/bin/bash
 # Remember to change this to your own project ID after the course!
 #SBATCH -A naiss2023-22-914
 # We are asking for 5 minutes
