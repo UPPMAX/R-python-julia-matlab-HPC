@@ -147,7 +147,7 @@ First steps
     
     
 - `More info about Conda on UPPMAX <https://uppmax.uu.se/support/user-guides/conda-user-guide/>`_
-
+- `Video: How to use conda on the Rackham UPPMAX HPC cluster (YouTube) <https://youtu.be/SMhawXQhtls>`_
 
 Working with Conda environments defined by files
 ------------------------------------------------
@@ -240,4 +240,12 @@ Exercises
    - Conda environment requires that you install all packages needed by yourself. 
    
       - That is, you cannot load the python module and use the packages therein inside you Conda environment.
+    
+    
+Links
+---------
+
+* `Video: How to use conda on the Rackham UPPMAX HPC cluster (YouTube) <https://youtu.be/SMhawXQhtls>`_
+    
+        
     
