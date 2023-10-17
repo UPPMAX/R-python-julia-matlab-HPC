@@ -59,6 +59,12 @@ Preliminary schedule
      - **break**
      - 
    * - 11.15
+     - Parallel session — UPPMAX: Bianca packages
+     - Lecture+code along 15m
+   * - .
+     - Parallel session — HPC2N: Parallel and multithreaded functions
+     - Lecture+code along 15m   
+   * - 11.50
      - Exercises and informal chat
      - 
    * - 12.00
@@ -66,27 +72,24 @@ Preliminary schedule
      -
    * - 13.00
      - SLURM Batch scripts for Julia jobs  
-     - Lecture+code along + exercise 25m
-   * - 13.30
-     - Parallel session — UPPMAX: Jupyter and interactive work
-     - Lecture+code along 15m
-   * - 13.30
-     - Parallel session — HPC2N: Jupyter
-     - Lecture+code along 15m   
+     - Lecture+code along + exercise 45m
    * - 13.45
      - **break**
      - 
    * - 14.00
-     - Parallel session — UPPMAX: Bianca packages
-     - Lecture+code along 15m
-   * - 14.00
-     - Parallel session — HPC2N: Parallel and multithreaded functions
-     - Lecture+code along 15m   
+     - Parallel session — UPPMAX: Jupyter and interactive work
+     - Lecture+code along 25m
+   * - .
+     - Parallel session — HPC2N: Jupyter
+     - Lecture+code along 25m   
    * - 14.25
-     - Summary and Q&A on-demand
+     - Summary 
+     -
+   * - 14.35
+     - Evaluation
      -
    * - 14.45
-     - Evaluation
+     - Q&A on-demand
      -
    * - 15.00
      - END
