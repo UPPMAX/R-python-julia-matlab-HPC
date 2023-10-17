@@ -228,7 +228,7 @@ Exercises
 
 .. admonition:: Using pip on Bianca
 
-   - Bianca cluster does not have directr internet access
+   - Bianca cluster does not have direct internet access
    - If a python package is not not available on Bianca already (like Conda repositories) you may have to use the wharf to install your tools
 
    - `Install with pip to Bianca <https://uppmax.github.io/bianca_workshop/pip/>`_
