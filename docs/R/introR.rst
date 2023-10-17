@@ -39,10 +39,10 @@ Preliminary schedule
      - 10m
    * - 9.10
      - Introduction, R in general
-     - Lecture 20 m 
+     - Lecture 10 m 
    * - 9.20
      - Loading modules and running R codes 
-     - Lecture+code along 30m
+     - Lecture+code along 25m
    * - 9.45
      - **Coffee break**
      - 
