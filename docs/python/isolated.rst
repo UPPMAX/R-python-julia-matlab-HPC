@@ -292,7 +292,7 @@ Create a virtual environment called ``Example-gpu`` for using on UPPMAX for the 
          :language: bash
          :prompts: (Example-gpu) $
 
-         pip install numba
+         pip install --upgrade numpy scipy numba
 
       Check what was installed
 
