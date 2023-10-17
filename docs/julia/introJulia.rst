@@ -195,9 +195,10 @@ instead of typing the complete name of **Pkg** commands such as ``Pkg.status()``
 The last mode is the ``help`` mode, you can enter this mode from the ``Julian`` one by
 typing ``?``, then you may type some string from which you need more information:
 
-.. code-block:: julia-repl
+.. code-block:: julia
 
    julia>?
+
    help?> ans
    search: ans transpose transcode contains expanduser instances MathConstants readlines 
    LinearIndices leading_ones leading_zeros
