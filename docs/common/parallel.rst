@@ -70,6 +70,7 @@ One possible layout (Kebnekaise) is as follows:
 
 
 .. figure:: ../../img/cpu-gpu.png
+   :width: 450  
    :align: center
 
    Schematics of a hybrid CPU-GPU architecture. A GPU K80 card consisting of two engines is attached
