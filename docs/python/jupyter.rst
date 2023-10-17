@@ -49,6 +49,10 @@ In Thinlinc
 - If you are connected to Rackham via [Thinlinc session](https://www.uppmax.uu.se/support/user-guides/thinlinc-graphical-connection-guide/), open a browser with the link you got but modified to point to r486 i.e. 
 ``http://r486:8888/?token=5c3aeee9fbfc75f7a11c4a64b2b5b7ec49622231388241c2``
 
+
+* `Video: Starting a Jupyter notebook on the Rackham UPPMAX HPC cluster using a ThinLinc remote desktop (YouTube) <https://youtu.be/72rYjwGvWEc>`_
+
+
 On own computer
 '''''''''''''''
 
@@ -342,3 +346,9 @@ If a kernel is running (shown under kernels), then shut down that kernel and cli
 12. You can now run your files etc. with the own-installed Python packages available.
 
 **NOTE**! Sometimes it is still running on the default kernel. If so, Click the 3 little dots in the right side of the editor-window for the program and *pick your kernel*. Then rerun your files.
+
+Links
+---------
+
+* `Video: Starting a Jupyter notebook on the Rackham UPPMAX HPC cluster using a ThinLinc remote desktop (YouTube) <https://youtu.be/72rYjwGvWEc>`_
+
