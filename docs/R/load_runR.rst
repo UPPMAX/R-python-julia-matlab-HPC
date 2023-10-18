@@ -246,7 +246,7 @@ You can run an R script in the shell like this:
     
    More information will follow on running R from within a **batch job**. 
 
-Exit R with q() in the R prompt. Decide if you want to save your workspace image or not. 
+Exit R with ``q()`` in the R prompt. Decide if you want to save your workspace image or not. 
 
 Here is an example of running a short, serial R program at Kebnekaise: 
 
