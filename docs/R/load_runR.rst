@@ -98,6 +98,7 @@ Check for R versions
                 R/4.0.4
                 R/4.1.1
                 R/4.2.1
+                R/4.3.1
              Other possible modules matches:
                 454-dataprocessing  ADMIXTURE  ANTLR  ARCS  ARC_assembler  ARPACK-NG  ..
           .
@@ -152,7 +153,7 @@ Check for R versions
 
 
 Load an R module
---------------------
+----------------
 
 For reproducibility, we recommend ALWAYS loading a specific module instead of using the default version! 
 
@@ -203,11 +204,11 @@ Run
 Run R from command line 
 #######################
 
-After loading the R module (and its prerequisites), you start R like this (Kebnekaise, R/4.0.4): 
+After loading the R module (and its prerequisites), you start R like this (R/4.0.4): 
 
-  .. code-block:: sh
+.. code-block:: console
 
-     b-an01 [~]$ R
+     $ R
      
      R version 4.0.4 (2021-02-15) -- "Lost Library Book"
      Copyright (C) 2021 The R Foundation for Statistical Computing
@@ -231,7 +232,7 @@ After loading the R module (and its prerequisites), you start R like this (Kebne
      
      
 Run R script
-#####################
+############
     
 You can run an R script in the shell like this:
 
@@ -250,23 +251,23 @@ Here is an example of running a short, serial R program at Kebnekaise:
   .. admonition:: Serial R program (add2.R) to add two arguments
       :class: dropdown
 
-          .. code-block:: tcl
+      .. code-block:: tcl
         
          
-             args <- commandArgs(trailingOnly = TRUE)
-             num1 <- as.numeric(args[1])
-             num2 <- as.numeric(args[2])
+         args <- commandArgs(trailingOnly = TRUE)
+         num1 <- as.numeric(args[1])
+         num2 <- as.numeric(args[2])
             
-             answer <- num1 + num2
-             cat("Sum of arguments is: ", answer)
-             cat("\n")
+         answer <- num1 + num2
+         cat("Sum of arguments is: ", answer)
+         cat("\n")
            
            
-  .. code-block:: sh
+.. code-block:: console
 
-    b-an01 [~]$ Rscript add2.R 3 4
+   $ Rscript add2.R 3 4
     Sum of arguments is:  7
-    b-an01 [~]$
+   $
 
 .. admonition:: Workflow
 
@@ -309,13 +310,13 @@ Exercises
 
 .. challenge:: Try yourself to load R, start it, check libraries, load a library, quit R
     
-    .. code-block:: R
-    
-        1) Load R version 4.0.4 
-	2) Start R. Check which libraries are installed. Load one of them.
-	3) Quit R
+   .. code-block:: R
+   
+      1) Load R version 4.0.4 
+      2) Start R. Check which libraries are installed. Load one of them.
+      3) Quit R
 	
-    Remember to check if a module you are loading has prerequisites, and load those first if it does. In this case it depends on whether you do the exercises on Kebnekaise or Rackham. 
+   Remember to check if a module you are loading has prerequisites, and load those first if it does. In this case it depends on whether you do the exercises on Kebnekaise or Rackham. 
 
 
 
