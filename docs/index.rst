@@ -36,7 +36,7 @@ Introduction to running R, Python, and Julia in HPC
 
 
 Schedule Fall 2023
-==================
+------------------
 
 .. list-table:: 
    :widths: 25 25
@@ -132,7 +132,7 @@ Finally, if you notice something that prevents you from learning as well as you 
 
    
 Example of screen arrangement
-#############################
+:::::::::::::::::::::::::::::
 
 If you only have one screen to work with for the course, try to fit: 
 
@@ -162,51 +162,7 @@ If you only have one screen to work with for the course, try to fit:
       - `HPC2N's intro course material (including link to recordings) <https://github.com/hpc2n/intro-course>`_
       - `HPC2N's YouTube channel video on Linux <https://www.youtube.com/watch?v=gq4Dvt2LeDg>`_
 
-Prepare your environment now!
------------------------------
-  
-- Please log in to Rackham, Kebnekaise or other cluster that you are using.
 
-.. admonition:: Use Thinlinc or terminal?
-
-   - It is up to you!
-   - Graphics come easier with Thinlinc
-   - For this course, when having many windows open, it may be better to run in terminal, for screen space issues.
-
-
-.. tabs::
-
-   .. tab:: UPPMAX
-
-      1. Log in to Rackham!
-        - Terminal: ``ssh -Y <user>@rackham.uppmax.uu.se`` 
-      
-        - ThinLinc app: ``<user>@rackham-gui.uppmax.uu.se``
-        - ThinLinc in web browser: ``https://rackham-gui.uppmax.uu.se``
-      
-      2. If not already: **create a working directory** where you can code along.
-         - We recommend creating it under the course project storage directory
-   
-      3. Example. If your username is "mrspock" and you are at UPPMAX, then we recommend you create this folder: 
-     
-         .. code-block:: console
-         
-            $ mkdir /proj/naiss2023-22-914/mrspock/
-
-   .. tab:: HPC2N
-
-      - Kebnekaise through terminal: ``<user>@kebnekaise.hpc2n.umu.se``     
-      - Kebnekaise through ThinLinc, use: ``<user>@kebnekaise-tl.hpc2n.umu.se``
-   
-      - Create a working directory where you can code along.    
-      
-        - Example. If your username is bbrydsoe and you are at HPC2N, then we recommend you create this folder: 
-     
-         .. code-block:: console
-         
-            $ /proj/nobackup/hpc2n2023-110/bbrydsoe/
-         
-   
 The two HPC centers UPPMAX and HPC2N
 ------------------------------------
 
@@ -244,7 +200,7 @@ The two HPC centers UPPMAX and HPC2N
    To distinguish these modules from the **python** *modules* that work as libraries we refer to the later ones as **packages**.
    
 Briefly about the cluster hardware and system at UPPMAX and HPC2N
------------------------------------------------------------------
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 **What is a cluster?**
 
@@ -298,7 +254,6 @@ Common features
      - None
      - NVidia T4 
      - NVidia A100
-
  
 Material for improving your programming skills
 ----------------------------------------------
@@ -326,6 +281,53 @@ Third level
 - `ENCCS training material <https://enccs.se/lessons/>`_ 
 
 
+Prepare your environment now!
+-----------------------------
+  
+- Please log in to Rackham, Kebnekaise or other cluster that you are using.
+
+.. admonition:: Use Thinlinc or terminal?
+
+   - It is up to you!
+   - Graphics come easier with Thinlinc
+   - For this course, when having many windows open, it may be better to run in terminal, for screen space issues.
+
+
+.. tabs::
+
+   .. tab:: UPPMAX
+
+      1. Log in to Rackham!
+        - Terminal: ``ssh -Y <user>@rackham.uppmax.uu.se`` 
+      
+        - ThinLinc app: ``<user>@rackham-gui.uppmax.uu.se``
+        - ThinLinc in web browser: ``https://rackham-gui.uppmax.uu.se``
+      
+      2. If not already: **create a working directory** where you can code along.
+         - We recommend creating it under the course project storage directory
+   
+      3. Example. If your username is "mrspock" and you are at UPPMAX, then we recommend you create this folder: 
+     
+         .. code-block:: console
+         
+            $ mkdir /proj/naiss2023-22-914/mrspock/
+
+   .. tab:: HPC2N
+
+      - Kebnekaise through terminal: ``<user>@kebnekaise.hpc2n.umu.se``     
+      - Kebnekaise through ThinLinc, use: ``<user>@kebnekaise-tl.hpc2n.umu.se``
+   
+      - Create a working directory where you can code along.    
+      
+        - Example. If your username is bbrydsoe and you are at HPC2N, then we recommend you create this folder: 
+     
+         .. code-block:: console
+         
+            $ /proj/nobackup/hpc2n2023-110/bbrydsoe/
+         
+Content of the course
+---------------------
+
 .. toctree::
    :maxdepth: 2
    :caption: Python Lessons:
@@ -350,10 +352,10 @@ Third level
    julia/introJulia.rst
    julia/load_runJulia.rst
    julia/isolatedJulia.rst
-   julia/batchJulia.rst
-   julia/interactiveJulia.rst
    common/parallel.rst
    julia/packagesBianca.rst
+   julia/batchJulia.rst
+   julia/interactiveJulia.rst
    julia/exercisesJulia.rst
    julia/summaryJulia.rst
    
@@ -365,11 +367,11 @@ Third level
    R/load_runR.rst
    R/packagesR.rst
    R/isolatedR
+   common/parallel.rst
+   R/packagesBianca.rst
    R/batchR.rst
    R/interactiveR.rst
    R/rstudio.rst
-   common/parallel.rst
-   R/packagesBianca.rst
    R/exercisesR.rst
    R/summaryR.rst
 

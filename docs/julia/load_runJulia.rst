@@ -12,6 +12,14 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
    - show how to start and use the Julia command line
    - Show how to run Julia scripts and 
 
+.. instructor-note::
+
+   - Lecture and demo 15 min
+   - Exercise 15 min
+   - Total time 30 min
+
+As for Python, Julia can be started after a Julia module is loaded. The module activates paths to a specific version of the julia interpreter and its librarires and packages. 
+
 .. admonition:: Short cheat sheet
     :class: dropdown 
     
@@ -148,13 +156,59 @@ For this course, we recommend using Julia 1.8.5.
 
          $ ml Julia/1.8.5-linux-x86_64
 
+Run
+---
+
+Run Julia script
+################
+
+You can run a Julia script in the shell like this:
+
+.. code-block:: console
+
+   $ julia example.jl
+    
+More information will follow later in the course on running Julia from within a **batch job**. 
+
+Run Julia as a session
+######################
+
+.. admonition:: The Julian modes
+
+  - enter the shell mode by typing ``;``
+  - go back to *Julian* mode by ``<backspace>``
+  - enter the package manager mode by typing ``]`` in the *Julian* mode
+  - enter the help mode by typing ``?`` in the *Julian mode*
+
+.. code-block:: console
+
+   $ julia 
+
+The Julia prompt (``julian`` mode) looks like this:
+
+.. code-block:: julia-repl
+   
+   julia> 
+
+Exit with 
+
+.. code-block:: julia-repl
+
+   julia> <Ctrl-D> 
+
+or 
+
+.. code-block:: julia-repl
+
+   julia> exit()
+
 Exercises
 ---------
 
 
 .. challenge:: Getting familiar with Julia REPL
     
-    Is is important in this course that you know how to navigate on the 
+    It is important in this course that you know how to navigate on the 
     Julia command line. This exercise will help you to become more familiar
     with the REPL. Do the following steps: 
 
@@ -180,48 +234,6 @@ Exercises
                 julia>?
                 help?> println
 
-
-
-
-Run
----
-
-Run Julia script
-################
-
-You can run a Julia script in the shell like this:
-
-.. code-block:: console
-
-   $ julia example.jl
-    
-More information will follow later in the course on running Julia from within a **batch job**. 
-
-Run Julia as a session
-######################
-
-.. code-block:: console
-
-   $ julia 
-
-The Julia prompt (``julian`` mode) looks like this:
-
-.. code-block:: julia-repl
-   
-   julia> 
-
-Exit with 
-
-.. code-block:: julia-repl
-
-   julia> <Ctrl-D> 
-or 
-
-.. code-block:: julia-repl
-
-   julia> exit()
-   
-    
 .. challenge:: Loading modules and running scripts
     
     Load the Julia version 1.8.5 and run the following serial script (``serial-sum.jl``) which accepts two integer arguments as input: 
@@ -259,6 +271,6 @@ or
 .. keypoints::
 
    - Before you can run Julia scripts or work in a Julia shell, first load a Julia module.
-   - Start a Julia shell session either with ``julia``
+   - Start a Julia shell session with ``julia``
    - Run scripts with ``julia <script.jl>``
     

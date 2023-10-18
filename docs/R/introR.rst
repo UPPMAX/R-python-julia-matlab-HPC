@@ -1,5 +1,5 @@
 Introduction R
-===================
+==============
 
 `Welcome page and syllabus <https://uppmax.github.io/R-python-julia-HPC/index.html>`_
    - Also link by clicking the logo at the top left of the page 
@@ -8,7 +8,7 @@ Introduction R
    
    - Load R modules and site-installed R packages
    - Install R packages from CRAN - automatic download and install
-   - Write a batchscript for running R
+   - Write a batch script for running R
    - Using Rstudio
 
     **Not covered**
@@ -39,23 +39,29 @@ Preliminary schedule
      - 10m
    * - 9.10
      - Introduction, R in general
-     - Lecture 20 m 
+     - Lecture 10 m 
    * - 9.20
      - Loading modules and running R codes 
-     - Lecture+code along 30m
+     - Lecture+code along 25m
    * - 9.45
      - **Coffee break**
      - 
    * - 10.00
      - Packages
-     - Lecture+code along 45m
-   * - 10.45
-     - **break**
-     - 
-   * - 11.00
+     - Lecture+code along 30m
+   * - 10.30
      - Virtual environments
      - Lecture+code along 30m
-   * - 11.30
+   * - 11.00
+     - **break**
+     - 
+   * - 11.15
+     - Parallel session — UPPMAX: Bianca packages
+     - Lecture+code along 35m
+   * - .
+     - Parallel session — HPC2N: Parallel and multithreaded functions
+     - Lecture+code along 35m   
+   * - 11.50
      - Exercises and informal chat
      - 
    * - 12.00
@@ -63,27 +69,24 @@ Preliminary schedule
      -
    * - 13.00
      - SLURM Batch scripts for R jobs  
-     - Lecture+code along + exercise 25m
-   * - 13.30
-     - Parallel session — UPPMAX: Thinlinc and RStudio 
-     - Lecture+code along 15m
-   * - 13.30
-     - Parallel session — HPC2N: Thinlinc and RStudio 
-     - Lecture+code along 15m   
+     - Lecture+code along + exercise 45m
    * - 13.45
      - **break**
      - 
    * - 14.00
-     - Parallel session — UPPMAX: Packages on Bianca
-     - Lecture+code along 15m
+     - Parallel session — UPPMAX: Thinlinc and RStudio 
+     - Lecture+code along 25m
    * - 14.00
-     - Parallel session — HPC2N: Parallel and multi-threaded functions
-     - Lecture+code along 15m   
+     - Parallel session — HPC2N: Thinlinc and RStudio 
+     - Lecture+code along 25m   
    * - 14.25
-     - Summary and Q&A on-demand
+     - Summary
+     -
+   * - 14.35
+     - Evaluation
      -
    * - 14.45
-     - Evaluation
+     - Q&A on-demand
      -
    * - 15.00
      - END
@@ -152,7 +155,7 @@ Other NAISS centres
    - `R <https://www.c3se.chalmers.se/documentation/applications/r/>`_
 - NSC
    - `R <https://ipv4.www.nsc.liu.se/software/catalogue/tetralith/modules/r.html>`_
-   - `RStudio < https://ipv4.www.nsc.liu.se/software/catalogue/tetralith/modules/rstudio.html>`_
+   - `RStudio <https://ipv4.www.nsc.liu.se/software/catalogue/tetralith/modules/rstudio.html>`_
 - PDC
    - `R <https://www.pdc.kth.se/software/software/R/index_general.html>`_
 

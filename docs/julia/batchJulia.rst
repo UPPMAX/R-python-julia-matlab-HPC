@@ -209,7 +209,7 @@ Parallel code
 
         - In the ``julian`` mode run these commands:
 
-        .. code-block:: julia-repl
+        .. code-block:: julia
 
             julia> using MPI 
             julia> MPI.install_mpiexecjl() 
@@ -240,7 +240,7 @@ Parallel code
             (v1.8) pkg> add MPI 
             # In the ``julian`` mode run these commands:
 
-         .. code-block:: julia-repl
+         .. code-block:: julia
         
             julia> using MPI 
             julia> MPI.install_mpiexecjl() 

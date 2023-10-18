@@ -1,15 +1,17 @@
 Summary
-==============
+=======
 
 .. keypoints::
 
    - Load and run
-     - Use the desired ``R`` version from the module system e.g. ``module load
-       R/4.1.1``
-     - Use ``Rscript`` to run a script or ``R`` to start the interpreter/REPL
+      - Use the desired ``R`` version from the module system e.g. ``module load  R/4.1.1``
+      - Use ``Rscript`` to run a script or ``R`` to start the interpreter/REPL
+
    - Packages
       - Always check for preinstalled packages e.g. ``R_packages`` on UPPMAX 
-        - Simply use ``library(pkg-name)`` to see if available
+         
+         - use ``library(<pkg-name>)`` to see if available
+
    - Isolated environments 
       - With a virtual environment you can tailor an environment with specific
         versions.
@@ -43,10 +45,9 @@ Summary
 
 .. seealso::
 
-    - Content from NBIS R course from 2021: https://nbisweden.github.io/RaukR-2021/
-    - CodeRefinery develops and maintains training material on software best
-      practices for researchers that already write code. 
+   - Content from NBIS R course from 2021: https://nbisweden.github.io/RaukR-2021/
+   - CodeRefinery develops and maintains training material on software best practices for researchers that already write code. 
       - Their material addresses all academic disciplines and tries to be as
         programming language-independent as possible.
         https://coderefinery.org/lessons/
-    - Learn more about R packages: https://r-pkgs.org/
+   - Learn more about R packages: https://r-pkgs.org/

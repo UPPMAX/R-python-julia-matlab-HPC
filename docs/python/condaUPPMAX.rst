@@ -112,7 +112,7 @@ First steps
      $ conda create --name python36-env python=3.6 numpy=1.13.1 matplotlib=2.2.2
 	
   .. admonition:: The ``mamba`` alternative 
-     :clas   s: dropdown
+     :class: dropdown
     
      - ``mamba`` is a fast drop-in alternative to conda, using "libsolv" for dependency resolution. It is available from the ``conda`` module.
      - Example:  
@@ -228,10 +228,10 @@ Exercises
 
 .. admonition:: Using pip on Bianca
 
-   - Since Bianca 
-   If not available on Bianca already (like Conda repositories) you may have to use the wharf to install your tools
+   - Bianca cluster does not have direct internet access
+   - If a python package is not not available on Bianca already (like Conda repositories) you may have to use the wharf to install your tools
 
-   https://uppmax.github.io/bianca_workshop/pip/
+   - `Install with pip to Bianca <https://uppmax.github.io/bianca_workshop/pip/>`_
 
 .. keypoints::
 

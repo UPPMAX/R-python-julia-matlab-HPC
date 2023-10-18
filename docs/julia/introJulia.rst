@@ -13,8 +13,6 @@ Introduction Julia
    - Use Julia in parallel mode
    - Use GPUs with Julia
    - Use Julia for ML 
-
-          
     
 .. admonition:: Your expectations?
    
@@ -27,9 +25,7 @@ Introduction Julia
     
     - Improve Julia *coding* skills 
     - Other clusters
-
-        
-
+      
 Preliminary schedule
 --------------------
 
@@ -55,13 +51,16 @@ Preliminary schedule
    * - 10.15
      - Packages and isolated environments   
      - Lecture+code along 45m
-   * - 10.15
-     - More on Packages
-     - Lecture+code along 30m
    * - 11.00
      - **break**
      - 
    * - 11.15
+     - Parallel session — UPPMAX: Bianca packages
+     - Lecture+code along 15m
+   * - .
+     - Parallel session — HPC2N: Parallel and multithreaded functions
+     - Lecture+code along 15m   
+   * - 11.50
      - Exercises and informal chat
      - 
    * - 12.00
@@ -69,31 +68,36 @@ Preliminary schedule
      -
    * - 13.00
      - SLURM Batch scripts for Julia jobs  
-     - Lecture+code along + exercise 25m
-   * - 13.30
-     - Parallel session — UPPMAX: Jupyter and interactive work
-     - Lecture+code along 15m
-   * - 13.30
-     - Parallel session — HPC2N: Jupyter
-     - Lecture+code along 15m   
+     - Lecture+code along + exercise 45m
    * - 13.45
      - **break**
      - 
    * - 14.00
-     - Parallel session — UPPMAX: Bianca packages
-     - Lecture+code along 15m
-   * - 14.00
-     - Parallel session — HPC2N: Parallel and multithreaded functions
-     - Lecture+code along 15m   
+     - Parallel session — UPPMAX: Jupyter and interactive work
+     - Lecture+code along 25m
+   * - .
+     - Parallel session — HPC2N: Jupyter
+     - Lecture+code along 25m   
    * - 14.25
-     - Summary and Q&A on-demand
+     - Summary 
+     -
+   * - 14.35
+     - Evaluation
      -
    * - 14.45
-     - Evaluation
+     - Q&A on-demand
      -
    * - 15.00
      - END
      -
+
+.. instructor-note::
+
+   - Intro 10 min 
+   - Lecture and demo 10 min
+   - Exercise 0 min
+
+
 
 What is Julia?
 --------------
@@ -117,8 +121,8 @@ Among the different features of Julia, is its capability of integrating both asp
    Two-language problem where Julia is shown as a bridge between the languages
    in the traditional paradigms, productivity vs. performance. 
 
-Workflow in Julia
------------------
+Workflow in Julia (DEMO)
+------------------------
 
 After loading the appropriate modules for Julia, you will have access to the
 read-eval-print-loop (REPL) command line by typing ``julia``: 
@@ -191,9 +195,10 @@ instead of typing the complete name of **Pkg** commands such as ``Pkg.status()``
 The last mode is the ``help`` mode, you can enter this mode from the ``Julian`` one by
 typing ``?``, then you may type some string from which you need more information:
 
-.. code-block:: julia-repl
+.. code-block:: julia
 
    julia>?
+
    help?> ans
    search: ans transpose transcode contains expanduser instances MathConstants readlines 
    LinearIndices leading_ones leading_zeros
@@ -225,7 +230,10 @@ Shortcomings of Julia
 - Currently, using Julia for simple tasks (for instance, opening a file and writing text, plotting) is not as
   efficient as using Linux tools (AWK, GREP) or compiled languages (Fortran, C/C++, Rust)
 - Previous situation is more noticeable upon running simple tasks in parallel mode (MPI, Threads)
-  
+- An initial code version can be fast (compared to base Python) with a code that is clear to
+  novices and without spending a long time writing. However, if one needs to get a more optimized code, 
+  it would most likely increase its complexity (readability) and one would need to spend more time 
+  (learning/programming) as in the case of C/C++/Fortran.  
 
 
 

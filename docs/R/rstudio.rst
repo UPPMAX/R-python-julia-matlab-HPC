@@ -21,11 +21,12 @@ Also, we recommend to use ThinLinc. Login using
 - load R_packages/4.1.1, use 'module help R_packages/4.1.1' to see what is
   available in this certain version module load RStudio/1.4.1106
 - run 'rstudio &' from the command line, and wait
-  - it might take 5-10 minutes for RStudio to start, but once it starts, there
+  
+   - it might take 5-10 minutes for RStudio to start, but once it starts, there
     should be no further delays
-  - do *not* start RStudio through the graphical menu system in ThinLinc, this
+   - do *not* start RStudio through the graphical menu system in ThinLinc, this
     will not have access to loaded modules.
-  - if it takes a long time and might be due to that you have saved a lot of
+   - if it takes a long time and might be due to that you have saved a lot of
     workspace
   
 
