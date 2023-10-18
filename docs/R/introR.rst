@@ -11,10 +11,10 @@ Introduction R
    - Write a batch script for running R
    - Using Rstudio
 
-    **Not covered**
+**Not covered**
     
-    - improve R *coding* skills 
-    - Other clusters
+   - improve R *coding* skills 
+   - Other clusters
         
 .. admonition:: Exercises
 
@@ -91,10 +91,9 @@ Preliminary schedule
    * - 15.00
      - END
      -
-
        
 What is R?
----------------
+----------
 
 As you probably already know…
     
