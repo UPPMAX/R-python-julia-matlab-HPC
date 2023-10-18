@@ -351,4 +351,5 @@ Links
 ---------
 
 * `Video: Starting a Jupyter notebook on the Rackham UPPMAX HPC cluster using a ThinLinc remote desktop (YouTube) <https://youtu.be/72rYjwGvWEc>`_
+* `Video: Starting a Jupyter notebook on the Rackham UPPMAX HPC cluster using a ThinLinc remote desktop (.ogv) <https://richelbilderbeek.nl/jupyter_from_rackham_using_thinlinc>`_
 

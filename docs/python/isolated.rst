@@ -552,6 +552,7 @@ Links
 ---------
 
 * `Video: How to use a Python venv on the Rackham UPPAX cluster (YouTube) <https://youtu.be/OjftEQ23xYk>`_
+* `Video: How to use a Python venv on the Rackham UPPAX cluster (.ogv) <https://richelbilderbeek.nl/python_in_venv_hpc.ogv>`_
 * `Presentation: How to use a Python venv on the Rackham UPPAX cluster (PDF) <https://github.com/UPPMAX/R-python-julia-HPC/blob/main/docs/python/isolated.pdf>`_
 * `Presentation: How to use a Python venv on the Rackham UPPAX cluster (ODP) <https://github.com/UPPMAX/R-python-julia-HPC/blob/main/docs/python/isolated.odp>`_
     

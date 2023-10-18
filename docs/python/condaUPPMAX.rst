@@ -246,6 +246,5 @@ Links
 ---------
 
 * `Video: How to use conda on the Rackham UPPMAX HPC cluster (YouTube) <https://youtu.be/SMhawXQhtls>`_
-    
-        
+* `Video: How to use conda on the Rackham UPPMAX HPC cluster (.mp4) <https://richelbilderbeek.nl/conda_on_rackham.mp4>`_
     
