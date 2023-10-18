@@ -70,14 +70,14 @@ The ``renv::init()`` function attempts to ensure the newly-created project
 library includes all R packages currently used by the project. It does this by
 crawling R files within the project for dependencies with the
 ``renv::dependencies()`` function. The discovered packages are then installed
-into the project library with the r``env::hydrate()`` function, which will also
+into the project library with the ``renv::hydrate()`` function, which will also
 attempt to save time by copying packages from your user library (rather than
 reinstalling from CRAN) as appropriate.
 
 Calling ``renv::init()`` will also write out the infrastructure necessary to
 automatically load and use the private library for new R sessions launched from
 the project root directory. This is accomplished by creating (or amending) a
-project-local .Rprofile with the necessary code to load the project when the R
+project-local ``.Rprofile`` with the necessary code to load the project when the R
 session is started.
 
 If you’d like to initialize a project without attempting dependency discovery
