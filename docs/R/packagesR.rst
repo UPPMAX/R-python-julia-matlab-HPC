@@ -412,6 +412,14 @@ dependencies yourself.
      You would then either download and install manually or install with
      something like devtools, from within R. 
 
+Install own packages on Bianca
+------------------------------
+
+- If an R package is not not available on Bianca already (like Conda repositories) you may have to use the wharf to install the library/package
+
+   - `Installing R packages on Bianca <https://uppmax.github.io/bianca_workshop/rpackages/>`_
+
+
 Exercises
 ---------
 
