@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A naiss2023-22-44
+#SBATCH -A naiss2023-22-914
 #Asking for 10 min.
 #SBATCH -t 00:10:00
 #SBATCH -n 8
