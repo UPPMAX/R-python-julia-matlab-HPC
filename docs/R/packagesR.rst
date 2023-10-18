@@ -139,15 +139,26 @@ way to check is probably starting the interpreter and running the ``libPaths()``
 Preinstalled package libraries
 ------------------------------
 
-Both UPPMAX and HPC2N offer a large amount of preinstalled packages. On HPC2N
-most of these (around 750 packages) come with the ``R`` module and additional
-ones in the ``R-bundle-Bioconductor``. On UPPMAX the module ``R_packages`` is a
-package library containing almost all packages in the CRAN and BioConductor
-repositories. As of 2021-11-11 there are a total of 21659 R packages installed
-in ``R_packages/4.1.1``. A total of 21740 packages are available in CRAN and
-BioConductor. 
+Both UPPMAX and HPC2N offer a large amount of preinstalled packages.
 
-NOTE: that on HPC2N, there are currently only two versions of the ``R-bundle-Bioconductor`` module, one that is compatible with ``R/4.0.0`` and one with ``R/4.1.2``. Thus, if you need the extra packages included in the ``R-bundle-Bioconductor`` module, you should use one of the compatible R versions. Use ``module spider <module>/<version>`` to check for prerequisites, as usual. 
+.. admonition:: HPC2N
+
+   - On HPC2N most of these (around 750 packages) come with the ``R`` module and additional ones in the ``R-bundle-Bioconductor``.
+
+   - NOTE: that on HPC2N, there are currently only two versions of the ``R-bundle-Bioconductor`` module, one that is compatible with ``R/4.0.0`` and one with ``R/4.1.2``. Thus, if you need the extra packages included in the ``R-bundle-Bioconductor`` module, you should use one of the compatible R versions. Use ``module spider <module>/<version>`` to check for prerequisites, as usual. 
+
+.. admonition:: UPPMAX
+
+   On UPPMAX the module ``R_packages`` is a package library containing almost all packages in the CRAN and BioConductor
+repositories. As of 2023-10-11 there are a total of:
+
+   - A total of 23476 R packages are installed
+   - A total of 23535 packages are available in CRAN and BioConductor
+   
+      - 19809 CRAN packages are installed, out of 19976 available
+      - 3544 BioConductor-specific packages are installed, out of 3559 available
+   - 121 other R packages are installed. These are not in CRAN/BioConductor, are only available in the CRAN/BioConductor archives, or are hosted on github, gitlab or elsewhere
+
 
 There are many different ways to check if the package you are after is already
 installed - chances are it is! The simplest way is probably to simply try
