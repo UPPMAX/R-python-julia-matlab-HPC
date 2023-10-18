@@ -1,6 +1,6 @@
 #!/bin/bash
 # A batch script for running the ML R program Rscript.R on Rackham
-#SBATCH -A naiss2023-22-44
+#SBATCH -A naiss2023-22-914
 #Asking for 10 min.
 #SBATCH -t 00:10:00
 #SBATCH -n 1

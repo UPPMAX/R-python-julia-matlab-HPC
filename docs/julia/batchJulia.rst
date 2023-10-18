@@ -240,14 +240,14 @@ Parallel code
             (v1.8) pkg> add MPI 
             # In the ``julian`` mode run these commands:
 
-         .. code-block:: julia
+        .. code-block:: julia
         
             julia> using MPI 
             julia> MPI.install_mpiexecjl() 
                  [ Info: Installing `mpiexecjl` to `/home/u/username/.julia/bin`...
                  [ Info: Done!
 
-         .. code-block:: console
+        .. code-block:: console
 
             # Add the installed ``mpiexecjl`` wrapper to your path on the Linux command line
             $ export PATH=/home/u/username/.julia/bin:$PATH
@@ -673,8 +673,7 @@ reference point, we show the simulation on CPUs as well.
             #SBATCH --qos=short              # if test run t<15 min
             #SBATCH --mail-type=begin        # send email when job begins
             #SBATCH --mail-type=end          # send email when job ends
-            #SBATCH --mail-user=bjorn.claremar@uppmax.uu.se
-            
+                       
             module load julia/1.8.5      # system CUDA works as of today
             julia script-gpu.jl
             
