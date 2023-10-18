@@ -160,9 +160,7 @@ repositories. As of 2023-10-11 there are a total of:
    - 121 other R packages are installed. These are not in CRAN/BioConductor, are only available in the CRAN/BioConductor archives, or are hosted on github, gitlab or elsewhere
 
 
-There are many different ways to check if the package you are after is already
-installed - chances are it is! The simplest way is probably to simply try
-loading the package from within ``R``
+There are many different ways to check if the package you are after is already installed - chances are it is! The simplest way is probably to simply try loading the package from within ``R``
 
 .. code-block:: R
 
@@ -180,10 +178,9 @@ Another option would be to create a dataframe of all the installed packages
 
    print(ip, row.names=FALSE)
 
-However, this might not be so helpful unless you do aditional filtering.
-Another simple option is to ``grep`` the library directory. For example, both
-when loading ``R_packages`` at UPPMAX and ``R-bundle-Bioconductor`` at HPC2N
-the environment variable ``R_LIBS_SITE`` will be set to the path of the package
+However, this might not be so helpful unless you do additional filtering.
+<br>
+Another simple option is to ``grep`` the library directory. For example, both when loading ``R_packages`` at UPPMAX and ``R-bundle-Bioconductor`` at HPC2N the environment variable ``R_LIBS_SITE`` will be set to the path of the package
 library.
 
 
@@ -420,17 +417,15 @@ Exercises
 
 .. challenge:: Install a package with automatic download
 
-   1) First do the setup of .Renviron and create the directory for installing R
+   1) First do the setup of `.Renviron` and create the directory for installing R
    packages
-   2) From the command line. Suggestion: "anomalize"
-   3) From inside R. Suggestion: "tidyr"
+   2) From the command line. Suggestion: ``anomalize``
+   3) From inside R. Suggestion: `tidyr`
    4) Start R and see if the library can be loaded. 
    
-   These are both on CRAN, and this way any dependencies will be installed as
-   well. 
+   These are both on CRAN, and this way any dependencies will be installed as well. 
    
-   Remember to pick a repo that is nearby, to install from:
-   https://cran.r-project.org/mirrors.html 
+   Remember to pick a repo that is nearby, to install from: https://cran.r-project.org/mirrors.html 
 
 
 .. solution:: Solution
