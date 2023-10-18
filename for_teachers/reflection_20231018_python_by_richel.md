@@ -54,7 +54,7 @@ as its members seems quite diverse:
 
  * Birgitte: most knowledge of general things
  * Björn: the most all-around-nice-guy
- * Pedro: most knowledgable in parallel computing
+ * Pedro: most knowledgeable in parallel computing
 
 As Björn was the only one to have sysadmin rights,
 he was the one to get learners to login, which he did as much as he could.
