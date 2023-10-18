@@ -231,8 +231,8 @@ After loading the R module (and its prerequisites), you start R like this (R/4.0
      > 
      
      
-Run R script
-############
+Run R scripts
+#############
     
 You can run an R script in the shell like this:
 
@@ -240,18 +240,20 @@ You can run an R script in the shell like this:
 
    $ Rscript example.R
 
-NOTE: *only* run jobs that are short and/or do not use a lot of resources from the command line. Otherwise ALWAYS use the batch system!
+.. warning::
+
+   *only* run jobs that are short and/or do not use a lot of resources from the command line. Otherwise ALWAYS use the batch system!
     
-More information will follow on running R from within a **batch job**. 
+   More information will follow on running R from within a **batch job**. 
 
 Exit R with q() in the R prompt. Decide if you want to save your workspace image or not. 
 
 Here is an example of running a short, serial R program at Kebnekaise: 
 
-  .. admonition:: Serial R program (add2.R) to add two arguments
-      :class: dropdown
+.. admonition:: Serial R program (add2.R) to add two arguments
+   :class: dropdown
 
-      .. code-block:: tcl
+   .. code-block:: tcl
         
          
          args <- commandArgs(trailingOnly = TRUE)
