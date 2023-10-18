@@ -56,10 +56,7 @@ Preliminary schedule
      - **break**
      - 
    * - 11.15
-     - Parallel session — UPPMAX: Bianca packages
-     - Lecture+code along 35m
-   * - .
-     - Parallel session — HPC2N: Parallel and multithreaded functions
+     - HPC2N: Parallel and multithreaded functions
      - Lecture+code along 35m   
    * - 11.50
      - Exercises and informal chat
@@ -74,7 +71,7 @@ Preliminary schedule
      - **break**
      - 
    * - 14.00
-     - Parallel session — UPPMAX: Thinlinc and RStudio 
+     - Parallel session — UPPMAX: Interactive/Thinlinc and RStudio 
      - Lecture+code along 25m
    * - 14.00
      - Parallel session — HPC2N: Thinlinc and RStudio 
