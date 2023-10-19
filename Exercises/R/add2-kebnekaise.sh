@@ -9,4 +9,4 @@ module purge
 module load GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
 
 # Run your R script (here 'add2.R') for some random numbers, here 234 and 346 
-Rscript --no-save --quiet add2.R 234 346
+Rscript add2.R 234 346
