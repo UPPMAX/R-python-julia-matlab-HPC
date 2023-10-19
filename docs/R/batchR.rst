@@ -448,7 +448,7 @@ Exercises
              module load R/4.0.4
              
              # Run your R script 
-             R --no-save --quiet < add2.R 2 3 
+             Rscript --no-save --quiet add2.R 2 3 
 
 
 .. solution:: Solution for HPC2N
@@ -464,10 +464,10 @@ Exercises
              #SBATCH -n 1 # Asking for 1 core
              
              # Load any modules you need, here for R/4.0.4
-             module load R/4.0.4
+             module load GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
              
              # Run your R script 
-             R --no-save --quiet < add2.R 2 3 
+             Rscript --no-save --quiet add2.R 2 3 
 
 
 
