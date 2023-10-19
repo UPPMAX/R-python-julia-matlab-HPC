@@ -149,8 +149,7 @@ Both UPPMAX and HPC2N offer a large amount of preinstalled packages.
 
 .. admonition:: UPPMAX
 
-   On UPPMAX the module ``R_packages`` is a package library containing almost all packages in the CRAN and BioConductor
-repositories. As of 2023-10-11 there are a total of:
+   On UPPMAX the module ``R_packages`` is a package library containing almost all packages in the CRAN and BioConductor repositories. As of 2023-10-11 there are a total of:
 
    - A total of 23476 R packages are installed
    - A total of 23535 packages are available in CRAN and BioConductor
@@ -431,11 +430,11 @@ Exercises
 
 .. challenge:: Install a package with automatic download
 
-   1) First do the setup of `.Renviron` and create the directory for installing R
+   1. First do the setup of `.Renviron` and create the directory for installing R
    packages
-   2) From the command line. Suggestion: ``anomalize``
-   3) From inside R. Suggestion: `tidyr`
-   4) Start R and see if the library can be loaded. 
+   2. From the command line. Suggestion: ``anomalize``
+   3. From inside R. Suggestion: `tidyr`
+   4. Start R and see if the library can be loaded. 
    
    These are both on CRAN, and this way any dependencies will be installed as well. 
    
