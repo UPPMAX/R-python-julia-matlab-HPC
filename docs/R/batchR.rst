@@ -330,7 +330,12 @@ ML code
             #SBATCH -A naiss2023-22-914
             #Asking for 10 min.
             #SBATCH -t 00:10:00
-            #SBATCH -n 1
+            #SBATCH --exclusive
+            #SBATCH -p node
+            #SBATCH -N 1
+            #SBATCH -M snowy
+            #SBATCH --gpus=1
+            #SBATCH --gpus-per-node=1
             #Writing output and error files
             #SBATCH --output=output%J.out
             #SBATCH --error=error%J.error
