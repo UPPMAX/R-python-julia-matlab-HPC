@@ -63,8 +63,7 @@ Package states
 
 An R packages can exist in five possible states
 
-- Source: The example above - "source code" or "source files". Development
-  form.
+- Source: "source code" or "source files". Development form.
 - Bundled: The source code compressed into a single file, usually `tar.gz` and
   sometimes refered to as "source tarballs". Files in `.Rbuildignore` are
   excluded.
