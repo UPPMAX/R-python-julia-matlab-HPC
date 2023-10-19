@@ -223,7 +223,7 @@ library.
 
       .. code-block:: console 
 
-         $ ls -l $/hpc2n/eb/software/R-bundle-Bioconductor/3.14-foss-2021b-R-4.1.2 | grep RNA
+         $ ls -l /hpc2n/eb/software/R-bundle-Bioconductor/3.14-foss-2021b-R-4.1.2 | grep RNA
          drwxr-xr-x  9 easybuild easybuild 4096 Dec 30  2021 DeconRNASeq/
          drwxr-xr-x  7 easybuild easybuild 4096 Dec 30  2021 RNASeqPower/
 
