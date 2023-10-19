@@ -448,7 +448,7 @@ Exercises
              module load R/4.0.4
              
              # Run your R script 
-             Rscript --no-save --quiet add2.R 2 3 
+             Rscript add2.R 2 3 
 
 
 .. solution:: Solution for HPC2N
@@ -467,7 +467,7 @@ Exercises
              module load GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
              
              # Run your R script 
-             Rscript --no-save --quiet add2.R 2 3 
+             Rscript add2.R 2 3 
 
 
 
