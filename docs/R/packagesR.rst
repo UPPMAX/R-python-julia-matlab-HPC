@@ -81,7 +81,8 @@ An R packages can exist in five possible states
    :align: left
 
 
-source: https://r-pkgs.org/structure.html and
+
+Source: https://r-pkgs.org/structure.html and
 https://nbisweden.github.io/RaukR-2021/rpackages_Sebastian/presentation/rpackages_Sebastian.html
 
 Package libraries
