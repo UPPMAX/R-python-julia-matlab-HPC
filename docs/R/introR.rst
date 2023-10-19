@@ -21,8 +21,8 @@ Introduction R
     - You can download the exercises from the course GitHub repo, under the
       "Exercises" directory:
       https://github.com/UPPMAX/R-python-julia-HPC/tree/main/Exercises
-    - On HPC2N, you can copy the exercises in a tarball from TBC
-    - On UPPMAX you can copy the exercises in a tarball from TBC
+    - On HPC2N, you can copy the exercises in a tarball from /proj/nobackup/hpc2n2023-110/Exercises.tar.gz
+    - On UPPMAX you can copy the exercises in a tarball from /proj/naiss2023-22-914/Exercises.tar.gz
 
 Preliminary schedule
 --------------------
