@@ -48,8 +48,8 @@ Workflow
 
 The general workflow when working with ``renv`` is:
 
-    1. Call ``renv::init()`` to initialize a new project-local environment with
-           a private R library,
+    1. Call ``renv::init()`` 
+       to initialize a new project-local environment with a private R library,
 
     2. Work in the project as normal, installing and removing new R packages as
            they are needed in the project,
