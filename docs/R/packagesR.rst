@@ -63,8 +63,7 @@ Package states
 
 An R packages can exist in five possible states
 
-- Source: The example above - "source code" or "source files". Development
-  form.
+- Source: "source code" or "source files". Development form.
 - Bundled: The source code compressed into a single file, usually `tar.gz` and
   sometimes refered to as "source tarballs". Files in `.Rbuildignore` are
   excluded.
@@ -82,7 +81,8 @@ An R packages can exist in five possible states
    :align: left
 
 
-source: https://r-pkgs.org/structure.html and
+
+Source: https://r-pkgs.org/structure.html and
 https://nbisweden.github.io/RaukR-2021/rpackages_Sebastian/presentation/rpackages_Sebastian.html
 
 Package libraries
@@ -139,19 +139,27 @@ way to check is probably starting the interpreter and running the ``libPaths()``
 Preinstalled package libraries
 ------------------------------
 
-Both UPPMAX and HPC2N offer a large amount of preinstalled packages. On HPC2N
-most of these (around 750 packages) come with the ``R`` module and additional
-ones in the ``R-bundle-Bioconductor``. On UPPMAX the module ``R_packages`` is a
-package library containing almost all packages in the CRAN and BioConductor
-repositories. As of 2021-11-11 there are a total of 21659 R packages installed
-in ``R_packages/4.1.1``. A total of 21740 packages are available in CRAN and
-BioConductor. 
+Both UPPMAX and HPC2N offer a large amount of preinstalled packages.
 
-NOTE: that on HPC2N, there are currently only two versions of the ``R-bundle-Bioconductor`` module, one that is compatible with ``R/4.0.0`` and one with ``R/4.1.2``. Thus, if you need the extra packages included in the ``R-bundle-Bioconductor`` module, you should use one of the compatible R versions. Use ``module spider <module>/<version>`` to check for prerequisites, as usual. 
+.. admonition:: HPC2N
 
-There are many different ways to check if the package you are after is already
-installed - chances are it is! The simplest way is probably to simply try
-loading the package from within ``R``
+   - On HPC2N most of these (around 750 packages) come with the ``R`` module and additional ones in the ``R-bundle-Bioconductor``.
+
+   - NOTE: that on HPC2N, there are currently only two versions of the ``R-bundle-Bioconductor`` module, one that is compatible with ``R/4.0.0`` and one with ``R/4.1.2``. Thus, if you need the extra packages included in the ``R-bundle-Bioconductor`` module, you should use one of the compatible R versions. Use ``module spider <module>/<version>`` to check for prerequisites, as usual. 
+
+.. admonition:: UPPMAX
+
+   On UPPMAX the module ``R_packages`` is a package library containing almost all packages in the CRAN and BioConductor repositories. As of 2023-10-11 there are a total of:
+
+   - A total of 23476 R packages are installed
+   - A total of 23535 packages are available in CRAN and BioConductor
+   
+      - 19809 CRAN packages are installed, out of 19976 available
+      - 3544 BioConductor-specific packages are installed, out of 3559 available
+   - 121 other R packages are installed. These are not in CRAN/BioConductor, are only available in the CRAN/BioConductor archives, or are hosted on github, gitlab or elsewhere
+
+
+There are many different ways to check if the package you are after is already installed - chances are it is! The simplest way is probably to simply try loading the package from within ``R``
 
 .. code-block:: R
 
@@ -169,10 +177,9 @@ Another option would be to create a dataframe of all the installed packages
 
    print(ip, row.names=FALSE)
 
-However, this might not be so helpful unless you do aditional filtering.
-Another simple option is to ``grep`` the library directory. For example, both
-when loading ``R_packages`` at UPPMAX and ``R-bundle-Bioconductor`` at HPC2N
-the environment variable ``R_LIBS_SITE`` will be set to the path of the package
+However, this might not be so helpful unless you do additional filtering.
+<br>
+Another simple option is to ``grep`` the library directory. For example, both when loading ``R_packages`` at UPPMAX and ``R-bundle-Bioconductor`` at HPC2N the environment variable ``R_LIBS_SITE`` will be set to the path of the package
 library.
 
 
@@ -215,7 +222,7 @@ library.
 
       .. code-block:: console 
 
-         $ ls -l $/hpc2n/eb/software/R-bundle-Bioconductor/3.14-foss-2021b-R-4.1.2 | grep RNA
+         $ ls -l /hpc2n/eb/software/R-bundle-Bioconductor/3.14-foss-2021b-R-4.1.2 | grep RNA
          drwxr-xr-x  9 easybuild easybuild 4096 Dec 30  2021 DeconRNASeq/
          drwxr-xr-x  7 easybuild easybuild 4096 Dec 30  2021 RNASeqPower/
 
@@ -404,22 +411,34 @@ dependencies yourself.
      You would then either download and install manually or install with
      something like devtools, from within R. 
 
+Install own packages on Bianca
+------------------------------
+
+- If an R package is not not available on Bianca already (like Conda repositories) you may have to use the wharf to install the library/package
+- Typical workflow
+
+   - Install on Rackham
+   - Transfer to Wharf
+   - Move package to local Bianca R package path
+   - Test your installation
+- Demo and exercise from our Bianca course:
+   - `Installing R packages on Bianca <https://uppmax.github.io/bianca_workshop/rpackages/>`_
+
+
 Exercises
 ---------
 
 .. challenge:: Install a package with automatic download
 
-   1) First do the setup of .Renviron and create the directory for installing R
+   1. First do the setup of `.Renviron` and create the directory for installing R
    packages
-   2) From the command line. Suggestion: "anomalize"
-   3) From inside R. Suggestion: "tidyr"
-   4) Start R and see if the library can be loaded. 
+   2. From the command line. Suggestion: ``anomalize``
+   3. From inside R. Suggestion: `tidyr`
+   4. Start R and see if the library can be loaded. 
    
-   These are both on CRAN, and this way any dependencies will be installed as
-   well. 
+   These are both on CRAN, and this way any dependencies will be installed as well. 
    
-   Remember to pick a repo that is nearby, to install from:
-   https://cran.r-project.org/mirrors.html 
+   Remember to pick a repo that is nearby, to install from: https://cran.r-project.org/mirrors.html 
 
 
 .. solution:: Solution

@@ -330,7 +330,12 @@ ML code
             #SBATCH -A naiss2023-22-914
             #Asking for 10 min.
             #SBATCH -t 00:10:00
-            #SBATCH -n 1
+            #SBATCH --exclusive
+            #SBATCH -p node
+            #SBATCH -N 1
+            #SBATCH -M snowy
+            #SBATCH --gpus=1
+            #SBATCH --gpus-per-node=1
             #Writing output and error files
             #SBATCH --output=output%J.out
             #SBATCH --error=error%J.error
@@ -443,7 +448,7 @@ Exercises
              module load R/4.0.4
              
              # Run your R script 
-             R --no-save --quiet < add2.R 2 3 
+             Rscript add2.R 2 3 
 
 
 .. solution:: Solution for HPC2N
@@ -459,10 +464,10 @@ Exercises
              #SBATCH -n 1 # Asking for 1 core
              
              # Load any modules you need, here for R/4.0.4
-             module load R/4.0.4
+             module load GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
              
              # Run your R script 
-             R --no-save --quiet < add2.R 2 3 
+             Rscript add2.R 2 3 
 
 
 

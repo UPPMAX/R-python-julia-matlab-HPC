@@ -368,7 +368,6 @@ Content of the course
    R/packagesR.rst
    R/isolatedR
    common/parallel.rst
-   R/packagesBianca.rst
    R/batchR.rst
    R/interactiveR.rst
    R/rstudio.rst

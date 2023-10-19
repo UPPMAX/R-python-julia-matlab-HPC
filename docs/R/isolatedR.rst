@@ -48,36 +48,33 @@ Workflow
 
 The general workflow when working with ``renv`` is:
 
-    1. Call ``renv::init()`` to initialize a new project-local environment with
-           a private R library,
+    1. Call ``renv::init()`` 
+       to initialize a new project-local environment with a private R library,
 
-    2. Work in the project as normal, installing and removing new R packages as
-           they are needed in the project,
+    2. Work 
+       in the project as normal, installing and removing new R packages as they are needed in the project,
 
-    3. Call ``renv::snapshot()`` to save the state of the project library to
-           the lockfile (called ``renv.lock``),
+    3. Call ``renv::snapshot()`` 
+       to save the state of the project library to the lockfile (called ``renv.lock``),
 
-    4. Continue working on your project, installing and updating R packages as
-           needed.
+    4. Continue working 
+       on your project, installing and updating R packages as needed.
 
-    5. Call ``renv::snapshot()`` again to save the state of your project
-           library if your attempts to update R packages were successful, or
-           call ``renv::restore()`` to revert to the previous state as encoded
-           in the lockfile if your attempts to update packages introduced some
-           new problems.
+    5. Call ``renv::snapshot()`` 
+       again to save the state of your project library if your attempts to update R packages were successful, or call ``renv::restore()`` to revert to the previous state as encoded in the lockfile if your attempts to update packages introduced some new problems.
 
 The ``renv::init()`` function attempts to ensure the newly-created project
 library includes all R packages currently used by the project. It does this by
 crawling R files within the project for dependencies with the
 ``renv::dependencies()`` function. The discovered packages are then installed
-into the project library with the r``env::hydrate()`` function, which will also
+into the project library with the ``renv::hydrate()`` function, which will also
 attempt to save time by copying packages from your user library (rather than
 reinstalling from CRAN) as appropriate.
 
 Calling ``renv::init()`` will also write out the infrastructure necessary to
 automatically load and use the private library for new R sessions launched from
 the project root directory. This is accomplished by creating (or amending) a
-project-local .Rprofile with the necessary code to load the project when the R
+project-local ``.Rprofile`` with the necessary code to load the project when the R
 session is started.
 
 If you’d like to initialize a project without attempting dependency discovery
