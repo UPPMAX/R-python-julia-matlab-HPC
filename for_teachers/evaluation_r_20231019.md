@@ -16,3 +16,4 @@ Feedback:
  * ThinLinc was of correct length today, on Day 1 indeed a little bit too short
  * All the instructors should use the same R version, because
    else you need to load a different R module
+
