@@ -274,6 +274,10 @@ time on purpose (or was that another course?) and I felt it was preferred
 to be vague over setting a time that would possible be changed, to add
 to the tranquility.
 
+Comment from 2024-01-24: I am happy to see I took this feedback seriously,
+practiced this and forgot it was based on this! Now I always show the
+exercise before sending the learners to a breakout room :-)
+
  * The first should be how to run a simple script.  "batch mode" should come before "virtual environments".  Also, avoid "pip" at the start, take that later since modules are enough for standard tasks
 
 I like this suggestion!
