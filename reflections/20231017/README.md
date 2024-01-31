@@ -1,5 +1,9 @@
 # October 2023 Python Day by Richel
 
+ * Teaching day: 2023-10-17
+ * Topic: Python
+ * Written on 2023-10-18
+
 This was the original course schedule:
 
 Time     |Topic                      |Teacher
