@@ -330,6 +330,12 @@ Content of the course
 
 .. toctree::
    :maxdepth: 2
+   :caption: Pre-requirements:
+
+   prereqs.md
+
+.. toctree::
+   :maxdepth: 2
    :caption: Python Lessons:
 
    python/intro.rst
