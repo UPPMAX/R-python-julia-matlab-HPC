@@ -29,8 +29,10 @@ Summary
    - Interactive work on calculation nodes
       - Start an interactive session on a calculation node by a SLURM
         allocation (similar flags)
+
          - At HPC2N: ``salloc`` ...
          - At UPPMAX: ``interactive`` ...
+
       - Follow the same procedure as usual by loading the R module and
         possible prerequisites.
    - Using RStudio
