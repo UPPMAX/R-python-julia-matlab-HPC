@@ -223,8 +223,8 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
         First load the modules ``ml GCCcore/10.3.0 Python/3.9.5`` and then run the script
         with the command  ``python sleep.py`` to use 6 processes.
 
-        DASK
-        ''''
+        **DASK**
+        
 
         There are other strategies that are more automatic. **Dask** is a array model extension and task 
         scheduler. By using the new array classes, you can automatically distribute operations across multiple CPUs.
