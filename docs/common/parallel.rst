@@ -223,6 +223,25 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
         First load the modules ``ml GCCcore/10.3.0 Python/3.9.5`` and then run the script
         with the command  ``python sleep.py`` to use 6 processes.
 
+        DASK
+        ''''
+
+        There are other strategies that are more automatic. **Dask** is a array model extension and task 
+        scheduler. By using the new array classes, you can automatically distribute operations across multiple CPUs.
+
+        Dask is very popular for data analysis and is used by a number of high-level Python libraries:
+
+            - Dask arrays scale NumPy (see also xarray)
+            - Dask dataframes scale Pandas workflows
+            - Dask-ML scales Scikit-Learn
+
+        - Dask divides arrays into many small pieces (chunks), as small as necessary to fit it into memory. 
+        - Operations are delayed (lazy computing) e.g. tasks are queue and no computation is performed until 
+          you actually ask values to be computed (for instance print mean values). 
+        - Then data is loaded into memory and computation proceeds in a streaming fashion, block-by-block.
+
+
+
    .. tab:: Julia
 
         In the following example ``sleep.jl`` the `sleep()` function is called `n` times
@@ -291,21 +310,7 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
         First load the modules ``ml GCC/10.2.0  OpenMPI/4.0.5 R/4.0.4`` and then run the script
         with the command  ``Rscript --no-save --no-restore sleep.R`` to use 6 processes.
 
-DASK
-''''
 
-There are other strategies that are more automatic. 
-**Dask** is a array model extension and task scheduler. By using the new array classes, you can automatically distribute operations across multiple CPUs.
-
-Dask is very popular for data analysis and is used by a number of high-level Python libraries:
-
-    - Dask arrays scale NumPy (see also xarray)
-    - Dask dataframes scale Pandas workflows
-    - Dask-ML scales Scikit-Learn
-
-- Dask divides arrays into many small pieces (chunks), as small as necessary to fit it into memory. 
-- Operations are delayed (lazy computing) e.g. tasks are queue and no computation is performed until you actually ask values to be computed (for instance print mean values). 
-- Then data is loaded into memory and computation proceeds in a streaming fashion, block-by-block.
 
 .. admonition:: More info!
 
