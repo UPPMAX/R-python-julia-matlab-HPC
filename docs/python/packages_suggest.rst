@@ -2,6 +2,36 @@
 Packages
 ********
 
+.. admonition:: Admonition title
+
+    Admonition text
+
+.. CAUTION:: 
+    Caution title
+
+    Caution text
+
+
+.. danger:: 
+    Danger title
+
+    Danger text
+
+.. ERROR:: Error title
+
+    Error text
+
+.. Hint:: Hint title with period.
+
+    Hint text with period.
+
+.. note:: Note title
+
+    Note text
+
+
+
+
 .. admonition:: Learning objectives
 
     - Have a first 'Get stuff to work' experience
