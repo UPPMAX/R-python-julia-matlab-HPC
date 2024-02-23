@@ -297,9 +297,80 @@ Question 1
 
     Apply the documentation to show if a Python package is already installed
 
-- Load the module for Python 3.11.4
-- Is the Python package `pandas` installed? If yes, which version?
-- Is the Python package `mhcnuggets` installed? If yes, which version?
+.. tabs::
+
+    .. tab:: Exercise 1.1
+
+        Load the module for Python 3.11.4
+
+    .. tab:: Answer HPC2N
+
+        Do:
+
+        .. code-block::
+
+            module load python/3.11.4
+
+    .. tab:: Answer UPPMAX
+
+        Do:
+
+        .. code-block::
+
+            module load python/3.11.4
+
+.. tabs::
+
+    .. tab:: Exercise 1.2
+
+        Is the Python package `pandas` installed? If yes, which version?
+
+    .. tab:: Answer HPC2N
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+    .. tab:: Answer UPPMAX
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+        Then among the list one can find: ``pandas 2.0.3``
+
+        So, yes, the Python package `pandas` version 2.0.3 is installed!
+
+.. tabs::
+
+    .. tab:: Exercise 1.3
+
+        Is the Python package `mhcnuggets` installed? If yes, which version?
+
+    .. tab:: Answer HPC2N
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+    .. tab:: Answer UPPMAX
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+        In the list, one cannot find ``mhcnuggets``.
+
+        So, no, the Python package ``mhcnuggets`` is not installed.
+
 
 **********
 Question 2
