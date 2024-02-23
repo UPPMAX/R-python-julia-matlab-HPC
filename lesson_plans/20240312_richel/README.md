@@ -12,7 +12,7 @@ Time     |Topic                      |Teacher
 **9.10** |Python in general          |Birgitte
 **9.20** |Load modules and run       |Birgitte
 **9.45** |Break                      |.
-**10:00**|Packages  (45-->30)                 |Richel
+**10:00**|Packages  (45-->30)        |Richel
 **10.30**|Break                      |.
 **10.45**|Isolated environments (venv, **conda**)     |Richel (45-->60)
 **11:45**|Break or informal chat     |Richel 
