@@ -258,6 +258,10 @@ Do X. Then do Y.
 Question 2
 **********
 
+:::{dropdown} Teaching goals
+Here is a teaching goal.
+:::
+
 .. note:: Teaching goals
 
     Here is a teaching goal.
