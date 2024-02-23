@@ -2,65 +2,37 @@
 Packages
 ********
 
-.. admonition:: Admonition title
+.. tabs::
 
-    Admonition text
-
-.. CAUTION:: 
-    Caution title
-
-    Caution text
+   .. tab:: Learning objectives
 
 
-.. danger:: 
-    Danger title
+      - Have a first 'Get stuff to work' experience
+      - Rehearse creating a script
+      - Experience when importing a Python package gives an error
+      - Search for an UPPMAX module that needs to be loaded
+      - Import a Python package successfully
 
-    Danger text
+   .. tab:: For teachers
 
-.. ERROR:: Error title
+      Teaching goals are:
 
-    Error text
+      - Learners have observed the error when importing a Python package without the needed UPPMAX module loaded
+      - Learners have search through the UPPMAX modules
+      - Learners may find out that X-forwarding is important
+      - Learners have gotten 'stuff to work'
 
-.. Hint:: Hint title with period.
+      Other goals are:
 
-    Hint text with period.
+      - Verify that learners indeed have learned how to login with X-forwarding.
+        Redirect to remote desktop environment as a solution
 
-.. note:: Note title
+      Lesson plan:
 
-    Note text
-
-
-
-
-.. admonition:: Learning objectives
-
-    - Have a first 'Get stuff to work' experience
-    - Rehearse creating a script
-    - Experience when importing a Python package gives an error
-    - Search for an UPPMAX module that needs to be loaded
-    - Import a Python package successfully
-
-.. admonition:: For teachers
-
-    Teaching goals are:
-
-    - Learners have observed the error when importing a Python package without the needed UPPMAX module loaded
-    - Learners have search through the UPPMAX modules
-    - Learners may find out that X-forwarding is important
-    - Learners have gotten 'stuff to work'
-
-    Other goals are:
-
-    - Verify that learners indeed have learned how to login with X-forwarding.
-      Redirect to remote desktop environment as a solution
-
-    Lesson plan:
-
-    - 5 mins: prior knowledge
-    - 5 mins: presentation
-    - 25 mins: challenge
-    - 5 mins: feedback
-    :::
+      - 5 mins: prior knowledge
+      - 5 mins: presentation
+      - 25 mins: challenge
+      - 5 mins: feedback
 
 ############
 Introduction
@@ -75,13 +47,17 @@ we practice working with packages.
 Python package installation systems
 ***********************************
 
+There are two Python package installation system.
+In this session, we use `pip`, as it can be used on both HPC clusters.
+
 +-----------------------------+-------------+-------------+
-| Package installation system | HPC2n       | UPPMAX      |
+| Package installation system | HPC2N       | UPPMAX      |
 +=============================+=============+=============+
 | conda                       | Unsupported | Recommended |
 +-----------------------------+-------------+-------------+
 | pip                         | Recommended | Supported   |
 +-----------------------------+-------------+-------------+
+
 
 .. questions::
 
@@ -311,24 +287,41 @@ Questions
 
 We ask questions
 
+
+
 **********
 Question 1
 **********
 
-.. note:: Teaching goals
+.. admonition:: Teaching goals
 
-    Here is a teaching goal.
+    Apply the documentation to show if a Python package is already installed
 
-
-Do X. Then do Y.
+- Load the module for Python 3.11.4
+- Is the Python package `pandas` installed? If yes, which version?
+- Is the Python package `mhcnuggets` installed? If yes, which version?
 
 **********
 Question 2
 **********
 
-.. note:: Teaching goals
+.. admonition:: Teaching goals
 
-    Here is a teaching goal.
+    Apply the documentation to load a Python package
+
+The Python package TensorFlow is not installed.
+
+- Use the module system to find which module you need to load.
+- Load the TensorFlow module.
+- Confirm that it works
+
+**********
+Question 2
+**********
+
+.. admonition:: Teaching goals
+
+    Apply the documentation to install a Python package
 
 Do X. Then do Y.
   
