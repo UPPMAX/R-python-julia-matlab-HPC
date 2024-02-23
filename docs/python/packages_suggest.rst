@@ -36,16 +36,22 @@ Packages
 Introduction
 ############
 
+Packages are pieces of Python code written to be used by others.
+When possible, using an existing Python package is usually smarter than writing code yourself.
+In this session, 
+we practice working with packages.
 
-.. admonition:: Python modules AKA Python packages
+***********************************
+Python package installation systems
+***********************************
 
-   - Python **packages broaden the use of python** to almost infinity! 
-
-   - Instead of writing code yourself there may be others that have done the same!
-
-   - Many **scientific tools** are distributed as **python packages**, making it possible to run a script in the prompt and there define files to be analysed and arguments defining exactly what to do.
-
-   - A nice **introduction to packages** can be found here: 
++-----------------------------+-------------+-------------+
+| Package installation system | HPC2n       | UPPMAX      |
++=============================+=============+=============+
+| conda                       | Unsupported | Recommended |
++-----------------------------+-------------+-------------+
+| pip                         | Recommended | Supported   |
++-----------------------------+-------------+-------------+
 
 .. questions::
 
@@ -77,7 +83,8 @@ Check current available packages
 General for both centers
 ########################
 
-Some python packages are working as stand-alone tools, for instance in bioinformatics. The tool may be already installed as a module. Check if it is there by:
+Some python packages are working as stand-alone tools, for instance in bioinformatics. 
+The tool may be already installed as a module. Check if it is there by:
 
 .. code-block:: console 
 
@@ -89,7 +96,7 @@ Using ``module spider`` lets you search regardless of upper- or lowercase charac
 
 .. tabs::
 
-   .. tab:: UPPMAX
+    .. tab:: UPPMAX
 
     Check the pre-installed packages of a specific python module:
 
@@ -99,7 +106,7 @@ Using ``module spider`` lets you search regardless of upper- or lowercase charac
   
     
     
-   .. tab:: HPC2N
+    .. tab:: HPC2N
    
     At HPC2N, a way to find Python packages that you are unsure how are names, would be to do
 
