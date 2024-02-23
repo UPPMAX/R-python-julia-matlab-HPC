@@ -2,7 +2,7 @@
 Packages
 ********
 
-.. note:: Learning objectives
+.. admonition:: Learning objectives
 
     - Have a first 'Get stuff to work' experience
     - Rehearse creating a script
@@ -10,7 +10,7 @@ Packages
     - Search for an UPPMAX module that needs to be loaded
     - Import a Python package successfully
 
-.. note:: For teachers
+.. admonition:: For teachers
 
     Teaching goals are:
 
