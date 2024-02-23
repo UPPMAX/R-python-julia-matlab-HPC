@@ -10,26 +10,27 @@ Packages
     - Search for an UPPMAX module that needs to be loaded
     - Import a Python package successfully
 
-:::{dropdown} For teachers
-Teaching goals are:
+.. note:: For teachers
 
-- Learners have observed the error when importing a Python package without the needed UPPMAX module loaded
-- Learners have search through the UPPMAX modules
-- Learners may find out that X-forwarding is important
-- Learners have gotten 'stuff to work'
+    Teaching goals are:
 
-Other goals are:
+    - Learners have observed the error when importing a Python package without the needed UPPMAX module loaded
+    - Learners have search through the UPPMAX modules
+    - Learners may find out that X-forwarding is important
+    - Learners have gotten 'stuff to work'
 
-- Verify that learners indeed have learned how to login with X-forwarding.
-  Redirect to remote desktop environment as a solution
+    Other goals are:
 
-Lesson plan:
+    - Verify that learners indeed have learned how to login with X-forwarding.
+      Redirect to remote desktop environment as a solution
 
-- 5 mins: prior knowledge
-- 5 mins: presentation
-- 25 mins: challenge
-- 5 mins: feedback
-:::
+    Lesson plan:
+
+    - 5 mins: prior knowledge
+    - 5 mins: presentation
+    - 25 mins: challenge
+    - 5 mins: feedback
+    :::
 
 ############
 Introduction
@@ -65,7 +66,7 @@ Introduction
     - **Conda** (``conda``) is more general and while it contains many Python packages and packages with a Python interface, it is often used to also distribute packages which do not contain any Python (e.g. C or C++ packages).
 
         - Creates its own environment that does not interact with other python installations
-	- At HPC2N, Conda is not recommended, and we do not support it there
+    - At HPC2N, Conda is not recommended, and we do not support it there
 
     - Many libraries and tools are distributed in both ecosystems.
 
@@ -90,29 +91,29 @@ Using ``module spider`` lets you search regardless of upper- or lowercase charac
 
    .. tab:: UPPMAX
 
-	Check the pre-installed packages of a specific python module:
+    Check the pre-installed packages of a specific python module:
 
-	.. code-block:: console 
+    .. code-block:: console 
 
-	   $ module help python/<version> 
+       $ module help python/<version> 
   
-	
-	
+    
+    
    .. tab:: HPC2N
    
-	At HPC2N, a way to find Python packages that you are unsure how are names, would be to do
+    At HPC2N, a way to find Python packages that you are unsure how are names, would be to do
 
-	.. code-block:: console 
+    .. code-block:: console 
 
-	   $ module -r spider ’.*Python.*’
+       $ module -r spider ’.*Python.*’
    
-	or
+    or
 
-	.. code-block:: console 
+    .. code-block:: console 
 
-	   $ module -r spider ’.*python.*’
+       $ module -r spider ’.*python.*’
    
-	Do be aware that the output of this will not just be Python packages, some will just be programs that are compiled with Python, so you need to check the list carefully.   
+    Do be aware that the output of this will not just be Python packages, some will just be programs that are compiled with Python, so you need to check the list carefully.   
    
 Check the pre-installed packages of a loaded python module, in shell:
 
@@ -140,32 +141,32 @@ A selection of the Python packages and libraries installed on UPPMAX and HPC2N a
 
    .. tab:: UPPMAX
 
-	The python application at UPPMAX comes with several preinstalled packages.
-	A selection of the Python packages and libraries installed on UPPMAX are:
+    The python application at UPPMAX comes with several preinstalled packages.
+    A selection of the Python packages and libraries installed on UPPMAX are:
 
-	  - ``Numpy``
-	  - ``Pandas``
- 	  - ``Scipy``
-	  - ``Matplotlib``
-	  - ``Jupyter notebook``
-	  - ``pip``
-	  - ``cython``
-	  - ``ipython``
-	  - ``networkx``
-	  - ``graphviz/0.16``
-	In addition there are packages available from the module system
-  	  - ``biopython``
-  	  - ``python_ML_packages``
-    	  - ``sklearn/scikit-learn``
-	  - ``TensorFlow`` 
-	  - ``torch``
-    	  - ``mpi``
-    	  - ``mpi4py``
-  	  - ``bwa``
-  	  - ``Graphviz/2.40.1``
-  	  - ``HiChipper``
-  	  - ``Homer``
-  	  - ``pysam``
+      - ``Numpy``
+      - ``Pandas``
+       - ``Scipy``
+      - ``Matplotlib``
+      - ``Jupyter notebook``
+      - ``pip``
+      - ``cython``
+      - ``ipython``
+      - ``networkx``
+      - ``graphviz/0.16``
+    In addition there are packages available from the module system
+        - ``biopython``
+        - ``python_ML_packages``
+          - ``sklearn/scikit-learn``
+      - ``TensorFlow`` 
+      - ``torch``
+          - ``mpi``
+          - ``mpi4py``
+        - ``bwa``
+        - ``Graphviz/2.40.1``
+        - ``HiChipper``
+        - ``Homer``
+        - ``pysam``
 
    .. tab:: HPC2N
 
@@ -173,24 +174,24 @@ A selection of the Python packages and libraries installed on UPPMAX and HPC2N a
       - HPC2N has both Python 2.7.x and Python 3.x installed. 
       - We will be using Python 3.x in this course.  For this course, the recommended version of Python to use on Kebnekaise is 3.10.4
 
-	NOTE:  HPC2N do NOT recommend (and do not support) using Anaconda/Conda on our systems. You can read more about this here: https://www.hpc2n.umu.se/documentation/guides/anaconda
+    NOTE:  HPC2N do NOT recommend (and do not support) using Anaconda/Conda on our systems. You can read more about this here: https://www.hpc2n.umu.se/documentation/guides/anaconda
 
 
       - This is a selection of the packages and libraries installed at HPC2N. These are all installed as **modules** and need to be loaded before use. Some may also have **prerequisites** that needs to be loaded first. That will be listed when you check with module spider <package-module> 
-	
-	  - ``ASE``  (Not on AMD nodes yet)
-	  - ``Keras``
-	  - ``PyTorch``   
-	  - ``SciPy-bundle`` (Bottleneck, deap, mpi4py, mpmath, numexpr, numpy, pandas, scipy - some of the versions have more)
-	  - ``TensorFlow``
-	  - ``Theano``  (Not on AMD nodes yet)
-	  - ``matplotlib`` 
-	  - ``scikit-learn`` 
-	  - ``scikit-image``  (Not on AMD nodes yet)
-	  - ``pip``  
-	  - ``iPython``  (Not on AMD nodes yet)
-	  - ``Cython``   
-	  - ``Flask``   (Not on AMD nodes yet)
+    
+      - ``ASE``  (Not on AMD nodes yet)
+      - ``Keras``
+      - ``PyTorch``   
+      - ``SciPy-bundle`` (Bottleneck, deap, mpi4py, mpmath, numexpr, numpy, pandas, scipy - some of the versions have more)
+      - ``TensorFlow``
+      - ``Theano``  (Not on AMD nodes yet)
+      - ``matplotlib`` 
+      - ``scikit-learn`` 
+      - ``scikit-image``  (Not on AMD nodes yet)
+      - ``pip``  
+      - ``iPython``  (Not on AMD nodes yet)
+      - ``Cython``   
+      - ``Flask``   (Not on AMD nodes yet)
 
 
 
@@ -220,12 +221,12 @@ We HIGHLY recommend using a virtual environment during installation, since this 
 
    - You can check for packages 
    
-   	- from the Python shell with the ``import`` command
-	- from BASH shell with the 
-	
-		- ``pip list`` command at both centers
-		- ``ml help python/3.10.8`` at UPPMAX
-		
+       - from the Python shell with the ``import`` command
+    - from BASH shell with the 
+    
+        - ``pip list`` command at both centers
+        - ``ml help python/3.10.8`` at UPPMAX
+        
    - Installation of Python packages can be done either with **PYPI** or **Conda**
    - You install own packages with the ``pip install`` command (This is the recommended way on HPC2N)
    - At UPPMAX Conda is also available (See Conda section)
@@ -252,8 +253,8 @@ Using Conda
       
 .. admonition:: Conda cheat sheet    
    
-   - List packages in present environment:	``conda list``
-   - List all environments:			``conda info -e`` or ``conda env list``
+   - List packages in present environment:    ``conda list``
+   - List all environments:            ``conda info -e`` or ``conda env list``
    - Install a package: ``conda install somepackage``
    - Install from certain channel (conda-forge): ``conda install -c conda-forge somepackage``
    - Install a specific version: ``conda install somepackage=1.2.3``
@@ -288,14 +289,9 @@ Do X. Then do Y.
 Question 2
 **********
 
-:::{dropdown} Teaching goals
-Here is a teaching goal.
-:::
-
 .. note:: Teaching goals
 
     Here is a teaching goal.
-
 
 Do X. Then do Y.
   
