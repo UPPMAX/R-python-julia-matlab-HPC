@@ -2,9 +2,39 @@
 Packages
 ********
 
+.. note:: Learning objectives
+
+    - Have a first 'Get stuff to work' experience
+    - Rehearse creating a script
+    - Experience when importing a Python package gives an error
+    - Search for an UPPMAX module that needs to be loaded
+    - Import a Python package successfully
+
+:::{dropdown} For teachers
+Teaching goals are:
+
+- Learners have observed the error when importing a Python package without the needed UPPMAX module loaded
+- Learners have search through the UPPMAX modules
+- Learners may find out that X-forwarding is important
+- Learners have gotten 'stuff to work'
+
+Other goals are:
+
+- Verify that learners indeed have learned how to login with X-forwarding.
+  Redirect to remote desktop environment as a solution
+
+Lesson plan:
+
+- 5 mins: prior knowledge
+- 5 mins: presentation
+- 25 mins: challenge
+- 5 mins: feedback
+:::
+
 ############
 Introduction
 ############
+
 
 .. admonition:: Python modules AKA Python packages
 
@@ -14,7 +44,7 @@ Introduction
 
    - Many **scientific tools** are distributed as **python packages**, making it possible to run a script in the prompt and there define files to be analysed and arguments defining exactly what to do.
 
-   - A nice **introduction to packages** can be found here: https://aaltoscicomp.github.io/python-for-scicomp/dependencies/ 
+   - A nice **introduction to packages** can be found here: 
 
 .. questions::
 
@@ -273,6 +303,7 @@ Do X. Then do Y.
 Links
 #####
 
+* `Introduction to Python packages <https://aaltoscicomp.github.io/python-for-scicomp/dependencies/>`_
 * `Video: Load and use Python packages on the UPPMAX and HPC2N HPC clusters using pip (YouTube) <https://youtu.be/novRJfAa2QA>`_
 * `Video: Load and use Python packages on the UPPMAX and HPC2N HPC clusters using pip (.ogv) <https://richelbilderbeek.nl/use_python_packages_hpc_from_txt.ogv>`_
 * `Presentation: Load and use Python packages on the UPPMAX and HPC2N HPC clusters using pip (PDF) <https://github.com/UPPMAX/R-python-julia-HPC/blob/main/docs/python/find_and_use_packages.pdf>`_
