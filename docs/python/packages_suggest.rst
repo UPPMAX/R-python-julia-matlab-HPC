@@ -230,7 +230,7 @@ Exercise 2
 
    	 Apply the documentation to load a Python package
 
-The Python package Theano is not installed.
+The Python package PyTorch is not installed.
 
 - Use the module system to find which module you need to load.
 - Load the TensorFlow module.
