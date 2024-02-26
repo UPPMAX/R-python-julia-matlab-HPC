@@ -16,13 +16,19 @@ Introduction R
    - improve R *coding* skills 
    - Other clusters
         
-.. admonition:: Exercises
+.. admonition:: Exercise files
 
-    - You can download the exercises from the course GitHub repo, under the
-      "Exercises" directory:
+    - You can download the (files of the) exercises from the course GitHub repo, 
+      under the "Exercises" directory:
       https://github.com/UPPMAX/R-python-julia-HPC/tree/main/Exercises
-    - On HPC2N, you can copy the exercises in a tarball from /proj/nobackup/hpc2n2023-110/Exercises.tar.gz
-    - On UPPMAX you can copy the exercises in a tarball from /proj/naiss2023-22-914/Exercises.tar.gz
+    - On HPC2N, you can copy the exercises in a tarball 
+      from ``/proj/nobackup/hpc2n2023-110/Exercises.tar.gz``
+    - On UPPMAX you can copy the exercises in a tarball 
+      from ``/proj/naiss2023-22-914/Exercises.tar.gz``
+
+.. challenge:: Download the exercise files
+
+    Download the exercise files on your favorite cluster.
 
 Preliminary schedule
 --------------------
