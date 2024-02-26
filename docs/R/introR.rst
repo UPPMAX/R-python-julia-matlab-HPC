@@ -142,18 +142,16 @@ Aalto Scientific Computing
 - `Data analysis workflows with R and Python <https://aaltoscicomp.github.io/data-analysis-workflows-course/>`_
 
 
-Other NAISS centres
--------------------
+Overview of NAISS centres and their R documentation
+---------------------------------------------------
 
-- LUNARC
-   - `R <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Rscript/>`_
-- C3SE
-   - `R <https://www.c3se.chalmers.se/documentation/applications/r/>`_
-- NSC
-   - `R <https://ipv4.www.nsc.liu.se/software/catalogue/tetralith/modules/r.html>`_
-   - `RStudio <https://ipv4.www.nsc.liu.se/software/catalogue/tetralith/modules/rstudio.html>`_
-- PDC
-   - `R <https://www.pdc.kth.se/software/software/R/index_general.html>`_
+- `C3SE <https://www.c3se.chalmers.se/documentation/applications/r/>`_
+- `HPC2N <https://www.hpc2n.umu.se/resources/software/r>`_
+- `LUNARC <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Rscript/>`_
+- `NSC <https://ipv4.www.nsc.liu.se/software/catalogue/tetralith/modules/r.html>`_
+- `PDC <https://www.pdc.kth.se/software/software/R/index_general.html>`_
+- `UPPMAX <http://docs.uppmax.uu.se/software/r/>`_
+
 
 .. objectives:: 
 

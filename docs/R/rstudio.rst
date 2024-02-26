@@ -1,5 +1,8 @@
-Using RStudio (own session)
-===========================
+Using RStudio
+=============
+
+Using RStudio differs between different HPC clusters.
+
 
 On UPPMAX
 ----------
@@ -34,7 +37,6 @@ Example:
 
 .. code:: console 
 
-   $ module load R_packages/4.1.1
    $ module load RStudio/2022.02.0-443
    $ rstudio &
 
