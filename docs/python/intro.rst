@@ -178,6 +178,7 @@ Other NAISS centres
     - Explain how to create and use virtual environments
     - Show you how to run batch jobs 
     - Show some examples with parallel computing and using GPUs
-    - Most of this will be the same or very similar to how it is done at other HPC centres in Sweden  
+
+    Most of this will be the same or very similar to how it is done at other HPC centres in Sweden  
  
 
