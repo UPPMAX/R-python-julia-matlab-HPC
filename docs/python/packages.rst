@@ -121,11 +121,9 @@ A selection of the Python packages and libraries installed on UPPMAX and HPC2N a
 	In addition there are packages available from the module system
   	  - ``biopython``
   	  - ``python_ML_packages``
-    	  - ``sklearn/scikit-learn``
-	  - ``TensorFlow`` 
-	  - ``torch``
-    	  - ``mpi``
-    	  - ``mpi4py``
+    	    - ``sklearn/scikit-learn``
+     	    - ``TensorFlow`` 
+	    - ``torch``
   	  - ``bwa``
   	  - ``Graphviz/2.40.1``
   	  - ``HiChipper``
