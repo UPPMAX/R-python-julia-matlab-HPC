@@ -122,7 +122,7 @@ Check for Python versions
           $ module spider python/3.12.1
           -------------------------------------------------------------------------------------------------------
 
-.. admonition:: Output at HPC2N (Skylake nodes) as of 4 Oct 2023 
+.. admonition:: Output at HPC2N (Skylake nodes) as of 28 Feb 2024  
     :class: dropdown
 
         .. code-block:: tcl
@@ -132,8 +132,7 @@ Check for Python versions
            Python:
            ----------------------------------------------------------------------------
            Description:
-               Python is a programming language that lets you work more quickly and
-               integrate your systems more effectively.
+               Python is a programming language that lets you work more quickly and integrate your systems more effectively.
     
             Versions:
                 Python/2.7.15   
@@ -150,8 +149,11 @@ Check for Python versions
                 Python/3.9.6   
                 Python/3.10.4-bare
                 Python/3.10.4
+                Python/3.10.8-bare
+                Python/3.10.8
+                Python/3.11.3
             Other possible modules matches:
-                Biopython  Boost.Python  GitPython  IPython  flatbuffers-python intervaltree-python  libxml2-python  netcdf4-python  protobuf-python ...
+                Biopython  Boost.Python  GitPython  IPython  Python-bundle-PyPI  flatbuffers-python intervaltree-python  ...
            ----------------------------------------------------------------------------
            To find other possible module matches execute:
                $ module -r spider '.*Python.*'
@@ -160,7 +162,7 @@ Check for Python versions
                Note that names that have a trailing (E) are extensions provided by other modules.
        
            For example:
-            $ module spider Python/3.10.4
+            $ module spider Python/3.11.3
            ----------------------------------------------------------------------------
 
 Load a Python module
@@ -168,7 +170,7 @@ Load a Python module
 
 For reproducibility, we recommend ALWAYS loading a specific module instead of using the default version! 
 
-For this course, we recommend using Python 3.10.X at UPPMAX and Python 3.10.4 at HPC2N.
+For this course, we recommend using Python 3.11.x at UPPMAX (3.11.8) and HPC2N (3.11.3).
 
 .. tip::
     
