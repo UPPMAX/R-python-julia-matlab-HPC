@@ -77,7 +77,7 @@ Check for Python versions
 
    We will use Python 3.11.x in this course! 
 
-.. admonition:: Output at UPPMAX as of Oct 10 2023
+.. admonition:: Output at UPPMAX as of Feb 28 2024
    :class: dropdown
     
        .. code-block::  tcl
@@ -103,8 +103,10 @@ Check for Python versions
                    python/3.9.5
                    python/3.10.8
                    python/3.11.4
+                   python/3.11.8
+                   python/3.12.1
                 Other possible modules matches:
-                Biopython  GitPython  IPython  Python  biopython  netcdf4-python  
+                   Biopython  Boost.Python  GitPython  IPython  Python  biopython  flatbuffers-python   netcdf4-python  
           ...
 
           ----------------------------------------------------------------------
@@ -112,6 +114,13 @@ Check for Python versions
 
           $ module -r spider '.*python.*'
 
+          -------------------------------------------------------------------------------------------------------
+          For detailed information about a specific "python" package (including how to load the modules) use the module's full name.
+          Note that names that have a trailing (E) are extensions provided by other modules.
+          For example:
+
+          $ module spider python/3.12.1
+          -------------------------------------------------------------------------------------------------------
 
 .. admonition:: Output at HPC2N (Skylake nodes) as of 4 Oct 2023 
     :class: dropdown
