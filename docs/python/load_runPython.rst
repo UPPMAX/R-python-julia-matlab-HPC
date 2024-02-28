@@ -181,18 +181,18 @@ For this course, we recommend using Python 3.11.x at UPPMAX (3.11.8) and HPC2N (
 
    .. tab:: UPPMAX
    
-      Go back and check which Python modules were available. To load version 3.10.8, do:
+      Go back and check which Python modules were available. To load version 3.11.8, do:
 
       .. code-block:: console
 
-        $ module load python/3.10.8
+        $ module load python/3.11.8
         
       Note: Lowercase ``p``.
       For short, you can also use: 
 
       .. code-block:: console
 
-         $ ml python/3.10.8
+         $ ml python/3.11.8
 
  
    .. tab:: HPC2N 
@@ -200,14 +200,14 @@ For this course, we recommend using Python 3.11.x at UPPMAX (3.11.8) and HPC2N (
  
       .. code-block:: console
 
-         $ module load GCC/11.3.0 Python/3.10.4
+         $ module load GCC/12.3.0 Python/3.11.3
 
       Note: Uppercase ``P``.   
       For short, you can also use: 
 
       .. code-block:: console
 
-         $ ml GCC/11.3.0 Python/3.10.4
+         $ ml GCC/12.3.0 Python/3.11.3
 
 .. warning::
 
@@ -297,11 +297,11 @@ For more interactiveness you can run Ipython.
 
          $ module spider IPython
 
-      Then load one of them, for instance 8.5.0:
+      Then load one of them, for instance 8.14.0:
 
       .. code-block:: sh
 
-         $ ml GCCcore/11.3.0 IPython/8.5.0
+         $ ml GCC/12.3.0 IPython/8.14.0
 
       Then start Ipython with (lowercase):
 
@@ -318,7 +318,7 @@ Python
 .. code-block:: python
 
    b-an01 [~]$ python
-   Python 3.10.4 (main, Sep 21 2022, 11:17:23) [GCC 11.3.0] on linux
+   Python 3.11.3 (main, Oct 30 2023, 16:00:15) [GCC 12.3.0] on linux
    Type "help", "copyright", "credits" or "license" for more information.
    >>> a=3
    >>> b=7
@@ -331,9 +331,9 @@ iPython
 .. code-block:: ipython
 
    b-an01 [~]$ ipython
-   Python 3.10.4 (main, Sep 21 2022, 11:17:23) [GCC 11.3.0]
+   Python 3.11.3 (main, Oct 30 2023, 16:00:15) [GCC 12.3.0]
    Type 'copyright', 'credits' or 'license' for more information
-   IPython 8.5.0 -- An enhanced Interactive Python. Type '?' for help.
+   IPython 8.14.0 -- An enhanced Interactive Python. Type '?' for help.
 
    In [1]: a=3
 
