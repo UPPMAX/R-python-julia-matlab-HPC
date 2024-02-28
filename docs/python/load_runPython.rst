@@ -315,11 +315,14 @@ For more interactiveness you can run Ipython.
 
 Python
 
-.. code-block:: python
+.. code-block:: console
 
    b-an01 [~]$ python
    Python 3.11.3 (main, Oct 30 2023, 16:00:15) [GCC 12.3.0] on linux
    Type "help", "copyright", "credits" or "license" for more information.
+
+.. code-block:: python
+
    >>> a=3
    >>> b=7
    >>> c=a+b
@@ -330,19 +333,16 @@ iPython
 
 .. code-block:: console
 
-   b-an01 [~]$ ipython
-   Python 3.11.3 (main, Oct 30 2023, 16:00:15) [GCC 12.3.0]
-   Type 'copyright', 'credits' or 'license' for more information
-   IPython 8.14.0 -- An enhanced Interactive Python. Type '?' for help.
+    b-an01 [~]$ ipython
+    Python 3.11.3 (main, Oct 30 2023, 16:00:15) [GCC 12.3.0]
+    Type 'copyright', 'credits' or 'license' for more information
+    IPython 8.14.0 -- An enhanced Interactive Python. Type '?' for help.
 
 .. code-block:: ipython
 
-In [1]: a=3
-
+   In [1]: a=3
    In [2]: b=7
-
    In [3]: c=a+b
-
    In [4]: c
    Out[4]: 10
 
