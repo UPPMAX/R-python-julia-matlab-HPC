@@ -28,6 +28,7 @@ Most HPC centres in Sweden is using the same or similar module system for their 
    
    - Note that the module systems at UPPMAX and HPC2N are slightly different. 
    - While all modules at UPPMAX not directly related to bio-informatics are shown by ``ml avail``, modules at HPC2N are hidden until one has loaded a prerequisite like the compiler ``GCC``.
+   - Thus, you need to use ``module spider`` to see all modules at HPC2N, and ``ml avail`` for those available to load given your currently loaded prerequisites.  
 
 
 - For reproducibility reasons, you should always load a specific version of a module instead of just the default version
@@ -66,11 +67,15 @@ Check for Python versions
    
          $ module spider Python/<version>
 
-      Example for Python 3.10.4
+      Example for Python 3.11.3 
 
       .. code-block:: console
 
-         $ module spider Python/3.10.4 
+         $ module spider Python/3.11.3 
+
+.. note::
+
+   We will use Python 3.11.x in this course! 
 
 .. admonition:: Output at UPPMAX as of Oct 10 2023
    :class: dropdown
