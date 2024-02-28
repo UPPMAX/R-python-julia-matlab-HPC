@@ -328,14 +328,16 @@ Python
 
 iPython
 
-.. code-block:: ipython
+.. code-block:: console
 
    b-an01 [~]$ ipython
    Python 3.11.3 (main, Oct 30 2023, 16:00:15) [GCC 12.3.0]
    Type 'copyright', 'credits' or 'license' for more information
    IPython 8.14.0 -- An enhanced Interactive Python. Type '?' for help.
 
-   In [1]: a=3
+.. code-block:: ipython
+
+In [1]: a=3
 
    In [2]: b=7
 
