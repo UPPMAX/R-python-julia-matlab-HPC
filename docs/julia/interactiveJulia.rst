@@ -61,7 +61,7 @@ run on the allocated nodes instead of the login node.
 
       .. code-block:: console
           
-         $ interactive -n <tasks> --time=HHH:MM:SS -A naiss2023-22-914 
+         $ interactive -n <tasks> --time=HHH:MM:SS -A naiss2024-22-107
       
    .. tab:: HPC2N (salloc)
 
