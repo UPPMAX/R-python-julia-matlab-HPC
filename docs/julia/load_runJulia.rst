@@ -75,7 +75,7 @@ Check for Julia versions
 .. admonition:: Output at UPPMAX as of Oct 14 2023
    :class: dropdown
     
-       .. code-block::  tcl
+       .. code-block::  console
     
           $ module av julia
           ----------------------------- /sw/mf/rackham/compilers -----------------------------
@@ -93,7 +93,7 @@ Check for Julia versions
 .. admonition:: Output at HPC2N as of Oct 14 2023
     :class: dropdown
 
-        .. code-block:: tcl
+        .. code-block:: console
 
            b-an01 [~]$ module spider julia
            ------------------------------------------------------------------------------------------------
@@ -124,37 +124,38 @@ For reproducibility, we recommend ALWAYS loading a specific module instead of us
 
 For this course, we recommend using Julia 1.8.5.
 
-.. tabs::
+.. type-along::
 
-   .. tab:: UPPMAX
+   .. tabs::
+
+      .. tab:: UPPMAX
    
-      Go back and check which Julia modules were available. To load version 1.8.5, do:
+         Go back and check which Julia modules were available. To load version 1.8.5, do:
 
-      .. code-block:: console
+         .. code-block:: console
 
-        $ module load julia/1.8.5
+           $ module load julia/1.8.5
         
-      Note: Lowercase ``j``.
-      For short, you can also use: 
+         Note: Lowercase ``j``.
+         For short, you can also use: 
 
-      .. code-block:: console
+         .. code-block:: console
 
-         $ ml julia/1.8.5
-
- 
-   .. tab:: HPC2N
+            $ ml julia/1.8.5
 
  
-      .. code-block:: console
+      .. tab:: HPC2N
 
-         $ module load Julia/1.8.5-linux-x86_64
+         .. code-block:: console
 
-      Note: Uppercase ``J``.   
-      For short, you can also use: 
+            $ module load Julia/1.8.5-linux-x86_64
 
-      .. code-block:: console
+         Note: Uppercase ``J``.   
+         For short, you can also use: 
 
-         $ ml Julia/1.8.5-linux-x86_64
+         .. code-block:: console
+
+            $ ml Julia/1.8.5-linux-x86_64
 
 Run
 ---
@@ -186,23 +187,23 @@ Run Julia as a session
 
       $ julia 
 
-The Julia prompt (``julian`` mode) looks like this:
+   The Julia prompt (``julian`` mode) looks like this:
 
-.. code-block:: julia-repl
+   .. code-block:: julia-repl
    
-   julia> 
+      julia> 
 
-Exit with 
+   Exit with 
 
-.. code-block:: julia-repl
+   .. code-block:: julia-repl
 
-   julia> <Ctrl-D> 
+      julia> <Ctrl-D> 
 
-or 
+   or 
 
-.. code-block:: julia-repl
+   .. code-block:: julia-repl
 
-   julia> exit()
+      julia> exit()
 
 Exercises
 ---------
