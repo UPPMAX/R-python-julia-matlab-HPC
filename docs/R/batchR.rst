@@ -18,6 +18,12 @@ Running R in batch mode
 
    - Rackham: ``naiss2024-22-107``
    - Kebnekaise: ``hpc2n2024-025``
+
+.. admonition:: Storage space for this workshop 
+
+   - Rackham: ``/proj/r-py-jl``
+   - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
+
    
 
 
