@@ -120,25 +120,25 @@ Create a project environment
 
 Let's now create a **project environment**, this can be done as follows (if typing along, you have to change the path to your environment, like ``/proj/py-r-jl/$USER/julia`` on rackham):
 
-.. code-block:: julia
+.. type-along::
 
-   julia> using Pkg
-   julia>;
-   shell> mkdir my-first-env
-   shell> cd my-first-env
-      /pfs/proj/nobackup/path/Julia-Test/my-first-env
-   shell> #type backspace#
-   julia> ]  
-   (v1.8) pkg> activate . 
-      Activating new project at `/pfs/proj/nobackup/path/Julia-Test/my-first-env`
-   (my-first-env) pkg> #type backspace
-   julia> ;
-   shell> ls  
+   .. code-block:: julia
 
-We can see that our environment in parenthesis has been activated. At this stage nothing has
-been added in the folder *my-first-env* as you can see from the empty output of the ``ls`` command. 
-Notice that now that we are in this new environment, the default and standard library environments
-are also present as before:
+      julia> using Pkg
+      julia>;
+      shell> mkdir my-first-env
+      shell> cd my-first-env
+         /pfs/proj/nobackup/path/Julia-Test/my-first-env
+      shell> #type backspace#
+      julia> ]  
+      (v1.8) pkg> activate . 
+         Activating new project at `/pfs/proj/nobackup/path/Julia-Test/my-first-env`
+      (my-first-env) pkg> #type backspace
+      julia> ;
+      shell> ls  
+   
+We can see that our environment in parenthesis has been activated. At this stage nothing has been added in the folder *my-first-env* as you can see from the empty output of the ``ls`` command. 
+Notice that now that we are in this new environment, the default and standard library environments are also present as before:
 
 .. code-block:: julia-repl
 
