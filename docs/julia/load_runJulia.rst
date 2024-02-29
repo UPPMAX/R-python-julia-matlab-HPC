@@ -72,7 +72,7 @@ Check for Julia versions
 
          $ module spider Julia/1.8.5
 
-.. admonition:: Output at UPPMAX as of Oct 14 2023
+.. admonition:: Output at UPPMAX as of Feb 29 2024
    :class: dropdown
     
        .. code-block::  console
@@ -90,12 +90,12 @@ Check for Julia versions
           Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 
 
-.. admonition:: Output at HPC2N as of Oct 14 2023
+.. admonition:: Output at HPC2N as of Feb 29 2024
     :class: dropdown
 
         .. code-block:: console
 
-           b-an01 [~]$ module spider julia
+           $ module spider julia
            ------------------------------------------------------------------------------------------------
              Julia:
            ------------------------------------------------------------------------------------------------
