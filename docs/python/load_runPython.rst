@@ -318,7 +318,7 @@ Python
 
 .. code-block:: console
 
-   b-an01 [~]$ python
+   $ python
    Python 3.11.3 (main, Oct 30 2023, 16:00:15) [GCC 12.3.0] on linux
    Type "help", "copyright", "credits" or "license" for more information.
 
@@ -334,7 +334,7 @@ iPython
 
 .. code-block:: console
 
-    b-an01 [~]$ ipython
+    $ ipython
     Python 3.11.3 (main, Oct 30 2023, 16:00:15) [GCC 12.3.0]
     Type 'copyright', 'credits' or 'license' for more information
     IPython 8.14.0 -- An enhanced Interactive Python. Type '?' for help.
