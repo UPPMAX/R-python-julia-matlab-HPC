@@ -108,46 +108,45 @@ Example **Code along**
             Waiting for job 29556505 to start...
             Starting job now -- you waited for 1 second.
           
-           [bjornc@r484 ~]$ module load julia/1.8.5
+            [bjornc@r484 ~]$ module load julia/1.8.5
 
-        Let us check that we actually run on the compute node: 
+         Let us check that we actually run on the compute node: 
 
-        .. code-block:: console
+         .. code-block:: console
       
-           [bjornc@r483 ~]$ srun hostname
-           r483.uppmax.uu.se
-           r483.uppmax.uu.se
-           r483.uppmax.uu.se
-           r483.uppmax.uu.se
+            [bjornc@r483 ~]$ srun hostname
+            r483.uppmax.uu.se
+            r483.uppmax.uu.se
+            r483.uppmax.uu.se
+            r483.uppmax.uu.se
 
-        We are. Notice that we got a response from all four cores we have allocated.   
+         We are. Notice that we got a response from all four cores we have allocated.   
 
-     .. tab:: HPC2N
+      .. tab:: HPC2N
          
-        .. code-block:: console
+         .. code-block:: console
       
-           [~]$ salloc -n 4 --time=00:30:00 -A hpc2n2023-110
-           salloc: Pending job allocation 20174806
-           salloc: job 20174806 queued and waiting for resources
-           salloc: job 20174806 has been allocated resources
-           salloc: Granted job allocation 20174806
-           salloc: Waiting for resource configuration
-           salloc: Nodes b-cn0241 are ready for job
-           [~]$ module load GCC/10.3.0 OpenMPI/4.1.1 julia/1.8.5
-           [~]$ 
+            [~]$ salloc -n 4 --time=00:30:00 -A hpc2n2023-110
+            salloc: Pending job allocation 20174806
+            salloc: job 20174806 queued and waiting for resources
+            salloc: job 20174806 has been allocated resources
+            salloc: Granted job allocation 20174806
+            salloc: Waiting for resource configuration
+            salloc: Nodes b-cn0241 are ready for job
+            [~]$ module load GCC/10.3.0 OpenMPI/4.1.1 julia/1.8.5
+            [~]$ 
                   
+         Let us check that we actually run on the compute node: 
       
-        Let us check that we actually run on the compute node: 
-      
-        .. code-block:: console
+         .. code-block:: console
                   
-           b-an01 [~]$ srun hostname
-           b-cn0241.hpc2n.umu.se
-           b-cn0241.hpc2n.umu.se
-           b-cn0241.hpc2n.umu.se
-           b-cn0241.hpc2n.umu.se
+            b-an01 [~]$ srun hostname
+            b-cn0241.hpc2n.umu.se
+            b-cn0241.hpc2n.umu.se
+            b-cn0241.hpc2n.umu.se
+            b-cn0241.hpc2n.umu.se
       
-        We are. Notice that we got a response from all four cores we have allocated.   
+         We are. Notice that we got a response from all four cores we have allocated.   
       
       
 Running a script
