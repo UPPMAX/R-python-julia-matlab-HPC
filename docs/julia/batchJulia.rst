@@ -17,7 +17,7 @@ Running Julia in batch mode
 .. admonition:: Compute allocations in this workshop 
 
    - Rackham: ``naiss2024-22-107``
-   - Kebnekaise: ``hpc2n2023-110``
+   - Kebnekaise: ``hpc2n2024-025``
 
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
 
@@ -88,7 +88,7 @@ Serial code
         .. code-block:: bash
    
             #!/bin/bash            
-            #SBATCH -A hpc2n2023-110     # your project_ID       
+            #SBATCH -A hpc2n2024-025     # your project_ID       
             #SBATCH -J job-serial        # name of the job         
             #SBATCH -n 1                 # nr. tasks  
             #SBATCH --time=00:03:00      # requested time
@@ -153,7 +153,7 @@ Serial code + self-installed package in virt. env.
         .. code-block:: bash
 
             #!/bin/bash            
-            #SBATCH -A hpc2n2023-110     # your project_ID       
+            #SBATCH -A hpc2n2024-025     # your project_ID       
             #SBATCH -J job-serial        # name of the job         
             #SBATCH -n 1                 # nr. tasks  
             #SBATCH --time=00:03:00      # requested time
@@ -531,7 +531,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
         
                #!/bin/bash
-               #SBATCH -A hpc2n2023-110
+               #SBATCH -A hpc2n2024-025
                #SBATCH -J job
                #SBATCH -n 1
                #SBATCH --time=00:10:00
@@ -550,7 +550,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
             
                #!/bin/bash
-               #SBATCH -A hpc2n2023-110
+               #SBATCH -A hpc2n2024-025
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -569,7 +569,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: sh
            
                #!/bin/bash
-               #SBATCH -A hpc2n2023-110
+               #SBATCH -A hpc2n2024-025
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -587,7 +587,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: sh
            
                #!/bin/bash
-               #SBATCH -A hpc2n2023-110
+               #SBATCH -A hpc2n2024-025
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -682,7 +682,7 @@ reference point, we show the simulation on CPUs as well.
         .. code-block:: sh
 
             #!/bin/bash            
-            #SBATCH -A hpc2n2023-110     # your project_ID       
+            #SBATCH -A hpc2n2024-025     # your project_ID       
             #SBATCH -J job-serial        # name of the job         
             #SBATCH -n 1                 # nr. tasks  
             #SBATCH --time=00:03:00      # requested time
@@ -751,7 +751,7 @@ Exercises
             .. code-block:: sh
     
                 #!/bin/bash            
-                #SBATCH -A hpc2n2023-110     # your project_ID       
+                #SBATCH -A hpc2n2024-025     # your project_ID       
                 #SBATCH -J job-serial        # name of the job         
                 #SBATCH -n 1                 # nr. tasks  
                 #SBATCH --time=00:03:00      # requested time
@@ -771,7 +771,7 @@ Exercises
             .. code-block:: sh
     
                 #!/bin/bash -l
-                #SBATCH -A naiss2023-22-914  # Change to your own after the course
+                #SBATCH -A naiss2024-22-107  # Change to your own after the course
                 #SBATCH -J job-serial        # name of the job         
                 #SBATCH -n 1                 # nr. tasks  
                 #SBATCH --time=00:05:00 # Asking for 5 minutes
@@ -853,7 +853,7 @@ Exercises
             
             .. code-block:: sh
     
-                #SBATCH -A <project with Snowy/Bianca access    # your project_ID  
+                #SBATCH -A naiss2024-22-107   # your project_ID  
                 #SBATCH -M snowy
                 #SBATCH -p node
                 ##SBATCH -C gpu   #NB: Only for Bianca
