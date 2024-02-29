@@ -204,6 +204,10 @@ GPU code
 
 **We'll not test this live, but you can try if you have Snowy access**
 
+.. note:: 
+
+   Since the newest Python package modules on UPPMAX and HPC2N do not contain CUDA, we will use Python 3.9.5 for these examples  
+
 .. tabs::
 
    .. tab:: UPPMAX
