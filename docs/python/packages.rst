@@ -155,7 +155,7 @@ A selection of the Python packages and libraries installed on UPPMAX and HPC2N a
 	  - ``Cython``   
 	  - ``Flask``   (Not on AMD nodes yet)
           - ``mpi4py`
-
+          - ``Python-bundle-PyPI`` A large number of Python packages from PyPi
 
 
 Install with pip
