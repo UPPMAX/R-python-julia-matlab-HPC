@@ -21,7 +21,7 @@ Interactive work on compute nodes
 .. admonition:: Compute allocations in this workshop 
 
    - Rackham: ``naiss2024-22-107``
-   - Kebnekaise: ``hpc2n2023-110``
+   - Kebnekaise: ``hpc2n2024-025``
 
 There are several ways to run Julia interactively
 
@@ -108,7 +108,7 @@ Example **Code along**
             Waiting for job 29556505 to start...
             Starting job now -- you waited for 1 second.
           
-            [bjornc@r484 ~]$ module load julia/1.8.5
+            [bjornc@r483 ~]$ module load julia/1.8.5
 
          Let us check that we actually run on the compute node: 
 
@@ -126,7 +126,7 @@ Example **Code along**
          
          .. code-block:: console
       
-            [~]$ salloc -n 4 --time=00:30:00 -A hpc2n2023-110
+            [~]$ salloc -n 4 --time=00:30:00 -A hpc2n2024-025
             salloc: Pending job allocation 20174806
             salloc: job 20174806 queued and waiting for resources
             salloc: job 20174806 has been allocated resources
@@ -140,7 +140,7 @@ Example **Code along**
       
          .. code-block:: console
                   
-            b-an01 [~]$ srun hostname
+            [~]$ srun hostname
             b-cn0241.hpc2n.umu.se
             b-cn0241.hpc2n.umu.se
             b-cn0241.hpc2n.umu.se
@@ -175,18 +175,18 @@ Running a script
          
       .. code-block:: console
       
-          b-an01 [~]$ srun julia serial-sum.jl 3 4
+          [~]$ srun julia serial-sum.jl 3 4
           The sum of the two numbers is: 7
           The sum of the two numbers is: 7
           The sum of the two numbers is: 7
           The sum of the two numbers is: 7
-          b-an01 [~]$             
+          [~]$             
                         
       Without the ``srun`` command, Julia won't understand that it can use several cores. Therefore the program is run only once.
                   
       .. code-block:: sh 
                   
-                  b-an01 [~]$ julia serial-sum.jl 3 4 
+                  [~]$ julia serial-sum.jl 3 4 
                   The sum of the two numbers is: 7
 
 **Running Julia REPL (UPPMAX)**
@@ -213,11 +213,11 @@ When you have finished using the allocation, either wait for it to end, or close
    
       .. code-block:: console 
                   
-                  [bjornc@r484 ~]$ exit
+                  [bjornc@r483 ~]$ exit
       
                   exit
                   [screen is terminating]
-                  Connection to r484 closed.
+                  Connection to r483 closed.
       
                   [bjornc@rackham2 ~]$
      
@@ -225,11 +225,11 @@ When you have finished using the allocation, either wait for it to end, or close
    
       .. code-block:: sh 
                   
-                  b-an01 [~]$ exit
+                  [~]$ exit
                   exit
                   salloc: Relinquishing job allocation 20174806
                   salloc: Job allocation 20174806 has been revoked.
-                  b-an01 [~]$
+                  [~]$
 
 Running IJulia from Jupyter notebook on UPPMAX 
 ----------------------------------------------
