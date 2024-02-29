@@ -122,7 +122,7 @@ Let's now create a **project environment**, this can be done as follows (if typi
 
 .. type-along::
 
-   .. code-block:: julia-repl
+   .. code-block:: juliaconsole
 
       julia> using Pkg
       julia>;
