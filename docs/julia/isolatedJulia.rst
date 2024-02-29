@@ -160,7 +160,7 @@ Let's now create a **project environment**, this can be done as follows (if typi
 
    First, we notice that installation was much faster than before. This is because **Pkg** did not do a new installation but it just updated our environment with information of the available ``DFTK`` package. Specifically, if you take a look at the content of the current directory you will see the new files ``Project.toml`` and ``Manifest.toml``, the ``more`` command can display the content of these files:
 
-   .. code-block:: julia
+   .. code-block:: julia-repl
 
       shell> ls
       Manifest.toml  Project.toml
@@ -193,7 +193,7 @@ Let's now create a **project environment**, this can be done as follows (if typi
    Here, we notice that the ``Project.toml`` only gives us the UUID of the project while the ``Manifest.toml`` file contains the full information about the dependencies versions and organization layout. Notice the message regarding editing for the latter. Let's leave this environment: 
 
 
-   .. code-block:: julia
+   .. code-block:: julia-repl
 
       (my-first-env) pkg> activate 
           Activating project at `~/.julia/environments/v1.8`
