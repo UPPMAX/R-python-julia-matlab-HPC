@@ -18,14 +18,14 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Introduction to running R, Python, and Julia in HPC'
-copyright = '2023, UPPMAX & HPC2N'
+copyright = '2024, UPPMAX & HPC2N'
 author = 'UPPMAX & HPC2N'
 github_user = "UPPMAX"
 github_repo_name = ""  # auto-detected from dirname if blank
 github_version = "main"
 conf_py_path = "/docs/" 
 # The full version, including alpha/beta/rc tags
-release = '0.1'
+release = '2.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -39,6 +39,9 @@ extensions = ["sphinx_lesson",
     "sphinxemoji.sphinxemoji",
     'sphinx-prompt',
     'sphinx_copybutton',
+    'sphinxcontrib.plantuml',
+    'sphinx.ext.graphviz',
+    'sphinxcontrib.mermaid',
 ]
 jupyter_execute_notebooks = "cache"
 
@@ -67,6 +70,15 @@ exclude_patterns = [
     ".DS_Store",
     "jupyter_execute",
     "*venv*",
+]
+
+mermaid_output_format = 'raq'
+mermaid_output_format = "png"
+mermaid_params = [
+    "--theme",
+    "forest",
+    "--backgroundColor",
+    "transparent",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -101,7 +113,7 @@ html_context = {
     # useful as a default.
     # "github_repo": github_repo_name or basename(dirname(realpath(__file__))),
     # Richel: trying to fix 'Edit on GitHub link' onhttps://uppmax.github.io/R-python-julia-HPC/index.html
-    "github_repo": github_repo_name,
+    "github_repo": github_repo_name or basename(dirname(realpath(__file__))),
     "github_version": github_version,
     "conf_py_path": conf_py_path,
 }
