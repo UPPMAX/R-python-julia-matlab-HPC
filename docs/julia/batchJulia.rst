@@ -61,7 +61,7 @@ Examples of batch scripts for Julia
 
 Serial code
 '''''''''''
-            
+
 .. tabs::
 
    .. tab:: UPPMAX
@@ -70,12 +70,12 @@ Serial code
 
         .. code-block:: bash
 
-            #!/bin/bash -l       # -l cleans the environment in the batch job, recommended at UPPMAX
-            #SBATCH -A naiss2024-22-107 # Change to your own after the course
-            #SBATCH --time=00:10:00 # Asking for 10 minutes
-            #SBATCH -n 1 # Asking for 1 core
-            #SBATCH --error=job.%J.err   # error file
-            #SBATCH --output=job.%J.out  # output file                                                                                                        
+            #!/bin/bash -l                 # -l cleans the environment in the batch job, recommended at UPPMAX
+            #SBATCH -A naiss2024-22-107    # your project_ID
+            #SBATCH --time=00:10:00        # Asking for 10 minutes
+            #SBATCH -n 1                   # Asking for 1 core
+            #SBATCH --error=job.%J.err     # error file
+            #SBATCH --output=job.%J.out    # output file                                                                                                        
             ml julia/1.8.5 # Julia module
            
             julia serial.jl              # run the serial script
@@ -124,17 +124,16 @@ Serial code + self-installed package in virt. env.
 
         .. code-block:: bash
         
-             #!/bin/bash -l       # -l cleans the environment in the batch job, recommended at UPPMAX
-            #SBATCH -A naiss2024-22-107 # Change to your own after the course
-            #SBATCH --time=00:10:00 # Asking for 10 minutes
-            #SBATCH -n 1 # Asking for 1 core
-            #SBATCH --error=job.%J.err   # error file
-            #SBATCH --output=job.%J.out  # output file                                                                                             
+            #!/bin/bash -l               # -l cleans the environment in the batch job, recommended at UPPMAX
+            #SBATCH -A naiss2024-22-107   # Change to your own after the course
+            #SBATCH --time=00:10:00       # Asking for 10 minutes
+            #SBATCH -n 1                  # Asking for 1 core
+            #SBATCH --error=job.%J.err    # error file
+            #SBATCH --output=job.%J.out   # output file                                                                                             
             
-            ml julia/1.8.5               # Julia module
+            ml julia/1.8.5                # Julia module
              
-            # Move to the directory where the ".toml" files 
-            # for the environment are located
+            # Move to the directory where the ".toml" files for the environment are located
             julia --project=. serial-env.jl  # run the script 
 
         If this works, you will see the installed packages in the output file. In the present case
