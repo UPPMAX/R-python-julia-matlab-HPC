@@ -16,7 +16,7 @@ Running Julia in batch mode
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: ``naiss2023-22-914``
+   - Rackham: ``naiss2024-22-107``
    - Kebnekaise: ``hpc2n2023-110``
 
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
@@ -71,7 +71,7 @@ Serial code
         .. code-block:: bash
 
             #!/bin/bash -l       # -l cleans the environment in the batch job, recommended at UPPMAX
-            #SBATCH -A naiss2023-22-914 # Change to your own after the course
+            #SBATCH -A naiss2024-22-107 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             #SBATCH --error=job.%J.err   # error file
@@ -125,7 +125,7 @@ Serial code + self-installed package in virt. env.
         .. code-block:: bash
         
              #!/bin/bash -l       # -l cleans the environment in the batch job, recommended at UPPMAX
-            #SBATCH -A naiss2023-22-914 # Change to your own after the course
+            #SBATCH -A naiss2024-22-107 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             #SBATCH --error=job.%J.err   # error file
@@ -454,7 +454,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
         
                #!/bin/bash -l
-               #SBATCH -A naiss2023-22-914
+               #SBATCH -A naiss2024-22-107
                #SBATCH -J job
                #SBATCH -n 1
                #SBATCH --time=00:10:00
@@ -472,7 +472,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
             
                #!/bin/bash
-               #SBATCH -A naiss2023-22-914
+               #SBATCH -A naiss2024-22-107
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -490,7 +490,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
            
                #!/bin/bash
-               #SBATCH -A naiss2023-22-914
+               #SBATCH -A naiss2024-22-107
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -507,7 +507,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
            
                #!/bin/bash
-               #SBATCH -A naiss2023-22-914
+               #SBATCH -A naiss2024-22-107
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -662,10 +662,10 @@ reference point, we show the simulation on CPUs as well.
 
           
             #!/bin/bash -l
-            #SBATCH -A <project with Snowy/Bianca access    # your project_ID  
+            #SBATCH -A naiss2024-22-107    # your project_ID  
             #SBATCH -M snowy
             #SBATCH -p node
-            ##SBATCH -C gpu   #NB: Only for Bianca
+            ##SBATCH --gres=gpu:1
             #SBATCH -N 1
             #SBATCH --job-name=juliaGPU         # create a short name for your job
             #SBATCH --gpus-per-node=1             # number of gpus per node (Bianca 2, Snowy 1)
