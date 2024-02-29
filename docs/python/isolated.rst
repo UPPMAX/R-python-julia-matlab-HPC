@@ -467,7 +467,7 @@ Exercises
 
 .. challenge:: Create a virtual environment with a requirements file below
 
-   - Create a virtual environment with Python 3.10.x with the name ``analysis``.
+   - Create a virtual environment with Python 3.11.x with the name ``analysis``.
    - Install packages defined by a ``requirements.txt`` file (save it).
   
    .. code-block:: sh
