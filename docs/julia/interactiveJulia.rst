@@ -20,7 +20,7 @@ Interactive work on compute nodes
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: ``naiss2023-22-914``
+   - Rackham: ``naiss2024-22-107``
    - Kebnekaise: ``hpc2n2023-110``
 
 There are several ways to run Julia interactively
@@ -72,7 +72,7 @@ run on the allocated nodes instead of the login node.
       
 where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in 
       hours, minutes, and seconds (maximum T168 hours), and then you give the id for your project 
-      (**naiss2023-22-914** for this course)
+      (**naiss2024-22-107** for this course)
 
 Your request enters the job queue just like any other job, and interactive/salloc will tell you that it is
       waiting for the requested resources. When salloc tells you that your job has been allocated 
@@ -97,7 +97,7 @@ Example **Code along**
 
       .. code-block:: console
       
-          [bjornc@rackham2 ~]$ interactive -A naiss2023-22-914 -p core -n 4 -t 10:00
+          [bjornc@rackham2 ~]$ interactive -A naiss2024-22-107 -p core -n 4 -t 10:00
           You receive the high interactive priority.
           There are free cores, so your job is expected to start at once.
       
@@ -321,7 +321,7 @@ Write a bash script similar  to this (call it `job_jupyter.sh`, for instance):
 
    #!/bin/bash
    # Here you should put your own project id
-   #SBATCH -A project_ID
+   #SBATCH -A naiss2024-22-107
    # This example asks for 1 core
    #SBATCH -n 1
    # Ask for a suitable amount of time. Remember, this is the time the Jupyter notebook will be available! HHH:MM:SS.
