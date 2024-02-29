@@ -131,7 +131,7 @@ Example **Code along**
           Waiting for job 29556505 to start...
           Starting job now -- you waited for 1 second.
           
-          [bjornc@r484 ~]$ module load R/4.3.1
+          [bjornc@r484 ~]$ module load R/4.1.1
 
       Let us check that we actually run on the compute node: 
 
@@ -236,7 +236,7 @@ When you have finished using the allocation, either wait for it to end, or close
       
                   exit
                   [screen is terminating]
-                  Connection to r484 closed.
+                  Connection to r483 closed.
       
                   [bjornc@rackham2 ~]$
      
