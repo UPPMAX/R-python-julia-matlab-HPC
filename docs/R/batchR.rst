@@ -16,7 +16,7 @@ Running R in batch mode
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: ``naiss2023-22-914``
+   - Rackham: ``naiss2024-22-107``
    - Kebnekaise: ``hpc2n2023-110``
    
 
@@ -84,7 +84,7 @@ Serial code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A naiss2023-22-914 # Course project id. Change to your own project ID after the course
+            #SBATCH -A naiss2024-22-107 # Course project id. Change to your own project ID after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -145,7 +145,7 @@ foreach and doParallel
         .. code-block:: sh
         
             #!/bin/bash
-            #SBATCH -A naiss2023-22-914
+            #SBATCH -A naiss2024-22-107
             #SBATCH -t 00:10:00
             #SBATCH -N 1
             #SBATCH -c 4
@@ -235,7 +235,7 @@ Rmpi
         .. code-block:: sh
         
             #!/bin/bash
-            #SBATCH -A naiss2023-22-914
+            #SBATCH -A naiss2024-22-107
             #Asking for 10 min.
             #SBATCH -t 00:10:00
             #SBATCH -n 8
@@ -327,7 +327,7 @@ ML code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A naiss2023-22-914
+            #SBATCH -A naiss2024-22-107
             #Asking for 10 min.
             #SBATCH -t 00:10:00
             #SBATCH --exclusive
@@ -440,7 +440,7 @@ Exercises
           .. code-block:: sh
  
              #!/bin/bash
-             #SBATCH -A naiss2023-22-914 # Change to your own after the course
+             #SBATCH -A naiss2024-22-107 # Change to your own after the course
              #SBATCH --time=00:10:00 # Asking for 10 minutes
              #SBATCH -n 1 # Asking for 1 core
              
