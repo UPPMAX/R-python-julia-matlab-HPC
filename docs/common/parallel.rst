@@ -340,6 +340,51 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
         Run the script with the command  ``Rscript --no-save --no-restore clusterapply.R``.
 
 
+Exercises
+---------
+
+.. challenge:: Parallelize a simple code
+
+   1. First do the setup of `.Renviron` and create the directory for installing R
+   packages
+   2. From the command line. Suggestion: ``anomalize``
+   3. From inside R. Suggestion: `tidyr`
+   4. Start R and see if the library can be loaded. 
+   
+
+.. solution:: Solution
+
+   .. tabs:: 
+
+      .. tab:: Python
+      
+            .. code-block:: console
+	 
+               [bbrydsoe@rackham3 bbrydsoe]$ echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron
+	       R_LIBS_USER="/home/bbrydsoe/R-packages-%V"
+	       [bbrydsoe@rackham3 bbrydsoe]$ mkdir -p $HOME/R-packages-4.0.4
+	    
+
+      .. tab:: R
+      
+            Installing package "anomalize". Using the repo http://ftp.acc.umu.se/mirror/CRAN/
+         
+            .. code-block:: console
+	 
+	       [bbrydsoe@rackham3 bbrydsoe]$ R --quiet --no-save --no-restore -e "install.packages('anomalize', repo='http://ftp.acc.umu.se/mirror/CRAN/')"
+	  
+            This assumes you have already loaded the R module. If not, then do so first. 
+	 
+      .. tab:: Julia
+      
+            Installing package "tidyr". Using the repo http://ftp.acc.umu.se/mirror/CRAN/
+
+            .. code-block:: R 
+
+               > install.packages('tidyr', repo='http://ftp.acc.umu.se/mirror/CRAN/')	     
+	     
+
+
 .. admonition:: More info!
 
    - `Introduction to Dask by Aalto Scientific Computing and CodeRefinery <https://aaltoscicomp.github.io/python-for-scicomp/parallel/#dask-and-task-queues>`_
