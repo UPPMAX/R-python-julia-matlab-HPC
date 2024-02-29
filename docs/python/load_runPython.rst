@@ -82,7 +82,7 @@ Check for Python versions
     
        .. code-block::  tcl
     
-          [bbrydsoe@rackham4 ~]$ ml spider python
+          $ ml spider python
 
           ----------------------------------------------------------------------
              python:
