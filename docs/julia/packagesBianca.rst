@@ -62,29 +62,28 @@ To make sure that the package is not already installed, type in Julia:
 
 .. code-block:: julia-repl
 
-   using Pkg
-   Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");  #change version accordingly
-
-   Pkg.status()
+   julia> using Pkg
+   julia> Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");  #change version accordingly
+   julia> Pkg.status()
 
 To go back to your own personal packages:
 
 .. code-block:: julia-repl
      
-   Pkg.activate(DEPOT_PATH[1]*"/environments/v1.8");
-   Pkg.status()
+   julia> Pkg.activate(DEPOT_PATH[1]*"/environments/v1.8");
+   julia> Pkg.status()
 
 To install personal packages you type within Julia:
 
 .. code-block:: julia-repl
      
-   Pkg.add("<package_name>")
+   julia>  Pkg.add("<package_name>")
 
 This will install under the path ~/.julia/packages/. Then you can load it by just doing "using/import <package_name>".
 
 .. code-block:: julia-repl
      
-   using <package_name>
+   julia> using <package_name>
 
 You can also activate a "package prompt" in julia with   ']':
 
