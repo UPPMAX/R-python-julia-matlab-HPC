@@ -21,7 +21,7 @@ Running Python in batch mode
 
 .. admonition:: Storage space for this workshop 
 
-   - Rackham: ``/proj/t-py-jl``
+   - Rackham: ``/proj/r-py-jl``
    - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
 
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
