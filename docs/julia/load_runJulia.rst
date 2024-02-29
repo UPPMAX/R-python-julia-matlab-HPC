@@ -180,9 +180,11 @@ Run Julia as a session
   - enter the package manager mode by typing ``]`` in the *Julian* mode
   - enter the help mode by typing ``?`` in the *Julian mode*
 
-.. code-block:: console
+.. type-along::
 
-   $ julia 
+   .. code-block:: console
+
+      $ julia 
 
 The Julia prompt (``julian`` mode) looks like this:
 
