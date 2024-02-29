@@ -80,7 +80,7 @@ Check for Python versions
 .. admonition:: Output at UPPMAX as of Feb 28 2024
    :class: dropdown
     
-       .. code-block::  tcl
+       .. code-block::  console
     
           $ ml spider python
 
