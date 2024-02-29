@@ -119,16 +119,16 @@ Finally, if you notice something that prevents you from learning as well as you 
 
    - Main project on UPPMAX:
      
-        - Project ID: ``NAISS2023-22-914``
-        - Directory name on rackham: ``/proj/naiss2023-22-914``
-        - Please create a suitably named subdirectory below ``/proj/naiss2023-22-914``, for your own exercises. 
+        - Project ID: ``naiss2024-22-107``
+        - Directory name on rackham: ``/proj/r-py-jl``
+        - Please create a suitably named subdirectory below ``/proj/r-py-jl``, for your own exercises. 
    
 
    - Local project on HPC2N: 
 
-        - Project ID: ``hpc2n2023-110``
-        - Directory name on Kebnekaise: ``/proj/nobackup/hpc2n2023-110``
-        - Please create a suitably named subdirectory below ``/proj/nobackup/hpc2n2023-110``, for your own exercises.
+        - Project ID: ``hpc2n2024-025``
+        - Directory name on Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
+        - Please create a suitably named subdirectory below ``/proj/nobackup/hpc2n2024-025``, for your own exercises.
 
    
 Example of screen arrangement
