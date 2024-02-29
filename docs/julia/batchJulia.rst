@@ -19,6 +19,12 @@ Running Julia in batch mode
    - Rackham: ``naiss2024-22-107``
    - Kebnekaise: ``hpc2n2024-025``
 
+.. admonition:: Storage space for this workshop 
+
+   - Rackham: ``/proj/r-py-jl``
+   - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
+
+
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
 
 The batch system used at both UPPMAX and HPC2N is called SLURM. 
