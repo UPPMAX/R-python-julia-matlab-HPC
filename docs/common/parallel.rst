@@ -244,7 +244,7 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
 
    .. tab:: Julia
 
-        In the following example ``sleep.jl`` the `sleep()` function is called `n` times
+        In the following example ``sleep-threads.jl`` the `sleep()` function is called `n` times
         first in serial mode and then by using `n` threads. The *BenchmarkTools* package
         help us to time the code (this package is not in the base Julia installation).
 
@@ -263,7 +263,6 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
             
             @btime sleep_serial(n) evals=1 samples=1
             
-            
             function sleep_threaded(n) #Parallel version
                 @threads for i = 1:n
                     sleep(1)
@@ -273,8 +272,25 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
             @btime sleep_threaded(n) evals=1 samples=1
             
         First load the Julia module ``ml Julia/1.8.5-linux-x86_64`` and then run the script
-        with the command  ``julia --threads 6 sleep.jl`` to use 6 Julia threads.
+        with the command  ``julia --threads 6 sleep-threads.jl`` to use 6 Julia threads.
 
+        We can also use the *Distributed* package that allows the scaling of simulations beyond
+        a single node (call the script ``sleep-distributed.jl``): 
+
+        .. code-block:: julia
+
+            using BenchmarkTools
+            using Distributed 
+
+            n = 6   # number of iterations
+
+            function sleep_parallel(n)
+                @distributed for i in 1:n
+                    sleep(1)
+                end
+            end         
+
+        Run the script with the command  ``julia -p 6 sleep-distributed.jl`` to use 6 Julia processes.
 
    .. tab:: R 
    
@@ -347,9 +363,9 @@ Exercises
 
    1. First do the setup of `.Renviron` and create the directory for installing R
    packages
-   2. From the command line. Suggestion: ``anomalize``
-   3. From inside R. Suggestion: `tidyr`
-   4. Start R and see if the library can be loaded. 
+   1. From the command line. Suggestion: ``anomalize``
+   2. From inside R. Suggestion: `tidyr`
+   3. Start R and see if the library can be loaded. 
    
 
 .. solution:: Solution
