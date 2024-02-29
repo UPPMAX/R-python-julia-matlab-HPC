@@ -122,7 +122,7 @@ Let's now create a **project environment**, this can be done as follows (if typi
 
 .. type-along::
 
-   .. code-block:: juliaconsole
+   .. code-block:: julia-repl
 
       julia> using Pkg
       julia>;
@@ -219,7 +219,7 @@ Create a package environment
 A package environment can be created by using the ``generate`` function in ``package mode``
 or ``Pkg.generate()`` in ``Julian`` mode:
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    (v1.8) pkg> generate myfirstpackage 
      Generating  project myfirstpackage:
@@ -230,7 +230,7 @@ In contrast to the ``project environment``, the ``package environment`` has a de
 structure, see for instance the **src** directory that is created.
 One can activate this environment in the following way:
 
-.. code-block:: julia
+.. code-block:: julia repl
 
    shell> cd myfirstpackage 
    (v1.8) pkg> activate . 
@@ -250,7 +250,7 @@ the standard library environments.
 
 Let's add the package ``Flux`` for Machine Learning routines:
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    (myfirstpackage) pkg> add Flux
      Precompiling project...
@@ -272,14 +272,14 @@ One can customize this setting with the variable ``JULIA_LOAD_PATH``, this can b
 done on the Linux command line:
 
 
-.. code-block:: bash
+.. code-block:: console
 
    $ export JULIA_LOAD_PATH="path1:path2:..."
 
 For instance, for including just the current environment we can set the value of 
 this variable as:
 
-.. code-block:: bash
+.. code-block:: console
 
    $ export JULIA_LOAD_PATH="@"
 
@@ -310,7 +310,7 @@ the environments we want in the path so that they are visible in our current env
 To illustrate this concept, let's create a second environment and first we can remove the
 content of ``LOAD_PATH`` (which path will be different for you):
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    julia> empty!(LOAD_PATH)
    shell> pwd
@@ -323,7 +323,7 @@ content of ``LOAD_PATH`` (which path will be different for you):
 
 If we try to use the ``DFTK`` package we will see the error message:
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    julia> using DFTK
       │ Package DFTK not found, but a package named DFTK is available from a registry. 
@@ -336,7 +336,7 @@ If you remember this package was installed in the first environment (``my-first-
 to make this package available in our second environment we can push the corresponding folder's
 path to ``LOAD_PATH``:
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    julia> push!(LOAD_PATH, "/pfs/proj/nobackup/path/Julia-Test/my-first-env/")
       1-element Vector{String}:
@@ -407,7 +407,7 @@ Exercises
     .. solution:: Solution for both centres
         :class: dropdown
             
-            .. code-block:: julia
+            .. code-block:: julia-repl
     
                 shell> mkdir new-env
                 shell> cd new-env
@@ -429,7 +429,7 @@ Exercises
     .. solution:: Solution for both centres
         :class: dropdown
             
-            .. code-block:: julia
+            .. code-block:: julia-repl
     
                 shell> pwd            #Check were you are currently located
                 (@v1.8) pkg> generate new_pack
