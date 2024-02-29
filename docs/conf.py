@@ -44,6 +44,16 @@ extensions = ["sphinx_lesson",
     'sphinx.ext.graphviz',
     'sphinxcontrib.mermaid',
 ]
+
+mermaid_output_format = 'raq'
+mermaid_output_format = "png"
+mermaid_params = [
+    "--theme",
+    "forest",
+    "--backgroundColor",
+    "transparent",
+]
+
 jupyter_execute_notebooks = "cache"
 
 myst_enable_extensions = [
@@ -73,14 +83,6 @@ exclude_patterns = [
     "*venv*",
 ]
 
-mermaid_output_format = 'raq'
-mermaid_output_format = "png"
-mermaid_params = [
-    "--theme",
-    "forest",
-    "--backgroundColor",
-    "transparent",
-]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
