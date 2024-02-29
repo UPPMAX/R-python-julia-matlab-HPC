@@ -25,7 +25,7 @@ Interactive work on the compute nodes
 .. admonition:: Compute allocations in this workshop 
 
    - Rackham: ``naiss2024-22-107``
-   - Kebnekaise: ``hpc2n2023-110``
+   - Kebnekaise: ``hpc2n2024-025``
 
 
 There are several ways to run R interactively
@@ -77,7 +77,7 @@ your job. When the resources are allocated, you need to preface commands with
 
       .. code-block:: console
           
-         $ salloc -n <tasks> --time=HHH:MM:SS -A hpc2n2023-110 
+         $ salloc -n <tasks> --time=HHH:MM:SS -A hpc2n2024-025 
          
       
 where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in 
@@ -149,7 +149,7 @@ Example **Code along**
          
       .. code-block:: console
       
-          [~]$ salloc -n 4 --time=00:30:00 -A hpc2n2023-110
+          [~]$ salloc -n 4 --time=00:30:00 -A hpc2n2024-025
           salloc: Pending job allocation 20174806
           salloc: job 20174806 queued and waiting for resources
           salloc: job 20174806 has been allocated resources
@@ -232,7 +232,7 @@ When you have finished using the allocation, either wait for it to end, or close
    
       .. code-block:: console 
                   
-                  [bjornc@r484 ~]$ exit
+                  [bjornc@r483 ~]$ exit
       
                   exit
                   [screen is terminating]
