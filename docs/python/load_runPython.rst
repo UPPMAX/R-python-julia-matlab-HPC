@@ -125,9 +125,9 @@ Check for Python versions
 .. admonition:: Output at HPC2N (Skylake nodes) as of 28 Feb 2024  
     :class: dropdown
 
-        .. code-block:: tcl
+        .. code-block:: console
 
-           b-an01 [~]$ module spider Python
+           $ module spider Python
            ----------------------------------------------------------------------------
            Python:
            ----------------------------------------------------------------------------
@@ -155,15 +155,16 @@ Check for Python versions
             Other possible modules matches:
                 Biopython  Boost.Python  GitPython  IPython  Python-bundle-PyPI  flatbuffers-python intervaltree-python  ...
            ----------------------------------------------------------------------------
-           To find other possible module matches execute:
+
+            To find other possible module matches execute:
                $ module -r spider '.*Python.*'
-           ----------------------------------------------------------------------------
-           For detailed information about a specific "Python" package (including how to load the modules) use the module's full name.
+            ----------------------------------------------------------------------------
+            For detailed information about a specific "Python" package (including how to load the modules) use the module's full name.
                Note that names that have a trailing (E) are extensions provided by other modules.
        
-           For example:
+            For example:
             $ module spider Python/3.11.3
-           ----------------------------------------------------------------------------
+            ----------------------------------------------------------------------------
 
 Load a Python module
 --------------------
