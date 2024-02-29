@@ -150,7 +150,7 @@ Let's now create a **project environment**, this can be done as follows (if typi
    
    This can be confirmed if we try to load the ``DFTK`` package that we installed previously as thecommand ``using DFTK`` will execute without any complaints. If we install the ``DFTK`` package we will notice some differences w.r.t. the previous installation: 
 
-   .. code-block:: julia-repl
+   .. code-block:: julia
 
       (my-first-env) pkg> add DFTK 
       Resolving package versions...
@@ -193,7 +193,7 @@ Let's now create a **project environment**, this can be done as follows (if typi
    Here, we notice that the ``Project.toml`` only gives us the UUID of the project while the ``Manifest.toml`` file contains the full information about the dependencies versions and organization layout. Notice the message regarding editing for the latter. Let's leave this environment: 
 
 
-   .. code-block:: julia-repl
+   .. code-block:: julia
 
       (my-first-env) pkg> activate 
           Activating project at `~/.julia/environments/v1.8`
@@ -219,7 +219,7 @@ Create a package environment
 A package environment can be created by using the ``generate`` function in ``package mode``
 or ``Pkg.generate()`` in ``Julian`` mode:
 
-.. code-block:: julia-repl
+.. code-block:: julia
 
    (v1.8) pkg> generate myfirstpackage 
      Generating  project myfirstpackage:
@@ -230,7 +230,7 @@ In contrast to the ``project environment``, the ``package environment`` has a de
 structure, see for instance the **src** directory that is created.
 One can activate this environment in the following way:
 
-.. code-block:: julia repl
+.. code-block:: julia
 
    shell> cd myfirstpackage 
    (v1.8) pkg> activate . 
@@ -250,7 +250,7 @@ the standard library environments.
 
 Let's add the package ``Flux`` for Machine Learning routines:
 
-.. code-block:: julia-repl
+.. code-block:: julia
 
    (myfirstpackage) pkg> add Flux
      Precompiling project...
@@ -407,7 +407,7 @@ Exercises
     .. solution:: Solution for both centres
         :class: dropdown
             
-            .. code-block:: julia-repl
+            .. code-block:: julia
     
                 shell> mkdir new-env
                 shell> cd new-env
@@ -429,7 +429,7 @@ Exercises
     .. solution:: Solution for both centres
         :class: dropdown
             
-            .. code-block:: julia-repl
+            .. code-block:: julia
     
                 shell> pwd            #Check were you are currently located
                 (@v1.8) pkg> generate new_pack
