@@ -359,13 +359,111 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
 Exercises
 ---------
 
-.. challenge:: Parallelize a simple code
+.. challenge:: Parallelize a *for loop* code
 
-   1. First do the setup of `.Renviron` and create the directory for installing R
-   packages
-   1. From the command line. Suggestion: ``anomalize``
-   2. From inside R. Suggestion: `tidyr`
-   3. Start R and see if the library can be loaded. 
+   Cheo
+
+   .. tabs:: 
+
+        .. tab:: Python
+
+            Pandas is available in the following combo ``ml GCC/12.3.0 SciPy-bundle/2023.07``. 
+
+            .. code-block:: python
+
+                import pandas as pd
+                import multiprocessing
+
+                # Create a DataFrame
+                data_df = pd.DataFrame({
+                    'ID': range(1, 10001),
+                    'Value': range(3, 20002, 2)  # Generating 10000 odd numbers starting from 3
+                })
+
+                # Define a function to calculate the sum of a portion of the data
+                def calculate_sum(values):
+                    total_sum = sum(values)
+                    return total_sum
+
+                # Split the 'Value' column into chunks
+                chunk_size = 1000
+                value_chunks = [data_df['Value'][i:i+chunk_size] for i in range(0, len(data_df['Value']), chunk_size)]
+
+                # Create a Pool of worker processes
+                pool = multiprocessing.Pool()
+
+                # Map the calculate_sum function to each chunk of data in parallel
+                results = pool.map(calculate_sum, value_chunks)
+
+                # Close the pool to free up resources
+                pool.close()
+
+                # Combine the results to get the total sum
+                total_sum = sum(results)
+
+                # Compute the mean
+                mean_value = total_sum / len(data_df['Value'])
+
+                # Print the mean value
+                print(mean_value)
+
+
+        .. tab:: Julia
+
+            .. code-block:: julia 
+
+                
+
+        .. tab:: R
+
+            ouat 
+
+            .. code-block:: r 
+
+                library(doParallel)
+                library(foreach)
+
+                # Create a data frame
+                data_df <- data.frame(
+                ID <- seq(1,10000), Value <- seq(from=3,by=2,length.out=10000)
+                )
+
+                # Number of subsets
+                num_subsets <- 4
+
+                # Create a cluster with 4 workers using makeCluster
+                cl <- makeCluster(4)
+
+                # Register the cluster for parallel processing
+                registerDoParallel(cl)
+
+                # Function to process a subset
+                process_subset <- function(subset) {
+                # Perform some computation on the subset
+                subset_sum <- sum(subset$Value)
+                return(data.frame(SubsetSum = subset_sum))
+                }
+
+                # Use foreach with dopar to generate and process subsets in parallel
+                result <- foreach(i = 1:num_subsets, .combine = rbind) %dopar% {
+                # Determine the indices for the subset
+                subset_indices <- seq(from = 1 + (i - 1) * nrow(data_df) / num_subsets,
+                                        to = i * nrow(data_df) / num_subsets)
+                
+                # Extract the subset
+                subset_data <- data_df[subset_indices, , drop = FALSE]
+                
+                # Process the subset
+                subset_result <- process_subset(subset_data)
+                
+                return(subset_result)
+                }
+
+                # Stop the cluster when done
+                stopCluster(cl)
+
+                # Print the results
+                print(sum(result)/10000)
    
 
 .. solution:: Solution
@@ -376,9 +474,7 @@ Exercises
       
             .. code-block:: console
 	 
-               [bbrydsoe@rackham3 bbrydsoe]$ echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron
-	       R_LIBS_USER="/home/bbrydsoe/R-packages-%V"
-	       [bbrydsoe@rackham3 bbrydsoe]$ mkdir -p $HOME/R-packages-4.0.4
+               oaou 
 	    
 
       .. tab:: R
@@ -403,11 +499,12 @@ Exercises
 
 .. admonition:: More info!
 
+   - `HPC2N Julia documentation <https://www.hpc2n.umu.se/resources/software/julia>`_.
+   - `HPC2N R documentation <https://www.hpc2n.umu.se/resources/software/r>`_.
    - `Introduction to Dask by Aalto Scientific Computing and CodeRefinery <https://aaltoscicomp.github.io/python-for-scicomp/parallel/#dask-and-task-queues>`_
    - `Intermedieate level Dask by ENCCS <https://enccs.github.io/hpda-python/dask/>`_.
-
-- Official Python documentation is found here https://www.python.org/doc/ .
-- `Wikipedias' article on Parallel Computing <https://en.wikipedia.org/wiki/Parallel_computing>`_ 
-- The book `High Performance Python <https://www.oreilly.com/library/view/high-performance-python/9781492055013/>`_ is a good resource for ways of speeding up Python code.
+   - Official Python documentation is found here https://www.python.org/doc/ .
+   - `Wikipedias' article on Parallel Computing <https://en.wikipedia.org/wiki/Parallel_computing>`_ 
+   - The book `High Performance Python <https://www.oreilly.com/library/view/high-performance-python/9781492055013/>`_ is a good resource for ways of speeding up Python code.
     
 
