@@ -212,7 +212,7 @@ GPU code
 
    .. tab:: UPPMAX
 
-        Short GPU example for running on Snowy.         
+        Short GPU example for running on Snowy. This runs the example pytorch_fitting_gpu.py program that you can find in the Exercises/Python directory         
        
         .. code-block:: sh
 
@@ -226,11 +226,12 @@ GPU code
             #SBATCH --gpus=1
             #SBATCH --gpus-per-node=1
             
-            # Load any modules you need, here loading Python 3.11.8
-            module load python/3.11.8
+            # Load any modules you need, here loading Python 3.9.5 and the corresponding ML packages module 
+
+            module load python_ML_packages/3.9.5-gpu 
             
             # Run your code
-            python <my-gpu-code>.py 
+            srun python pytorch_fitting_gpu.py 
             
 
    .. tab:: HPC2N
