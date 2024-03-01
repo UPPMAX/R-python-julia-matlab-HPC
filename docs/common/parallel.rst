@@ -361,26 +361,159 @@ Exercises
 
 .. challenge:: Parallelize a *for loop* code
 
-   Cheo
-
    .. tabs:: 
 
         .. tab:: Python
 
-            Pandas is available in the following combo ``ml GCC/12.3.0 SciPy-bundle/2023.07``. 
+            Pandas is available in the following combo ``ml GCC/12.3.0 SciPy-bundle/2023.07`` (HPC2N) and 
+            ``ml python/3.11.8`` (UPPMAX). Call the script ``script-df.py``. 
 
             .. code-block:: python
 
                 import pandas as pd
                 import multiprocessing
 
-                # Create a DataFrame
+                # Create a DataFrame with two sets of values ID and Value
                 data_df = pd.DataFrame({
                     'ID': range(1, 10001),
-                    'Value': range(3, 20002, 2)  # Generating 10000 odd numbers starting from 3
+                    'Value': range(3, 20002, 2)  # Generate 10000 odd numbers starting from 3
                 })
 
-                # Define a function to calculate the sum of a portion of the data
+                # Define a function to calculate the sum of a vector
+                def calculate_sum(values):
+                    total_sum = *FIXME*(values)
+                    return *FIXME*
+
+                # Split the 'Value' column into chunks of size 1000
+                chunk_size = *FIXME*
+                value_chunks = [data_df['Value'][*FIXME*:*FIXME*] for i in range(0, len(data_df['*FIXME*']), *FIXME*)]
+
+                # Create a Pool of 4 worker processes, this is required by multiprocessing
+                pool = multiprocessing.Pool(processes=*FIXME*)
+
+                # Map the calculate_sum function to each chunk of data in parallel
+                results = pool.map(*FIXME: function*, *FIXME: chunk size*)
+
+                # Close the pool to free up resources, if the pool won't be used further
+                pool.close()
+
+                # Combine the partial results to get the total sum
+                total_sum = sum(results)
+
+                # Compute the mean by dividing the total sum by the total length of the column 'Value'
+                mean_value = *FIXME* / len(data_df['*FIXME*'])
+
+                # Print the mean value
+                print(mean_value)
+
+            Run the code with ``python script-df.py``.
+
+
+        .. tab:: Julia
+
+            The package *DataFrames* needs to be added in a Julia session in case you haven't done it previously.
+            The functions **nthreads()** (number of available threads), and **threadid()** (the thread identification 
+            number) will be useful in this task.
+
+            .. code-block:: julia
+
+                using DataFrames
+                using Base.Threads
+
+                # Create a data frame with two sets of values ID and Value
+                data_df = DataFrame(ID = 1:10000, Value = range(3, step=2, length=10000))
+
+                # Define a function to compute the sum in parallel
+                function parallel_sum(data)
+                    # Initialize an array to store thread-local sums
+                    local_sums = zeros(eltype(data), nthreads())
+                    # Iterate through each value in the 'Value' column in parallel
+                    @threads for i =1:length(data)
+                        # Add the value to the thread-local sum
+                        local_sums[threadid()] += data[i]
+                    end
+                    # Combine the local sums to obtain the total sum
+                    total_sum_parallel = sum(local_sums)
+                    return total_sum_parallel
+                end
+
+                # Compute the sum in parallel
+                total_sum_parallel = parallel_sum(data_df.Value)
+
+                # Compute the mean
+                mean_value_parallel = total_sum_parallel / length(data_df.Value)
+
+                # Print the mean value
+                println(mean_value_parallel)                
+
+        .. tab:: R
+
+            .. code-block:: r 
+
+                library(doParallel)
+                library(foreach)
+
+                # Create a data frame with two sets called ID and Value
+                data_df <- data.frame(
+                ID <- seq(1,10000), Value <- seq(from=3,by=2,length.out=10000)
+                )
+
+                # Create 4 subsets
+                num_subsets <- *FIXME*
+
+                # Create a cluster with 4 workers
+                cl <- makeCluster(*FIXME*)
+
+                # Register the cluster for parallel processing
+                registerDoParallel(cl)
+
+                # Function to process a subset of the whole data
+                process_subset <- function(subset) {
+                # Perform some computation on the subset
+                subset_sum <- sum(*FIXME*)
+                return(data.frame(SubsetSum = subset_sum))
+                }
+
+                # Use foreach with dopar to process subsets in parallel
+                result <- foreach(i = 1:*FIXME*, .combine = rbind) %dopar% {
+                # Determine the indices for the subset
+                subset_indices <- seq(from = *FIXME*,
+                                        to = *FIXME*)
+                
+                # Create the subset
+                subset_data <- data_df[*FIXME*, , drop = FALSE]
+                
+                # Process the subset
+                subset_result <- process_subset(*FIXME*)
+                
+                return(subset_result)
+                }
+
+                # Stop the cluster when done
+                stopCluster(cl)
+
+                # Print the results
+                print(sum(*FIXME*)/*FIXME*)
+   
+
+.. solution:: Solution
+
+   .. tabs:: 
+
+      .. tab:: Python
+      
+            .. code-block:: python
+	 
+                import pandas as pd
+                import multiprocessing
+
+                # Create a DataFrame with two sets of values ID and Value
+                data_df = pd.DataFrame({
+                    'ID': range(1, 10001),
+                    'Value': range(3, 20002, 2)  # Generate 10000 odd numbers starting from 3
+                })
+
+                # Define a function to calculate the sum of a vector
                 def calculate_sum(values):
                     total_sum = sum(values)
                     return total_sum
@@ -389,68 +522,92 @@ Exercises
                 chunk_size = 1000
                 value_chunks = [data_df['Value'][i:i+chunk_size] for i in range(0, len(data_df['Value']), chunk_size)]
 
-                # Create a Pool of worker processes
-                pool = multiprocessing.Pool()
+                # Create a Pool of 4 worker processes, this is required by multiprocessing
+                pool = multiprocessing.Pool(processes=4)
 
                 # Map the calculate_sum function to each chunk of data in parallel
                 results = pool.map(calculate_sum, value_chunks)
 
-                # Close the pool to free up resources
+                # Close the pool to free up resources, if the pool won't be used further
                 pool.close()
 
-                # Combine the results to get the total sum
+                # Combine the partial results to get the total sum
                 total_sum = sum(results)
 
-                # Compute the mean
+                # Compute the mean by dividing the total sum by the total length of the column 'Value'
                 mean_value = total_sum / len(data_df['Value'])
 
                 # Print the mean value
-                print(mean_value)
+                print(mean_value)               
 
+      .. tab:: Julia
+         
+            .. code-block:: julia
 
-        .. tab:: Julia
+                using DataFrames
+                using Base.Threads
 
-            .. code-block:: julia 
+                # Create a data frame with two sets of values ID and Value
+                data_df = DataFrame(ID = 1:10000, Value = range(3, step=2, length=10000))
 
-                
+                # Define a function to compute the sum in parallel
+                function parallel_sum(data)
+                    # Initialize an array to store thread-local sums
+                    local_sums = zeros(eltype(data), nthreads())
+                    # Iterate through each value in the 'Value' column in parallel
+                    @threads for i =1:length(data)
+                        # Add the value to the thread-local sum
+                        local_sums[threadid()] += data[i]
+                    end
+                    # Combine the local sums to obtain the total sum
+                    total_sum_parallel = sum(local_sums)
+                    return total_sum_parallel
+                end
 
-        .. tab:: R
+                # Compute the sum in parallel
+                total_sum_parallel = parallel_sum(data_df.Value)
 
-            ouat 
+                # Compute the mean
+                mean_value_parallel = total_sum_parallel / length(data_df.Value)
+
+                # Print the mean value
+                println(mean_value_parallel)   
+	 
+      .. tab:: R
 
             .. code-block:: r 
 
                 library(doParallel)
                 library(foreach)
 
-                # Create a data frame
+                # Create a data frame with two sets called ID and Value
                 data_df <- data.frame(
                 ID <- seq(1,10000), Value <- seq(from=3,by=2,length.out=10000)
                 )
 
-                # Number of subsets
+                # Create 4 subsets
                 num_subsets <- 4
 
-                # Create a cluster with 4 workers using makeCluster
+                # Create a cluster with 4 workers
                 cl <- makeCluster(4)
 
                 # Register the cluster for parallel processing
                 registerDoParallel(cl)
 
-                # Function to process a subset
+                # Function to process a subset of the whole data
                 process_subset <- function(subset) {
                 # Perform some computation on the subset
                 subset_sum <- sum(subset$Value)
                 return(data.frame(SubsetSum = subset_sum))
                 }
 
-                # Use foreach with dopar to generate and process subsets in parallel
+                # Use foreach with dopar to process subsets in parallel
                 result <- foreach(i = 1:num_subsets, .combine = rbind) %dopar% {
                 # Determine the indices for the subset
                 subset_indices <- seq(from = 1 + (i - 1) * nrow(data_df) / num_subsets,
                                         to = i * nrow(data_df) / num_subsets)
                 
-                # Extract the subset
+                # Create the subset
                 subset_data <- data_df[subset_indices, , drop = FALSE]
                 
                 # Process the subset
@@ -463,37 +620,7 @@ Exercises
                 stopCluster(cl)
 
                 # Print the results
-                print(sum(result)/10000)
-   
-
-.. solution:: Solution
-
-   .. tabs:: 
-
-      .. tab:: Python
-      
-            .. code-block:: console
-	 
-               oaou 
-	    
-
-      .. tab:: R
-      
-            Installing package "anomalize". Using the repo http://ftp.acc.umu.se/mirror/CRAN/
-         
-            .. code-block:: console
-	 
-	       [bbrydsoe@rackham3 bbrydsoe]$ R --quiet --no-save --no-restore -e "install.packages('anomalize', repo='http://ftp.acc.umu.se/mirror/CRAN/')"
-	  
-            This assumes you have already loaded the R module. If not, then do so first. 
-	 
-      .. tab:: Julia
-      
-            Installing package "tidyr". Using the repo http://ftp.acc.umu.se/mirror/CRAN/
-
-            .. code-block:: R 
-
-               > install.packages('tidyr', repo='http://ftp.acc.umu.se/mirror/CRAN/')	     
+                print(sum(result)/10000)	     
 	     
 
 
