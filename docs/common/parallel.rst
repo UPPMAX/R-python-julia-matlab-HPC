@@ -635,7 +635,7 @@ Exercises
    - `HPC2N R documentation <https://www.hpc2n.umu.se/resources/software/r>`_.
    - `Introduction to Dask by Aalto Scientific Computing and CodeRefinery <https://aaltoscicomp.github.io/python-for-scicomp/parallel/#dask-and-task-queues>`_
    - `Intermediate level Dask by ENCCS <https://enccs.github.io/hpda-python/dask/>`_.
-   - `Official Python documentation <https://www.python.org/doc/>`_.
+   - `Official Python documentation <https://www.python.org/doc/>`_.
    - `Wikipedias' article on Parallel Computing <https://en.wikipedia.org/wiki/Parallel_computing>`_ 
    - The book `High Performance Python <https://www.oreilly.com/library/view/high-performance-python/9781492055013/>`_ is a good resource for ways of speeding up Python code.
     
