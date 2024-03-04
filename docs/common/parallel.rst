@@ -413,7 +413,7 @@ Exercises
 
             The package *DataFrames* needs to be added in a Julia session in case you haven't done it previously.
             The functions **nthreads()** (number of available threads), and **threadid()** (the thread identification 
-            number) will be useful in this task.
+            number) will be useful in this task. Call the script ``script-df.jl``.
 
             .. code-block:: julia
 
@@ -444,9 +444,13 @@ Exercises
                 mean_value_parallel = total_sum_parallel / length(data_df.Value)
 
                 # Print the mean value
-                println(mean_value_parallel)                
+                println(mean_value_parallel)    
+
+            Run the code with ``julia --threads X script-df.jl``, with X <= 4.             
 
         .. tab:: R
+
+            Call the script ``script-df.R``.
 
             .. code-block:: r 
 
@@ -494,7 +498,8 @@ Exercises
 
                 # Print the results
                 print(sum(*FIXME*)/*FIXME*)
-   
+            
+            Run the code with ``Rscript --no-save --no-restore script-df.R``
 
 .. solution:: Solution
 
