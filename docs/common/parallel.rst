@@ -106,11 +106,11 @@ HPC resources. The situation would be similar to turn on many washing machines t
 a single item, we can waste energy easily.
 
 .. figure:: ../../img/laundry-machines.svg
-   :width: 350
+   :width: 300
    :align: center
 
 .. figure:: ../../img/laundry-machines.svg
-   :width: 350
+   :width: 300
    :align: center
 
    Under-using a cluster.
@@ -359,7 +359,7 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
 Exercises
 ---------
 
-.. challenge:: Parallelize a *for loop* code
+.. challenge:: Parallelizing a *for loop* workflow
 
    .. tabs:: 
 
@@ -629,13 +629,13 @@ Exercises
 	     
 
 
-.. admonition:: More info!
+.. admonition:: More info
 
    - `HPC2N Julia documentation <https://www.hpc2n.umu.se/resources/software/julia>`_.
    - `HPC2N R documentation <https://www.hpc2n.umu.se/resources/software/r>`_.
    - `Introduction to Dask by Aalto Scientific Computing and CodeRefinery <https://aaltoscicomp.github.io/python-for-scicomp/parallel/#dask-and-task-queues>`_
-   - `Intermedieate level Dask by ENCCS <https://enccs.github.io/hpda-python/dask/>`_.
-   - Official Python documentation is found here https://www.python.org/doc/ .
+   - `Intermediate level Dask by ENCCS <https://enccs.github.io/hpda-python/dask/>`_.
+   - `Official Python documentation <https://www.python.org/doc/>`_.
    - `Wikipedias' article on Parallel Computing <https://en.wikipedia.org/wiki/Parallel_computing>`_ 
    - The book `High Performance Python <https://www.oreilly.com/library/view/high-performance-python/9781492055013/>`_ is a good resource for ways of speeding up Python code.
     
