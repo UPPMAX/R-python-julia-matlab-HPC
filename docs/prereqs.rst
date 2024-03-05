@@ -14,9 +14,11 @@ Terminals
 
    .. tab:: Mac
 
-      - USe terminal (e.g. from Launchpad) or [iTerm2](https://iterm2.com/)
+      - Use terminal (e.g. from Launchpad) or [iTerm2](https://iterm2.com/)
 
-      ![Terminal](./img/Mac_terminal.png)
+      .. figure:: ../img/Mac_terminal.png
+         :width: 550
+         :align: center
 
       - iTerm2 goodies:
          - You can save hosts for later.
