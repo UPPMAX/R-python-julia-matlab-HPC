@@ -243,22 +243,9 @@ Create a virtual environment called ``vpyenv``. First load the python version yo
       
    .. tab:: HPC2N
      
-      1) **First go to the directory you want your environment in.**
-      Installing spacy. Using existing modules for numpy (in SciPy-bundle) and a virtualenv named "Example2", created under Python 3.11.3, but with a compatible SciPy-bundle loaded as well. Note that you need to load the modules again if you have been logged out, etc. but the virtual environment remains, of course.
+      Installing spacy, seaborn. Using existing modules for numpy (in SciPy-bundle), matplotlib, under Python 3.11.3.    
 
-      .. admonition:: Load modules for Python, numpy (in SciPy-bundle), create a virtualenv named Example2, activate the environment, and install spacy on Kebnekaise at HPC2N 
-         :class: dropdown
-   
-         .. code-block:: sh
-           
-            b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07
-            b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ virtualenv --system-site-packages Example2
-	    b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ source Example2/bin/activate
-            (Example2) b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ pip install --no-cache-dir --no-build-isolation spacy 
-   
-      2) Installing seaborn. Using existing modules for numpy (in SciPy-bundle), matplotlib, and a new virtualenv containing the same as Example2 + matplotlib, under Python 3.11.3.    
-
-      .. admonition:: Load modules for Python, numpy (in SciPy-bundle), matplotlib, activate the environment, create virtualenv "Example3", activate the environment, and install seaborn on Kebnekaise at HPC2N. Note: deactivate your virtualenv "Example2" first (using "deactivate")
+      .. admonition:: Load modules for Python, numpy (in SciPy-bundle), matplotlib, activate the environment, create virtualenv "vpyenv", activate the environment, and install spacy and seaborn on Kebnekaise at HPC2N. 
          :class: dropdown
    
          .. code-block:: sh
@@ -266,19 +253,19 @@ Create a virtual environment called ``vpyenv``. First load the python version yo
             b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07 matplotlib/3.7.2
 	    b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ virtualenv --system-site-packages Example3
             b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ source Example3/bin/activate
-            (Example3) $ pip install --no-cache-dir --no-build-isolation seaborn 
+            (vpyenv) $ pip install --no-cache-dir --no-build-isolation spacy seaborn 
 
          Deactivating a virtual environment.
 
          .. code-block:: sh
 
-            (Example3) $ deactivate
+            (vpyenv) $ deactivate
 
       Every time you need the tools available in the virtual environment you activate it as above (after first loading the modules for Python, Python packages, and prerequisites)
 
       .. code-block:: console
 
-         $ source Example3/bin/activate
+         $ source vpyenv/bin/activate
 
 
 **UPPMAX**

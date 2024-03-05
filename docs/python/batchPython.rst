@@ -146,6 +146,8 @@ Send the script to the batch:
 Serial code + self-installed package in virt. env. 
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 
+Here we are using the virtual environment we created under the "isolated environments" session earlier. It is using the Python package "<a href="https://github.com/mwaskom/seaborn">seaborn</a>". In order to run the seaborn-code.py example, you need to download the data set "tips.csv" which you can find here: <a href="https://github.com/mwaskom/seaborn-data">https://github.com/mwaskom/seaborn-data</a>. If you want, there are other datasets there to play with.  
+
 .. tabs::
 
    .. tab:: UPPMAX
@@ -168,7 +170,7 @@ Serial code + self-installed package in virt. env.
             source /proj/naiss2024-22-107/<user-dir>/<path-to-virt-env>/<venv-name>/bin/activate
             
             # Run your Python script
-            python <my_program.py>
+            python seaborn-code.py
 
 
    .. tab:: HPC2N
@@ -191,7 +193,30 @@ Serial code + self-installed package in virt. env.
             source /proj/nobackup/hpc2n2024-025/<user-dir>/<path-to-virt-env>/Example2/bin/activate
             
             # Run your Python script 
-            python <my_program.py>
+            python seaborn-code.py
+
+   .. tab:: Python 
+
+        An example Python code using the "seaborn" package. It was taken from <a href="https://seaborn.pydata.org/tutorial/introduction.html">https://seaborn.pydata.org/tutorial/introduction.html</a>. 
+
+        .. code-block:: python
+
+            # Import seaborn
+            import seaborn as sns
+
+            # Apply the default theme
+            sns.set_theme()
+
+            # Load an example dataset
+            tips = sns.load_dataset("tips")
+
+            # Create a visualization
+            sns.relplot(
+                data=tips,
+                x="total_bill", y="tip", col="time",
+                hue="smoker", style="smoker", size="size",
+            )
+
 
 Send the script to the batch:
 
