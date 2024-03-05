@@ -4,11 +4,12 @@ Pre-requirements
 Technical on local computer
 ---------------------------
 
-- terminal programs and thinLinc
-- graphics
+- We reccoomend that you set up both a terminal on you computer that can handle X11 graphics AND install the "Remote Access Desktop application" ThinLinc, see below.
 
 Terminals without graphics
-#########
+##########################
+
+**If you are in a hurry or get problems in the installation procedure you can do most of the work from these solutions.**
 
 .. tabs::
 
@@ -55,8 +56,8 @@ Terminals without graphics
 
       - `Git bash <https://gitforwindows.org/>`_
 
-Add X11 graphics
-################
+Add X11 graphics to terminal
+###########################
 
 .. tabs::
 
@@ -133,10 +134,8 @@ ThinLinc
       - username
 
       - password
- 
+
   .. figure:: ./img/Thinlinc2.jpg
-
-
 
 
 
@@ -160,7 +159,7 @@ Try to log in
    - Which client to use?
        - Graphics and easy to use
        - ThinLinc
-  - Best integrated systems
+   - Best integrated systems
       - Visual Studio Code has several extensions (remote, SCP, programming IDE:s)
       - Windows: MobaXterm is somewhat easier to use.
   
