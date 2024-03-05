@@ -1,14 +1,14 @@
 #!/bin/bash
-#SBATCH -A naiss2023-22-914 # Change to your own after the course
+#SBATCH -A naiss2024-22-107 # Change to your own after the course
 #SBATCH --time=00:10:00 # Asking for 10 minutes
 #SBATCH -n 1 # Asking for 1 core
 
-# Load any modules you need, here for Python 3.9.5 
-module load python/3.9.5
+# Load any modules you need, here for Python 3.11.8
+module load python/3.11.8
 
-# Activate your virtual environment. 
+# Activate your virtual environment that you created in the session about isolated environments. 
 # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
-source <path-to-virt-env>/bin/activate
+source <path-to-virt-env>/vpyenv/bin/activate
 
 # Run your Python script
-python <my_program.py>
+python seaborn-code-rackham.py
