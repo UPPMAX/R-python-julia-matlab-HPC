@@ -188,6 +188,50 @@ Text editors on the Clusters
 - gedit
 - mobaxterm built-in
 
+.. hint::
+
+   - There are many ways to edit your scripts.
+   - If you are rather new.
+
+      - Graphical: ``$ gedit <script> &`` 
+   
+         - (``&`` is for letting you use the terminal while editor window is open)
+
+         - Requires ThinLinc or ``ssh -Y ...`` or ``ssh -X``
+
+      - Terminal: ``$ nano <script>``
+
+   - Otherwise you would know what to do!
+   - |:warning:| The teachers may use their common editor, like ``vi``/``vim``
+      - If you get stuck, press: ``<esc>`` and then ``:q`` !
+ 
+
+.. example::
+
+   - Let's make a script with the name ``example.py``  
+
+   .. code-block:: console
+
+      $ nano example.py
+
+   - Insert the following text
+
+   .. code-block:: python
+
+      # This program prints Hello, world!
+      print('Hello, world!')
+
+   - Save and exit. In nano: ``<ctrl>+O``, ``<ctrl>+X``
+
+   You can run a python script in the shell like this:
+
+   .. code-block:: console
+
+      $ python example.py
+      # or 
+      $ python3 example.py
+
+
 Coding
 ------
 
