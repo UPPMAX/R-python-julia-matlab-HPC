@@ -4,9 +4,10 @@ Pre-requirements
 Technical on local computer
 ---------------------------
 
-- We recommend that you set up both_
-  - a terminal on you computer that can handle X11 graphics AND 
-  - install the "Remote Access Desktop application" ThinLinc, see below.
+- We recommend that you set up both:
+
+    - a terminal on you computer that can handle X11 graphics AND 
+    - install the "Remote Access Desktop application" ThinLinc, see below.
 
 
 Basic terminal clients 
