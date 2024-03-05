@@ -135,7 +135,7 @@ ThinLinc
 
       - password
 
-  .. figure:: ./img/Thinlinc2.jpg
+.. figure:: ./img/Thinlinc2.jpg
 
 
 
@@ -193,13 +193,15 @@ See below for links to useful material if you need a refresher before the course
   
 Linux
 #####
-some familiarity with the LINUX command line (recordings from HPC2N:s Linux intro and UPPMAX Intro course), 
 
-basic R, Python, or Julia, depending on which language(s) you are interested in. See below for links to useful material if you need a refresher before the course.
-- https://www.youtube.com/watch?v=gq4Dvt2LeDg
-- https://www.uppmax.uu.se/support/courses-and-workshops/uppmax-introductory-course/
-- http://docs.uppmax.uu.se/getting_started/linux/
-- http://docs.uppmax.uu.se/getting_started/linux_basics/
+- some familiarity with the LINUX command line (recordings from HPC2N:s Linux intro and UPPMAX Intro course), 
+
+- See below for links to useful material if you need a refresher before the course.
+
+   - https://www.youtube.com/watch?v=gq4Dvt2LeDg
+   - https://www.uppmax.uu.se/support/courses-and-workshops/uppmax-introductory-course/
+   - http://docs.uppmax.uu.se/getting_started/linux/
+   - http://docs.uppmax.uu.se/getting_started/linux_basics/
   
 Material for improving your programming skills
 ##############################################
