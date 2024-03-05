@@ -8,7 +8,7 @@ Technical on local computer
 - graphics
 
 Terminals
-#########erminal
+#########
 
    .. tab:: Mac
 
