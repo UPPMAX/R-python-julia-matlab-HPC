@@ -120,109 +120,98 @@ Create a project environment
 
 Let's now create a **project environment**, this can be done as follows (if typing along, you have to change the path to your environment, like ``/proj/py-r-jl/$USER/julia`` on rackham):
 
-.. code-block:: julia
+.. type-along::
 
-   julia> using Pkg
-   julia>;
-   shell> mkdir my-first-env
-   shell> cd my-first-env
-      /pfs/proj/nobackup/path/Julia-Test/my-first-env
-   shell> #type backspace#
-   julia> ]  
-   (v1.8) pkg> activate . 
-      Activating new project at `/pfs/proj/nobackup/path/Julia-Test/my-first-env`
-   (my-first-env) pkg> #type backspace
-   julia> ;
-   shell> ls  
+   .. code-block:: julia-repl
 
-We can see that our environment in parenthesis has been activated. At this stage nothing has
-been added in the folder *my-first-env* as you can see from the empty output of the ``ls`` command. 
-Notice that now that we are in this new environment, the default and standard library environments
-are also present as before:
+      julia> using Pkg
+      julia>;
+      shell> mkdir my-first-env
+      shell> cd my-first-env
+         /pfs/proj/nobackup/path/Julia-Test/my-first-env
+      shell> #type backspace#
+      julia> ]  
+      (v1.8) pkg> activate . 
+         Activating new project at `/pfs/proj/nobackup/path/Julia-Test/my-first-env`
+      (my-first-env) pkg> #type backspace
+      julia> ;
+      shell> ls  
+   
+   We can see that our environment in parenthesis has been activated. At this stage nothing has been added in the folder *my-first-env* as you can see from the empty output of the ``ls`` command. 
+   Notice that now that we are in this new environment, the default and standard library environments are also present as before:
 
-.. code-block:: julia-repl
+   .. code-block:: julia-repl
 
-   julia> LOAD_PATH
-   3-element Vector{String}:
-   "@"
-   "@v#.#"
-   "@stdlib"
+      julia> LOAD_PATH
+      3-element Vector{String}:
+      "@"
+      "@v#.#"
+      "@stdlib"
+   
+   This can be confirmed if we try to load the ``DFTK`` package that we installed previously as thecommand ``using DFTK`` will execute without any complaints. If we install the ``DFTK`` package we will notice some differences w.r.t. the previous installation: 
 
-This can be confirmed if we try to load the ``DFTK`` package that we installed previously as the
-command ``using DFTK`` will execute without any complaints. If we install the ``DFTK`` package
-we will notice some differences w.r.t. the previous installation: 
+   .. code-block:: julia
 
-.. code-block:: julia
+      (my-first-env) pkg> add DFTK 
+      Resolving package versions...
+      Updating `/pfs/proj/nobackup/path/Julia-Test/my-first-env/Project.toml`
+      [acf6eb54] + DFTK v0.6.2
+       Updating `/pfs/proj/nobackup/path/Julia-Test/my-first-env/Manifest.toml`
 
-   (my-first-env) pkg> add DFTK 
-   Resolving package versions...
-    Updating `/pfs/proj/nobackup/path/Julia-Test/my-first-env/Project.toml`
-   [acf6eb54] + DFTK v0.6.2
-    Updating `/pfs/proj/nobackup/path/Julia-Test/my-first-env/Manifest.toml`
+   First, we notice that installation was much faster than before. This is because **Pkg** did not do a new installation but it just updated our environment with information of the available ``DFTK`` package. Specifically, if you take a look at the content of the current directory you will see the new files ``Project.toml`` and ``Manifest.toml``, the ``more`` command can display the content of these files:
 
-First, we notice that installation was much faster than before. This is because **Pkg** did not do
-a new installation but it just updated our environment with information of the available
-``DFTK`` package. Specifically, if you take a look at the content of the current directory
-you will see the new files ``Project.toml`` and ``Manifest.toml``, the ``more`` command can display
-the content of these files:
+   .. code-block:: julia-repl
 
-.. code-block:: julia
+      shell> ls
+      Manifest.toml  Project.toml
 
-   shell> ls
-   Manifest.toml  Project.toml
+      shell> more Project.toml 
+      [deps]
+      DFTK = "acf6eb54-70d9-11e9-0013-234b7a5f5337"
+   
+      shell> more Manifest.toml
+      # This file is machine-generated - editing it directly is not advised
+   
+      julia_version = "1.8.5"
+      manifest_format = "2.0"
+      project_hash = "48bbaa26b07ee1ca85ad746dc9b2f772ba10b675"
 
-   shell> more Project.toml 
-   [deps]
-   DFTK = "acf6eb54-70d9-11e9-0013-234b7a5f5337"
+      [[deps.AbstractFFTs]]
+      deps = ["ChainRulesCore", "LinearAlgebra"]
+      git-tree-sha1 = "69f7020bd72f069c219b5e8c236c1fa90d2cb409"
+      uuid = "621f4979-c628-5d54-868e-fcf4e3e8185c"
+      version = "1.2.1"
 
-   shell> more Manifest.toml
-   # This file is machine-generated - editing it directly is not advised
+      [[deps.Adapt]]
+      deps = ["LinearAlgebra"]
+      git-tree-sha1 = "195c5505521008abea5aee4f96930717958eac6f"
+      uuid = "79e6a3ab-5dfb-504d-930d-738a2a938a0e"
+      version = "3.4.0"
 
-   julia_version = "1.8.5"
-   manifest_format = "2.0"
-   project_hash = "48bbaa26b07ee1ca85ad746dc9b2f772ba10b675"
+      ...   
 
-   [[deps.AbstractFFTs]]
-   deps = ["ChainRulesCore", "LinearAlgebra"]
-   git-tree-sha1 = "69f7020bd72f069c219b5e8c236c1fa90d2cb409"
-   uuid = "621f4979-c628-5d54-868e-fcf4e3e8185c"
-   version = "1.2.1"
-
-   [[deps.Adapt]]
-   deps = ["LinearAlgebra"]
-   git-tree-sha1 = "195c5505521008abea5aee4f96930717958eac6f"
-   uuid = "79e6a3ab-5dfb-504d-930d-738a2a938a0e"
-   version = "3.4.0"
-
-   ...
-
-Here, we notice that the ``Project.toml`` only gives us the UUID of the project while the
-``Manifest.toml`` file contains the full information about the dependencies versions and organization
-layout. Notice the message regarding editing for the latter. Let's leave this environment: 
+   Here, we notice that the ``Project.toml`` only gives us the UUID of the project while the ``Manifest.toml`` file contains the full information about the dependencies versions and organization layout. Notice the message regarding editing for the latter. Let's leave this environment: 
 
 
-.. code-block:: julia
+   .. code-block:: julia
 
-   (my-first-env) pkg> activate 
-      Activating project at `~/.julia/environments/v1.8`
+      (my-first-env) pkg> activate 
+          Activating project at `~/.julia/environments/v1.8`
 
-   (v1.8) pkg> 
+      (v1.8) pkg> 
 
-Once you have created an environment, it can be activated in several manners. The one we
-saw before is by activating it in ``package`` mode with the command ``activate .``. You may also be able to
-activate the environment inside the Julia script by calling these lines in your ``.jl`` file:
+   Once you have created an environment, it can be activated in several manners. The one we saw before is by activating it in ``package`` mode with the command ``activate .``. You may also be able to activate the environment inside the Julia script by calling these lines in your ``.jl`` file:
 
-.. code-block:: julia-repl
+   .. code-block:: julia-repl
 
-   julia> using Pkg
-   julia> Pkg.activate(".")
+      julia> using Pkg
+      julia> Pkg.activate(".")
 
-Besides the previous two options for activating an environment, you can also activate it on the Linux
-command line (assuming that you are located in the environment directory): 
+   Besides the previous two options for activating an environment, you can also activate it on the Linux command line (assuming that you are located in the environment directory): 
 
-.. code-block:: console
+   .. code-block:: console
 
-   $ julia --project=. 
+      $ julia --project=. 
 
 Create a package environment
 ----------------------------
@@ -283,14 +272,14 @@ One can customize this setting with the variable ``JULIA_LOAD_PATH``, this can b
 done on the Linux command line:
 
 
-.. code-block:: bash
+.. code-block:: console
 
    $ export JULIA_LOAD_PATH="path1:path2:..."
 
 For instance, for including just the current environment we can set the value of 
 this variable as:
 
-.. code-block:: bash
+.. code-block:: console
 
    $ export JULIA_LOAD_PATH="@"
 
@@ -321,7 +310,7 @@ the environments we want in the path so that they are visible in our current env
 To illustrate this concept, let's create a second environment and first we can remove the
 content of ``LOAD_PATH`` (which path will be different for you):
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    julia> empty!(LOAD_PATH)
    shell> pwd
@@ -334,7 +323,7 @@ content of ``LOAD_PATH`` (which path will be different for you):
 
 If we try to use the ``DFTK`` package we will see the error message:
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    julia> using DFTK
       │ Package DFTK not found, but a package named DFTK is available from a registry. 
@@ -347,7 +336,7 @@ If you remember this package was installed in the first environment (``my-first-
 to make this package available in our second environment we can push the corresponding folder's
 path to ``LOAD_PATH``:
 
-.. code-block:: julia
+.. code-block:: julia-repl
 
    julia> push!(LOAD_PATH, "/pfs/proj/nobackup/path/Julia-Test/my-first-env/")
       1-element Vector{String}:

@@ -16,8 +16,13 @@ Running Python in batch mode
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: ``naiss2023-22-914``
-   - Kebnekaise: ``hpc2n2023-110``
+   - Rackham: ``naiss2024-22-107``
+   - Kebnekaise: ``hpc2n2024-025``
+
+.. admonition:: Storage space for this workshop 
+
+   - Rackham: ``/proj/r-py-jl``
+   - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
 
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
 
@@ -66,17 +71,17 @@ Serial code
 
    .. tab:: UPPMAX
 
-        Short serial example script for Rackham. Loading Python 3.9.5. Numpy is preinstalled and does not need to be loaded. 
+        Short serial example script for Rackham. Loading Python 3.11.8. Numpy is preinstalled and does not need to be loaded. 
 
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A naiss2023-22-914 # Change to your own after the course
+            #SBATCH -A naiss2024-22-107 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here Python 3.10.x. 
-            module load python/3.10.8 
+            # Load any modules you need, here Python 3.11.x. 
+            module load python/3.11.8 
             
             # Run your Python script 
             python mmmult.py   
@@ -84,17 +89,17 @@ Serial code
 
    .. tab:: HPC2N
 
-        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2022.05 and Python/3.10.4 (+ prerequisites)  
+        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2023.07 and Python/3.11.3 (+ prerequisites)  
        
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2n2023-110 # Change to your own after the course
+            #SBATCH -A hpc2n2024-025 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here for Python 3.10.4 and compatible SciPy-bundle
-            module load GCC/11.3.0 OpenMPI/4.1.4 Python/3.10.4 SciPy-bundle/2022.05
+            # Load any modules you need, here for Python 3.11.3 and compatible SciPy-bundle
+            module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07
             
             # Run your Python script 
             python mmmult.py    
@@ -145,22 +150,22 @@ Serial code + self-installed package in virt. env.
 
    .. tab:: UPPMAX
 
-        Short serial example for running on Rackham. Loading Python 3.10.x + using any Python packages you have installed yourself with venv. More information under the separate session for UPPMAX. Change to your directory name and venv name below. 
+        Short serial example for running on Rackham. Loading Python 3.11.x + using any Python packages you have installed yourself with venv. More information under the separate session for UPPMAX. Change to your directory name and venv name below. 
 
         .. code-block:: sh
         
             #!/bin/bash
-            #SBATCH -A naiss2023-22-914 # Change to your own after the course
+            #SBATCH -A naiss2024-22-107 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here for Python 3.10.x 
-            module load python/3.10.8
+            # Load any modules you need, here for Python 3.11.x 
+            module load python/3.11.8
             
             # Activate your virtual environment. 
             # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
-            # Example: /proj/naiss2023-22-914/<user-dir>/python/<venv-name>
-            source /proj/naiss2023-22-914/<user-dir>/<path-to-virt-env>/<venv-name>/bin/activate
+            # Example: /proj/naiss2024-22-107/<user-dir>/python/<venv-name>
+            source /proj/naiss2024-22-107/<user-dir>/<path-to-virt-env>/<venv-name>/bin/activate
             
             # Run your Python script
             python <my_program.py>
@@ -168,22 +173,22 @@ Serial code + self-installed package in virt. env.
 
    .. tab:: HPC2N
 
-        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2022.05, Python/3.10.4 + using any Python packages you have installed yourself with virtual environment - the one we named "Example2" should work well here. During the isolated environments session there was more about how to install something yourself this way. 
+        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2023.07, Python/3.11.3 + using any Python packages you have installed yourself with virtual environment - the one we named "Example2" should work well here. During the isolated environments session there was more about how to install something yourself this way. 
        
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2n2023-110 # Change to your own after the course
+            #SBATCH -A hpc2n2024-025 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here for Python 3.10.4 and compatible SciPy-bundle
-            module load GCC/11.3.0  OpenMPI/4.1.4 Python/3.10.4 SciPy-bundle/2022.05
+            # Load any modules you need, here for Python 3.11.3 and compatible SciPy-bundle
+            module load GCC/12.3.0  Python/3.11.3 SciPy-bundle/2023.07
             
             # Activate your virtual environment. 
             # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
-            # Example: /proj/nobackup/hpc2n2023-110/bbrydsoe/python/Example2 
-            source /proj/nobackup/hpc2n2023-110/<user-dir>/<path-to-virt-env>/Example2/bin/activate
+            # Example: /proj/nobackup/hpc2n2024-025/bbrydsoe/python/Example2 
+            source /proj/nobackup/hpc2n2024-025/<user-dir>/<path-to-virt-env>/Example2/bin/activate
             
             # Run your Python script 
             python <my_program.py>
@@ -199,16 +204,20 @@ GPU code
 
 **We'll not test this live, but you can try if you have Snowy access**
 
+.. note:: 
+
+   Since the newest Python package modules on UPPMAX and HPC2N do not contain CUDA, we will use Python 3.9.5 for these examples  
+
 .. tabs::
 
    .. tab:: UPPMAX
 
-        Short GPU example for running on Snowy.         
+        Short GPU example for running on Snowy. This runs the example pytorch_fitting_gpu.py program that you can find in the Exercises/Python directory         
        
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A naiss2023-22-914
+            #SBATCH -A naiss2024-22-107
             #SBATCH -t 00:10:00
             #SBATCH --exclusive
             #SBATCH -p node
@@ -217,11 +226,12 @@ GPU code
             #SBATCH --gpus=1
             #SBATCH --gpus-per-node=1
             
-            # Load any modules you need, here loading Python 3.10.8
-            module load python/3.9.5
+            # Load any modules you need, here loading Python 3.9.5 and the corresponding ML packages module 
+
+            module load python_ML_packages/3.9.5-gpu 
             
             # Run your code
-            python <my-gpu-code>.py 
+            srun python pytorch_fitting_gpu.py 
             
 
    .. tab:: HPC2N
@@ -231,15 +241,14 @@ GPU code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2n2023-110 # Change to your own after the course
-            #SBATCH --reservation=hpc-python  # Only valid during the course 
+            #SBATCH -A hpc2n2024-025 # Change to your own after the course
             #SBATCH --time=00:10:00  # Asking for 10 minutes
             # Asking for one V100 card
             #SBATCH --gres=gpu:v100:1
             
             # Remove any loaded modules and load the ones we need
             module purge  > /dev/null 2>&1
-            module load GCC/10.3.0 OpenMPI/4.1.1 TensorFlow/2.6.0-CUDA-11.3.1
+            module load GCC/12.3.0 OpenMPI/4.1.5 TensorFlow/2.13.0
             
             # Activate the virtual environment we installed to
             # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment

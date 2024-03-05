@@ -20,8 +20,8 @@ Interactive work on compute nodes
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: ``naiss2023-22-914``
-   - Kebnekaise: ``hpc2n2023-110``
+   - Rackham: ``naiss2024-22-107``
+   - Kebnekaise: ``hpc2n2024-025``
 
 There are several ways to run Julia interactively
 
@@ -61,7 +61,7 @@ run on the allocated nodes instead of the login node.
 
       .. code-block:: console
           
-         $ interactive -n <tasks> --time=HHH:MM:SS -A naiss2023-22-914 
+         $ interactive -n <tasks> --time=HHH:MM:SS -A naiss2024-22-107
       
    .. tab:: HPC2N (salloc)
 
@@ -72,7 +72,7 @@ run on the allocated nodes instead of the login node.
       
 where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in 
       hours, minutes, and seconds (maximum T168 hours), and then you give the id for your project 
-      (**naiss2023-22-914** for this course)
+      (**naiss2024-22-107** for this course)
 
 Your request enters the job queue just like any other job, and interactive/salloc will tell you that it is
       waiting for the requested resources. When salloc tells you that your job has been allocated 
@@ -89,63 +89,64 @@ You can now run Julia scripts on the allocated resources directly instead of wai
 Example **Code along**
 ######################
 
-**Requesting 4 cores for 10 minutes, then running Julia**
+.. type-along::
 
-.. tabs::
+   **Requesting 4 cores for 10 minutes, then running Julia**
 
-   .. tab:: UPPMAX
+   .. tabs::
 
-      .. code-block:: console
+      .. tab:: UPPMAX
+
+         .. code-block:: console
       
-          [bjornc@rackham2 ~]$ interactive -A naiss2023-22-914 -p core -n 4 -t 10:00
-          You receive the high interactive priority.
-          There are free cores, so your job is expected to start at once.
+            [bjornc@rackham2 ~]$ interactive -A naiss2024-22-107 -p core -n 4 -t 10:00
+            You receive the high interactive priority.
+            There are free cores, so your job is expected to start at once.
       
-          Please, use no more than 6.4 GB of RAM.
+            Please, use no more than 6.4 GB of RAM.
       
-          Waiting for job 29556505 to start...
-          Starting job now -- you waited for 1 second.
+            Waiting for job 29556505 to start...
+            Starting job now -- you waited for 1 second.
           
-          [bjornc@r484 ~]$ module load julia/1.8.5
+            [bjornc@r483 ~]$ module load julia/1.8.5
 
-      Let us check that we actually run on the compute node: 
+         Let us check that we actually run on the compute node: 
 
-      .. code-block:: console
+         .. code-block:: console
       
-          [bjornc@r483 ~]$ srun hostname
-          r483.uppmax.uu.se
-          r483.uppmax.uu.se
-          r483.uppmax.uu.se
-          r483.uppmax.uu.se
+            [bjornc@r483 ~]$ srun hostname
+            r483.uppmax.uu.se
+            r483.uppmax.uu.se
+            r483.uppmax.uu.se
+            r483.uppmax.uu.se
 
-      We are. Notice that we got a response from all four cores we have allocated.   
+         We are. Notice that we got a response from all four cores we have allocated.   
 
-   .. tab:: HPC2N
+      .. tab:: HPC2N
          
-      .. code-block:: console
+         .. code-block:: console
       
-          b-an01 [~]$ salloc -n 4 --time=00:30:00 -A hpc2n2023-110
-          salloc: Pending job allocation 20174806
-          salloc: job 20174806 queued and waiting for resources
-          salloc: job 20174806 has been allocated resources
-          salloc: Granted job allocation 20174806
-          salloc: Waiting for resource configuration
-          salloc: Nodes b-cn0241 are ready for job
-          b-an01 [~]$ module load GCC/10.3.0 OpenMPI/4.1.1 julia/1.8.5
-          b-an01 [~]$ 
+            [~]$ salloc -n 4 --time=00:30:00 -A hpc2n2024-025
+            salloc: Pending job allocation 20174806
+            salloc: job 20174806 queued and waiting for resources
+            salloc: job 20174806 has been allocated resources
+            salloc: Granted job allocation 20174806
+            salloc: Waiting for resource configuration
+            salloc: Nodes b-cn0241 are ready for job
+            [~]$ module load GCC/10.3.0 OpenMPI/4.1.1 julia/1.8.5
+            [~]$ 
                   
+         Let us check that we actually run on the compute node: 
       
-      Let us check that we actually run on the compute node: 
-      
-      .. code-block:: console
+         .. code-block:: console
                   
-           b-an01 [~]$ srun hostname
-           b-cn0241.hpc2n.umu.se
-           b-cn0241.hpc2n.umu.se
-           b-cn0241.hpc2n.umu.se
-           b-cn0241.hpc2n.umu.se
+            [~]$ srun hostname
+            b-cn0241.hpc2n.umu.se
+            b-cn0241.hpc2n.umu.se
+            b-cn0241.hpc2n.umu.se
+            b-cn0241.hpc2n.umu.se
       
-      We are. Notice that we got a response from all four cores we have allocated.   
+         We are. Notice that we got a response from all four cores we have allocated.   
       
       
 Running a script
@@ -174,18 +175,18 @@ Running a script
          
       .. code-block:: console
       
-          b-an01 [~]$ srun julia serial-sum.jl 3 4
+          [~]$ srun julia serial-sum.jl 3 4
           The sum of the two numbers is: 7
           The sum of the two numbers is: 7
           The sum of the two numbers is: 7
           The sum of the two numbers is: 7
-          b-an01 [~]$             
+          [~]$             
                         
       Without the ``srun`` command, Julia won't understand that it can use several cores. Therefore the program is run only once.
                   
       .. code-block:: sh 
                   
-                  b-an01 [~]$ julia serial-sum.jl 3 4 
+                  [~]$ julia serial-sum.jl 3 4 
                   The sum of the two numbers is: 7
 
 **Running Julia REPL (UPPMAX)**
@@ -212,11 +213,11 @@ When you have finished using the allocation, either wait for it to end, or close
    
       .. code-block:: console 
                   
-                  [bjornc@r484 ~]$ exit
+                  [bjornc@r483 ~]$ exit
       
                   exit
                   [screen is terminating]
-                  Connection to r484 closed.
+                  Connection to r483 closed.
       
                   [bjornc@rackham2 ~]$
      
@@ -224,11 +225,11 @@ When you have finished using the allocation, either wait for it to end, or close
    
       .. code-block:: sh 
                   
-                  b-an01 [~]$ exit
+                  [~]$ exit
                   exit
                   salloc: Relinquishing job allocation 20174806
                   salloc: Job allocation 20174806 has been revoked.
-                  b-an01 [~]$
+                  [~]$
 
 Running IJulia from Jupyter notebook on UPPMAX 
 ----------------------------------------------
@@ -321,7 +322,7 @@ Write a bash script similar  to this (call it `job_jupyter.sh`, for instance):
 
    #!/bin/bash
    # Here you should put your own project id
-   #SBATCH -A project_ID
+   #SBATCH -A naiss2024-22-107
    # This example asks for 1 core
    #SBATCH -n 1
    # Ask for a suitable amount of time. Remember, this is the time the Jupyter notebook will be available! HHH:MM:SS.

@@ -16,8 +16,14 @@ Running Julia in batch mode
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: ``naiss2023-22-914``
-   - Kebnekaise: ``hpc2n2023-110``
+   - Rackham: ``naiss2024-22-107``
+   - Kebnekaise: ``hpc2n2024-025``
+
+.. admonition:: Storage space for this workshop 
+
+   - Rackham: ``/proj/r-py-jl``
+   - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
+
 
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
 
@@ -61,7 +67,7 @@ Examples of batch scripts for Julia
 
 Serial code
 '''''''''''
-            
+
 .. tabs::
 
    .. tab:: UPPMAX
@@ -70,12 +76,12 @@ Serial code
 
         .. code-block:: bash
 
-            #!/bin/bash -l       # -l cleans the environment in the batch job, recommended at UPPMAX
-            #SBATCH -A naiss2023-22-914 # Change to your own after the course
-            #SBATCH --time=00:10:00 # Asking for 10 minutes
-            #SBATCH -n 1 # Asking for 1 core
-            #SBATCH --error=job.%J.err   # error file
-            #SBATCH --output=job.%J.out  # output file                                                                                                        
+            #!/bin/bash -l                 # -l cleans the environment in the batch job, recommended at UPPMAX
+            #SBATCH -A naiss2024-22-107    # your project_ID
+            #SBATCH --time=00:10:00        # Asking for 10 minutes
+            #SBATCH -n 1                   # Asking for 1 core
+            #SBATCH --error=job.%J.err     # error file
+            #SBATCH --output=job.%J.out    # output file                                                                                                        
             ml julia/1.8.5 # Julia module
            
             julia serial.jl              # run the serial script
@@ -88,7 +94,7 @@ Serial code
         .. code-block:: bash
    
             #!/bin/bash            
-            #SBATCH -A hpc2n2023-110     # your project_ID       
+            #SBATCH -A hpc2n2024-025     # your project_ID       
             #SBATCH -J job-serial        # name of the job         
             #SBATCH -n 1                 # nr. tasks  
             #SBATCH --time=00:03:00      # requested time
@@ -124,17 +130,16 @@ Serial code + self-installed package in virt. env.
 
         .. code-block:: bash
         
-             #!/bin/bash -l       # -l cleans the environment in the batch job, recommended at UPPMAX
-            #SBATCH -A naiss2023-22-914 # Change to your own after the course
-            #SBATCH --time=00:10:00 # Asking for 10 minutes
-            #SBATCH -n 1 # Asking for 1 core
-            #SBATCH --error=job.%J.err   # error file
-            #SBATCH --output=job.%J.out  # output file                                                                                             
+            #!/bin/bash -l               # -l cleans the environment in the batch job, recommended at UPPMAX
+            #SBATCH -A naiss2024-22-107   # Change to your own after the course
+            #SBATCH --time=00:10:00       # Asking for 10 minutes
+            #SBATCH -n 1                  # Asking for 1 core
+            #SBATCH --error=job.%J.err    # error file
+            #SBATCH --output=job.%J.out   # output file                                                                                             
             
-            ml julia/1.8.5               # Julia module
+            ml julia/1.8.5                # Julia module
              
-            # Move to the directory where the ".toml" files 
-            # for the environment are located
+            # Move to the directory where the ".toml" files for the environment are located
             julia --project=. serial-env.jl  # run the script 
 
         If this works, you will see the installed packages in the output file. In the present case
@@ -154,7 +159,7 @@ Serial code + self-installed package in virt. env.
         .. code-block:: bash
 
             #!/bin/bash            
-            #SBATCH -A hpc2n2023-110     # your project_ID       
+            #SBATCH -A hpc2n2024-025     # your project_ID       
             #SBATCH -J job-serial        # name of the job         
             #SBATCH -n 1                 # nr. tasks  
             #SBATCH --time=00:03:00      # requested time
@@ -454,7 +459,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
         
                #!/bin/bash -l
-               #SBATCH -A naiss2023-22-914
+               #SBATCH -A naiss2024-22-107
                #SBATCH -J job
                #SBATCH -n 1
                #SBATCH --time=00:10:00
@@ -472,7 +477,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
             
                #!/bin/bash
-               #SBATCH -A naiss2023-22-914
+               #SBATCH -A naiss2024-22-107
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -490,7 +495,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
            
                #!/bin/bash
-               #SBATCH -A naiss2023-22-914
+               #SBATCH -A naiss2024-22-107
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -507,7 +512,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
            
                #!/bin/bash
-               #SBATCH -A naiss2023-22-914
+               #SBATCH -A naiss2024-22-107
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -532,7 +537,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
         
                #!/bin/bash
-               #SBATCH -A hpc2n2023-110
+               #SBATCH -A hpc2n2024-025
                #SBATCH -J job
                #SBATCH -n 1
                #SBATCH --time=00:10:00
@@ -551,7 +556,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
             
                #!/bin/bash
-               #SBATCH -A hpc2n2023-110
+               #SBATCH -A hpc2n2024-025
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -570,7 +575,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: sh
            
                #!/bin/bash
-               #SBATCH -A hpc2n2023-110
+               #SBATCH -A hpc2n2024-025
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -588,7 +593,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: sh
            
                #!/bin/bash
-               #SBATCH -A hpc2n2023-110
+               #SBATCH -A hpc2n2024-025
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -662,10 +667,10 @@ reference point, we show the simulation on CPUs as well.
 
           
             #!/bin/bash -l
-            #SBATCH -A <project with Snowy/Bianca access    # your project_ID  
+            #SBATCH -A naiss2024-22-107    # your project_ID  
             #SBATCH -M snowy
             #SBATCH -p node
-            ##SBATCH -C gpu   #NB: Only for Bianca
+            ##SBATCH --gres=gpu:1
             #SBATCH -N 1
             #SBATCH --job-name=juliaGPU         # create a short name for your job
             #SBATCH --gpus-per-node=1             # number of gpus per node (Bianca 2, Snowy 1)
@@ -683,7 +688,7 @@ reference point, we show the simulation on CPUs as well.
         .. code-block:: sh
 
             #!/bin/bash            
-            #SBATCH -A hpc2n2023-110     # your project_ID       
+            #SBATCH -A hpc2n2024-025     # your project_ID       
             #SBATCH -J job-serial        # name of the job         
             #SBATCH -n 1                 # nr. tasks  
             #SBATCH --time=00:03:00      # requested time
@@ -752,7 +757,7 @@ Exercises
             .. code-block:: sh
     
                 #!/bin/bash            
-                #SBATCH -A hpc2n2023-110     # your project_ID       
+                #SBATCH -A hpc2n2024-025     # your project_ID       
                 #SBATCH -J job-serial        # name of the job         
                 #SBATCH -n 1                 # nr. tasks  
                 #SBATCH --time=00:03:00      # requested time
@@ -772,7 +777,7 @@ Exercises
             .. code-block:: sh
     
                 #!/bin/bash -l
-                #SBATCH -A naiss2023-22-914  # Change to your own after the course
+                #SBATCH -A naiss2024-22-107  # Change to your own after the course
                 #SBATCH -J job-serial        # name of the job         
                 #SBATCH -n 1                 # nr. tasks  
                 #SBATCH --time=00:05:00 # Asking for 5 minutes
@@ -854,7 +859,7 @@ Exercises
             
             .. code-block:: sh
     
-                #SBATCH -A <project with Snowy/Bianca access    # your project_ID  
+                #SBATCH -A naiss2024-22-107   # your project_ID  
                 #SBATCH -M snowy
                 #SBATCH -p node
                 ##SBATCH -C gpu   #NB: Only for Bianca

@@ -28,6 +28,7 @@ Most HPC centres in Sweden is using the same or similar module system for their 
    
    - Note that the module systems at UPPMAX and HPC2N are slightly different. 
    - While all modules at UPPMAX not directly related to bio-informatics are shown by ``ml avail``, modules at HPC2N are hidden until one has loaded a prerequisite like the compiler ``GCC``.
+   - Thus, you need to use ``module spider`` to see all modules at HPC2N, and ``ml avail`` for those available to load given your currently loaded prerequisites.  
 
 
 - For reproducibility reasons, you should always load a specific version of a module instead of just the default version
@@ -66,18 +67,22 @@ Check for Python versions
    
          $ module spider Python/<version>
 
-      Example for Python 3.10.4
+      Example for Python 3.11.3 
 
       .. code-block:: console
 
-         $ module spider Python/3.10.4 
+         $ module spider Python/3.11.3 
 
-.. admonition:: Output at UPPMAX as of Oct 10 2023
+.. note::
+
+   We will use Python 3.11.x in this course! 
+
+.. admonition:: Output at UPPMAX as of Feb 28 2024
    :class: dropdown
     
-       .. code-block::  tcl
+       .. code-block::  console
     
-          [bbrydsoe@rackham4 ~]$ ml spider python
+          $ ml spider python
 
           ----------------------------------------------------------------------
              python:
@@ -98,8 +103,10 @@ Check for Python versions
                    python/3.9.5
                    python/3.10.8
                    python/3.11.4
+                   python/3.11.8
+                   python/3.12.1
                 Other possible modules matches:
-                Biopython  GitPython  IPython  Python  biopython  netcdf4-python  
+                   Biopython  Boost.Python  GitPython  IPython  Python  biopython  flatbuffers-python   netcdf4-python  
           ...
 
           ----------------------------------------------------------------------
@@ -107,19 +114,25 @@ Check for Python versions
 
           $ module -r spider '.*python.*'
 
+          -------------------------------------------------------------------------------------------------------
+          For detailed information about a specific "python" package (including how to load the modules) use the module's full name.
+          Note that names that have a trailing (E) are extensions provided by other modules.
+          For example:
 
-.. admonition:: Output at HPC2N (Skylake nodes) as of 4 Oct 2023 
+          $ module spider python/3.12.1
+          -------------------------------------------------------------------------------------------------------
+
+.. admonition:: Output at HPC2N (Skylake nodes) as of 28 Feb 2024  
     :class: dropdown
 
-        .. code-block:: tcl
+        .. code-block:: console
 
-           b-an01 [~]$ module spider Python
+           $ module spider Python
            ----------------------------------------------------------------------------
            Python:
            ----------------------------------------------------------------------------
            Description:
-               Python is a programming language that lets you work more quickly and
-               integrate your systems more effectively.
+               Python is a programming language that lets you work more quickly and integrate your systems more effectively.
     
             Versions:
                 Python/2.7.15   
@@ -136,25 +149,29 @@ Check for Python versions
                 Python/3.9.6   
                 Python/3.10.4-bare
                 Python/3.10.4
+                Python/3.10.8-bare
+                Python/3.10.8
+                Python/3.11.3
             Other possible modules matches:
-                Biopython  Boost.Python  GitPython  IPython  flatbuffers-python intervaltree-python  libxml2-python  netcdf4-python  protobuf-python ...
+                Biopython  Boost.Python  GitPython  IPython  Python-bundle-PyPI  flatbuffers-python intervaltree-python  ...
            ----------------------------------------------------------------------------
-           To find other possible module matches execute:
+
+            To find other possible module matches execute:
                $ module -r spider '.*Python.*'
-           ----------------------------------------------------------------------------
-           For detailed information about a specific "Python" package (including how to load the modules) use the module's full name.
+            ----------------------------------------------------------------------------
+            For detailed information about a specific "Python" package (including how to load the modules) use the module's full name.
                Note that names that have a trailing (E) are extensions provided by other modules.
        
-           For example:
-            $ module spider Python/3.10.4
-           ----------------------------------------------------------------------------
+            For example:
+            $ module spider Python/3.11.3
+            ----------------------------------------------------------------------------
 
 Load a Python module
 --------------------
 
 For reproducibility, we recommend ALWAYS loading a specific module instead of using the default version! 
 
-For this course, we recommend using Python 3.10.X at UPPMAX and Python 3.10.4 at HPC2N.
+For this course, we recommend using Python 3.11.x at UPPMAX (3.11.8) and HPC2N (3.11.3).
 
 .. tip::
     
@@ -165,18 +182,18 @@ For this course, we recommend using Python 3.10.X at UPPMAX and Python 3.10.4 at
 
    .. tab:: UPPMAX
    
-      Go back and check which Python modules were available. To load version 3.10.8, do:
+      Go back and check which Python modules were available. To load version 3.11.8, do:
 
       .. code-block:: console
 
-        $ module load python/3.10.8
+        $ module load python/3.11.8
         
       Note: Lowercase ``p``.
       For short, you can also use: 
 
       .. code-block:: console
 
-         $ ml python/3.10.8
+         $ ml python/3.11.8
 
  
    .. tab:: HPC2N 
@@ -184,14 +201,14 @@ For this course, we recommend using Python 3.10.X at UPPMAX and Python 3.10.4 at
  
       .. code-block:: console
 
-         $ module load GCC/11.3.0 Python/3.10.4
+         $ module load GCC/12.3.0 Python/3.11.3
 
       Note: Uppercase ``P``.   
       For short, you can also use: 
 
       .. code-block:: console
 
-         $ ml GCC/11.3.0 Python/3.10.4
+         $ ml GCC/12.3.0 Python/3.11.3
 
 .. warning::
 
@@ -281,11 +298,11 @@ For more interactiveness you can run Ipython.
 
          $ module spider IPython
 
-      Then load one of them, for instance 8.5.0:
+      Then load one of them, for instance 8.14.0:
 
       .. code-block:: sh
 
-         $ ml GCCcore/11.3.0 IPython/8.5.0
+         $ ml GCC/12.3.0 IPython/8.14.0
 
       Then start Ipython with (lowercase):
 
@@ -299,11 +316,14 @@ For more interactiveness you can run Ipython.
 
 Python
 
+.. code-block:: console
+
+   $ python
+   Python 3.11.3 (main, Oct 30 2023, 16:00:15) [GCC 12.3.0] on linux
+   Type "help", "copyright", "credits" or "license" for more information.
+
 .. code-block:: python
 
-   b-an01 [~]$ python
-   Python 3.10.4 (main, Sep 21 2022, 11:17:23) [GCC 11.3.0] on linux
-   Type "help", "copyright", "credits" or "license" for more information.
    >>> a=3
    >>> b=7
    >>> c=a+b
@@ -312,19 +332,18 @@ Python
 
 iPython
 
+.. code-block:: console
+
+    $ ipython
+    Python 3.11.3 (main, Oct 30 2023, 16:00:15) [GCC 12.3.0]
+    Type 'copyright', 'credits' or 'license' for more information
+    IPython 8.14.0 -- An enhanced Interactive Python. Type '?' for help.
+
 .. code-block:: ipython
 
-   b-an01 [~]$ ipython
-   Python 3.10.4 (main, Sep 21 2022, 11:17:23) [GCC 11.3.0]
-   Type 'copyright', 'credits' or 'license' for more information
-   IPython 8.5.0 -- An enhanced Interactive Python. Type '?' for help.
-
    In [1]: a=3
-
    In [2]: b=7
-
    In [3]: c=a+b
-
    In [4]: c
    Out[4]: 10
 

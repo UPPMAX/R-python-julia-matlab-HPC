@@ -121,11 +121,9 @@ A selection of the Python packages and libraries installed on UPPMAX and HPC2N a
 	In addition there are packages available from the module system
   	  - ``biopython``
   	  - ``python_ML_packages``
-    	  - ``sklearn/scikit-learn``
-	  - ``TensorFlow`` 
-	  - ``torch``
-    	  - ``mpi``
-    	  - ``mpi4py``
+    	    - ``sklearn/scikit-learn``
+     	    - ``TensorFlow`` 
+	    - ``torch``
   	  - ``bwa``
   	  - ``Graphviz/2.40.1``
   	  - ``HiChipper``
@@ -148,7 +146,7 @@ A selection of the Python packages and libraries installed on UPPMAX and HPC2N a
 	  - ``PyTorch``   
 	  - ``SciPy-bundle`` (Bottleneck, deap, mpi4py, mpmath, numexpr, numpy, pandas, scipy - some of the versions have more)
 	  - ``TensorFlow``
-	  - ``Theano``  (Not on AMD nodes yet)
+	  - ``Theano``  (Not on AMD nodes yet and not for newer Python versions - we will get PyTensor instead)
 	  - ``matplotlib`` 
 	  - ``scikit-learn`` 
 	  - ``scikit-image``  (Not on AMD nodes yet)
@@ -156,7 +154,8 @@ A selection of the Python packages and libraries installed on UPPMAX and HPC2N a
 	  - ``iPython``  (Not on AMD nodes yet)
 	  - ``Cython``   
 	  - ``Flask``   (Not on AMD nodes yet)
-
+          - ``mpi4py`
+          - ``Python-bundle-PyPI`` A large number of Python packages from PyPi
 
 
 Install with pip

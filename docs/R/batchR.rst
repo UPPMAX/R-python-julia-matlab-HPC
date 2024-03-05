@@ -16,8 +16,14 @@ Running R in batch mode
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: ``naiss2023-22-914``
-   - Kebnekaise: ``hpc2n2023-110``
+   - Rackham: ``naiss2024-22-107``
+   - Kebnekaise: ``hpc2n2024-025``
+
+.. admonition:: Storage space for this workshop 
+
+   - Rackham: ``/proj/r-py-jl``
+   - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
+
    
 
 
@@ -79,17 +85,17 @@ Serial code
 
    .. tab:: UPPMAX
 
-        Short serial example script for Rackham. Loading R/4.0.4 
+        Short serial example script for Rackham. Loading R/4.1.1
 
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A naiss2023-22-914 # Course project id. Change to your own project ID after the course
+            #SBATCH -A naiss2024-22-107 # Course project id. Change to your own project ID after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here R/4.0.4
-            module load R/4.0.4
+            # Load any modules you need, here R/4.1.1
+            module load R/4.1.1
             
             # Run your R script (here 'hello.R')
             R --no-save --quiet < hello.R
@@ -103,7 +109,7 @@ Serial code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2n2023-110 # Change to your own project ID
+            #SBATCH -A hpc2n2024-025 # Change to your own project ID
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -140,18 +146,18 @@ foreach and doParallel
 
    .. tab:: UPPMAX
 
-        Short parallel example (Since we are using packages "foreach" and "doParallel", you need to use module R_packages/4.0.4 instead of R/4.0.4. 
+        Short parallel example (Since we are using packages "foreach" and "doParallel", you need to use module R_packages/4.1.1 instead of R/4.1.1. 
 
         .. code-block:: sh
         
             #!/bin/bash
-            #SBATCH -A naiss2023-22-914
+            #SBATCH -A naiss2024-22-107
             #SBATCH -t 00:10:00
             #SBATCH -N 1
             #SBATCH -c 4
             
             ml purge > /dev/null 2>&1
-            ml R_packages/4.0.4
+            ml R_packages/4.1.1
             
             # Batch script to submit the R program parallel_foreach.R 
             R -q --slave -f parallel_foreach.R
@@ -164,7 +170,7 @@ foreach and doParallel
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2n2023-110 # Change to your own project ID
+            #SBATCH -A hpc2n2024-025 # Change to your own project ID
             #SBATCH -t 00:10:00
             #SBATCH -N 1
             #SBATCH -c 4
@@ -230,21 +236,22 @@ Rmpi
 
    .. tab:: UPPMAX
 
-        Short parallel example (using package "Rmpi", so we need to load the module R_packages/4.0.4 instead of R/4.0.4 and we need to load a suitable openmpi module, openmpi/3.1.5)
+        Short parallel example (using package "Rmpi", so we need to load the module R_packages/4.1.1 instead of R/4.1.1 and we need to load a suitable openmpi module, openmpi/4.0.3)
 
         .. code-block:: sh
         
             #!/bin/bash
-            #SBATCH -A naiss2023-22-914
+            #SBATCH -A naiss2024-22-107
             #Asking for 10 min.
             #SBATCH -t 00:10:00
             #SBATCH -n 8
             
             export OMPI_MCA_mpi_warn_on_fork=0
+            export OMPI_MCA_btl_openib_allow_ib=1
             
             ml purge > /dev/null 2>&1
-            ml R_packages/4.0.4
-            ml openmpi/3.1.5
+            ml R_packages/4.1.1
+            ml openmpi/4.0.3
             
             mpirun -np 1 R CMD BATCH --no-save --no-restore Rmpi.R output.out 
            
@@ -257,7 +264,7 @@ Rmpi
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2n2023-110 # Change to your own project ID
+            #SBATCH -A hpc2n2024-025# Change to your own project ID
             #Asking for 10 min.
             #SBATCH -t 00:10:00
             #SBATCH -n 8
@@ -266,7 +273,7 @@ Rmpi
             
             ml purge > /dev/null 2>&1
             ml GCC/10.2.0  OpenMPI/4.0.5
-            ml R/4.0.4
+            ml R/4.1.1
             
             mpirun -np 1 R CMD BATCH --no-save --no-restore Rmpi.R output.out 
    
@@ -327,7 +334,7 @@ ML code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A naiss2023-22-914
+            #SBATCH -A naiss2024-22-107
             #Asking for 10 min.
             #SBATCH -t 00:10:00
             #SBATCH --exclusive
@@ -341,7 +348,7 @@ ML code
             #SBATCH --error=error%J.error
             
             ml purge > /dev/null 2>&1
-            ml R_packages/4.0.4
+            ml R_packages/4.1.1
             
             R --no-save --no-restore -f Rscript.R
            
@@ -353,7 +360,7 @@ ML code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2n2023-110 # Change to your own project ID
+            #SBATCH -A hpc2n2024-025 # Change to your own project ID
             #Asking for 10 min.
             #SBATCH -t 00:10:00
             #SBATCH -n 1
@@ -440,12 +447,12 @@ Exercises
           .. code-block:: sh
  
              #!/bin/bash
-             #SBATCH -A naiss2023-22-914 # Change to your own after the course
+             #SBATCH -A naiss2024-22-107 # Change to your own after the course
              #SBATCH --time=00:10:00 # Asking for 10 minutes
              #SBATCH -n 1 # Asking for 1 core
              
-             # Load any modules you need, here for R/4.0.4
-             module load R/4.0.4
+             # Load any modules you need, here for R/4.1.1
+             module load R/4.1.1
              
              # Run your R script 
              Rscript add2.R 2 3 
@@ -459,7 +466,7 @@ Exercises
           .. code-block:: sh
  
              #!/bin/bash
-             #SBATCH -A hpc2n2023-110 # Change to your own project ID
+             #SBATCH -A hpc2n2024-025 # Change to your own project ID
              #SBATCH --time=00:10:00 # Asking for 10 minutes
              #SBATCH -n 1 # Asking for 1 core
              

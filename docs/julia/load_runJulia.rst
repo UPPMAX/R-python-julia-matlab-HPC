@@ -72,10 +72,10 @@ Check for Julia versions
 
          $ module spider Julia/1.8.5
 
-.. admonition:: Output at UPPMAX as of Oct 14 2023
+.. admonition:: Output at UPPMAX as of Feb 29 2024
    :class: dropdown
     
-       .. code-block::  tcl
+       .. code-block::  console
     
           $ module av julia
           ----------------------------- /sw/mf/rackham/compilers -----------------------------
@@ -90,12 +90,12 @@ Check for Julia versions
           Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 
 
-.. admonition:: Output at HPC2N as of Oct 14 2023
+.. admonition:: Output at HPC2N as of Feb 29 2024
     :class: dropdown
 
-        .. code-block:: tcl
+        .. code-block:: console
 
-           b-an01 [~]$ module spider julia
+           $ module spider julia
            ------------------------------------------------------------------------------------------------
              Julia:
            ------------------------------------------------------------------------------------------------
@@ -124,37 +124,38 @@ For reproducibility, we recommend ALWAYS loading a specific module instead of us
 
 For this course, we recommend using Julia 1.8.5.
 
-.. tabs::
+.. type-along::
 
-   .. tab:: UPPMAX
+   .. tabs::
+
+      .. tab:: UPPMAX
    
-      Go back and check which Julia modules were available. To load version 1.8.5, do:
+         Go back and check which Julia modules were available. To load version 1.8.5, do:
 
-      .. code-block:: console
+         .. code-block:: console
 
-        $ module load julia/1.8.5
+           $ module load julia/1.8.5
         
-      Note: Lowercase ``j``.
-      For short, you can also use: 
+         Note: Lowercase ``j``.
+         For short, you can also use: 
 
-      .. code-block:: console
+         .. code-block:: console
 
-         $ ml julia/1.8.5
-
- 
-   .. tab:: HPC2N
+            $ ml julia/1.8.5
 
  
-      .. code-block:: console
+      .. tab:: HPC2N
 
-         $ module load Julia/1.8.5-linux-x86_64
+         .. code-block:: console
 
-      Note: Uppercase ``J``.   
-      For short, you can also use: 
+            $ module load Julia/1.8.5-linux-x86_64
 
-      .. code-block:: console
+         Note: Uppercase ``J``.   
+         For short, you can also use: 
 
-         $ ml Julia/1.8.5-linux-x86_64
+         .. code-block:: console
+
+            $ ml Julia/1.8.5-linux-x86_64
 
 Run
 ---
@@ -180,27 +181,29 @@ Run Julia as a session
   - enter the package manager mode by typing ``]`` in the *Julian* mode
   - enter the help mode by typing ``?`` in the *Julian mode*
 
-.. code-block:: console
+.. type-along::
 
-   $ julia 
+   .. code-block:: console
 
-The Julia prompt (``julian`` mode) looks like this:
+      $ julia 
 
-.. code-block:: julia-repl
+   The Julia prompt (``julian`` mode) looks like this:
+
+   .. code-block:: julia-repl
    
-   julia> 
+      julia> 
 
-Exit with 
+   Exit with 
 
-.. code-block:: julia-repl
+   .. code-block:: julia-repl
 
-   julia> <Ctrl-D> 
+      julia> <Ctrl-D> 
 
-or 
+   or 
 
-.. code-block:: julia-repl
+   .. code-block:: julia-repl
 
-   julia> exit()
+      julia> exit()
 
 Exercises
 ---------

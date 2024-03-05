@@ -12,20 +12,21 @@
 #
 # import os
 # import sys
+# import sphinx_rtd_theme
 # sys.path.insert(0, os.path.abspath('.'))
 
 
 # -- Project information -----------------------------------------------------
 
 project = 'Introduction to running R, Python, and Julia in HPC'
-copyright = '2023, UPPMAX & HPC2N'
+copyright = '2024, UPPMAX & HPC2N'
 author = 'UPPMAX & HPC2N'
 github_user = "UPPMAX"
-github_repo_name = ""  # auto-detected from dirname if blank
+github_repo_name = "R-python-julia-HPC"  # auto-detected from dirname if blank                                       NEEDED FOR "Edit on GitHub to work"
 github_version = "main"
 conf_py_path = "/docs/" 
 # The full version, including alpha/beta/rc tags
-release = '0.1'
+release = '2.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -39,7 +40,20 @@ extensions = ["sphinx_lesson",
     "sphinxemoji.sphinxemoji",
     'sphinx-prompt',
     'sphinx_copybutton',
+    'sphinxcontrib.plantuml',
+    'sphinx.ext.graphviz',
+    'sphinxcontrib.mermaid',
 ]
+
+mermaid_output_format = 'raq'
+mermaid_output_format = "png"
+mermaid_params = [
+    "--theme",
+    "forest",
+    "--backgroundColor",
+    "transparent",
+]
+
 jupyter_execute_notebooks = "cache"
 
 myst_enable_extensions = [
@@ -68,6 +82,7 @@ exclude_patterns = [
     "jupyter_execute",
     "*venv*",
 ]
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -101,7 +116,7 @@ html_context = {
     # useful as a default.
     # "github_repo": github_repo_name or basename(dirname(realpath(__file__))),
     # Richel: trying to fix 'Edit on GitHub link' onhttps://uppmax.github.io/R-python-julia-HPC/index.html
-    "github_repo": github_repo_name,
+    "github_repo": github_repo_name or basename(dirname(realpath(__file__))),
     "github_version": github_version,
     "conf_py_path": conf_py_path,
 }

@@ -106,11 +106,11 @@ HPC resources. The situation would be similar to turn on many washing machines t
 a single item, we can waste energy easily.
 
 .. figure:: ../../img/laundry-machines.svg
-   :width: 350
+   :width: 300
    :align: center
 
 .. figure:: ../../img/laundry-machines.svg
-   :width: 350
+   :width: 300
    :align: center
 
    Under-using a cluster.
@@ -244,7 +244,7 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
 
    .. tab:: Julia
 
-        In the following example ``sleep.jl`` the `sleep()` function is called `n` times
+        In the following example ``sleep-threads.jl`` the `sleep()` function is called `n` times
         first in serial mode and then by using `n` threads. The *BenchmarkTools* package
         help us to time the code (this package is not in the base Julia installation).
 
@@ -263,7 +263,6 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
             
             @btime sleep_serial(n) evals=1 samples=1
             
-            
             function sleep_threaded(n) #Parallel version
                 @threads for i = 1:n
                     sleep(1)
@@ -273,13 +272,31 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
             @btime sleep_threaded(n) evals=1 samples=1
             
         First load the Julia module ``ml Julia/1.8.5-linux-x86_64`` and then run the script
-        with the command  ``julia --threads 6 sleep.jl`` to use 6 Julia threads.
+        with the command  ``julia --threads 6 sleep-threads.jl`` to use 6 Julia threads.
 
+        We can also use the *Distributed* package that allows the scaling of simulations beyond
+        a single node (call the script ``sleep-distributed.jl``): 
+
+        .. code-block:: julia
+
+            using BenchmarkTools
+            using Distributed 
+
+            n = 6   # number of iterations
+
+            function sleep_parallel(n)
+                @distributed for i in 1:n
+                    sleep(1)
+                end
+            end         
+
+        Run the script with the command  ``julia -p 6 sleep-distributed.jl`` to use 6 Julia processes.
 
    .. tab:: R 
    
         In the following example ``sleep.R`` the `sleep()` function is called `n` times
-        first in serial mode and then by using `n` processes.    
+        first in serial mode and then by using `n` processes. Start by loading the 
+        modules ``ml GCC/10.2.0 OpenMPI/4.0.5 R/4.0.4``
 
         .. code-block:: r
         
@@ -307,18 +324,319 @@ Passing Interface (MPI). In general, MPI requires refactory of your code.
             stopCluster(cl)
             parallel_time
 
-        First load the modules ``ml GCC/10.2.0  OpenMPI/4.0.5 R/4.0.4`` and then run the script
-        with the command  ``Rscript --no-save --no-restore sleep.R`` to use 6 processes.
+        Run the script with the command  ``Rscript --no-save --no-restore sleep.R``.
+
+        In this second example, a *lapply* function is used in parallel mode to compute the root
+        square of a sequence of numbers (call the script ``clusterapply.R``):
+
+        .. code-block:: r
+        
+            library(parallel)
+
+            # Define a function to be applied
+            square_function <- function(x) {
+                return(sqrt(x))
+            }
+
+            # Create the sequence of values
+            numbers <- seq(1,1000000)
+
+            # Create a cluster with 4 workers
+            cl <- makeCluster(4)
+
+            # Use a parallel lapply function
+            result_parallel <- clusterApply(cl, numbers, square_function)
+
+            # Stop the cluster
+            stopCluster(cl)
+
+            # Print the result
+            print(unlist(result_parallel))
+
+        Run the script with the command  ``Rscript --no-save --no-restore clusterapply.R``.
 
 
+Exercises
+---------
 
-.. admonition:: More info!
+.. challenge:: Parallelizing a *for loop* workflow
 
+   .. tabs:: 
+
+        .. tab:: Python
+
+            Pandas is available in the following combo ``ml GCC/12.3.0 SciPy-bundle/2023.07`` (HPC2N) and 
+            ``ml python/3.11.8`` (UPPMAX). Call the script ``script-df.py``. 
+
+            .. code-block:: python
+
+                import pandas as pd
+                import multiprocessing
+
+                # Create a DataFrame with two sets of values ID and Value
+                data_df = pd.DataFrame({
+                    'ID': range(1, 10001),
+                    'Value': range(3, 20002, 2)  # Generate 10000 odd numbers starting from 3
+                })
+
+                # Define a function to calculate the sum of a vector
+                def calculate_sum(values):
+                    total_sum = *FIXME*(values)
+                    return *FIXME*
+
+                # Split the 'Value' column into chunks of size 1000
+                chunk_size = *FIXME*
+                value_chunks = [data_df['Value'][*FIXME*:*FIXME*] for i in range(0, len(data_df['*FIXME*']), *FIXME*)]
+
+                # Create a Pool of 4 worker processes, this is required by multiprocessing
+                pool = multiprocessing.Pool(processes=*FIXME*)
+
+                # Map the calculate_sum function to each chunk of data in parallel
+                results = pool.map(*FIXME: function*, *FIXME: chunk size*)
+
+                # Close the pool to free up resources, if the pool won't be used further
+                pool.close()
+
+                # Combine the partial results to get the total sum
+                total_sum = sum(results)
+
+                # Compute the mean by dividing the total sum by the total length of the column 'Value'
+                mean_value = *FIXME* / len(data_df['*FIXME*'])
+
+                # Print the mean value
+                print(mean_value)
+
+            Run the code with ``python script-df.py``.
+
+
+        .. tab:: Julia
+
+            The package *DataFrames* needs to be added in a Julia session in case you haven't done it previously.
+            The functions **nthreads()** (number of available threads), and **threadid()** (the thread identification 
+            number) will be useful in this task. Call the script ``script-df.jl``.
+
+            .. code-block:: julia
+
+                using DataFrames
+                using Base.Threads
+
+                # Create a data frame with two sets of values ID and Value
+                data_df = DataFrame(ID = 1:10000, Value = range(3, step=2, length=10000))
+
+                # Define a function to compute the sum in parallel
+                function parallel_sum(data)
+                    # Initialize an array to store thread-local sums
+                    local_sums = zeros(eltype(data), nthreads())
+                    # Iterate through each value in the 'Value' column in parallel
+                    @threads for i =1:length(data)
+                        # Add the value to the thread-local sum
+                        local_sums[threadid()] += data[i]
+                    end
+                    # Combine the local sums to obtain the total sum
+                    total_sum_parallel = sum(local_sums)
+                    return total_sum_parallel
+                end
+
+                # Compute the sum in parallel
+                total_sum_parallel = parallel_sum(data_df.Value)
+
+                # Compute the mean
+                mean_value_parallel = total_sum_parallel / length(data_df.Value)
+
+                # Print the mean value
+                println(mean_value_parallel)    
+
+            Run the code with ``julia --threads X script-df.jl``, with X <= 4.             
+
+        .. tab:: R
+
+            Call the script ``script-df.R``.
+
+            .. code-block:: r 
+
+                library(doParallel)
+                library(foreach)
+
+                # Create a data frame with two sets called ID and Value
+                data_df <- data.frame(
+                ID <- seq(1,10000), Value <- seq(from=3,by=2,length.out=10000)
+                )
+
+                # Create 4 subsets
+                num_subsets <- *FIXME*
+
+                # Create a cluster with 4 workers
+                cl <- makeCluster(*FIXME*)
+
+                # Register the cluster for parallel processing
+                registerDoParallel(cl)
+
+                # Function to process a subset of the whole data
+                process_subset <- function(subset) {
+                # Perform some computation on the subset
+                subset_sum <- sum(*FIXME*)
+                return(data.frame(SubsetSum = subset_sum))
+                }
+
+                # Use foreach with dopar to process subsets in parallel
+                result <- foreach(i = 1:*FIXME*, .combine = rbind) %dopar% {
+                # Determine the indices for the subset
+                subset_indices <- seq(from = *FIXME*,
+                                        to = *FIXME*)
+                
+                # Create the subset
+                subset_data <- data_df[*FIXME*, , drop = FALSE]
+                
+                # Process the subset
+                subset_result <- process_subset(*FIXME*)
+                
+                return(subset_result)
+                }
+
+                # Stop the cluster when done
+                stopCluster(cl)
+
+                # Print the results
+                print(sum(*FIXME*)/*FIXME*)
+            
+            Run the code with ``Rscript --no-save --no-restore script-df.R``
+
+.. solution:: Solution
+
+   .. tabs:: 
+
+      .. tab:: Python
+      
+            .. code-block:: python
+	 
+                import pandas as pd
+                import multiprocessing
+
+                # Create a DataFrame with two sets of values ID and Value
+                data_df = pd.DataFrame({
+                    'ID': range(1, 10001),
+                    'Value': range(3, 20002, 2)  # Generate 10000 odd numbers starting from 3
+                })
+
+                # Define a function to calculate the sum of a vector
+                def calculate_sum(values):
+                    total_sum = sum(values)
+                    return total_sum
+
+                # Split the 'Value' column into chunks
+                chunk_size = 1000
+                value_chunks = [data_df['Value'][i:i+chunk_size] for i in range(0, len(data_df['Value']), chunk_size)]
+
+                # Create a Pool of 4 worker processes, this is required by multiprocessing
+                pool = multiprocessing.Pool(processes=4)
+
+                # Map the calculate_sum function to each chunk of data in parallel
+                results = pool.map(calculate_sum, value_chunks)
+
+                # Close the pool to free up resources, if the pool won't be used further
+                pool.close()
+
+                # Combine the partial results to get the total sum
+                total_sum = sum(results)
+
+                # Compute the mean by dividing the total sum by the total length of the column 'Value'
+                mean_value = total_sum / len(data_df['Value'])
+
+                # Print the mean value
+                print(mean_value)               
+
+      .. tab:: Julia
+         
+            .. code-block:: julia
+
+                using DataFrames
+                using Base.Threads
+
+                # Create a data frame with two sets of values ID and Value
+                data_df = DataFrame(ID = 1:10000, Value = range(3, step=2, length=10000))
+
+                # Define a function to compute the sum in parallel
+                function parallel_sum(data)
+                    # Initialize an array to store thread-local sums
+                    local_sums = zeros(eltype(data), nthreads())
+                    # Iterate through each value in the 'Value' column in parallel
+                    @threads for i =1:length(data)
+                        # Add the value to the thread-local sum
+                        local_sums[threadid()] += data[i]
+                    end
+                    # Combine the local sums to obtain the total sum
+                    total_sum_parallel = sum(local_sums)
+                    return total_sum_parallel
+                end
+
+                # Compute the sum in parallel
+                total_sum_parallel = parallel_sum(data_df.Value)
+
+                # Compute the mean
+                mean_value_parallel = total_sum_parallel / length(data_df.Value)
+
+                # Print the mean value
+                println(mean_value_parallel)   
+	 
+      .. tab:: R
+
+            .. code-block:: r 
+
+                library(doParallel)
+                library(foreach)
+
+                # Create a data frame with two sets called ID and Value
+                data_df <- data.frame(
+                ID <- seq(1,10000), Value <- seq(from=3,by=2,length.out=10000)
+                )
+
+                # Create 4 subsets
+                num_subsets <- 4
+
+                # Create a cluster with 4 workers
+                cl <- makeCluster(4)
+
+                # Register the cluster for parallel processing
+                registerDoParallel(cl)
+
+                # Function to process a subset of the whole data
+                process_subset <- function(subset) {
+                # Perform some computation on the subset
+                subset_sum <- sum(subset$Value)
+                return(data.frame(SubsetSum = subset_sum))
+                }
+
+                # Use foreach with dopar to process subsets in parallel
+                result <- foreach(i = 1:num_subsets, .combine = rbind) %dopar% {
+                # Determine the indices for the subset
+                subset_indices <- seq(from = 1 + (i - 1) * nrow(data_df) / num_subsets,
+                                        to = i * nrow(data_df) / num_subsets)
+                
+                # Create the subset
+                subset_data <- data_df[subset_indices, , drop = FALSE]
+                
+                # Process the subset
+                subset_result <- process_subset(subset_data)
+                
+                return(subset_result)
+                }
+
+                # Stop the cluster when done
+                stopCluster(cl)
+
+                # Print the results
+                print(sum(result)/10000)	     
+	     
+
+
+.. admonition:: More info
+
+   - `HPC2N Julia documentation <https://www.hpc2n.umu.se/resources/software/julia>`_.
+   - `HPC2N R documentation <https://www.hpc2n.umu.se/resources/software/r>`_.
    - `Introduction to Dask by Aalto Scientific Computing and CodeRefinery <https://aaltoscicomp.github.io/python-for-scicomp/parallel/#dask-and-task-queues>`_
-   - `Intermedieate level Dask by ENCCS <https://enccs.github.io/hpda-python/dask/>`_.
-
-- Official Python documentation is found here https://www.python.org/doc/ .
-- `Wikipedias' article on Parallel Computing <https://en.wikipedia.org/wiki/Parallel_computing>`_ 
-- The book `High Performance Python <https://www.oreilly.com/library/view/high-performance-python/9781492055013/>`_ is a good resource for ways of speeding up Python code.
+   - `Intermediate level Dask by ENCCS <https://enccs.github.io/hpda-python/dask/>`_.
+   - `Official Python documentation <https://www.python.org/doc/>`_.
+   - `Wikipedias' article on Parallel Computing <https://en.wikipedia.org/wiki/Parallel_computing>`_ 
+   - The book `High Performance Python <https://www.oreilly.com/library/view/high-performance-python/9781492055013/>`_ is a good resource for ways of speeding up Python code.
     
 

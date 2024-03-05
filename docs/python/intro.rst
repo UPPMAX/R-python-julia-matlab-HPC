@@ -26,7 +26,7 @@ Introduction Python
  **Not covered**
     
     - Improve python *coding* skills 
-    - Other clusters
+    - Other clusters (though they work in a mostly very similar way)
 
 Preliminary schedule
 --------------------
@@ -55,13 +55,13 @@ Preliminary schedule
      - 
    * - 10:00
      - Packages  
-     - Lecture+code along 45m
-   * - 10.45
+     - Lecture+code along 30m
+   * - 10.30
      - **Coffee break**
      - 
-   * - 11:00
-     - Isolated environments
-     - Lecture+code along 45m
+   * - 10:45
+     - Isolated environments (venv, conda) 
+     - Lecture+code along 60m
    * - 11.45
      - **Break or informal chat**
      - 
@@ -86,9 +86,6 @@ Preliminary schedule
    * - 14:00  
      - Parallel session: Parallel and multi-threaded functions
      - 25m
-   * -    
-     - Parallel session — UPPMAX: Conda
-     - 
    * - 14:25
      - Conclusion & Q/A
      - 20m
@@ -175,12 +172,13 @@ Other NAISS centres
 
     We will:
     
-    - Teach you how to navigate the module system at UPPMAX (and HPC2N)
+    - Teach you how to navigate the module system at UPPMAX (and HPC2N). 
     - Show you how to find out which versions of Python and packages are installed
     - Look at the package handler **pip** (and **Conda** for UPPMAX)
     - Explain how to create and use virtual environments
     - Show you how to run batch jobs 
     - Show some examples with parallel computing and using GPUs
 
+    Most of this will be the same or very similar to how it is done at other HPC centres in Sweden  
  
 
