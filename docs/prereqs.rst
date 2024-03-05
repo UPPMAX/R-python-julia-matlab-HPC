@@ -183,13 +183,45 @@ Text editors on the Clusters
 Coding
 ------
 
-- Basic knowledge of the languages used the different days
-  Links
+- Basic knowledge of the languages used the different days. 
+- We won't test your skills though.
+- Rather you will learn to understand the ecosystems and navigations for the the different languages on a HPC cluster.
+
+See below for links to useful material if you need a refresher before the course.
+
+- More important is how to work in Linux and especially Bash
   
 Linux
 #####
+some familiarity with the LINUX command line (recordings from HPC2N:s Linux intro and UPPMAX Intro course), 
 
-some familiarity with the LINUX command line (recordings from HPC2N:s Linux intro and UPPMAX Intro course), basic R, Python, or Julia, depending on which language(s) you are interested in. See below for links to useful material if you need a refresher before the course.
+basic R, Python, or Julia, depending on which language(s) you are interested in. See below for links to useful material if you need a refresher before the course.
 - https://www.youtube.com/watch?v=gq4Dvt2LeDg
 - https://www.uppmax.uu.se/support/courses-and-workshops/uppmax-introductory-course/
+- http://docs.uppmax.uu.se/getting_started/linux/
+- http://docs.uppmax.uu.se/getting_started/linux_basics/
   
+Material for improving your programming skills
+##############################################
+
+First level
+:::::::::::
+
+`The Carpentries <https://carpentries.org/>`_ teaches basic lab skills for research computing.
+
+- `Software carpentry courses/material <https://software-carpentry.org/lessons/>`_ 
+
+Second level
+::::::::::::
+
+`Code Refinery <https://coderefinery.org/>`_ develops and maintains training material on software best practices for researchers that already write code. 
+
+- Their material addresses all academic disciplines and tries to be as programming language-independent as possible. 
+- `Code refinery lessons <https://coderefinery.org/lessons/>`_     
+
+Third level
+:::::::::::
+
+`ENCCS (EuroCC National Competence Centre Sweden) <https://enccs.se/>`_ is a national centre that supports industry, public administration and academia accessing and using European supercomputers. They give higher-level training of programming and specific software.
+
+- `ENCCS training material <https://enccs.se/lessons/>`_ 
