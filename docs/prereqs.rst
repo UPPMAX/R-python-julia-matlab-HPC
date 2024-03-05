@@ -8,17 +8,17 @@ Technical on local computer
 - graphics
 
 Terminals
-#########
-
-.. tabs::
+#########erminal
 
    .. tab:: Mac
 
-      - Use terminal (e.g. from Launchpad) or [iTerm2](https://iterm2.com/)
+      - Use terminal (e.g. from Launchpad) or `iTerm2 <https://iterm2.com/>`_
 
-      .. figure:: ../img/Mac_terminal.png
+      .. figure:: img/Mac_terminal.png
          :width: 550
          :align: center
+
+         Mac built-in t
 
       - iTerm2 goodies:
          - You can save hosts for later.
@@ -30,9 +30,9 @@ Terminals
       - Start terminal (see below)
 
 
-      ![Terminal](./img/putty.jpg)
+      .. figure:: ./img/putty.jpg)
 
-      - the ssh (secure shell) client [**putty**](https://www.putty.org/) is sufficient first days of the course!
+      - the ssh (secure shell) client `**putty**<https://www.putty.org/>`_ is sufficient first days of the course!
 
       - You can save hosts for later.
       - No graphics.
@@ -41,15 +41,15 @@ Terminals
 
          - Cannot save hosts
          - no graphics
-         - [PowerShell](https://learn.microsoft.com/en-us/powershell/)
+         - `PowerShell <https://learn.microsoft.com/en-us/powershell/>`_
     
       - Windows command prompt can also work
 
          - Cannot save hosts
          - no graphics
-         - [Command Prompt](https://www.makeuseof.com/tag/a-beginners-guide-to-the-windows-command-line/)
+         - `Command Prompt <https://www.makeuseof.com/tag/a-beginners-guide-to-the-windows-command-line/>`_
 
-      - [Git bash](https://gitforwindows.org/)
+      - `Git bash <https://gitforwindows.org/>`_
 
 
 Try to log in
