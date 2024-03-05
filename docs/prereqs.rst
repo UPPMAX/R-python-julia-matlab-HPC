@@ -34,7 +34,7 @@ Basic terminal clients
 
    .. tab:: Windows
 
-      - the ssh (secure shell) client `putty<https://www.putty.org/>`_ is sufficient first days of the course!
+      - the ssh (secure shell) client `putty <https://www.putty.org/>`_ is sufficient for most of course
 
          - You can save hosts for later.
          - No graphics.
