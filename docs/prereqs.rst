@@ -4,12 +4,15 @@ Pre-requirements
 Technical on local computer
 ---------------------------
 
-- We reccoomend that you set up both a terminal on you computer that can handle X11 graphics AND install the "Remote Access Desktop application" ThinLinc, see below.
+- We recommend that you set up both_
+  - a terminal on you computer that can handle X11 graphics AND 
+  - install the "Remote Access Desktop application" ThinLinc, see below.
 
-Terminals without graphics
-##########################
 
-**If you are in a hurry or get problems in the installation procedure you can do most of the work from these solutions.**
+Basic terminal clients 
+#######################
+
+**If you are in a hurry or get problems in the installation procedure you can do most of the work from these first steps **
 
 .. tabs::
 
@@ -57,7 +60,7 @@ Terminals without graphics
       - `Git bash <https://gitforwindows.org/>`_
 
 Add X11 graphics to terminal
-###########################
+############################
 
 .. tabs::
 
@@ -97,7 +100,7 @@ Add X11 graphics to terminal
 .. admonition:: X11-forwarding from the command line (generally)
 
    - Graphics can be sent through the SSH connection you’re using to connect
-      - Use primarily `ssh -Y <...>` or secondary `ssh -X <...>`
+      - Use primarily `ssh -Y <...>` and secondary `ssh -X <...>`
 
    - The X servers that enables graphics are needed, as mentioned above!
       - When starting a graphical program, a new window will open, but your terminal will be “locked”.
@@ -144,11 +147,15 @@ Try to log in
 
 - Follow the steps in the emailed instructions.
 - First time you need to use a terminal to set password
-- When password is set you can begin to use ThinLinc
+- When password is set you can begin to use ThinLinc as well.
 
 - When logging in the first time in ThinLinc, choose XFCE desktop. 
 
 - Test it!
+
+.. seealso::
+
+   `Log in to Rackham <http://docs.uppmax.uu.se/getting_started/login_rackham/>`_ 
 
 .. keypoints::
 
