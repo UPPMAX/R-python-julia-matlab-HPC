@@ -10,6 +10,8 @@ Technical on local computer
 Terminals
 #########
 
+.. tabs::
+
    .. tab:: Mac
 
       - Use terminal (e.g. from Launchpad) or `iTerm2 <https://iterm2.com/>`_
