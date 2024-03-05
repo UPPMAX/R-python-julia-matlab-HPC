@@ -2,22 +2,34 @@ Isolated environments
 =====================
 
 .. note::
+
    Isolated environments solve a couple of problems:
    
    - You can install specific, also older, versions into them.
    - You can create one for each project and no problem if the two projects require different versions.
    - You can remove the environment and create a new one, if not needed or with errors.
    
-``conda`` works as an isolated environment. Below we present the ``pip`` way with "virtual environments", as well as installing using setup.py! Installing with a virtual environment is the only recommended way at HPC2N! 
+``conda`` works as an isolated environment. 
+Below we present the ``pip`` way with "virtual environments", 
+as well as installing using ``setup.py``.
+Installing with a virtual environment is the only recommended way at HPC2N! 
 
-.. questions::
-
-   - How to work with isolated environments at HPC2N and UPPMAX?
-   
-.. objectives:: 
+.. objectives:: Teaching objectives
 
    - Give a general *theoretical* introduction to isolated environments 
-   - Site-specific procedures.
+   - Create, activate, use and deactivate an isolated environment at HPC2N and UPPMAX
+
+Overview
+--------
+
++-----------------------+-------------------+------------------+
+| Parameter             | conda             | venv             |
++=======================+===================+==================+
+| Scope                 | Language agnostic | Python-exclusive |
+| UPPMAX recommendation | Recommended       | OK               |
+| HPC2N recommendation  | Avoid             | Recommended      |
++-----------------------+-------------------+------------------+
+
 
 General procedures   
 ------------------
@@ -464,6 +476,13 @@ More info
 Exercises
 ---------
 
+.. admonition:: For teachers
+
+    - Technical: Use ``python/3.11.8`` and ``ML_packages/3.11.8-GPU``
+    - Teaching goals: 
+        - learners have created, activated, used and deactivated a conda virtual environment
+        - learners have used an ML package
+        - learners have heard about venv
 
 .. challenge:: Create a virtual environment with a requirements file below
 
@@ -476,8 +495,8 @@ Exercises
       matplotlib==3.5.2
       pandas==1.4.2
     
-   - Check that the packages were installed.
-   - Don't forget to deactivate afterwards.
+   - Check that the packages were installed
+   - Deactivate the virtual environment
 
 .. solution:: Solution for UPPMAX
     :class: dropdown
