@@ -251,8 +251,8 @@ Create a virtual environment called ``vpyenv``. First load the python version yo
          .. code-block:: sh
            
             b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07 matplotlib/3.7.2
-	    b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ virtualenv --system-site-packages Example3
-            b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ source Example3/bin/activate
+	    b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ virtualenv --system-site-packages vpyenv
+            b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ source vpyenv/bin/activate
             (vpyenv) $ pip install --no-cache-dir --no-build-isolation spacy seaborn 
 
          Deactivating a virtual environment.

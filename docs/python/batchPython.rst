@@ -175,7 +175,7 @@ Here we are using the virtual environment we created under the "isolated environ
 
    .. tab:: HPC2N
 
-        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2023.07, Python/3.11.3 + using any Python packages you have installed yourself with virtual environment - the one we named "Example2" should work well here. During the isolated environments session there was more about how to install something yourself this way. 
+        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2023.07, Python/3.11.3, matplotlib + using any Python packages you have installed yourself with virtual environment - the one we named "vpyenv" should work well here. During the isolated environments session there was more about how to install something yourself this way. 
        
         .. code-block:: sh
 
@@ -189,8 +189,8 @@ Here we are using the virtual environment we created under the "isolated environ
             
             # Activate your virtual environment. 
             # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
-            # Example: /proj/nobackup/hpc2n2024-025/bbrydsoe/python/Example2 
-            source /proj/nobackup/hpc2n2024-025/<user-dir>/<path-to-virt-env>/Example2/bin/activate
+            # Example: /proj/nobackup/hpc2n2024-025/bbrydsoe/python/vpyenv  
+            source /proj/nobackup/hpc2n2024-025/<user-dir>/<path-to-virt-env>/vpyenv/bin/activate
             
             # Run your Python script 
             python seaborn-code.py
