@@ -13,7 +13,7 @@ Technical on local computer
 Basic terminal clients 
 #######################
 
-**If you are in a hurry or get problems in the installation procedure you can do most of the work from these first steps **
+**If you are in a hurry or get problems in the installation procedure you can do most of the work from these first steps.**
 
 .. tabs::
 
@@ -34,7 +34,7 @@ Basic terminal clients
 
    .. tab:: Windows
 
-      - the ssh (secure shell) client `**putty**<https://www.putty.org/>`_ is sufficient first days of the course!
+      - the ssh (secure shell) client `putty<https://www.putty.org/>`_ is sufficient first days of the course!
 
          - You can save hosts for later.
          - No graphics.
