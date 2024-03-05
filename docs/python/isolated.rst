@@ -465,7 +465,7 @@ Exercises
 
 .. admonition:: For teachers
 
-    - Technical: Use ``python/3.11.8`` and ``ML_packages/3.11.8-GPU``
+    - Technical: Use ``python/3.11.8`` and ``python_ML_packages/3.11.8-GPU``
     - Teaching goals: 
         - learners have created, activated, used and deactivated a conda virtual environment
         - learners have used an ML package
@@ -563,3 +563,11 @@ Links
 * `Presentation: How to use a Python venv on the Rackham UPPAX cluster (ODP) <https://github.com/UPPMAX/R-python-julia-HPC/blob/main/docs/python/isolated.odp>`_
     
 
+Notes
+-----
+
+module load python_ML_packages/3.9.5-gpu
+git clone https://github.com/UPPMAX/R-python-julia-HPC
+pip install -r requirements.txt
+cd Exercises
+pytorch_fitting_gpu.py
