@@ -185,7 +185,7 @@ Here we are using the virtual environment we created under the "isolated environ
             #SBATCH -n 1 # Asking for 1 core
             
             # Load any modules you need, here for Python 3.11.3 and compatible SciPy-bundle
-            module load GCC/12.3.0  Python/3.11.3 SciPy-bundle/2023.07
+            module load GCC/12.3.0  Python/3.11.3 SciPy-bundle/2023.07 matplotlib/3.7.2
             
             # Activate your virtual environment. 
             # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
@@ -195,28 +195,32 @@ Here we are using the virtual environment we created under the "isolated environ
             # Run your Python script 
             python seaborn-code.py
 
-   .. tab:: Python 
+   .. tab:: seaborn-code.py
 
-        An example Python code using the "seaborn" package. It was taken from <a href="https://seaborn.pydata.org/tutorial/introduction.html">https://seaborn.pydata.org/tutorial/introduction.html</a>. 
+        An example Python code using the "seaborn" package. It was (with minor changes) taken from <a href="https://seaborn.pydata.org/tutorial/introduction.html">https://seaborn.pydata.org/tutorial/introduction.html</a>. 
 
         .. code-block:: python
 
-            # Import seaborn
+            # Import seaborn, matplotlib
+            import matplotlib.pyplot as plt
             import seaborn as sns
+            import pandas as pd
 
             # Apply the default theme
             sns.set_theme()
 
-            # Load an example dataset
-            tips = sns.load_dataset("tips")
+            # Load an example dataset (local, with pandas)
+            tips = pd.read.csv('tips.csv')
+            # Load an example dataset (remotely from repo. Only works at HPC2N - remove outcomment to use and comment out above line instead)
+            #tips = sns.load_dataset("tips")
 
             # Create a visualization
-            sns.relplot(
+            plot=sns.relplot(
                 data=tips,
                 x="total_bill", y="tip", col="time",
                 hue="smoker", style="smoker", size="size",
             )
-
+            plot.savefig('tipsplot.png')
 
 Send the script to the batch:
 
