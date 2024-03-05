@@ -2,19 +2,58 @@ Pre-requirements
 ================
 
 Technical on local computer
-------------------------------
+---------------------------
 
 - terminal programs and thinLinc
 - graphics
 
-Linux users
-###########
-
-Mac users
+Terminals
 #########
 
-Windows users
+.. tabs::
+
+   .. tab:: Mac
+
+      - USe terminal (e.g. from Launchpad) or [iTerm2](https://iterm2.com/)
+
+      ![Terminal](./img/Mac_terminal.png)
+
+      - iTerm2 goodies:
+         - You can save hosts for later.
+         - Drag and drop scp
+
+
+   .. tab:: Windows
+
+      - Start terminal (see below)
+
+
+      ![Terminal](./img/putty.jpg)
+
+      - the ssh (secure shell) client [**putty**](https://www.putty.org/) is sufficient first days of the course!
+
+      - You can save hosts for later.
+      - No graphics.
+    
+      - Windows Powershell terminal can also work
+
+         - Cannot save hosts
+         - no graphics
+         - [PowerShell](https://learn.microsoft.com/en-us/powershell/)
+    
+      - Windows command prompt can also work
+
+         - Cannot save hosts
+         - no graphics
+         - [Command Prompt](https://www.makeuseof.com/tag/a-beginners-guide-to-the-windows-command-line/)
+
+      - [Git bash](https://gitforwindows.org/)
+
+
+Try to log in
 #############
+
+- Follow the steps in the emaild instructions
 
 Understanding clusters
 ----------------------
