@@ -63,13 +63,13 @@ Add X11 graphics
    .. tab:: Mac
 
       - Download and install **XQuartz** or other X11 server for Mac OS
-         - <https://www.xquartz.org>
+         - https://www.xquartz.org
 
       - Start terminal (e.g. from Launchpad) or `iTerm2 <https://iterm2.com/>`_ 
 
    .. tab:: Windows
 
-      - Install **`MobaXterm <https://mobaxterm.mobatek.net/>`_**  with built-in X11 and sftp file manager
+      - Install `MobaXterm <https://mobaxterm.mobatek.net/>`_  with built-in X11 and sftp file manager
          - sftp frame makes it easy to move, upload and download files.
          - ... though downloading from remote host to local is usually easier.
          - tabs for several sessions
@@ -91,22 +91,51 @@ Add X11 graphics
       .. figure:: ./img/mobax_start.jpg
 
 
-````
-`````
 
-```{admonition} X11-forwarding from the command line (generally)
 
-- Graphics can be sent through the SSH connection you’re using to connect
-  - Use primarily `ssh -Y <...>` or secondary `ssh -X <...>`
+.. admonition:: X11-forwarding from the command line (generally)
 
-- The X servers that enables graphics are needed, as mentioned above!
-  - When starting a graphical program, a new window will open, but your terminal will be “locked”.
-  - Run using "`&`" at the end to run it as a background process e.g. "`xeyes &`" or “`gedit &`”
+   - Graphics can be sent through the SSH connection you’re using to connect
+      - Use primarily `ssh -Y <...>` or secondary `ssh -X <...>`
 
-![Caption](./img/xeyes.png)
+   - The X servers that enables graphics are needed, as mentioned above!
+      - When starting a graphical program, a new window will open, but your terminal will be “locked”.
+      - Run using "`&`" at the end to run it as a background process e.g. "`xeyes &`" or “`gedit &`”
 
-- Alternatively, use `<ctrl>-z` to put e.g. gedit to sleep and type "`bg`" to make last process in background.
-```
+    .. figure:: ./img/xeyes.png
+
+    - Alternatively, use `<ctrl>-z` to put e.g. gedit to sleep and type "`bg`" to make last process in background.
+
+ThinLinc
+########
+
+- Rackham, Kebnekaise and Bianca offer graphical login.
+- This gives you a desktop environment, as if you were working on your own computer!
+- Install ThinLinc cient
+     - https://www.cendio.com/thinlinc/download
+
+- Login to ThinLinc desktop application by providing the following
+
+.. tabs::
+
+   .. tab:: Rackham
+
+      - server: rackham-gui.uppmax.uu.se
+
+      - username
+
+      - password
+ 
+   .. tab:: Kebnekaise
+
+      - server: kebnekaise-tl.hpc2n.umu.se
+
+      - username
+
+      - password
+ 
+  .. figure:: ./img/Thinlinc2.jpg
+
 
 
 
@@ -114,17 +143,28 @@ Add X11 graphics
 Try to log in
 #############
 
-- Follow the steps in the emaild instructions.
+- Follow the steps in the emailed instructions.
+- First time you need to use a terminal to set password
+- When password is set you can begin to use ThinLinc
 
+- When logging in the first time in ThinLinc, choose XFCE desktop. 
 
-Test the X11 graphics with:
+- Test it!
 
-.. console::
+.. keypoints::
 
-   $ ssh -Y <username>@rackham.uppmax.uu.se
+   - When you log in from your local computer you will always arrive at a login node with limited resources. 
+       - You reach the calculations nodes from within the login node (See  Submitting jobs section)
+   - You reach UPPMAX clusters either using a terminal client or Thinlinc
+   - Graphics are included in Thinlinc and from terminal if you have enabled X11.
+   - Which client to use?
+       - Graphics and easy to use
+       - ThinLinc
+  - Best integrated systems
+      - Visual Studio Code has several extensions (remote, SCP, programming IDE:s)
+      - Windows: MobaXterm is somewhat easier to use.
+  
 
-- ``-X``      Enables X11 forwarding. 
-- ``-Y``      Enables trusted X11 forwarding
 
 
 Understanding clusters
