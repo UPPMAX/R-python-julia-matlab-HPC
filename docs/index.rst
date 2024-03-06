@@ -311,7 +311,6 @@ Content of the course
    julia/load_runJulia.rst
    julia/isolatedJulia.rst
    common/parallel.rst
-   julia/packagesBianca.rst
    julia/batchJulia.rst
    julia/interactiveJulia.rst
    julia/exercisesJulia.rst
