@@ -371,20 +371,20 @@ Using the virtual environment created earlier and the ``spacy`` we installed und
       >>> 
 
 
-.. admonition:: HPC2N: Load modules for Python, numpy (in SciPy-bundle), activate the environment "Example2". 
+.. admonition:: HPC2N: Load modules for Python, numpy (in SciPy-bundle), activate the environment "vpyenv". 
     :class: dropdown
    
         .. code-block:: sh
            
            b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07
-           b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ source Example2/bin/activate
-           (Example2) b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ python
+           b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ source vpyenv/bin/activate
+           (vpyenv) b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ python
            Python 3.11.3 (main, Oct 30 2023, 16:00:15) [GCC 12.3.0] on linux
            Type "help", "copyright", "credits" or "license" for more information.
            >>> import spacy
            >>> 
 
-        Try and do the same for "Example3" and seaborn. Remember to deactivate virtualenv "Example2" first, and then load the extra matplotlib/3.7.2 before activating "Example3" and trying to import seaborn to Python. 
+        Try and do the same for seaborn.  
 
 - To use self-installed Python packages in a batch script, you always also need to load the above mentioned modules and activate the environment. An example of this will follow later in the course. 
 
