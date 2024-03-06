@@ -232,50 +232,49 @@ The two HPC centers UPPMAX and HPC2N
 Prepare your environment now!
 -----------------------------
 
-```{type-along}
+.. type-along::
   
-- Please log in to Rackham, Kebnekaise or other cluster that you are using.
+   - Please log in to Rackham, Kebnekaise or other cluster that you are using.
 
-.. admonition:: Use Thinlinc or terminal?
+   .. admonition:: Use Thinlinc or terminal?
 
-   - It is up to you!
-   - Graphics come easier with Thinlinc
-   - For this course, when having many windows open, it may be better to run in terminal, for screen space issues.
+      - It is up to you!
+      - Graphics come easier with Thinlinc
+      - For this course, when having many windows open, it may be better to run in terminal, for screen space issues.
 
 
-.. tabs::
+   .. tabs::
 
-   .. tab:: UPPMAX
+      .. tab:: UPPMAX
 
-      1. Log in to Rackham!
-        - Terminal: ``ssh -Y <user>@rackham.uppmax.uu.se`` 
+         1. Log in to Rackham!
+           - Terminal: ``ssh -Y <user>@rackham.uppmax.uu.se`` 
       
-        - ThinLinc app: ``<user>@rackham-gui.uppmax.uu.se``
-        - ThinLinc in web browser: ``https://rackham-gui.uppmax.uu.se``
+           - ThinLinc app: ``<user>@rackham-gui.uppmax.uu.se``
+           - ThinLinc in web browser: ``https://rackham-gui.uppmax.uu.se``
       
-      2. If not already: **create a working directory** where you can code along.
-         - We recommend creating it under the course project storage directory
+         2. If not already: **create a working directory** where you can code along.
+           - We recommend creating it under the course project storage directory
    
-      3. Example. If your username is "mrspock" and you are at UPPMAX, then we recommend you create this folder: 
+         3. Example. If your username is "mrspock" and you are at UPPMAX, then we recommend you create this folder: 
      
-         .. code-block:: console
+            .. code-block:: console
          
-            $ mkdir /proj/naiss2023-22-914/mrspock/
+               $ mkdir /proj/naiss2023-22-914/mrspock/
 
-   .. tab:: HPC2N
+      .. tab:: HPC2N
 
-      - Kebnekaise through terminal: ``<user>@kebnekaise.hpc2n.umu.se``     
-      - Kebnekaise through ThinLinc, use: ``<user>@kebnekaise-tl.hpc2n.umu.se``
+         - Kebnekaise through terminal: ``<user>@kebnekaise.hpc2n.umu.se``     
+         - Kebnekaise through ThinLinc, use: ``<user>@kebnekaise-tl.hpc2n.umu.se``
    
-      - Create a working directory where you can code along.    
+         - Create a working directory where you can code along.    
       
-        - Example. If your username is bbrydsoe and you are at HPC2N, then we recommend you create this folder: 
+           - Example. If your username is bbrydsoe and you are at HPC2N, then we recommend you create this folder: 
      
-         .. code-block:: console
+           .. code-block:: console
          
-            $ /proj/nobackup/hpc2n2023-110/bbrydsoe/
+              $ /proj/nobackup/hpc2n2023-110/bbrydsoe/
 
-```
          
 Content of the course
 ---------------------
