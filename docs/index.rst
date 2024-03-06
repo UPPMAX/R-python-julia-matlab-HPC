@@ -248,7 +248,7 @@ Prepare your environment now!
       .. tab:: UPPMAX
 
          1. Log in to Rackham!
-           - Terminal: ``ssh -Y <user>@rackham.uppmax.uu.se`` 
+           - Terminal: ``ssh -X <user>@rackham.uppmax.uu.se`` 
       
            - ThinLinc app: ``<user>@rackham-gui.uppmax.uu.se``
            - ThinLinc in web browser: ``https://rackham-gui.uppmax.uu.se``
