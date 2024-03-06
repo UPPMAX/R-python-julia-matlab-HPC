@@ -564,6 +564,12 @@ Links
 * `Presentation: How to use a Python venv on the Rackham UPPAX cluster (ODP) <https://github.com/UPPMAX/R-python-julia-HPC/blob/main/docs/python/isolated.odp>`_
     
 
+Dead links on purpose
+---------------------
+
+- `Dead external links <https://www.abs.ent>`_
+- Dead other page :doc:`absent_page.rst`
+
 Notes
 -----
 
