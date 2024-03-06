@@ -74,6 +74,9 @@ Add X11 graphics to terminal
 
    .. tab:: Windows
 
+      - Either continue building upon Putty and install `XMING <https://sourceforge.net/projects/xming/>`_
+            - When installed, start XMING and let run in background and then start putty and log in with ``ssh -X`` ...
+      - OR
       - Install `MobaXterm <https://mobaxterm.mobatek.net/>`_  with built-in X11 and sftp file manager
          - sftp frame makes it easy to move, upload and download files.
          - ... though downloading from remote host to local is usually easier.
@@ -86,6 +89,7 @@ Add X11 graphics to terminal
       .. codeblock:: console
 
          $ ssh -X <username>@rackham.uppmax.uu.se
+         $ ssh -X <username>@kebnekaise.hpc2n.uu.se
 
       .. figure:: ./img/mobax_start1.jpg
 
@@ -95,13 +99,11 @@ Add X11 graphics to terminal
 
       .. figure:: ./img/mobax_start.jpg
 
-
-
-
 .. admonition:: X11-forwarding from the command line (generally)
 
    - Graphics can be sent through the SSH connection you’re using to connect
       - Use primarily `ssh -X <...>` and secondary `ssh -Y <...>`
+      - http://docs.uppmax.uu.se/software/ssh_x_forwarding/
 
    - The X servers that enables graphics are needed, as mentioned above!
       - When starting a graphical program, a new window will open, but your terminal will be “locked”.
@@ -150,6 +152,11 @@ Try to log in
 - First time you need to use a terminal to set password
 - When password is set you can begin to use ThinLinc as well.
 
+.. warning::
+
+   - Using ThinLinc to log in to Rackham may require 2FA
+     - https://www.uppmax.uu.se/support/user-guides/setting-up-two-factor-authentication/
+
 - When logging in the first time in ThinLinc, choose XFCE desktop. 
 
 - Test it!
@@ -157,6 +164,7 @@ Try to log in
 .. seealso::
 
    `Log in to Rackham <http://docs.uppmax.uu.se/getting_started/login_rackham/>`_ 
+   `Log in to Kebnekaise <http://docs.uppmax.uu.se/getting_started/login_rackham/>`_ 
 
 .. keypoints::
 
@@ -177,6 +185,10 @@ Text editors on the Clusters
 - Nano
 - gedit
 - mobaxterm built-in
+
+.. seealso::
+
+   - http://docs.uppmax.uu.se/software/text_editors/
 
 .. hint::
 
