@@ -355,7 +355,7 @@ Using the self-installed packages in Python
    **Code along!**
 
 
-Using the virtual environment created earlier and the ``spacy`` we installed under example 1) above. 
+Using the virtual environment created earlier and the ``spacy`` we installed under the code-along example above. 
 
 .. admonition:: UPPMAX: Load modules for Python, activate the environment 
    :class: dropdown
@@ -363,8 +363,8 @@ Using the virtual environment created earlier and the ``spacy`` we installed und
    .. code-block:: console
            
       $ module load python/3.11.8
-      $ source /proj/r-py-jl/<user>/python/Example/bin/activate
-      (Example) $ python
+      $ source /proj/r-py-jl/<user>/python/vpyenv/bin/activate
+      (vpyenv) $ python
       Python 3.11.8 (main, Feb  8 2024, 11:48:52) [GCC 12.3.0] on linux
       Type "help", "copyright", "credits" or "license" for more information.
       >>> import spacy
