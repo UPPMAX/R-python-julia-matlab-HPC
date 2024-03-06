@@ -251,4 +251,9 @@ PowerShell
 WSL
 mins
 Birgitte
+Birgittes
 multithreaded
+Umeå
+kebnekaise
+ReadTheDocs
+

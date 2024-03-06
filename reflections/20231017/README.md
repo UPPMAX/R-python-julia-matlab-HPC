@@ -222,7 +222,8 @@ This is nice to hear!
 Unsure if this about mine or Birgittes parts :-|
 
  * Materials
- * That materials were extensive and provided (both in advance and during the day). The break-out sesson was good to let me ask the stupid questions to fellows that could help out or make me catch up.
+ * That materials were extensive and provided (both in advance and during the day). 
+The break-out session was good to let me ask the stupid questions to fellows that could help out or make me catch up.
 
 The goal of the break-out sessions has been achieved :-)
 
@@ -258,7 +259,9 @@ what to do. Most students usually knew what to do.
 
 Maybe.
 
- * Lectures should be given more time (or the contents reduced). Unfortunately it was at times a hard to follow. Perhaps, also, make it a bit more clear what is expected from the excercises. 
+ * Lectures should be given more time (or the contents reduced). 
+   Unfortunately it was at times a hard to follow. 
+   Perhaps, also, make it a bit more clear what is expected from the exercises. 
 
  * Maybe actually follow the material that is there. It's hard for us to do exercises and go back and check later when one of the presenters just had his own material. Also, maybe make actual parallel sessions instead of going break rooms. Too much time in break rooms in general, and then other sections got rushed. 
 
