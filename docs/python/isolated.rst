@@ -16,8 +16,9 @@ Installing with a virtual environment is the only recommended way at HPC2N!
 
 .. objectives:: Teaching objectives
 
-   - Give a general *theoretical* introduction to isolated environments 
-   - Create, activate, use and deactivate an isolated environment at HPC2N and UPPMAX
+   - learners have created, activated, used and deactivated a venv
+   - learners have used an ML package
+   - learners have heard about conda
 
 Overview
 --------
