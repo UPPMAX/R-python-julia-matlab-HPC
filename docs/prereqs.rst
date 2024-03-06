@@ -380,3 +380,8 @@ Overview of the UPPMAX systems
 ##############################
 
 .. mermaid:: mermaid/uppmax2.mmd
+
+Overview of the HPC2N system
+############################
+
+.. mermaid:: mermaid/kebnekaise.mmd
