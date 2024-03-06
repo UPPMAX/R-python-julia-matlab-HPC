@@ -35,8 +35,8 @@ Introduction to running R, Python, and Julia in HPC
       - When present, links to the Python/Julia/R documentation at other NAISS centres are given in the corresponding session.
 
 
-Schedule Fall 2023
-------------------
+Schedule Spring 2024
+--------------------
 
 .. list-table:: 
    :widths: 25 25
@@ -44,11 +44,11 @@ Schedule Fall 2023
 
    * - Day
      - Language
-   * - Tuesday 17 Oct
+   * - Tuesday 12 March
      - Python 
-   * - Wednesday 18 Oct
+   * - Wednesday 13 March
      - Julia
-   * - Thursday 19 Oct
+   * - Thursday 14 March
      - R 
    
 
@@ -154,7 +154,7 @@ If you only have one screen to work with for the course, try to fit:
    - It mentions the familiarity with the LINUX command line.
    - The applications to connect to the clusters
       - terminals
-      - Remote graphical desktop ThinLinc
+      - remote graphical desktop ThinLinc
  
 Material for improving your programming skills
 ----------------------------------------------
@@ -164,6 +164,70 @@ Material for improving your programming skills
 
 See the pre-requirements, section `Coding <https://uppmax.github.io/R-python-julia-HPC/prereqs.html#coding>`_
 
+Briefly about the cluster hardware and system at UPPMAX and HPC2N
+-----------------------------------------------------------------
+
+**What is a cluster?**
+
+- Login nodes and calculations/computation nodes
+
+- A network of computers, each computer working as a **node**.
+     
+- Each node contains several processor cores and RAM and a local disk called scratch.
+
+.. figure:: ../img/node.png
+   :align: center
+
+- The user logs in to **login nodes**  via Internet through ssh or Thinlinc.
+
+  - Here the file management and lighter data analysis can be performed.
+
+.. figure:: ../img/nodes.png
+   :align: center
+
+- The **calculation nodes** have to be used for intense computing. 
+
+The two HPC centers UPPMAX and HPC2N
+====================================
+
+.. admonition:: Two HPC centers
+
+   - There are many similarities:
+   
+     - Login vs. calculation/compute nodes
+     - Environmental module system with software hidden until loaded with ``module load``
+     - Slurm batch job and scheduling system
+     - ``pip install`` procedure
+     
+   - ... and small differences:
+   
+     - commands to load Python, Python packages, R, Julia
+     - slightly different flags to Slurm
+     
+   - ... and some bigger differences:
+   
+     - UPPMAX has three different clusters 
+
+       - Rackham for general purpose computing on CPUs only
+       - Snowy available for local projects and suits long jobs (< 1 month) and has GPUs
+       - Bianca for sensitive data and has GPUs
+
+   - HPC2N has Kebnekaise with GPUs  
+   - Conda is recommended only for UPPMAX users
+    
+.. warning:: 
+
+   - At both HPC2N and UPPMAX we call the applications available via the *module system* **modules**. 
+   - https://www.uppmax.uu.se/resources/software/module-system/ 
+   - https://www.hpc2n.umu.se/documentation/environment/lmod
+   
+   To distinguish these modules from the **python** *modules* that work as libraries we refer to the later ones as **packages**.
+
+.. seealso::
+
+   - Details about the systems 
+     - https://uppmax.github.io/R-python-julia-HPC/prereqs.html#common-features
+     - and below
 
 Prepare your environment now!
 -----------------------------
