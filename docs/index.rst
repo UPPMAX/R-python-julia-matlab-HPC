@@ -106,7 +106,7 @@ Finally, if you notice something that prevents you from learning as well as you 
 
    - .. raw:: html
 
-        <a target='_blank' href="https://umeauniversity.sharepoint.com/:w:/s/HPC2N630/EZaIVorUBXZEj89dNxYEaQcBAV0H4yQz-soWF_imIeNHUw?e=azbezP">Q/A collaboration document</a>
+        <a target='_blank' href="https://umeauniversity.sharepoint.com/:w:/s/HPC2N630/EY1_M9pARplGrJq4N81bkQQB3S4wwb-HcNA2byoKTnMXHw">Q/A collaboration document</a>
 
    - Use this page for the workshop with your questions.
    - It becomes part of the course and some Q/A:s may be **more relevant to you at a later occasion!!**
@@ -311,7 +311,6 @@ Content of the course
    julia/load_runJulia.rst
    julia/isolatedJulia.rst
    common/parallel.rst
-   julia/packagesBianca.rst
    julia/batchJulia.rst
    julia/interactiveJulia.rst
    julia/exercisesJulia.rst
