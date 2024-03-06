@@ -86,7 +86,7 @@ Add X11 graphics to terminal
 
       - Start local terminal and a SSH session by:
 
-      .. codeblock:: console
+      .. code-block:: console
 
          $ ssh -X <username>@rackham.uppmax.uu.se
          $ ssh -X <username>@kebnekaise.hpc2n.uu.se
@@ -208,7 +208,7 @@ Text editors on the Clusters
       - If you get stuck, press: ``<esc>`` and then ``:q`` !
  
 
-.. example::
+.. demo::
 
    - Let's make a script with the name ``example.py``  
 
