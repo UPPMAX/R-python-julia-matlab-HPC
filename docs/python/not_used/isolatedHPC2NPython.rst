@@ -186,5 +186,5 @@ HPC2N's documentation pages about installing Python packages and virtual environ
 
    - With a virtual environment you can tailor an environment with specific versions for Python and packages, not interfering with other installed python versions and packages.
    - Make it for each project you have for reproducibility.
-   - There are different tools to create virtual environemnts.
+   - There are different tools to create virtual environments.
       - HPC2N has virtualenv

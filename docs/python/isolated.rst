@@ -69,7 +69,7 @@ In this course we will look at the following tools for creating and using isolat
 
    - With a virtual environment you can tailor an environment with specific versions for Python and packages, not interfering with other installed python versions and packages.
    - Make it for each project you have for reproducibility.
-   - There are different tools to create virtual environemnts.
+   - There are different tools to create virtual environments.
       - UPPMAX has  Conda and venv and virtualenv
       - HPC2N has venv and virtualenv.
       - More details in the separated sessions!
@@ -176,7 +176,7 @@ Deactivate it.
 The "--no-cache-dir" option is required to avoid it from reusing earlier installations from the same user in a different environment. The "--no-build-isolation" is to make sure that it uses the loaded modules from the module system when building any Cython libraries.
 
 
-Everytime you need the tools available in the virtual environment you activate it as above.
+Every time you need the tools available in the virtual environment you activate it as above.
 
 .. code-block:: console
 
@@ -549,7 +549,7 @@ Exercises
 
    - With a virtual environment you can tailor an environment with specific versions for Python and packages, not interfering with other installed python versions and packages.
    - Make it for each project you have for reproducibility.
-   - There are different tools to create virtual environemnts.
+   - There are different tools to create virtual environments.
    
       - UPPMAX has Conda and venv and virtualenv
       - HPC2N has venv and virtualenv

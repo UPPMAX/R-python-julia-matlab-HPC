@@ -67,7 +67,7 @@ Deactivate it.
 
     deactivate
 
-Everytime you need the tools available in the virtual environment you activate it as above.
+Every time you need the tools available in the virtual environment you activate it as above.
 
 .. prompt:: bash $
 
@@ -128,7 +128,7 @@ More on virtual environment: https://docs.python.org/3/tutorial/venv.html
 Using setup.py
 ''''''''''''''
 
-Some Python packages are only available as downloads, for intsance via github, to install with setup.py or similar file. If that is the case for the package you need, this is how you do it: 
+Some Python packages are only available as downloads, for instance via github, to install with setup.py or similar file. If that is the case for the package you need, this is how you do it: 
 
 - Pick a location for your installation (change below to fit - I am installing under a project storage)
 
@@ -223,5 +223,5 @@ Have a look on this manual https://www.uppmax.uu.se/support/user-guides/python-m
 
    - With a virtual environment you can tailor an environment with specific versions for Python and packages, not interfering with other installed python versions and packages.
    - Make it for each project you have for reproducibility.
-   - There are different tools to create virtual environemnts.
+   - There are different tools to create virtual environments.
       - UPPMAX has Conda and venv

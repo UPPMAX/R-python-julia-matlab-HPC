@@ -25,7 +25,7 @@ computing units (cores) simultaneously. In the past computers were shiped with a
 single core per Central Processing Unit (CPU) and therefore it could only perform
 a single computation at the time (serial program).
 
-Nowadays computer architechures are more complex than the single core CPU mentioned
+Nowadays computer architectures are more complex than the single core CPU mentioned
 already. For instance, common architectures include those where several cores in a
 CPU share a common memory space and also those where CPUs are connected through some
 network interconnect.
@@ -124,7 +124,7 @@ interconnected through networks, and that have different types of memory availab
 Python, Julia, and R languages have different tools and libraries that can help you
 to get more from your local machine or HPC cluster resources.
 
-Threaded programing
+Threaded programming
 '''''''''''''''''''
 
 To take advantage of the shared memory of the cores, **threaded** mechanisms can be used.
@@ -139,7 +139,7 @@ Due to a locking mechanism in Python, `Python threads` are not efficient for com
 However, the `Mojo project <https://docs.modular.com/mojo/notebooks/Mandelbrot.html#benchmarking>`_
 is striving to leverage the threaded parallelism in Python.
             
-From the previous paragraph we infere that without doing any modification to our code
+From the previous paragraph we infer that without doing any modification to our code
 we can get the benefits from parallel computing by turning-on/off external libraries,
 by setting environment variables such as `OMP_NUM_THREADS`.
 
@@ -152,7 +152,7 @@ pieces of code that can run on thousand of cores (*kernels*). Also the APIs
 are different, with NVIDIA and ROCM being two of the most common ones in GPU
 programming.
 
-Distributed programing
+Distributed programming
 ''''''''''''''''''''''
 
 Although threaded programming is convenient because one can achieve considerable initial speedups
@@ -162,7 +162,7 @@ a common shared memory but the individual `processes` (notice the different term
 with `threads` in shared memory) have their own memory space. Then, if a process requires
 data from or should transfer data to another process, it can do that by using `send` and
 `receive` to transfer messages. A standard API for distributed computing is the Message 
-Passing Interface (MPI). In general, MPI requires refactory of your code.
+Passing Interface (MPI). In general, MPI requires refactoring of your code.
 
 .. tabs::
 

@@ -29,7 +29,7 @@ Packages and isolated environments
 
 In the Python's lesson on environments, we saw that there are different ways to deal with isolated 
 environments in this language, for instance, ``conda`` and ``pip``. This situation is simplified
-in Julia (if you are working with Julia code only) because environemnts are managed by Julia
+in Julia (if you are working with Julia code only) because environments are managed by Julia
 itself. Julia distinguishes between **project environments** and **package directories** 
 (https://docs.julialang.org/en/v1/manual/code-loading/#Environments). In the former, only the
 Tom's Obvious Minimal Language (TOML) files (Project.toml, Manifest.toml) are present while in the

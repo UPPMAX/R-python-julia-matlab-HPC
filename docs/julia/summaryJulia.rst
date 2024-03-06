@@ -19,7 +19,7 @@ Summary
         for Julia and packages, not interfering with other installed Julia versions and 
         packages.
       - Make it for each project you have for reproducibility.
-      - Julia has its own mechanism to create virtual environemnts. 
+      - Julia has its own mechanism to create virtual environments. 
   
          - HPC2N 
   
