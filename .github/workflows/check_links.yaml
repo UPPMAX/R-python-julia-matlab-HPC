@@ -17,9 +17,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Remove folders that need not to be checked
+        run: rm -rf /docs/python/not_used/
+
       - uses: gaurav-nelson/github-action-markdown-link-check@v1
 
-      # Cannot deal with emails :-/
+
+      # Cannot deal w	ith emails :-/
       #- uses: lycheeverse/lychee-action@v1.2.0
       #  with:
       #    #args: --verbose --exclude-mail './**/*.md' './**/*.html'
