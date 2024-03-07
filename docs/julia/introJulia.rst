@@ -121,6 +121,10 @@ Among the different features of Julia, is its capability of integrating both asp
 Workflow in Julia (DEMO)
 ------------------------
 
+.. demo::
+
+   The teacher will do this as a demo. You will have the opportunity to test in the next session!
+
 After loading the appropriate modules for Julia, you will have access to the
 read-eval-print-loop (REPL) command line by typing ``julia``: 
 
