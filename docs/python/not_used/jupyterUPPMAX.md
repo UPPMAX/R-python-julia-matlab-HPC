@@ -39,7 +39,7 @@ http://r141:8888/?token=5c3aeee9fbfc75f7a11c4a64b2b5b7ec49622231388241c2
         $ ssh -L 8888:r141:8888 username@rackham.uppmax.uu.se
         ```
     - If you use PuTTY - you need to change the settings in "Tunnels" accordingly (could be done for the current connection as well).
-    ![](../../img/putty.png)
+    ![](../../../img/putty.png)
     https://uplogix.com/docs/local-manager-user-guide/advanced-features/ssh-port-forwarding 
     
 
