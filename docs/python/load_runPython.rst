@@ -38,40 +38,40 @@ Most HPC centres in Sweden is using the same or similar module system for their 
 Check for Python versions
 -------------------------
 
-.. tip::
-    
-   **Code along!**
-
-.. tabs::
-
-   .. tab:: UPPMAX
-
-     Check all available Python versions with:
-
-      .. code-block:: console
-
-          $ module avail python
-
-
-   .. tab:: HPC2N
+.. type-along::
    
-      Check all available version Python versions with:
+   Checking for Python versions 
+   
+   .. tabs::
 
-      .. code-block:: console
+      .. tab:: UPPMAX
+
+         Check all available Python versions with:
+
+         .. code-block:: console
+
+            $ module avail python
+
+
+      .. tab:: HPC2N
+   
+         Check all available version Python versions with:
+
+         .. code-block:: console
  
-         $ module spider Python
+            $ module spider Python
       
-      To see how to load a specific version of Python, including the prerequisites, do 
+         To see how to load a specific version of Python, including the prerequisites, do 
 
-      .. code-block:: console
+         .. code-block:: console
    
-         $ module spider Python/<version>
+            $ module spider Python/<version>
 
-      Example for Python 3.11.3 
+         Example for Python 3.11.3 
 
-      .. code-block:: console
+         .. code-block:: console
 
-         $ module spider Python/3.11.3 
+            $ module spider Python/3.11.3 
 
 .. note::
 
