@@ -27,5 +27,5 @@ Time     |Topic                            |Teacher
 **14:45**|Evaluation                       |.
 **15:00**|END                              |.
 
-The exercises are already in place at <https://uppmax.github.io/R-python-julia-HPC/R/exercisesR.html>:
+The exercises are already in place at <https://uppmax.github.io/R-python-julia-HPC/r/exercisesR.html>:
 great!
