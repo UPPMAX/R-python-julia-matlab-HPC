@@ -182,8 +182,7 @@ As before, we need the batch system to run the code. There are no GPUs on the lo
 
          .. tab:: Batch script for HPC2N
 
-            Batch script, ``add-list.sh``, to run the same GPU Python script (the numba code, ``add-list.py``) at Kebnekaise. 
-            As before, submit with ``sbatch add-list.sh`` (assuming you called the batch script thus - change to fit your own naming style). 
+            Batch script, "add-list.sh", to run the same GPU Python script (the numba code, "add-list.py") at Kebnekaise. As before, submit with "sbatch add-list.sh" (assuming you called the batch script thus - change to fit your own naming style). 
       
             .. code-block:: console
 
@@ -201,6 +200,7 @@ As before, we need the batch system to run the code. There are no GPUs on the lo
 
                # Run your Python script
                python add-list.py
+
 
 Exercises
 ---------
