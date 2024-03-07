@@ -71,12 +71,13 @@ You use ``pip`` this way, in a Linux shell OR a python shell:
     
 Use ``pip3`` if you loaded python3.
 
-Then (on your own computer) the package ends up in ``~/.local/lib/python<version>/site-packages/`` .
+Then (on your own computer) the package ends up 
+in ``~/.local/lib/python<version>/site-packages/`` .
 
-Note that python<version> is omitting the last number (bug fix), like 3.9 for python-3.9.6.
-We HIGHLY recommend using a virtual environment during installation, since this makes it easier to install for different versions of Python.  More information will follow later in this course (https://uppmax.github.io/HPC-python/isolated.html). 
-
-
+Note that ``python<version>`` is omitting the last number (bug fix), like 3.9 for python-3.9.6.
+We HIGHLY recommend using a virtual environment during installation, 
+since this makes it easier to install for different versions of Python,
+as is taught in `the session on isolated environments <https://uppmax.github.io/HPC-python/isolated.html>`_
 
 .. note::
    
