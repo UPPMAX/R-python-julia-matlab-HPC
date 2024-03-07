@@ -8,7 +8,7 @@
 
 # Remove any loaded modules and load the ones we need
 module purge  > /dev/null 2>&1
-module load GCC/12.3.0  OpenMPI/4.1.5 Python/3.11.3 SciPy-bundle/2023.07 CUDA/11.3.1
+module load GCC/11.3.0  OpenMPI/4.1.4 Python/3.10.4 SciPy-bundle/2022.05 CUDA/11.7.0
 
 # Run your Python script
 python add-list.py
