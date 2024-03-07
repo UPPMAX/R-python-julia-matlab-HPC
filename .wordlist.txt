@@ -601,3 +601,7 @@ acf
 myfirstpackage
 src
 julian
+ProjectInfo
+ArgumentError
+nano
+mobaxterm
