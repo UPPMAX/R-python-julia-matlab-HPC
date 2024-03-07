@@ -1,6 +1,6 @@
 #!/bin/bash
 # Remember to change this to your own project ID after the course!
-#SBATCH -A naiss2023-22-914
+#SBATCH -A naiss2024-22-107
 # We are asking for 5 minutes
 #SBATCH --time=00:05:00
 # Asking for one GPU
