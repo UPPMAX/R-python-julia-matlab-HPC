@@ -117,7 +117,7 @@ Deactivate it.
 
     deactivate
 
-Everytime you need the tools available in the virtual environment you activate it as above.
+Every time you need the tools available in the virtual environment you activate it as above.
 
 .. prompt:: bash $
 
