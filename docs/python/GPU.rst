@@ -165,43 +165,42 @@ As before, we need the batch system to run the code. There are no GPUs on the lo
    
          Running a GPU Python code interactively.  
 
-      .. code-block:: console
-
-         $ salloc -A hpc2n2024-025 --time=00:30:00 -n 1 --gres=gpu:v100:1 
-         salloc: Pending job allocation 20346979
-         salloc: job 20346979 queued and waiting for resources
-         salloc: job 20346979 has been allocated resources
-         salloc: Granted job allocation 20346979
-         salloc: Waiting for resource configuration
-         salloc: Nodes b-cn1504 are ready for job
-         $
-         $ module load GCC/10.3.0 OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1
-         $ srun python add-list.py
-         CPU function took 31.905025 seconds.
-         GPU function took 0.684060 seconds.
-
-
-      .. tab:: Batch script for HPC2N
-
-         Batch script, ``add-list.sh``, to run the same GPU Python script (the numba code, ``add-list.py``) at Kebnekaise. 
-         As before, submit with ``sbatch add-list.sh`` (assuming you called the batch script thus - change to fit your own naming style). 
-      
          .. code-block:: console
 
-            #!/bin/bash
-            # Remember to change this to your own project ID after the course!
-            #SBATCH -A hpc2n2025-025     
-            # We are asking for 5 minutes
-            #SBATCH --time=00:05:00
-            # Asking for one GPU
-            #SBATCH --gres=gpu:v100:1    
+            $ salloc -A hpc2n2024-025 --time=00:30:00 -n 1 --gres=gpu:v100:1 
+            salloc: Pending job allocation 20346979
+            salloc: job 20346979 queued and waiting for resources
+            salloc: job 20346979 has been allocated resources
+            salloc: Granted job allocation 20346979
+            salloc: Waiting for resource configuration
+            salloc: Nodes b-cn1504 are ready for job
+            $
+            $ module load GCC/10.3.0 OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1
+            $ srun python add-list.py
+            CPU function took 31.905025 seconds.
+            GPU function took 0.684060 seconds.
 
-            # Remove any loaded modules and load the ones we need
-            module purge  > /dev/null 2>&1
-            module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1 
+         .. tab:: Batch script for HPC2N
 
-            # Run your Python script
-            python add-list.py
+            Batch script, ``add-list.sh``, to run the same GPU Python script (the numba code, ``add-list.py``) at Kebnekaise. 
+            As before, submit with ``sbatch add-list.sh`` (assuming you called the batch script thus - change to fit your own naming style). 
+      
+            .. code-block:: console
+
+               #!/bin/bash
+               # Remember to change this to your own project ID after the course!
+               #SBATCH -A hpc2n2025-025     
+               # We are asking for 5 minutes
+               #SBATCH --time=00:05:00
+               # Asking for one GPU
+               #SBATCH --gres=gpu:v100:1    
+
+               # Remove any loaded modules and load the ones we need
+               module purge  > /dev/null 2>&1
+               module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1 
+
+               # Run your Python script
+               python add-list.py
 
 Exercises
 ---------
