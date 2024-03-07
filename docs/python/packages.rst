@@ -55,7 +55,7 @@ In this session, we use `pip`, as it can be used on both HPC clusters.
 +=============================+=================+==================+=================+
 | conda                       | Unsupported [1] | Recommended      | Recommended     |
 +-----------------------------+-----------------+------------------+-----------------+
-| pip                         | Recommended     | Supported        | Unsupported     |
+| pip                         | Recommended     | Supported        | Unsupported [2] |
 +-----------------------------+-----------------+------------------+-----------------+
 
 
