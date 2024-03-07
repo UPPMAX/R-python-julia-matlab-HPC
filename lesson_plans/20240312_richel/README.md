@@ -14,7 +14,7 @@ Time     |Topic                      |Teacher
 **9.45** |Break                      |.
 **10:00**|Packages  (45-->30)        |Richel
 **10.30**|Break                      |.
-**10.45**|Isolated environments (venv, **conda**)     |Richel (45-->60)
+**10.45**|Isolated environments (ML, venv, **conda**)|Richel (45-->60)
 **11:45**|Break or informal chat     |Richel 
 **12.00**|Lunch                      |.
 **13.00**|Batch                      |Birgitte
@@ -24,5 +24,5 @@ Time     |Topic                      |Teacher
 **13.45**|Break                      |.
 **14.00**|Parallel and multithreaded functions|Pedro
 **14.25**|Conclusion & Q/A           |Birgitte
-**14.45**|Evaluation                 |Anon [R picks someone]
+**14.45**|Evaluation                 |.
 **15.00**|END 
