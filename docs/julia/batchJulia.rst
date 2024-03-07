@@ -654,7 +654,7 @@ cluster and install the ``CUDA`` package in Julia as in the next sequence of com
      
 
 Once this initial setting is completed, you will be able to use the GPUs available on the
-cluster. Here, there is a simple example for computing a matrix-matrix multplication. As a 
+cluster. Here, there is a simple example for computing a matrix-matrix multiplication. As a 
 reference point, we show the simulation on CPUs as well. 
 
 .. tabs::
