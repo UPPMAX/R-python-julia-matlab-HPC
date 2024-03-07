@@ -88,7 +88,7 @@ need to either add them explicitly (by coding them yourself) or implicitly (by u
 libraries that were coded by others).
 
 In your local machine, you may have some number of cores available and some memory 
-attached to them which can be exploited by using a parallell program. There can be
+attached to them which can be exploited by using a parallel program. There can be
 some limited resources for running your data-production simulations as you may use
 your local machine for other purposes such as writing a manuscript, making a presentation,
 etc. One alternative to your local machine can be a High Performance Computing (HPC)
