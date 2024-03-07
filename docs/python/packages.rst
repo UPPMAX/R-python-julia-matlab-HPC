@@ -33,18 +33,17 @@ Packages
       - 25 mins: challenge
       - 5 mins: feedback
 
-############
+
 Introduction
-############
+------------
 
 Packages are pieces of Python code written to be used by others.
 When possible, using an existing Python package is usually smarter than writing code yourself.
 In this session, 
 we practice working with packages.
 
-***********************************
 Python package installation systems
-***********************************
+-----------------------------------
 
 There are two Python package installation systems,
 called ``conda`` and ``pip``.
@@ -118,35 +117,13 @@ as is taught in `the session on isolated environments <https://uppmax.github.io/
    - You install own packages with the ``pip install`` command (This is the recommended way on HPC2N)
    - At UPPMAX Conda is also available (See Conda section)
 
-Conda
------
+Exercises
+---------
 
-.. questions::
+Here are some exercises, including the answers.
 
-   - What does Conda do?
-   - How to create a Conda environment
-   
-.. objectives::
-
-   - Learn pros and cons with Conda
-   - Learn how to install packages and work with the Conda (isolated) environment
-   
-.. hint::
-
-   - On Bianca (with no internet), Conda is the first choice when installing packages, because there is a local mirror of most of the Conda repositories.
-
-.. note::
-
-
-#########
-Questions
-#########
-
-We ask questions
-
-**********
 Exercise 1
-**********
+----------
 
 .. admonition:: Teaching goals
 
@@ -227,9 +204,8 @@ Exercise 1
         So, no, the Python package ``mhcnuggets`` is not installed.
 
 
-**********
 Exercise 2
-**********
+----------
 
 .. admonition:: Teaching goals
 
@@ -241,9 +217,8 @@ The Python package PyTorch is not installed.
 - Load the TensorFlow module.
 - Confirm that it works
 
-**********
 Question 3
-**********
+----------
 
 .. admonition:: Teaching goals
 
@@ -253,9 +228,8 @@ The Python package Theano is not installed.
 Install Theano.
 
   
-#####
 Links
-#####
+-----
 
 * `Introduction to Python packages <https://aaltoscicomp.github.io/python-for-scicomp/dependencies/>`_
 * `Video: Load and use Python packages on the UPPMAX and HPC2N HPC clusters using pip (YouTube) <https://youtu.be/novRJfAa2QA>`_
