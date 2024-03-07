@@ -100,7 +100,7 @@ What is Julia?
 --------------
 
 Julia is a relatively new Programming language (pre-released 1.0 announced in 2018), compared to well-known and standard languages such as Fortran, C, C++, R, and Python (some of them dated back to the 70's). 
-A common pattern in those well-stablished languages (traditional paradigm) is that they look after either:
+A common pattern in those well-established languages (traditional paradigm) is that they look after either:
 
   - productivity (fast deployment, fast prototyping) or,
   - performance (fast numerical computations). 
@@ -178,7 +178,7 @@ While being on the Julian mode you can enter the ``shell`` mode by typing ``;``:
    shell>pwd
    /current-folder-path
 
-this will allow you to use Linux commands. Notice that the availabilty of these commands
+this will allow you to use Linux commands. Notice that the availability of these commands
 depend on the OS, for instance, on Windows it will depend on the terminal that you have
 installed and if it is visible to the Julia installation. 
 
