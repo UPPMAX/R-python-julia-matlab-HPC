@@ -80,6 +80,7 @@ As a first impression, here is a simple comparison between the two:
 | Installs non-Python software | Yes   | No   |
 +------------------------------+-------+------+
 
+
 Install with pip
 ----------------
 
