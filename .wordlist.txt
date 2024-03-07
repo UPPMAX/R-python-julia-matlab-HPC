@@ -570,11 +570,34 @@ transcode
 stdlib
 julialang
 AWK
- Kj
+Kj
 Xxg
 bXHe
 nworkers
- TOML
+TOML
 julialang
 toml
 UUIDs
+infos
+xeyes
+cendio
+jpg
+MobaXterm
+Nano
+gedit
+largemem
+NVidia
+mmd
+prefs
+scratchspaces
+pojedama
+Projectinfo
+juliapackages
+Precompiling
+DFTK
+dftk
+UUID
+acf
+myfirstpackage
+src
+julian
