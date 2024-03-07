@@ -47,8 +47,11 @@ we practice working with packages.
 Python package installation systems
 ***********************************
 
-There are two Python package installation system.
-In this session, we use `pip`, as it can be used on both HPC clusters.
+There are two Python package installation systems,
+called ``conda`` and ``pip``.
+
+In this session, we use ``pip``, as it can be used on 
+the two HPC clusters used in this course:
 
 +-----------------------------+-----------------+------------------+-----------------+
 | Package installation system | HPC2N           | UPPMAX (Rackham) | UPPMAX (Bianca) |
@@ -58,9 +61,24 @@ In this session, we use `pip`, as it can be used on both HPC clusters.
 | pip                         | Recommended     | Supported        | Unsupported [2] |
 +-----------------------------+-----------------+------------------+-----------------+
 
-
 - ``[1]`` `HPC2N guide against using conda <https://www.hpc2n.umu.se/documentation/guides/anaconda>`_
 - ``[2]`` Bianca has no internet
+
+In this session we use ``pip``, 
+because it is a commonly-used package installation system
+that works on both HPC clusters used in this course.
+For UPPMAX users, we will discuss Conda in the session 
+`Conda at UPPMAX <https://uppmax.github.io/R-python-julia-HPC/python/condaUPPMAX.html>`_.
+
+As a first impression, here is a simple comparison between the two:
+
++------------------------------+-------+------+
+| Parameter                    | conda | pip  |
++==============================+=======+======+
+| Installs Python packages     | Yes   | Yes  |
++------------------------------+-------+------+
+| Installs non-Python software | Yes   | No   |
++------------------------------+-------+------+
 
 Install with pip
 ----------------
@@ -74,9 +92,10 @@ You use ``pip`` this way, in a Linux shell OR a python shell:
 Use ``pip3`` if you loaded python3.
 
 Then (on your own computer) the package ends up 
-in ``~/.local/lib/python<version>/site-packages/`` .
+in ``~/.local/lib/python<version>/site-packages/``.
 
-Note that ``python<version>`` is omitting the last number (bug fix), like 3.9 for python-3.9.6.
+Note that ``python<version>`` is omitting the third number in the version, 
+hence ``python-3.9.6`` will be stored in ``~/.local/lib/python-3.9``.
 We HIGHLY recommend using a virtual environment during installation, 
 since this makes it easier to install for different versions of Python,
 as is taught in `the session on isolated environments <https://uppmax.github.io/HPC-python/isolated.html>`_
@@ -93,7 +112,7 @@ as is taught in `the session on isolated environments <https://uppmax.github.io/
     - from BASH shell with the 
     
         - ``pip list`` command at both centers
-        - ``ml help python/3.10.8`` at UPPMAX
+        - ``module help python/3.10.8`` at UPPMAX
         
    - Installation of Python packages can be done either with **PYPI** or **Conda**
    - You install own packages with the ``pip install`` command (This is the recommended way on HPC2N)
@@ -116,25 +135,8 @@ Conda
 
    - On Bianca (with no internet), Conda is the first choice when installing packages, because there is a local mirror of most of the Conda repositories.
 
-Using Conda
-###########
-      
-.. admonition:: Conda cheat sheet    
-   
-   - List packages in present environment:    ``conda list``
-   - List all environments:            ``conda info -e`` or ``conda env list``
-   - Install a package: ``conda install somepackage``
-   - Install from certain channel (conda-forge): ``conda install -c conda-forge somepackage``
-   - Install a specific version: ``conda install somepackage=1.2.3``
-   - Create a new environment: ``conda create --name myenvironment``
-   - Create a new environment from requirements.txt: ``conda create --name myenvironment --file requirements.txt``
-   - On e.g. HPC systems where you don’t have write access to central installation directory: conda create --prefix /some/path/to/env``
-   - Activate a specific environment: ``conda activate myenvironment``
-   - Deactivate current environment: ``conda deactivate``
-
 .. note::
 
-   Learn how the install with Conda on UPPMAX in the session `Conda at UPPMAX <https://uppmax.github.io/R-python-julia-HPC/python/condaUPPMAX.html>`_ 
 
 #########
 Questions
