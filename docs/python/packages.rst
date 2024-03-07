@@ -50,15 +50,14 @@ Python package installation systems
 There are two Python package installation system.
 In this session, we use `pip`, as it can be used on both HPC clusters.
 
-+-----------------------------+-------------+-------------+
-| Package installation system | HPC2N       | UPPMAX      |
-+=============================+=============+=============+
-| conda                       | Unsupported | Recommended |
-+-----------------------------+-------------+-------------+
-| pip                         | Recommended | Supported   |
-+-----------------------------+-------------+-------------+
++-----------------------------+-----------------+------------------+-----------------+
+| Package installation system | HPC2N           | UPPMAX (Rackham) | UPPMAX (Bianca) |
++=============================+=================+==================+=================+
+| conda                       | Unsupported [1] | Recommended      | Recommended     |
+| pip                         | Recommended     | Supported        | Unsupported     |
++-----------------------------+-----------------+------------------+-----------------+
 
-- `HPC2N guide against using conda <https://www.hpc2n.umu.se/documentation/guides/anaconda>`_
+- ``[1]`` `HPC2N guide against using conda <https://www.hpc2n.umu.se/documentation/guides/anaconda>`_
 
 Install with pip
 ----------------
