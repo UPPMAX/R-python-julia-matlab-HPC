@@ -18,7 +18,7 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
    - Exercise 15 min
    - Total time 30 min
 
-As for Python, Julia can be started after a Julia module is loaded. The module activates paths to a specific version of the julia interpreter and its librarires and packages. 
+As for Python, Julia can be started after a Julia module is loaded. The module activates paths to a specific version of the julia interpreter and its libraries and packages. 
 
 .. admonition:: Short cheat sheet
     :class: dropdown 
