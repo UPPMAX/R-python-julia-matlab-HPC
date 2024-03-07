@@ -654,7 +654,7 @@ cluster and install the ``CUDA`` package in Julia as in the next sequence of com
      
 
 Once this initial setting is completed, you will be able to use the GPUs available on the
-cluster. Here, there is a simple example for computing a matrix-matrix multplication. As a 
+cluster. Here, there is a simple example for computing a matrix-matrix multiplication. As a 
 reference point, we show the simulation on CPUs as well. 
 
 .. tabs::
@@ -730,6 +730,52 @@ reference point, we show the simulation on CPUs as well.
             # Calculation on GPU
             @time A*B
                  
+
+Cluster Managers
+''''''''''''''''
+
+.. code-block:: julia
+
+    using Distributed, ClusterManagers
+    # Adapted from: https://github.com/JuliaParallel/ClusterManagers.jl 
+    # Arguments to the Slurm srun(1) command can be given as keyword
+    # arguments to addprocs.  The argument name and value is translated to
+    # a srun(1) command line argument as follows:
+    # 1) If the length of the argument is 1 => "-arg value",
+    #    e.g. t="0:1:0" => "-t 0:1:0"
+    # 2) If the length of the argument is > 1 => "--arg=value"
+    #    e.g. time="0:1:0" => "--time=0:1:0"
+    # 3) If the value is the empty string, it becomes a flag value,
+    #    e.g. exclusive="" => "--exclusive"
+    # 4) If the argument contains "_", they are replaced with "-",
+    #    e.g. mem_per_cpu=100 => "--mem-per-cpu=100"
+    # Example: add 2 processes, with your project ID, allocated 5 min, and 2 cores
+    addprocs(SlurmManager(2), A="project_ID", t="00:5:00", c="2")
+    
+    # Define a function that computes the square of a number
+    @everywhere function square(x)
+        return x^2
+    end
+    
+    hosts = []
+    result = []
+    for i in workers()
+            println(i)
+    	host = fetch(@spawnat i gethostname())
+    	push!(hosts, host)
+    	result_partial = fetch(@spawnat i square(i))
+    	push!(result, result_partial)
+    end
+    
+    println(hosts)
+    println(result)
+    
+    # The Slurm resource allocation is released when all the workers have
+    # exited
+    for i in workers()
+    	rmprocs(i)
+    end
+
 
 
 

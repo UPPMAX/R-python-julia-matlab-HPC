@@ -42,7 +42,7 @@ As an example, maybe you have been using TensorFlow 1.x.x for your project and n
 - Isolated environments lets you create separate workspaces for different versions of Python and/or different versions of packages. 
 - You can activate and deactivate them one at a time, and work as if the other workspace does not exist.
 
-There are different tools for creating an isolated environement, but they all have some things in common. At both UPPMAX and HPC2N the workflow is: 
+There are different tools for creating an isolated environment, but they all have some things in common. At both UPPMAX and HPC2N the workflow is: 
 
 - You load the Python module you will be using, as well as any site-installed package modules (requires the ``--system-site-packages`` option)
 - You create the isolated environment with something like venv, virtualenv, or conda
@@ -271,7 +271,7 @@ Create a virtual environment called ``vpyenv``. First load the python version yo
 
 **UPPMAX**
 
-Create a virtual environment called ``Example-gpu`` for using on UPPMAX for the numba example under GPUs. First load the python version you want to base your virtual environment on (3.9.5 in this example since that is what is on Snowy):
+Create a virtual environment called ``Example-gpu`` for using on UPPMAX for the numba example and the PyTorch example under GPUs. First load the python version you want to base your virtual environment on (3.9.5 in this example since that is what is on Snowy):
 
       .. code-block:: console
 
@@ -292,7 +292,7 @@ Create a virtual environment called ``Example-gpu`` for using on UPPMAX for the 
          :language: bash
          :prompts: (Example-gpu) $
 
-         pip install --upgrade numpy scipy numba
+         pip install --upgrade numpy scipy numba torch
 
       Check what was installed
 

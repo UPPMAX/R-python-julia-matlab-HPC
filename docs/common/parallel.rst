@@ -88,7 +88,7 @@ need to either add them explicitly (by coding them yourself) or implicitly (by u
 libraries that were coded by others).
 
 In your local machine, you may have some number of cores available and some memory 
-attached to them which can be exploited by using a parallell program. There can be
+attached to them which can be exploited by using a parallel program. There can be
 some limited resources for running your data-production simulations as you may use
 your local machine for other purposes such as writing a manuscript, making a presentation,
 etc. One alternative to your local machine can be a High Performance Computing (HPC)
@@ -125,7 +125,7 @@ Python, Julia, and R languages have different tools and libraries that can help 
 to get more from your local machine or HPC cluster resources.
 
 Threaded programming
-'''''''''''''''''''
+''''''''''''''''''''
 
 To take advantage of the shared memory of the cores, **threaded** mechanisms can be used.
 Low-level programming languages, such as Fortra/C/C++, use OpenMP as the standard
@@ -153,7 +153,7 @@ are different, with NVIDIA and ROCM being two of the most common ones in GPU
 programming.
 
 Distributed programming
-''''''''''''''''''''''
+'''''''''''''''''''''''
 
 Although threaded programming is convenient because one can achieve considerable initial speedups
 with little code modifications, this approach does not scale for more than hundreds of 

@@ -231,11 +231,12 @@ Send the script to the batch:
 GPU code
 ''''''''
 
-**We'll not test this live, but you can try if you have Snowy access**
+**We'll not test this live, but you can try if you have Snowy access or if you have an account on Kebnekaise with GPU access**
 
 .. note:: 
 
-   Since the newest Python package modules on UPPMAX and HPC2N do not contain CUDA, we will use Python 3.9.5 for these examples  
+   Since the newest Python package modules on UPPMAX and HPC2N do not contain CUDA, we will use Python 3.9.x for these examples.
+   There is some problem with PyTorch under the ML package on UPPMAX, so you need to use the virtual environment   
 
 .. tabs::
 
@@ -257,8 +258,12 @@ GPU code
             
             # Load any modules you need, here loading Python 3.9.5 and the corresponding ML packages module 
 
-            module load python_ML_packages/3.9.5-gpu 
+            module load uppmax
+            module load python_ML_packages/3.9.5-gpu python/3.9.5
             
+            # Activate the Example-gpu environment to use the PyTorch we installed there 
+            source <path-to-to-your-virtual-environment>/Example-gpu/bin/activate 
+
             # Run your code
             srun python pytorch_fitting_gpu.py 
             
@@ -277,15 +282,10 @@ GPU code
             
             # Remove any loaded modules and load the ones we need
             module purge  > /dev/null 2>&1
-            module load GCC/12.3.0 OpenMPI/4.1.5 TensorFlow/2.13.0
-            
-            # Activate the virtual environment we installed to
-            # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
-            # Example: /proj/hpc2n2023-110/mrspock/python
-            source <path-to-virt-env>/bin/activate
+            module load GCC/11.2.0 OpenMPI/4.1.1 PyTorch/1.12.1-CUDA-11.4.1
             
             # Run your Python script
-            python example-tf.py
+            srun python pytorch_fitting_gpu.py
 
 Send the script to the batch:
 
@@ -319,12 +319,12 @@ Exercises
           .. code-block:: sh
  
             #!/bin/bash
-            #SBATCH -A hpc2nXXXX-YYY # Change to your own after the course
+            #SBATCH -A hpc2n2024-025 # Change to your own after the course
             #SBATCH --time=00:05:00 # Asking for 5 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here for Python 3.10.4
-            module load GCC/11.3.0  Python/3.10.4
+            # Load any modules you need, here for Python 3.11.3
+            module load GCC/12.3.0  Python/3.11.3
             
             # Run your Python script 
             python sum-2args.py 2 3 
@@ -337,12 +337,12 @@ Exercises
           .. code-block:: sh
  
             #!/bin/bash
-            #SBATCH -A naiss2023-22-44 # Change to your own after the course
+            #SBATCH -A naiss2024-22-107 # Change to your own after the course
             #SBATCH --time=00:05:00 # Asking for 5 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here for Python 3.10.8
-            module load Python/3.10.8
+            # Load any modules you need, here for Python 3.11.8
+            module load Python/3.11.8
             
             # Run your Python script 
             python sum-2args.py 2 3 

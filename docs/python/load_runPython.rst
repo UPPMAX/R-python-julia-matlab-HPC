@@ -38,40 +38,40 @@ Most HPC centres in Sweden is using the same or similar module system for their 
 Check for Python versions
 -------------------------
 
-.. tip::
-    
-   **Code along!**
-
-.. tabs::
-
-   .. tab:: UPPMAX
-
-     Check all available Python versions with:
-
-      .. code-block:: console
-
-          $ module avail python
-
-
-   .. tab:: HPC2N
+.. type-along::
    
-      Check all available version Python versions with:
+   Checking for Python versions 
+   
+   .. tabs::
 
-      .. code-block:: console
+      .. tab:: UPPMAX
+
+         Check all available Python versions with:
+
+         .. code-block:: console
+
+            $ module avail python
+
+
+      .. tab:: HPC2N
+   
+         Check all available version Python versions with:
+
+         .. code-block:: console
  
-         $ module spider Python
+            $ module spider Python
       
-      To see how to load a specific version of Python, including the prerequisites, do 
+         To see how to load a specific version of Python, including the prerequisites, do 
 
-      .. code-block:: console
+         .. code-block:: console
    
-         $ module spider Python/<version>
+            $ module spider Python/<version>
 
-      Example for Python 3.11.3 
+         Example for Python 3.11.3 
 
-      .. code-block:: console
+         .. code-block:: console
 
-         $ module spider Python/3.11.3 
+            $ module spider Python/3.11.3 
 
 .. note::
 
@@ -173,42 +173,40 @@ For reproducibility, we recommend ALWAYS loading a specific module instead of us
 
 For this course, we recommend using Python 3.11.x at UPPMAX (3.11.8) and HPC2N (3.11.3).
 
-.. tip::
+.. type-along::
     
-   **Code along!**
+   Loading a Python module. Here Python 3.11.x
 
+   .. tabs::
 
-.. tabs::
-
-   .. tab:: UPPMAX
+      .. tab:: UPPMAX
    
-      Go back and check which Python modules were available. To load version 3.11.8, do:
+         Go back and check which Python modules were available. To load version 3.11.8, do:
 
-      .. code-block:: console
+         .. code-block:: console
 
-        $ module load python/3.11.8
+            $ module load python/3.11.8
         
-      Note: Lowercase ``p``.
-      For short, you can also use: 
+         Note: Lowercase ``p``.
+         For short, you can also use: 
 
-      .. code-block:: console
+         .. code-block:: console
 
-         $ ml python/3.11.8
-
- 
-   .. tab:: HPC2N 
+            $ ml python/3.11.8
 
  
-      .. code-block:: console
+      .. tab:: HPC2N 
 
-         $ module load GCC/12.3.0 Python/3.11.3
+         .. code-block:: console
 
-      Note: Uppercase ``P``.   
-      For short, you can also use: 
+            $ module load GCC/12.3.0 Python/3.11.3
 
-      .. code-block:: console
+         Note: Uppercase ``P``.   
+         For short, you can also use: 
 
-         $ ml GCC/12.3.0 Python/3.11.3
+         .. code-block:: console
+
+            $ ml GCC/12.3.0 Python/3.11.3
 
 .. warning::
 
@@ -261,58 +259,55 @@ Run an interactive Python shell
 
 For more interactiveness you can run Ipython.
 
-.. tip::
-    
-   **Code along!**
+.. type-along::
 
+   Starting ipython
 
+   .. tabs::
 
-.. tabs::
+      .. tab:: UPPMAX
 
-   .. tab:: UPPMAX
-
-      NOTE: remember to load a python module first. Then start IPython from the terminal
+         NOTE: remember to load a python module first. Then start IPython from the terminal
       
-      .. code-block:: console
+         .. code-block:: console
 
-         $ ipython 
+            $ ipython 
     
-      or 
+         or 
 
-      .. code-block:: console
+         .. code-block:: console
 
-         $ ipython3 
+            $ ipython3 
          
-      UPPMAX has also ``jupyter-notebook`` installed and available from the loaded Python module. Start with
+         UPPMAX has also ``jupyter-notebook`` installed and available from the loaded Python module. Start with
        
-      .. code-block:: console
+         .. code-block:: console
 
-         $ jupyter-notebook 
+            $ jupyter-notebook 
          
-    
-   .. tab:: HPC2N
+      .. tab:: HPC2N
       
-      NOTE: remember to load an IPython module first. You can see possible modules with 
+         NOTE: remember to load an **IPython** module first. You can see possible modules with 
 
-      .. code-block:: console
+         .. code-block:: console
 
-         $ module spider IPython
+            $ module spider IPython
 
-      Then load one of them, for instance 8.14.0:
+         Then load one of them, for instance 8.14.0:
 
-      .. code-block:: sh
+         .. code-block:: sh
 
-         $ ml GCC/12.3.0 IPython/8.14.0
+            $ ml GCC/12.3.0 IPython/8.14.0
 
-      Then start Ipython with (lowercase):
+         Then start Ipython with (lowercase):
 
-      .. code-block:: console
+         .. code-block:: console
 
-         $ ipython
+            $ ipython
 
-      HPC2N also has Jupyter notebook. More about that in the specific session.
+         HPC2N also has Jupyter notebook. More about that in the specific session.
 
-**Examples**
+**Examples** (Try them out! Remember to load suitable modules first!) 
 
 Python
 

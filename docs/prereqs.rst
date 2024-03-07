@@ -38,9 +38,8 @@ Basic terminal clients
 
          - You can save hosts for later.
          - No graphics.
-      
-      .. figure:: ./img/putty.jpg
 
+      .. figure:: ./img/putty.jpg
          :width: 550
          :align: center
 
@@ -118,7 +117,7 @@ ThinLinc
 
 - Rackham, Kebnekaise and Bianca offer graphical login.
 - This gives you a desktop environment, as if you were working on your own computer!
-- Install ThinLinc cient
+- Install ThinLinc client
      - https://www.cendio.com/thinlinc/download
 
 - Login to ThinLinc desktop application by providing the following

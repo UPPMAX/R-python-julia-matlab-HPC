@@ -21,7 +21,7 @@ A GPU is a processor which is from many smaller and more specialized cores. When
 In a typical cluster, some GPUs are attached to a single node resulting in a CPU-GPU
 hybrid architecture. The CPU component is called the host and the GPU part the device.
 
-We can characterize the CPU and GPU performance with two quantities: the **latency** and the **througput**.
+We can characterize the CPU and GPU performance with two quantities: the **latency** and the **throughput**.
 
 **Latency** refers to the time spent in a sole computation. **Throughput** denotes the number of 
 computations that can be performed in parallel. Then, we can say that a CPU has low latency
@@ -80,7 +80,7 @@ And for the A100 GPUs you also need to use ``#SBATCH -p amd_gpu``
 Numba example
 -------------
 
-Numba is installed on HPC2N. We also need numpy, so we are loading SciPy-bundle as we have done before: 
+Numba is installed on HPC2N. We also need numpy, so we are loading SciPy-bundle as we have done before. We will use Python 3.9.x on both  UPPMAX and HPC2N since that is the only version where the GPU packages are currently working correctly.  
 
 We are going to use the following program for testing (it was taken from 
 https://linuxhint.com/gpu-programming-python/ but there are also many great examples at 
@@ -136,40 +136,38 @@ https://numba.readthedocs.io/en/stable/cuda/examples.html):
                  
 As before, we need the batch system to run the code. There are no GPUs on the login nodes. 
 
-.. tabs::
+.. type-along::
 
-   .. tab:: UPPMAX
+   .. tabs::
+
+      .. tab:: UPPMAX
       
-       Here we need to install numba because of some temporary error (otherwise we would use the module ``python_ML_packages/3.9.5-gpu`` on Snowy)
+         Here we need to use the numba we installed in the "Example-gpu" virtual environment because of some temporary error (otherwise we would use the module ``python_ML_packages/3.9.5-gpu`` on Snowy)
+         When you code-along, remember to change the activation path for the virtual environment to your own!
 
-       .. code-block:: console
+         .. code-block:: console
       
-         [bbrydsoe@rackham3 Python]$ module load python/3.9.5
-         [bbrydsoe@rackham3 Python]$ python -m venv --system-site-packages Example-gpu
-         [bbrydsoe@rackham3 Python]$ source Example-gpu/bin/activate
-         (Example-gpu) [bbrydsoe@rackham3 Python]$ pip install --no-cache-dir --no-build-isolation numba
-         (Example-gpu) [bbrydsoe@rackham3 Python]$ interactive -A naiss2023-22-914 -n 1 -M snowy --gres=gpu:1  -t 1:00:01--gres=gpu:1  -t 1:00:01 
-         You receive the high interactive priority.
+            $ interactive -A naiss202-22-107 -n 1 -M snowy --gres=gpu:1  -t 1:00:01 --gres=gpu:1  -t 1:00:01 
+            You receive the high interactive priority.
 
-         Please, use no more than 8 GB of RAM.
+            Please, use no more than 8 GB of RAM.
 
-         Waiting for job 8483006 to start...
-         Starting job now -- you waited for 10 seconds.
+            Waiting for job 8483006 to start...
+            Starting job now -- you waited for 10 seconds.
 
-         [bbrydsoe@s156 Python]$ ml python/3.9.5
-	 [bbrydsoe@s156 Python]$ source Example-gpu/bin/activate
-         (Example-gpu) [bbrydsoe@s156 Python]$ python add-list.py
-         CPU function took 36.849201 seconds.
-         GPU function took 1.574953 seconds.
+            $ ml python/3.9.5
+	    $ source <path-to-virtual-environment>/Example-gpu/bin/activate
+            (Example-gpu) $ python add-list.py
+            CPU function took 36.849201 seconds.
+            GPU function took 1.574953 seconds.
 
-
-   .. tab:: HPC2N
+      .. tab:: HPC2N
    
-      Running a GPU Python code interactively. When you code-along, remember to change the activation path for the virtual environment to your own! 
+         Running a GPU Python code interactively.  
 
       .. code-block:: console
 
-         $ salloc -A hpc2n2023-110 --time=00:30:00 -n 1 --gres=gpu:v100:1 
+         $ salloc -A hpc2n2024-025 --time=00:30:00 -n 1 --gres=gpu:v100:1 
          salloc: Pending job allocation 20346979
          salloc: job 20346979 queued and waiting for resources
          salloc: job 20346979 has been allocated resources
@@ -183,28 +181,27 @@ As before, we need the batch system to run the code. There are no GPUs on the lo
          GPU function took 0.684060 seconds.
 
 
-   .. tab:: Batch script for HPC2N
+      .. tab:: Batch script for HPC2N
 
-      Batch script, ``add-list.sh``, to run the same GPU Python script (the numba code, ``add-list.py``) at Kebnekaise. 
-      As before, submit with ``sbatch add-list.sh`` (assuming you called the batch script thus - change to fit your own naming style). 
+         Batch script, ``add-list.sh``, to run the same GPU Python script (the numba code, ``add-list.py``) at Kebnekaise. 
+         As before, submit with ``sbatch add-list.sh`` (assuming you called the batch script thus - change to fit your own naming style). 
       
-      .. code-block:: console
+         .. code-block:: console
 
-          #!/bin/bash
-          # Remember to change this to your own project ID after the course!
-          #SBATCH -A hpc2n2023-110     
-          # We are asking for 5 minutes
-          #SBATCH --time=00:05:00
-          # Asking for one GPU
-          #SBATCH --gres=gpu:v100:1    
+            #!/bin/bash
+            # Remember to change this to your own project ID after the course!
+            #SBATCH -A hpc2n2025-025     
+            # We are asking for 5 minutes
+            #SBATCH --time=00:05:00
+            # Asking for one GPU
+            #SBATCH --gres=gpu:v100:1    
 
-          # Remove any loaded modules and load the ones we need
-          module purge  > /dev/null 2>&1
-          module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1 
+            # Remove any loaded modules and load the ones we need
+            module purge  > /dev/null 2>&1
+            module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1 
 
-          # Run your Python script
-          python add-list.py
-
+            # Run your Python script
+            python add-list.py
 
 Exercises
 ---------
@@ -353,14 +350,14 @@ Here follows a solution for HPC2N. Try and make it run on Snowy, by using a numb
 
      A template for running the python codes at HPC2N is here:
 
-     .. admonition:: ``job-gpu.sh``
+     .. admonition:: ``integration2d_gpu.sh``
         :class: dropdown
       
          .. code-block:: console 
 
             #!/bin/bash
             # Remember to change this to your own project ID after the course!
-            #SBATCH -A hpc2n2023-110
+            #SBATCH -A hpc2n2024-025
             #SBATCH -t 00:08:00
             #SBATCH -N 1
             #SBATCH -n 28

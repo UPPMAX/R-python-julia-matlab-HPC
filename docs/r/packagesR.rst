@@ -36,7 +36,7 @@ R packages: A short Primer
 What is a package, really?
 ##########################
 
-An R package is essentialy a contained folder and file structure containing R
+An R package is essentially a contained folder and file structure containing R
 code (and possibly C/C++ or other code) and other files relevant for the
 package e.g. documentation(vignettes), licensing and configuration files. Let
 us look at a very simple example 
@@ -65,7 +65,7 @@ An R packages can exist in five possible states
 
 - Source: "source code" or "source files". Development form.
 - Bundled: The source code compressed into a single file, usually `tar.gz` and
-  sometimes refered to as "source tarballs". Files in `.Rbuildignore` are
+  sometimes referred to as "source tarballs". Files in `.Rbuildignore` are
   excluded.
 - Binary: A compressed and pre-compiled version of a bundle built for a
   specific architecture. Usually how the package is provided by CRAN. Much

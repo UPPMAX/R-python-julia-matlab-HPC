@@ -149,8 +149,7 @@ If you only have one screen to work with for the course, try to fit:
 
 .. warning::
 
-   **Please be sure that you have gone through the `pre-requirements <https://uppmax.github.io/R-python-julia-HPC/prereqs.html>`_ **
-
+   - **Please be sure that you have gone through the `pre-requirements <https://uppmax.github.io/R-python-julia-HPC/prereqs.html>`_**
    - It mentions the familiarity with the LINUX command line.
    - The applications to connect to the clusters
       - terminals
@@ -248,12 +247,14 @@ Prepare your environment now!
       .. tab:: UPPMAX
 
          1. Log in to Rackham!
+
            - Terminal: ``ssh -X <user>@rackham.uppmax.uu.se`` 
       
            - ThinLinc app: ``<user>@rackham-gui.uppmax.uu.se``
            - ThinLinc in web browser: ``https://rackham-gui.uppmax.uu.se``
       
          2. If not already: **create a working directory** where you can code along.
+
            - We recommend creating it under the course project storage directory
    
          3. Example. If your username is "mrspock" and you are at UPPMAX, then we recommend you create this folder: 

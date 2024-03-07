@@ -189,7 +189,7 @@ Running a script
                   [~]$ julia serial-sum.jl 3 4 
                   The sum of the two numbers is: 7
 
-**Running Julia REPL (UPPMAX)**
+**Running Julia REPL (UPPMAX/HPC2N)**
 
 - First start Julia using the 4 cores and check if workers are available
 
@@ -231,120 +231,117 @@ When you have finished using the allocation, either wait for it to end, or close
                   salloc: Job allocation 20174806 has been revoked.
                   [~]$
 
-Running IJulia from Jupyter notebook on UPPMAX 
-----------------------------------------------
+Running IJulia and Jupyter notebooks 
+------------------------------------
 
-- For more interactiveness you can run IJulia.
-- You benefit a lot if you are using ThinLinc
-- Like for Python it is possible to run a Julia in a notebook, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the python module as well. In shell:
+.. tabs::
 
-.. code-block:: console
+   .. tab:: UPPMAX
 
-   $ module load julia/1.8.5
-   $ module load python/3.10.8
-   $ julia
+      - For more interactiveness you can run IJulia.
+      - You benefit a lot if you are using ThinLinc
+      - Like for Python it is possible to run a Julia in a notebook, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the python module as well. In shell:
 
-In Julia:
+         .. code-block:: console
 
-.. code-block:: julia-repl
+            $ module load julia/1.8.5
+            $ module load python/3.10.8
+            $ julia
 
-   julia> using IJulia
-   julia> notebook(dir="</path/to/work/dir/>")
+      In Julia:
 
-A Firefox session should start with the Jupyter notebook interface.
+         .. code-block:: julia-repl
 
-.. figure:: ../../img/Jupyter_julia.png
+            julia> using IJulia
+            julia> notebook(dir="</path/to/work/dir/>")
 
-.. warning:: 
+      A Firefox session should start with the Jupyter notebook interface.
 
-   **If not**, you may have to build IJulia the first time with Pkg.build("IJulia"). Since "IJulia" is *pre-installed centrally* on UPPMAX you must activate the central environment by following these steps below. This should only be needed the first time like this
+      .. figure:: ../../img/Jupyter_julia.png
 
-   .. code-block:: julia-repl
-  
-      julia> using Pkg
-      julia> Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");
-      julia> Pkg.build("IJulia")
-      julia> notebook(dir="</path/to/work/dir/>")
+      .. warning:: 
 
-   This builds the package also locally before starting the notebook. If not done, Jupyter will not find the Julia kernel of that version.
+         **If not**, you may have to build IJulia the first time with Pkg.build("IJulia"). Since "IJulia" is *pre-installed centrally* on UPPMAX you must activate the central environment by following these steps below. This should only be needed the first time like this
 
-.. tip::
+      .. code-block:: julia-repl
+            
+         julia> using Pkg
+         julia> Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");
+         julia> Pkg.build("IJulia")
+         julia> notebook(dir="</path/to/work/dir/>")
 
-   With ``notebook(dir="</path/to/work/dir/>", detached=true)`` the notebook will not be killed when you exit your REPL Julia session in the terminal.
+      This builds the package also locally before starting the notebook. If not done, Jupyter will not find the Julia kernel of that version.
 
+      .. tip::
 
+         With ``notebook(dir="</path/to/work/dir/>", detached=true)`` the notebook will not be killed when you exit your REPL Julia session in the terminal.
 
+      .. admonition:: Running IJulia in Jupyter on compute nodes
 
-.. admonition:: Running IJulia in Jupyter on compute nodes at UPPMAX
+         - Jupyter is rather slow on the compute nodes. 
+         - This can be fixed by opening jupyter in a web browsers on your local computer or in ThinLinc
+         - Remember to load python as well and to go via the ``julia -p <number of cores>`` and ``notebook(<options>)`` inside the Julia session instead of starting ``jupiter-notebook`` in the bash shell.
+         - https://uppmax.github.io/HPC-python/jupyter.html
 
-   - Jupyter is rather slow on the compute nodes. 
-   - This can be fixed by opening jupyter in a web browsers on your local computer or in ThinLinc
-   - Remember to load python as well and to go via the ``julia -p <number of cores>`` and ``notebook(<options>)`` inside the Julia session instead of starting ``jupiter-notebook`` in the bash shell.
-   
-   https://uppmax.github.io/HPC-python/jupyter.html
+      Jupyter from terminal
+      #####################
 
-Jupyter from terminal
-#####################
+      If IJulia is precompiled once then you can run Julia from Jupyter directly from the terminal
 
-If IJulia is precompiled once then you can run Julia from Jupyter directly from the terminal
+         .. code-block: console
 
-.. code-block: console
+            $ ml julia/1.8.5 python/3.10.8
+            $ jupyter-notebook --no-browser
 
-   $ ml julia/1.8.5 python/3.10.8
-   $ jupyter-notebook --no-browser
+      - Start the browser from the ThinLinc menu.
+      - Copy-paste one of the address lines from the jupyter output
+      - You can start the Julia kernel in the upper right corner!
 
-- Start the browser from the ThinLinc menu.
-- Copy-paste one of the address lines from the jupyter output
-- You can start the Julia kernel in the upper right corner!
+   .. tab:: HPC2N
 
+      - Like for Python it is possible to run a Julia in a notebook, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the *JupyterLab* and *Julia* modules. In shell:
 
+      .. code-block:: console
 
-Running Julia from Jupyter notebook on HPC2N 
---------------------------------------------
+         $ module load GCC/10.3.0 JupyterLab/3.2.8
+         $ module load Julia/1.8.5-linux-x86_64
+         $ julia
 
-- Like for Python it is possible to run a Julia in a notebook, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the *JupyterLab* and *Julia* modules. In shell:
+      In Julia `package` mode:
 
-.. code-block:: console
+      .. code-block:: julia-repl
 
-   $ module load GCC/10.3.0 JupyterLab/3.2.8
-   $ module load Julia/1.8.5-linux-x86_64
-   $ julia
+         (v1.8) pkg>add IJulia
 
-In Julia `package` mode:
+      Write a bash script similar  to this (call it `job_jupyter.sh`, for instance):
 
-.. code-block:: julia-repl
+      .. code-block:: bash
 
-   (v1.8) pkg>add IJulia
+         #!/bin/bash
+         # Here you should put your own project id
+         #SBATCH -A naiss2024-22-107
+         # This example asks for 1 core
+         #SBATCH -n 1
+         # Ask for a suitable amount of time. Remember, this is the time the Jupyter notebook will be available! HHH:MM:SS.
+         #SBATCH --time=00:10:00
+         # Clear the environment from any previously loaded modules
+         module purge > /dev/null 2>&1
+         # Load the module environment suitable for the job
+         module load GCC/10.3.0 JupyterLab/3.2.8
+         # Load the Julia module
+         ml Julia/1.8.5-linux-x86_64
+         # Start JupyterLab
+         jupyter lab --no-browser --ip $(hostname)
 
-Write a bash script similar  to this (call it `job_jupyter.sh`, for instance):
+      Then, in the output file *slurm-<jobID>.out* file, copy the url that starts with *http://b-cn1403.hpc2n.umu.se:8888/lab* and 
+      paste it in a Firefox browser on Kebnekaise. When the Jupyter notebook interface starts, you can choose the Julia
+      version from the module you loaded (in this case 1.8.5).
 
-.. code-block:: bash
+      .. admonition:: Running Julia in Jupyter on compute nodes at HPC2N
 
-   #!/bin/bash
-   # Here you should put your own project id
-   #SBATCH -A naiss2024-22-107
-   # This example asks for 1 core
-   #SBATCH -n 1
-   # Ask for a suitable amount of time. Remember, this is the time the Jupyter notebook will be available! HHH:MM:SS.
-   #SBATCH --time=00:10:00
-   # Clear the environment from any previously loaded modules
-   module purge > /dev/null 2>&1
-   # Load the module environment suitable for the job
-   module load GCC/10.3.0 JupyterLab/3.2.8
-   # Load the Julia module
-   ml Julia/1.8.5-linux-x86_64
-   # Start JupyterLab
-   jupyter lab --no-browser --ip $(hostname)
+         - On Kebnekaise, you can run Jupyter notebooks with Julia kernels by using batch scripts    
+         - https://www.hpc2n.umu.se/resources/software/jupyter-julia
 
-Then, in the output file *slurm-<jobID>.out* file, copy the url that starts with *http://b-cn1403.hpc2n.umu.se:8888/lab* and 
-paste it in a Firefox browser on Kebnekaise. When the Jupyter notebook interface starts, you can choose the Julia
-version from the module you loaded (in this case 1.8.5).
-
-.. admonition:: Running Julia in Jupyter on compute nodes at HPC2N
-
-   - On Kebnekaise, you can run Jupyter notebooks with Julia kernels by using batch scripts
-   
-   https://www.hpc2n.umu.se/resources/software/jupyter-julia
 
 .. keypoints::
 

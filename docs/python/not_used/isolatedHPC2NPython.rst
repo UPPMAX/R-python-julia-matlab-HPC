@@ -174,7 +174,7 @@ Using the vpyenv created earlier and the spacy we installed under example 1) abo
 
 To use self-installed Python packages in a batch script, you also need to load the above mentioned modules and activate the environment. An example of this will follow later in the course. 
 
-To see which Python packages you, yourself, has installed, you can use ``pip list --user`` while the environement you have installed the packages in are active. 
+To see which Python packages you, yourself, has installed, you can use ``pip list --user`` while the environment you have installed the packages in are active. 
 
 More info
 '''''''''

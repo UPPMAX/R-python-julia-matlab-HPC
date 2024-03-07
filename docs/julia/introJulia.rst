@@ -45,10 +45,10 @@ Preliminary schedule
    * - 9.30
      - Loading modules and running Julia codes 
      - Lecture+code along 30m
-   * - 10.00
+   * - 9.45
      - **Coffee break**
      - 
-   * - 10.15
+   * - 10.00
      - Packages and isolated environments   
      - Lecture+code along 45m
    * - 11.00
@@ -56,11 +56,8 @@ Preliminary schedule
      - 
    * - 11.15
      - Parallel session — UPPMAX: Bianca packages
-     - Lecture+code along 15m
-   * - .
-     - Parallel session — HPC2N: Parallel and multithreaded functions
-     - Lecture+code along 15m   
-   * - 11.50
+     - Lecture+code along 30m
+   * - 11.45
      - Exercises and informal chat
      - 
    * - 12.00
@@ -69,7 +66,7 @@ Preliminary schedule
    * - 13.00
      - SLURM Batch scripts for Julia jobs  
      - Lecture+code along + exercise 45m
-   * - 13.45
+   * - 13.50
      - **break**
      - 
    * - 14.00
@@ -103,7 +100,7 @@ What is Julia?
 --------------
 
 Julia is a relatively new Programming language (pre-released 1.0 announced in 2018), compared to well-known and standard languages such as Fortran, C, C++, R, and Python (some of them dated back to the 70's). 
-A common pattern in those well-stablished languages (traditional paradigm) is that they look after either:
+A common pattern in those well-established languages (traditional paradigm) is that they look after either:
 
   - productivity (fast deployment, fast prototyping) or,
   - performance (fast numerical computations). 
@@ -123,6 +120,10 @@ Among the different features of Julia, is its capability of integrating both asp
 
 Workflow in Julia (DEMO)
 ------------------------
+
+.. demo::
+
+   The teacher will do this as a demo. You will have the opportunity to test in the next session!
 
 After loading the appropriate modules for Julia, you will have access to the
 read-eval-print-loop (REPL) command line by typing ``julia``: 
@@ -177,7 +178,7 @@ While being on the Julian mode you can enter the ``shell`` mode by typing ``;``:
    shell>pwd
    /current-folder-path
 
-this will allow you to use Linux commands. Notice that the availabilty of these commands
+this will allow you to use Linux commands. Notice that the availability of these commands
 depend on the OS, for instance, on Windows it will depend on the terminal that you have
 installed and if it is visible to the Julia installation. 
 

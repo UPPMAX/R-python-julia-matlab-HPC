@@ -9,9 +9,9 @@ Results can be found [here](https://forms.office.com/Pages/AnalysisPage.aspx?Ana
 - Formatted ReadTheDocs
 - materials
 - I liked how easy it was to ask questions, how friendly the lecturers / organizers were and that there was time for trying it yourself. The course material is really nice to read and helpful.
-- Couse materials are really nicely put together
+- Course materials are really nicely put together
 - The instructions and code given in the course material on GitHub
-- That materials were extensive and provided (both in advance and during the day). The break-out sesson was good to let me ask the stupid questions to fellows that could help out or make me catch up.
+- That materials were extensive and provided (both in advance and during the day). The break-out session was good to let me ask the stupid questions to fellows that could help out or make me catch up.
 - I liked the 'code along' parts, when it worked and was an appropriate pace one could actually follow. 
 - Materials
 - Very good material, but a bit chaotic
@@ -23,7 +23,7 @@ Results can be found [here](https://forms.office.com/Pages/AnalysisPage.aspx?Ana
 - Maybe have two streams, since most Python programmers already know about venv, etc.
 - a little bit too much information too fast during the zoom call. It's not possible to fit in all your superb infos from the material in the course itself
 - For some tasks, there was too much time allocated, for example for the pip installs at the start. I would suggest checking in with students more frequently about if they are done or not, and then continuing. Or students could be instructed to join the main room again when they are done. This way, if someone takes longer, you could see who is left in the breakout rooms and check in with them.
-- Lectures should be given more time (or the contents reduced). Unfortunately it was at times a hard to follow. Perhaps, also, make it a bit more clear what is expected from the excercises. 
+- Lectures should be given more time (or the contents reduced). Unfortunately it was at times a hard to follow. Perhaps, also, make it a bit more clear what is expected from the exercises. 
 - It looked like everything was rushed up and it was not clear what we were supposed to do in the breakout rooms
 - Create one single entrance point for all the material where links to the rest are to be found. I got lost with five or more different links, folders and the information overflow as it got started. I also missed the big picture of the super computer (no previous experience), how the different systems are related, the main difference of Rackham and hp2cn/kebnekaise and so on. I felt I have too little information to make informed choices. For example, it would be easier if everybody used the same server, and only one...
 - Much more time spent on code along and instructions, this would improve the course a lot I think! 
