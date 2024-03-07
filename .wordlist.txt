@@ -541,10 +541,11 @@ suboptimal
 summaryJulia
 summaryPython
 summaryR
+pwd
 sw
 tcl
 Tensorflow
-througput
+throughput
 tidyr
 tl
 Tuomanen
@@ -557,4 +558,23 @@ xfun
 xr
 Yuliana
 
-
+Fortran
+Performant
+eval
+pwd
+LinearIndices
+MathConstants
+expanduser
+readlines
+transcode
+stdlib
+julialang
+AWK
+ Kj
+Xxg
+bXHe
+nworkers
+ TOML
+julialang
+toml
+UUIDs
