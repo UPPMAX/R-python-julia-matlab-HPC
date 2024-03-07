@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH -A hpc2n2023-110
-#SBATCH -t 00:05:00
+#SBATCH -A hpc2n2024-025
+#SBATCH -t 00:30:00
 #SBATCH -N 1
 #SBATCH -n 28
 #SBATCH -o output_%j.out   # output file
