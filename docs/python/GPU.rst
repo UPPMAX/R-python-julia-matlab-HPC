@@ -21,7 +21,7 @@ A GPU is a processor which is from many smaller and more specialized cores. When
 In a typical cluster, some GPUs are attached to a single node resulting in a CPU-GPU
 hybrid architecture. The CPU component is called the host and the GPU part the device.
 
-We can characterize the CPU and GPU performance with two quantities: the **latency** and the **througput**.
+We can characterize the CPU and GPU performance with two quantities: the **latency** and the **throughput**.
 
 **Latency** refers to the time spent in a sole computation. **Throughput** denotes the number of 
 computations that can be performed in parallel. Then, we can say that a CPU has low latency
