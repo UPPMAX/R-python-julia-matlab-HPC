@@ -38,9 +38,8 @@ Basic terminal clients
 
          - You can save hosts for later.
          - No graphics.
-      
-      .. figure:: ./img/putty.jpg
 
+      .. figure:: ./img/putty.jpg
          :width: 550
          :align: center
 
