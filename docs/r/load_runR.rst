@@ -269,12 +269,14 @@ You can run an R script in the bash shell like this:
 
 Exit R with ``q()`` in the R prompt. Decide if you want to save your workspace image or not. 
 
-Here is an example of running a short, serial R program at Kebnekaise: 
+.. type-along::
 
-.. admonition:: Serial R program (add2.R) to add two arguments
-   :class: dropdown
+   Here is an example of running a short, serial R program at Kebnekaise: 
 
-   .. code-block:: R
+   .. admonition:: Serial R program (add2.R) to add two arguments
+      :class: dropdown
+
+      .. code-block:: R
         
          
          args <- commandArgs(trailingOnly = TRUE)
@@ -286,11 +288,12 @@ Here is an example of running a short, serial R program at Kebnekaise:
          cat("\n")
            
            
-.. code-block:: console
+   .. code-block:: console
 
-   $ Rscript add2.R 3 4
-    Sum of arguments is:  7
-   $
+      $ Rscript add2.R 3 4
+       Sum of arguments is:  7
+      $
+
 
 .. admonition:: Workflow
 
