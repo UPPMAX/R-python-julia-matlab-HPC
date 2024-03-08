@@ -155,41 +155,45 @@ Check for R versions
 Load an R module
 ----------------
 
-For reproducibility, we recommend ALWAYS loading a specific module instead of using the default version! 
+!!! important
 
-For this course, we recommend using R 4.0.4
+    - For reproducibility, we recommend ALWAYS loading a specific module instead of using the default version! 
 
-.. tabs::
+   -  For this course, we recommend using ``R/4.1.1`` on UPPMAX clusters and ``4.1.2`` on Kebnekaise
 
-   .. tab:: UPPMAX
+.. type-along::
+
+   .. tabs::
+
+      .. tab:: UPPMAX
    
-      Go back and check which R modules were available. To load version 4.0.4, do:
+         Go back and check which R modules were available. To load version 4.1.1, do:
 
-      .. code-block:: console
+         .. code-block:: console
+   
+            $ module load R/4.1.1        
 
-        $ module load R/4.0.4
-        
-      For short, you can also use: 
+         For short, you can also use: 
 
-      .. code-block:: console
+         .. code-block:: console
 
-         $ ml R/4.0.4
-
- 
-   .. tab:: HPC2N
+            $ ml R/4.1.1
 
  
-      .. code-block:: console
+      .. tab:: HPC2N
 
-         $ module load GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
+ 
+         .. code-block:: console
+
+            $ module load GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
       
-         (or 'module load GCC/10.2.0  CUDA/11.1.1  OpenMPI/4.0.5  R/4.0.4' if you need CUDA)
+            (or 'module load GCC/10.2.0  CUDA/11.1.1  OpenMPI/4.0.5  R/4.0.4' if you need CUDA)
 
-      For short, you can also use: 
+         For short, you can also use: 
 
-      .. code-block:: console
+         .. code-block:: console
 
-         $ ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
+            $ ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
 
 .. warning::
 
@@ -204,31 +208,33 @@ Run
 Run R from command line 
 #######################
 
-After loading the R module (and its prerequisites), you start R like this (R/4.0.4): 
+- After loading the R module (and its prerequisites), you start R like this (R/4.0.4): 
 
-.. code-block:: console
+.. type-along
 
-     $ R
+   .. code-block:: console
+
+      $ R
      
-     R version 4.0.4 (2021-02-15) -- "Lost Library Book"
-     Copyright (C) 2021 The R Foundation for Statistical Computing
-     Platform: x86_64-pc-linux-gnu (64-bit)
+      R version 4.0.4 (2021-02-15) -- "Lost Library Book"
+      Copyright (C) 2021 The R Foundation for Statistical Computing
+      Platform: x86_64-pc-linux-gnu (64-bit)
      
-     R is free software and comes with ABSOLUTELY NO WARRANTY.
-     You are welcome to redistribute it under certain conditions.
-     Type 'license()' or 'licence()' for distribution details.
+      R is free software and comes with ABSOLUTELY NO WARRANTY.
+      You are welcome to redistribute it under certain conditions.
+      Type 'license()' or 'licence()' for distribution details.
      
-       Natural language support but running in an English locale
+        Natural language support but running in an English locale
        
-     R is a collaborative project with many contributors.
-     Type 'contributors()' for more information and
-     'citation()' on how to cite R or R packages in publications.
+      R is a collaborative project with many contributors.
+      Type 'contributors()' for more information and
+      'citation()' on how to cite R or R packages in publications.
      
-     Type 'demo()' for some demos, 'help()' for on-line help, or
-     'help.start()' for an HTML browser interface to help.
-     Type 'q()' to quit R.
+      Type 'demo()' for some demos, 'help()' for on-line help, or
+      'help.start()' for an HTML browser interface to help.
+      Type 'q()' to quit R.
      
-     > 
+      > 
      
      
 Run R scripts
