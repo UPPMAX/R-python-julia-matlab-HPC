@@ -235,12 +235,25 @@ Run R from command line
       Type 'q()' to quit R.
      
       > 
-     
+
+   .. code-block:: R
+
+      > 4+7
+      [1] 11
+      > j=4+7
+      > j
+      [1] 11
+      > a=3
+      > b=7
+      > c=a+b
+      > c
+      [1] 10
+
      
 Run R scripts
 #############
     
-You can run an R script in the shell like this:
+You can run an R script in the bash shell like this:
 
 .. code-block:: console
 
@@ -259,7 +272,7 @@ Here is an example of running a short, serial R program at Kebnekaise:
 .. admonition:: Serial R program (add2.R) to add two arguments
    :class: dropdown
 
-   .. code-block:: tcl
+   .. code-block:: R
         
          
          args <- commandArgs(trailingOnly = TRUE)
