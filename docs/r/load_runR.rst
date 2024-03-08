@@ -68,11 +68,11 @@ Check for R versions
    
          $ module spider R/<version>
 
-      Example for R 4.0.4 (recommended version)
+      Example for R 4.1.2 (recommended version)
 
       .. code-block:: console
 
-         $ module spider R/4.0.4 
+         $ module spider R/4.1.2 
 
 .. admonition:: Output at UPPMAX as of October 15 2023
    :class: dropdown
@@ -185,15 +185,15 @@ Load an R module
  
          .. code-block:: console
 
-            $ module load GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
+            $ module load GCC/10.2.0  OpenMPI/4.0.5  R/4.1.2
       
-	 (or 'module load GCC/10.2.0  CUDA/11.1.1  OpenMPI/4.0.5  R/4.0.4' if you need CUDA)
+	 (or 'module load GCC/10.2.0  CUDA/11.1.1  OpenMPI/4.0.5  R/4.1.2' if you need CUDA)
 
          For short, you can also use: 
 
          .. code-block:: console
 
-            $ ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
+            $ ml GCC/10.2.0  OpenMPI/4.0.5  R/4.1.2
 
 .. warning::
 
@@ -208,9 +208,11 @@ Run
 Run R from command line 
 #######################
 
-- After loading the R module (and its prerequisites), you start R like this (R/4.0.4): 
-
 .. type-along::
+
+   - After loading the R module (and its prerequisites), you start R like this:
+	- The output from below is from an older version
+
 
    .. code-block:: console
 
@@ -333,7 +335,7 @@ Exercises
     
    .. code-block:: R
    
-      1) Load R version 4.0.4 
+      1) Load R version 4.1.X 
       2) Start R. Check which libraries are installed. Load one of them.
       3) Quit R
 	
@@ -351,25 +353,25 @@ Exercises
           
             .. code-block:: sh
 	    
-	       [bbrydsoe@rackham3 bbrydsoe]$ ml spider R/4.0.4
+	       [bbrydsoe@rackham3 bbrydsoe]$ ml spider R/4.1.1
 	    
   	       ----------------------------------------------------------------------------
-	         R: R/4.0.4
+	         R: R/4.1.1
 	       ----------------------------------------------------------------------------
 	     
-	            This module can be loaded directly: module load R/4.0.4
+	            This module can be loaded directly: module load R/4.1.1
 		 
 		    Help:
-		        R - use R Version 4.0.4
+		        R - use R Version 4.1.1
 		     
 		        https://www.r-project.org
 		     
 		      Many, many R and Bioconductor packages are available in the module 
-		      'R_packages/4.0.4'
+		      'R_packages/4.1.2'
 
-	       [bbrydsoe@rackham3 bbrydsoe]$ module load R/4.0.4
+	       [bbrydsoe@rackham3 bbrydsoe]$ module load R/4.1.2
 	       Nearly all CRAN and BioConductor packages are installed and available by
-   	       loading the module R_packages/4.0.4 
+   	       loading the module R_packages/4.1.2 
 	       [bbrydsoe@rackham3 bbrydsoe]$
 	    
 	       [bbrydsoe@rackham3 bbrydsoe]$ R
@@ -425,10 +427,10 @@ Exercises
           
             .. code-block:: sh
 	    
-	       b-an01 [~]$ ml spider R/4.0.4
+	       b-an01 [~]$ ml spider R/4.1.2
 
                ----------------------------------------------------------------------------
-	         R: R/4.0.4
+	         R: R/4.1.2
 	       ----------------------------------------------------------------------------
 	           Description:
 		     R is a free software environment for statistical computing and
@@ -436,7 +438,7 @@ Exercises
 		     
 		     
 		   You will need to load all module(s) on any one of the lines below before 
-		   the "R/4.0.4" module is available to load.
+		   the "R/4.1.2" module is available to load.
 		   
 		     GCC/10.2.0  CUDA/11.1.1  OpenMPI/4.0.5
 		     GCC/10.2.0  OpenMPI/4.0.5
@@ -455,10 +457,10 @@ Exercises
 		      assertive.types/0.0-3 (E), assertive/0.3-6 (E), assertthat/0.2.1 (E), AUC/0.3.0 (E), 
 		      ...
 		      
-		      b-an01 [~]$ module load GCC/10.2.0  OpenMPI/4.0.5 R/4.0.4
+		      b-an01 [~]$ module load GCC/10.2.0  OpenMPI/4.0.5 R/4.1.2
 		      b-an01 [~]$ R
 		      
-		      R version 4.0.4 (2021-02-15) -- "Lost Library Book"
+		      R version 4.1.2 (2021-02-15) -- "Lost Library Book"
 		      Copyright (C) 2021 The R Foundation for Statistical Computing
 		      Platform: x86_64-pc-linux-gnu (64-bit)
 		      
@@ -491,7 +493,7 @@ Exercises
     
     .. code-block:: sh
     
-        1) Load R version 4.0.4 (if you have not done so already)
+        1) Load R version 4.1.X (if you have not done so already)
 	2) Run the small R script called ``hello.R``, using ``Rscript``
 	
     Remember to check if a module you are loading has prerequisites, and load those first if it does. In this case it depends on whether you do the exercises on Kebnekaise or Rackham. 
