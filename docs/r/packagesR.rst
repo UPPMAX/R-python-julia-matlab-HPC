@@ -252,32 +252,34 @@ $HOME/.Renviron``
 **NOTE**: In this example we are going to assume you have chosen to place the R packages in a directory under your home directory, but in general it might be good to use the project storage for space reasons. As mentioned, you will need
 separate ones for each R version.
 
-If you have not yet installed any packages to R yourself, the environment file
-should be empty and you can update it like this: 
+If you have not yet installed any packages to R yourself, the environment file should be empty and you can update it like this: 
 
 .. code-block:: console 
 
-   $ echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron
+   $ echo R_LIBS_USER="$HOME/R-packages-%V" > ~/.Renviron
 
-If it is **not** empty, you can edit ``$HOME/.Renviron`` with your favorite
-editor so that ``R_LIBS_USER`` contain the path to your chosen directory for
-own-installed R packages. It should look something like this when you are done:
+.. warning::
+
+   - If it is **not empty**, you can edit ``$HOME/.Renviron`` with your favorite editor so that ``R_LIBS_USER`` contains the path to your chosen directory for own-installed R packages. 
+
+
+It should look something like this when you are done:
 
 .. code-block:: console 
 
    $ R_LIBS_USER="/home/u/user/R-packages-%V"
 
 
-| NOTE: Replace ``/home/u/user`` with the value of ``$HOME``. Run ``echo $HOME`` to see its value.
-| NOTE: The ``%V`` should be written as-is, it's substituted at runtime with the active R version.
+|:NOTE:| Replace ``/home/u/user`` with the value of ``$HOME``. Run ``echo $HOME`` to see its value.
+|:NOTE:| The ``%V`` should be written as-is, it's substituted at runtime with the active R version.
 
 For each version of R you are using, create a directory matching the pattern
 used in ``.Renviron`` to store your packages in. This example is shown for R
-version 4.0.4:
+version 4.1.1:
 
 .. code-block:: sh 
 
-   $ mkdir -p $HOME/R-packages-4.0.4
+   $ mkdir -p $HOME/R-packages-4.1.1
 
 
 Automatical download and install from CRAN
