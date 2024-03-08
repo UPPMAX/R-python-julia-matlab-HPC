@@ -236,7 +236,7 @@ Run R from command line
      
       > 
 
-   .. code-block:: R
+   .. code-block:: rconsole
 
       > 4+7
       [1] 11
