@@ -187,7 +187,7 @@ Load an R module
 
             $ module load GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
       
-            (or 'module load GCC/10.2.0  CUDA/11.1.1  OpenMPI/4.0.5  R/4.0.4' if you need CUDA)
+	 (or 'module load GCC/10.2.0  CUDA/11.1.1  OpenMPI/4.0.5  R/4.0.4' if you need CUDA)
 
          For short, you can also use: 
 
@@ -210,7 +210,7 @@ Run R from command line
 
 - After loading the R module (and its prerequisites), you start R like this (R/4.0.4): 
 
-.. type-along
+.. type-along::
 
    .. code-block:: console
 
