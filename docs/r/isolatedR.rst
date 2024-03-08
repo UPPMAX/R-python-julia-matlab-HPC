@@ -169,7 +169,7 @@ Verify that the ``renv`` directory as well as lock file was created
 
 Relaunch and check at the library paths
 
-.. code-block:: R
+.. code-block:: Rconsole
 
    > .libPaths()
    [1] "/crex/proj/py-r-jl/matpiq/r_proj/renv/library/R-4.1/x86_64-pc-linux-gnu"
@@ -229,14 +229,15 @@ Then load conda and create the environment
 
 .. code-block:: console
 
-   $ mamba env create -f r_env.yaml
+   $ module load conda
+   $ conda env create -f r_env.yaml
 
 Next, we can activate the environment and verify that we have indeed have an
 isolated R environment
 
 .. code-block:: console
 
-   $ conda activate r_env
+   $ source activate r_env
    $ which R
    ~/.conda/envs/my_r_env/bin/R
 
