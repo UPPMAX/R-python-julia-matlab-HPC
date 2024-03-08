@@ -355,22 +355,23 @@ This is how you install a package from GitHub, inside R:
 Example
 *******
 
-In this example we want to install the package ``quantstrat``. It is not on
-CRAN, so let's get it from the GitHub page for the project:
-https://github.com/braverock/quantstrat 
+.. type-along::
 
-We also need to install devtools so we can install packages from GitHub. In
-addition, ``quantstrat`` has some prerequisites, some on CRAN, some on GitHub,
-so we need to install those as well. 
+   In this example we want to install the package ``quantstrat``. It is not on CRAN, so let's get it from the GitHub page for the project:
+   https://github.com/braverock/quantstrat 
 
-.. code-block:: R 
+   We also need to install devtools so we can install packages from GitHub. In
+   addition, ``quantstrat`` has some prerequisites, some on CRAN, some on GitHub,
+   so we need to install those as well. 
 
-   install.packages("devtools") # ONLY ONCE
-   install.packages("FinancialInstrument") 
-   install.packages("PerformanceAnalytics") 
+   .. code-block:: R 
+
+      install.packages("devtools") # ONLY ONCE
+      install.packages("FinancialInstrument") 
+      install.packages("PerformanceAnalytics") 
    
-   devtools::install_github("braverock/blotter")
-   devtools::install_github("braverock/quantstrat")
+      devtools::install_github("braverock/blotter")
+      devtools::install_github("braverock/quantstrat")
 
     
 Manual download and install
