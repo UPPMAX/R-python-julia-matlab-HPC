@@ -24,14 +24,14 @@ Isolated
     
      .. code-block:: sh
 
-          $ module load python/3.10.8
-          $ python -m venv --system-site-packages /proj/naiss2023-22-914/<user>/python/analysis
+          $ module load python/3.11.8
+          $ python -m venv --system-site-packages /proj/naiss2024-22-107/<user>/python/analysis
     
       Activate it.
 
       .. code-block:: sh
 
-         $ source /proj/naiss2023-22-914/<user>/python/analysis/bin/activate
+         $ source /proj/naiss2024-22-107/<user>/python/analysis/bin/activate
 
       - Note that your prompt is changing to start with (analysis) to show that you are within an environment.
       - Install the packages from the file::
@@ -48,14 +48,14 @@ Isolated
     
      .. code-block:: sh
 
-          $ module load GCC/11.3.0 Python/3.10.4
-          $ virtualenv --system-site-packages /proj/nobackup/hpc2n2023-110/<your-directory>/analysis 
+          $ module load GCC/12.3.0 Python/3.11.3
+          $ virtualenv --system-site-packages /proj/nobackup/hpc2n2024-025/<your-directory>/analysis 
       
       Activate it.
 
       .. code-block:: sh
 
-         $ source /proj/nobackup/hpc2n2023-110/<your-directory>/analysis/bin/activate
+         $ source /proj/nobackup/hpc2n2024-025/<your-directory>/analysis/bin/activate
 
       - Note that your prompt is changing to start with (analysis) to show that you are within an environment.
       - Install the packages from the file::
@@ -75,11 +75,11 @@ Conda (UPPMAX)
 .. challenge:: UPPMAX: Create a conda environment and install some packages
     
    - Be sure to deactivate any virtual environment. 
-   - First check the current installed packages while having ``python/3.10.8`` loaded
+   - First check the current installed packages while having ``python/3.11.8`` loaded
    - Open a new terminal and have the old one available for later comparison
-   - Use the conda module on Rackham and create an environment with name ``HPC-python23`` with ``python 3.7``  and ``numpy 1.15``
+   - Use the conda module on Rackham and create an environment with name ``HPC-python24`` with ``python 3.11``  and ``numpy 1.15``
    
-   	- Use your a path for ``CONDA_ENVS_PATH`` of your own choice or ``/proj/naiss2023-22-914/<user>/python``
+   	- Use your a path for ``CONDA_ENVS_PATH`` of your own choice or ``/proj/naiss2024-22-107/<user>/python``
         - (It may take a minute or so)
 	
    - Activate!
@@ -97,9 +97,9 @@ Conda (UPPMAX)
           .. code-block:: sh
 
             $ module load conda
-            $ export CONDA_ENVS_PATH=/proj/naiss2023-22-914/<user>/python
-            $ conda create --name HPC-python23 python=3.7 numpy=1.15
-            $ source activate HPC-python23
+            $ export CONDA_ENVS_PATH=/proj/naiss2024-22-107/<user>/python
+            $ conda create --name HPC-python24 python=3.11 numpy=1.15
+            $ source activate HPC-python24
             $ pip list
             $ python -V
             $ source deactivate
@@ -130,12 +130,12 @@ Batch
           .. code-block:: sh
  
             #!/bin/bash
-            #SBATCH -A hpc2n2023-110 # Change to your own after the course
+            #SBATCH -A hpc2n2024-025 # Change to your own after the course
             #SBATCH --time=00:05:00 # Asking for 5 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here for Python 3.9.5
-            module load GCC/11.3.0  Python/3.10.4
+            # Load any modules you need, here for Python 3.11.3
+            module load GCC/12.3.0  Python/3.11.3
             
             # Run your Python script 
             python sum-2args.py 2 3 
@@ -148,12 +148,12 @@ Batch
           .. code-block:: sh
  
             #!/bin/bash
-            #SBATCH -A naiss2023-22-914 # Change to your own after the course
+            #SBATCH -A naiss2024-22-107 # Change to your own after the course
             #SBATCH --time=00:05:00 # Asking for 5 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here for Python 3.10.8
-            module load Python/3.10.8
+            # Load any modules you need, here for Python 3.11.8
+            module load python/3.11.8
             
             # Run your Python script 
             python sum-2args.py 2 3 
