@@ -11,7 +11,7 @@
 module purge  > /dev/null 2>&1
 module load python/3.9.5  
 
-# Load virtual environment - change <path-to-virt-env> and <virt-env> to the actual path and name you used for your venv
+# Load virtual environment - change <path-to-virt-env> and <virt-env> to the actual path and name you used for your venv. A good one to use is the Example-gpu virtual environment you created under the "Isolated environments" session
 source <path-to-virt-env>/<virt-env>/bin/activate   
 	  
 # Run your Python script

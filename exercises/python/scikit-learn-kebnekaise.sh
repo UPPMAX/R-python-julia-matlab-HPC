@@ -1,6 +1,6 @@
 #!/bin/bash
 # Remember to change this to your own project ID after the course!
-#SBATCH -A hpc2n2023-110
+#SBATCH -A hpc2n2024-025
 # We are asking for 5 minutes
 #SBATCH --time=00:05:00
 # Asking for one GPU

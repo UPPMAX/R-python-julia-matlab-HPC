@@ -1,6 +1,6 @@
 #!/bin/bash
-# Batch script for running the numba program "add-list.py" on Kebnekaise
-#SBATCH -A naiss2023-22-914 # Remember to change this to your own project ID
+# Batch script for running the program "multiproc.py" on Rackham
+#SBATCH -A naiss2024-22-107 # Remember to change this to your own project ID
 # We are asking for 5 minutes
 #SBATCH --time=00:05:00
 #SBATCH -n 4
