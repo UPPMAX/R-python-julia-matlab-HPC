@@ -32,7 +32,7 @@ You could try creating a batch job for Rackham if only one for Kebnekaise exist!
 
 ## PyTorch example
 
-- ``pytorch_fitting_gpu.py``  : python code, fitting ``y=sin(x) with a third order polynomial using PyTorch 
+- ``pytorch_fitting_gpu.py``  : python code, fitting ``y=sin(x)`` with a third order polynomial using PyTorch 
 - ``pytorch_fitting_gpu-kebnekaise.sh``
 - ``pytorch_fitting_gpu-snowy.sh``
 
