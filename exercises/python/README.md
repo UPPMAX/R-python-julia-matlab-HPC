@@ -44,37 +44,37 @@ You could try creating a batch job for Rackham if only one for Kebnekaise exist!
 
 ## numba example
 
-integration2d_gpu.py  : python code, 2D integration problem with the CUDA support for Numba 
-integration2d_gpu_shared.py
-integration2d_gpu.sh
+- ``integration2d_gpu.py``  : python code, 2D integration problem with the CUDA support for Numba 
+- ``integration2d_gpu_shared.py``
+- ``integration2d_gpu.sh``
 
 ## multiproc.py example
 
-multiproc.py 
-multiproc-kebnekaise.sh
-multiproc-rackham.sh
+- ``multiproc.py``
+- ``multiproc-kebnekaise.sh``
+- ``multiproc-rackham.sh``
 
 ## sum-2args.py example
 
-sum-2args.py  : python code, sums to numbers given as arguments 
-sum-2args-kebnekaise.sh
-sum-2args-rackham.sh
+- ``sum-2args.py``  : python code, sums to numbers given as arguments 
+- ``sum-2args-kebnekaise.sh``
+- ``sum-2args-rackham.sh``
 
 ## Virtual environment in a batch job example
 
-seaborn-code-kebnekaise.py
-serial-python-virt-kebnekaise.sh
-seaborn-code-rackham.py
-serial-python-virt-rackham.sh
+- ``seaborn-code-kebnekaise.py``
+- ``serial-python-virt-kebnekaise.sh``
+- ``seaborn-code-rackham.py``
+- ``serial-python-virt-rackham.sh``
 
 ## scikit example
 
-scikit-learn-kebnekaise.py  : python code example for Kebnekaise, using scikit-learn 
-scikit-learn-kebnekaise.sh
+- ``scikit-learn-kebnekaise.py``  : python code example for Kebnekaise, using scikit-learn 
+- ``scikit-learn-kebnekaise.sh``
 
 ## some example batch scripts 
 
-sequential-python.sh
+- ``sequential-python.sh``
 
-serial-python-scipybundle-kebnekaise.sh
+- ``serial-python-scipybundle-kebnekaise.sh``
     
