@@ -22,9 +22,9 @@ Introduction R
       under the "Exercises" directory:
       https://github.com/UPPMAX/R-python-julia-HPC/tree/main/Exercises
     - On HPC2N, you can copy the exercises in a tarball 
-      from ``/proj/nobackup/hpc2n2023-110/Exercises.tar.gz``
+      from ``/proj/nobackup/hpc2n2024-025/Exercises.tar.gz``
     - On UPPMAX you can copy the exercises in a tarball 
-      from ``/proj/naiss2023-22-914/Exercises.tar.gz``
+      from ``/proj/naiss2024-22-107/Exercises.tar.gz``
 
 .. challenge:: Download the exercise files
 
@@ -56,7 +56,11 @@ Preliminary schedule
      - Packages
      - Lecture+code along 30m
    * - 10.30
-     - Virtual environments
+     - **break**
+     - 
+   * 10:45
+     - HPC2N: ThinLinc & RStudio <br>
+       UPPMAX: ThinLinc & RStudio
      - Lecture+code along 30m
    * - 11.00
      - **break**
