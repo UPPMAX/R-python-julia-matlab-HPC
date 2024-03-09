@@ -13,34 +13,34 @@ You could try creating a batch job for Rackham if only one for Kebnekaise exist!
 
 ## add.py example
 
-add2.py  :  python code, example for running interactively or from command line
+- ``add2.py``  :  python code, example for running interactively or from command line
 
 ## example.py example 
 
-example.py  : python code, adds two numbers given in the file. For interactive/command line testing
+- ``example.py``  : python code, adds two numbers given in the file. For interactive/command line testing
 
 ## TensorFlow example
 
-my_tf_program.py  : python code, TensorFlow example. Used in ``gpu-python-kebnekaise.sh``
-gpu-python-kebnekaise.sh  : batch script for the above python code
+- ``my_tf_program.py``  : python code, TensorFlow example. Used in ``gpu-python-kebnekaise.sh``
+- ``gpu-python-kebnekaise.sh``  : batch script for the above python code
 
 ## add-list.py example
 
-add-list.py  : python code, uses numba to add two vectors
-add-list-kebnekaise.sh  : Kebnekaise batch script to run the above ``add-list.py``
-add-list-snowy.sh  : Snowy batch script to run the above ``add-list.py``
+- ``add-list.py``  : python code, uses numba to add two vectors
+- ``add-list-kebnekaise.sh``  : Kebnekaise batch script to run the above ``add-list.py``
+- ``add-list-snowy.sh``  : Snowy batch script to run the above ``add-list.py``
 
 ## PyTorch example
 
-pytorch_fitting_gpu.py  : python code, fitting y=sin⁡(x)y=sin(x) with a third order polynomial using PyTorch 
-pytorch_fitting_gpu-kebnekaise.sh
-pytorch_fitting_gpu-snowy.sh
+- ``pytorch_fitting_gpu.py``  : python code, fitting ``y=sin(x) with a third order polynomial using PyTorch 
+- ``pytorch_fitting_gpu-kebnekaise.sh``
+- ``pytorch_fitting_gpu-snowy.sh``
 
 ## mmult.py example 
 
-mmmult.py  : python code, does matrix-matrix multiplication using numpy
-mmmult-kebnekaise.sh
-mmmult-rackham.sh
+- ``mmmult.py``  : python code, does matrix-matrix multiplication using numpy
+- ``mmmult-kebnekaise.sh``
+- ``mmmult-rackham.sh``
 
 ## numba example
 
