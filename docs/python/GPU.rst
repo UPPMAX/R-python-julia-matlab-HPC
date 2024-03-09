@@ -180,26 +180,26 @@ As before, we need the batch system to run the code. There are no GPUs on the lo
             CPU function took 31.905025 seconds.
             GPU function took 0.684060 seconds.
 
-         .. tab:: Batch script for HPC2N
+      .. tab:: Batch script for HPC2N
 
-            Batch script, "add-list.sh", to run the same GPU Python script (the numba code, "add-list.py") at Kebnekaise. As before, submit with "sbatch add-list.sh" (assuming you called the batch script thus - change to fit your own naming style). 
+         Batch script, "add-list.sh", to run the same GPU Python script (the numba code, "add-list.py") at Kebnekaise. As before, submit with "sbatch add-list.sh" (assuming you called the batch script thus - change to fit your own naming style). 
       
-            .. code-block:: console
+         .. code-block:: console
 
-               #!/bin/bash
-               # Remember to change this to your own project ID after the course!
-               #SBATCH -A hpc2n2025-025     
-               # We are asking for 5 minutes
-               #SBATCH --time=00:05:00
-               # Asking for one GPU
-               #SBATCH --gres=gpu:v100:1    
+            #!/bin/bash
+            # Remember to change this to your own project ID after the course!
+            #SBATCH -A hpc2n2025-025     
+            # We are asking for 5 minutes
+            #SBATCH --time=00:05:00
+            # Asking for one GPU
+            #SBATCH --gres=gpu:v100:1    
 
-               # Remove any loaded modules and load the ones we need
-               module purge  > /dev/null 2>&1
-               module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1 
+            # Remove any loaded modules and load the ones we need
+            module purge  > /dev/null 2>&1
+            module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1 
 
-               # Run your Python script
-               python add-list.py
+            # Run your Python script
+            python add-list.py
 
 
 Exercises

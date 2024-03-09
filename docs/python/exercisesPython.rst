@@ -7,7 +7,7 @@ Isolated
 
 .. challenge:: Create a virtual environment with a requirements file below
 
-   - Create a virtual environment with Python 3.10.X (check what is available on your cluster) with the name ``analysis``.
+   - Create a virtual environment with Python 3.11.X (check what is available on your cluster) with the name ``analysis``.
    - Install packages defined by the ``requirements.txt`` file (save it).
   
    .. code-block:: sh
@@ -77,7 +77,7 @@ Conda (UPPMAX)
    - Be sure to deactivate any virtual environment. 
    - First check the current installed packages while having ``python/3.11.8`` loaded
    - Open a new terminal and have the old one available for later comparison
-   - Use the conda module on Rackham and create an environment with name ``HPC-python24`` with ``python 3.11``  and ``numpy 1.15``
+   - Use the conda module on Rackham and create an environment with name ``HPC-python24`` with ``python 3.11``  and ``numpy 1.22``
    
    	- Use your a path for ``CONDA_ENVS_PATH`` of your own choice or ``/proj/naiss2024-22-107/<user>/python``
         - (It may take a minute or so)
@@ -98,7 +98,7 @@ Conda (UPPMAX)
 
             $ module load conda
             $ export CONDA_ENVS_PATH=/proj/naiss2024-22-107/<user>/python
-            $ conda create --name HPC-python24 python=3.11 numpy=1.15
+            $ conda create --name HPC-python24 python=3.11 numpy=1.22
             $ source activate HPC-python24
             $ pip list
             $ python -V
