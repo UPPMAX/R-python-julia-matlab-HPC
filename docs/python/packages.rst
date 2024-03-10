@@ -190,7 +190,7 @@ Here we see that one comes already installed with the module system.
 
     .. tab:: Exercise 1.4
 
-        Is the Python package `mhcnuggets` installed? If yes, which version?
+        Is the Python package ``mhcnuggets` `installed? If yes, which version?
 
     .. tab:: Answer HPC2N
 
@@ -231,7 +231,7 @@ machine learning module.
 
     .. tab:: Exercise 2.1
 
-        Read [the UPPMAX documentation on Tensorflow](http://docs.uppmax.uu.se/software/tensorflow/).
+        Read `the UPPMAX documentation on Tensorflow<http://docs.uppmax.uu.se/software/tensorflow/>`_.
 
         Which of the versions should you use?
 
@@ -264,7 +264,7 @@ machine learning module.
 
     .. tab:: Exercise 2.2
 
-        Read [the UPPMAX documentation on how to determine if a Python package comes with your Python module](http://docs.uppmax.uu.se/software/python/#determine-if-a-python-package-comes-with-your-python-module).
+        Read `the UPPMAX documentation on how to determine if a Python package comes with your Python module<http://docs.uppmax.uu.se/software/python/#determine-if-a-python-package-comes-with-your-python-module>`_.
 
         Is the Python package `pandas` installed? If yes, which version?
 
@@ -318,7 +318,7 @@ machine learning module.
 
     .. tab:: Exercise 2.4
 
-        Is the Python package `mhcnuggets` installed? If yes, which version?
+        Is the Python package ``mhcnuggets` `installed? If yes, which version?
 
     .. tab:: Answer HPC2N
 
@@ -358,7 +358,7 @@ Here we install a Python package ourselves.
 
     .. tab:: Exercise 3.1
 
-        Read [the UPPMAX documentation on how to install Python packages using pip](http://docs.uppmax.uu.se/software/python_install_packages/#pip).
+        Read `the UPPMAX documentation on how to install Python packages using pip<http://docs.uppmax.uu.se/software/python_install_packages/#pip>`_.
 
         We will be using the first install with ``--user``.
 
@@ -395,7 +395,7 @@ Here we install a Python package ourselves.
 
     .. tab:: Exercise 3.3
 
-        Confirm that the Python package `mhcnuggets` is installed now.
+        Confirm that the Python package ``mhcnuggets` `is installed now.
         Which version has been installed?
 
     .. tab:: Answer
