@@ -146,13 +146,17 @@ Parallel code
 foreach and doParallel
 ::::::::::::::::::::::
 
-.. tabs::
+.. type-along:: 
 
-   .. tab:: UPPMAX
+   Short parallel example, using foreach and doParallel
+   
+   .. tabs::
 
-        Short parallel example (Since we are using packages "foreach" and "doParallel", you need to use module R_packages/4.1.1 instead of R/4.1.1. 
+      .. tab:: UPPMAX
 
-        .. code-block:: sh
+         Short parallel example (Since we are using packages "foreach" and "doParallel", you need to use module R_packages/4.1.1 instead of R/4.1.1. 
+
+         .. code-block:: sh
         
             #!/bin/bash
             #SBATCH -A naiss2024-22-107
@@ -167,11 +171,11 @@ foreach and doParallel
             R -q --slave -f parallel_foreach.R
 
 
-   .. tab:: HPC2N
+      .. tab:: HPC2N
 
-        Short parallel example (using packages "foreach" and "doParallel" which are included in the R module) for running on Kebnekaise. Loading R/4.0.4 and its prerequisites. 
+         Short parallel example (using packages "foreach" and "doParallel" which are included in the R module) for running on Kebnekaise. Loading R/4.0.4 and its prerequisites. 
        
-        .. code-block:: sh
+         .. code-block:: sh
 
             #!/bin/bash
             #SBATCH -A hpc2n2024-025 # Change to your own project ID
@@ -186,11 +190,11 @@ foreach and doParallel
             R -q --slave -f parallel_foreach.R
 
 
-   .. tab:: parallel_foreach.R
-
-        This R script uses packages "foreach" and "doParallel". 
+      .. tab:: parallel_foreach.R
+ 
+         This R script uses packages "foreach" and "doParallel". 
        
-        .. code-block:: R
+         .. code-block:: R
 
             library(parallel)
             library(foreach)
@@ -227,22 +231,26 @@ foreach and doParallel
               print(Sys.time() - start_time)
               }
 
-Send the script to the batch:
+   Send the script to the batch:
 
-.. code-block:: console
+   .. code-block:: console
 
-   $ sbatch <batch script>
+      $ sbatch <batch script>
 
 Rmpi
 ::::
 
-.. tabs::
+.. type-along:: 
 
-   .. tab:: UPPMAX
+   Short parallel example using package “Rmpi” 
 
-        Short parallel example (using package "Rmpi", so we need to load the module R_packages/4.1.1 instead of R/4.1.1 and we need to load a suitable openmpi module, openmpi/4.0.3)
+   .. tabs::
 
-        .. code-block:: sh
+      .. tab:: UPPMAX
+
+         Short parallel example (using package "Rmpi", so we need to load the module R_packages/4.1.1 instead of R/4.1.1 and we need to load a suitable openmpi module, openmpi/4.0.3)
+
+         .. code-block:: sh
         
             #!/bin/bash
             #SBATCH -A naiss2024-22-107
@@ -261,11 +269,11 @@ Rmpi
            
 
 
-   .. tab:: HPC2N
+      .. tab:: HPC2N
 
-        Short parallel example (using packages "Rmpi"). Loading R/4.0.4 and its prerequisites. 
+         Short parallel example (using packages "Rmpi"). Loading R/4.0.4 and its prerequisites. 
        
-        .. code-block:: sh
+         .. code-block:: sh
 
             #!/bin/bash
             #SBATCH -A hpc2n2024-025# Change to your own project ID
@@ -282,11 +290,11 @@ Rmpi
             mpirun -np 1 R CMD BATCH --no-save --no-restore Rmpi.R output.out 
    
 
-   .. tab:: Rmpi.R
+      .. tab:: Rmpi.R
 
-        This R script uses package "Rmpi". 
+         This R script uses package "Rmpi". 
        
-        .. code-block:: sh
+         .. code-block:: sh
         
            # Load the R MPI package if it is not already loaded.
            if (!is.loaded("mpi_initialize")) {
@@ -322,25 +330,59 @@ Rmpi
            
            mpi.quit()
 
-.. code-block:: console
+      Send the script to the batch system: 
 
-   $ sbatch <batch script>
+      .. code-block:: console
 
-ML code
-''''''''
+         $ sbatch <batch script>
+
+
+Using GPUs in a batch job
+'''''''''''''''''''''''''
+
+There are generally either not GPUs on the login nodes or they cannot be accessed for computations. To use them you need to either launch an interactive job or submit a batch job.
+
+**UPPMAX only**
+
+Rackham’s compute nodes do not have GPUs. You need to use Snowy for that. 
+
+You need to use this batch command (for x being the number of cards, 1 or 2):
+
+.. code-block::
+
+   #SBATCH -M snowy
+   #SBATCH --gres=gpu:x
+
+**HPC2N**
+
+Kebnekaise’s GPU nodes are considered a separate resource, and the regular compute nodes do not have GPUs.
+
+You need to use this to access the batch system: 
+
+.. code-block::
+
+   #SBATCH --gres=gpu:<card>:x 
+   
+   for <card>=v100 or a100 and x=1 or 2.
+
+In addition, for the A100 GPUs you also need to use 
+
+.. code-block::
+
+   #SBATCH -p amd_gpu
+   
+**Example batch script**
 
 .. tabs::
 
    .. tab:: UPPMAX
 
-        Short ML example for running on Rackham.         
-       
         .. code-block:: sh
 
             #!/bin/bash
             #SBATCH -A naiss2024-22-107
-            #Asking for 10 min.
-            #SBATCH -t 00:10:00
+            #Asking for runtime: hours, minutes, seconds. At most 1 week
+            #SBATCH -t HHH:MM:SS
             #SBATCH --exclusive
             #SBATCH -p node
             #SBATCH -N 1
@@ -352,89 +394,33 @@ ML code
             #SBATCH --error=error%J.error
             
             ml purge > /dev/null 2>&1
-            ml R_packages/4.1.1
+            ml R/4.1.1 R_packages/4.1.1
             
-            R --no-save --no-restore -f Rscript.R
+            R --no-save --no-restore -f MY-R-GPU-SCRIPT.R
            
 
    .. tab:: HPC2N
 
-        Short ML example for running on Kebnekaise.       
-       
         .. code-block:: sh
 
             #!/bin/bash
             #SBATCH -A hpc2n2024-025 # Change to your own project ID
-            #Asking for 10 min.
-            #SBATCH -t 00:10:00
-            #SBATCH -n 1
+            #Asking for runtime: hours, minutes, seconds. At most 1 week
+            #SBATCH -t HHH:MM:SS
+            #Ask for GPU resources, card is v100 or a100, x is 1 or 2
+            #SBATCH --gres=gpu:<card>:x
+            #Outcomment the below if you asked for A100 cards
+            #SBATCH -p amd_gpu 
             #Writing output and error files
             #SBATCH --output=output%J.out
             #SBATCH --error=error%J.error
             
             ml purge > /dev/null 2>&1
-            ml GCC/10.2.0  OpenMPI/4.0.5
+            #R version 4.0.4 is the only one compiled for CUDA 
+            ml GCC/10.2.0  CUDA/11.1.1 OpenMPI/4.0.5
             ml R/4.0.4
             
-            R --no-save --no-restore -f Rscript.R
-
-
-   .. tab:: Rscript.R
-
-        Short ML example.       
-       
-        .. code-block:: sh
-
-            #Example taken from https://github.com/lgreski/datasciencectacontent/blob/master/markdown/pml-randomForestPerformance.md
-            library(mlbench)
-            data(Sonar)
-            library(caret)
-            set.seed(95014)
-            
-            # create training & testing data sets
-            inTraining <- createDataPartition(Sonar$Class, p = .75, list=FALSE)
-            training <- Sonar[inTraining,]
-            testing <- Sonar[-inTraining,]
-            
-            # set up training run for x / y syntax because model format performs poorly
-            x <- training[,-61]
-            y <- training[,61]
-            
-            #Serial mode
-            fitControl <- trainControl(method = "cv",
-                                       number = 25,
-                                       allowParallel = FALSE)
-            
-            stime <- system.time(fit <- train(x,y, method="rf",data=Sonar,trControl = fitControl))
-            
-            
-            #Parallel mode
-            library(parallel)
-            library(doParallel)
-            cluster <- makeCluster(1) 
-            registerDoParallel(cluster)
-            
-            fitControl <- trainControl(method = "cv",
-                                       number = 25,
-                                       allowParallel = TRUE)
-
-            ptime <- system.time(fit <- train(x,y, method="rf",data=Sonar,trControl = fitControl))
-            
-            stopCluster(cluster)
-            registerDoSEQ()
-            
-            fit
-            fit$resample
-            confusionMatrix.train(fit)
-            
-            #Timings
-            timing <- rbind(sequential = stime, parallel = ptime)
-            timing
-
-.. code-block:: console
-
-   $ sbatch <batch script>
-
+            R --no-save --no-restore -f MY-R-GPU-SCRIPT.R
 
 Exercises
 ---------
@@ -474,12 +460,11 @@ Exercises
              #SBATCH --time=00:10:00 # Asking for 10 minutes
              #SBATCH -n 1 # Asking for 1 core
              
-             # Load any modules you need, here for R/4.0.4
-             module load GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
+             # Load any modules you need, here for R/4.1.2
+             module load GCC/11.2.0  OpenMPI/4.1.1 R/4.1.2
              
              # Run your R script 
              Rscript add2.R 2 3 
-
 
 
 
@@ -487,8 +472,4 @@ Exercises
 
    Try running the parallel example with "foreach" from further up on the page. 
 
-
-.. challenge:: R for ML
-
-   Run the ML example shown in this session. 
 

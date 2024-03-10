@@ -326,6 +326,7 @@ Content of the course
    r/isolatedR
    common/parallel.rst
    r/batchR.rst
+   r/MLR.rst
    r/interactiveR.rst
    r/rstudio.rst
    r/exercisesR.rst

@@ -1,5 +1,5 @@
-Parallel Programming (parallel session)
-=======================================
+Parallel and multithreaded functions
+====================================
 
 
 .. questions::

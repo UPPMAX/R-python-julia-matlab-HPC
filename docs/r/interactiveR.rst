@@ -111,88 +111,90 @@ You can now run R scripts on the allocated resources directly instead of waiting
       $ git pull                
    
 
-Example **Code along**
+Example **Type along**
 ######################
 
-**Requesting 4 cores for 10 minutes, then running R**
+.. type-along::
 
-.. tabs::
+   **Requesting 4 cores for 10 minutes, then running R**
 
-   .. tab:: UPPMAX
+   .. tabs::
 
-      .. code-block:: console
+      .. tab:: UPPMAX
+
+         .. code-block:: console
       
-          [bjornc@rackham2 ~]$ interactive -A naiss2024-22-107 -p devcore -n 4 -t 10:00
-          You receive the high interactive priority.
-          There are free cores, so your job is expected to start at once.
+            [bjornc@rackham2 ~]$ interactive -A naiss2024-22-107 -p devcore -n 4 -t 10:00
+            You receive the high interactive priority.
+            There are free cores, so your job is expected to start at once.
       
-          Please, use no more than 6.4 GB of RAM.
+            Please, use no more than 6.4 GB of RAM.
       
-          Waiting for job 29556505 to start...
-          Starting job now -- you waited for 1 second.
+            Waiting for job 29556505 to start...
+            Starting job now -- you waited for 1 second.
           
-          [bjornc@r484 ~]$ module load R/4.1.1
+            [bjornc@r484 ~]$ module load R/4.1.1
 
-      Let us check that we actually run on the compute node: 
+         Let us check that we actually run on the compute node: 
 
-      .. code-block:: console
+         .. code-block:: console
       
-          [bjornc@r483 ~]$ srun hostname
-          r483.uppmax.uu.se
-          r483.uppmax.uu.se
-          r483.uppmax.uu.se
-          r483.uppmax.uu.se
+            [bjornc@r483 ~]$ srun hostname
+            r483.uppmax.uu.se
+            r483.uppmax.uu.se
+            r483.uppmax.uu.se
+            r483.uppmax.uu.se
 
-      We are. Notice that we got a response from all four cores we have allocated.   
+         We are! Notice that we got a response from all four cores we have allocated.   
 
-   .. tab:: HPC2N
+      .. tab:: HPC2N
          
-      .. code-block:: console
+         .. code-block:: console
       
-          [~]$ salloc -n 4 --time=00:30:00 -A hpc2n2024-025
-          salloc: Pending job allocation 20174806
-          salloc: job 20174806 queued and waiting for resources
-          salloc: job 20174806 has been allocated resources
-          salloc: Granted job allocation 20174806
-          salloc: Waiting for resource configuration
-          salloc: Nodes b-cn0241 are ready for job
-          [~]$ module load GCC/10.3.0 OpenMPI/4.1.1 R/4.0.4
-          [~]$ 
+            [~]$ salloc -n 4 --time=00:30:00 -A hpc2n2024-025
+            salloc: Pending job allocation 20174806
+            salloc: job 20174806 queued and waiting for resources
+            salloc: job 20174806 has been allocated resources
+            salloc: Granted job allocation 20174806
+            salloc: Waiting for resource configuration
+            salloc: Nodes b-cn0241 are ready for job
+            [~]$ module load GCC/10.3.0 OpenMPI/4.1.1 R/4.0.4
+            [~]$ 
                   
       
-      Let us check that we actually run on the compute node: 
+         Let us check that we actually run on the compute node: 
       
-      .. code-block:: console
+         .. code-block:: console
                   
-           [~]$ srun hostname
-           b-cn0241.hpc2n.umu.se
-           b-cn0241.hpc2n.umu.se
-           b-cn0241.hpc2n.umu.se
-           b-cn0241.hpc2n.umu.se
+            [~]$ srun hostname
+            b-cn0241.hpc2n.umu.se
+            b-cn0241.hpc2n.umu.se
+            b-cn0241.hpc2n.umu.se
+            b-cn0241.hpc2n.umu.se
       
-      We are. Notice that we got a response from all four cores we have allocated.   
+         We are. Notice that we got a response from all four cores we have allocated.   
       
       
-Running a script
-''''''''''''''''
+   Running a script
+   ''''''''''''''''
 
-**The script** 
-      Adding two numbers from user input (serial_sum.R)
+   **The script** 
+   Adding two numbers from user input (``serial_sum.R``)
          
-      .. code-block:: R
+   .. code-block:: R
       
           # This program will add two numbers that are provided by the user
           args = commandArgs(trailingOnly = TRUE)
           res = as.numeric(args[1]) + as.numeric(args[2])
           print(paste("The sum of the two numbers is", res))
       
-**Running the script**
+   **Running the script**
 
-- Note that the commands are the same for both HPC2N and UPPMAX!
+   - Note that the commands are the same for both HPC2N and UPPMAX!
       
-      Running a R script in the allocation we made further up. Notice that since we asked for 4 cores, the script is run 4 times, since it is a serial script
+   Running a R script in the allocation we made further up. Notice that since we asked for 4 cores, the script is run 4 times, since it is a serial script
          
-      .. code-block:: console
+   .. code-block:: console
 
           $ srun Rscript serial_sum.R 3 4
           [1] "The sum of the two numbers is 7"
@@ -200,19 +202,18 @@ Running a script
           [1] "The sum of the two numbers is 7"
           [1] "The sum of the two numbers is 7"
  
-      Without the ``srun`` command, R won't understand that it can use several
-      cores. Therefor the program is run only once.
+   Without the ``srun`` command, R won't understand that it can use several  cores. Therefore the program is run only once.
                   
-      .. code-block:: console 
+   .. code-block:: console 
                   
           $ Rscript serial_sum.R 3 4
           [1] "The sum of the two numbers is 7"
 
-**Running R interpreter (UPPMAX)**
+   **Running R interpreter (UPPMAX)**
 
-- First start R and check available workers with ``future``
+   - First start R and check available workers with ``future``
 
-      .. code-block:: R 
+   .. code-block:: R 
 
          > library(future)
          > availableWorkers()
@@ -222,15 +223,15 @@ Running a script
              4
 
 
-**Exit**
+   **Exit**
 
-When you have finished using the allocation, either wait for it to end, or close it with ``exit``
+   When you have finished using the allocation, either wait for it to end, or close it with ``exit``
 
-.. tabs::
+   .. tabs::
 
-   .. tab:: UPPMAX
+      .. tab:: UPPMAX
    
-      .. code-block:: console 
+         .. code-block:: console 
                   
                   [bjornc@r483 ~]$ exit
       
@@ -240,9 +241,9 @@ When you have finished using the allocation, either wait for it to end, or close
       
                   [bjornc@rackham2 ~]$
      
-   .. tab:: HPC2N
+      .. tab:: HPC2N
    
-      .. code-block:: sh 
+         .. code-block:: sh 
                   
                   [~]$ exit
                   exit
