@@ -117,7 +117,7 @@ Example - Installing ``knitr``
 
          .. code-block:: console
 
-            ml GCC/11.2.0  OpenMPI/4.1.1  R-bundle-Bioconductor/3.14-R-4.1.2
+            $ ml GCC/11.2.0  OpenMPI/4.1.1  R-bundle-Bioconductor/3.14-R-4.1.2
 
    - Next, launch the ``R`` interpreter and initialize an ``renv`` environment.
 
@@ -171,9 +171,13 @@ Example - Installing ``knitr``
 
    .. code-block:: R
    
-      renv::init()
-      # Exit the session
-      quit()
+      > renv::init()
+      
+   Exit the session
+   
+   .. code-block:: R
+
+      > quit()
 
    Verify that the ``renv`` directory as well as lock file was created
 
