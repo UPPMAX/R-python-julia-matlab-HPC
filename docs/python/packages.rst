@@ -112,7 +112,7 @@ Exercise 1
     - Apply the documentation to show if a Python package is already installed
     - Observe how it looks like when a package is not installed
 
-Imagine you want to use the Python packages ``pandas``and ``tensorflow-cpu`` and ``mhcnuggets``.
+Imagine you want to use the Python packages ``pandas`` and ``tensorflow-cpu`` and ``mhcnuggets``.
 Here we see that one comes already installed with the module system.
 
 .. tabs::
@@ -137,7 +137,7 @@ Here we see that one comes already installed with the module system.
 
         Read `the UPPMAX documentation on how to determine if a Python package comes with your Python module <http://docs.uppmax.uu.se/software/python/#determine-if-a-python-package-comes-with-your-python-module>`_.
 
-        Is the Python package ``pandas``installed? If yes, which version?
+        Is the Python package ``pandas`` installed? If yes, which version?
 
     .. tab:: Answer HPC2N
 
@@ -190,7 +190,7 @@ Here we see that one comes already installed with the module system.
 
     .. tab:: Exercise 1.4
 
-        Is the Python package ``mhcnuggets` `installed? If yes, which version?
+        Is the Python package ``mhcnuggets`` installed? If yes, which version?
 
     .. tab:: Answer HPC2N
 
@@ -223,7 +223,7 @@ Exercise 2
     - Apply the documentation to show if a Python package is already installed
     - Observe how it looks like when a package is not installed
 
-Imagine you want to use the Python packages ``pandas``and ``tensorflow-cpu`` and ``mhcnuggets``.
+Imagine you want to use the Python packages ``pandas`` and ``tensorflow-cpu`` and ``mhcnuggets``.
 Here we see that two come already installed with a Python
 machine learning module.
 
@@ -266,7 +266,7 @@ machine learning module.
 
         Read `the UPPMAX documentation on how to determine if a Python package comes with your Python module <http://docs.uppmax.uu.se/software/python/#determine-if-a-python-package-comes-with-your-python-module>`_.
 
-        Is the Python package ``pandas``installed? If yes, which version?
+        Is the Python package ``pandas`` installed? If yes, which version?
 
     .. tab:: Answer HPC2N
 
@@ -318,7 +318,7 @@ machine learning module.
 
     .. tab:: Exercise 2.4
 
-        Is the Python package ``mhcnuggets` `installed? If yes, which version?
+        Is the Python package ``mhcnuggets`` installed? If yes, which version?
 
     .. tab:: Answer HPC2N
 
@@ -350,7 +350,7 @@ Exercise 3
     - Install a new package.
     - Rehearse determining if a Python package is already installed
 
-Imagine you want to use the Python packages ``pandas``and ``tensorflow-cpu`` and ``mhcnuggets``.
+Imagine you want to use the Python packages ``pandas`` and ``tensorflow-cpu`` and ``mhcnuggets``.
 Even when loading a bigger module, one of the packages was not installed for us.
 Here we install a Python package ourselves.
 
@@ -395,7 +395,7 @@ Here we install a Python package ourselves.
 
     .. tab:: Exercise 3.3
 
-        Confirm that the Python package ``mhcnuggets` `is installed now.
+        Confirm that the Python package ``mhcnuggets`` is installed now.
         Which version has been installed?
 
     .. tab:: Answer
