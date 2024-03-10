@@ -65,7 +65,7 @@ Running your code
             $ module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2 R-bundle-Bioconductor/3.14-R-4.1.2 
             $ Rscript iris_ml.R
 
-      .. tab:: iris_ML.R
+      .. tab:: iris_ml.R
 
          .. code-block:: R 
             :class: dropdown 
