@@ -107,13 +107,13 @@ Example - Installing ``knitr``
 
    .. tabs::
 
-      .. tab::UPPMAX
+      .. tab:: UPPMAX
 
          .. code-block:: console
 
             $ ml R/4.1.1 R_packages/4.1.1
 
-      .. tab::HPC2N
+      .. tab:: HPC2N
 
          .. code-block:: console
 
