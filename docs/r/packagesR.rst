@@ -124,6 +124,10 @@ An R packages can exist in five possible states
    :width: 600
    :align: left
 
+.. role:: raw-html(raw)
+    :format: html
+
+:raw-html:`<br />`
 
 | Source: 
 | https://r-pkgs.org/structure.html and
