@@ -335,7 +335,7 @@ machine learning module.
         So, no, the Python package ``mhcnuggets`` is not installed.
 
 
-Question 3
+Exercise 3
 ----------
 
 .. admonition:: Teaching goals
