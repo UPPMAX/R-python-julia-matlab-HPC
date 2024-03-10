@@ -45,7 +45,11 @@ we practice working with packages.
 Finding packages
 ----------------
 
+.. mermaid:: package_user_journey.mmd
 
+The most common Python packages come installed when loading a regular Python module.
+Some of the more complex packages, are part of a module for more complex Python packages.
+If a package is not installed, however, you can also install it.
 
 Python package installers
 -------------------------
