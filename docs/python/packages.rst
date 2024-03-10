@@ -80,43 +80,10 @@ As a first impression, here is a simple comparison between the two:
 | Installs non-Python software | Yes   | No   |
 +------------------------------+-------+------+
 
-Install with pip
-----------------
-
-You use ``pip`` this way, in a Linux shell OR a python shell: 
-
-.. code-block:: console 
-
-    $ pip install --user <package>
-    
-Use ``pip3`` if you loaded python3.
-
-Then (on your own computer) the package ends up 
-in ``~/.local/lib/python<version>/site-packages/``.
-
-Note that ``python<version>`` is omitting the third number in the version, 
-hence ``python-3.9.6`` will be stored in ``~/.local/lib/python-3.9``.
-We HIGHLY recommend using a virtual environment during installation, 
-since this makes it easier to install for different versions of Python,
-as is taught in `the session on isolated environments <https://uppmax.github.io/HPC-python/isolated.html>`_
-
 .. note::
    
    You will test this in the next session about isolated environments.
 
-.. keypoints::
-
-   - You can check for packages 
-   
-       - from the Python shell with the ``import`` command
-    - from BASH shell with the 
-    
-        - ``pip list`` command at both centers
-        - ``module help python/3.10.8`` at UPPMAX
-        
-   - Installation of Python packages can be done either with **PYPI** or **Conda**
-   - You install own packages with the ``pip install`` command (This is the recommended way on HPC2N)
-   - At UPPMAX Conda is also available (See Conda section)
 
 Exercises
 ---------
@@ -409,25 +376,13 @@ Here we install a Python package ourselves.
         it is probably those packages in your ``.local`` folder.
         This can be solved by removing that ``.local`` folder.
 
-HIERO
-
 .. tabs::
 
     .. tab:: Exercise 3.2
 
-        Read [the UPPMAX documentation on how to determine if a Python package comes with your Python module](http://docs.uppmax.uu.se/software/python/#determine-if-a-python-package-comes-with-your-python-module).
+        Install the package ``mhcnuggets``.
 
-        Is the Python package `pandas` installed? If yes, which version?
-
-    .. tab:: Answer HPC2N
-
-        Do:
-
-        .. code-block::
-
-            pip list
-
-    .. tab:: Answer UPPMAX
+    .. tab:: Answer
 
         Do:
 
@@ -443,17 +398,10 @@ HIERO
 
     .. tab:: Exercise 3.3
 
-        Is the Python package `tensorflow-cpu` installed? If yes, which version?
+        Confirm that the Python package `mhcnuggets` is installed now.
+        Which version has been installed?
 
-    .. tab:: Answer HPC2N
-
-        Do:
-
-        .. code-block::
-
-            pip list
-
-    .. tab:: Answer UPPMAX
+    .. tab:: Answer
 
         Do:
 
@@ -461,46 +409,23 @@ HIERO
 
             pip list
 
-        In the list, one can find ``tensorflow-cpu``, with version ``2.15.0.post1``.
+        In the list, one can find ``mhcnuggets``, with version ``2.4.1``
 
-        So, yes, the Python package ``tensorflow-cpu`` is installed.
+        So, yes, the Python package ``mhcnuggets`` is now installed!
 
-    .. tab:: Exercise 3.4
+Conclusion
+----------
 
-        Is the Python package `mhcnuggets` installed? If yes, which version?
+.. keypoints::
 
-    .. tab:: Answer HPC2N
+    You have:
 
-        Do:
+    - determined if a Python package is installed yes/no using ``pip``
+    - discovered some Python package are already installed upon
+      loading a module
+    - installed a Python package using ``pip``
 
-        .. code-block::
+    However, the installed package was put into a shared (as in, not isolated)
+    environment.
 
-            pip list
-
-    .. tab:: Answer UPPMAX
-
-        Do:
-
-        .. code-block::
-
-            pip list
-
-        In the list, one cannot find ``mhcnuggets``.
-
-        So, no, the Python package ``mhcnuggets`` is not installed.
-  
-Links
------
-
-* `Introduction to Python packages <https://aaltoscicomp.github.io/python-for-scicomp/dependencies/>`_
-* `Video: Load and use Python packages on the UPPMAX and HPC2N HPC clusters using pip (YouTube) <https://youtu.be/novRJfAa2QA>`_
-* `Video: Load and use Python packages on the UPPMAX and HPC2N HPC clusters using pip (.ogv) <https://richelbilderbeek.nl/use_python_packages_hpc_from_txt.ogv>`_
-* `Presentation: Load and use Python packages on the UPPMAX and HPC2N HPC clusters using pip (PDF) <https://github.com/UPPMAX/R-python-julia-HPC/blob/main/docs/python/find_and_use_packages.pdf>`_
-* `Presentation: Load and use Python packages on the UPPMAX and HPC2N HPC clusters using pip (ODP) <https://github.com/UPPMAX/R-python-julia-HPC/blob/main/docs/python/find_and_use_packages.odp>`_
-    
-    
-Sloppy Notes
-
-3.11.4 before
-3.11.8 new
-python_ML_packages/3.11.8-cpu
+    Luckily, isolated environments are discussed in this course too :-)
