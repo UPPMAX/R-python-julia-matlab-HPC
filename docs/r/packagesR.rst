@@ -58,7 +58,8 @@ us look at a very simple example
    │   └── hello.Rd
    └── r_example.Rproj
 
-.. tips::
+
+.. note::
    :class: dropdown
 
       If you are on a Linux Ubuntu system where tree is not installed, and you do not have root permissions, you can do this to install it in your own area 
