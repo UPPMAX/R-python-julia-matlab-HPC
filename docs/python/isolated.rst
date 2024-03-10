@@ -23,6 +23,8 @@ Installing with a virtual environment is the only recommended way at HPC2N!
 Overview
 --------
 
+.. mermaid:: isolated.mmd
+
 +-----------------------+-------------------+------------------+
 | Parameter             | conda             | venv             |
 +=======================+===================+==================+
