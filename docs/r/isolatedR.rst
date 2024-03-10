@@ -85,68 +85,72 @@ initialize a project with an empty project library.
 Example - Installing ``knitr``
 ********************************
 
-First create a project under the course project directory and cd to it
+.. type-along::
 
-.. tabs::
+   - First create a project under the course project directory and cd to it
 
-   .. tab:: UPPMAX
+   .. tabs::
 
-      .. code-block:: console
+      .. tab:: UPPMAX
 
-         $ mkdir -v /proj/naiss2023-22-914/<your-dir>/R/r_proj && cd $_
-      
-   .. tab:: HPC2N
+         .. code-block:: console
+   
+            $ mkdir -v /proj/naiss2023-22-914/<your-dir>/R/r_proj && cd $_    
+
+      .. tab:: HPC2N
  
-      .. code-block:: console
+         .. code-block:: console
+   
+            $ mkdir -v /proj/nobackup/hpc2n2023-110/<your-dir>/R/r_proj && cd $_
 
-         $ mkdir -v /proj/nobackup/hpc2n2023-110/<your-dir>/R/r_proj && cd $_
+      - Make sure you have loaded ``R_packages`` on UPPMAX or ``R`` on HPC2N. 
+      - Next, launch the ``R`` interpreter and initialize an ``renv`` environment.
 
-Make sure you have loaded ``R_packages`` on UPPMAX or ``R`` on HPC2N. Next,
-launch the ``R`` interpreter and initialize an ``renv`` environment.
+      .. warning:: 
 
-NOTE: ``renv`` is not available on HPC2N, and you need to install it yourself: 
+         NOTE: ``renv`` is not available on HPC2N, and you need to install it yourself: 
 
-.. admonition:: Install renv    
-    :class: dropdown   
+         .. admonition:: Install renv on Kebnekaise
+            :class: dropdown   
 
-          .. code-block:: console
+            .. code-block:: console
 
-             $ module load GCC/11.2.0  OpenMPI/4.1.1 R-bundle-Bioconductor/3.14-R-4.1.2
-             $ R
-             R version 4.1.2 (2021-11-01) -- "Bird Hippie"
-             Copyright (C) 2021 The R Foundation for Statistical Computing
-             Platform: x86_64-pc-linux-gnu (64-bit)
+               $ module load GCC/11.2.0  OpenMPI/4.1.1 R-bundle-Bioconductor/3.14-R-4.1.2
+               $ R
+               R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+               Copyright (C) 2021 The R Foundation for Statistical Computing
+               Platform: x86_64-pc-linux-gnu (64-bit)
 
-             R is free software and comes with ABSOLUTELY NO WARRANTY.
-             You are welcome to redistribute it under certain conditions.
-             Type 'license()' or 'licence()' for distribution details.
+               R is free software and comes with ABSOLUTELY NO WARRANTY.
+               You are welcome to redistribute it under certain conditions.
+               Type 'license()' or 'licence()' for distribution details.
+  
+               Natural language support but running in an English locale
+  
+               R is a collaborative project with many contributors.
+               Type 'contributors()' for more information and
+               'citation()' on how to cite R or R packages in publications.
+  
+               Type 'demo()' for some demos, 'help()' for on-line help, or
+               'help.start()' for an HTML browser interface to help.
+               Type 'q()' to quit R.
 
-             Natural language support but running in an English locale
+               > install.packages('renv')
+               Installing package into ‘/cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/R-bundle-Bioconductor/3.14-foss-2021b-R-4.1.2’
+               (as ‘lib’ is unspecified)
+               Warning in install.packages("renv") :
+               'lib = "/cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/R-bundle-Bioconductor/3.14-foss-2021b-R-4.1.2"' is not writable
+               Would you like to use a personal library instead? (yes/No/cancel) yes
+               Would you like to create a personal library
+               ‘/home/b/bbrydsoe/R-packages-4.1.2’
+               to install packages into? (yes/No/cancel) yes
+               --- Please select a CRAN mirror for use in this session ---
+               Secure CRAN mirrors
 
-             R is a collaborative project with many contributors.
-             Type 'contributors()' for more information and
-             'citation()' on how to cite R or R packages in publications.
-
-             Type 'demo()' for some demos, 'help()' for on-line help, or
-             'help.start()' for an HTML browser interface to help.
-             Type 'q()' to quit R.
-
-             > install.packages('renv')
-             Installing package into ‘/cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/R-bundle-Bioconductor/3.14-foss-2021b-R-4.1.2’
-             (as ‘lib’ is unspecified)
-             Warning in install.packages("renv") :
-             'lib = "/cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/R-bundle-Bioconductor/3.14-foss-2021b-R-4.1.2"' is not writable
-             Would you like to use a personal library instead? (yes/No/cancel) yes
-             Would you like to create a personal library
-             ‘/home/b/bbrydsoe/R-packages-4.1.2’
-             to install packages into? (yes/No/cancel) yes
-             --- Please select a CRAN mirror for use in this session ---
-             Secure CRAN mirrors
-
-             ...
+               ...
 
 
-         Pick 62: Sweden (Umeå) [https]
+            Pick 62: Sweden (Umeå) [https]
 
 
 .. code-block:: R
@@ -165,7 +169,7 @@ Verify that the ``renv`` directory as well as lock file was created
 
 Relaunch and check at the library paths
 
-.. code-block:: R
+.. code-block:: Rconsole
 
    > .libPaths()
    [1] "/crex/proj/py-r-jl/matpiq/r_proj/renv/library/R-4.1/x86_64-pc-linux-gnu"
@@ -175,7 +179,7 @@ What happens if you leave the project directory? As a last step we can try
 installing some package into the environment. Let's re-enter the project
 directory and try installing  ``knitr``
 
-.. code-block:: R
+.. code-block:: rconsole
 
    > install.packages("knitr")
 
@@ -225,14 +229,15 @@ Then load conda and create the environment
 
 .. code-block:: console
 
-   $ mamba env create -f r_env.yaml
+   $ module load conda
+   $ conda env create -f r_env.yaml
 
 Next, we can activate the environment and verify that we have indeed have an
 isolated R environment
 
 .. code-block:: console
 
-   $ conda activate r_env
+   $ source activate r_env
    $ which R
    ~/.conda/envs/my_r_env/bin/R
 

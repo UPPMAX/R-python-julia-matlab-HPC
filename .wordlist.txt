@@ -605,3 +605,5 @@ ProjectInfo
 ArgumentError
 nano
 mobaxterm
+ReStructedText
+rconsole

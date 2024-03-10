@@ -16,26 +16,26 @@ Jupyter on compute nodes
 UPPMAX
 ------
 
-1. Start an interactive session from the login node
+1. Start an interactive session from the login node (change to the correct NAISS project ID) 
   
 **For Rackham**
 
 .. code-block:: sh
 
-   $ interactive -A snic-project  -t 4:00:00
+   $ interactive -A <naiss-project-id>  -t 4:00:00
 
 **For Snowy**
 
 .. code-block:: sh
 
-   $ interactive -M snowy -A snic-project  -t 4:00:00
+   $ interactive -M snowy -A <naiss-project-id>  -t 4:00:00
    
 
-2. Start jupyter notebook (from ``python/3.10`` also ``jupyter-lab``) from the interactive session (*when it gets allocated*)
+2. Start jupyter notebook (from ``python/3.11`` also ``jupyter-lab``) from the interactive session (*when it gets allocated*)
 
 .. code-block:: sh``
 		
-   $ module load python/3.9.5
+   $ module load python/3.11.8
    $ jupyter-notebook --ip 0.0.0.0 --no-browser
 
 
@@ -122,9 +122,9 @@ You then do
 
 for a specific <version> to see which prerequisites should be loaded first.
 
-**Example, loading ``JupyterLab/3.2.8``**
+**Example, loading ``JupyterLab/4.0.5``**
 
-``module load GCC/10.3.0 JupyterLab/3.2.8``
+``module load GCC/12.3.0 JupyterLab/4.0.5``
 
 2. Making the submit file
 
@@ -143,7 +143,7 @@ Something like the file below will work. Remember to change the project id after
    module purge > /dev/null 2>&1
  
    # Load the module environment suitable for the job
-   module load GCC/10.3.0 JupyterLab/3.2.8
+   module load GCC/12.3.0 JupyterLab/4.0.5
 
    # Start JupyterLab
    jupyter lab --no-browser --ip $(hostname)
@@ -171,19 +171,40 @@ The SLURM output file is as default named ``slurm-<job-id>.out`` where you get t
 The file will look similar to this:
 
 .. code-block:: sh
-		
-   b-an01 [~]$ cat slurm-22422626.out
-   [I 2023-05-11 15:06:23.597 ServerApp] jupyterlab | extension was successfully linked.
-   [I 2023-05-11 15:06:23.756 LabApp] JupyterLab extension loaded from /hpc2n/eb/software/JupyterLab/3.2.8-GCCcore-10.3.0/lib/python3.9/site-packages/jupyterlab
-   [I 2023-05-11 15:06:23.756 LabApp] JupyterLab application directory is /cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/JupyterLab/3.2.8-GCCcore-10.3.0/share/jupyter/lab
-   [I 2023-05-11 15:06:23.760 ServerApp] jupyterlab | extension was successfully loaded.
-   [I 2023-05-11 15:06:23.761 ServerApp] Serving notebooks from local directory: /pfs/stor10/users/home/b/bbrydsoe
-   [I 2023-05-11 15:06:23.761 ServerApp] Jupyter Server 1.13.4 is running at:
-   [I 2023-05-11 15:06:23.761 ServerApp] http://b-cn0232.hpc2n.umu.se:8888/lab?token=4e369c85f797f7de0c4e15723af75e93ad6bbe7cba11ae59
-   [I 2023-05-11 15:06:23.761 ServerApp]  or http://127.0.0.1:8888/lab?token=4e369c85f797f7de0c4e15723af75e93ad6bbe7cba11ae59
-   [I 2023-05-11 15:06:23.761 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-   [C 2023-05-11 15:06:23.778 ServerApp]
-    
+
+   b-an03 [~]$ cat slurm-24661064.out
+   [I 2024-03-09 15:35:30.595 ServerApp] Package jupyterlab took 0.0000s to import
+   [I 2024-03-09 15:35:30.617 ServerApp] Package jupyter_lsp took 0.0217s to import
+   [W 2024-03-09 15:35:30.617 ServerApp] A `_jupyter_server_extension_points` function was not found in jupyter_lsp. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+   [I 2024-03-09 15:35:30.626 ServerApp] Package jupyter_server_terminals took 0.0087s to import
+   [I 2024-03-09 15:35:30.627 ServerApp] Package notebook_shim took 0.0000s to import
+   [W 2024-03-09 15:35:30.627 ServerApp] A `_jupyter_server_extension_points` function was not found in notebook_shim. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+   [I 2024-03-09 15:35:30.627 ServerApp] jupyter_lsp | extension was successfully linked.
+   [I 2024-03-09 15:35:30.632 ServerApp] jupyter_server_terminals | extension was successfully linked.
+   [I 2024-03-09 15:35:30.637 ServerApp] jupyterlab | extension was successfully linked.
+   [I 2024-03-09 15:35:30.995 ServerApp] notebook_shim | extension was successfully linked.
+   [I 2024-03-09 15:35:31.020 ServerApp] notebook_shim | extension was successfully loaded.
+   [I 2024-03-09 15:35:31.022 ServerApp] jupyter_lsp | extension was successfully loaded.
+   [I 2024-03-09 15:35:31.023 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+   [I 2024-03-09 15:35:31.027 LabApp] JupyterLab extension loaded from /hpc2n/eb/software/JupyterLab/4.0.5-GCCcore-12.3.0/lib/python3.11/site-packages/jupyterlab
+   [I 2024-03-09 15:35:31.027 LabApp] JupyterLab application directory is /cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_skx/software/JupyterLab/4.0.5-GCCcore-12.3.0/share/jupyter/lab
+   [I 2024-03-09 15:35:31.028 LabApp] Extension Manager is 'pypi'.
+   [I 2024-03-09 15:35:31.029 ServerApp] jupyterlab | extension was successfully loaded.
+   [I 2024-03-09 15:35:31.030 ServerApp] Serving notebooks from local directory: /pfs/stor10/users/home/b/bbrydsoe
+   [I 2024-03-09 15:35:31.030 ServerApp] Jupyter Server 2.7.2 is running at:
+   [I 2024-03-09 15:35:31.030 ServerApp] http://b-cn1520.hpc2n.umu.se:8888/lab?token=c45b36c6f22322c4cb1e037e046ec33da94506004aa137c1
+   [I 2024-03-09 15:35:31.030 ServerApp]     http://127.0.0.1:8888/lab?token=c45b36c6f22322c4cb1e037e046ec33da94506004aa137c1
+   [I 2024-03-09 15:35:31.030 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+   [C 2024-03-09 15:35:31.039 ServerApp]
+
+    To access the server, open this file in a browser:
+        file:///pfs/stor10/users/home/b/bbrydsoe/.local/share/jupyter/runtime/jpserver-121683-open.html
+    Or copy and paste one of these URLs:
+        http://b-cn1520.hpc2n.umu.se:8888/lab?token=c45b36c6f22322c4cb1e037e046ec33da94506004aa137c1
+        http://127.0.0.1:8888/lab?token=c45b36c6f22322c4cb1e037e046ec33da94506004aa137c1
+   [I 2024-03-09 15:35:31.078 ServerApp] Skipped non-installed server(s): bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+
+ 
 To access the server, go to
 
 ``file:///.local/share/jupyter/runtime/jpserver-<newest>-open.html``
@@ -194,19 +215,19 @@ Or, to access the server you can copy and paste this URLs from the file:
 
 .. code-block:: sh
 
-   http://b-cn0232.hpc2n.umu.se:8888/lab?token=4e369c85f797f7de0c4e15723af75e93ad6bbe7cba11ae59
+   http://b-cn1520.hpc2n.umu.se:8888/lab?token=c45b36c6f22322c4cb1e037e046ec33da94506004aa137c1
 
 **NOTE** of course, do not copy the above, but the similar looking one from the file you get from running the batch script!!!
 
 5. Start a webbrowser within HPC2N (ThinLinc interface). Open the html or put in the URL you grabbed, including the token:
 
-.. figure:: ../../img/jupyterlab-start.png
+.. figure:: ../img/jupyterlab-start.png
    :width: 450
    :align: center
 
 After a few moments JupyterLab starts up:
 
-.. figure:: ../../img/jupyterlab_started.png
+.. figure:: ../img/jupyterlab_started.png
    :width: 450
    :align: center
 
@@ -220,7 +241,7 @@ Already installed package at HPC2N
 
 If you need extra Python modules and these modules are already installed at HPC2N, you can just load them. It is easiest to do so before you start the JupyterLab, inside the submit file.
 
-**Example, loading JupyterLab/3.2.8, its prerequisites, and the modules for SciPy-bundle (mpi4py, numpy, pandas, scipy etc.) and matplotlib**:
+**Example, loading JupyterLab/4.0.5, its prerequisites, and the modules for SciPy-bundle (mpi4py, numpy, pandas, scipy etc.) and matplotlib**:
 
 .. code-block:: sh
 
@@ -235,7 +256,7 @@ If you need extra Python modules and these modules are already installed at HPC2
 module purge > /dev/null 2>&1
 
    # Load the module environment suitable for the job
-   module load GCC/10.3.0 JupyterLab/3.2.8 OpenMPI/4.1.1 SciPy-bundle/2021.05 matplotlib/3.4.2
+   module load GCC/12.3.0 JupyterLab/4.0.5 SciPy-bundle/2023.07 matplotlib/3.7.2
 
    # Start JupyterLab
    jupyter lab --no-browser --ip $(hostname)

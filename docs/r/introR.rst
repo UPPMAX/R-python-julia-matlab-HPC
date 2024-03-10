@@ -22,9 +22,9 @@ Introduction R
       under the "Exercises" directory:
       https://github.com/UPPMAX/R-python-julia-HPC/tree/main/Exercises
     - On HPC2N, you can copy the exercises in a tarball 
-      from ``/proj/nobackup/hpc2n2023-110/Exercises.tar.gz``
+      from ``/proj/nobackup/hpc2n2024-025/Exercises.tar.gz``
     - On UPPMAX you can copy the exercises in a tarball 
-      from ``/proj/naiss2023-22-914/Exercises.tar.gz``
+      from ``/proj/naiss2024-22-107/Exercises.tar.gz``
 
 .. challenge:: Download the exercise files
 
@@ -43,58 +43,59 @@ Preliminary schedule
    * - 9:00
      - Syllabus 
      - 10m
-   * - 9.10
+   * - 9:10
      - Introduction, R in general
      - Lecture 10 m 
-   * - 9.20
+   * - 9:20
      - Loading modules and running R codes 
      - Lecture+code along 25m
-   * - 9.45
+   * - 9:45
      - **Coffee break**
      - 
-   * - 10.00
+   * - 10:00
      - Packages
      - Lecture+code along 30m
-   * - 10.30
-     - Virtual environments
-     - Lecture+code along 30m
-   * - 11.00
+   * - 10:30
      - **break**
      - 
-   * - 11.15
-     - HPC2N: Parallel and multithreaded functions
+   * - 10:45
+     - Parallel session - HPC2N: ThinLinc & RStudio 
+     - Lecture+code along 25m
+   * - 10:45
+     - Parallel session - UPPMAX: Interactive/ThinLinc & RStudio
+     - Lecture+code along 25m 
+   * - 11:15
+     - Parallel and multithreaded functions
      - Lecture+code along 35m   
-   * - 11.50
-     - Exercises and informal chat
+   * - 11:50
+     - Exercises and informal chat (or break) 
      - 
-   * - 12.00
+   * - 12:00
      - **LUNCH**
      -
-   * - 13.00
+   * - 13:00
+     - Isolated environments
+     - Lecture+code along 20m
+   * - 13:20
      - SLURM Batch scripts for R jobs  
-     - Lecture+code along + exercise 45m
-   * - 13.45
+     - Lecture+code along + exercise 30m
+   * - 13:50
      - **break**
      - 
-   * - 14.00
-     - Parallel session — UPPMAX: Interactive/Thinlinc and RStudio 
-     - Lecture+code along 25m
-   * - 14.00
-     - Parallel session — HPC2N: Thinlinc and RStudio 
-     - Lecture+code along 25m   
-   * - 14.25
-     - Summary
-     -
-   * - 14.35
+   * - 14:00
+     - ML  
+     - Lecture+code along 35m
+   * - 14:35
+     - Conclusion & Q/A
+     -    
+   * - 14:45
      - Evaluation
      -
-   * - 14.45
-     - Q&A on-demand
-     -
-   * - 15.00
+   * - 15:00
      - END
      -
        
+
 What is R?
 ----------
 

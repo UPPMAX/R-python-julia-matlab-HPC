@@ -320,16 +320,16 @@ Content of the course
    :maxdepth: 2
    :caption: R Lessons:
 
-   R/introR.rst
-   R/load_runR.rst
-   R/packagesR.rst
-   R/isolatedR
+   r/introR.rst
+   r/load_runR.rst
+   r/packagesR.rst
+   r/isolatedR
    common/parallel.rst
-   R/batchR.rst
-   R/interactiveR.rst
-   R/rstudio.rst
-   R/exercisesR.rst
-   R/summaryR.rst
+   r/batchR.rst
+   r/interactiveR.rst
+   r/rstudio.rst
+   r/exercisesR.rst
+   r/summaryR.rst
 
 .. toctree::
    :maxdepth: 2

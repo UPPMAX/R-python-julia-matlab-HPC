@@ -1,6 +1,6 @@
 #!/bin/bash
-# Batch script for running the numba program "add-list.py" on Kebnekaise
-#SBATCH -A hpc2n2023-110 # Remember to change this to your own project ID
+# Batch script for running the program "multiproc.py" on Kebnekaise
+#SBATCH -A hpc2n2024-025 # Remember to change this to your own project ID
 # We are asking for 5 minutes
 #SBATCH --time=00:05:00
 #SBATCH -n 4
