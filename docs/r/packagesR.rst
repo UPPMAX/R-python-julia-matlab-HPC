@@ -59,7 +59,7 @@ us look at a very simple example
    └── r_example.Rproj
 
 
-.. note:: "installing tree as non-root on Linux Ubuntu"
+.. admonition:: Installing tree as non-root on Linux Ubuntu
    :class: dropdown
 
       If you are on a Linux Ubuntu system where tree is not installed, and you do not have root permissions, you can do this to install it in your own area 
