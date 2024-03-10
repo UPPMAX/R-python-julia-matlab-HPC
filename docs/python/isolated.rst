@@ -17,7 +17,7 @@ Installing with a virtual environment is the only recommended way at HPC2N!
 .. objectives:: Teaching objectives
 
    - learners have created, activated, used and deactivated a venv
-   - learners have used an ML package
+   - learners have re-created a venv
    - learners have heard about conda
 
 Overview
@@ -28,7 +28,7 @@ Overview
 +-----------------------+-------------------+------------------+
 | Parameter             | conda             | venv             |
 +=======================+===================+==================+
-| Scope                 | Language agnostic | Python-exclusive |
+| Scope                 | Language agnostic | Python only      |
 | UPPMAX recommendation | Recommended       | OK               |
 | HPC2N recommendation  | Avoid             | Recommended      |
 +-----------------------+-------------------+------------------+
@@ -580,3 +580,43 @@ git clone https://github.com/UPPMAX/R-python-julia-HPC
 pip install -r requirements.txt
 cd Exercises
 pytorch_fitting_gpu.py
+
+
+
+module load python/3.10.8
+
+# Create
+python -m venv --system-site-packages /proj/naiss2023-22-914/<user>/python/Example
+
+# Activate
+source /proj/naiss2023-22-914/<user>/python/Example/bin/activate
+
+# Get requirments
+pip freeze > requirements.txt
+
+# Deactivate
+deactivate
+
+
+
+## Exercise 1
+
+
+- Create a venv called ‘vpyenv’
+- Activate it
+- Install the packages ‘spacy’ and ‘seaborn’ using ``pip``
+- Confirm that these are installed
+- Deactivate the venv
+
+
+## Exercise 2
+
+- Create a venv called ‘vpyenv’
+- Activate it
+- Create a file ‘requirements.txt’ with content:
+numpy==1.22.3
+matplotlib==3.5.2
+pandas==1.4.2
+- Install these requirements
+- Confirm that these are installed
+- Deactivate the venv

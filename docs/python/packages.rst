@@ -119,7 +119,7 @@ Here we see that one comes already installed with the module system.
 
     .. tab:: Exercise 1.1
 
-        Read [the UPPMAX documentation on how to load Python](http://docs.uppmax.uu.se/software/python/#loading-python).
+        Read `the UPPMAX documentation on how to load Python <http://docs.uppmax.uu.se/software/python/#loading-python>`_.
 
         Load the module for Python 3.11.8
 
@@ -135,7 +135,7 @@ Here we see that one comes already installed with the module system.
 
     .. tab:: Exercise 1.2
 
-        Read [the UPPMAX documentation on how to determine if a Python package comes with your Python module](http://docs.uppmax.uu.se/software/python/#determine-if-a-python-package-comes-with-your-python-module).
+        Read `the UPPMAX documentation on how to determine if a Python package comes with your Python module <http://docs.uppmax.uu.se/software/python/#determine-if-a-python-package-comes-with-your-python-module>`_.
 
         Is the Python package ``pandas``installed? If yes, which version?
 
@@ -231,7 +231,7 @@ machine learning module.
 
     .. tab:: Exercise 2.1
 
-        Read `the UPPMAX documentation on Tensorflow<http://docs.uppmax.uu.se/software/tensorflow/>`_.
+        Read `the UPPMAX documentation on Tensorflow <http://docs.uppmax.uu.se/software/tensorflow/>`_.
 
         Which of the versions should you use?
 
@@ -264,7 +264,7 @@ machine learning module.
 
     .. tab:: Exercise 2.2
 
-        Read `the UPPMAX documentation on how to determine if a Python package comes with your Python module<http://docs.uppmax.uu.se/software/python/#determine-if-a-python-package-comes-with-your-python-module>`_.
+        Read `the UPPMAX documentation on how to determine if a Python package comes with your Python module <http://docs.uppmax.uu.se/software/python/#determine-if-a-python-package-comes-with-your-python-module>`_.
 
         Is the Python package ``pandas``installed? If yes, which version?
 
@@ -358,7 +358,7 @@ Here we install a Python package ourselves.
 
     .. tab:: Exercise 3.1
 
-        Read `the UPPMAX documentation on how to install Python packages using pip<http://docs.uppmax.uu.se/software/python_install_packages/#pip>`_.
+        Read `the UPPMAX documentation on how to install Python packages using pip <http://docs.uppmax.uu.se/software/python_install_packages/#pip>`_.
 
         We will be using the first install with ``--user``.
 
