@@ -104,6 +104,21 @@ Example - Installing ``knitr``
             $ mkdir -v /proj/nobackup/hpc2n2024-025/<your-dir>/r_proj && cd $_
 
    - Make sure you have loaded ``R`` and ``R_packages`` on UPPMAX or ``R`` and ``R-bundle-Bioconductor`` on HPC2N. 
+
+   .. tabs::
+
+      .. tab::UPPMAX
+
+         .. code-block:: console
+
+            $ ml R/4.1.1 R_packages/4.1.1
+
+      .. tab::HPC2N
+
+         .. code-block:: console
+
+            ml GCC/11.2.0  OpenMPI/4.1.1  R-bundle-Bioconductor/3.14-R-4.1.2
+
    - Next, launch the ``R`` interpreter and initialize an ``renv`` environment.
 
    .. warning:: 
