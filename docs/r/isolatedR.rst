@@ -95,13 +95,13 @@ Example - Installing ``knitr``
 
          .. code-block:: console
    
-            $ mkdir -v /proj/r-py-jl/<your-dir>/R/r_proj && cd $_    
+            $ mkdir -v /proj/r-py-jl/<your-dir>/r_proj && cd $_    
 
       .. tab:: HPC2N
  
          .. code-block:: console
    
-            $ mkdir -v /proj/nobackup/hpc2n2024-025/<your-dir>/R/r_proj && cd $_
+            $ mkdir -v /proj/nobackup/hpc2n2024-025/<your-dir>/r_proj && cd $_
 
    - Make sure you have loaded ``R`` and ``R_packages`` on UPPMAX or ``R`` and ``R-bundle-Bioconductor`` on HPC2N. 
    - Next, launch the ``R`` interpreter and initialize an ``renv`` environment.
@@ -150,71 +150,61 @@ Example - Installing ``knitr``
             ...
 
 
-         Pick 62: Sweden (Umeå) [https]
+         Pick 59: Sweden (Umeå) [https]
 
+   Now start R if it is not already running and initialize the renv 
 
-.. code-block:: R
+   .. code-block:: R
    
-   renv::init()
-   # Exit the session
-   quit()
+      renv::init()
+      # Exit the session
+      quit()
 
-Verify that the ``renv`` directory as well as lock file was created
+   Verify that the ``renv`` directory as well as lock file was created
 
-.. code-block:: console
+   .. code-block:: console
 
-   $ ls -l
-   drwxrwsr-x 4 matpiq p_py-r-jl 4096 Feb  9 16:32 renv
-   -rw-rw-r-- 1 matpiq p_py-r-jl  354 Feb  9 16:32 renv.lock
+      $ ls -l
+      drwxrwsr-x 4 matpiq p_py-r-jl 4096 Feb  9 16:32 renv
+      -rw-rw-r-- 1 matpiq p_py-r-jl  354 Feb  9 16:32 renv.lock
 
-Relaunch and check at the library paths
+   Relaunch R and check the library paths
 
-.. code-block:: Rconsole
+   .. code-block:: Rconsole
 
-   > .libPaths()
-   [1] "/crex/proj/py-r-jl/matpiq/r_proj/renv/library/R-4.1/x86_64-pc-linux-gnu"
-   [2] "/scratch/RtmpMgprgX/renv-system-library"
+      > .libPaths()
+      [1] "/crex/proj/py-r-jl/matpiq/r_proj/renv/library/R-4.1/x86_64-pc-linux-gnu"
+      [2] "/scratch/RtmpMgprgX/renv-system-library"
 
-What happens if you leave the project directory? As a last step we can try
-installing some package into the environment. Let's re-enter the project
-directory and try installing  ``knitr``
+   **Question**: What happens if you leave the project directory? 
 
-.. code-block:: rconsole
+   As a last step we can try installing some package into the environment. Let's re-enter the project directory (if you left it) and try installing  ``knitr``. Start R again if you had exited it. 
 
-   > install.packages("knitr")
+   .. code-block:: rconsole
 
-And check what was installed
+      > install.packages("knitr")
 
-.. code-block:: console
+   You could exit R and check what was installed 
 
-   $ ls -l renv/library/R-4.1/x86_64-pc-linux-gnu
-   lrwxrwxrwx  1 matpiq p_py-r-jl  121 Feb  9 16:44 evaluate -> /domus/h1/matpiq/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/evaluate/0.20/4b68aa51edd89a0e044a66e75ae3cc6c/evaluate
-   lrwxrwxrwx  1 matpiq p_py-r-jl  115 Feb  9 16:44 highr -> /domus/h1/matpiq/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/highr/0.10/06230136b2d2b9ba5805e1963fa6e890/highr
-   lrwxrwxrwx  1 matpiq p_py-r-jl  115 Feb  9 16:44 knitr -> /domus/h1/matpiq/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/knitr/1.42/8329a9bcc82943c8069104d4be3ee22d/knitr
-   dr-xr-sr-x 10 matpiq sw        4096 Sep  6  2021 renv
-   lrwxrwxrwx  1 matpiq p_py-r-jl  113 Feb  9 16:44 xfun -> /domus/h1/matpiq/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/xfun/0.37/a6860e1400a8fd1ddb6d9b4230cc34ab/xfun
-   lrwxrwxrwx  1 matpiq p_py-r-jl  114 Feb  9 16:44 yaml -> /domus/h1/matpiq/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/yaml/2.3.7/0d0056cc5383fbc240ccd0cb584bf436/yaml
+   .. code-block:: console
+
+      $ ls -l renv/library/R-4.1/x86_64-pc-linux-gnu
+      lrwxrwxrwx  1 matpiq p_py-r-jl  121 Feb  9 16:44 evaluate -> /domus/h1/matpiq/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/evaluate/0.20/4b68aa51edd89a0e044a66e75ae3cc6c/evaluate
+      lrwxrwxrwx  1 matpiq p_py-r-jl  115 Feb  9 16:44 highr -> /domus/h1/matpiq/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/highr/0.10/06230136b2d2b9ba5805e1963fa6e890/highr
+      lrwxrwxrwx  1 matpiq p_py-r-jl  115 Feb  9 16:44 knitr -> /domus/h1/matpiq/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/knitr/1.42/8329a9bcc82943c8069104d4be3ee22d/knitr
+      dr-xr-sr-x 10 matpiq sw        4096 Sep  6  2021 renv
+      lrwxrwxrwx  1 matpiq p_py-r-jl  113 Feb  9 16:44 xfun -> /domus/h1/matpiq/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/xfun/0.37/a6860e1400a8fd1ddb6d9b4230cc34ab/xfun
+      lrwxrwxrwx  1 matpiq p_py-r-jl  114 Feb  9 16:44 yaml -> /domus/h1/matpiq/.cache/R/renv/cache/v5/R-4.1/x86_64-pc-linux-gnu/yaml/2.3.7/0d0056cc5383fbc240ccd0cb584bf436/yaml
 
 
+*Note*: Notice that the packages exposed in the ``renv`` library are actually just symbolic links to the home directory. This allows the same package to be shared across environments. However, having this cached in the home directory might be suboptimal because of limited storage. We can change this behavior by setting ``use.cache:: FALSE`` in the ``renv/settings.dcf`` file. Another option is to set the ``RENV_PATHS_CACHE`` to someplace else, for example ``R_LIBS_SITE`` if the R_packages module is loaded. See more here: https://rstudio.github.io/renv/articles/renv.html#cache.
 
-*Note*: Notice that the packages exposed in the ``renv`` library are actually
-just symbolic links to the home directory. This allows the same package to be
-shared across environments. However, having this cached in the home directory
-might be suboptimal because of limited storage. We can change this behavior by
-setting ``use.cache:: FALSE`` in the ``renv/settings.dcf`` file. Another option
-is to set the ``RENV_PATHS_CACHE`` to someplace else, for example
-``R_LIBS_SITE`` if the R_packages module is loaded. See more here:
-https://rstudio.github.io/renv/articles/renv.html#cache.
-
-*Note*: You can also do all of this directly through Rstudio when initializing a
-project.
+*Note*: You can also do all of this directly through Rstudio when initializing a project.
 
 Conda (UPPMAX)
 --------------
 
-Another possibility on UPPMAX is instead using Conda to create a virtual
-environment. For example, create an environment ``yaml`` file. Let's call it
-``r_env.yaml``
+Another possibility on UPPMAX is instead using Conda to create a virtual environment. For example, create an environment ``yaml`` file. Let's call it ``r_env.yaml``
 
 .. code-block:: yaml
 
@@ -241,8 +231,7 @@ isolated R environment
    $ which R
    ~/.conda/envs/my_r_env/bin/R
 
-If we want to store our environments somewhere else, e.g. in the project
-directory (recommended), we can define the environmental variable
+If we want to store our environments somewhere else, e.g. in the project directory (recommended), we can define the environmental variable
 ``CONDA_ENVS_PATH="path/to/your/env"``.
 
 Benefits of using Conda:
@@ -254,8 +243,6 @@ Benefits of using Conda:
 
 .. keypoints::
 
-   - With a virtual environment you can tailor an environment with specific
-     versions for R and packages, not interfering with other installed
-     versions.
+   - With a virtual environment you can tailor an environment with specific versions for R and packages, not interfering with other installed versions.
    - Make it for each project you have for reproducibility.
    - UPPMAX has Conda as an alternative to ``renv``
