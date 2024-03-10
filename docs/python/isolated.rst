@@ -89,14 +89,14 @@ at `this UPPMAX page <http://docs.uppmax.uu.se/software/python_venv/#create-a-vi
 
 Load Python modules:
 
-- HPC2N: `module load GCC/12.3.0 Python/3.11.3`
-- UPPMAX: `module load python/3.11.8`
+- HPC2N: ``module load GCC/12.3.0 Python/3.11.3``
+- UPPMAX: ``module load python/3.11.8``
 
 As virtual environments can take up a lot of disc space,
 consider using your project folder:
 
-- UPPMAX: `/proj/[uppmax_project]/`
-- HPC2N: `/proj/nobackup/[hpc2n_project]/`
+- UPPMAX: ``/proj/[uppmax_project]/``
+- HPC2N: ``/proj/nobackup/[hpc2n_project]/``
 
 However, in this course, you are probably fine using your home folder.
 
@@ -238,7 +238,8 @@ Create a virtual environment called ``Example-gpu`` for using on UPPMAX for the 
 Using setup.py
 --------------
 
-Some Python packages are only available as downloads, for instance via github, to install with setup.py or similar file. If that is the case for the package you need, this is how you do it: 
+Some Python packages are only available as downloads, 
+for instance via github, to install with setup.py or similar file. If that is the case for the package you need, this is how you do it: 
 
 - Pick a location for your installation (change below to fit - I am installing under a project storage)
 
