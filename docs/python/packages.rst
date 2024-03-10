@@ -5,29 +5,30 @@ Packages
 
    .. tab:: Learning objectives
 
-
-      - Have a first 'Get stuff to work' experience
-      - Experience when importing a Python package gives an error
-      - Search for an UPPMAX module that needs to be loaded
-      - Import a Python package successfully
+      - practice to determine the version of a Python package 
+      - practice to determine that a Python package is not installed
+      - practice to have loaded a Python machine learning module
+      - practice to install a Python package
 
    .. tab:: For teachers
 
       Teaching goals are:
 
-      - Learners have observed the error when importing a Python package without the needed UPPMAX module loaded
-      - Learners have search through the UPPMAX modules
-      - Learners may find out that X-forwarding is important
-      - Learners have gotten 'stuff to work'
-
-      Other goals are:
-
-      - Verify that learners indeed have learned how to login with X-forwarding.
-        Redirect to remote desktop environment as a solution
+      - Learners have determined the version of a Python package 
+      - Learners have determined that a Python package is not installed
+      - Learners have loaded a Python machine learning module
+      - Learners have installed a Python package
 
       Lesson plan:
 
       - 5 mins: prior knowledge
+        - What are Python packages?
+        - Why use Python packages?
+        - How to find out if a package is already installed?
+        - What are some Python package installers?
+        - What are the differences?
+        - What are some Python package installers used on UPPMAX?
+        - What are some Python package installers used on HPC2N?
       - 5 mins: presentation
       - 25 mins: challenge
       - 5 mins: feedback
@@ -79,7 +80,6 @@ As a first impression, here is a simple comparison between the two:
 | Installs non-Python software | Yes   | No   |
 +------------------------------+-------+------+
 
-
 Install with pip
 ----------------
 
@@ -121,18 +121,34 @@ as is taught in `the session on isolated environments <https://uppmax.github.io/
 Exercises
 ---------
 
-Here are some exercises, including the answers.
+These exercises follow a common user journey, 
+for a user that needs to use a certain Python packages:
+
+- In exercise 1, we determine if a Python package is already installed
+- In exercise 2, we determine if a machine learning Python package is already installed
+- If all fails, in exercise 3, we install a Python package ourselves
+
+Like any user, we'll try to be autonomous and read the -hopefully well written!-
+UPPMAX documentation.
 
 Exercise 1
 ----------
 
 .. admonition:: Teaching goals
 
-    Apply the documentation to show if a Python package is already installed
+    - Practice reading documentation
+    - Apply/rehearse the documentation to load a module
+    - Apply the documentation to show if a Python package is already installed
+    - Observe how it looks like when a package is not installed
+
+Imagine you want to use the Python packages `pandas` and `tensorflow-cpu` and `mhcnuggets`.
+Here we see that one comes already installed with the module system.
 
 .. tabs::
 
     .. tab:: Exercise 1.1
+
+        Read [the UPPMAX documentation on how to load Python](http://docs.uppmax.uu.se/software/python/#loading-python).
 
         Load the module for Python 3.11.8
 
@@ -155,6 +171,8 @@ Exercise 1
 .. tabs::
 
     .. tab:: Exercise 1.2
+
+        Read [the UPPMAX documentation on how to determine if a Python package comes with your Python module](http://docs.uppmax.uu.se/software/python/#determine-if-a-python-package-comes-with-your-python-module).
 
         Is the Python package `pandas` installed? If yes, which version?
 
@@ -181,6 +199,30 @@ Exercise 1
 .. tabs::
 
     .. tab:: Exercise 1.3
+
+        Is the Python package `tensorflow-cpu` installed? If yes, which version?
+
+    .. tab:: Answer HPC2N
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+    .. tab:: Answer UPPMAX
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+        In the list, one cannot find ``tensorflow-cpu``.
+
+        So, no, the Python package ``tensorflow-cpu`` is not installed.
+
+    .. tab:: Exercise 1.4
 
         Is the Python package `mhcnuggets` installed? If yes, which version?
 
@@ -210,13 +252,125 @@ Exercise 2
 
 .. admonition:: Teaching goals
 
-   	 Apply the documentation to load a Python package
+    - Practice reading documentation
+    - Rehearse the documentation to load a Python machine learning module
+    - Apply the documentation to show if a Python package is already installed
+    - Observe how it looks like when a package is not installed
 
-The Python package `tensorflow` (for CPU) is not installed.
+Imagine you want to use the Python packages `pandas` and `tensorflow-cpu` and `mhcnuggets`.
+Here we see that two come already installed with a Python
+machine learning module.
 
-- Use the module system to find which module you need to load.
-- Load the TensorFlow module.
-- Confirm that it works
+.. tabs::
+
+    .. tab:: Exercise 2.1
+
+        Read [the UPPMAX documentation on Tensorflow](http://docs.uppmax.uu.se/software/tensorflow/).
+
+        Which of the versions should you use?
+
+        Load the latest Python machine learning module for that version.
+
+    .. tab:: Answer HPC2N
+
+        ``TODO``
+
+        Unsure which version you should use, 
+        as Kebnekaise has both CPU and GPU.
+
+        Do:
+
+        .. code-block::
+
+            module load ???
+
+    .. tab:: Answer UPPMAX
+
+        Rackham only has CPUs, hence you will need to load the ``cpu`` module:
+
+        Do:
+
+        .. code-block::
+
+            module load python_ML_packages/3.11.8-cpu
+
+.. tabs::
+
+    .. tab:: Exercise 2.2
+
+        Read [the UPPMAX documentation on how to determine if a Python package comes with your Python module](http://docs.uppmax.uu.se/software/python/#determine-if-a-python-package-comes-with-your-python-module).
+
+        Is the Python package `pandas` installed? If yes, which version?
+
+    .. tab:: Answer HPC2N
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+    .. tab:: Answer UPPMAX
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+        Then among the list one can find: ``pandas 2.2.0``
+
+        So, yes, the Python package `pandas` version 2.2.0 is installed!
+
+.. tabs::
+
+    .. tab:: Exercise 2.3
+
+        Is the Python package `tensorflow-cpu` installed? If yes, which version?
+
+    .. tab:: Answer HPC2N
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+    .. tab:: Answer UPPMAX
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+        In the list, one can find ``tensorflow-cpu``, with version ``2.15.0.post1``.
+
+        So, yes, the Python package ``tensorflow-cpu`` is installed.
+
+    .. tab:: Exercise 2.4
+
+        Is the Python package `mhcnuggets` installed? If yes, which version?
+
+    .. tab:: Answer HPC2N
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+    .. tab:: Answer UPPMAX
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+        In the list, one cannot find ``mhcnuggets``.
+
+        So, no, the Python package ``mhcnuggets`` is not installed.
 
 
 Question 3
@@ -224,10 +378,116 @@ Question 3
 
 .. admonition:: Teaching goals
 
-    Apply the documentation to install a Python package
+    - Practice reading documentation
+    - Install a new package.
+    - Rehearse determining if a Python package is already installed
 
-The Python package Theano is not installed.
-Install Theano.
+Imagine you want to use the Python packages `pandas` and `tensorflow-cpu` and `mhcnuggets`.
+Even when loading a bigger module, one of the packages was not installed for us.
+Here we install a Python package ourselves.
+
+.. tabs::
+
+    .. tab:: Exercise 3.1
+
+        Read [the UPPMAX documentation on how to install Python packages using pip](http://docs.uppmax.uu.se/software/python_install_packages/#pip).
+
+        We will be using the first install with ``--user``.
+
+        In which folder do the Python packages end up?
+
+        Try to come up with a reason why would this be important to know.
+
+    .. tab:: Answer
+
+        When using ``--user``, your Python packages end up in the ``.local`` folder.
+
+        This can be important, because it will always be present.
+        That is, it is not part of an isolated environment.
+        If you, for example, work in an 'isolated' environment and
+        run into problems with Python package versions that are not part of it,
+        it is probably those packages in your ``.local`` folder.
+        This can be solved by removing that ``.local`` folder.
+
+HIERO
+
+.. tabs::
+
+    .. tab:: Exercise 3.2
+
+        Read [the UPPMAX documentation on how to determine if a Python package comes with your Python module](http://docs.uppmax.uu.se/software/python/#determine-if-a-python-package-comes-with-your-python-module).
+
+        Is the Python package `pandas` installed? If yes, which version?
+
+    .. tab:: Answer HPC2N
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+    .. tab:: Answer UPPMAX
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+        Then among the list one can find: ``pandas 2.2.0``
+
+        So, yes, the Python package `pandas` version 2.2.0 is installed!
+
+.. tabs::
+
+    .. tab:: Exercise 3.3
+
+        Is the Python package `tensorflow-cpu` installed? If yes, which version?
+
+    .. tab:: Answer HPC2N
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+    .. tab:: Answer UPPMAX
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+        In the list, one can find ``tensorflow-cpu``, with version ``2.15.0.post1``.
+
+        So, yes, the Python package ``tensorflow-cpu`` is installed.
+
+    .. tab:: Exercise 3.4
+
+        Is the Python package `mhcnuggets` installed? If yes, which version?
+
+    .. tab:: Answer HPC2N
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+    .. tab:: Answer UPPMAX
+
+        Do:
+
+        .. code-block::
+
+            pip list
+
+        In the list, one cannot find ``mhcnuggets``.
+
+        So, no, the Python package ``mhcnuggets`` is not installed.
   
 Links
 -----
