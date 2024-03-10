@@ -9,6 +9,7 @@ ML with R
 .. objectives:: 
 
    - Short introduction to ML with R
+   - Workflow
    - Show the structure of a suitable batch script
    - Examples to try
 
@@ -31,6 +32,14 @@ and many many more.
 Running your code
 -----------------
 
+**Workflow**
+
+1. Determine if you need any R libraries that are not already installed (load R module and R_packages/R-bundle-Bioconductor and check)
+2. Determine if you want to run on CPUs or GPUs - some of the R version modules are not CUDA-aware
+3. Install any missing R libraries in an isolated environment 
+4. Possibly download any datasets
+5. Write a batch script
+6. Submit the batch script   
 
 
 R batch scripts for ML
@@ -38,12 +47,8 @@ R batch scripts for ML
 
 Since most R codes for Machine Learning would run for a fairly long time, you would usually have to run them in a batch script. 
 
-**Workflow**
-
-1. Determine if you need any R libraries that are not already installed 
-
-Serial code
-'''''''''''
+ML on CPUs
+''''''''''
 
 .. type-along:: 
 
