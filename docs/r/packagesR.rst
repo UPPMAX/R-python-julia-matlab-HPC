@@ -132,6 +132,12 @@ An R packages can exist in five possible states
 :raw-html:`<br />`
 :raw-html:`<br />`
 :raw-html:`<br />`
+:raw-html:`<br />`
+:raw-html:`<br />`
+:raw-html:`<br />`
+:raw-html:`<br />`
+:raw-html:`<br />`
+:raw-html:`<br />`
 
 | Source: 
 | https://r-pkgs.org/structure.html and
