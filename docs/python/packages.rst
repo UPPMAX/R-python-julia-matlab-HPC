@@ -42,24 +42,28 @@ When possible, using an existing Python package is usually smarter than writing 
 In this session, 
 we practice working with packages.
 
-.. mermaid:: packages.mmd
+Finding packages
+----------------
 
-Python package installation systems
------------------------------------
 
-There are two Python package installation systems,
-called ``conda`` and ``pip``.
+
+Python package installers
+-------------------------
+
+.. mermaid:: package_installers.mmd
+
+There are two Python package installers, called ``conda`` and ``pip``.
 
 In this session, we use ``pip``, as it can be used on 
 the two HPC clusters used in this course:
 
-+-----------------------------+-----------------+------------------+-----------------+
-| Package installation system | HPC2N           | UPPMAX (Rackham) | UPPMAX (Bianca) |
-+=============================+=================+==================+=================+
-| conda                       | Unsupported [1] | Recommended      | Recommended     |
-+-----------------------------+-----------------+------------------+-----------------+
-| pip                         | Recommended     | Supported        | Unsupported [2] |
-+-----------------------------+-----------------+------------------+-----------------+
++-------------------+-----------------+------------------+-----------------+
+| Package installer | HPC2N           | UPPMAX (Rackham) | UPPMAX (Bianca) |
++===================+=================+==================+=================+
+| conda             | Unsupported [1] | Recommended      | Recommended     |
++-------------------+-----------------+------------------+-----------------+
+| pip               | Recommended     | Supported        | Unsupported [2] |
++-------------------+-----------------+------------------+-----------------+
 
 - ``[1]`` `HPC2N guide against using conda <https://www.hpc2n.umu.se/documentation/guides/anaconda>`_
 - ``[2]`` Bianca has no internet
@@ -309,6 +313,8 @@ machine learning module.
         In the list, one can find ``tensorflow-cpu``, with version ``2.15.0.post1``.
 
         So, yes, the Python package ``tensorflow-cpu`` is installed.
+
+.. tabs::
 
     .. tab:: Exercise 2.4
 
