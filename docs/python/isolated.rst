@@ -84,125 +84,23 @@ However, there are more efficient ways, which are discussed below.
 Creating a ``venv``
 -------------------
 
-- You load the Python module you will be using, 
-  as well as any site-installed package modules (requires the ``--system-site-packages`` option)
+How to create a ``venv`` virtual environment is described
+at `this UPPMAX page <http://docs.uppmax.uu.se/software/python_venv/#create-a-virtual-environment>`_.
 
-   
-Virtual environment - venv
----------------------------------------
+Load Python modules:
 
-Example
-'''''''
+- HPC2N: `module load GCC/12.3.0 Python/3.11.3`
+- UPPMAX: `module load python/3.11.8`
 
-.. tip::
-    
-   **Do not code along!**
+As virtual environments can take up a lot of disc space,
+consider using your project folder:
 
-Create a ``venv``. First load the python version you want to base your virtual environment on (3.11.x for this course):
+- UPPMAX: `/proj/[uppmax_project]/`
+- HPC2N: `/proj/nobackup/[hpc2n_project]/`
 
-.. tabs::
+However, in this course, you are probably fine using your home folder.
 
-   .. tab:: UPPMAX
-
-      .. code-block:: console
-
-         $ module load python/3.11.8
-         $ python -m venv --system-site-packages Example
-    
-      "Example" is the name of the virtual environment. 
-      The directory “Example” is created in the present working directory. 
-      The ``-m`` flag makes sure that you use the libraries 
-      from the Python version you are using.
-
-   .. tab:: HPC2N
-
-      .. code-block:: console
-
-         $ module load GCC/12.3.0 Python/3.11.3
-         $ virtualenv --system-site-packages Example
-    
-      Where "Example" is the name of the virtual environment. You can name it whatever you want. The directory “Example” is created in the present working directory - to change that, give the full path.
-
-
-.. note::
-
-   To save space, you should load any other Python modules 
-   you will need that are system installed before installing your own packages! 
-   Remember to choose ones that are compatible with the Python version you picked! 
-   ``--system-site-packages`` includes the packages already installed 
-   in the loaded python module.
-
-**NOTE**: since it may take up a bit of space 
-if you are installing many Python packages to your virtual environment, 
-we **strongly** recommend you place it in your project storage! 
-
-**NOTE**: if you need are for instance working with both Python 2 and 3, 
-then you can of course create more than one virtual environment, 
-just name them so you can easily remember which one has what. 
-      
-If you want it in a certain place...
-
-.. tabs::
-
-   .. tab:: UPPMAX
-
-      To place it in (your own subdirectory named <user>/python) in the course project folder
-      
-      .. code-block:: console
-
-         $ python -m venv --system-site-packages /proj/r-py-jl/<user>/python/Example
-    
-      Activate it.
-
-      .. code-block:: console
-
-          $ source /proj/r-py-jl/<user>/python/Example/bin/activate
-
-      Note that your prompt is changing to start with (Example) to show that you are within an environment.
-
-   .. tab:: HPC2N
-
-      To place it in a directory you created below your project storage (again calling it "Example"): 
-
-      .. code-block:: console
-
-         $ virtualenv --system-site-packages /proj/nobackup/hpc2n2024-025/<your-directory>/python/Example 
-    
-      Activate it.
-
-      .. code-block:: console
-
-          $ source /proj/nobackup/hpc2n2024-025/<your-directory>/python/Example/bin/activate
-
-Note that your prompt is changing to start with the name of your virtual environment
-to show that you are within it.
-
-Using pip
----------
-
-Install your packages (here numpy and matplotlib, both with specific versions) with ``pip``. While not always needed, it is often a good idea to give the correct versions you want, to ensure compatibility with other packages you use: 
-
-.. prompt:: 
-    :language: bash
-    :prompts: (Example) $
-      
-    pip install numpy==1.15.4 matplotlib==2.2.2
-
-Deactivate it.
-
-.. code-block:: console
-  
-   deactivate
-    
 The "--no-cache-dir" option is required to avoid it from reusing earlier installations from the same user in a different environment. The "--no-build-isolation" is to make sure that it uses the loaded modules from the module system when building any Cython libraries.
-
-
-Every time you need the tools available in the virtual environment you activate it as above.
-
-.. code-block:: console
-
-   $ source /proj/nobackup/hpc2n2024-025/<your-directory>/python/Example/bin/activate
-    
 
 Prepare the course environment
 ------------------------------
