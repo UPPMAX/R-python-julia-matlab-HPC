@@ -611,7 +611,7 @@ python -m venv --system-site-packages /proj/naiss2023-22-914/<user>/python/Examp
 # Activate
 source /proj/naiss2023-22-914/<user>/python/Example/bin/activate
 
-# Get requirments
+# Get requirements
 pip freeze > requirements.txt
 
 # Deactivate
