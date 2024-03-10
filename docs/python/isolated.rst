@@ -71,16 +71,24 @@ General workflow
 
 Whatever environment manager you use, this is the workflow:
 
-- You load the Python module you will be using, 
-  as well as any site-installed package modules (requires the ``--system-site-packages`` option)
-- You create the isolated environment with something like venv, virtualenv, or conda
+- You create the isolated environment
 - You activate the environment
-- You install (or update) the environment with the packages you need
-- You work in the isolated environment
+- You work in the isolated environment. 
+  Here you install (or update) the environment with the packages you need
 - You deactivate the environment after use 
 
+A virtual environment can be created in multiple ways,
+for example, from scratch.
+However, there are more efficient ways, which are discussed below.
+
+Creating a ``venv``
+-------------------
+
+- You load the Python module you will be using, 
+  as well as any site-installed package modules (requires the ``--system-site-packages`` option)
+
    
-Virtual environment - venv & virtualenv
+Virtual environment - venv
 ---------------------------------------
 
 Example
@@ -101,7 +109,10 @@ Create a ``venv``. First load the python version you want to base your virtual e
          $ module load python/3.11.8
          $ python -m venv --system-site-packages Example
     
-      "Example" is the name of the virtual environment. The directory “Example” is created in the present working directory. The ``-m`` flag makes sure that you use the libraries from the python version you are using.
+      "Example" is the name of the virtual environment. 
+      The directory “Example” is created in the present working directory. 
+      The ``-m`` flag makes sure that you use the libraries 
+      from the Python version you are using.
 
    .. tab:: HPC2N
 
@@ -115,14 +126,20 @@ Create a ``venv``. First load the python version you want to base your virtual e
 
 .. note::
 
-   To save space, you should load any other Python modules you will need that are system installed before installing your own packages! Remember to choose ones that are compatible with the Python version you picked! 
-   ``--system-site-packages`` includes the packages already installed in the loaded python module.
+   To save space, you should load any other Python modules 
+   you will need that are system installed before installing your own packages! 
+   Remember to choose ones that are compatible with the Python version you picked! 
+   ``--system-site-packages`` includes the packages already installed 
+   in the loaded python module.
 
-**NOTE**: since it may take up a bit of space if you are installing many Python packages to your virtual environment, we **strongly** recommend you place it in your project storage! 
+**NOTE**: since it may take up a bit of space 
+if you are installing many Python packages to your virtual environment, 
+we **strongly** recommend you place it in your project storage! 
 
-**NOTE**: if you need are for instance working with both Python 2 and 3, then you can of course create more than one virtual environment, just name them so you can easily remember which one has what. 
+**NOTE**: if you need are for instance working with both Python 2 and 3, 
+then you can of course create more than one virtual environment, 
+just name them so you can easily remember which one has what. 
       
-
 If you want it in a certain place...
 
 .. tabs::
@@ -157,9 +174,8 @@ If you want it in a certain place...
 
           $ source /proj/nobackup/hpc2n2024-025/<your-directory>/python/Example/bin/activate
 
-
-Note that your prompt is changing to start with (name of your vitual environment) to show that you are within it.
-
+Note that your prompt is changing to start with the name of your virtual environment
+to show that you are within it.
 
 Using pip
 ---------
