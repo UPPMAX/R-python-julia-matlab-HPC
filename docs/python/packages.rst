@@ -22,13 +22,13 @@ Packages
       Lesson plan:
 
       - 5 mins: prior knowledge
-        - What are Python packages?
-        - Why use Python packages?
-        - How to find out if a package is already installed?
-        - What are some Python package installers?
-        - What are the differences?
-        - What are some Python package installers used on UPPMAX?
-        - What are some Python package installers used on HPC2N?
+         - What are Python packages?
+         - Why use Python packages?
+         - How to find out if a package is already installed?
+         - What are some Python package installers?
+         - What are the differences?
+         - What are some Python package installers used on UPPMAX?
+         - What are some Python package installers used on HPC2N?
       - 5 mins: presentation
       - 25 mins: challenge
       - 5 mins: feedback
