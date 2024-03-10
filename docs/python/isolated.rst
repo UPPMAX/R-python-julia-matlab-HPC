@@ -100,8 +100,6 @@ consider using your project folder:
 
 However, in this course, you are probably fine using your home folder.
 
-The "--no-cache-dir" option is required to avoid it from reusing earlier installations from the same user in a different environment. The "--no-build-isolation" is to make sure that it uses the loaded modules from the module system when building any Cython libraries.
-
 Prepare the course environment
 ------------------------------
 
