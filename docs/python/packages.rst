@@ -7,7 +7,6 @@ Packages
 
 
       - Have a first 'Get stuff to work' experience
-      - Rehearse creating a script
       - Experience when importing a Python package gives an error
       - Search for an UPPMAX module that needs to be loaded
       - Import a Python package successfully
@@ -41,6 +40,8 @@ Packages are pieces of Python code written to be used by others.
 When possible, using an existing Python package is usually smarter than writing code yourself.
 In this session, 
 we practice working with packages.
+
+.. mermaid:: packages.mmd
 
 Python package installation systems
 -----------------------------------
@@ -133,7 +134,7 @@ Exercise 1
 
     .. tab:: Exercise 1.1
 
-        Load the module for Python 3.11.4
+        Load the module for Python 3.11.8
 
     .. tab:: Answer HPC2N
 
@@ -141,7 +142,7 @@ Exercise 1
 
         .. code-block::
 
-            module load python/3.11.4
+            module load python/3.11.8
 
     .. tab:: Answer UPPMAX
 
@@ -149,7 +150,7 @@ Exercise 1
 
         .. code-block::
 
-            module load python/3.11.4
+            module load python/3.11.8
 
 .. tabs::
 
@@ -173,9 +174,9 @@ Exercise 1
 
             pip list
 
-        Then among the list one can find: ``pandas 2.0.3``
+        Then among the list one can find: ``pandas 2.2.0``
 
-        So, yes, the Python package `pandas` version 2.0.3 is installed!
+        So, yes, the Python package `pandas` version 2.2.0 is installed!
 
 .. tabs::
 
@@ -211,11 +212,12 @@ Exercise 2
 
    	 Apply the documentation to load a Python package
 
-The Python package PyTorch is not installed.
+The Python package `tensorflow` (for CPU) is not installed.
 
 - Use the module system to find which module you need to load.
 - Load the TensorFlow module.
 - Confirm that it works
+
 
 Question 3
 ----------
@@ -226,7 +228,6 @@ Question 3
 
 The Python package Theano is not installed.
 Install Theano.
-
   
 Links
 -----
@@ -238,3 +239,8 @@ Links
 * `Presentation: Load and use Python packages on the UPPMAX and HPC2N HPC clusters using pip (ODP) <https://github.com/UPPMAX/R-python-julia-HPC/blob/main/docs/python/find_and_use_packages.odp>`_
     
     
+Sloppy Notes
+
+3.11.4 before
+3.11.8 new
+python_ML_packages/3.11.8-cpu

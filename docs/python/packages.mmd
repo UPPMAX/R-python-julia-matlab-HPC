@@ -1,0 +1,18 @@
+flowchart TD
+  python[Python]
+  packages[packages]
+  code_written_by_others[code written by others]
+  package_install_system[package installation system]
+  pip[pip]
+  conda[conda]
+  uppmax[UPPMAX]
+  hpc2n[HPC2N]
+
+  python -->|has| packages
+  packages -->|are|code_written_by_others
+  packages -->|installed by|package_install_system
+  package_install_system --> pip
+  package_install_system --> conda
+  conda -->|works on|uppmax
+  pip -->|works on|uppmax
+  pip -->|works on|hpc2n
