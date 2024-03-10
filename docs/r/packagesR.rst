@@ -44,7 +44,7 @@ us look at a very simple example
 
 .. code-block:: console
 
-   $ git clone git@github.com:MatPiq/R_example.git
+   $ git clone https://github.com/MatPiq/R_example.git
 
    $ cd R_example
 
@@ -57,6 +57,48 @@ us look at a very simple example
    ├── man
    │   └── hello.Rd
    └── r_example.Rproj
+
+.. tips::
+
+   If you are on a Linux Ubuntu system where tree is not installed, and you do not have root permissions, you can do this to install it in your own area 
+
+   1) Create a directory (in your home folder) to install in: 
+
+   .. code-block: console 
+
+      mkdir ~/mytree
+
+   Change to that directory: 
+
+   .. code-block:: console
+
+      cd ~/mytree
+
+   Now download tree: 
+
+   .. code-block:: console
+
+      apt download tree
+
+   Unpack the files: 
+
+   .. code-block:: console 
+
+      dpkg-deb -xv ./*deb ./
+
+   You can use tree like this now, giving the full path: 
+   
+   .. code-block:: console
+
+      ~/mytree/usr/bin/tree
+
+   Note: if you want to be able to use it with the command "tree" you could set an alias in your ~/.bashrc file and then ``source`` it: 
+
+   .. code-block:: console 
+
+      echo 'alias tree="$HOME/mytree/usr/bin/tree"' >> ~/.bashrc
+      source ~/.bashrc
+
 
 Package states
 ##############
