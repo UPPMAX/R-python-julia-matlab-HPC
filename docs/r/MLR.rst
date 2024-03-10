@@ -1,82 +1,46 @@
-Running R in batch mode
-=======================
+ML with R 
+=========
 
 .. questions::
 
-   - What is a batch job?
-   - How to write a batch script and submit a batch job?
-
-   
+   - Is R suitable for Machine Learning (ML)?
+   - How to run R ML jobs on a HPC system (UPPMAX, HPC2N, ...)
    
 .. objectives:: 
 
-   - Short introduction to SLURM scheduler
-   - Show structure of a batch script
-   - Example to try
+   - Short introduction to ML with R
+   - Show the structure of a suitable batch script
+   - Examples to try
 
-.. admonition:: Compute allocations in this workshop 
+R provides many packages that are specifically designed for machine learning. R is also known for its statistical capabilities for analysis and interpretation of data. 
 
-   - Rackham: ``naiss2024-22-107``
-   - Kebnekaise: ``hpc2n2024-025``
+This all makes it easier to develop and deploy models, also without having to write a lot of code yourself. 
 
-.. admonition:: Storage space for this workshop 
+The R community has contributed many powerful packages, both for machine learning and data science. Some of the popular packages are: 
 
-   - Rackham: ``/proj/r-py-jl``
-   - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
+- Dplyr
+- Tidyr
+- Caret
+- MLR
+- ggplot2
+- randomForest
+- mlbench
 
-   
+and many many more. 
+
+Running your code
+-----------------
 
 
-Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
 
-The batch system used at both UPPMAX and HPC2N (and most other HPC centres in Sweden) is called SLURM. 
+R batch scripts for ML
+~~~~~~~~~~~~~~~~~~~~~~
 
-SLURM is an Open Source job scheduler, which provides three key functions
-
-- Keeps track of available system resources
-- Enforces local system resource usage and job scheduling policies
-- Manages a job queue, distributing work across resources according to policies
-
-In order to run a batch job, you need to create and submit a SLURM submit file (also called a batch submit file, a batch script, or a job script).
-
-Guides and documentation at: http://www.hpc2n.umu.se/support and https://www.uppmax.uu.se/support/user-guides/slurm-user-guide/ 
+Since most R codes for Machine Learning would run for a fairly long time, you would usually have to run them in a batch script. 
 
 **Workflow**
 
-- Write a batch script
-
-  - Inside the batch script you need to load the modules you need (R and any prerequisites) 
-  - If you are using any own-installed packages, make sure R_LIBS_USER is set (export R_LIBS_USER=/path/to/my/R-packages) 
-  - Ask for resources depending on if it is a parallel job or a serial job, if you need GPUs or not, etc.
-  - Give the command(s) to your R script
-
-- Submit batch script with ``sbatch <my-batch-script-for-R.sh>`` 
-
-Common file extensions for batch scripts are ``.sh`` or ``.batch``, but they are not necessary. You can choose any name that makes sense to you. 
-
-Useful commands to the batch system
------------------------------------
-
-- Submit job: ``sbatch <jobscript.sh>``
-- Get list of your jobs: ``squeue -u <username>``
-- Check on a specific job: ``scontrol show job <job-id>``
-- Delete a specific job: ``scancel <job-id>``
-- Useful info about a job: ``sacct -l -j <job-id> | less -S``
-- Url to a page with info about the job (Kebnekaise only): ``job-usage <job-id>``
-
-
-.. keypoints::
-
-   - The SLURM scheduler handles allocations to the calculation nodes
-   - Interactive sessions was presented in the previous presentation
-   - Batch jobs runs without interaction with the user
-   - A batch script consists of a part with SLURM parameters describing the allocation and a second part describing the actual work within the job, for instance one or several R scripts.
-      - Remember to include possible input arguments to the R script in the batch script.
-    
-
-
-Example R batch scripts
------------------------
+1. Determine if you need any R libraries that are not already installed 
 
 Serial code
 '''''''''''
