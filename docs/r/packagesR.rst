@@ -59,45 +59,46 @@ us look at a very simple example
    └── r_example.Rproj
 
 .. tips::
+   :class: dropdown
 
-   If you are on a Linux Ubuntu system where tree is not installed, and you do not have root permissions, you can do this to install it in your own area 
+      If you are on a Linux Ubuntu system where tree is not installed, and you do not have root permissions, you can do this to install it in your own area 
 
-   1) Create a directory (in your home folder) to install in: 
+      1) Create a directory (in your home folder) to install in: 
 
-   .. code-block: console 
+      .. code-block: console 
 
-      mkdir ~/mytree
+         mkdir ~/mytree
 
-   Change to that directory: 
+      Change to that directory: 
 
-   .. code-block:: console
+      .. code-block:: console
 
-      cd ~/mytree
+         cd ~/mytree
 
-   Now download tree: 
+      Now download tree: 
 
-   .. code-block:: console
+      .. code-block:: console
 
-      apt download tree
+         apt download tree
 
-   Unpack the files: 
+      Unpack the files: 
 
-   .. code-block:: console 
+      .. code-block:: console 
 
-      dpkg-deb -xv ./*deb ./
+         dpkg-deb -xv ./*deb ./
 
-   You can use tree like this now, giving the full path: 
+      You can use tree like this now, giving the full path: 
    
-   .. code-block:: console
+      .. code-block:: console
 
-      ~/mytree/usr/bin/tree
+         ~/mytree/usr/bin/tree
 
-   Note: if you want to be able to use it with the command "tree" you could set an alias in your ~/.bashrc file and then ``source`` it: 
+      **Note**: if you want to be able to use it with the command "tree" you could set an alias in your ~/.bashrc file and then ``source`` it: 
 
-   .. code-block:: console 
+      .. code-block:: console 
 
-      echo 'alias tree="$HOME/mytree/usr/bin/tree"' >> ~/.bashrc
-      source ~/.bashrc
+         echo 'alias tree="$HOME/mytree/usr/bin/tree"' >> ~/.bashrc
+         source ~/.bashrc
 
 
 Package states
