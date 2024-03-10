@@ -138,6 +138,7 @@ An R packages can exist in five possible states
 :raw-html:`<br />`
 :raw-html:`<br />`
 :raw-html:`<br />`
+:raw-html:`<br />`
 
 | Source: 
 | https://r-pkgs.org/structure.html and
@@ -177,11 +178,11 @@ way to check is probably starting the interpreter and running the ``libPaths()``
 	
    .. tab:: HPC2N
    
-      Load ``R``, e.g. version 4.0.4 and start the Interpreter
+      Load ``R``, e.g. version 4.1.2 and start the Interpreter
 
       .. code-block:: console 
 
-         $ ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
+         $ ml GCC/11.2.0  OpenMPI/4.1.1  R/4.1.2
          $ R
 
       Then check find the path of the library using the ``libPaths()`` function.
@@ -189,9 +190,8 @@ way to check is probably starting the interpreter and running the ``libPaths()``
       .. code-block:: rconsole
       
          > .libPaths()
-         [1] "/cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/R/4.0.4-foss-2020b/lib/R/library"
-
-
+         [1] "/pfs/stor10/users/home/b/bbrydsoe/R-packages-4.1.2"                                     
+         [2] "/cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/R/4.1.2-foss-2021b/lib/R/library"
 
 
 Preinstalled package libraries
@@ -375,6 +375,8 @@ Example
 In this example, we will install the R package ``stringr`` and use the
 repository http://ftp.acc.umu.se/mirror/CRAN/ 
 
+**Note**: You need to load R (and any prerequisites, and possibly R-bundle-Bioconductor if you need packages from that) before installing packages. 
+
 .. tabs::
 
    .. tab:: From command line
@@ -491,8 +493,7 @@ Exercises
 
 .. challenge:: Install a package with automatic download
 
-   1. First do the setup of `.Renviron` and create the directory for installing R
-   packages
+   1. First do the setup of `.Renviron` and create the directory for installing R packages (Recommended load R version 4.1.1 on Rackham, 4.1.2 on Kebnekaise)
    2. From the command line. Suggestion: ``anomalize``
    3. From inside R. Suggestion: `tidyr`
    4. Start R and see if the library can be loaded. 
@@ -502,7 +503,7 @@ Exercises
    Remember to pick a repo that is nearby, to install from: https://cran.r-project.org/mirrors.html 
 
 
-.. solution:: Solution
+.. solution:: Solution for 4.1.1 on Rackham (change <user>) 
 
    .. tabs:: 
 
@@ -510,9 +511,9 @@ Exercises
       
             .. code-block:: console
 	 
-               [bbrydsoe@rackham3 bbrydsoe]$ echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron
-	       R_LIBS_USER="/home/bbrydsoe/R-packages-%V"
-	       [bbrydsoe@rackham3 bbrydsoe]$ mkdir -p $HOME/R-packages-4.0.4
+               $ echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron
+	       R_LIBS_USER="/home/<user>/R-packages-%V"
+	       $ mkdir -p $HOME/R-packages-4.1.1
 	    
 
       .. tab:: Command line
@@ -521,7 +522,7 @@ Exercises
          
             .. code-block:: console
 	 
-	       [bbrydsoe@rackham3 bbrydsoe]$ R --quiet --no-save --no-restore -e "install.packages('anomalize', repo='http://ftp.acc.umu.se/mirror/CRAN/')"
+	       $ R --quiet --no-save --no-restore -e "install.packages('anomalize', repo='http://ftp.acc.umu.se/mirror/CRAN/')"
 	  
             This assumes you have already loaded the R module. If not, then do so first. 
 	 
@@ -537,7 +538,7 @@ Exercises
 
             .. code-block:: R
 	 
-	       [bbrydsoe@rackham3 bbrydsoe]$ R
+	       $ R
 	       > library("anomalize")
 	       > library("tidyr")
 	    
