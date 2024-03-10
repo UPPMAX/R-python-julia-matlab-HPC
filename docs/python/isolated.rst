@@ -1,81 +1,84 @@
 Isolated environments
 =====================
 
-.. note::
+.. tabs::
 
-   Isolated environments solve a couple of problems:
-   
-   - You can install specific, also older, versions into them.
-   - You can create one for each project and no problem if the two projects require different versions.
-   - You can remove the environment and create a new one, if not needed or with errors.
-   
-``conda`` works as an isolated environment. 
-Below we present the ``pip`` way with "virtual environments", 
-as well as installing using ``setup.py``.
-Installing with a virtual environment is the only recommended way at HPC2N! 
+   .. tab:: Learning objectives
 
-.. objectives:: Teaching objectives
+      - remember there are multiple virtual environment managers
+      - practice to create, activate, work in and deactive a ``venv``
+      - practice to export and import a ``venv``
 
-   - learners have created, activated, used and deactivated a venv
-   - learners have re-created a venv
-   - learners have heard about conda
+   .. tab:: For teachers
 
-Overview
---------
+      Teaching goals are:
+
+      - Learners have heard about Conda
+      - Learners have created, activated, worked in and deactived a ``venv``
+      - Learners have exported and imported a ``venv``
+
+      Other teaching goals are:
+
+      - Create the ``venv`` called ``vpyenv`` needed later on
+      - UPPMAX only: create the ``venv`` called ``Example-gpu`` needed later in this course
+
+      Lesson plan:
+
+      - 5 mins: prior knowledge
+         - How to deal with two tools that need incompatible sets of Python packages?
+         - How to solve the problem when there are two tools that need incompatible sets of Python packages?
+         - What is a virtual environment manager?
+         - Which virtual environment managers exists? 
+         - What are the differences between virtual environment managers?
+      - 5 mins: presentation
+      - 25 mins: challenge
+      - 5 mins: feedback
+
+Introduction
+------------
+
+Different experiments may need different versions of Python and/or Python packages.
+Isolated virtual environments (from now on: 'isolated environments')
+allow one to work with multiple sets of (potentially incompatible) packages.
+
+Additionally, you may want to have a reproducible computational environment,
+so that others can reproduce your computational experiments.
+Virtual environments can be exported and imported to provide for better
+reproducible computational environments
+
+Environment managers
+--------------------
 
 .. mermaid:: isolated.mmd
 
-+-----------------------+-------------------+------------------+
-| Parameter             | conda             | venv             |
-+=======================+===================+==================+
-| Scope                 | Language agnostic | Python only      |
-| UPPMAX recommendation | Recommended       | OK               |
-| HPC2N recommendation  | Avoid             | Recommended      |
-+-----------------------+-------------------+------------------+
+In this course, we will look at the following environment managers:
 
++------------+-------------+-------------+------------------+
+| Manager    | HPC2N       | UPPMAX      |Scope             |
++============+=============+=============+==================+
+| ``conda``  | Avoid       | Recommended |Language agnostic |
++------------+-------------+-------------+------------------+
+| ``venv``   | Recommended | OK          |Python only       |
++------------+-------------+-------------+------------------+
 
-General procedures   
-------------------
+In this session, we use an environment manager that works for both UPPMAX
+and HPC2N, which is ``venv``.
 
-You will often have the situation that your project(s) use different versions of Python and different versions of packages. This is great if you need different versions of a package for different tasks, for instance.
+General workflow
+----------------
 
-As an example, maybe you have been using TensorFlow 1.x.x for your project and now you need to install a package that requires TensorFlow 2.x.x but you will still be needing the old version of TensorFlow for another package, for instance. This is easily solved with isolated environments.
+.. mermaid:: isolated_workflow.mmd
 
-- Isolated environments lets you create separate workspaces for different versions of Python and/or different versions of packages. 
-- You can activate and deactivate them one at a time, and work as if the other workspace does not exist.
+Whatever environment manager you use, this is the workflow:
 
-There are different tools for creating an isolated environment, but they all have some things in common. At both UPPMAX and HPC2N the workflow is: 
-
-- You load the Python module you will be using, as well as any site-installed package modules (requires the ``--system-site-packages`` option)
+- You load the Python module you will be using, 
+  as well as any site-installed package modules (requires the ``--system-site-packages`` option)
 - You create the isolated environment with something like venv, virtualenv, or conda
 - You activate the environment
 - You install (or update) the environment with the packages you need
 - You work in the isolated environment
 - You deactivate the environment after use 
 
-**The tools**
-
-In this course we will look at the following tools for creating and using isolated environments: 
-
-   - venv            UPPMAX+HPC2N
-   - virtualenv      UPPMAX+HPC2N
-   - Conda           UPPMAX
-
-
-.. admonition:: venv vs. virtualenv
-
-   - These are almost completely interchangeable
-   - The difference being that **virtualenv supports older python versions** and has a few more minor unique features, while **venv is in the standard library**.
-
-.. keypoints::
-
-   - With a virtual environment you can tailor an environment with specific versions for Python and packages, not interfering with other installed python versions and packages.
-   - Make it for each project you have for reproducibility.
-   - There are different tools to create virtual environments.
-      - UPPMAX has  Conda and venv and virtualenv
-      - HPC2N has venv and virtualenv.
-      - More details in the separated sessions!
- 
    
 Virtual environment - venv & virtualenv
 ---------------------------------------
@@ -398,27 +401,29 @@ Working with virtual environments defined from files
 ----------------------------------------------------
 
 - First create and activate an environment (see above)
-- Create an environment based on dependencies given in an environment file::
+- Create an environment based on dependencies given in an environment file:
   
 .. code-block:: console
 
    $ pip install -r requirements.txt
    
-- Create file from present virtual environment::
+- Create file from present virtual environment:
 
 .. code-block:: console
 
    $ pip freeze > requirements.txt
   
 ``requirements.txt`` (used by virtual environment) is a simple
-text file which could look like this::
+text file which could look like this:
 
    numpy
    matplotlib
    pandas
    scipy
 
-``requirements.txt`` with versions::
+``requirements.txt`` with versions:
+
+.. code-block:: console
 
     numpy==1.18.1
     matplotlib==3.1.3
@@ -428,7 +433,6 @@ text file which could look like this::
 .. admonition:: More on dependencies
 
    - `Dependency management from coursePython for Scientific computing <https://aaltoscicomp.github.io/python-for-scicomp/dependencies/>`_
-
 
 .. note:: 
 
@@ -620,3 +624,14 @@ pandas==1.4.2
 - Install these requirements
 - Confirm that these are installed
 - Deactivate the venv
+
+
+
+.. keypoints::
+
+   - With a virtual environment you can tailor an environment with specific versions for Python and packages, not interfering with other installed python versions and packages.
+   - Make it for each project you have for reproducibility.
+   - There are different tools to create virtual environments.
+      - UPPMAX has  Conda and venv and virtualenv
+      - HPC2N has venv and virtualenv.
+      - More details in the separated sessions!
