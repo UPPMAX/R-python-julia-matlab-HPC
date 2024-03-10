@@ -26,3 +26,11 @@ Time     |Topic                      |Teacher
 **14.25**|Conclusion & Q/A           |Birgitte
 **14.45**|Evaluation                 |.
 **15.00**|END 
+
+Progress
+
+Use 3.11.8
+
+ * [Draft done] Packages  (45-->30)
+ * [] Isolated environments (venv, conda, ML)
+ * [] Rackham:  Interactive session and Jupyter
