@@ -119,15 +119,7 @@ Here we see that one comes already installed with the module system.
 
         Load the module for Python 3.11.8
 
-    .. tab:: Answer HPC2N
-
-        Do:
-
-        .. code-block::
-
-            module load python/3.11.8
-
-    .. tab:: Answer UPPMAX
+    .. tab:: Answer
 
         Do:
 
@@ -188,6 +180,9 @@ Here we see that one comes already installed with the module system.
         In the list, one cannot find ``tensorflow-cpu``.
 
         So, no, the Python package ``tensorflow-cpu`` is not installed.
+
+
+.. tabs::
 
     .. tab:: Exercise 1.4
 
@@ -388,11 +383,7 @@ Here we install a Python package ourselves.
 
         .. code-block::
 
-            pip list
-
-        Then among the list one can find: ``pandas 2.2.0``
-
-        So, yes, the Python package `pandas` version 2.2.0 is installed!
+            pip install --user mhcnuggets
 
 .. tabs::
 
