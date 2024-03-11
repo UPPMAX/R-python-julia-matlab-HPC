@@ -83,11 +83,15 @@ Running such a program on a computer node using ``sbatch``
 would not allow a user to connect to it.
 In such a case: use an interactive session.
 
-.. admonition:: **Jupyter on HPC2N is more complex**
+.. admonition:: **About Jupyter**
 
-    On HPC2N, using Jupyter on HPC2N is possible, 
-    yet harder to get to work correctly.
+    For HPC2N, using 
+    `Jupyter on HPC2N <https://www.hpc2n.umu.se/resources/software/jupyter>`_ is possible, 
+    yet harder to get to work correctly
     If you need it anyway, please contact ``support@hpc2n.umu.se``.
+
+    For UPPMAX, using Jupyter is easier 
+    and this will be shown in this course, in `the UPPMAX-only session on Jupyter <https://uppmax.github.io/HPC-python/jupyter.html>`_.
 
 An interactive session is a session with direct access to a compute node.
 Or alternatively: an interactive session is a session,
@@ -320,8 +324,6 @@ Check to be in an interactive session
 
       This will always show that you are on a login node
 
-
-
 Check to have booked the expected amount of cores
 -------------------------------------------------
 
@@ -381,6 +383,55 @@ Check to have booked the expected amount of cores
            b-cn0241.hpc2n.umu.se
            b-cn0241.hpc2n.umu.se
 
+Running a Python script in an interactive session
+-------------------------------------------------
+
+.. tabs::
+
+   .. tab:: UPPMAX
+
+      To run a Python script in an interactive session,
+      first load the Python modules:
+
+      .. code-block:: console
+
+         module load python/3.11.8
+
+      To run a Python script on 1 core, do:
+
+      .. code-block:: console
+
+         python [my_script.py]
+
+      where `[my_script.py]` is the path to a Python script, for example
+      ``srun python ~/my_script.py``.
+
+      To run a Python script on each of the requested cores, do:
+
+      .. code-block:: console
+
+         srun python [my_script.py]
+
+      where `[my_script.py]` is the path to a Python script, for example
+      ``srun python ~/my_script.py``.
+      
+   .. tab:: HPC2N
+
+      To run a Python script in an interactive session,
+      first load the Python modules:
+
+      .. code-block:: console
+
+         module load python/3.11.8
+
+      To run a Python script on each of the requested cores, do:
+
+      .. code-block:: console
+
+         srun python [my_script.py]
+
+      where `[my_script.py]` is the path to a Python script, for example
+      ``srun python ~/my_script.py``.
 
 End the interactive session
 ---------------------------
@@ -435,13 +486,6 @@ Example
 #######
 
 
-Load Python:
-
-.. code-block:: python
-
-    [bjornc@r484 ~]$ module load python/3.11.8
-      
-      
 **I am going to use the following two Python codes for the examples:**
       
       Adding two numbers from user input (add2.py)
@@ -509,28 +553,6 @@ Load Python:
                   Enter the second number: 3
                   The sum of 2 and 3 is 5
       
-
-**Exit**
-
-When you have finished using the allocation, either wait for it to end, or close it with ``exit``
-
-.. tabs::
-
-   .. tab:: UPPMAX
-         
-      It is also possible to run IPython or (on UPPMAX) jupyter-notebook 
-
-   .. tab:: HPC2N
-   
-
-.. admonition:: Running Jupyter on compute nodes at UPPMAX
-
-   https://uppmax.github.io/HPC-python/jupyter.html
-
-.. admonition:: Running Jupyter on compute nodes at HPC2N
-
-   https://www.hpc2n.umu.se/resources/software/jupyter
-
 .. keypoints::
 
    - Start an interactive session on a calculation node by a SLURM allocation

@@ -133,7 +133,15 @@ Here we see that one comes already installed with the module system.
 
         Load the module for Python 3.11.8
 
-    .. tab:: Answer
+    .. tab:: Answer HPC2N
+
+        Do:
+
+        .. code-block::
+
+            module load python/3.11.8
+
+    .. tab:: Answer UPPMAX
 
         Do:
 
