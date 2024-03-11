@@ -130,7 +130,7 @@ Exercise 1.1: load the modules needed
 
           module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07 matplotlib/3.7.2
 
-Step 2: create the virtual environment
+Exercise 1.2: create the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
@@ -156,7 +156,7 @@ Step 2: create the virtual environment
       where ``[username]`` is your HPC2N username, for example ``virtualenv --system-site-packages /proj/nobackup/hpc2n2024-025/sven/python/vpyenv``.
 
 
-Step 3: activate the virtual environment
+Exercise 1.3: activate the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
@@ -182,7 +182,7 @@ Step 3: activate the virtual environment
       where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/hpc2n2024-025/sven/python/vpyenv``.
 
 
-Step 4: install Python packages
+Exercise 1.4: install Python packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
@@ -203,7 +203,7 @@ Step 4: install Python packages
 
           pip install --no-cache-dir --no-build-isolation spacy seaborn 
 
-Step 5: check if the Python packages are installed
+Exercise 1.5: check if the Python packages are installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
@@ -236,7 +236,7 @@ Step 5: check if the Python packages are installed
 
             pip list --user
 
-Step 6: use the virtual environment
+Exercise 1.6: use the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
@@ -265,7 +265,7 @@ Step 6: use the virtual environment
          >>> import spacy
          >>> 
 
-Step 7: deactivate the virtual environment
+Exercise 1.7: deactivate the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
@@ -304,7 +304,7 @@ by using the ``numba`` and ``PyTorch`` Python packages.
 
 Because the structure is the same as Exercise 1, see exercise 1 for details.
 
-Step 1: load the modules needed
+Exercise 2.1: load the modules needed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Here we need an older Python module, 
@@ -314,7 +314,7 @@ as that is what available on the Snowy computer cluster:
 
     module load python/3.9.5
 
-Step 2: create the virtual environment
+Exercise 2.2: create the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -323,7 +323,7 @@ Step 2: create the virtual environment
 
 where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl/sven/python/Example-gpu``.
 
-Step 3: activate the virtual environment
+Exercise 2.3: activate the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -332,7 +332,7 @@ Step 3: activate the virtual environment
 
 where ``[username]`` is your UPPMAX username, for example ``source /proj/r-py-jl/sven/python/Example-gpu/bin/activate``.
 
-Step 4: install Python packages
+Exercise 2.4: install Python packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. prompt:: 
@@ -342,7 +342,7 @@ Step 4: install Python packages
     pip install --upgrade numpy scipy numba torch
 
 
-Step 5: check if the Python packages are installed
+Exercise 2.5: check if the Python packages are installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. prompt:: 
@@ -351,12 +351,12 @@ Step 5: check if the Python packages are installed
 
     pip list
 
-Step 6: use the virtual environment
+Exercise 2.6: use the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Not now :-)
 
-Step 7: deactivate the virtual environment
+Exercise 2.7: deactivate the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. prompt:: 
@@ -380,7 +380,7 @@ as we have done this earlier, the answers will now be hidden :-)
 
 .. mermaid:: isolated_workflow_vpyenv.mmd
 
-Step 1: load the modules needed
+Exercise 3.1: load the modules needed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
@@ -401,7 +401,7 @@ Step 1: load the modules needed
 
           module load GCC/12.3.0 Python/3.11.3 
 
-Step 2: create the virtual environment
+Exercise 3.2: create the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
@@ -423,7 +423,7 @@ Step 2: create the virtual environment
           virtualenv --system-site-packages /proj/nobackup/hpc2n2024-025/[username]/python/analysis 
 
 
-Step 3: activate the virtual environment
+Exercise 3.3: activate the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
@@ -444,7 +444,7 @@ Step 3: activate the virtual environment
 
           source /proj/nobackup/hpc2n2024-025/[username]/python/analysis/bin/activate
 
-Step 4: install Python packages
+Exercise 3.4: install Python packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
@@ -494,7 +494,7 @@ Step 4: install Python packages
           pip install -r requirements.txt
 
 
-Step 5: check if the Python packages are installed
+Exercise 3.5: check if the Python packages are installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
@@ -517,12 +517,12 @@ Step 5: check if the Python packages are installed
 
 
 
-Step 6: use the virtual environment
+Exercise 3.6: use the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Not now :-)
 
-Step 7: deactivate the virtual environment
+Exercise 3.7: deactivate the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
