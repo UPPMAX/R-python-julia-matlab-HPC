@@ -79,36 +79,26 @@ Whatever environment manager you use, this is the workflow:
 
 A virtual environment can be created in multiple ways,
 for example, from scratch.
-However, there are more efficient ways, which are discussed below.
+However, there are more efficient ways, which we will use.
 
-Creating a ``venv``
--------------------
+In this session, we use ``venv``,
+which is a virtual environment manager described in detail
+at `the UPPMAX page on 'venv' <http://docs.uppmax.uu.se/software/python_venv/#create-a-virtual-environment>`_.
 
-How to create a ``venv`` virtual environment is described
-at `this UPPMAX page <http://docs.uppmax.uu.se/software/python_venv/#create-a-virtual-environment>`_.
+Exercise 1
+----------
 
-Load Python modules:
+In this exercise, we create the course environment ``vpyenv``
+in a step-by-step fashion:
 
-- HPC2N: ``module load GCC/12.3.0 Python/3.11.3``
-- UPPMAX: ``module load python/3.11.8``
+.. mermaid:: isolated_workflow_vpyenv.mmd
 
+We create the virtual environment needed for this course, called ``vpyenv``.
 As virtual environments can take up a lot of disc space,
-consider using your project folder:
+we create it in the course project folder.
 
-- UPPMAX: ``/proj/[uppmax_project]/``
-- HPC2N: ``/proj/nobackup/[hpc2n_project]/``
-
-However, in this course, you are probably fine using your home folder.
-
-Prepare the course environment
-------------------------------
-
-.. tip::
-    
-   **Code along!**
-
-
-Create a virtual environment called ``vpyenv``. First load the python version you want to base your virtual environment on:
+Step 1: load the modules needed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -116,75 +106,121 @@ Create a virtual environment called ``vpyenv``. First load the python version yo
       
       .. code-block:: console
 
-          $ module load python/3.11.8
-          $ python -m venv --system-site-packages /proj/r-py-jl/<user>/python/vpyenv
-    
-      Activate it.
+          module load python/3.11.8
 
-      .. code-block:: console
-
-         $ source /proj/r-py-jl/<user>/python/vpyenv/bin/activate
-
-      Note that your prompt is changing to start with (vpyenve) to show that you are within an environment.
-
-      Install your packages with ``pip`` (``--user`` not needed) and the correct versions, like:
-
-      .. prompt:: 
-         :language: bash
-         :prompts: (vpyenv) $
-
-         pip install spacy seaborn
-
-      Check what was installed
-
-      .. prompt:: 
-         :language: bash
-         :prompts: (vpyenv) $
-
-         pip list
-
-      Deactivate it.
-
-      .. prompt:: 
-         :language: bash
-         :prompts: (vpyenv) $
-
-         deactivate
-
-      Everytime you need the tools available in the virtual environment you activate it as above.
-
-      .. code-block:: console
-
-         $ source /proj/r-py-jl/<user>/python/vpyenv/bin/activate
-
-      More on virtual environment: https://docs.python.org/3/tutorial/venv.html 
-      
    .. tab:: HPC2N
      
-      Installing spacy, seaborn. Using existing modules for numpy (in SciPy-bundle), matplotlib, under Python 3.11.3.    
+      .. code-block:: console
 
-      .. admonition:: Load modules for Python, numpy (in SciPy-bundle), matplotlib, activate the environment, create virtualenv "vpyenv", activate the environment, and install spacy and seaborn on Kebnekaise at HPC2N. 
-         :class: dropdown
-   
-         .. code-block:: sh
-           
-            b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07 matplotlib/3.7.2
-	    b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ virtualenv --system-site-packages vpyenv
-            b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ source vpyenv/bin/activate
-            (vpyenv) $ pip install --no-cache-dir --no-build-isolation spacy seaborn 
+          module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07 matplotlib/3.7.2
 
-         Deactivating a virtual environment.
+Step 2: create the ``venv``:
 
-         .. code-block:: sh
+.. tabs::
 
-            (vpyenv) $ deactivate
+   .. tab:: UPPMAX
 
-      Every time you need the tools available in the virtual environment you activate it as above (after first loading the modules for Python, Python packages, and prerequisites)
+      Create the ``venv`` virtual environment called ``vpyenv`` as such:      
 
       .. code-block:: console
 
-         $ source vpyenv/bin/activate
+          $ python -m venv --system-site-packages /proj/r-py-jl/[username]/python/vpyenv
 
+      where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl/sven/python/vpyenv``.
+
+   .. tab:: HPC2N
+
+      Create the ``venv`` virtual environment called ``vpyenv`` as such:      
+     
+      .. code-block:: console
+
+          $ python -m venv --system-site-packages /proj/nobackup/hpc2n2024-025/[username]/python/vpyenv
+
+      where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/hpc2n2024-025/sven/python/vpyenv``.
+
+
+Step 3: activate the ``venv``:
+
+.. tabs::
+
+   .. tab:: UPPMAX
+
+      Create the ``venv`` virtual environment called ``vpyenv`` as such:      
+
+      .. code-block:: console
+
+          source /proj/r-py-jl/[username]/python/vpyenv/bin/activate
+
+      where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl/sven/python/vpyenv``.
+
+   .. tab:: HPC2N
+
+      Create the ``venv`` virtual environment called ``vpyenv`` as such:      
+     
+      .. code-block:: console
+
+            source /proj/nobackup/hpc2n2024-025/[username]/python/vpyenv/bin/activate
+
+      where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/hpc2n2024-025/sven/python/vpyenv``.
+
+
+Step 4: install packages:
+
+.. tabs::
+
+   .. tab:: UPPMAX
+
+      Install the ``spacy`` and ``seaborn`` packages
+
+      .. code-block:: console
+
+          pip install --user spacy seaborn
+
+   .. tab:: HPC2N
+
+      Install the ``spacy`` and ``seaborn`` packages
+     
+      .. code-block:: console
+
+          pip install --no-cache-dir --no-build-isolation spacy seaborn 
+
+Step 5: check if the packages are installed
+
+.. tabs::
+
+   .. tab:: UPPMAX
+
+      .. code-block:: console
+
+            pip list
+
+   .. tab:: HPC2N
+
+      .. code-block:: console
+
+            pip list
+
+Step 6: use
+
+We will use this ``venv`` later.
+
+Step 7: deactivate the virtual environments
+
+.. tabs::
+
+   .. tab:: UPPMAX
+
+      .. code-block:: console
+
+            deactivate
+
+   .. tab:: HPC2N
+
+      .. code-block:: console
+
+            deactivate
+
+Well done, you've just created a virtual environment called ``vpyenv``!
 
 **UPPMAX**
 
