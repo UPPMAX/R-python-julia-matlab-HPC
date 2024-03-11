@@ -53,16 +53,25 @@ Environment managers
 
 In this course, we will look at the following environment managers:
 
-+------------+-------------+-------------+------------------+
-| Manager    | HPC2N       | UPPMAX      |Scope             |
-+============+=============+=============+==================+
-| ``conda``  | Avoid       | Recommended |Language agnostic |
-+------------+-------------+-------------+------------------+
-| ``venv``   | Recommended | OK          |Python only       |
-+------------+-------------+-------------+------------------+
++---------------+-----------------+-------------+------------------+
+| Manager       | HPC2N           | UPPMAX      |Scope             |
++===============+=================+=============+==================+
+| ``conda``     | Avoid           | Recommended |Language agnostic |
++---------------+-----------------+-------------+------------------+
+| ``venv``      | OK              | OK          |Python only       |
++---------------+-----------------+-------------+------------------+
+| ``virtualenv``| Recommended [1] | OK          |Python only       |
++---------------+-----------------+-------------+------------------+
 
-In this session, we use an environment manager that works for both UPPMAX
-and HPC2N, which is ``venv``.
+- ``[1]`` As it is described in the `HPC2N pages on Python <https://www.hpc2n.umu.se/resources/software/user_installed/python>`_
+
+Both centers have their documentation on virtual environment managers:
+
+- `UPPMAX <http://docs.uppmax.uu.se/software/python_virtual_environments/>`_
+- `HPC2N <https://www.hpc2n.umu.se/resources/software/user_installed/python>`_
+
+In this session, we use ``venv`` and ``virtualenv``
+as (1) these are quite similar, (2) work for both UPPMAX and HPC2N.
 
 General workflow
 ----------------
