@@ -409,7 +409,7 @@ Exercises
 
    .. code-block:: console 
 
-      $ Rscript validation-rackham.R
+      $ Rscript validation.R
 
 .. challenge:: Create a batch script to run ``validation.R``
 
