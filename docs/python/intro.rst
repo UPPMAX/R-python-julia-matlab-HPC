@@ -84,7 +84,7 @@ Preliminary schedule
      - **Break**
      - 
    * - 14:00  
-     - Parallel session: Parallel and multi-threaded functions
+     - Parallel and multi-threaded functions
      - 25m
    * - 14:25
      - Conclusion & Q/A
