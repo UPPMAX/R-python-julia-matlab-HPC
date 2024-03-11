@@ -55,16 +55,13 @@ Preliminary schedule
      - 
    * - 10:00
      - Packages  
-     - Lecture+code along 30m
-   * - 10.30
+     - Lecture+code along 45m
+   * - 10.45
      - **Coffee break**
      - 
-   * - 10:45
+   * - 11:00
      - Isolated environments (venv, conda) 
      - Lecture+code along 60m
-   * - 11.45
-     - **Break or informal chat**
-     - 
    * - 12:00
      - **LUNCH BREAK**
      - 
