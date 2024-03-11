@@ -51,21 +51,24 @@ Preliminary schedule
    * - 10.00
      - Packages and isolated environments   
      - Lecture+code along 45m
-   * - 11.00
+   * - 10.55
      - **break**
      - 
-   * - 11.15
-     - Parallel session — UPPMAX: Bianca packages
-     - Lecture+code along 30m
-   * - 11.45
+   * - 11.05
+     - SLURM Batch scripts for Julia jobs  
+     - Lecture+code along + exercise 45m
+   * - 11.50
      - Exercises and informal chat
      - 
    * - 12.00
      - **LUNCH**
      -
    * - 13.00
-     - SLURM Batch scripts for Julia jobs  
-     - Lecture+code along + exercise 45m
+     - Exercises and informal chat
+     - 
+   * - 13.15
+     - Parallel and multithreaded functions   
+     - Lecture+code along + exercise 30m
    * - 13.50
      - **break**
      - 

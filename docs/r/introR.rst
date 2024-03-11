@@ -55,41 +55,44 @@ Preliminary schedule
    * - 10:00
      - Packages
      - Lecture+code along 30m
-   * - 10:30
+   * - 10.30
+     - Isolated environments
+     - Lecture+code along 20m
+   * - 10:50
      - **break**
      - 
-   * - 10:45
-     - Parallel session - HPC2N: ThinLinc & RStudio 
-     - Lecture+code along 25m
-   * - 10:45
-     - Parallel session - UPPMAX: Interactive/ThinLinc & RStudio
-     - Lecture+code along 25m 
-   * - 11:15
+   * - 11:00
+     - SLURM Batch scripts for R jobs  
+     - Lecture+code along + exercise 30m
+   * - 11:30
      - Parallel and multithreaded functions
      - Lecture+code along 35m   
-   * - 11:50
-     - Exercises and informal chat (or break) 
-     - 
    * - 12:00
      - **LUNCH**
      -
-   * - 13:00
-     - Isolated environments
-     - Lecture+code along 20m
-   * - 13:20
-     - SLURM Batch scripts for R jobs  
-     - Lecture+code along + exercise 30m
+   * - 13.00
+     - Exercises and informal chat (or break) 
+     - 
+   * - 13.15
+     - ML  
+     - Lecture+code along 35m
    * - 13:50
      - **break**
      - 
-   * - 14:00
-     - ML  
-     - Lecture+code along 35m
-   * - 14:35
-     - Conclusion & Q/A
-     -    
-   * - 14:45
+   * - 14.00
+     - Parallel session - HPC2N: ThinLinc & RStudio 
+     - Lecture+code along 25m
+   * - 
+     - Parallel session - UPPMAX: Interactive/ThinLinc & RStudio
+     - Lecture+code along 25m 
+   * - 14.25
+     - Summary 
+     -
+   * - 14.35
      - Evaluation
+     -
+   * - 14.45
+     - Q&A on-demand
      -
    * - 15:00
      - END

@@ -788,7 +788,7 @@ package, you should add it in a Julia session.
 Exercises
 ---------
 
-.. challenge:: Run a serial script
+.. challenge:: 1. Run a serial script
     
     Run the serial script ``serial-sum.jl``: 
 

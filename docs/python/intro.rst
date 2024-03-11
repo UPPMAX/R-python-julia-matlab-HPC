@@ -51,20 +51,17 @@ Preliminary schedule
      - Loading modules and running Python codes 
      - Lecture+code along 25m
    * - 9.45
-     - **Leg stretch**
+     - **Coffee break**
      - 
    * - 10:00
      - Packages  
-     - Lecture+code along 30m
-   * - 10.30
-     - **Coffee break**
+     - Lecture+code along 45m
+   * - 10.45
+     - **Leg stretch**
      - 
-   * - 10:45
+   * - 11:00
      - Isolated environments (venv, conda) 
      - Lecture+code along 60m
-   * - 11.45
-     - **Break or informal chat**
-     - 
    * - 12:00
      - **LUNCH BREAK**
      - 
@@ -86,12 +83,15 @@ Preliminary schedule
    * - 14:00  
      - Parallel and multi-threaded functions
      - 25m
-   * - 14:25
-     - Conclusion & Q/A
-     - 20m
-   * - 14:45
-     - Evaluation of today's course 
-     - 15m
+   * - 14.25
+     - Summary 
+     -
+   * - 14.35
+     - Evaluation
+     -
+   * - 14.45
+     - Q&A on-demand
+     -
    * - 15:00
      - END
      -
