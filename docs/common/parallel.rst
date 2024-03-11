@@ -463,7 +463,7 @@ Exercises
                 # Print the mean value
                 println(mean_value_parallel)    
 
-                Run this job with the following batch script (HPC2N):
+            Run this job with the following batch script (HPC2N):
 
                     .. code-block:: sh
                         
@@ -480,7 +480,7 @@ Exercises
 
                         julia --threads X script-df.jl  # X number of threads
 
-                UPPMAX ...
+            UPPMAX ...
 
            
 
@@ -551,7 +551,7 @@ Exercises
                         ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
                         Rscript --no-save --no-restore script-df.R
 
-                UPPMAX ...
+            UPPMAX ...
 
 .. solution:: Solution
 
