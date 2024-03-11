@@ -23,7 +23,7 @@ Interactive work on the compute nodes
    - Rackham: ``naiss2024-22-107``
    - Kebnekaise: ``hpc2n2024-025``
 
-There are several ways to run Python interactively
+There are several ways to run Python interactively:
 
 - Directly on the login nodes: **only** do this for short jobs that do not take a lot of resources
 - As an interactive job on the computer nodes, launched via the batch system
@@ -32,17 +32,25 @@ There are several ways to run Python interactively
 General
 -------
 
-In order to run interactively, you need to have compute nodes allocated to run on, and this is done through the batch system.  
+In order to run interactively, you need to have 
+compute nodes allocated to run on, and this is done through the batch system.  
 
-Because you will have to wait until the nodes are allocated, and because you cannot know when this happens, this is not usually a recommended way to run Python, but it is possible. 
+Because you will have to wait until the nodes are allocated, 
+and because you cannot know when this happens, 
+this is not usually a recommended way to run Python, but it is possible. 
 
 .. warning::
 
-    (HPC2N) Do note that it is not *real* interactivity as you probably mean it, as you will have to run it as a Python script instead of by starting Python and giving commands inside it. The reason for this is that you are not actually logged into the compute node and only sees the output of the commands you run. 
+    (HPC2N) Do note that it is not *real* interactivity as you probably mean it, 
+   as you will have to run it as a Python script instead of by starting Python 
+   and giving commands inside it. 
+   The reason for this is that you are not actually logged into the compute node 
+   and only sees the output of the commands you run. 
 
-Another option would be to use Jupyter notebooks. This option will be covered under the UPPMAX separate sessions.
-This is somewhat convoluted to get to work correctly at HPC2N, but possible. Please contact us at support@hpc2n.umu.se if you want to go this route at HPC2N. 
-
+Another option would be to use Jupyter notebooks. 
+This option will be covered under the UPPMAX separate sessions.
+This is somewhat convoluted to get to work correctly at HPC2N, but possible. 
+Please contact us at support@hpc2n.umu.se if you want to go this route at HPC2N. 
 
 Python "interactively" on the compute nodes 
 -------------------------------------------
@@ -264,3 +272,26 @@ When you have finished using the allocation, either wait for it to end, or close
       - At UPPMAX: ``interactive`` ...
    - Follow the same procedure as usual by loading the Python module and possible prerequisites.
     
+
+Exercises
+---------
+
+Exercise 1
+----------
+
+.. admonition:: Learning objectives
+
+    - Start an interactive session
+    - Test to be on an interactive node
+    - End an interactive session
+
+
+Exercise 2
+----------
+
+.. admonition:: Learning objectives
+
+    - Start an interactive session with multiple cores
+    - Test to be on an interactive node with multiple cores
+    - End an interactive session
+
