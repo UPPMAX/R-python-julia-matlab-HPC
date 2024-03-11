@@ -5,6 +5,8 @@ Interactive work on the compute nodes
 
    .. tab:: Learning objectives
 
+      - Understand what an interactive session is
+      - Understand why one may need an interactive session
       - Start an interactive session
       - Test to be on an interactive node
       - End an interactive session
@@ -16,6 +18,8 @@ Interactive work on the compute nodes
 
       Teaching goals are:
 
+      - Learners have heard what an interactive session is
+      - Learners have heard why one may need an interactive session
       - Learners have started an interactive session
       - Learners have tested to be on an interactive node
       - Learners have ended an interactive session
@@ -58,14 +62,15 @@ Interactive work on the compute nodes
    - Rackham: ``naiss2024-22-107``
    - Kebnekaise: ``hpc2n2024-025``
 
+
+Introduction
+------------
+
 There are several ways to run Python interactively:
 
 - Directly on the login nodes: **only** do this for short jobs that do not take a lot of resources
 - As an interactive job on the computer nodes, launched via the batch system
 - Jupyter notebooks (UPPMAX)
-
-General
--------
 
 In order to run interactively, you need to have 
 compute nodes allocated to run on, and this is done through the batch system.  
@@ -89,6 +94,8 @@ Please contact us at support@hpc2n.umu.se if you want to go this route at HPC2N.
 
 Python "interactively" on the compute nodes 
 -------------------------------------------
+
+.. mermaid:: interactive_node_transitions.mmd 
 
 To run interactively, you need to allocate resources on the cluster first. 
 You can use the command salloc to allow interactive use of resources allocated to your job. 
@@ -127,7 +134,6 @@ You can now run Python scripts on the allocated resources directly instead of wa
       your batch job to return a result. This is an advantage if you want to test your Python 
       script or perhaps figure out which parameters are best.
                   
-
 Example
 #######
 
@@ -311,6 +317,11 @@ When you have finished using the allocation, either wait for it to end, or close
 Exercises
 ---------
 
+In these exercises, we start two interactive sessions:
+
+- a minimal interactive session
+- a more optimized interactive session
+
 Exercise 1
 ----------
 
@@ -319,6 +330,7 @@ Exercise 1
     - Start an interactive session
     - Test to be on an interactive node
     - End an interactive session
+
 
 
 Exercise 2

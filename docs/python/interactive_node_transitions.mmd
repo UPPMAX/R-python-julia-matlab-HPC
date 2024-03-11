@@ -1,0 +1,12 @@
+flowchart TD
+  subgraph login_node[Login nodes]
+    user_on_login_node[User on login node]
+  end
+  subgraph compute_node[Compute nodes]
+    user_on_computer_node[User on compute node]
+    job_on_compute_node[Job on compute node]
+  end
+
+  user_on_login_node --> |interactive| user_on_computer_node
+  user_on_login_node --> |salloc| user_on_computer_node
+  user_on_login_node --> |sbatch| job_on_compute_node
