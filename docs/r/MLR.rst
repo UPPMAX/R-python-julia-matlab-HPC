@@ -413,3 +413,5 @@ Exercises
 
 .. challenge:: Create a batch script to run ``validation.R``
 
+   You can find example batch scripts in the ``exercises/r`` directory. 
+
