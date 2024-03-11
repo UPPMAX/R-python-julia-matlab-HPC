@@ -312,9 +312,9 @@ Exercises
 
    This example is taken from https://www.geeksforgeeks.org/cross-validation-in-r-programming/
 
-   To run this, you need to install the ``datarium`` package in your ``renv``. 
+   To run this, you need to install the ``datarium`` package in your ``renv`` on HPC2N. This is already installed in R_packages on UPPMAX.  
    
-   Remember that for HPC2N you need to run in the ``renv`` directory.  
+   **Note** Remember that for HPC2N you need to run in the ``renv`` directory.  
 
 .. admonition:: ``validation.R``
    :class: dropdown 
@@ -383,7 +383,7 @@ Exercises
          > renv::init()
          > quit()  
 
-      6) Start R again and install the package ``datarium`` (Pick CRAN mirror 59: Sweden (Umeå) [https] 
+      6) Start R again and install the package ``datarium`` (Pick CRAN mirror 59: Sweden (Umeå) [https] )
 
       .. code-block:: console
 
@@ -399,61 +399,17 @@ Exercises
 
          > quit()
          
-      8) You are now ready to run ``valdation.R``
+      8) You are now ready to run ``validation.R``
 
       .. code-block:: console
 
          $ Rscript validation.R
 
 .. solution:: Solution for UPPMAX
-   :class: dropdown 
 
-      1) Create a directory to work in: ``mkdir -v /proj/r-py-jl/<your-dir>/r_proj_val && cd $_``
-      2) Load modules
+   .. code-block:: console 
 
-      .. code-block:: console
-
-         module load R/4.1.1 R_packages/4.1.1 
-
-      3) Start R 
-
-      .. code-block:: console
-
-         $ R
-
-      5) Initialize a ``renv`` and exit R
-
-      .. code-block:: R
-
-         > renv::init()
-         > quit()  
-
-      6) Start R again and install the package ``datarium`` (Pick CRAN mirror 59: Sweden (Umeå) [https] 
-
-      .. code-block:: console
-
-         $ R
-
-      .. code-block:: R
-
-         > install.packages("datarium")   
-
-      7) Exit R
-      
-      .. code-block:: R
-
-         > quit()
-         
-      8) You are now ready to run ``valdation.R``
-
-      .. code-block:: console
-
-         $ Rscript validation.R
+      $ Rscript validation-rackham.R
 
 .. challenge:: Create a batch script to run ``validation.R``
-
-
-Links to material
------------------
-
 

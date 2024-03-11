@@ -1,8 +1,8 @@
 # R program to implement
 # validation set approach
 # Taken from https://www.geeksforgeeks.org/cross-validation-in-r-programming/
-library(tidyverse)
 library(caret)
+library(tidyverse)
 library(datarium)
 
 # setting seed to generate a

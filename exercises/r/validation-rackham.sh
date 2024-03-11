@@ -6,8 +6,5 @@
 # Load any modules you need, here R/4.1.1 and R_packages/4.1.1
 module load R/4.1.1 R_packages/4.1.1
 
-Activate the renv with datarium installed
-cd /proj/nobackup/naiss2024-025/<path-to-renv>
-
 # Run your R script (here 'validation.R')
 R --no-save --quiet < validation.R
