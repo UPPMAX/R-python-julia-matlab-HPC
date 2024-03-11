@@ -30,9 +30,15 @@ Packages
          - What are some Python package installers used on UPPMAX?
          - What are some Python package installers used on HPC2N?
       - 5 mins: presentation
-      - 25 mins: challenge
+      - 20 mins: challenge
       - 5 mins: feedback
-
+         - What are Python packages?
+         - Why use Python packages?
+         - How to find out if a package is already installed?
+         - What are some Python package installers?
+         - What are the differences?
+         - What are some Python package installers used on UPPMAX?
+         - What are some Python package installers used on HPC2N?
 
 Introduction
 ------------

@@ -30,9 +30,12 @@ Isolated environments
          - What is a virtual environment manager?
          - Which virtual environment managers exists? 
          - What are the differences between virtual environment managers?
-      - 5 mins: presentation
-      - 25 mins: challenge
-      - 5 mins: feedback
+      - 10 mins: presentation
+         - Why?
+         - Exercises
+         - Exercises
+      - 30 mins: challenge
+      - 10 mins: feedback
 
 Introduction
 ------------
