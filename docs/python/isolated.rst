@@ -361,8 +361,16 @@ Exercise 3: export and import a ``venv``
 
 .. admonition:: Teaching goals
 
+    - Rehearse creating a Python virtual environment
     - Export a ``venv`` from reading documentation
     - Import a ``venv`` from reading documentation
+
+In this exercise, we export and import a ``venv`` virtual environment.
+Additionally, you get to rehearse to create a ``venv`` 
+like we have done earlier: answers will now be hidden.
+
+.. mermaid:: isolated_workflow_vpyenv.mmd
+
 
 Step 1: load the modules needed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -388,32 +396,111 @@ Step 1: load the modules needed
 Step 2: create the ``venv``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Create a virtual environment with the name ``analysis``.
+.. tabs::
+
+   .. tab:: Step 2: create the ``venv``
+
+      Create a virtual environment with the name ``analysis``.
+
+   .. tab:: UPPMAX
+
+      .. code-block:: console
+
+          python -m venv --system-site-packages /proj/r-py-jl/[username]/python/analysis
+
+   .. tab:: HPC2N
+
+      .. code-block:: console
+
+          python -m venv --system-site-packages /proj/nobackup/hpc2n2024-025/[username]/python/analysis 
+
 
 Step 3: activate the ``venv``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Activate the virtual environment.
+.. tabs::
 
+   .. tab:: Step 3: activate the ``venv``
+
+      Activate the virtual environment.
+
+   .. tab:: UPPMAX
+
+      .. code-block:: console
+
+          source /proj/r-py-jl/[username]/python/analysis/bin/activate
+
+   .. tab:: HPC2N
+
+      .. code-block:: console
+
+          source /proj/nobackup/hpc2n2024-025/[username]/python/analysis/bin/activate
 
 Step 4: install Python packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Create a file called ``requirements.txt``, with the following content:
+.. tabs::
 
-.. code-block:: sh
+   .. tab:: Step pre-4: create file
 
-    numpy==1.22.3
-    matplotlib==3.5.2
-    pandas==1.4.2
+       Create a file called ``requirements.txt``, with the following content:
 
-Install packages by using the ``requirements.txt`` file.
+       .. code-block:: sh
+
+           numpy==1.22.3
+           matplotlib==3.5.2
+           pandas==1.4.2
+
+   .. tab:: UPPMAX
+
+      Use any editor.
+
+   .. tab:: HPC2N
+
+      Use any editor.
+
+
+.. tabs::
+
+   .. tab:: Step 4: install Python packages
+
+       Install packages by using the ``requirements.txt`` file.
+
+   .. tab:: UPPMAX
+
+      .. code-block:: console
+
+          pip install -r requirements.txt
+
+   .. tab:: HPC2N
+
+      .. code-block:: console
+
+          pip install -r requirements.txt
 
 
 Step 5: check if the Python packages are installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Check that the packages were installed.
+.. tabs::
+
+   .. tab:: Step 5: check if the Python packages are installed
+
+       Check that the packages were installed.
+
+   .. tab:: UPPMAX
+
+      .. code-block:: console
+
+          pip list
+
+   .. tab:: HPC2N
+
+      .. code-block:: console
+
+          pip list
+
+
 
 Step 6: use the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -423,69 +510,25 @@ Not now :-)
 Step 7: deactivate the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Deactivate the virtual environment
 
 
+.. tabs::
 
-.. solution:: Solution for UPPMAX
+   .. tab:: Step 7: deactivate the virtual environment
 
-    :class: dropdown
-    
-     .. code-block:: console
+       Deactivate the virtual environment
 
-          $ module load python/3.11.8
-          $ python -m venv --system-site-packages /proj/r-py-jl/<user>/python/analysis
-    
-      Activate it.
+   .. tab:: UPPMAX
 
       .. code-block:: console
 
-         $ source /proj/r-py-jl/<user>/python/analysis/bin/activate
+          deactivate
 
-      - Note that your prompt is changing to start with (analysis) to show that you are within an environment.
-      - Install the packages from the file::
-      
+   .. tab:: HPC2N
+
       .. code-block:: console
 
-         (analysis) $ pip install -r requirements.txt
-      
-      - check the installation
-      
-       .. code-block:: sh
-
-         (analysis) $ pip list
-	 (analysis) $ deactivate
-      
-.. solution:: Solution for HPC2N
-    :class: dropdown
-    
-     .. code-block:: console
-
-          $ module load GCC/12.3.0 Python/3.11.3 
-          $ virtualenv --system-site-packages /proj/nobackup/hpc2n2024-025/<user-dir>/python/analysis 
-
-     Activate it.
-
-     .. code-block:: console
-
-        $ source /proj/nobackup/hpc2n2024-025/<user-dir>/python/analysis/bin/activate
-
-     - Note that your prompt is changing to start with (analysis) to show that you are within an environment.
-     - Install the packages from the file::
-      
-     .. code-block:: console
-
-	(analysis) $ pip install -r requirements.txt
-
-     Check that the packages were installed and then deactivate the virtual environment
-      
-     .. code-block:: console
-
-        $ pip list
-        $ deactivate
-      
-     You could also have started Python and tried to import the package instead of using "pip list".
-
+          deactivate
 
 Conclusion
 ---------
@@ -496,10 +539,9 @@ Conclusion
    - Make it for each project you have for reproducibility.
    - There are different tools to create virtual environments.
    
-      - UPPMAX has Conda and venv
+      - UPPMAX has Conda and venv: Conda is discussed in a separate UPPMAX-only session.
       - HPC2N has venv
 
-   Conda is discussed in a seperate UPPMAX-only session.
 
 Links
 -----
