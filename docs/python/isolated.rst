@@ -6,21 +6,21 @@ Isolated environments
    .. tab:: Learning objectives
 
       - remember there are multiple virtual environment managers
-      - practice to create, activate, work in and deactive a ``venv``
-      - practice to export and import a ``venv``
+      - practice to create, activate, work in and deactive a virtual environment
+      - practice to export and import a virtual environment
 
    .. tab:: For teachers
 
       Teaching goals are:
 
       - Learners have heard about Conda
-      - Learners have created, activated, worked in and deactived a ``venv``
-      - Learners have exported and imported a ``venv``
+      - Learners have created, activated, worked in and deactived a virtual environment
+      - Learners have exported and imported a virtual environment
 
       Other teaching goals are:
 
-      - Create the ``venv`` called ``vpyenv`` needed later on
-      - UPPMAX only: create the ``venv`` called ``Example-gpu`` needed later in this course
+      - Create the virtual environment called ``vpyenv`` needed later on
+      - UPPMAX only: create the virtual environment called ``Example-gpu`` needed later in this course
 
       Lesson plan:
 
@@ -38,16 +38,20 @@ Introduction
 ------------
 
 Different experiments may need different versions of Python and/or Python packages.
-Isolated virtual environments (from now on: 'isolated environments')
-allow one to work with multiple sets of (potentially incompatible) packages.
+Virtual environments allow one to work with multiple sets 
+of (potentially incompatible) packages, 
+where each set is independent and isolated.
 
 Additionally, you may want to have a reproducible computational environment,
 so that others can reproduce your computational experiments.
 Virtual environments can be exported and imported to provide for better
-reproducible computational environments
+reproducible computational environments.
 
-Environment managers
---------------------
+In this session, we create, activate, use, deactivate, export and import 
+some virtual environments.
+
+Virtual environment managers
+----------------------------
 
 .. mermaid:: isolated.mmd
 
@@ -90,10 +94,6 @@ A virtual environment can be created in multiple ways,
 for example, from scratch.
 However, there are more efficient ways, which we will use.
 
-In this session, we use ``venv``,
-which is a virtual environment manager described in detail
-at `the UPPMAX page on 'venv' <http://docs.uppmax.uu.se/software/python_venv/#create-a-virtual-environment>`_.
-
 Exercises
 ---------
 
@@ -130,14 +130,14 @@ Step 1: load the modules needed
 
           module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07 matplotlib/3.7.2
 
-Step 2: create the ``venv``
+Step 2: create the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
    .. tab:: UPPMAX
 
-      Create the ``venv`` virtual environment called ``vpyenv`` as such:      
+      Create the virtual environment called ``vpyenv`` as such:      
 
       .. code-block:: console
 
@@ -147,23 +147,23 @@ Step 2: create the ``venv``
 
    .. tab:: HPC2N
 
-      Create the ``venv`` virtual environment called ``vpyenv`` as such:      
+      Create the virtual environment called ``vpyenv`` as such:      
      
       .. code-block:: console
 
-          $ python -m venv --system-site-packages /proj/nobackup/hpc2n2024-025/[username]/python/vpyenv
+          $ virtualenv --system-site-packages /proj/nobackup/hpc2n2024-025/[username]/python/vpyenv
 
-      where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/hpc2n2024-025/sven/python/vpyenv``.
+      where ``[username]`` is your HPC2N username, for example ``virtualenv --system-site-packages /proj/nobackup/hpc2n2024-025/sven/python/vpyenv``.
 
 
-Step 3: activate the ``venv``
+Step 3: activate the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
    .. tab:: UPPMAX
 
-      Create the ``venv`` virtual environment called ``vpyenv`` as such:      
+      Create the virtual environment called ``vpyenv`` as such:      
 
       .. code-block:: console
 
@@ -173,7 +173,7 @@ Step 3: activate the ``venv``
 
    .. tab:: HPC2N
 
-      Create the ``venv`` virtual environment called ``vpyenv`` as such:      
+      Create the virtual environment called ``vpyenv`` as such:      
      
       .. code-block:: console
 
@@ -314,7 +314,7 @@ as that is what available on the Snowy computer cluster:
 
     module load python/3.9.5
 
-Step 2: create the ``venv``
+Step 2: create the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -323,7 +323,7 @@ Step 2: create the ``venv``
 
 where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl/sven/python/Example-gpu``.
 
-Step 3: activate the ``venv``
+Step 3: activate the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -354,7 +354,7 @@ Step 5: check if the Python packages are installed
 Step 6: use the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
+Not now :-)
 
 Step 7: deactivate the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -365,21 +365,20 @@ Step 7: deactivate the virtual environment
 
     deactivate
 
-Exercise 3: export and import a ``venv``
-----------------------------------------
+Exercise 3: export and import a virtual environment
+---------------------------------------------------
 
 .. admonition:: Teaching goals
 
     - Rehearse creating a Python virtual environment
-    - Export a ``venv`` from reading documentation
-    - Import a ``venv`` from reading documentation
+    - Export a virtual environment from a step-by-step instruction
+    - Import a virtual environment from a step-by-step instruction
 
-In this exercise, we export and import a ``venv`` virtual environment.
-Additionally, you get to rehearse to create a ``venv`` 
-like we have done earlier: answers will now be hidden.
+In this exercise, we export and import a virtual environment.
+Additionally, you get to rehearse to create a virtual environment:
+as we have done this earlier, the answers will now be hidden :-)
 
 .. mermaid:: isolated_workflow_vpyenv.mmd
-
 
 Step 1: load the modules needed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -402,12 +401,12 @@ Step 1: load the modules needed
 
           module load GCC/12.3.0 Python/3.11.3 
 
-Step 2: create the ``venv``
+Step 2: create the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
-   .. tab:: Step 2: create the ``venv``
+   .. tab:: Step 2: create the virtual environment
 
       Create a virtual environment with the name ``analysis``.
 
@@ -421,15 +420,15 @@ Step 2: create the ``venv``
 
       .. code-block:: console
 
-          python -m venv --system-site-packages /proj/nobackup/hpc2n2024-025/[username]/python/analysis 
+          virtualenv --system-site-packages /proj/nobackup/hpc2n2024-025/[username]/python/analysis 
 
 
-Step 3: activate the ``venv``
+Step 3: activate the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
-   .. tab:: Step 3: activate the ``venv``
+   .. tab:: Step 3: activate the virtual environment
 
       Activate the virtual environment.
 
@@ -462,26 +461,33 @@ Step 4: install Python packages
 
    .. tab:: UPPMAX
 
-      Use any editor.
+      Use `any text editor available on UPPMAX<http://docs.uppmax.uu.se/software/text_editors/>`_.
 
    .. tab:: HPC2N
 
-      Use any editor.
-
+      Use any text editor, for example, ``nano``.
 
 .. tabs::
 
    .. tab:: Step 4: install Python packages
 
-       Install packages by using the ``requirements.txt`` file.
+       Install packages by using the ``requirements.txt`` file:
+
+      .. code-block:: console
+
+          pip install -r requirements.txt
 
    .. tab:: UPPMAX
+
+      Yup, just do that:
 
       .. code-block:: console
 
           pip install -r requirements.txt
 
    .. tab:: HPC2N
+
+      Yup, just do that:
 
       .. code-block:: console
 
@@ -550,7 +556,6 @@ Conclusion
    
       - UPPMAX has Conda and venv: Conda is discussed in a separate UPPMAX-only session.
       - HPC2N has venv
-
 
 Links
 -----
