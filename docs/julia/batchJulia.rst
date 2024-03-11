@@ -734,6 +734,12 @@ reference point, we show the simulation on CPUs as well.
 Cluster Managers
 ''''''''''''''''
 
+The package *ClusterManagers.jl* allows you to submit expensive parts of your simulation
+to the batch queue in a more *interactive* manner than by using batch scripts. This can
+useful, for instance if you are developing some code where just specific parts are computationally
+heavy while the rest is related to data analysis or visualization. In order to use this 
+package, you should add it in a Julia session.
+
 .. code-block:: julia
 
     using Distributed, ClusterManagers
