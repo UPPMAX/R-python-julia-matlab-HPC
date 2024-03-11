@@ -65,20 +65,15 @@ In this course, we will look at the following environment managers:
 +===============+=================+=============+==================+
 | ``conda``     | Avoid           | Recommended |Language agnostic |
 +---------------+-----------------+-------------+------------------+
-| ``venv``      | OK              | OK          |Python only       |
+| ``venv``      | Recommended     | OK          |Python only       |
 +---------------+-----------------+-------------+------------------+
-| ``virtualenv``| Recommended [1] | OK          |Python only       |
-+---------------+-----------------+-------------+------------------+
-
-- ``[1]`` As it is described in the `HPC2N pages on Python <https://www.hpc2n.umu.se/resources/software/user_installed/python>`_
 
 Both centers have their documentation on virtual environment managers:
 
 - `UPPMAX <http://docs.uppmax.uu.se/software/python_virtual_environments/>`_
 - `HPC2N <https://www.hpc2n.umu.se/resources/software/user_installed/python>`_
 
-In this session, we use ``venv`` and ``virtualenv``
-as (1) these are quite similar, (2) work for both UPPMAX and HPC2N.
+In this session, we use ``venv``, as it works for both UPPMAX and HPC2N.
 
 General workflow
 ----------------
@@ -177,9 +172,9 @@ Exercise 1.2: create the virtual environment
      
       .. code-block:: console
 
-          $ virtualenv --system-site-packages /proj/nobackup/hpc2n2024-025/[username]/python/vpyenv
+          $ python -m venv --system-site-packages /proj/nobackup/hpc2n2024-025/[username]/python/vpyenv
 
-      where ``[username]`` is your HPC2N username, for example ``virtualenv --system-site-packages /proj/nobackup/hpc2n2024-025/sven/python/vpyenv``.
+      where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/hpc2n2024-025/sven/python/vpyenv``.
 
 
 Exercise 1.3: activate the virtual environment
@@ -464,7 +459,7 @@ Exercise 3.2: create the virtual environment
 
       .. code-block:: console
 
-          virtualenv --system-site-packages /proj/nobackup/hpc2n2024-025/[username]/python/analysis 
+          python -m venv --system-site-packages /proj/nobackup/hpc2n2024-025/[username]/python/analysis 
 
 
 Exercise 3.3: activate the virtual environment
@@ -626,7 +621,7 @@ Conclusion
       set of Python packages
     - heard that there are multiple virtual environments managers:
         - UPPMAX: Conda and ``venv``. Conda is discussed in a separate UPPMAX-only session.
-        - HPC2N has ``virtualenv``
+        - HPC2N has ``venv``
     - created, activated, used and deactivated virtual environments
     - installed Python packages by using a ``requirements.txt`` file
     - exported the Python packages of a virtual environment
