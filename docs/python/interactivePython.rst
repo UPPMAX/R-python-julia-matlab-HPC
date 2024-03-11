@@ -1045,15 +1045,17 @@ Conclusion
 
 .. keypoints::
 
-   - We have seen how to use a compute node interactively,
+   You have:
+
+   - seen how to use a compute node interactively,
      which differs between HPC2N and UPPMAX
-   - We have checked if we are in an interactive session
-   - We have checked if we have booked the right number of cores
-   - We have run Python scripts in an interactive session,
+   - checked if we are in an interactive session
+   - checked if we have booked the right number of cores
+   - run Python scripts in an interactive session,
      which differs between HPC2N and UPPMAX
-   - We have seen that not Python scripts 
+   - seen that not all Python scripts 
      can be run interactively on multiples cores
-   - We have exited an interactive session
+   - exited an interactive session
 
 Links
 -----
