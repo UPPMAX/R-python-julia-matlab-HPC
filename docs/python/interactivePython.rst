@@ -66,38 +66,62 @@ Interactive work on the compute nodes
 Introduction
 ------------
 
-There are several ways to run Python interactively:
+Some users develop Python code in a line-by-line fashion. 
+These users typically want to run a (calculation-heavy) 
+script frequently, to test if the code works.
+However, scheduling each new line is too slow, as it
+can take minutes before the new code is run.
+Instead, there is a way to directly work 
+with such code: use an interactive session.
 
-- Directly on the login nodes: **only** do this for short jobs that do not take a lot of resources
-- As an interactive job on the computer nodes, launched via the batch system
-- For UPPMAX: using Jupyter notebooks
+Some other users want to run programs that 
+(1) use a lot of CPU and memory, and (2) need to be persistent/available.
+One good example is Jupyter. 
+Running such a program on a login nodes would
+harm all other users on the login node.
+Running such a program on a computer node using ``sbatch``
+would not allow a user to connect to it.
+In such a case: use an interactive session.
 
-In order to run interactively, you need to have 
-compute nodes allocated to run on, and this is done through the batch system.  
+.. admonition:: **Jupyter on HPC2N is more complex**
 
-Because you will have to wait until the nodes are allocated, 
-and because you cannot know when this happens, 
-this is not usually a recommended way to run Python, but it is possible. 
+    On HPC2N, using Jupyter on HPC2N is possible, 
+    yet harder to get to work correctly.
+    If you need it anyway, please contact ``support@hpc2n.umu.se``.
 
-.. warning::
+An interactive session is a session with direct access to a compute node.
+Or alternatively: an interactive session is a session,
+in which there is no queue before a command is run on a compute node.
 
-    (HPC2N) Do note that it is not *real* interactivity as you probably mean it, 
-   as you will have to run it as a Python script instead of by starting Python 
-   and giving commands inside it. 
-   The reason for this is that you are not actually logged into the compute node 
-   and only sees the output of the commands you run. 
+In this session, we show how to:
+- the different way HPC2N and UPPMAX provide for an interactive session
+- start an interactive session
+- check to be in an interactive session
+- check to have booked the expected amount of cores
+- end the interactive session
 
-Another option would be to use Jupyter notebooks. 
-This option will be covered under the UPPMAX separate sessions.
-This is somewhat convoluted to get to work correctly at HPC2N, but possible. 
-Please contact us at support@hpc2n.umu.se if you want to go this route at HPC2N. 
-
-Python "interactively" on the compute nodes 
--------------------------------------------
+The different way HPC2N and UPPMAX provide for an interactive session
+---------------------------------------------------------------------
 
 .. mermaid:: interactive_node_transitions.mmd 
 
-To run interactively, you need to allocate resources on the cluster first. 
+Here we define an interactive session as a session 
+with direct access to a compute node.
+Or alternatively: an interactive session is a session,
+in which there is no queue before a command is run on a compute node.
+
+This differs between HPC2N and UPPMAX:
+
+- HPC2N: the user remains on a login node. 
+  All commands can be sent directly to the compute node using ``srun``
+- UPPMAX: the user is actually on a computer node.
+  Whatever command is done, it is run on the compute node
+
+Start an interactive session
+----------------------------
+
+To start an interactive session, 
+one needs to allocate resources on the cluster first.
 
 The command to request an interactive node differs per HPC cluster:
 
@@ -109,7 +133,10 @@ The command to request an interactive node differs per HPC cluster:
 | UPPMAX  | Recommended     | Works       |
 +---------+-----------------+-------------+
 
-To start an interactive node in the simplest way, is shown here:
+Start an interactive session in the simplest way
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To start an interactive session in the simplest way, is shown here:
 
 .. tabs::
 
@@ -137,30 +164,49 @@ Indeed, all you need is the UPPMAX/HPC2N project name.
 However, this simplest way may have some defaults settings 
 that do not fit you.
 
-To start an interactive node in a more elaborate way, is shown here:
+Start an interactive session in a more elaborate way
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The simplest way to start an interactive session
+may have some defaults settings that do not fit you:
+
+- session duration is too short
+- the session has too few cores available
+
+Here we show how start an interactive session in a more elaborate way,
+with a custom session duration and a custom amount of cores:
       
 .. tabs::
 
    .. tab:: UPPMAX
 
+      Here we start an interactive session on the ``devcore`` partition,
+      with a custom session duration and a custom amount of cores:
+
       .. code-block:: console
           
-         interactive -n [n_tasks] --time=[duration] -A naiss2024-22-107
+         interactive -p devcore -n [n_tasks] --time=[duration] -A naiss2024-22-107
 
       where ``[n_tasks]`` is the number of tasks,
       ``[duration]`` is the time given in ``HHH:MM:SS`` format,
       and ``[project_name]`` is the UPPMAX project name.
+
+      The parameters ``-p devcore`` mean that the ``devcore`` partition is used,
+      which results in jobs that start either faster or just as fast. Nice!
 
       As an example, here an interactive job is started with 4 tasks,
       for 1 hour, for the UPPMAX project ``naiss2024-22-107``:
 
       .. code-block:: console
 
-         interactive -n 4 --time=1:00:00 -A naiss2024-22-107
+         interactive -p devcore -n 4 --time=1:00:00 -A naiss2024-22-107
 
       Note that, as Slurm uses 1 task per core by default, we request 4 cores.
       
    .. tab:: HPC2N
+
+      Here we start an interactive session,
+      with a custom session duration and a custom amount of cores:
 
       .. code-block:: console
           
@@ -194,6 +240,114 @@ You can now run Python scripts on the allocated resources directly instead of wa
 When you have request multiple cores for your interactive session,
 you need to preface commands with ``srun`` in order to 
 run on the allocated nodes instead of the login node. 
+
+Check to be in an interactive session
+-------------------------------------
+
+.. tabs::
+
+   .. tab:: UPPMAX
+
+      To check to be in an interactive session, do:
+
+      .. code-block:: console
+
+         hostname
+
+      If the output is ``r[number].uppmax.uu.se``, where ``[number]``
+      is a number, you are on a computer node. Well done!
+
+      If the output is ``rackham[number].uppmax.uu.se``, where ``[number]``
+      is a number, you are still on a login node.
+      
+   .. tab:: HPC2N
+
+      To check to be in an interactive session, do:
+
+      .. code-block:: console
+
+         srun hostname
+
+      If the output is ``b-cn[number].hpc2n.umu.se``, where ``[number]``
+      is a number, you are more-or-less on a computer node. Well done!
+
+      If the output is ``[something else]``, where ``[number]``
+      is a number, you are still on a login node.
+
+      Misleading would be to use:
+
+      .. code-block:: console
+
+         hostname
+
+      This will always show that you are on a login node
+
+
+Check to have booked the expected amount of cores
+-------------------------------------------------
+
+.. tabs::
+
+   .. tab:: UPPMAX
+
+      To check to have booked the expected amount of cores:
+
+      .. code-block:: console
+
+         srun hostname
+
+      The output should be one line of ``r[number].uppmax.uu.se``, where ``[number]``
+      is a number, you have booked one core.
+
+      If the output is more than one line of ``r[number].uppmax.uu.se``, where ``[number]``
+      is a number, you have booked more than one core. 
+
+      If the output is ``rackham[number].uppmax.uu.se``, where ``[number]``
+      is a number, you are still on a login node.
+      
+   .. tab:: HPC2N
+
+      To check to have booked the expected amount of cores:
+
+      .. code-block:: console
+
+         srun hostname
+
+      The output should be one line of ``b-cn[number].hpc2n.umu.se``, where ``[number]``
+      is a number, you have booked one core.
+
+      If the output is more than one line of ``b-cn[number].hpc2n.umu.se``, where ``[number]``
+      is a number, you have booked more than one core. 
+
+      If the output is ``[something else]``, where ``[number]``
+      is a number, you are still on a login node.
+
+
+End the interactive session
+---------------------------
+
+.. tabs::
+
+   .. tab:: UPPMAX
+
+      To end and interactive session, do:
+
+      .. code-block:: console
+
+         exit
+
+      The prompt should change to contain ``rackham[number].uppmax.uu.se``, 
+      where ``[number]`` is a number, which indicates you are back on a login node.
+      
+   .. tab:: HPC2N
+
+      To end and interactive session, do:
+
+      .. code-block:: console
+
+         exit
+
+      The prompt will remain the same.
                   
 Example
 #######
@@ -388,13 +542,17 @@ Exercise 1
 
 .. admonition:: Learning objectives
 
-    - Start an interactive session
+    - Start an interactive session with 1 core
     - Test to be on an interactive node
+    - Test to be on an interactive session with 1 core
     - End an interactive session
+
+Exercise 1.1: start an interactive node
+---------------------------------------
 
 .. tabs::
 
-   .. tab:: Exercise 1: start an interactive node
+   .. tab:: Exercise 1.1: start an interactive node
 
    Start an interactive node in the simplest way possible.
 
@@ -411,6 +569,125 @@ Exercise 1
       .. code-block:: console
           
          salloc -A hpc2n2024-025
+
+Exercise 1.2: check to be in an interactive session
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+   .. tab:: Exercise 1.2: confirm to be on a compute node
+
+   Confirm to be on a compute node.
+
+   .. tab:: UPPMAX
+
+      Use:
+
+      .. code-block:: console
+
+         hostname
+
+      If the output is ``r[number].uppmax.uu.se``, where ``[number]``
+      is a number, you are on a computer node. Well done!
+
+      If the output is ``rackham[number].uppmax.uu.se``, where ``[number]``
+      is a number, you are still on a login node.
+      
+   .. tab:: HPC2N
+
+      Use:
+
+      .. code-block:: console
+
+         srun hostname
+
+      If the output is ``b-cn[number].hpc2n.umu.se``, where ``[number]``
+      is a number, you are more-or-less on a computer node. Well done!
+
+      If the output is ``[something else]``, where ``[number]``
+      is a number, you are still on a login node.
+
+      Misleading would be to use:
+
+      .. code-block:: console
+
+         hostname
+
+      This will always show that you are on a login node
+
+
+Exercise 1.3: check to have booked the expected amount of cores
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+   .. tab:: Exercise 1.3: confirm to have booked one core
+
+   Confirm to have booked one core.
+
+   .. tab:: UPPMAX
+
+      Use:
+
+      .. code-block:: console
+
+         srun hostname
+
+      The output should be one line of ``r[number].uppmax.uu.se``, where ``[number]``
+      is a number, you have booked one core.
+
+      If the output is more than one line of ``r[number].uppmax.uu.se``, where ``[number]``
+      is a number, you have booked more than one core. 
+
+      If the output is ``rackham[number].uppmax.uu.se``, where ``[number]``
+      is a number, you are still on a login node.
+      
+   .. tab:: HPC2N
+
+      Use:
+
+      .. code-block:: console
+
+         srun hostname
+
+      The output should be one line of ``b-cn[number].hpc2n.umu.se``, where ``[number]``
+      is a number, you have booked one core.
+
+      If the output is more than one line of ``b-cn[number].hpc2n.umu.se``, where ``[number]``
+      is a number, you have booked more than one core. 
+
+      If the output is ``[something else]``, where ``[number]``
+      is a number, you are still on a login node.
+
+Exercise 1.4: exit
+^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+   .. tab:: Exercise 1.4: exit
+
+   Exit the interactive node
+
+   .. tab:: UPPMAX
+
+      Use:
+
+      .. code-block:: console
+
+         exit
+
+      The prompt should change to contain ``rackham[number].uppmax.uu.se``, 
+      where ``[number]`` is a number, which indicates you are back on a login node.
+      
+   .. tab:: HPC2N
+
+      Use:
+
+      .. code-block:: console
+
+         exit
+
+      The prompt will remain the same.
 
 
 Exercise 2
