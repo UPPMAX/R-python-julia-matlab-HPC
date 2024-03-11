@@ -841,11 +841,11 @@ Exercises
                 
 
 
-.. challenge:: Run the GPU script
+.. challenge:: 2. Run the GPU script
     
     Run the following script ``script-gpu.jl``. Why are we running the simulations
     twice?
-    Note that at UPPMAX you will need a project will access to Snowy (or Bianca)
+    Note that at UPPMAX you will need a project will access to Snowy
 
         .. code-block:: julia
          
@@ -958,7 +958,7 @@ Exercises
                   0.000176 seconds (16 allocations: 384 bytes)
 
   
-.. challenge:: Machine Learning job on GPUs (on HPC2N)
+.. challenge:: 3. Machine Learning job on GPUs (on HPC2N)
     
     Julia has already several packages for ML, one of them is ``Flux`` (https://fluxml.ai/). We will work with one of
     the test cases provided by ``Flux`` which deals with a data set of tiny images (CIFAR10). Follow this steps:
