@@ -109,7 +109,7 @@ UPPMAX documentation.
 Exercise 1
 ----------
 
-.. admonition:: Teaching goals
+.. admonition:: Learning objectives
 
     - Practice reading documentation
     - Apply/rehearse the documentation to load a module
@@ -220,7 +220,7 @@ Here we see that one comes already installed with the module system.
 Exercise 2
 ----------
 
-.. admonition:: Teaching goals
+.. admonition:: Learning objectives
 
     - Practice reading documentation
     - Rehearse the documentation to load a Python machine learning module
@@ -348,7 +348,7 @@ machine learning module.
 Exercise 3
 ----------
 
-.. admonition:: Teaching goals
+.. admonition:: Learning objectives
 
     - Practice reading documentation
     - Install a new package.
