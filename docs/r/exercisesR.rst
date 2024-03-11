@@ -8,7 +8,7 @@ Load and run
     
     .. code-block:: R
     
-        1) Load R version 4.0.4 
+        1) Load R version 4.1.1 
         2) Start R. Check which libraries are installed. Load one of them.
         3) Quit R
 	
@@ -26,32 +26,31 @@ Load and run
           
             .. code-block:: sh
 	    
-	       [bbrydsoe@rackham3 bbrydsoe]$ ml spider R/4.0.4
+	       $ ml spider R/4.1.1
 	    
   	       ----------------------------------------------------------------------------
-	         R: R/4.0.4
+	         R: R/4.1.1
 	       ----------------------------------------------------------------------------
 	     
-	            This module can be loaded directly: module load R/4.0.4
+	            This module can be loaded directly: module load R/4.1.1
 		 
 		    Help:
-		        R - use R Version 4.0.4
+		        R - use R Version 4.1.1
 		     
 		        https://www.r-project.org
 		     
 		      Many, many R and Bioconductor packages are available in the module 
-		      'R_packages/4.0.4'
+		      'R_packages/4.1.1'
 
-	       [bbrydsoe@rackham3 bbrydsoe]$ module load R/4.0.4
-	       Nearly all CRAN and BioConductor packages are installed and available by
-   	       loading the module R_packages/4.0.4 
-	       [bbrydsoe@rackham3 bbrydsoe]$
+	       $ module load R/4.1.1
+	       Nearly all CRAN and BioConductor packages are installed and available by loading the module R_packages/4.1.1
+	       $
 	    
-	       [bbrydsoe@rackham3 bbrydsoe]$ R
+	       $ R
 
-               R version 4.0.4 (2021-02-15) -- "Lost Library Book"
-	       Copyright (C) 2021 The R Foundation for Statistical Computing
-	       Platform: x86_64-pc-linux-gnu (64-bit)
+               R version 4.1.1 (2021-08-10) -- "Kick Things"
+	       Copyright (C) 2021 The R Foundation for Statistical Computing 
+               Platform: x86_64-pc-linux-gnu (64-bit)
 	    
 	       R is free software and comes with ABSOLUTELY NO WARRANTY.
 	       You are welcome to redistribute it under certain conditions.
@@ -68,23 +67,23 @@ Load and run
 	       Type 'q()' to quit R.
 	    
 	       > installed.packages()
-                          Package      LibPath
-               base       "base"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       boot       "boot"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       class      "class"      "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       cluster    "cluster"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       codetools  "codetools"  "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       compiler   "compiler"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       datasets   "datasets"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       foreign    "foreign"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       graphics   "graphics"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       grDevices  "grDevices"  "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       grid       "grid"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       KernSmooth "KernSmooth" "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       lattice    "lattice"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       MASS       "MASS"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       Matrix     "Matrix"     "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       ...
+           Package      LibPath                                    Version  
+           base       "base"       "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
+           boot       "boot"       "/sw/apps/R/4.1.1/rackham/lib64/R/library" "1.3-28" 
+           class      "class"      "/sw/apps/R/4.1.1/rackham/lib64/R/library" "7.3-19" 
+           cluster    "cluster"    "/sw/apps/R/4.1.1/rackham/lib64/R/library" "2.1.2"  
+           codetools  "codetools"  "/sw/apps/R/4.1.1/rackham/lib64/R/library" "0.2-18" 
+           compiler   "compiler"   "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
+           datasets   "datasets"   "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
+           foreign    "foreign"    "/sw/apps/R/4.1.1/rackham/lib64/R/library" "0.8-81" 
+           graphics   "graphics"   "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
+           grDevices  "grDevices"  "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
+           grid       "grid"       "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
+           KernSmooth "KernSmooth" "/sw/apps/R/4.1.1/rackham/lib64/R/library" "2.23-20"
+           lattice    "lattice"    "/sw/apps/R/4.1.1/rackham/lib64/R/library" "0.20-45"
+           MASS       "MASS"       "/sw/apps/R/4.1.1/rackham/lib64/R/library" "7.3-54" 
+           Matrix     "Matrix"     "/sw/apps/R/4.1.1/rackham/lib64/R/library" "1.3-4"  
+           ...
 	    
 	       > library("parallel")
 	       > quit()
@@ -100,21 +99,18 @@ Load and run
           
             .. code-block:: sh
 	    
-	       b-an01 [~]$ ml spider R/4.0.4
+	       b-an01 [~]$ ml spider R/4.1.2
 
                ----------------------------------------------------------------------------
-	         R: R/4.0.4
+	         R: R/4.1.2
 	       ----------------------------------------------------------------------------
 	           Description:
-		     R is a free software environment for statistical computing and
-		     graphics.
+		     R is a free software environment for statistical computing and graphics.
 		     
 		     
-		   You will need to load all module(s) on any one of the lines below before 
-		   the "R/4.0.4" module is available to load.
+		   You will need to load all module(s) on any one of the lines below before the "R/4.1.2" module is available to load.
 		   
-		     GCC/10.2.0  CUDA/11.1.1  OpenMPI/4.0.5
-		     GCC/10.2.0  OpenMPI/4.0.5
+		     GCC/11.2.0  OpenMPI/4.1.1
 		     
 	           This module provides the following extensions:
 
@@ -130,10 +126,10 @@ Load and run
 		      assertive.types/0.0-3 (E), assertive/0.3-6 (E), assertthat/0.2.1 (E), AUC/0.3.0 (E), 
 		      ...
 		      
-		      b-an01 [~]$ module load GCC/10.2.0  OpenMPI/4.0.5 R/4.0.4
+		      b-an01 [~]$ module load GCC/11.2.0  OpenMPI/4.1.1 R/4.1.2
 		      b-an01 [~]$ R
 		      
-		      R version 4.0.4 (2021-02-15) -- "Lost Library Book"
+		      R version 4.1.2 (2021-11-01) -- "Bird Hippie"
 		      Copyright (C) 2021 The R Foundation for Statistical Computing
 		      Platform: x86_64-pc-linux-gnu (64-bit)
 		      
@@ -164,10 +160,10 @@ Load and run
 
 .. challenge:: Load R and run a short R script from the command line
     
-   1) Load R version 4.0.4 (if you have not done so already)
+   1) Load R version 4.1.x (if you have not done so already)
    2) Run the small R script called ``hello.R``, using ``Rscript``
 	
-   Remember to check if a module you are loading has prerequisites, and load those first if it does. In this case it depends on whether you do the exercises on Kebnekaise or Rackham. 
+   Remember to check if a module you are loading has prerequisites, and load those first if it does. In this case it depends on whether you do the exercises on Kebnekaise or Rackham. Remember, Kebnekaise has 4.1.2 and Rackham has 4.1.1. 
 
 .. admonition:: "hello.R" (it can also be found under "R" in the "Exercises" directory on the course GitHub repository (https://github.com/UPPMAX/R-python-julia-HPC). 
 
@@ -187,9 +183,9 @@ Load and run
           
             .. code-block:: sh
 	    
-	       [bbrydsoe@rackham2 bbrydsoe]$ Rscript hello.R
+	       $ Rscript hello.R
 	       [1] "Hello World!"
-	       [bbrydsoe@rackham2 bbrydsoe]$
+	       $
 
       .. tab:: HPC2N
  
@@ -197,12 +193,12 @@ Load and run
           
             .. code-block:: sh
 	    
-	       b-an01 [~]$ Rscript hello.R
+	       $ Rscript hello.R
 	       [1] "Hello World!"
-	       b-an01 [~]$ 
+	       $ 
 
 	    
-      As you can see, it is working the same. 
+      As you can see, it is working the same way. 
       
 
 
@@ -235,8 +231,8 @@ Packages
       
             .. code-block:: sh
 	 
-               [bbrydsoe@rackham3 bbrydsoe]$ echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron R_LIBS_USER="/home/bbrydsoe/R-packages-%V"
-               [bbrydsoe@rackham3 bbrydsoe]$ mkdir -p $HOME/R-packages-4.0.4
+               $ echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron R_LIBS_USER="/home/bbrydsoe/R-packages-%V"
+               $ mkdir -p $HOME/R-packages-4.0.4
 	    
 
       .. tab:: Command line
@@ -245,10 +241,10 @@ Packages
          
             .. code-block:: sh
 	 
-	           [bbrydsoe@rackham3 bbrydsoe]$ R --quiet --no-save --no-restore -e "install.packages('anomalize', repo='http://ftp.acc.umu.se/mirror/CRAN/')"
+	       $ R --quiet --no-save --no-restore -e "install.packages('anomalize', repo='http://ftp.acc.umu.se/mirror/CRAN/')"
            
            
-           This assumes you have already loaded the R module. If not, then do so first. 
+            This assumes you have already loaded the R module. If not, then do so first. 
 	 
       .. tab:: Inside R
       
@@ -262,7 +258,7 @@ Packages
 
             .. code-block:: R
 	 
-  	       [bbrydsoe@rackham3 bbrydsoe]$ R
+  	       $ R
                > library("anomalize")
                > library("tidyr")
 	    
@@ -284,12 +280,12 @@ Batch mode
           .. code-block:: sh
  
              #!/bin/bash
-             #SBATCH -A naiss2023-22-914 # Change to your own after the course
+             #SBATCH -A naiss2024-22-107 # Change to your own after the course
              #SBATCH --time=00:10:00 # Asking for 10 minutes
              #SBATCH -n 1 # Asking for 1 core
              
-             # Load any modules you need, here for R/4.0.4
-             module load R/4.0.4
+             # Load any modules you need, here for R/4.1.1
+             module load R/4.1.1
              
              # Run your R script 
              R --no-save --quiet < add2.R 2 3 
@@ -303,12 +299,12 @@ Batch mode
           .. code-block:: sh
  
              #!/bin/bash
-             #SBATCH -A hpc2n2023-110 # Change to your own project ID
+             #SBATCH -A hpc2n2024-025 # Change to your own project ID
              #SBATCH --time=00:10:00 # Asking for 10 minutes
              #SBATCH -n 1 # Asking for 1 core
              
-             # Load any modules you need, here for R/4.0.4
-             module load R/4.0.4
+             # Load any modules you need, here for R/4.1.2
+             module load R/4.1.2
              
              # Run your R script 
              R --no-save --quiet < add2.R 2 3 
@@ -323,5 +319,5 @@ Batch mode
 
 .. challenge:: R for ML
 
-   Run the ML example shown in the session "Running R in batch mode". 
+   Run the ML examples shown in the session "ML with R". 
 
