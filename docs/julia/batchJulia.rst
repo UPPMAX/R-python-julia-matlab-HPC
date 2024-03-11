@@ -670,10 +670,9 @@ reference point, we show the simulation on CPUs as well.
             #SBATCH -A naiss2024-22-107    # your project_ID  
             #SBATCH -M snowy
             #SBATCH -p node
-            ##SBATCH --gres=gpu:1
+            #SBATCH --gres=gpu:1
             #SBATCH -N 1
             #SBATCH --job-name=juliaGPU         # create a short name for your job
-            #SBATCH --gpus-per-node=1             # number of gpus per node (Bianca 2, Snowy 1)
             #SBATCH --time=00:15:00          # total run time limit (HH:MM:SS)
             #SBATCH --qos=short              # if test run t<15 min
             #SBATCH --mail-type=begin        # send email when job begins
@@ -914,10 +913,9 @@ Exercises
                 #SBATCH -A naiss2024-22-107   # your project_ID  
                 #SBATCH -M snowy
                 #SBATCH -p node
-                ##SBATCH -C gpu   #NB: Only for Bianca
+                #SBATCH --gres=gpu:1
                 #SBATCH -N 1
                 #SBATCH --job-name=juliaGPU         # create a short name for your job
-                #SBATCH --gpus-per-node=1             # number of gpus per node (Bianca 2, Snowy 1)
                 #SBATCH --time=00:15:00          # total run time limit (HH:MM:SS)
                 #SBATCH --qos=short              # if test run t<15 min
                 
