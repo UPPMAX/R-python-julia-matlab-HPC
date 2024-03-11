@@ -422,3 +422,8 @@ Exercise 2
     - Test to be on an interactive node with multiple cores
     - End an interactive session
 
+
+Links
+-----
+
+- `This session taught at 2023-12-01 <https://youtu.be/Rt7-sGEHrp0?si=4AB4Nu6BpLhNJXzE>`_
