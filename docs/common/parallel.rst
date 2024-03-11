@@ -406,7 +406,28 @@ Exercises
                 # Print the mean value
                 print(mean_value)
 
-            Run the code with ``python script-df.py``.
+            Run the code with the batch script: 
+            
+            .. tabs:: 
+
+                 ..tab:: HPC2N 
+
+                    .. code-block:: sh
+                        
+                        #!/bin/bash            
+                        #SBATCH -A hpc2n2023-110     # your project_ID       
+                        #SBATCH -J job-serial        # name of the job         
+                        #SBATCH -n 1                 # nr. tasks  
+                        #SBATCH --time=00:20:00      # requested time
+                        #SBATCH --error=job.%J.err   # error file
+                        #SBATCH --output=job.%J.out  # output file  
+
+                        # Load any modules you need, here for Python 3.11.3 and compatible SciPy-bundle
+                        module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07
+                        python script-df.py
+
+                 ..tab:: UPPMAX
+
 
 
         .. tab:: Julia
@@ -445,6 +466,27 @@ Exercises
 
                 # Print the mean value
                 println(mean_value_parallel)    
+
+            .. tabs:: 
+
+                 ..tab:: HPC2N 
+
+                    .. code-block:: sh
+                        
+                        #!/bin/bash            
+                        #SBATCH -A hpc2n2023-110     # your project_ID       
+                        #SBATCH -J job-serial        # name of the job         
+                        #SBATCH -n 1                 # nr. tasks  
+                        #SBATCH --time=00:20:00      # requested time
+                        #SBATCH --error=job.%J.err   # error file
+                        #SBATCH --output=job.%J.out  # output file  
+
+                        ml purge  > /dev/null 2>&1
+                        ml Julia/1.8.5-linux-x86_64
+
+                        julia --threads X script-df.jl  # X number of threads
+
+                 ..tab:: UPPMAX
 
             Run the code with ``julia --threads X script-df.jl``, with X <= 4.             
 
