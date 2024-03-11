@@ -920,7 +920,7 @@ Exercises
                 #SBATCH --time=00:15:00          # total run time limit (HH:MM:SS)
                 #SBATCH --qos=short              # if test run t<15 min
                 
-                ml julia/1.8.5-linux-x86_64
+                ml julia/1.8.5
 
                 julia script-gpu.jl
 
