@@ -32,5 +32,7 @@ Progress
 Use 3.11.8
 
  * [Draft done] Packages  (45-->30)
- * [] Isolated environments (venv, conda, ML)
+ * [Draft done] Isolated environments (venv, conda, ML)
  * [] Rackham:  Interactive session and Jupyter
+
+
