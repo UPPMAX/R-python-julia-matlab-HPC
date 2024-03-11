@@ -70,7 +70,7 @@ There are several ways to run Python interactively:
 
 - Directly on the login nodes: **only** do this for short jobs that do not take a lot of resources
 - As an interactive job on the computer nodes, launched via the batch system
-- Jupyter notebooks (UPPMAX)
+- For UPPMAX: using Jupyter notebooks
 
 In order to run interactively, you need to have 
 compute nodes allocated to run on, and this is done through the batch system.  
@@ -98,30 +98,87 @@ Python "interactively" on the compute nodes
 .. mermaid:: interactive_node_transitions.mmd 
 
 To run interactively, you need to allocate resources on the cluster first. 
-You can use the command salloc to allow interactive use of resources allocated to your job. 
-When the resources are allocated, you need to preface commands with ``srun`` in order to 
-run on the allocated nodes instead of the login node. 
-      
-- First, you make a request for resources with ``interactive``/``salloc``, like this:
+
+The command to request an interactive node differs per HPC cluster:
+
++---------+-----------------+-------------+
+| Cluster | ``interactive`` | ``salloc``  |
++=========+=================+=============+
+| HPC2N   | Works           | Recommended |
++---------+-----------------+-------------+
+| UPPMAX  | Recommended     | Works       |
++---------+-----------------+-------------+
+
+To start an interactive node in the simplest way, is shown here:
 
 .. tabs::
 
-   .. tab:: UPPMAX (interactive)
+   .. tab:: UPPMAX
+
+     Use:
+
+      .. code-block:: console
+
+         interactive -A [project_name]
+
+      Where ``[project_name]`` is the UPPMAX project name,
+      for example ``interactive -A naiss2024-22-107``.
+      
+   .. tab:: HPC2N
 
       .. code-block:: console
           
-         $ interactive -n <tasks> --time=HHH:MM:SS -A naiss2024-22-107
+         salloc -A [project_name]
+
+      Where ``[project_name]`` is the HPC2N project name,
+      for example ``interactive -A hpc2n2024-025``.
+
+Indeed, all you need is the UPPMAX/HPC2N project name.
+However, this simplest way may have some defaults settings 
+that do not fit you.
+
+To start an interactive node in a more elaborate way, is shown here:
       
-   .. tab:: HPC2N (salloc)
+.. tabs::
+
+   .. tab:: UPPMAX
 
       .. code-block:: console
           
-         $ salloc -n <tasks> --time=HHH:MM:SS -A hpc2n2024-025
-         
+         interactive -n [n_tasks] --time=[duration] -A naiss2024-22-107
+
+      where ``[n_tasks]`` is the number of tasks,
+      ``[duration]`` is the time given in ``HHH:MM:SS`` format,
+      and ``[project_name]`` is the UPPMAX project name.
+
+      As an example, here an interactive job is started with 4 tasks,
+      for 1 hour, for the UPPMAX project ``naiss2024-22-107``:
+
+      .. code-block:: console
+
+         interactive -n 4 --time=1:00:00 -A naiss2024-22-107
+
+      Note that, as Slurm uses 1 task per core by default, we request 4 cores.
       
-where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in 
-      hours, minutes, and seconds (maximum T168 hours), and then you give the id for your project 
-      (**2023-22-914** for this course)
+   .. tab:: HPC2N
+
+      .. code-block:: console
+          
+         interactive -n [n_tasks] --time=[duration] -A naiss2024-22-107
+
+      where ``[n_tasks]`` is the number of tasks,
+      ``[duration]`` is the time given in ``HHH:MM:SS`` format,
+      and ``[project_name]`` is the HPC2N project name.
+
+      As an example, here an interactive job is started with 4 tasks,
+      for 1 hour, for the HPC2N project ``hpc2n2024-025``:
+
+      .. code-block:: console
+          
+         salloc -n 4 --time=1:00:00 -A hpc2n2024-025
+
+      Note that, as Slurm uses 1 task per core by default, we request 4 cores.
+
 
 Your request enters the job queue just like any other job, and interactive/salloc will tell you that it is
       waiting for the requested resources. When salloc tells you that your job has been allocated 
@@ -133,6 +190,10 @@ Your request enters the job queue just like any other job, and interactive/sallo
 You can now run Python scripts on the allocated resources directly instead of waiting for 
       your batch job to return a result. This is an advantage if you want to test your Python 
       script or perhaps figure out which parameters are best.
+
+When you have request multiple cores for your interactive session,
+you need to preface commands with ``srun`` in order to 
+run on the allocated nodes instead of the login node. 
                   
 Example
 #######
@@ -331,6 +392,25 @@ Exercise 1
     - Test to be on an interactive node
     - End an interactive session
 
+.. tabs::
+
+   .. tab:: Exercise 1: start an interactive node
+
+   Start an interactive node in the simplest way possible.
+
+   .. tab:: UPPMAX
+
+      On UPPMAX, ``interactive`` is recommended:
+
+      .. code-block:: console
+
+         interactive -A naiss2024-22-107
+      
+   .. tab:: HPC2N
+
+      .. code-block:: console
+          
+         salloc -A hpc2n2024-025
 
 
 Exercise 2
