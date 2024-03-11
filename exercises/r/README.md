@@ -41,6 +41,12 @@ You can also try run the R codes directly, with Rscript (after loading R modules
 - ``Rscript_ML-kebnekaise.sh``
 - ``Rscript_ML-rackham.sh``
 
+## Validation/ML example
+
+- ``validation.R``
+- ``validation-kebnekaise.sh``
+- ``validation-rackham.sh``
+
 ## Serial example 
 
 - ``serial.R``  

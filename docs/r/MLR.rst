@@ -409,7 +409,9 @@ Exercises
 
    .. code-block:: console 
 
-      $ Rscript validation-rackham.R
+      $ Rscript validation.R
 
 .. challenge:: Create a batch script to run ``validation.R``
+
+   You can find example batch scripts in the ``exercises/r`` directory. 
 
