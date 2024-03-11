@@ -131,7 +131,10 @@ Here we see that one comes already installed with the module system.
 
         Read `the UPPMAX documentation on how to load Python <http://docs.uppmax.uu.se/software/python/#loading-python>`_.
 
-        Load the module for Python 3.11.8
+        Then do:
+
+        - HPC2N: load the modules ``GCC/12.3.0`` and ``Python 3.11.3``
+        - UPPMAX: load the module ``python/3.11.8``
 
     .. tab:: Answer HPC2N
 
@@ -139,7 +142,7 @@ Here we see that one comes already installed with the module system.
 
         .. code-block::
 
-            module load python/3.11.8
+            module load GCC/12.3.0 Python/3.11.3
 
     .. tab:: Answer UPPMAX
 
