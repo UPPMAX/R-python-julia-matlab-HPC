@@ -166,17 +166,14 @@ Passing Interface (MPI). In general, MPI requires refactoring of your code.
 
 .. demo:: 
 
-   This part is demo!
-
-.. tabs::
+   .. tabs::
 
 
-   .. tab:: Python
+      .. tab:: Python
 
-        In the following example ``sleep.py`` the `sleep()` function is called `n` times
-        first in serial mode and then by using `n` processes. 
+         In the following example ``sleep.py`` the `sleep()` function is called `n` times first in serial mode and then by using `n` processes. 
 
-        .. code-block:: python
+         .. code-block:: python
 
             import sys
             from time import perf_counter,sleep
@@ -224,35 +221,34 @@ Passing Interface (MPI). In general, MPI requires refactoring of your code.
 
             print("Time spent parallel: %.2f sec" % (endtime-starttime))
 
-        First load the modules ``ml GCCcore/10.3.0 Python/3.9.5`` and then run the script
-        with the command  ``python sleep.py`` to use 6 processes.
+         First load the modules ``ml GCCcore/10.3.0 Python/3.9.5`` and then run the script
+         with the command  ``python sleep.py`` to use 6 processes.
 
-        **DASK**
+         **DASK**
         
+ 
+         There are other strategies that are more automatic. **Dask** is a array model extension and task scheduler. By using the new array classes, you can automatically distribute operations across multiple CPUs.
 
-        There are other strategies that are more automatic. **Dask** is a array model extension and task 
-        scheduler. By using the new array classes, you can automatically distribute operations across multiple CPUs.
-
-        Dask is very popular for data analysis and is used by a number of high-level Python libraries:
+         Dask is very popular for data analysis and is used by a number of high-level Python libraries:
 
             - Dask arrays scale NumPy (see also xarray)
             - Dask dataframes scale Pandas workflows
             - Dask-ML scales Scikit-Learn
 
-        - Dask divides arrays into many small pieces (chunks), as small as necessary to fit it into memory. 
-        - Operations are delayed (lazy computing) e.g. tasks are queue and no computation is performed until 
+         - Dask divides arrays into many small pieces (chunks), as small as necessary to fit it into memory. 
+         - Operations are delayed (lazy computing) e.g. tasks are queue and no computation is performed until 
           you actually ask values to be computed (for instance print mean values). 
-        - Then data is loaded into memory and computation proceeds in a streaming fashion, block-by-block.
+         - Then data is loaded into memory and computation proceeds in a streaming fashion, block-by-block.
 
 
 
-   .. tab:: Julia
+      .. tab:: Julia
 
-        In the following example ``sleep-threads.jl`` the `sleep()` function is called `n` times
-        first in serial mode and then by using `n` threads. The *BenchmarkTools* package
-        help us to time the code (this package is not in the base Julia installation).
+         In the following example ``sleep-threads.jl`` the `sleep()` function is called `n` times
+         first in serial mode and then by using `n` threads. The *BenchmarkTools* package
+         help us to time the code (this package is not in the base Julia installation).
 
-        .. code-block:: julia
+         .. code-block:: julia
 
             using BenchmarkTools
             using .Threads
@@ -275,13 +271,13 @@ Passing Interface (MPI). In general, MPI requires refactoring of your code.
             
             @btime sleep_threaded(n) evals=1 samples=1
             
-        First load the Julia module ``ml Julia/1.8.5-linux-x86_64`` and then run the script
-        with the command  ``julia --threads 6 sleep-threads.jl`` to use 6 Julia threads.
+         First load the Julia module ``ml Julia/1.8.5-linux-x86_64`` and then run the script
+         with the command  ``julia --threads 6 sleep-threads.jl`` to use 6 Julia threads.
 
-        We can also use the *Distributed* package that allows the scaling of simulations beyond
-        a single node (call the script ``sleep-distributed.jl``): 
+         We can also use the *Distributed* package that allows the scaling of simulations beyond
+         a single node (call the script ``sleep-distributed.jl``): 
 
-        .. code-block:: julia
+         .. code-block:: julia
 
             using BenchmarkTools
             using Distributed 
@@ -294,15 +290,15 @@ Passing Interface (MPI). In general, MPI requires refactoring of your code.
                 end
             end         
 
-        Run the script with the command  ``julia -p 6 sleep-distributed.jl`` to use 6 Julia processes.
+         Run the script with the command  ``julia -p 6 sleep-distributed.jl`` to use 6 Julia processes.
 
-   .. tab:: R 
+      .. tab:: R 
    
-        In the following example ``sleep.R`` the `sleep()` function is called `n` times
-        first in serial mode and then by using `n` processes. Start by loading the 
-        modules ``ml GCC/10.2.0 OpenMPI/4.0.5 R/4.0.4``
+         In the following example ``sleep.R`` the `sleep()` function is called `n` times
+         first in serial mode and then by using `n` processes. Start by loading the 
+         modules ``ml GCC/10.2.0 OpenMPI/4.0.5 R/4.0.4``
 
-        .. code-block:: r
+         .. code-block:: r
         
             library(doParallel)
 
@@ -328,12 +324,12 @@ Passing Interface (MPI). In general, MPI requires refactoring of your code.
             stopCluster(cl)
             parallel_time
 
-        Run the script with the command  ``Rscript --no-save --no-restore sleep.R``.
+         Run the script with the command  ``Rscript --no-save --no-restore sleep.R``.
 
-        In this second example, a *lapply* function is used in parallel mode to compute the root
-        square of a sequence of numbers (call the script ``clusterapply.R``):
+         In this second example, a *lapply* function is used in parallel mode to compute the root
+         square of a sequence of numbers (call the script ``clusterapply.R``):
 
-        .. code-block:: r
+         .. code-block:: r
         
             library(parallel)
 
@@ -357,7 +353,7 @@ Passing Interface (MPI). In general, MPI requires refactoring of your code.
             # Print the result
             print(unlist(result_parallel))
 
-        Run the script with the command  ``Rscript --no-save --no-restore clusterapply.R``.
+         Run the script with the command  ``Rscript --no-save --no-restore clusterapply.R``.
 
 
 Exercises
