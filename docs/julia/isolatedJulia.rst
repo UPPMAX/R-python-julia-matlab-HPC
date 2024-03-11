@@ -397,7 +397,7 @@ Exercises
 ---------
 
 
-.. challenge:: Project environment
+.. challenge:: 1. Project environment
     
     Create a project environment called ``new-env`` and activate it. Then, install the
     package ``CSV`` in this environment. For your knowledge, ``CSV`` is a package that
@@ -419,7 +419,7 @@ Exercises
                       [336ed68f] CSV v0.10.9
                 (new-env) pkg> activate 
 
-.. challenge:: Package environment
+.. challenge:: 2. Package environment
     
     Create a package environment called ``new_pack`` and activate it. Then, install the
     package ``CSV`` in this environment. For your knowledge, ``CSV`` is a package that

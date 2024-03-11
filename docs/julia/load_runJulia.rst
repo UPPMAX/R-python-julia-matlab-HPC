@@ -209,7 +209,7 @@ Exercises
 ---------
 
 
-.. challenge:: Getting familiar with Julia REPL
+.. challenge:: 1. Getting familiar with Julia REPL
     
     It is important in this course that you know how to navigate on the 
     Julia command line. This exercise will help you to become more familiar
@@ -237,7 +237,7 @@ Exercises
                 julia>?
                 help?> println
 
-.. challenge:: Loading modules and running scripts
+.. challenge:: 2. Loading modules and running scripts
     
     Load the Julia version 1.8.5 and run the following serial script (``serial-sum.jl``) which accepts two integer arguments as input: 
 
