@@ -160,6 +160,20 @@ To start an interactive session in the simplest way, is shown here:
       Where ``[project_name]`` is the HPC2N project name,
       for example ``interactive -A hpc2n2024-025``.
 
+      This will look similar to this:
+
+      .. code-block:: console
+
+          b-an01 [~]$ salloc -n 4 --time=00:10:00 -A hpc2n2024-025 
+          salloc: Pending job allocation 20174806
+          salloc: job 20174806 queued and waiting for resources
+          salloc: job 20174806 has been allocated resources
+          salloc: Granted job allocation 20174806
+          salloc: Waiting for resource configuration
+          salloc: Nodes b-cn0241 are ready for job
+          b-an01 [~]$ module load GCC/12.3.0 Python/3.11.3
+          b-an01 [~]$ 
+
 Indeed, all you need is the UPPMAX/HPC2N project name.
 However, this simplest way may have some defaults settings 
 that do not fit you.
@@ -202,6 +216,20 @@ with a custom session duration and a custom amount of cores:
          interactive -p devcore -n 4 --time=1:00:00 -A naiss2024-22-107
 
       Note that, as Slurm uses 1 task per core by default, we request 4 cores.
+
+      The output will be similar to this:
+
+      .. code-block:: console
+      
+          [bjornc@rackham2 ~]$ interactive -A naiss2024-22-107 -p devcore -n 4 -t 10:00
+          You receive the high interactive priority.
+          There are free cores, so your job is expected to start at once.
+      
+          Please, use no more than 6.4 GB of RAM.
+      
+          Waiting for job 29556505 to start...
+          Starting job now -- you waited for 1 second.
+
       
    .. tab:: HPC2N
 
@@ -274,6 +302,16 @@ Check to be in an interactive session
       If the output is ``[something else]``, where ``[number]``
       is a number, you are still on a login node.
 
+      This is an example of output when 4 cores have been booked:
+
+      .. code-block:: console
+                  
+           b-an01 [~]$ srun hostname
+           b-cn0241.hpc2n.umu.se
+           b-cn0241.hpc2n.umu.se
+           b-cn0241.hpc2n.umu.se
+           b-cn0241.hpc2n.umu.se
+
       Misleading would be to use:
 
       .. code-block:: console
@@ -281,6 +319,7 @@ Check to be in an interactive session
          hostname
 
       This will always show that you are on a login node
+
 
 
 Check to have booked the expected amount of cores
@@ -304,6 +343,16 @@ Check to have booked the expected amount of cores
 
       If the output is ``rackham[number].uppmax.uu.se``, where ``[number]``
       is a number, you are still on a login node.
+
+      Here is an example of output when 4 cores had been booked:
+
+      .. code-block:: console
+      
+          [bjornc@r483 ~]$ srun hostname
+          r483.uppmax.uu.se
+          r483.uppmax.uu.se
+          r483.uppmax.uu.se
+          r483.uppmax.uu.se
       
    .. tab:: HPC2N
 
@@ -322,6 +371,16 @@ Check to have booked the expected amount of cores
       If the output is ``[something else]``, where ``[number]``
       is a number, you are still on a login node.
 
+      This is an example of output when 4 cores have been booked:
+
+      .. code-block:: console
+                  
+           b-an01 [~]$ srun hostname
+           b-cn0241.hpc2n.umu.se
+           b-cn0241.hpc2n.umu.se
+           b-cn0241.hpc2n.umu.se
+           b-cn0241.hpc2n.umu.se
+
 
 End the interactive session
 ---------------------------
@@ -336,8 +395,20 @@ End the interactive session
 
          exit
 
-      The prompt should change to contain ``rackham[number].uppmax.uu.se``, 
-      where ``[number]`` is a number, which indicates you are back on a login node.
+      This will look similar to this:
+
+      .. code-block:: console 
+                  
+          [bjornc@r484 ~]$ exit
+
+          exit
+          [screen is terminating]
+          Connection to r484 closed.
+
+          [bjornc@rackham2 ~]$
+
+      Note that the prompt has changed to contain ``rackham[number].uppmax.uu.se``, 
+      where ``[number]`` is a number, which indicates one is back on a login node.
       
    .. tab:: HPC2N
 
@@ -347,72 +418,28 @@ End the interactive session
 
          exit
 
+      It will look similar to this:
+
+      .. code-block:: console 
+                  
+          b-an01 [~]$ exit
+          exit
+          salloc: Relinquishing job allocation 20174806
+          salloc: Job allocation 20174806 has been revoked.
+          b-an01 [~]$
+
       The prompt will remain the same.
+
                   
 Example
 #######
 
-.. tip::
-    
-   **Code along!**
 
-**Requesting 4 cores for 10 minutes, then running Python**
+Load Python:
 
-.. tabs::
+.. code-block:: python
 
-   .. tab:: UPPMAX
-
-      .. code-block:: console
-      
-          [bjornc@rackham2 ~]$ interactive -A naiss2024-22-107 -p devcore -n 4 -t 10:00
-          You receive the high interactive priority.
-          There are free cores, so your job is expected to start at once.
-      
-          Please, use no more than 6.4 GB of RAM.
-      
-          Waiting for job 29556505 to start...
-          Starting job now -- you waited for 1 second.
-          
-          [bjornc@r484 ~]$ module load python/3.11.8
-
-      Let us check that we actually run on the compute node: 
-
-      .. code-block:: console
-      
-          [bjornc@r483 ~]$ srun hostname
-          r483.uppmax.uu.se
-          r483.uppmax.uu.se
-          r483.uppmax.uu.se
-          r483.uppmax.uu.se
-
-      We are. Notice that we got a response from all four cores we have allocated.   
-
-   .. tab:: HPC2N
-         
-      .. code-block:: console
-      
-          b-an01 [~]$ salloc -n 4 --time=00:10:00 -A hpc2n2024-025 
-          salloc: Pending job allocation 20174806
-          salloc: job 20174806 queued and waiting for resources
-          salloc: job 20174806 has been allocated resources
-          salloc: Granted job allocation 20174806
-          salloc: Waiting for resource configuration
-          salloc: Nodes b-cn0241 are ready for job
-          b-an01 [~]$ module load GCC/12.3.0 Python/3.11.3
-          b-an01 [~]$ 
-                  
-      
-      Let us check that we actually run on the compute node: 
-      
-      .. code-block:: console
-                  
-           b-an01 [~]$ srun hostname
-           b-cn0241.hpc2n.umu.se
-           b-cn0241.hpc2n.umu.se
-           b-cn0241.hpc2n.umu.se
-           b-cn0241.hpc2n.umu.se
-      
-      We are. Notice that we got a response from all four cores we have allocated.   
+    [bjornc@r484 ~]$ module load python/3.11.8
       
       
 **I am going to use the following two Python codes for the examples:**
@@ -490,28 +517,11 @@ When you have finished using the allocation, either wait for it to end, or close
 .. tabs::
 
    .. tab:: UPPMAX
-   
-      .. code-block:: console 
-                  
-                  [bjornc@r484 ~]$ exit
-      
-                  exit
-                  [screen is terminating]
-                  Connection to r484 closed.
-      
-                  [bjornc@rackham2 ~]$
-      
+         
       It is also possible to run IPython or (on UPPMAX) jupyter-notebook 
 
    .. tab:: HPC2N
    
-      .. code-block:: console 
-                  
-                  b-an01 [~]$ exit
-                  exit
-                  salloc: Relinquishing job allocation 20174806
-                  salloc: Job allocation 20174806 has been revoked.
-                  b-an01 [~]$
 
 .. admonition:: Running Jupyter on compute nodes at UPPMAX
 
@@ -545,6 +555,7 @@ Exercise 1
     - Start an interactive session with 1 core
     - Test to be on an interactive node
     - Test to be on an interactive session with 1 core
+    - Run Python scripts on 1 core
     - End an interactive session
 
 Exercise 1.1: start an interactive node
