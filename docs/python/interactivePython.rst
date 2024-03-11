@@ -548,7 +548,7 @@ Exercise 1
     - End an interactive session
 
 Exercise 1.1: start an interactive node
----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -697,8 +697,150 @@ Exercise 2
 
     - Start an interactive session with multiple cores
     - Test to be on an interactive node with multiple cores
+    - Run Python scripts on multiple cores
     - End an interactive session
 
+Exercise 2.1: start an interactive node
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+   .. tab:: Exercise 2.1: start an interactive node
+
+   Start an interactive node in the simplest way possible.
+
+   .. tab:: UPPMAX
+
+      On UPPMAX, ``interactive`` is recommended:
+
+      .. code-block:: console
+
+         interactive -A naiss2024-22-107
+      
+   .. tab:: HPC2N
+
+      .. code-block:: console
+          
+         salloc -A hpc2n2024-025
+
+Exercise 2.2: check to be in an interactive session
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+   .. tab:: Exercise 2.2: confirm to be on a compute node
+
+   Confirm to be on a compute node.
+
+   .. tab:: UPPMAX
+
+      Use:
+
+      .. code-block:: console
+
+         hostname
+
+      If the output is ``r[number].uppmax.uu.se``, where ``[number]``
+      is a number, you are on a computer node. Well done!
+
+      If the output is ``rackham[number].uppmax.uu.se``, where ``[number]``
+      is a number, you are still on a login node.
+      
+   .. tab:: HPC2N
+
+      Use:
+
+      .. code-block:: console
+
+         srun hostname
+
+      If the output is ``b-cn[number].hpc2n.umu.se``, where ``[number]``
+      is a number, you are more-or-less on a computer node. Well done!
+
+      If the output is ``[something else]``, where ``[number]``
+      is a number, you are still on a login node.
+
+      Misleading would be to use:
+
+      .. code-block:: console
+
+         hostname
+
+      This will always show that you are on a login node
+
+
+Exercise 2.3: check to have booked the expected amount of cores
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+   .. tab:: Exercise 2.3: confirm to have booked one core
+
+   Confirm to have booked one core.
+
+   .. tab:: UPPMAX
+
+      Use:
+
+      .. code-block:: console
+
+         srun hostname
+
+      The output should be one line of ``r[number].uppmax.uu.se``, where ``[number]``
+      is a number, you have booked one core.
+
+      If the output is more than one line of ``r[number].uppmax.uu.se``, where ``[number]``
+      is a number, you have booked more than one core. 
+
+      If the output is ``rackham[number].uppmax.uu.se``, where ``[number]``
+      is a number, you are still on a login node.
+      
+   .. tab:: HPC2N
+
+      Use:
+
+      .. code-block:: console
+
+         srun hostname
+
+      The output should be one line of ``b-cn[number].hpc2n.umu.se``, where ``[number]``
+      is a number, you have booked one core.
+
+      If the output is more than one line of ``b-cn[number].hpc2n.umu.se``, where ``[number]``
+      is a number, you have booked more than one core. 
+
+      If the output is ``[something else]``, where ``[number]``
+      is a number, you are still on a login node.
+
+Exercise 2.4: exit
+^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+   .. tab:: Exercise 2.4: exit
+
+   Exit the interactive node
+
+   .. tab:: UPPMAX
+
+      Use:
+
+      .. code-block:: console
+
+         exit
+
+      The prompt should change to contain ``rackham[number].uppmax.uu.se``, 
+      where ``[number]`` is a number, which indicates you are back on a login node.
+      
+   .. tab:: HPC2N
+
+      Use:
+
+      .. code-block:: console
+
+         exit
+
+      The prompt will remain the same.
 
 Links
 -----
