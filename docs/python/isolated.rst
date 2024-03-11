@@ -95,7 +95,6 @@ Exercise 1: work with ``vpyenv``
 
     - Create a Python virtual environment from a step-by-step instruction
 
-
 In this exercise, we create the course environment ``vpyenv``
 in a step-by-step fashion:
 
@@ -488,17 +487,8 @@ Deactivate the virtual environment
      You could also have started Python and tried to import the package instead of using "pip list".
 
 
-
-More info
+Conclusion
 ---------
-
-- UPPMAX's documentation pages about installing Python packages and virtual environments: https://www.uppmax.uu.se/support/user-guides/python-user-guide/
-- HPC2N's documentation pages about installing Python packages and virtual environments: https://www.hpc2n.umu.se/resources/software/user_installed/python
-
-Exercises
----------
-
-
 
 .. keypoints::
 
@@ -506,73 +496,21 @@ Exercises
    - Make it for each project you have for reproducibility.
    - There are different tools to create virtual environments.
    
-      - UPPMAX has Conda and venv and virtualenv
-      - HPC2N has venv and virtualenv
+      - UPPMAX has Conda and venv
+      - HPC2N has venv
 
+   Conda is discussed in a seperate UPPMAX-only session.
 
-    
+Links
+-----
+
+- UPPMAX's documentation pages about installing Python packages and virtual environments: https://www.uppmax.uu.se/support/user-guides/python-user-guide/
+- HPC2N's documentation pages about installing Python packages and virtual environments: https://www.hpc2n.umu.se/resources/software/user_installed/python
+- `Video: How to use a Python venv on the Rackham UPPAX cluster (YouTube) <https://youtu.be/OjftEQ23xYk>`_
+- `Dependency management from coursePython for Scientific computing <https://aaltoscicomp.github.io/python-for-scicomp/dependencies/>`_
 
 Dead links on purpose
 ---------------------
 
 - `Dead external links <https://www.abs.ent>`_
 - Dead other page :doc:`absent_page.rst`
-
-Notes
------
-
-module load python_ML_packages/3.9.5-gpu
-git clone https://github.com/UPPMAX/R-python-julia-HPC
-pip install -r requirements.txt
-cd Exercises
-pytorch_fitting_gpu.py
-
-
-
-module load python/3.10.8
-
-# Create
-python -m venv --system-site-packages /proj/naiss2023-22-914/<user>/python/Example
-
-# Activate
-source /proj/naiss2023-22-914/<user>/python/Example/bin/activate
-
-# Get requirements
-pip freeze > requirements.txt
-
-# Deactivate
-deactivate
-
-
-
-
-## Exercise 2
-
-- Create a venv called ‘vpyenv’
-- Activate it
-- Create a file ‘requirements.txt’ with content:
-numpy==1.22.3
-matplotlib==3.5.2
-pandas==1.4.2
-- Install these requirements
-- Confirm that these are installed
-- Deactivate the venv
-
-
-
-.. keypoints::
-
-   - With a virtual environment you can tailor an environment with specific versions for Python and packages, not interfering with other installed python versions and packages.
-   - Make it for each project you have for reproducibility.
-   - There are different tools to create virtual environments.
-      - UPPMAX has  Conda and venv and virtualenv
-      - HPC2N has venv and virtualenv.
-      - More details in the separated sessions!
-
-Links
------
-
-- `Video: How to use a Python venv on the Rackham UPPAX cluster (YouTube) <https://youtu.be/OjftEQ23xYk>`_
-- `Dependency management from coursePython for Scientific computing <https://aaltoscicomp.github.io/python-for-scicomp/dependencies/>`_
-
-
