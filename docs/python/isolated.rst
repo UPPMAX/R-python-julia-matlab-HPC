@@ -617,12 +617,21 @@ Conclusion
 
 .. keypoints::
 
-   - With a virtual environment you can tailor an environment with specific versions for Python and packages, not interfering with other installed python versions and packages.
-   - Make it for each project you have for reproducibility.
-   - There are different tools to create virtual environments.
-   
-      - UPPMAX has Conda and venv: Conda is discussed in a separate UPPMAX-only session.
-      - HPC2N has venv
+    You have:
+
+    - heard that virtual environments allows one for independent and isolated 
+      set of Python packages
+    - heard that there are multiple virtual environments managers:
+        - UPPMAX: Conda and ``venv``. Conda is discussed in a separate UPPMAX-only session.
+        - HPC2N has ``virtualenv``
+    - created, activated, used and deactivated virtual environments
+    - installed Python packages by using a ``requirements.txt`` file
+    - exported the Python packages of a virtual environment
+
+    You may:
+
+    - consider to create a virtual environment per project, 
+      to provide for better reproducibility
 
 Links
 -----
