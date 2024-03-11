@@ -278,52 +278,72 @@ in the same step-by-step fashion as done in exercise 1:
 
 .. mermaid:: isolated_workflow_vpyenv.mmd
 
+This virtual environment called ``Example-gpu`` 
+is used for examples where the use of GPUs is demonstrated,
+by using the ``numba`` and ``PyTorch`` Python packages.
+
+Because the structure is the same as Exercise 1, see exercise 1 for details.
+
+Step 1: load the modules needed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Here we need an older Python module, 
+as that is what available on the Snowy computer cluster:
+
+.. code-block:: console
+
+    module load python/3.9.5
+
+Step 2: create the ``venv``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+    python -m venv --system-site-packages /proj/r-py-jl/<user>/python/Example-gpu
+
+where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl/sven/python/Example-gpu``.
+
+Step 3: activate the ``venv``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+    source /proj/r-py-jl/<user>/python/Example-gpu/bin/activate
+
+where ``[username]`` is your UPPMAX username, for example ``source /proj/r-py-jl/sven/python/Example-gpu/bin/activate``.
+
+Step 4: install Python packages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. prompt:: 
+    :language: bash
+    :prompts: (Example-gpu) $
+
+    pip install --upgrade numpy scipy numba torch
 
 
-Create a virtual environment called ``Example-gpu`` for using on UPPMAX for the numba example and the PyTorch example under GPUs. First load the python version you want to base your virtual environment on (3.9.5 in this example since that is what is on Snowy):
+Step 5: check if the Python packages are installed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-      .. code-block:: console
+.. prompt:: 
+    :language: bash
+    :prompts: (vpyenv) $
 
-          $ module load python/3.9.5
-          $ python -m venv --system-site-packages /proj/r-py-jl/<user>/python/Example-gpu
-    
-      Activate it.
+    pip list
 
-      .. code-block:: console
+Step 6: use the virtual environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-         $ source /proj/r-py-jl/<user>/python/Example-gpu/bin/activate
 
-      Note that your prompt is changing to start with (Example-gpu) to show that you are within an environment.
 
-      Install your packages with ``pip`` (``--user`` not needed) and the correct versions, like:
+Step 7: deactivate the virtual environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-      .. prompt:: 
-         :language: bash
-         :prompts: (Example-gpu) $
+.. prompt:: 
+    :language: bash
+    :prompts: (Example-gpu) $
 
-         pip install --upgrade numpy scipy numba torch
-
-      Check what was installed
-
-      .. prompt:: 
-         :language: bash
-         :prompts: (vpyenv) $
-
-         pip list
-
-      Deactivate it.
-
-      .. prompt:: 
-         :language: bash
-         :prompts: (Example-gpu) $
-
-         deactivate
-
-      Everytime you need the tools available in the virtual environment you activate it as above.
-
-      .. code-block:: console
-
-         $ source /proj/r-py-jl/<user>/python/Example-gpu/bin/activate
+    deactivate
 
 
 Working with virtual environments defined from files
