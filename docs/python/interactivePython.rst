@@ -635,7 +635,7 @@ Exercise 1.1: start an interactive node
 
    .. tab:: Exercise 1.1: start an interactive node
 
-   Start an interactive node in the simplest way possible.
+      Start an interactive node in the simplest way possible.
 
    .. tab:: UPPMAX
 
@@ -658,7 +658,7 @@ Exercise 1.2: check to be in an interactive session
 
    .. tab:: Exercise 1.2: confirm to be on a compute node
 
-   Confirm to be on a compute node.
+      Confirm to be on a compute node.
 
    .. tab:: UPPMAX
 
@@ -704,7 +704,7 @@ Exercise 1.3: check to have booked the expected amount of cores
 
    .. tab:: Exercise 1.3: confirm to have booked one core
 
-   Confirm to have booked one core.
+      Confirm to have booked one core.
 
    .. tab:: UPPMAX
 
@@ -809,7 +809,7 @@ Exercise 1.5: exit
 
    .. tab:: Exercise 1.5: exit
 
-   Exit the interactive node
+      Exit the interactive node
 
    .. tab:: UPPMAX
 
@@ -851,7 +851,7 @@ Exercise 2.1: start an interactive node
 
    .. tab:: Exercise 2.1: start an interactive node
 
-   Start an interactive node in the simplest way possible.
+      Start an interactive node in the simplest way possible.
 
    .. tab:: UPPMAX
 
@@ -874,7 +874,7 @@ Exercise 2.2: check to be in an interactive session
 
    .. tab:: Exercise 2.2: confirm to be on a compute node
 
-   Confirm to be on a compute node.
+      Confirm to be on a compute node.
 
    .. tab:: UPPMAX
 
@@ -920,7 +920,7 @@ Exercise 2.3: check to have booked the expected amount of cores
 
    .. tab:: Exercise 2.3: confirm to have booked one core
 
-   Confirm to have booked one core.
+      Confirm to have booked one core.
 
    .. tab:: UPPMAX
 
@@ -958,6 +958,7 @@ Exercise 2.3: check to have booked the expected amount of cores
 
 Exercise 2.4.1. Running the first Python script in an interactive session on all nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. tabs::
 
    .. tab:: Exercise 2.4.1. Running the first Python script in an interactive session
@@ -1016,7 +1017,7 @@ Exercise 2.5: exit
 
    .. tab:: Exercise 2.5: exit
 
-   Exit the interactive node
+      Exit the interactive node
 
    .. tab:: UPPMAX
 
