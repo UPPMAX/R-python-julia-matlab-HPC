@@ -113,8 +113,8 @@ We create the virtual environment needed for this course, called ``vpyenv``.
 As virtual environments can take up a lot of disc space,
 we create it in the course project folder.
 
-Step 1: load the modules needed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Exercise 1.1: load the modules needed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
