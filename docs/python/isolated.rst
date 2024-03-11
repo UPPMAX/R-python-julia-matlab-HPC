@@ -100,9 +100,15 @@ Exercises
 Exercise 1: work with ``vpyenv``
 --------------------------------
 
-.. admonition:: Teaching goals
+.. tabs::
 
-    - Create a Python virtual environment from a step-by-step instruction
+   .. tab:: Learning objectives
+
+       - Create a Python virtual environment from a step-by-step instruction
+
+   .. tab:: For teachers
+
+       Takes around 3 minutes for an experienced user
 
 In this exercise, we create the course environment ``vpyenv``
 in a step-by-step fashion:
@@ -287,9 +293,18 @@ Well done, you've just created a virtual environment called ``vpyenv``!
 Exercise 2: work with ``Example-gpu``
 -------------------------------------
 
-.. admonition:: Teaching goals
+.. tabs::
 
-    - Rehearse creating a Python virtual environment from a step-by-step instruction
+   .. tab:: Learning objectives
+
+       - Rehearse creating a Python virtual environment from a step-by-step instruction
+
+   .. tab:: For teachers
+
+       Takes around 7 minutes for an experienced user.
+
+       Installing the packages takes 6 minutes.
+
 
 This exercise if for UPPMAX users only.
 
@@ -335,12 +350,13 @@ where ``[username]`` is your UPPMAX username, for example ``source /proj/r-py-jl
 Exercise 2.4: install Python packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Installing these packages takes around 6 minutes.
+
 .. prompt:: 
     :language: bash
     :prompts: (Example-gpu) $
 
     pip install --upgrade numpy scipy numba torch
-
 
 Exercise 2.5: check if the Python packages are installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -368,11 +384,19 @@ Exercise 2.7: deactivate the virtual environment
 Exercise 3: export and import a virtual environment
 ---------------------------------------------------
 
-.. admonition:: Teaching goals
+.. tabs::
 
-    - Rehearse creating a Python virtual environment
-    - Export a virtual environment from a step-by-step instruction
-    - Import a virtual environment from a step-by-step instruction
+   .. tab:: Learning objectives
+
+       - Rehearse creating a Python virtual environment
+       - Export a virtual environment from a step-by-step instruction
+       - Import a virtual environment from a step-by-step instruction
+
+   .. tab:: For teachers
+
+       Takes around 14 minutes for an experienced user.
+
+       Installing the packages takes 13 minutes.
 
 In this exercise, we export and import a virtual environment.
 Additionally, you get to rehearse to create a virtual environment:
@@ -447,6 +471,8 @@ Exercise 3.3: activate the virtual environment
 Exercise 3.4: install Python packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Installing these packages takes around 13 minutes.
+
 .. tabs::
 
    .. tab:: Step pre-4: create file
@@ -520,12 +546,36 @@ Exercise 3.5: check if the Python packages are installed
 Exercise 3.6: use the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Not now :-)
+.. tabs::
+
+   .. tab:: Step 6: use the virtual environment
+
+      Export the Python packages our virtual environment uses:
+
+      .. code-block:: console
+
+          pip freeze > requirements.txt
+
+      View the file ``requirements.txt``.
+
+   .. tab:: UPPMAX
+
+      There are many ways to view a file, for example:
+
+      .. code-block:: console
+
+          cat requirements.txt
+
+   .. tab:: HPC2N
+
+      There are many ways to view a file, for example:
+
+      .. code-block:: console
+
+          cat requirements.txt
 
 Exercise 3.7: deactivate the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
 
 .. tabs::
 
