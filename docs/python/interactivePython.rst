@@ -277,22 +277,6 @@ with a custom session duration and a custom amount of cores:
 
       Note that, as Slurm uses 1 task per core by default, we request 4 cores.
 
-
-Your request enters the job queue just like any other job, and interactive/salloc will tell you that it is
-      waiting for the requested resources. When salloc tells you that your job has been allocated 
-      resources, you can interactively run programs on those resources with ``srun``. The commands 
-      you run with ``srun`` will then be executed on the resources your job has been allocated. 
-      If you do not preface with ``srun`` the command is run on the login node! 
-      
-
-You can now run Python scripts on the allocated resources directly instead of waiting for 
-      your batch job to return a result. This is an advantage if you want to test your Python 
-      script or perhaps figure out which parameters are best.
-
-When you have request multiple cores for your interactive session,
-you need to preface commands with ``srun`` in order to 
-run on the allocated nodes instead of the login node. 
-
 Check to be in an interactive session
 -------------------------------------
 
