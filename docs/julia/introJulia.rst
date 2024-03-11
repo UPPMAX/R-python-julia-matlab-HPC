@@ -209,13 +209,13 @@ typing ``?``, then you may type some string from which you need more information
    A variable referring to the last computed value, automatically set at the interactive prompt.
 
 
-More detailed information about the modes in Julia can be found here: https://docs.julialang.org/en/v1/stdlib/REPL/
+More detailed information about the modes in Julia can be found `here <https://docs.julialang.org/en/v1/stdlib/REPL/>`_.
 
 
 Features of Julia
 -----------------
 
-According to the Julia documentation (https://docs.julialang.org/en/v1/) some of
+According to the `Julia documentation <https://docs.julialang.org/en/v1/>`_ some of
 the features of this language are:
 
 - Good Base library with efficiently implemented operations written in Julia itself
@@ -244,9 +244,9 @@ More on Julia?
 - Documentation at the HPC centres UPPMAX and HPC2N
    - UPPMAX: https://www.uppmax.uu.se/support/user-guides/julia-user-guide/
    - HPC2N: https://www.hpc2n.umu.se/resources/software/julia
-- Official Julia documentation is found here: https://docs.julialang.org/en/v1/
+- Official Julia documentation is found `here: <https://docs.julialang.org/en/v1/>`_
 - Slack channel for Julia and instructions for joining it are found here: https://julialang.org/slack/
-- HPC2N YouTube video on Julia in HPC: https://www.youtube.com/watch?v=bXHe7Kj3Xxg
+- `HPC2N YouTube video on Julia in HPC <https://www.youtube.com/watch?v=bXHe7Kj3Xxg>`_
 
 Material for improving your programming skills
 ::::::::::::::::::::::::::::::::::::::::::::::
