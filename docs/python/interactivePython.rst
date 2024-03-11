@@ -1,6 +1,41 @@
 Interactive work on the compute nodes
 =====================================
 
+.. tabs::
+
+   .. tab:: Learning objectives
+
+      - Start an interactive session
+      - Test to be on an interactive node
+      - End an interactive session
+      - Start an interactive session with multiple cores
+      - Test to be on an interactive node with multiple cores
+      - End an interactive session with multiple cores
+
+   .. tab:: For teachers
+
+      Teaching goals are:
+
+      - Learners have started an interactive session
+      - Learners have tested to be on an interactive node
+      - Learners have ended an interactive session
+      - Learners have started an interactive session with multiple cores
+      - Learners have tested to be on an interactive node with multiple cores
+      - Learners have ended an interactive session with multiple cores
+
+      Lesson plan:
+
+      - 5 mins: prior knowledge
+         - What types of nodes do our HPC clusters have?
+         - What is the purpose of each of these nodes?
+         - Imagine you are developing a Python script in a line-by-line fashion. How to do so best?
+         - Why not do so on the login node?
+         - Why not do so by using ``sbatch``?
+      - 5 mins: presentation
+      - 20 mins: challenge
+      - 5 mins: feedback
+         - What is the drawback of using an interactive node?
+
 .. note::
 
    - It is possible to run Python directly on the login (including ThinLinc) nodes.

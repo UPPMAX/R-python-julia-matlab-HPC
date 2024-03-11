@@ -632,3 +632,7 @@ sql
 texlab
 vscode
 da
+machinelearningmastery
+dataset
+machinelearningmastery
+ClusterManagers
