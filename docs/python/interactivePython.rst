@@ -470,7 +470,7 @@ it is a simple script that adds two numbers from command-line arguments:
   
     print("The sum of the two numbers is: {0}".format(sum))
 
-Our second example Python script is called `add2.py <https://raw.githubusercontent.com/UPPMAX/R-python-julia-HPC/main/exercises/python/add2.py>`:
+Our second example Python script is called `add2.py <https://raw.githubusercontent.com/UPPMAX/R-python-julia-HPC/main/exercises/python/add2.py>`_:
 it is a simple script that adds two numbers from user input:
  
 .. code-block:: python
