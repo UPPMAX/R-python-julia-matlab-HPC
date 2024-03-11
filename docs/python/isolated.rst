@@ -85,8 +85,16 @@ In this session, we use ``venv``,
 which is a virtual environment manager described in detail
 at `the UPPMAX page on 'venv' <http://docs.uppmax.uu.se/software/python_venv/#create-a-virtual-environment>`_.
 
+Exercises
+---------
+
 Exercise 1: work with ``vpyenv``
 --------------------------------
+
+.. admonition:: Teaching goals
+
+    - Create a Python virtual environment from a step-by-step instruction
+
 
 In this exercise, we create the course environment ``vpyenv``
 in a step-by-step fashion:
@@ -271,6 +279,10 @@ Well done, you've just created a virtual environment called ``vpyenv``!
 Exercise 2: work with ``Example-gpu``
 -------------------------------------
 
+.. admonition:: Teaching goals
+
+    - Rehearse creating a Python virtual environment from a step-by-step instruction
+
 This exercise if for UPPMAX users only.
 
 In this exercise, we create another environment ``Example-gpu``
@@ -345,103 +357,79 @@ Step 7: deactivate the virtual environment
 
     deactivate
 
+Exercise 3: export and import a ``venv``
+----------------------------------------
 
-Working with virtual environments defined from files
-----------------------------------------------------
+.. admonition:: Teaching goals
 
-- First create and activate an environment (see above)
-- Create an environment based on dependencies given in an environment file:
-  
-.. code-block:: console
+    - Export a ``venv`` from reading documentation
+    - Import a ``venv`` from reading documentation
 
-   $ pip install -r requirements.txt
-   
-- Create file from present virtual environment:
+Step 1: load the modules needed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: console
+.. tabs::
 
-   $ pip freeze > requirements.txt
-  
-``requirements.txt`` (used by virtual environment) is a simple
-text file which could look like this:
+   .. tab:: Step 1: load the modules needed
 
-   numpy
-   matplotlib
-   pandas
-   scipy
+      Load the modules for Python 3.11.x.
 
-``requirements.txt`` with versions:
+   .. tab:: UPPMAX
 
-.. code-block:: console
+      .. code-block:: console
 
-    numpy==1.18.1
-    matplotlib==3.1.3
-    pandas==1.1.2
-    scipy==1.6.2
+          module load python/3.11.8
 
-.. admonition:: More on dependencies
+   .. tab:: HPC2N
 
-   - `Dependency management from coursePython for Scientific computing <https://aaltoscicomp.github.io/python-for-scicomp/dependencies/>`_
+      .. code-block:: console
 
-.. note:: 
+          module load GCC/12.3.0 Python/3.11.3 
 
-   **pyenv**
+Step 2: create the ``venv``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   - This approach is more advanced and should be, in our opinion, used only if the above are not enough for the purpose. 
-   - ``pyenv`` allows you to install your **own python version**, like 3.10.2, and much more… 
-   - Probably Conda will work well for you.
-   - https://www.uppmax.uu.se/support/user-guides/python-user-guide/#tocjump_9931546434791352_12
+Create a virtual environment with the name ``analysis``.
+
+Step 3: activate the ``venv``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Activate the virtual environment.
 
 
-More info
----------
+Step 4: install Python packages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- UPPMAX's documentation pages about installing Python packages and virtual environments: https://www.uppmax.uu.se/support/user-guides/python-user-guide/
-- HPC2N's documentation pages about installing Python packages and virtual environments: https://www.hpc2n.umu.se/resources/software/user_installed/python
+Create a file called ``requirements.txt``, with the following content:
 
-.. admonition:: Summary of workflow
+.. code-block:: sh
 
-   In addition to loading Python, you will also often need to load site-installed modules for Python packages, or use own-installed Python packages. The work-flow would be something like this: 
-   
- 
-   1) Load Python and prerequisites: `module load <pre-reqs> Python/<version>``
-   2) Load site-installed Python packages (optional): ``module load <pre-reqs> <python-package>/<version>``
-   3) Activate your virtual environment (optional): ``source <path-to-virt-env>/bin/activate``
-   4) Install any extra Python packages (optional): ``pip install --no-cache-dir --no-build-isolation <python-package>``
-   5) Start Python or run python script: ``python``
-   6) Do your work
-   7) Deactivate
+    numpy==1.22.3
+    matplotlib==3.5.2
+    pandas==1.4.2
 
-   - Installed Python modules (modules and own-installed) can be accessed within Python with ``import <package>`` as usual. 
-   - The command ``pip list`` given within Python will list the available modules to import. 
-   - More about packages and virtual/isolated environment to follow in later sections of the course! 
+Install packages by using the ``requirements.txt`` file.
 
-Exercises
----------
 
-.. admonition:: For teachers
+Step 5: check if the Python packages are installed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    - Technical: Use ``python/3.11.8`` and ``python_ML_packages/3.11.8-GPU``
-    - Teaching goals: 
-        - learners have created, activated, used and deactivated a conda virtual environment
-        - learners have used an ML package
-        - learners have heard about venv
+Check that the packages were installed.
 
-.. challenge:: Create a virtual environment with a requirements file below
+Step 6: use the virtual environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   - Create a virtual environment with Python 3.11.x with the name ``analysis``.
-   - Install packages defined by a ``requirements.txt`` file (save it).
-  
-   .. code-block:: sh
-   
-      numpy==1.22.3
-      matplotlib==3.5.2
-      pandas==1.4.2
-    
-   - Check that the packages were installed
-   - Deactivate the virtual environment
+Not now :-)
+
+Step 7: deactivate the virtual environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Deactivate the virtual environment
+
+
 
 .. solution:: Solution for UPPMAX
+
     :class: dropdown
     
      .. code-block:: console
@@ -500,6 +488,18 @@ Exercises
      You could also have started Python and tried to import the package instead of using "pip list".
 
 
+
+More info
+---------
+
+- UPPMAX's documentation pages about installing Python packages and virtual environments: https://www.uppmax.uu.se/support/user-guides/python-user-guide/
+- HPC2N's documentation pages about installing Python packages and virtual environments: https://www.hpc2n.umu.se/resources/software/user_installed/python
+
+Exercises
+---------
+
+
+
 .. keypoints::
 
    - With a virtual environment you can tailor an environment with specific versions for Python and packages, not interfering with other installed python versions and packages.
@@ -510,13 +510,6 @@ Exercises
       - HPC2N has venv and virtualenv
 
 
-Links
----------
-
-* `Video: How to use a Python venv on the Rackham UPPAX cluster (YouTube) <https://youtu.be/OjftEQ23xYk>`_
-* `Video: How to use a Python venv on the Rackham UPPAX cluster (.ogv) <https://richelbilderbeek.nl/python_in_venv_hpc.ogv>`_
-* `Presentation: How to use a Python venv on the Rackham UPPAX cluster (PDF) <https://github.com/UPPMAX/R-python-julia-HPC/blob/main/docs/python/isolated.pdf>`_
-* `Presentation: How to use a Python venv on the Rackham UPPAX cluster (ODP) <https://github.com/UPPMAX/R-python-julia-HPC/blob/main/docs/python/isolated.odp>`_
     
 
 Dead links on purpose
@@ -552,15 +545,6 @@ deactivate
 
 
 
-## Exercise 1
-
-
-- Create a venv called ‘vpyenv’
-- Activate it
-- Install the packages ‘spacy’ and ‘seaborn’ using ``pip``
-- Confirm that these are installed
-- Deactivate the venv
-
 
 ## Exercise 2
 
@@ -584,3 +568,11 @@ pandas==1.4.2
       - UPPMAX has  Conda and venv and virtualenv
       - HPC2N has venv and virtualenv.
       - More details in the separated sessions!
+
+Links
+-----
+
+- `Video: How to use a Python venv on the Rackham UPPAX cluster (YouTube) <https://youtu.be/OjftEQ23xYk>`_
+- `Dependency management from coursePython for Scientific computing <https://aaltoscicomp.github.io/python-for-scicomp/dependencies/>`_
+
+
