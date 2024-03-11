@@ -85,8 +85,8 @@ In this session, we use ``venv``,
 which is a virtual environment manager described in detail
 at `the UPPMAX page on 'venv' <http://docs.uppmax.uu.se/software/python_venv/#create-a-virtual-environment>`_.
 
-Exercise 1
-----------
+Exercise 1: work with ``vpyenv``
+--------------------------------
 
 In this exercise, we create the course environment ``vpyenv``
 in a step-by-step fashion:
@@ -114,7 +114,8 @@ Step 1: load the modules needed
 
           module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07 matplotlib/3.7.2
 
-Step 2: create the ``venv``:
+Step 2: create the ``venv``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -139,7 +140,8 @@ Step 2: create the ``venv``:
       where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/hpc2n2024-025/sven/python/vpyenv``.
 
 
-Step 3: activate the ``venv``:
+Step 3: activate the ``venv``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -164,7 +166,8 @@ Step 3: activate the ``venv``:
       where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/hpc2n2024-025/sven/python/vpyenv``.
 
 
-Step 4: install packages:
+Step 4: install Python packages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -184,15 +187,25 @@ Step 4: install packages:
 
           pip install --no-cache-dir --no-build-isolation spacy seaborn 
 
-Step 5: check if the packages are installed
+Step 5: check if the Python packages are installed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
    .. tab:: UPPMAX
 
+      To see all installed Python packages:
+
       .. code-block:: console
 
             pip list
+
+      To see which Python packages you have installed yourself 
+      (i.e. not loaded from a module), use:
+
+      .. code-block:: console
+
+            pip list --user
 
    .. tab:: HPC2N
 
@@ -200,11 +213,44 @@ Step 5: check if the packages are installed
 
             pip list
 
-Step 6: use
+      To see which Python packages you have installed yourself 
+      (i.e. not loaded from a module), use:
 
-We will use this ``venv`` later.
+      .. code-block:: console
 
-Step 7: deactivate the virtual environments
+            pip list --user
+
+Step 6: use the virtual environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+   .. tab:: UPPMAX
+
+      Start Python and import a Python package:
+
+      .. code-block:: console
+           
+         (vpyenv) $ python
+         Python 3.11.8 (main, Feb  8 2024, 11:48:52) [GCC 12.3.0] on linux
+         Type "help", "copyright", "credits" or "license" for more information.
+         >>> import spacy
+         >>> 
+
+   .. tab:: HPC2N
+
+      Start Python and import a Python package:
+
+      .. code-block:: console
+
+         (vpyenv) b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ python
+         Python 3.11.3 (main, Oct 30 2023, 16:00:15) [GCC 12.3.0] on linux
+         Type "help", "copyright", "credits" or "license" for more information.
+         >>> import spacy
+         >>> 
+
+Step 7: deactivate the virtual environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -222,7 +268,17 @@ Step 7: deactivate the virtual environments
 
 Well done, you've just created a virtual environment called ``vpyenv``!
 
-**UPPMAX**
+Exercise 2: work with ``Example-gpu``
+-------------------------------------
+
+This exercise if for UPPMAX users only.
+
+In this exercise, we create another environment ``Example-gpu``
+in the same step-by-step fashion as done in exercise 1:
+
+.. mermaid:: isolated_workflow_vpyenv.mmd
+
+
 
 Create a virtual environment called ``Example-gpu`` for using on UPPMAX for the numba example and the PyTorch example under GPUs. First load the python version you want to base your virtual environment on (3.9.5 in this example since that is what is on Snowy):
 
@@ -268,55 +324,6 @@ Create a virtual environment called ``Example-gpu`` for using on UPPMAX for the 
       .. code-block:: console
 
          $ source /proj/r-py-jl/<user>/python/Example-gpu/bin/activate
-
-
-Using the self-installed packages in Python
--------------------------------------------
-
-- To use the Python packages you have installed under your virtual environment, load your Python module + prerequisites, load any site-installed Python packages you used, and then activate the environment.
-- Now your own packages can be accessed from within Python, just like any other Python package. 
-
-**Test it!**
-
-.. tip::
-    
-   **Code along!**
-
-
-Using the virtual environment created earlier and the ``spacy`` we installed under the code-along example above. 
-
-.. admonition:: UPPMAX: Load modules for Python, activate the environment 
-   :class: dropdown
-   
-   .. code-block:: console
-           
-      $ module load python/3.11.8
-      $ source /proj/r-py-jl/<user>/python/vpyenv/bin/activate
-      (vpyenv) $ python
-      Python 3.11.8 (main, Feb  8 2024, 11:48:52) [GCC 12.3.0] on linux
-      Type "help", "copyright", "credits" or "license" for more information.
-      >>> import spacy
-      >>> 
-
-
-.. admonition:: HPC2N: Load modules for Python, numpy (in SciPy-bundle), activate the environment "vpyenv". 
-    :class: dropdown
-   
-        .. code-block:: sh
-           
-           b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07
-           b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ source vpyenv/bin/activate
-           (vpyenv) b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ python
-           Python 3.11.3 (main, Oct 30 2023, 16:00:15) [GCC 12.3.0] on linux
-           Type "help", "copyright", "credits" or "license" for more information.
-           >>> import spacy
-           >>> 
-
-        Try and do the same for seaborn.  
-
-- To use self-installed Python packages in a batch script, you always also need to load the above mentioned modules and activate the environment. An example of this will follow later in the course. 
-
-- To see which Python packages you, yourself, have installed, you can use ``pip list --user`` while the environment you have installed the packages in are active. 
 
 
 Working with virtual environments defined from files
