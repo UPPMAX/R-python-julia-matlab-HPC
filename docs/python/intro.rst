@@ -51,13 +51,13 @@ Preliminary schedule
      - Loading modules and running Python codes 
      - Lecture+code along 25m
    * - 9.45
-     - **Leg stretch**
+     - **Coffee break**
      - 
    * - 10:00
      - Packages  
      - Lecture+code along 45m
    * - 10.45
-     - **Coffee break**
+     - **Leg stretch**
      - 
    * - 11:00
      - Isolated environments (venv, conda) 
