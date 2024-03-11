@@ -86,12 +86,15 @@ Preliminary schedule
    * - 14:00  
      - Parallel and multi-threaded functions
      - 25m
-   * - 14:25
-     - Conclusion & Q/A
-     - 20m
-   * - 14:45
-     - Evaluation of today's course 
-     - 15m
+   * - 14.25
+     - Summary 
+     -
+   * - 14.35
+     - Evaluation
+     -
+   * - 14.45
+     - Q&A on-demand
+     -
    * - 15:00
      - END
      -
