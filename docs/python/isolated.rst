@@ -97,6 +97,23 @@ However, there are more efficient ways, which we will use.
 Exercises
 ---------
 
+In these exercises, we create multiple virtual environments.
+
+For exercises 2 and 3, there is considerate time needed to install
+all the Python packages:
+
++----------+--------------------------+------------------------------------+
+| Exercise | Virtual environment name | Time to install packages (minutes) |
++==========+==========================+====================================+
+| 1        | ``vpyenv``               | 1                                  |
++----------+--------------------------+------------------------------------+
+| 2        | ``Example-gpu``          | 6                                  |
++----------+--------------------------+------------------------------------+
+| 3        | ``analysis``             | 13                                 |
++----------+--------------------------+------------------------------------+
+
+Tip for UPPMAX users: do exercise 2 and 3 in parallel by logging in twice.
+
 Exercise 1: work with ``vpyenv``
 --------------------------------
 
