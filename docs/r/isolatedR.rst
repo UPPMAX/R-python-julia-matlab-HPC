@@ -220,6 +220,14 @@ Example - Installing ``knitr``
 
 *Note*: You can also do all of this directly through Rstudio when initializing a project.
 
+.. note::
+
+   To access the packages installed in the renv, you either need to activate it or be in that directory. Load the R module and prerequisites (and possibly R_packages on UPPMAX and R-bundle-Bioconductor on HPC2N) and do: 
+
+   - On UPPMAX, just do ``renv::activate(project="<path-to-your-renv>")`` to access the packages installed in it. 
+   - On HPC2N, ``renv`` is not installed, so you need to do that yourself, as shown further above on this page. It also means you can only access it from the directory you installed the packages in, so install any other R packages in that as well, and run R from there. 
+     
+
 Conda (UPPMAX)
 --------------
 

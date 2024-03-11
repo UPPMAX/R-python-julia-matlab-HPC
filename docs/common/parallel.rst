@@ -406,12 +406,8 @@ Exercises
                 # Print the mean value
                 print(mean_value)
 
-            Run the code with the batch script: 
+            Run the code with the batch script (HPC2N): 
             
-            .. tabs:: 
-
-                 ..tab:: HPC2N 
-
                     .. code-block:: sh
                         
                         #!/bin/bash            
@@ -426,7 +422,7 @@ Exercises
                         module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07
                         python script-df.py
 
-                 ..tab:: UPPMAX
+             UPPMAX...
 
 
 
@@ -467,9 +463,7 @@ Exercises
                 # Print the mean value
                 println(mean_value_parallel)    
 
-            .. tabs:: 
-
-                 ..tab:: HPC2N 
+            Run this job with the following batch script (HPC2N):
 
                     .. code-block:: sh
                         
@@ -486,9 +480,9 @@ Exercises
 
                         julia --threads X script-df.jl  # X number of threads
 
-                 ..tab:: UPPMAX
+            UPPMAX ...
 
-            Run the code with ``julia --threads X script-df.jl``, with X <= 4.             
+           
 
         .. tab:: R
 
@@ -541,7 +535,23 @@ Exercises
                 # Print the results
                 print(sum(*FIXME*)/*FIXME*)
             
-            Run the code with ``Rscript --no-save --no-restore script-df.R``
+            Run the code with the following batch script (HPC2N):
+
+                    .. code-block:: sh
+                        
+                        #!/bin/bash            
+                        #SBATCH -A hpc2n2023-110     # your project_ID       
+                        #SBATCH -J job-serial        # name of the job         
+                        #SBATCH -n 1                 # nr. tasks  
+                        #SBATCH --time=00:20:00      # requested time
+                        #SBATCH --error=job.%J.err   # error file
+                        #SBATCH --output=job.%J.out  # output file  
+
+                        ml purge > /dev/null 2>&1
+                        ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
+                        Rscript --no-save --no-restore script-df.R
+
+            UPPMAX ...
 
 .. solution:: Solution
 

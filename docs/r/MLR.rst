@@ -26,6 +26,7 @@ The R community has contributed many powerful packages, both for machine learnin
 - ggplot2
 - randomForest
 - mlbench
+- tidyverse
 
 and many many more. 
 
@@ -307,6 +308,152 @@ ML on GPUs
 Exercises
 ---------
 
-.. challenge:: 
+.. challenge:: Run validation.R with Rscript
+
+   This example is taken from https://www.geeksforgeeks.org/cross-validation-in-r-programming/
+
+   To run this, you need to install the ``datarium`` package in your ``renv``. 
+   
+   Remember that for HPC2N you need to run in the ``renv`` directory.  
+
+.. admonition:: ``validation.R``
+   :class: dropdown 
+      
+      .. code-block:: R
+
+         # R program to implement
+         # validation set approach
+         # Taken from https://www.geeksforgeeks.org/cross-validation-in-r-programming/
+         library(tidyverse)
+         library(caret)
+         library(datarium)
+
+         # setting seed to generate a 
+         # reproducible random sampling
+         set.seed(123)
+
+         # creating training data as 80% of the dataset
+         random_sample <- createDataPartition(marketing $ sales, p = 0.8, list = FALSE)
+
+         # generating training dataset
+         # from the random_sample
+         training_dataset <- marketing[random_sample, ]
+
+         # generating testing dataset
+         # from rows which are not 
+         # included in random_sample
+         testing_dataset <- marketing[-random_sample, ]
+
+         # Building the model
+
+         # training the model by assigning sales column
+         # as target variable and rest other columns
+         # as independent variables
+         model <- lm(sales ~., data = training_dataset)
+
+         # predicting the target variable
+         predictions <- predict(model, testing_dataset)
+
+         # computing model performance metrics
+         data.frame( R2 = R2(predictions, testing_dataset $ sales), RMSE = RMSE(predictions, testing_dataset $ sales), MAE = MAE(predictions, testing_dataset $ sales))
+
+
+
+.. solution:: Solution for HPC2N
+   :class: dropdown
+
+      1) Create a directory to work in: ``mkdir -v /proj/nobackup/hpc2n2024-025/<your-dir>/r_proj_val && cd $_``
+      2) Load modules
+
+      .. code-block:: console
+
+         module load GCC/11.2.0  OpenMPI/4.1.1  R/4.1.2 R-bundle-Bioconductor/3.14-R-4.1.2
+
+      3) Install ``renv`` as shown under here: https://uppmax.github.io/R-python-julia-HPC/r/isolatedR.html#example-installing-knitr
+      4) Start R 
+
+      .. code-block:: console
+
+         $ R
+
+      5) Initialize a ``renv`` and exit R
+
+      .. code-block:: R
+
+         > renv::init()
+         > quit()  
+
+      6) Start R again and install the package ``datarium`` (Pick CRAN mirror 59: Sweden (Umeå) [https] 
+
+      .. code-block:: console
+
+         $ R
+
+      .. code-block:: R
+
+         > install.packages("datarium")   
+
+      7) Exit R
+      
+      .. code-block:: R
+
+         > quit()
+         
+      8) You are now ready to run ``valdation.R``
+
+      .. code-block:: console
+
+         $ Rscript validation.R
+
+.. solution:: Solution for UPPMAX
+   :class: dropdown 
+
+      1) Create a directory to work in: ``mkdir -v /proj/r-py-jl/<your-dir>/r_proj_val && cd $_``
+      2) Load modules
+
+      .. code-block:: console
+
+         module load R/4.1.1 R_packages/4.1.1 
+
+      3) Start R 
+
+      .. code-block:: console
+
+         $ R
+
+      5) Initialize a ``renv`` and exit R
+
+      .. code-block:: R
+
+         > renv::init()
+         > quit()  
+
+      6) Start R again and install the package ``datarium`` (Pick CRAN mirror 59: Sweden (Umeå) [https] 
+
+      .. code-block:: console
+
+         $ R
+
+      .. code-block:: R
+
+         > install.packages("datarium")   
+
+      7) Exit R
+      
+      .. code-block:: R
+
+         > quit()
+         
+      8) You are now ready to run ``valdation.R``
+
+      .. code-block:: console
+
+         $ Rscript validation.R
+
+.. challenge:: Create a batch script to run ``validation.R``
+
+
+Links to material
+-----------------
 
 

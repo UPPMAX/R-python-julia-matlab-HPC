@@ -310,8 +310,8 @@ Content of the course
    julia/introJulia.rst
    julia/load_runJulia.rst
    julia/isolatedJulia.rst
-   common/parallel.rst
    julia/batchJulia.rst
+   common/parallel.rst
    julia/interactiveJulia.rst
    julia/exercisesJulia.rst
    julia/summaryJulia.rst
@@ -324,8 +324,8 @@ Content of the course
    r/load_runR.rst
    r/packagesR.rst
    r/isolatedR
-   common/parallel.rst
    r/batchR.rst
+   common/parallel.rst
    r/MLR.rst
    r/interactiveR.rst
    r/rstudio.rst
