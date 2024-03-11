@@ -910,6 +910,7 @@ Exercises
             
             .. code-block:: sh
     
+                #!/bin/bash -l
                 #SBATCH -A naiss2024-22-107   # your project_ID  
                 #SBATCH -M snowy
                 #SBATCH -p node
