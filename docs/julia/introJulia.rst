@@ -109,6 +109,13 @@ Preliminary schedule
    * - 15.00
      - END
      -
+.. Discussion:: **Menti**
+
+   - Which University?
+   - Which scientific topic?
+
+
+
 
 .. instructor-note::
 
