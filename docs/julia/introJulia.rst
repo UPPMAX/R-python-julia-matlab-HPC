@@ -112,8 +112,8 @@ Preliminary schedule
 .. important:: 
 
    - **Menti:**
-   - https://www.menti.com/alvj5kukhz75>
-   - <https://www.menti.com> with code valid the week: `12 40 73 1 `
+   - https://www.menti.com/alvj5kukhz75
+   - https://www.menti.com with code valid the week: `12 40 73 1 `
 
 
 .. Discussion:: **Menti**
