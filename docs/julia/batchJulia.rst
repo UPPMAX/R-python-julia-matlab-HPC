@@ -1017,7 +1017,7 @@ Exercises
             .. code-block:: sh
                 
                #!/bin/bash -l
-               #SBATCH -A staff        # your project_ID
+               #SBATCH -A naiss2024-22-107        # your project_ID
                #SBATCH -J job-serial        # name of the job
                #SBATCH -M snowy
                #SBATCH -p node
