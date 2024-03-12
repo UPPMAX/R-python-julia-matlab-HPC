@@ -957,7 +957,7 @@ Exercises
                   0.000176 seconds (16 allocations: 384 bytes)
 
   
-.. challenge:: 3. Machine Learning job on GPUs (on HPC2N)
+.. challenge:: 3. Machine Learning job on GPUs 
     
     Julia has already several packages for ML, one of them is ``Flux`` (https://fluxml.ai/). We will work with one of
     the test cases provided by ``Flux`` which deals with a data set of tiny images (CIFAR10). Follow this steps:
@@ -993,6 +993,48 @@ Exercises
 
             julia <fix-activate-environment> <fix-name-script>.jl 
 
+    .. solution:: Solution for UPPMAX
+        :class: dropdown
+        
+            .. code-block:: sh
+
+               ml julia/1.8.5
+               mkdir ML
+               cd ML
+               wget https://raw.githubusercontent.com/FluxML/model-zoo/master/vision/vgg_cifar10/vgg_cifar10.jl
+
+               julia
+               (v1.8) pkg> activate .
+               (ML) pkg> add CUDA
+               (ML) pkg> add Flux 
+               (ML) pkg> add MLDatasets
+               (ML) pkg> add MLUtils
+               julia> using MLDatasets: CIFAR10
+               julia> x, y = CIFAR10(:train)[:] 
+ 
+            The batch script looks like:
+            
+            .. code-block:: sh
+                
+               #!/bin/bash -l
+               #SBATCH -A staff        # your project_ID
+               #SBATCH -J job-serial        # name of the job
+               #SBATCH -M snowy
+               #SBATCH -p node
+               #SBATCH --gres=gpu:1
+               #SBATCH -N 1
+               #SBATCH --time=00:15:00      # requested time
+               #SBATCH --qos=short               
+               #SBATCH --error=job.%J.err   # error file
+               #SBATCH --output=job.%J.out  # output file
+
+               ml julia/1.8.5
+
+               julia --project=. vgg_cifar10.jl
+
+
+
+  
     .. solution:: Solution for HPC2N
         :class: dropdown
         
