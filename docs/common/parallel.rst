@@ -475,7 +475,7 @@ Exercises
                 # Print the mean value
                 println(mean_value_parallel)    
 
-            Run this job with the following batch script (HPC2N):
+            Run this job with the following batch script, defining that we want to use 4 threads:
 
             .. tabs::
 
@@ -502,7 +502,7 @@ Exercises
                         #!/bin/bash            
                         #SBATCH -A hpc2n2023-110     # your project_ID       
                         #SBATCH -J job-serial        # name of the job         
-                        #SBATCH -n 1                 # nr. tasks  
+                        #SBATCH -n 4                 # nr. tasks  
                         #SBATCH --time=00:20:00      # requested time
                         #SBATCH --error=job.%J.err   # error file
                         #SBATCH --output=job.%J.out  # output file  
@@ -510,7 +510,7 @@ Exercises
                         ml purge  > /dev/null 2>&1
                         ml Julia/1.8.5-linux-x86_64
 
-                        julia --threads X script-df.jl  # X number of threads
+                        julia --threads 4 script-df.jl  # X number of threads
 
 
 
