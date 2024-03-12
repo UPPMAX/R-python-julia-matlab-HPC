@@ -448,23 +448,23 @@ Exercises
 
       .. tab:: Julia
 
-            - First, be sure you have ``DataFrames`` installed as JuliaPackage.
-            - If not, follow the steps below. You can install it in your ordinaty user space (not an environment)
+         - First, be sure you have ``DataFrames`` installed as JuliaPackage.
+         - If not, follow the steps below. You can install it in your ordinaty user space (not an environment)
 
-            - Open a Julia session
+         - Open a Julia session
 
-            .. code-block::
+         .. code-block::
 
-               julia> using DataFrames
+            julia> using DataFrames
 
-            - Let it be installed when asking
-            - When done and working, exit().
+         - Let it be installed when asking
+         - When done and working, exit().
 
-            - Here is an exercise to fix some code snippets. Call the script ``script-df.jl``.
-            - Watch out for ``*FIXME*`` and replace with suitable functions
-            - The functions ``nthreads()`` (number of available threads), and ``threadid()`` (the thread identification number) will be useful in this task. 
+         - Here is an exercise to fix some code snippets. Call the script ``script-df.jl``.
+         - Watch out for ``*FIXME*`` and replace with suitable functions
+         - The functions ``nthreads()`` (number of available threads), and ``threadid()`` (the thread identification number) will be useful in this task. 
 
-            .. code-block:: julia
+         .. code-block:: julia
 
                 using DataFrames
                 using Base.Threads
@@ -495,13 +495,13 @@ Exercises
                 # Print the mean value
                 println(mean_value_parallel)    
 
-            Run this job with the following batch script, defining that we want to use 4 threads:
+         Run this job with the following batch script, defining that we want to use 4 threads:
 
-            .. tabs::
+         .. tabs::
 
-               .. tab:: UPPMAX
+            .. tab:: UPPMAX
 
-                  .. code-block:: bash
+               .. code-block:: bash
 
                        #!/bin/bash -l
                        #SBATCH -A naiss2024-22-107     # your project_ID
@@ -514,10 +514,10 @@ Exercises
                        ml julia/1.8.5
 
                        julia --threads 4 script-df.jl  # X number of threads
+   
+            .. tab:: HPC2N
 
-                 .. tab:: HPC2N
-
-                    .. code-block:: bash
+               .. code-block:: bash
                         
                         #!/bin/bash            
                         #SBATCH -A hpc2n2023-110     # your project_ID       
@@ -584,13 +584,13 @@ Exercises
                 # Print the results
                 print(sum(*FIXME*)/*FIXME*)
             
-            Run the code with the following batch script:
+         Run the code with the following batch script:
 
-            .. tabs::
+         .. tabs::
 
-               .. tab:: UPPMAX
+            .. tab:: UPPMAX
 
-                    .. code-block:: bash
+               .. code-block:: bash
                         
                        #!/bin/bash -l
                        #SBATCH -A naiss2024-22-107     # your project_ID
@@ -604,9 +604,9 @@ Exercises
 
                        Rscript --no-save --no-restore script-df.R
 
-               .. tab:: UPPMAX
+            .. tab:: HPC2N
 
-                    .. code-block:: bash
+               .. code-block:: bash
 
                         #!/bin/bash            
                         #SBATCH -A hpc2n2023-110     # your project_ID       
