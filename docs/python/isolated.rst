@@ -620,7 +620,7 @@ Conclusion
     - heard that virtual environments allows one for independent and isolated 
       set of Python packages
     - heard that there are multiple virtual environments managers:
-        - UPPMAX: Conda and ``venv``. Conda is discussed in a separate UPPMAX-only session.
+        - UPPMAX: Conda and ``venv``
         - HPC2N has ``venv``
     - created, activated, used and deactivated virtual environments
     - installed Python packages by using a ``requirements.txt`` file
@@ -638,9 +638,3 @@ Links
 - HPC2N's documentation pages about installing Python packages and virtual environments: https://www.hpc2n.umu.se/resources/software/user_installed/python
 - `Video: How to use a Python venv on the Rackham UPPAX cluster (YouTube) <https://youtu.be/OjftEQ23xYk>`_
 - `Dependency management from coursePython for Scientific computing <https://aaltoscicomp.github.io/python-for-scicomp/dependencies/>`_
-
-Dead links on purpose
----------------------
-
-- `Dead external links <https://www.abs.ent>`_
-- Dead other page :doc:`absent_page.rst`
