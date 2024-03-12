@@ -14,7 +14,7 @@ Summary
          - from BASH shell with the
          
             - ``pip list`` command at both centers
-            - ``ml help python/3.10.8`` at UPPMAX
+            - ``ml help python/3.11.8`` at UPPMAX
             - ``module -r spider '.*Python.*'`` at HPC2N
             
       - Installation with *PYPI*
