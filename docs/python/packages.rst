@@ -181,6 +181,8 @@ Here we see that one comes already installed with the module system.
 
             pip list
 
+        So for HPC2N you need to load pandas as a separate module or as part of SciPy-bundle. 
+
     .. tab:: Answer UPPMAX
 
         Do:
@@ -279,8 +281,7 @@ machine learning module.
 
         ``UNTESTED``
 
-        Unsure which version you should use, 
-        as Kebnekaise has both CPU and GPU.
+        TensorFlow for CPU is installed as a module that is compatible with Python/3.11.3. The relevant TensorFlow version is 2.13.0.
 
         Find the latest module:
 
@@ -288,11 +289,11 @@ machine learning module.
 
             module spider tensorflow
 
-        Load the latest module with placeholder version `1.2.3`
+        Load the latest module with placeholder version `2.13.0` which is compatible with Python 3.11.3. Note that there are prerequisites
 
         .. code-block::
 
-            module load tensorflow/1.2.3
+            module load GCC/12.3.0 OpenMPI/4.1.5 TensorFlow/2.13.0
 
     .. tab:: Answer UPPMAX
 
@@ -319,6 +320,14 @@ machine learning module.
         .. code-block::
 
             pip list
+
+        You need to load SciPy-bundle with prerequisites. Here for the one that is compatible with Python 3.11.3
+
+        .. code-block::
+
+           ml GCC/12.3.0 SciPy-bundle/2023.07
+
+        If you do ``pip list`` now you will see that ``pandas/2.0.3`` is available. 
 
     .. tab:: Answer UPPMAX
 

@@ -261,7 +261,8 @@ Prepare your environment now!
      
             .. code-block:: console
          
-               $ mkdir /proj/naiss2023-22-914/mrspock/
+               $ mkdir /proj/r-py-jl/mrspock/
+               $ mkdir /proj/naiss2024-22-107/mrspock/
 
       .. tab:: HPC2N
 
