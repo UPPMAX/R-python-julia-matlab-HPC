@@ -170,9 +170,9 @@ Other NAISS centres
 
     We will:
     
-    - Teach you how to navigate the module system at UPPMAX (and HPC2N). 
+    - Teach you how to navigate the module system
     - Show you how to find out which versions of Python and packages are installed
-    - Look at the package handler **pip** (and **Conda** for UPPMAX)
+    - Use the package handler **pip**
     - Explain how to create and use virtual environments
     - Show you how to run batch jobs 
     - Show some examples with parallel computing and using GPUs
