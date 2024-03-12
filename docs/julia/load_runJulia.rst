@@ -281,6 +281,14 @@ Exercises
                
                 julia serial-sum.jl Arg1 Arg2    # run the serial script
 
+.. Discussion:: **Menti**
+
+   - Can you start Julia without loading a Julia module?
+   - How do you activate Julia packages in the Julia REPL?
+   - How do you toggle to the package mode?
+
+
+
 .. keypoints::
 
    - Before you can run Julia scripts or work in a Julia shell, first load a Julia module.
