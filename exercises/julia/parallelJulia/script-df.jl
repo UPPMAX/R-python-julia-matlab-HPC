@@ -7,11 +7,11 @@ data_df = DataFrame(ID = 1:10000, Value = range(3, step=2, length=10000))
 # Define a function to compute the sum in parallel
 function parallel_sum(data)
     # Initialize an array to store thread-local sums
-    local_sums = zeros(eltype(data), nthreads())
+    local_sums = zeros(eltype(data), *FIXME*)
     # Iterate through each value in the 'Value' column in parallel
     @threads for i =1:length(data)
         # Add the value to the thread-local sum
-        local_sums[threadid()] += data[i]
+        local_sums[*FIXME*] += data[i]
     end
     # Combine the local sums to obtain the total sum
     total_sum_parallel = sum(local_sums)
