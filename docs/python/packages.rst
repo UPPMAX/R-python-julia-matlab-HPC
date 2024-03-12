@@ -19,7 +19,7 @@ Packages
       - Learners have loaded a Python machine learning module
       - Learners have installed a Python package
 
-      Lesson plan:
+      Lesson plan (45 minutes in total):
 
       - 5 mins: prior knowledge
          - What are Python packages?
@@ -70,9 +70,9 @@ the two HPC clusters used in this course:
 +-------------------+-----------------+------------------+-----------------+
 | Package installer | HPC2N           | UPPMAX (Rackham) | UPPMAX (Bianca) |
 +===================+=================+==================+=================+
-| conda             | Unsupported [1] | Recommended      | Recommended     |
+| ``conda``         | Unsupported [1] | Recommended      | Recommended     |
 +-------------------+-----------------+------------------+-----------------+
-| pip               | Recommended     | Supported        | Unsupported [2] |
+| ``pip``           | Recommended     | Supported        | Unsupported [2] |
 +-------------------+-----------------+------------------+-----------------+
 
 - ``[1]`` `HPC2N guide against using conda <https://www.hpc2n.umu.se/documentation/guides/anaconda>`_
@@ -81,23 +81,26 @@ the two HPC clusters used in this course:
 In this session we use ``pip``, 
 because it is a commonly-used package installation system
 that works on both HPC clusters used in this course.
-For UPPMAX users, we will discuss Conda in the session 
-`Conda at UPPMAX <https://uppmax.github.io/R-python-julia-HPC/python/condaUPPMAX.html>`_.
+
+We have not scheduled to discuss Conda in this course, 
+yet teaching materials can be found at `Conda at UPPMAX <https://uppmax.github.io/R-python-julia-HPC/python/condaUPPMAX.html>`_.
 
 As a first impression, here is a simple comparison between the two:
 
-+------------------------------+-------+------+
-| Parameter                    | conda | pip  |
-+==============================+=======+======+
-| Installs Python packages     | Yes   | Yes  |
-+------------------------------+-------+------+
-| Installs non-Python software | Yes   | No   |
-+------------------------------+-------+------+
++------------------------------+-----------+----------+
+| Parameter                    | ``conda`` | ``pip``  |
++==============================+===========+==========+
+| Installs Python packages     | Yes       | Yes      |
++------------------------------+-----------+----------+
+| Installs non-Python software | Yes       | No       |
++------------------------------+-----------+----------+
 
-.. note::
-   
-   You will test this in the next session about isolated environments.
-
+In this session, we will install packages to your default user folder.
+Because this one default user folder,
+installing a different version of one package
+for one computational experiment,
+may have consequences for others.
+These problems are addressed in the session on isolated environments.
 
 Exercises
 ---------
@@ -252,24 +255,34 @@ machine learning module.
 
     .. tab:: Exercise 2.1
 
-        Read `the UPPMAX documentation on Tensorflow <http://docs.uppmax.uu.se/software/tensorflow/>`_.
+        Read:
 
-        Which of the versions should you use?
+        - UPPMAX: `the UPPMAX documentation on Tensorflow <http://docs.uppmax.uu.se/software/tensorflow/>`_.
+        - HPC2N: `the HPC2N documentation on Tensorflow <https://www.hpc2n.umu.se/resources/software/tensorflow>`
 
-        Load the latest Python machine learning module for that version.
+        Do:
+
+        - UPPMAX: Which of the versions should you use? Load the latest Python machine learning module for that version.
+        - HPC2N: Load the latest module
 
     .. tab:: Answer HPC2N
 
-        ``TODO``
+        ``UNTESTED``
 
         Unsure which version you should use, 
         as Kebnekaise has both CPU and GPU.
 
-        Do:
+        Find the latest module:
 
         .. code-block::
 
-            module load ???
+            module spider tensorflow
+
+        Load the latest module with placeholder version `1.2.3`
+
+        .. code-block::
+
+            module load tensorflow/1.2.3
 
     .. tab:: Answer UPPMAX
 
@@ -313,9 +326,14 @@ machine learning module.
 
     .. tab:: Exercise 2.3
 
-        Is the Python package ``tensorflow-cpu`` installed? If yes, which version?
+        Answer:
+        
+        - HPC2N: Is the Python package ``tensorflow-cpu`` installed? If yes, which version?
+        - UPPMAX: Is the Python package ``tensorflow-cpu`` installed? If yes, which version?
 
     .. tab:: Answer HPC2N
+
+        ``UNTESTED``
 
         Do:
 
@@ -397,6 +415,9 @@ Here we install a Python package ourselves.
         run into problems with Python package versions that are not part of it,
         it is probably those packages in your ``.local`` folder.
         This can be solved by removing that ``.local`` folder.
+
+        Note that on UPPMAX, one can omit the ``--user`` flag, 
+        as it is added automatically, as is shown in a warning.
 
 .. tabs::
 
