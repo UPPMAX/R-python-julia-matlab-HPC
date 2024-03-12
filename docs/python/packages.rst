@@ -40,6 +40,16 @@ Packages
          - What are some Python package installers used on UPPMAX?
          - What are some Python package installers used on HPC2N?
 
+.. admonition:: Compute allocations in this workshop 
+
+   - Rackham: ``naiss2024-22-107``
+   - Kebnekaise: ``hpc2n2024-025``
+
+.. admonition:: Storage space for this workshop 
+
+   - Rackham: ``/proj/r-py-jl``
+   - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
+
 Introduction
 ------------
 

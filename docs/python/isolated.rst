@@ -21,8 +21,9 @@ Isolated environments
 
       - Create the virtual environment called ``vpyenv`` needed later on
       - UPPMAX only: create the virtual environment called ``Example-gpu`` needed later in this course
+      - Create the virtual environment called ``analysis`` needed later on
 
-      Lesson plan:
+      Lesson plan (60 minutes in total):
 
       - 5 mins: prior knowledge
          - How to deal with two tools that need incompatible sets of Python packages?
@@ -33,9 +34,20 @@ Isolated environments
       - 10 mins: presentation
          - Why?
          - Exercises
-         - Exercises
-      - 30 mins: challenge
-      - 10 mins: feedback
+      - 15 mins: challenge
+      - 5 mins: feedback
+      - 15 mins: continue challenge
+      - 5 mins: feedback
+
+.. admonition:: Compute allocations in this workshop 
+
+   - Rackham: ``naiss2024-22-107``
+   - Kebnekaise: ``hpc2n2024-025``
+
+.. admonition:: Storage space for this workshop 
+
+   - Rackham: ``/proj/r-py-jl``
+   - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
 
 Introduction
 ------------

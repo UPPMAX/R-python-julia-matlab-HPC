@@ -4,6 +4,12 @@
  * Course: Python
  * Teacher: Richel
 
+Remote desktop websites:
+
+- HPC2N: kebnekaise-tl.hpc2n.umu.se
+- UPPMAX: rackham-gui.uppmax.uu.se
+
+
 ### Python (Tuesday 2024-03-12)
 
 Time     |Topic                      |Teacher
@@ -59,4 +65,11 @@ to achieve the teaching goals.
   - Interactive: only 1.1, 1.2, 1.3 and 1.5
   - Jupyter: 
 
+## Discussion
+
+### Pre-requirements
+
+I feel the pre-requirements page, https://uppmax.github.io/R-python-julia-HPC/prereqs.html, is too extensive.
+I feel it should link to regular documentation and mostly show
+how to determine you fullfilled all pre-requirements.
 
