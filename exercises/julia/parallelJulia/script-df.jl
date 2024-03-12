@@ -22,7 +22,7 @@ end
 total_sum_parallel = parallel_sum(data_df.Value)
 
 # Compute the mean
-mean_value_parallel = total_sum_parallel / length(data_df.Value)
+mean_value_parallel = *FIXME* / length(data_df.Value)
 
 # Print the mean value
 println(mean_value_parallel)
