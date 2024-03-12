@@ -4,7 +4,12 @@ Load and run Julia
 .. Discussion:: **Menti**
 
    - What would you like to use Julia for?
-   - What do you want to learn today?At both UPPMAX and HPC2N we call the applications available via the module system modules. 
+   - What do you want to learn today?
+
+
+.. note::
+
+    - At both UPPMAX and HPC2N we call the applications available via the module system modules. 
     - https://www.uppmax.uu.se/resources/software/module-system/ 
     - https://www.hpc2n.umu.se/documentation/environment/lmod 
 
