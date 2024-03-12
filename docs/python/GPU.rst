@@ -147,7 +147,7 @@ As before, we need the batch system to run the code. There are no GPUs on the lo
 
          .. code-block:: console
       
-            $ interactive -A naiss202-22-107 -n 1 -M snowy --gres=gpu:1  -t 1:00:01 --gres=gpu:1  -t 1:00:01 
+            $ interactive -A naiss2024-22-107 -n 1 -M snowy --gres=gpu:1  -t 1:00:01 --gres=gpu:1  -t 1:00:01 
             You receive the high interactive priority.
 
             Please, use no more than 8 GB of RAM.
