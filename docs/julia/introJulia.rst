@@ -26,6 +26,25 @@ Introduction Julia
     - Improve Julia *coding* skills 
     - Other clusters
       
+.. admonition:: Julia Exercise files
+
+    - On HPC2N, you can copy the Julia exercises in a tarball 
+      from ``/proj/nobackup/hpc2n2024-025/Exercises.tar.gz``
+    - On UPPMAX you can copy the exercises in a tarball 
+      from ``/proj/naiss2024-22-107/juliaExercises.tar``
+
+.. challenge:: Download the exercise files
+
+    - Copy the file and un-tar it in you personal project folder you created a while ago (https://uppmax.github.io/R-python-julia-HPC/index.html#prepare-your-environment-now). Finally enter the directory and list the content with the ``tree`` command.
+
+    .. code-block:: bash
+
+       cd /proj/naiss2024-22-107/<your-name>
+       cp ../juliaExercises.tar .
+       tar xvf juliaExercises.tar
+       tree julia
+
+
 Preliminary schedule
 --------------------
 
