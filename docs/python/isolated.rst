@@ -196,7 +196,7 @@ Exercise 1.3: activate the virtual environment
 
    .. tab:: UPPMAX
 
-      Create the virtual environment called ``vpyenv`` as such:      
+      Activate the virtual environment called ``vpyenv`` as such:      
 
       .. code-block:: console
 
@@ -206,7 +206,7 @@ Exercise 1.3: activate the virtual environment
 
    .. tab:: HPC2N
 
-      Create the virtual environment called ``vpyenv`` as such:      
+      Activate the virtual environment called ``vpyenv`` as such:      
      
       .. code-block:: console
 
