@@ -363,7 +363,7 @@ Exercises
 
    .. tabs:: 
 
-        .. tab:: Python
+      .. tab:: Python
 
             Pandas is available in the following combo ``ml GCC/12.3.0 SciPy-bundle/2023.07`` (HPC2N) and 
             ``ml python/3.11.8`` (UPPMAX). Call the script ``script-df.py``. 
@@ -408,6 +408,26 @@ Exercises
 
             Run the code with the batch script (HPC2N): 
             
+            .. tabs::
+
+               .. tab:: UPPMAX
+
+                    .. code-block:: sh
+                        
+                       #!/bin/bash -l
+                       #SBATCH -A naiss2024-22-107     # your project_ID
+                       #SBATCH -J job-serial        # name of the job
+                       #SBATCH -n 4                 # nr. tasks/coresw
+                       #SBATCH --time=00:20:00      # requested time
+                       #SBATCH --error=job.%J.err   # error file
+                       #SBATCH --output=job.%J.out  # output file
+
+                       # Load any modules you need, here for Python 3.11.8 and compatible SciPy-bundle
+                       module load python/3.11.8
+                       python script-df.py
+
+               .. tab:: HPC2N
+
                     .. code-block:: sh
                         
                         #!/bin/bash            
@@ -422,11 +442,11 @@ Exercises
                         module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07
                         python script-df.py
 
-             UPPMAX...
 
 
 
-        .. tab:: Julia
+
+      .. tab:: Julia
 
             - First, be sure you have ``DataFrames`` installed as JuliaPackage.
             - If not, follow the steps below. You can install it in your ordinaty user space (not an environment)
@@ -513,11 +533,11 @@ Exercises
                         julia --threads 4 script-df.jl  # X number of threads
 
 
-         .. tab:: R
+      .. tab:: R
 
-            Call the script ``script-df.R``.
+         - Call the script ``script-df.R``.
 
-            .. code-block:: r 
+         .. code-block:: r 
 
                 library(doParallel)
                 library(foreach)
