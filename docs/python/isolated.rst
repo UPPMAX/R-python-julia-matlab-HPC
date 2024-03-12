@@ -124,6 +124,21 @@ all the Python packages:
 
 Tip for UPPMAX users: do exercise 2 and 3 in parallel by logging in twice.
 
+Exercise 0: remove the Python packages installed in the home folder
+-------------------------------------------------------------------
+
+In the previous session, we have installed Python packages in the
+home folder. This will interfere with our virtual environments.
+
+To make sure your virtual environments work, ruthlessly delete
+the Python packages in your home folder:
+
+.. code-block:: console
+
+    rm -Ir ~/.local/lib/python3.11
+
+You will be asked to confirm.
+
 Exercise 1: work with ``vpyenv``
 --------------------------------
 

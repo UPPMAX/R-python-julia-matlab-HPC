@@ -158,7 +158,7 @@ If you only have one screen to work with for the course, try to fit:
 Material for improving your programming skills
 ----------------------------------------------
 
-- This course does not aim to improve your codeing skills.
+- This course does not aim to improve your coding skills.
 - Rather you will learn to understand the ecosystems and navigations for the the different languages on a HPC cluster.
 
 See the pre-requirements, section `Coding <https://uppmax.github.io/R-python-julia-HPC/prereqs.html#coding>`_

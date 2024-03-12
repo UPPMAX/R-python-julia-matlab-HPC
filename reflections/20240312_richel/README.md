@@ -1,25 +1,37 @@
-# Lesson plan
+# Reflection
 
- * Teaching date: 2024-04-12
- * Course: Python
- * Teacher: Richel
+I prepared well for the lessons, as I remembered from the
+previous course iteration that my material was not blended
+in with the others. This iteration, my material was 100% part of the
+course website and I removed the presentation slides from the
+previous iteration.
 
-Remote desktop websites:
+Although I did invest 10 + 2 + 16 + 2 = 30 hours, 
+with little sleep, the day of teaching went fine.
 
-- HPC2N: kebnekaise-tl.hpc2n.umu.se
-- UPPMAX: rackham-gui.uppmax.uu.se
+The most obvious problem during teaching 
+was that Zoom did not allow me to speak
+or show video, in the main room, 
+when breakout rooms are active.
 
-Compute allocations:
+I think we dealt with this technical problem 
+as good as we reasonably could.
 
-- Rackham: `naiss2024-22-107`
-- Kebnekaise: `hpc2n2024-025`
-- Mine: `uppmax2023-2-25` 
+However, due to it, I cannot properly evaluate my own lessons.
+I was annoyed with being this blind as a teacher:
+how can I know if the learners understood, 
+if I cannot see their exercises?
+Also, I did not do a half-way-during-the-exercise feedback,
+nor a nearly-the-end-of-the-hour feedback.
 
-Storage space:
+There were some mistakes:
 
-- Rackham: `/proj/r-py-jl`
-- Kebnekaise: `/proj/nobackup/hpc2n2024-025`
-- Mine: `/proj/staff`
+- The exercises on venv failed due to the install of a package
+  in the session before. Next time, ruthlessly 
+  delete the `/home/richel/.local/lib/python3.11` folder
+- I could not demo going into the remote desktop website of Rackham.
+  Repeat this next time!
+
 
 ### Python (Tuesday 2024-03-12)
 
@@ -41,56 +53,6 @@ Time     |Topic                      |Teacher
 **14.00**|Parallel and multithreaded functions|Pedro
 **14.25**|Conclusion & Q/A           |Birgitte
 **14.45**|Evaluation                 |.
-
-## Progress
-
-Use Python 3.11.8 on UPPMAX
-
- * [Done] Packages
- * [Done] Virtual environments
- * [Done] Rackham:  Interactive session
- * [Good enough] Jupyter
-
-
-## Lesson plan notes
-
-- 10:00-10:45: Packages: 
-  - Exercise 2 for HPC2N has untested TensorFlow things
-  - Put learners 
-- 11:00-11:15: Break
-- 11:15-12:00: Isolated environments
-  - Exercise 2 is UPPMAX only
-  - Exercises 2.4 and 3.4 take 6 and 13 minutes
-- 12:00-13:00: Lunch break
-- 13:30-13:45: UPPMAX-only
-  - Interactive: only 1.1, 1.2, 1.3 and 1.5
-  - Jupyter: only show and run
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
