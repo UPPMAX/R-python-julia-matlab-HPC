@@ -481,7 +481,7 @@ Exercises
 
                .. tab:: UPPMAX
 
-                  .. code-block:: julia
+                  .. code-block:: bash
 
                        #!/bin/bash -l
                        #SBATCH -A naiss2024-22-107     # your project_ID
@@ -497,7 +497,7 @@ Exercises
 
                  .. tab:: HPC2N
 
-                    .. code-block:: sh
+                    .. code-block:: bash
                         
                         #!/bin/bash            
                         #SBATCH -A hpc2n2023-110     # your project_ID       
@@ -513,10 +513,7 @@ Exercises
                         julia --threads 4 script-df.jl  # X number of threads
 
 
-
-           
-
-        .. tab:: R
+         .. tab:: R
 
             Call the script ``script-df.R``.
 
@@ -567,10 +564,30 @@ Exercises
                 # Print the results
                 print(sum(*FIXME*)/*FIXME*)
             
-            Run the code with the following batch script (HPC2N):
+            Run the code with the following batch script:
 
-                    .. code-block:: sh
+            .. tabs::
+
+               .. tab:: UPPMAX
+
+                    .. code-block:: bash
                         
+                       #!/bin/bash -l
+                       #SBATCH -A naiss2024-22-107     # your project_ID
+                       #SBATCH -J job-serial        # name of the job
+                       #SBATCH -n 4                 # nr. tasks/coresw
+                       #SBATCH --time=00:20:00      # requested time
+                       #SBATCH --error=job.%J.err   # error file
+                       #SBATCH --output=job.%J.out  # output file
+
+                       ml R_packages/4.1.1
+
+                       Rscript --no-save --no-restore script-df.R
+
+               .. tab:: UPPMAX
+
+                    .. code-block:: bash
+
                         #!/bin/bash            
                         #SBATCH -A hpc2n2023-110     # your project_ID       
                         #SBATCH -J job-serial        # name of the job         
@@ -583,7 +600,7 @@ Exercises
                         ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
                         Rscript --no-save --no-restore script-df.R
 
-            UPPMAX ...
+
 
 .. solution:: Solution
 
