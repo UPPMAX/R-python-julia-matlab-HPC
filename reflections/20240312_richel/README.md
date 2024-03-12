@@ -23,40 +23,23 @@ how can I know if the learners understood,
 if I cannot see their exercises?
 Also, I did not do a half-way-during-the-exercise feedback,
 nor a nearly-the-end-of-the-hour feedback.
+And I was unable to see if the exercise lengths 
+matched the time allocated.
 
 There were some mistakes:
 
-- The exercises on venv failed due to the install of a package
+- [Fixed] The exercises on venv failed due to the install of a package
   in the session before. Next time, ruthlessly 
-  delete the `/home/richel/.local/lib/python3.11` folder
+  delete the `/home/richel/.local/lib/python3.11` folder.
+  I've added this to the course material
 - I could not demo going into the remote desktop website of Rackham.
   Repeat this next time!
 
+I feel that is as much as I have to reflect on.
+I think it went quite smoothly when correcting for the
+technical error.
 
-### Python (Tuesday 2024-03-12)
-
-Time     |Topic                      |Teacher
----------|---------------------------|-------
-**9.00** |Syllabus                   |Birgitte
-**9.10** |Python in general          |Birgitte
-**9.20** |Load modules and run       |Birgitte
-**9.45** |Break                      |.
-**10:00**|Packages  (45-->30)        |Richel
-**10.45**|Break                      |.
-**11.00**|Isolated environments      |Richel
-**12.00**|Lunch                      |.
-**13.00**|Batch                      |Birgitte
-**13:20**|GPU                        |Birgitte
-**13.30**|Kebnekaise: Jupyter        |Birgitte
-.        |Rackham:  Interactive session and Jupyter|Richel
-**13.45**|Break                      |.
-**14.00**|Parallel and multithreaded functions|Pedro
-**14.25**|Conclusion & Q/A           |Birgitte
-**14.45**|Evaluation                 |.
-
-
-
-## Discussion
+## Discussion on other sections
 
 ### Pre-requirements
 
@@ -98,11 +81,6 @@ Also, don't care about IPython?
 
 The Bianca portal is great. Could you do the same for Rackham?
 Not every user understands one needs to use 2FA now, and how
-
-## Technical problems
-
-This was quite annoying. Due to this, I cannot see how much the 
-learners have understood and progressed through the exercises.
 
 ## More time for sbatch
 
