@@ -9,9 +9,7 @@ Introduction Python
    - Load Python modules and site-installed Python packages
    - Create a virtual environment
    - Install Python packages with pip (Kebnekaise, Rackham, Snowy)
-   - Install Python packages with conda (Bianca)
    - Write a batch script for running Python
-
   
 .. admonition:: Exercises **FIX**
 
