@@ -199,27 +199,27 @@ Passing Interface (MPI). In general, MPI requires refactoring of your code.
 
             if __name__ == "__main__":
 
-            starttime = perf_counter()   # Start timing serial code
-            sleep_serial(n)
-            endtime = perf_counter()
+                starttime = perf_counter()   # Start timing serial code
+                sleep_serial(n)
+                endtime = perf_counter()
 
-            print("Time spent serial: %.2f sec" % (endtime-starttime))
+                print("Time spent serial: %.2f sec" % (endtime-starttime))
 
 
-            starttime = perf_counter()   # Start timing parallel code
-            processes = []
-            for i in range(numprocesses):
-                p = multiprocessing.Process(target=sleep_threaded, args=(n,numprocesses,i))
-                processes.append(p)
-                p.start()
+                starttime = perf_counter()   # Start timing parallel code
+                processes = []
+                for i in range(numprocesses):
+                    p = multiprocessing.Process(target=sleep_threaded, args=(n,numprocesses,i))
+                    processes.append(p)
+                    p.start()
 
-            # waiting for the processes
-            for p in processes:
-                p.join()
+                # waiting for the processes
+                for p in processes:
+                    p.join()
 
-            endtime = perf_counter()
+                endtime = perf_counter()
 
-            print("Time spent parallel: %.2f sec" % (endtime-starttime))
+                print("Time spent parallel: %.2f sec" % (endtime-starttime))
 
          First load the modules ``ml GCCcore/10.3.0 Python/3.9.5`` and then run the script
          with the command  ``python sleep.py`` to use 6 processes.
