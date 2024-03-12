@@ -1,22 +1,79 @@
 Jupyter on compute nodes
 ========================
 
-.. callout:: What is Jupyter?
-	     
-  - "The Jupyter Notebook is the original web application for creating and sharing computational documents. It offers a simple, streamlined, document-centric experience."
-    - Run python interactively and make a "story" document with text and code and figures woven together. 
-    - Includes file manager
-  - You run it in a **web browser** (``firefox`` at UPPMAX and HPC2N)
-  - This may be slow unless you run your browser in ThinLinc or locally or on you own computer (on HPC2N the JupyterLab is only accessible from within HPC2N's domain, which makes it easiest to use from inside ThinLinc).
+.. tabs::
 
-  - The Jupyter project site contains a lot of information and inspiration. https://jupyter.org/
-  - The Jupyter Notebook documentation. https://jupyter-notebook.readthedocs.io/en/stable/
-  
+   .. tab:: Learning objectives
 
-UPPMAX
-------
+      - Start Jupyter via an interactive session from the remote desktop website.
 
-1. Start an interactive session from the login node (change to the correct NAISS project ID) 
+   .. tab:: For teachers
+
+      Teaching goals are:
+
+      - Learners have started Jupyter via an interactive session from the remote desktop website.
+
+      Lesson plan (10 minutes in total):
+
+      - 1 mins: prior knowledge
+         - What is Jupyter?
+         - Why can't I run it on a login node?
+         - Why can't I run it on a compute node node?
+      - 1 mins: presentation
+      - 7 mins: challenge
+      - 1 mins: recap
+
+.. admonition:: Compute allocations in this workshop 
+
+   - Rackham: ``naiss2024-22-107``
+   - Kebnekaise: ``hpc2n2024-025``
+
+.. admonition:: Storage space for this workshop 
+
+   - Rackham: ``/proj/r-py-jl``
+   - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
+
+Introduction
+------------
+
+Jupyter is web application that allows literature programming
+for Python. That is, Jupyter allows to create documents 
+where Python code is shown and run and its results shown, 
+surrounded by written text (e.g. English).
+
+Additionally, Jupyter allows to share files and hence includes a file manager.
+
+Jupyter is:
+
+- started and running on a server, for example, an interactive node
+- displayed in a **web browser**, such as ``firefox``.
+
+Jupyter can be slow when using a remote desktop website 
+(e.g. ``rackham-gui.uppmax.uu.se`` or ``kebnekaise-tl.hpc2n.umu.se``).
+
+- For HPC2N, as ``JupyterLab`` is only accessible from within HPC2N's, 
+  there is no way to improve it
+- For UPPMAX, one can use a locally installed ThinLinc client to speed up Jupyter.
+  See `the UPPMAX documentation on ThinLinc <https://www.uppmax.uu.se/support/user-guides/thinlinc-graphical-connection-guide>`_
+  on how to install the ThinLinc client locally
+
+UPPMAX procedure
+----------------
+
+UPPMAX procedure step 1: login to a remote desktop
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Login to a remote desktop:
+
+- Login to the remote desktop website at ``rackham-gui.uppmax.uu.se``
+- Login to your local ThinLinc client
+
+UPPMAX procedure step 2: start an interactive session
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Start a terminal. Within that terminal, 
+start an interactive session from the login node 
+(change to the correct NAISS project ID) 
   
 **For Rackham**
 
@@ -31,27 +88,39 @@ UPPMAX
    $ interactive -M snowy -A <naiss-project-id>  -t 4:00:00
    
 
-2. Start jupyter notebook (from ``python/3.11`` also ``jupyter-lab``) from the interactive session (*when it gets allocated*)
+UPPMAX procedure step 3: start Jupyter in the interactive session
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Within your terminal with the interactive session, 
+load a modern Python module:
+
+.. code-block:: sh
+		
+   module load python/3.11.8
+
+Then, start ``jupyter-notebook`` (or ``jupyter-lab``):
 
 .. code-block:: sh``
-		
-   $ module load python/3.11.8
-   $ jupyter-notebook --ip 0.0.0.0 --no-browser
 
+   jupyter-notebook --ip 0.0.0.0 --no-browser
 
-3. Connect to the running notebook 
+Leave this terminal open.
 
-Keep this session open and running. Note the node on which you are got the interactive job i.e. something like "r141".
+UPPMAX procedure step 4: connect to the running notebook 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In Thinlinc
-'''''''''''
+The terminal will display multiple URLs.
 
-- If you are connected to Rackham via [Thinlinc session](https://www.uppmax.uu.se/support/user-guides/thinlinc-graphical-connection-guide/), open a browser with the link you got but modified to point to r486 i.e. 
-``http://r486:8888/?token=5c3aeee9fbfc75f7a11c4a64b2b5b7ec49622231388241c2``
+If you use the remote desktop website:
 
+- start ``firefox`` on the remote desktop
+- browse to the first URL, which will be similar to ``file://domus/h1/[username]/.local/share/jupyter/runtimejpserver-[number]-open.html``
 
-* `Video: Starting a Jupyter notebook on the Rackham UPPMAX HPC cluster using a ThinLinc remote desktop (YouTube) <https://youtu.be/72rYjwGvWEc>`_
+In both cases, you can access Jupyter from your local computer
 
+- start ``firefox`` on your local computer
+- browse to the second URL, which will be similar to 
+  ``http://r486:8888/?token=5c3aeee9fbfc75f7a11c4a64b2b5b7ec49622231388241c2``
 
 On own computer
 '''''''''''''''
@@ -371,6 +440,7 @@ If a kernel is running (shown under kernels), then shut down that kernel and cli
 Links
 ---------
 
-* `Video: Starting a Jupyter notebook on the Rackham UPPMAX HPC cluster using a ThinLinc remote desktop (YouTube) <https://youtu.be/72rYjwGvWEc>`_
-* `Video: Starting a Jupyter notebook on the Rackham UPPMAX HPC cluster using a ThinLinc remote desktop (.ogv) <https://richelbilderbeek.nl/jupyter_from_rackham_using_thinlinc>`_
+- `The Jupyter project <https://jupyter.org/>`_ contains a lot of information and inspiration
+- `The Jupyter Notebook documentation <https://jupyter-notebook.readthedocs.io/en/stable/>`_  
+- `Video: Starting a Jupyter notebook on the Rackham UPPMAX HPC cluster using a ThinLinc remote desktop (YouTube) <https://youtu.be/72rYjwGvWEc>`_
 

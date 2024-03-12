@@ -29,7 +29,7 @@ Interactive work on the compute nodes
       - Learners have tested to be on an interactive node with multiple cores
       - Learners have ended an interactive session with multiple cores
 
-      Lesson plan:
+      Lesson plan (60 minutes in total):
 
       - 5 mins: prior knowledge
          - What types of nodes do our HPC clusters have?
@@ -40,6 +40,21 @@ Interactive work on the compute nodes
       - 5 mins: presentation
       - 20 mins: challenge
       - 5 mins: feedback
+      - 20 mins: continue challenge
+      - 5 mins: feedback
+         - What is the drawback of using an interactive node?
+
+      Shortened lesson plan (20 minutes in total):
+
+      - 5 mins: prior knowledge
+         - What types of nodes do our HPC clusters have?
+         - What is the purpose of each of these nodes?
+         - Imagine you are developing a Python script in a line-by-line fashion. How to do so best?
+         - Why not do so on the login node?
+         - Why not do so by using ``sbatch``?
+      - 5 mins: presentation
+      - 5 mins: challenge
+      - 5 mins: recap
          - What is the drawback of using an interactive node?
 
 .. admonition:: Compute allocations in this workshop 
