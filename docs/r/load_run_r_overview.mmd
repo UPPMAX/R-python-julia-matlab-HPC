@@ -1,0 +1,10 @@
+flowchart TD
+
+  find_r_module[1. Find an R module\nmodule spider]
+  load_r_module[2. Load an R module\nmodule load]
+  run_r_interpreter[3. Run the R interpreter\nR]
+  run_r_script[4. Run an R script\n`Rscript]
+
+  find_r_module --> |needed for| load_r_module
+  load_r_module --> |allows for| run_r_interpreter
+  load_r_module --> |allows for| run_r_script  

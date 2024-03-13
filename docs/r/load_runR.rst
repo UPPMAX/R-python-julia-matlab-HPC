@@ -1,14 +1,49 @@
 Load and run R
-===================
+==============
+
+.. tabs::
+
+   .. tab:: Learning objectives
+
+      - find the module to be able to run R
+      - load the module to be able to run R
+      - run the R interpreter
+      - run an R script from the command-line
+
+   .. tab:: For teachers
+
+      Teaching goals are:
+
+      - Learners have found the module to be able to run R
+      - Learners have loaded the module to be able to run R
+      - Learners have run the R interpreter
+      - Learners have run an R script from the command-line
+      - Learners have been able to use the exercise files
+
+      Lesson plan (20 minutes in total):
+
+      - 5 mins: prior knowledge
+         - What is R?
+         - Why use R?
+         - What are features of R?
+         - Can R do everything?
+         - What are R packages?
+      - 5 mins: presentation: First overview of R
+      - 5 mins: presentation: Course schedule
+      - 5 mins: feedback
+
+Introduction
+------------
+
+.. mermaid:: load_run_r_overview.mmd 
+
+1. Find an R module
+-------------------
 
 At both UPPMAX and HPC2N we call the applications available via the module system modules. 
     - https://www.uppmax.uu.se/resources/software/module-system/ 
     - https://www.hpc2n.umu.se/documentation/environment/lmod 
    
-.. objectives:: 
-
-   - Show how to load R
-   - Show how to run R scripts and start R on the command line
 
 .. admonition:: Short cheat sheet
     :class: dropdown 
@@ -25,29 +60,6 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
 .. warning::
    Note that the module systems at UPPMAX and HPC2 are slightly different. While all modules at UPPMAX not directly related to bio-informatics are shown by ``ml avail``, most modules at HPC2N are hidden until one has loaded a prerequisite like the compiler ``GCC``.
 
-
-- For reproducibility reasons, you should always load a specific version of a module instead of just the default version
-- Many modules have prerequisite modules which needs to be loaded first (at HPC2N this is also the case for the R modules). When doing ``module spider <module>/<version>`` you will get a list of which other modules needs to be loaded first
-
-.. admonition:: Exercise files
-
-    - You can download the (files of the) exercises from the course GitHub repo, 
-      under the "Exercises" directory:
-      https://github.com/UPPMAX/R-python-julia-HPC/tree/main/Exercises
-    - On HPC2N, you can copy the exercises in a tarball 
-      from ``/proj/nobackup/hpc2n2024-025/Exercises.tar.gz``
-    - On UPPMAX you can copy the exercises in a tarball 
-      from ``/proj/naiss2024-22-107/Exercises.tar.gz``
-
-.. challenge:: Download the exercise files
-
-    Download the exercise files on your favorite cluster.
-
-
-Check for R versions
--------------------------
-
-
 .. tabs::
 
    .. tab:: UPPMAX
@@ -57,15 +69,6 @@ Check for R versions
       .. code-block:: console
  
            $ module spider R
-
-     OR
-
-      .. code-block:: console
-
-           $ module avail R
- 
-     Note that the latter option also lists other software modules matching the string "R". 
-
 
    .. tab:: HPC2N
    
@@ -164,14 +167,15 @@ Check for R versions
                 $ module spider R/4.1.3
            -----------------------------------------------------------------------------------------------------------------------------------------------
 
+2. Load an R module
+-------------------
 
-Load an R module
-----------------
+- For reproducibility reasons, you should always load a specific version of a module instead of just the default version
+- Many modules have prerequisite modules which needs to be loaded first (at HPC2N this is also the case for the R modules). When doing ``module spider <module>/<version>`` you will get a list of which other modules needs to be loaded first
 
 !!! important
 
     - For reproducibility, we recommend ALWAYS loading a specific module instead of using the default version! 
-
    -  For this course, we recommend using ``R/4.1.1`` on UPPMAX clusters and ``4.1.2`` on Kebnekaise
 
 .. type-along::
@@ -215,11 +219,10 @@ Load an R module
    + ALWAYS use R module
 
 
-Run
----
+3. Run the R interpreter
+------------------------
 
-Run R from command line 
-#######################
+Exit R with ``q()`` in the R prompt. Decide if you want to save your workspace image or not. 
 
 .. type-along::
 
@@ -264,10 +267,9 @@ Run R from command line
       > c
       [1] 10
 
-     
-Run R scripts
-#############
-    
+4. Run an R script
+------------------
+
 You can run an R script in the bash shell like this:
 
 .. code-block:: console
@@ -279,8 +281,6 @@ You can run an R script in the bash shell like this:
    *only* run jobs that are short and/or do not use a lot of resources from the command line. Otherwise ALWAYS use the batch system!
     
    More information will follow on running R from within a **batch job**. 
-
-Exit R with ``q()`` in the R prompt. Decide if you want to save your workspace image or not. 
 
 .. type-along::
 
@@ -336,16 +336,14 @@ Exit R with ``q()`` in the R prompt. Decide if you want to save your workspace i
 
    - More about installing your own R packages to follow in later sections of the course! 
 
-
-.. keypoints::
-
-   - Before you can run R scripts or work in an R shell, first load an R module and any needed prerequisites. 
-   - Start an R shell session with ``R``.
-   - Run scripts with ``Rscript <script.R>``
-    
-
 Exercises
 ---------
+
+Exercise 1: load an R module
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Exercise 2: run the R interpreter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. challenge:: Try yourself to load R, start it, check libraries, load a library, quit R
     
@@ -505,6 +503,24 @@ Exercises
 	    As you can see above, the main differences here compared to Rackham is that you need to load some prerequisites before you can load R and that doing ``ml spider R/<version>`` will give you a long list of "extensions" which is what the module system calls the system installed R packages. 
  	    
 
+Exercise 3: run an R script
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. admonition:: Exercise files
+
+    - You can download the (files of the) exercises from the course GitHub repo, 
+      under the "Exercises" directory:
+      https://github.com/UPPMAX/R-python-julia-HPC/tree/main/Exercises
+    - On HPC2N, you can copy the exercises in a tarball 
+      from ``/proj/nobackup/hpc2n2024-025/Exercises.tar.gz``
+    - On UPPMAX you can copy the exercises in a tarball 
+      from ``/proj/naiss2024-22-107/Exercises.tar.gz``
+
+.. challenge:: Download the exercise files
+
+    Download the exercise files on your favorite cluster.
+
+
 .. challenge:: Load R and run a short R script from the command line
     
     .. code-block:: sh
@@ -549,3 +565,16 @@ Exercises
 	    
       As you can see, it is working the same. 
       
+
+Conclusions
+-----------
+
+.. keypoints::
+
+    You need to:
+
+   - first find a module to run R
+   - load one or more modules to run R. 
+       - if you care about reproducibility, use explicit versions
+   - start the R interpreter with ``R``
+   - run R scripts scripts with ``Rscript``
