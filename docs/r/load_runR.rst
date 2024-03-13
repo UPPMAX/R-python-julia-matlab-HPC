@@ -465,8 +465,8 @@ Exercise 1: find an R module
 
     .. tab:: Exercise 1: find an R module
 
-    Use the module system to find which versions of R are provided
-    by your cluster's module system.
+        Use the module system to find which versions of R are provided
+        by your cluster's module system.
 
     .. tab:: UPPMAX
 
