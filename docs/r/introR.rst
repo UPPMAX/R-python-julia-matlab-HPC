@@ -70,7 +70,9 @@ R is used in many NAISS centres:
 Preliminary schedule
 --------------------
 
-.. mermaid:: intro_r_overview_course.mmd 
+.. mermaid::  intro_r_overview_course_login_and_scheduler.mmd
+
+.. mermaid::  intro_r_overview_course_r_and_modules.mmd
 
 .. list-table:: Preliminary times
    :widths: 25 25 50

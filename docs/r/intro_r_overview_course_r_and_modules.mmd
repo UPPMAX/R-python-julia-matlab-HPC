@@ -1,14 +1,5 @@
 flowchart TD
 
-    subgraph login[HPC login]
-      ssh[0. SSH]
-      remote_desktop_website[5. Remote desktop website]
-      remote_desktop_local_thinlinc_client[5. Remote desktop with local ThinLinc client]
-    end
-    subgraph scheduler[scheduler]
-      running_batch_jobs[3. Running batch jobs]
-      running_interactive_session[5. Running an interactive session]
-    end
     subgraph r[R]
       r_interpreter[1. the R interpreter]
       r_packages[2. R packages]
@@ -44,6 +35,3 @@ flowchart TD
 
     rstudio_module --> |automatically loads latest| r_packages_module
     r_packages_module --> |automatically loads corresponding version of| r_module
-
-    login --> |allows for| scheduler
-    scheduler --> |allows| r
