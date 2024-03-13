@@ -20,16 +20,17 @@ Load and run R
       - Learners have run an R script from the command-line
       - Learners have been able to use the exercise files
 
-      Lesson plan (20 minutes in total):
+      Lesson plan (25 minutes in total):
 
       - 5 mins: prior knowledge
-         - What is R?
-         - Why use R?
-         - What are features of R?
-         - Can R do everything?
-         - What are R packages?
-      - 5 mins: presentation: First overview of R
-      - 5 mins: presentation: Course schedule
+          - You want to write and run R code on an HPC cluster. 
+            Which ways do you know?
+          - How to start R on an HPC cluster?
+          - What is a module system?
+          - Why is there a module system?
+      - 5 mins: presentation: loading and running R
+          - skip R packages, that is next session
+      - 10 mins: challenge
       - 5 mins: feedback
 
 Introduction
@@ -705,6 +706,7 @@ Conclusions
 
     However:
 
+    - as we work on a login node, we can only do lightweight things
     - we can only use the R packages installed with the R module
     - we do not work in an isolated environment
 
