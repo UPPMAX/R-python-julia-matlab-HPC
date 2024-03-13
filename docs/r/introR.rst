@@ -1,7 +1,7 @@
 Introduction R
 ==============
 
-.. figure:: ../img/r_logo_50.png
+.. figure:: img/r_logo_50.png
 
 .. tabs::
 
