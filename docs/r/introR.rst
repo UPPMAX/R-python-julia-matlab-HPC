@@ -102,22 +102,11 @@ Preliminary schedule
 What is R?
 ----------
 
-As you probably already know…
-    
-    - R is a programming language for statistical computing and graphics. 
-    - R's data structures include vectors, arrays, lists, and data frames.
-    - R is an interpreted language; users can access it through a command-line
-      interpreter.
-    - It supports procedural programming with functions and, for some
-      functions, object-oriented programming with generic functions. 
-    - It has many user-created packages to augment the functions of the R
-      language. These packages offer statistical techniques, graphical devices,
-      import/export, reporting (RMarkdown, knitr, Sweave), etc.
-    - It is one of the most commonly used programming languages in data mining.
+R is a programming language for statistical computing and data visualization
+(from `Wikipedia <https://en.wikipedia.org/wiki/R_(programming_language>`_).
 
-In short; R has statistics-related libraries of a great variety and provides a
-good environment for statistical computing and design. Also, the R programming
-language is very useful for data importing and cleaning.
+
+
 
 - The home page of "The R Project for Statistical Computing" is here:
   https://www.r-project.org/
