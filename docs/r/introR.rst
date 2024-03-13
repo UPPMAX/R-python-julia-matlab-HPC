@@ -66,7 +66,7 @@ The main general R resources are:
 
 - `The R homepage <https://www.r-project.org/>`_
 - `The official R documentation <https://cran.r-project.org/manuals.html>`_
-- `The CRAN homepage <https://cran.r-project.org/>`_(with `a list of CRAN mirrors <https://cran.r-project.org/mirrors.html>`_)
+- `The CRAN homepage <https://cran.r-project.org/>`_ (with `a list of CRAN mirrors <https://cran.r-project.org/mirrors.html>`_)
 
 R is used in many NAISS centres:
 
