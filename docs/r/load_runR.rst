@@ -593,145 +593,101 @@ Exercise 3.3: load a package
         .. code-block:: console
 
             library(parallel)
-
-
-
-
-
-
-
-
-
-
-
          
-      .. tab:: HPC2N
-   
-            This is for Kebnekaise.
-          
-              ...
-              
-              b-an01 [~]$ module load GCC/10.2.0  OpenMPI/4.0.5 R/4.1.2
-              b-an01 [~]$ R
-              
-              R version 4.1.2 (2021-02-15) -- "Lost Library Book"
-              Copyright (C) 2021 The R Foundation for Statistical Computing
-              Platform: x86_64-pc-linux-gnu (64-bit)
-              
-              R is free software and comes with ABSOLUTELY NO WARRANTY.
-              You are welcome to redistribute it under certain conditions.
-              Type 'license()' or 'licence()' for distribution details.
-              
-                Natural language support but running in an English locale
-            
-              R is a collaborative project with many contributors.
-              Type 'contributors()' for more information and
-              'citation()' on how to cite R or R packages in publications.
-              
-              Type 'demo()' for some demos, 'help()' for on-line help, or
-              'help.start()' for an HTML browser interface to help.
-              Type 'q()' to quit R.
-              
-              > installed.packages()
-              ... 
-              
-              > library("parallel")
-              > quit()
-              Save workspace image? [y/n/c]: 
-
-         
-        As you can see above, the main differences here compared to Rackham is that you need to load some prerequisites before you can load R and that doing ``ml spider R/<version>`` will give you a long list of "extensions" which is what the module system calls the system installed R packages. 
-         
-
 Exercise 4: run an R script
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
 .. mermaid:: load_run_r_script.mmd 
 
-.. admonition:: Exercise files
+In this exercise, we will run an example script.
 
-    - You can download the (files of the) exercises from the course GitHub repo, 
-      under the "Exercises" directory:
-      https://github.com/UPPMAX/R-python-julia-HPC/tree/main/Exercises
-    - On HPC2N, you can copy the exercises in a tarball 
-      from ``/proj/nobackup/hpc2n2024-025/Exercises.tar.gz``
-    - On UPPMAX you can copy the exercises in a tarball 
-      from ``/proj/naiss2024-22-107/Exercises.tar.gz``
+Exercise 4.1: get an R script
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. challenge:: Download the exercise files
+.. tabs::
 
-    Download the exercise files on your favorite cluster.
+    .. tab:: Exercise 4.1: get an R script
 
+        Get the R script `hello.R <https://raw.githubusercontent.com/UPPMAX/R-python-julia-HPC/main/exercises/r/hello.R>`_ in any way.
 
-.. challenge:: Load R and run a short R script from the command line
-    
-    .. code-block:: sh
-    
-        1) Load R version 4.1.X (if you have not done so already)
-    2) Run the small R script called ``hello.R``, using ``Rscript``
-    
-    Remember to check if a module you are loading has prerequisites, and load those first if it does. In this case it depends on whether you do the exercises on Kebnekaise or Rackham. 
+    .. tab:: Download directly
 
-   .. admonition:: "hello.R" (it can also be found under "R" in the "Exercises" directory on the course GitHub repository (https://github.com/UPPMAX/R-python-julia-HPC). 
+        Download the script directly using ``wget``:
 
-      .. code-block:: R
-      
-         message <-"Hello World!"
-        print(message) 
+        .. code-block:: console
 
+            wget https://raw.githubusercontent.com/UPPMAX/R-python-julia-HPC/main/exercises/r/hello.R
 
-.. solution:: Solution
+    .. tab:: Create from terminal, using echo:
 
-   .. tabs:: 
+        Create the script yourself:
 
-      .. tab:: UPPMAX
- 
-            This is for Rackham.
-          
-            .. code-block:: console
-        
-           [bbrydsoe@rackham2 bbrydsoe]$ Rscript hello.R
-           [1] "Hello World!"
-           [bbrydsoe@rackham2 bbrydsoe]$
+        .. code-block:: console
 
-      .. tab:: HPC2N
- 
-            This is for Kebnekaise. 
-          
-            .. code-block:: sh
-        
-           b-an01 [~]$ Rscript hello.R
-           [1] "Hello World!"
-           b-an01 [~]$ 
+            echo 'message <- "Hello World!"' > hello.R
+            echo 'print(message)' >> hello.R
 
-        
-      As you can see, it is working the same. 
+    .. tab:: Create from terminal, using nano:
 
-.. type-along::
+        Create the script yourself using nano:
 
-   Here is an example of running a short, serial R program at Kebnekaise: 
+        .. code-block:: console
 
-   .. admonition:: Serial R program (add2.R) to add two arguments
-      :class: dropdown
+            nano hello.R
 
-      .. code-block:: R
-        
-         
-         args <- commandArgs(trailingOnly = TRUE)
-         num1 <- as.numeric(args[1])
-         num2 <- as.numeric(args[2])
-            
-         answer <- num1 + num2
-         cat("Sum of arguments is: ", answer)
-         cat("\n")
-           
-           
-   .. code-block:: console
+        Copy-paste `the hello.R code <https://raw.githubusercontent.com/UPPMAX/R-python-julia-HPC/main/exercises/r/hello.R>`_.
 
-      $ Rscript add2.R 3 4
-       Sum of arguments is:  7
-      $
-      
+    .. tab:: Download from GitHub
+
+        You can download the (files of the) exercises from 
+        `the course GitHub repo, in the exercises folder <https://github.com/UPPMAX/R-python-julia-HPC/tree/main/exercises/r>`_.
+
+    .. tab:: UPPMAX: copy from tarball on Rackham
+
+        Copy the exercises from ``/proj/naiss2024-22-107/Exercises.tar.gz``
+        and uncompress the files.
+
+    .. tab:: HPC2N: copy from tarball on Kebnekaise
+
+        Copy the exercises from ``/proj/nobackup/hpc2n2024-025/Exercises.tar.gz``
+        and uncompress the files.
+
+Exercise 4.2: run
+^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+    .. tab:: Exercise 4.2: load a package
+
+        Run the R script called ``hello.R``, using ``Rscript``.
+
+    .. tab:: UPPMAX
+
+        .. code-block:: console
+
+            Rscript hello.R
+
+        This will look similar to:
+
+        .. code-block:: console
+
+            [bbrydsoe@rackham2 bbrydsoe]$ Rscript hello.R
+            [1] "Hello World!"
+            [bbrydsoe@rackham2 bbrydsoe]$
+
+    .. tab:: HPC2N
+
+        .. code-block:: console
+
+            Rscript hello.R
+
+        This will look similar to:
+
+        .. code-block:: console
+
+            b-an01 [~]$ Rscript hello.R
+            [1] "Hello World!"
+            b-an01 [~]$ 
 
 Module system cheat sheet
 -------------------------
