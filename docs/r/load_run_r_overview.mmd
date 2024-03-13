@@ -2,9 +2,28 @@ flowchart TD
 
   find_r_module[1. Find an R module\nmodule spider]
   load_r_module[2. Load an R module\nmodule load]
-  run_r_interpreter[3. Run the R interpreter\nR]
-  run_r_script[4. Run an R script\nRscript]
+  use_r_interpreter[3. Use the R interpreter\nR]
+  start_r_interpreter[3.1 Start the R interpreter\nR]
+  subgraph R
+    say_hello[3.2 Say hello\nprint]
+    see_installed_packages[3.3 See installed packages]
+    load_package[3.4 Load a package]
+  end
+  stop_r_interpreter[3.5 Stop the R interpreter\nR]
+  run_r_script[4. Run an R script\n`Rscript]
 
   find_r_module --> |needed for| load_r_module
-  load_r_module --> |allows for| run_r_interpreter
+  load_r_module --> |allows for| use_r_interpreter
   load_r_module --> |allows for| run_r_script  
+
+  use_r_interpreter --> start_r_interpreter
+  use_r_interpreter --> say_hello
+  use_r_interpreter --> see_installed_packages
+  use_r_interpreter --> load_package
+  use_r_interpreter --> stop_r_interpreter
+
+  
+  run_r_script --> say_hello
+  run_r_script --> see_installed_packages
+  run_r_script --> load_package
+
