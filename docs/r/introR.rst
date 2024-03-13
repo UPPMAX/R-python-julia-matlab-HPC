@@ -65,7 +65,7 @@ The main general R resources are:
 R is used in many NAISS centres:
 
 - `here is an overview of 6 NAISS centres and their R documentation <http://docs.uppmax.uu.se/software/r/#overview-of-naiss-centers-and-their-documentation-about-r>`_
-- `here is an (incomplete) overview of R courses being taught at NAISS <>`_
+- `here is an (incomplete) overview of R courses being taught at NAISS <http://docs.uppmax.uu.se/software/r/#learning-r>`_
   
 Preliminary schedule
 --------------------
