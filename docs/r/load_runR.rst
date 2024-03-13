@@ -220,28 +220,13 @@ Here is how to find out how to load an R module of a specific version:
          .. code-block:: console
    
             $ module load R/4.1.1        
-
-         For short, you can also use: 
-
-         .. code-block:: console
-
-            $ ml R/4.1.1
-
  
       .. tab:: HPC2N
 
  
          .. code-block:: console
 
-            $ module load GCC/10.2.0  OpenMPI/4.0.5  R/4.1.2
-      
-	 (or 'module load GCC/10.2.0  CUDA/11.1.1  OpenMPI/4.0.5  R/4.1.2' if you need CUDA)
-
-         For short, you can also use: 
-
-         .. code-block:: console
-
-            $ ml GCC/10.2.0  OpenMPI/4.0.5  R/4.1.2
+            $ module load GCC/10.2.0 OpenMPI/4.0.5 R/4.1.2
 
 .. warning::
 
