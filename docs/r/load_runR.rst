@@ -4,7 +4,6 @@ Load and run R
 At both UPPMAX and HPC2N we call the applications available via the module system modules. 
     - https://www.uppmax.uu.se/resources/software/module-system/ 
     - https://www.hpc2n.umu.se/documentation/environment/lmod 
-
    
 .. objectives:: 
 
@@ -29,6 +28,20 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
 
 - For reproducibility reasons, you should always load a specific version of a module instead of just the default version
 - Many modules have prerequisite modules which needs to be loaded first (at HPC2N this is also the case for the R modules). When doing ``module spider <module>/<version>`` you will get a list of which other modules needs to be loaded first
+
+.. admonition:: Exercise files
+
+    - You can download the (files of the) exercises from the course GitHub repo, 
+      under the "Exercises" directory:
+      https://github.com/UPPMAX/R-python-julia-HPC/tree/main/Exercises
+    - On HPC2N, you can copy the exercises in a tarball 
+      from ``/proj/nobackup/hpc2n2024-025/Exercises.tar.gz``
+    - On UPPMAX you can copy the exercises in a tarball 
+      from ``/proj/naiss2024-22-107/Exercises.tar.gz``
+
+.. challenge:: Download the exercise files
+
+    Download the exercise files on your favorite cluster.
 
 
 Check for R versions
