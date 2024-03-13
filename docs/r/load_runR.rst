@@ -432,6 +432,8 @@ where you type ``n`` until you know what that is :-)
 4. Run an R script
 ------------------
 
+.. mermaid:: load_run_r_script.mmd 
+
 Now you have loaded a module for a specific version of R,
 from the terminal, we can run an R script like this:
 
@@ -521,6 +523,8 @@ For this course, we recommend these versions of R:
 
 Exercise 3: use the R interpreter
 ---------------------------------
+
+.. mermaid:: load_run_r_interpreter.mmd 
 
 Here we 
 - start the R interpreter
@@ -641,6 +645,8 @@ Exercise 3.3: load a package
 
 Exercise 4: run an R script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. mermaid:: load_run_r_script.mmd 
 
 .. admonition:: Exercise files
 
