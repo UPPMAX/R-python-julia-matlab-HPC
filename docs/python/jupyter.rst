@@ -425,7 +425,7 @@ Later you can remove the kernel if you feel like, using this:
 
 You get the <job-id> when you do the above command.
 
-<p>Check the SLURM output file (slurm-<job.id>.out); grab the URL **with the hostname** as described in the first part of this document, since the localhost one requires you to login to the compute node.
+   Check the SLURM output file (slurm-<job.id>.out); grab the URL **with the hostname** as described in the first part of this document, since the localhost one requires you to login to the compute node.
 
 10. Start a webbrowser within HPC2N (ThinLinc interface). Put in the URL you grabbed, including the token.
 
