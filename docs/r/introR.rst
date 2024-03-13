@@ -1,6 +1,32 @@
 Introduction R
 ==============
 
+.. tabs::
+
+   .. tab:: Learning objectives
+
+      - Understand what an interactive session is
+
+   .. tab:: For teachers
+
+      Teaching goals are:
+
+      - Learners have heard what an interactive session is
+
+      Lesson plan (10 minutes in total):
+
+      - 5 mins: prior knowledge
+         - What types of nodes do our HPC clusters have?
+         - What is the purpose of each of these nodes?
+         - Imagine you are developing a Python script in a line-by-line fashion. How to do so best?
+         - Why not do so on the login node?
+         - Why not do so by using ``sbatch``?
+      - 5 mins: presentation
+      - 5 mins: challenge
+      - 5 mins: recap
+         - What is the drawback of using an interactive node?
+
+
 `Welcome page and syllabus <https://uppmax.github.io/R-python-julia-HPC/index.html>`_
    - Also link by clicking the logo at the top left of the page 
 
@@ -32,6 +58,8 @@ Introduction R
 
 Preliminary schedule
 --------------------
+
+.. mermaid:: intro_r_overview_course.mmd 
 
 .. list-table:: Preliminary times
    :widths: 25 25 50
@@ -105,8 +133,7 @@ What is R?
 R is a programming language for statistical computing and data visualization
 (from `Wikipedia <https://en.wikipedia.org/wiki/R_(programming_language>`_).
 
-
-
+.. mermaid:: intro_r_overview_r.mmd 
 
 - The home page of "The R Project for Statistical Computing" is here:
   https://www.r-project.org/
