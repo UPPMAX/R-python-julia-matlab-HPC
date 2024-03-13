@@ -178,7 +178,7 @@ Here is how to find out how to load an R module of a specific version:
             module spider R/<version>
 
         where ``<version>`` is an R version, in ``major.minor.patch`` format, 
-        for example, ``module spider R/4.1.2``.
+        for example, ``module spider R/4.1.1``.
 
         .. admonition:: How does the output look like?
             :class: dropdown
@@ -212,7 +212,7 @@ Here is how to find out how to load an R module of a specific version:
             module spider R/<version>
 
         where ``<version>`` is an R version, in ``major.minor.patch`` format, 
-        for example, ``module spider R/4.1.2``
+        for example, ``module spider R/4.1.2``.
 
         .. admonition:: How does the output look like ?
             :class: dropdown
