@@ -614,13 +614,13 @@ Exercise 4.1: get an R script
 
     .. tab:: Download directly
 
-        Download the script directly using ``wget``:
+        Download the script directly using ``wget``
 
         .. code-block:: console
 
             wget https://raw.githubusercontent.com/UPPMAX/R-python-julia-HPC/main/exercises/r/hello.R
 
-    .. tab:: Create from terminal, using echo:
+    .. tab:: Create from terminal, using ``echo``
 
         Create the script yourself:
 
@@ -629,9 +629,9 @@ Exercise 4.1: get an R script
             echo 'message <- "Hello World!"' > hello.R
             echo 'print(message)' >> hello.R
 
-    .. tab:: Create from terminal, using nano:
+    .. tab:: Create from terminal, using ``nano``
 
-        Create the script yourself using nano:
+        Create the script yourself using ``nano``:
 
         .. code-block:: console
 
