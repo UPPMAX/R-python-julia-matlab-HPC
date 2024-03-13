@@ -209,24 +209,21 @@ Here is how to find out how to load an R module of a specific version:
     - For reproducibility, we recommend ALWAYS loading a specific module instead of using the default version! 
    -  For this course, we recommend using ``R/4.1.1`` on UPPMAX clusters and ``4.1.2`` on Kebnekaise
 
-.. type-along::
+.. tabs::
 
-   .. tabs::
+  .. tab:: UPPMAX
 
-      .. tab:: UPPMAX
-   
-         Go back and check which R modules were available. To load version 4.1.1, do:
+    Go back and check which R modules were available. To load version 4.1.1, do:
 
-         .. code-block:: console
-   
-            $ module load R/4.1.1        
- 
-      .. tab:: HPC2N
+    .. code-block:: console
 
- 
-         .. code-block:: console
+      $ module load R/4.1.1        
 
-            $ module load GCC/10.2.0 OpenMPI/4.0.5 R/4.1.2
+  .. tab:: HPC2N
+
+    .. code-block:: console
+
+      $ module load GCC/10.2.0 OpenMPI/4.0.5 R/4.1.2
 
 .. warning::
 
