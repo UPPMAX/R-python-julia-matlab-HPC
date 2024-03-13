@@ -100,12 +100,12 @@ Use Python 3.11.8 on UPPMAX
 
 I feel the pre-requirements page, https://uppmax.github.io/R-python-julia-HPC/prereqs.html, is too extensive.
 I feel it should link to regular documentation and mostly show
-how to determine you fullfilled all pre-requirements.
+how to determine you fulfilled all pre-requirements.
 
 ## Interactive
 
 The session on starting an interactive session feels too fancy twice:
-- create an interactice session 
+- create an interactive session 
   - with 1 node
   - with more nodes <--- feels beyond the teaching goals
 - run 2 Python scripts, 1 of which is unsuitable for an interactive session

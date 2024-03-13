@@ -26,6 +26,25 @@ Introduction Julia
     - Improve Julia *coding* skills 
     - Other clusters
       
+.. admonition:: Julia Exercise files
+
+    - On HPC2N, you can copy the Julia exercises in a tarball 
+      from ``/proj/nobackup/hpc2n2024-025/juliaExercises.tar.gz``
+    - On UPPMAX you can copy the exercises in a tarball 
+      from ``/proj/naiss2024-22-107/juliaExercises.tar``
+
+.. challenge:: Download the exercise files
+
+    - Copy the file and un-tar it in you personal project folder you created a while ago (https://uppmax.github.io/R-python-julia-HPC/index.html#prepare-your-environment-now). Finally enter the directory and list the content with the ``tree`` command.
+
+    .. code-block:: bash
+
+       cd /proj/naiss2024-22-107/<your-name>   # on Kebnekaise: cd /proj/nobackup/hpc2n2024-025/<your-name>
+       cp ../juliaExercises.tar .
+       tar xvf juliaExercises.tar
+       tree julia
+
+
 Preliminary schedule
 --------------------
 
@@ -90,6 +109,20 @@ Preliminary schedule
    * - 15.00
      - END
      -
+.. important:: 
+
+   - **Menti:**
+   - https://www.menti.com/alvj5kukhz75
+   - https://www.menti.com with code valid the week: `12 40 73 1 `
+
+
+.. Discussion:: **Menti**
+
+   - Which University?
+   - Which scientific topic?
+
+
+
 
 .. instructor-note::
 
@@ -245,7 +278,7 @@ More on Julia?
 --------------
 
 - Documentation at the HPC centres UPPMAX and HPC2N
-   - UPPMAX: https://www.uppmax.uu.se/support/user-guides/julia-user-guide/
+   - UPPMAX: http://docs.uppmax.uu.se/software/julia/
    - HPC2N: https://www.hpc2n.umu.se/resources/software/julia
 - Official Julia documentation is found `here: <https://docs.julialang.org/en/v1/>`_
 - Slack channel for Julia and instructions for joining it are found here: https://julialang.org/slack/

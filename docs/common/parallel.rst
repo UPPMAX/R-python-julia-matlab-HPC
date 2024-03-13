@@ -363,7 +363,7 @@ Exercises
 
    .. tabs:: 
 
-        .. tab:: Python
+      .. tab:: Python
 
             Pandas is available in the following combo ``ml GCC/12.3.0 SciPy-bundle/2023.07`` (HPC2N) and 
             ``ml python/3.11.8`` (UPPMAX). Call the script ``script-df.py``. 
@@ -408,6 +408,26 @@ Exercises
 
             Run the code with the batch script (HPC2N): 
             
+            .. tabs::
+
+               .. tab:: UPPMAX
+
+                    .. code-block:: sh
+                        
+                       #!/bin/bash -l
+                       #SBATCH -A naiss2024-22-107     # your project_ID
+                       #SBATCH -J job-serial        # name of the job
+                       #SBATCH -n 4                 # nr. tasks/coresw
+                       #SBATCH --time=00:20:00      # requested time
+                       #SBATCH --error=job.%J.err   # error file
+                       #SBATCH --output=job.%J.out  # output file
+
+                       # Load any modules you need, here for Python 3.11.8 and compatible SciPy-bundle
+                       module load python/3.11.8
+                       python script-df.py
+
+               .. tab:: HPC2N
+
                     .. code-block:: sh
                         
                         #!/bin/bash            
@@ -422,17 +442,29 @@ Exercises
                         module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07
                         python script-df.py
 
-             UPPMAX...
 
 
 
-        .. tab:: Julia
 
-            The package *DataFrames* needs to be added in a Julia session in case you haven't done it previously.
-            The functions **nthreads()** (number of available threads), and **threadid()** (the thread identification 
-            number) will be useful in this task. Call the script ``script-df.jl``.
+      .. tab:: Julia
 
-            .. code-block:: julia
+         - First, be sure you have ``DataFrames`` installed as JuliaPackage.
+         - If not, follow the steps below. You can install it in your ordinaty user space (not an environment)
+
+         - Open a Julia session
+
+         .. code-block::
+
+            julia> using DataFrames
+
+         - Let it be installed when asking
+         - When done and working, exit().
+
+         - Here is an exercise to fix some code snippets. Call the script ``script-df.jl``.
+         - Watch out for ``*FIXME*`` and replace with suitable functions
+         - The functions ``nthreads()`` (number of available threads), and ``threadid()`` (the thread identification number) will be useful in this task. 
+
+         .. code-block:: julia
 
                 using DataFrames
                 using Base.Threads
@@ -443,11 +475,11 @@ Exercises
                 # Define a function to compute the sum in parallel
                 function parallel_sum(data)
                     # Initialize an array to store thread-local sums
-                    local_sums = zeros(eltype(data), nthreads())
+                    local_sums = zeros(eltype(data), *FIXME*)
                     # Iterate through each value in the 'Value' column in parallel
                     @threads for i =1:length(data)
                         # Add the value to the thread-local sum
-                        local_sums[threadid()] += data[i]
+                        local_sums[*FIXME*] += data[i]
                     end
                     # Combine the local sums to obtain the total sum
                     total_sum_parallel = sum(local_sums)
@@ -458,19 +490,39 @@ Exercises
                 total_sum_parallel = parallel_sum(data_df.Value)
 
                 # Compute the mean
-                mean_value_parallel = total_sum_parallel / length(data_df.Value)
+                mean_value_parallel = *FIXME* / length(data_df.Value)
 
                 # Print the mean value
                 println(mean_value_parallel)    
 
-            Run this job with the following batch script (HPC2N):
+         Run this job with the following batch script, defining that we want to use 4 threads:
 
-                    .. code-block:: sh
+         .. tabs::
+
+            .. tab:: UPPMAX
+
+               .. code-block:: bash
+
+                       #!/bin/bash -l
+                       #SBATCH -A naiss2024-22-107     # your project_ID
+                       #SBATCH -J job-serial        # name of the job
+                       #SBATCH -n 4                 # nr. tasks/coresw
+                       #SBATCH --time=00:20:00      # requested time
+                       #SBATCH --error=job.%J.err   # error file
+                       #SBATCH --output=job.%J.out  # output file
+
+                       ml julia/1.8.5
+
+                       julia --threads 4 script-df.jl  # X number of threads
+   
+            .. tab:: HPC2N
+
+               .. code-block:: bash
                         
                         #!/bin/bash            
                         #SBATCH -A hpc2n2023-110     # your project_ID       
                         #SBATCH -J job-serial        # name of the job         
-                        #SBATCH -n 1                 # nr. tasks  
+                        #SBATCH -n 4                 # nr. tasks  
                         #SBATCH --time=00:20:00      # requested time
                         #SBATCH --error=job.%J.err   # error file
                         #SBATCH --output=job.%J.out  # output file  
@@ -478,17 +530,14 @@ Exercises
                         ml purge  > /dev/null 2>&1
                         ml Julia/1.8.5-linux-x86_64
 
-                        julia --threads X script-df.jl  # X number of threads
+                        julia --threads 4 script-df.jl  # X number of threads
 
-            UPPMAX ...
 
-           
+      .. tab:: R
 
-        .. tab:: R
+         - Call the script ``script-df.R``.
 
-            Call the script ``script-df.R``.
-
-            .. code-block:: r 
+         .. code-block:: r 
 
                 library(doParallel)
                 library(foreach)
@@ -535,10 +584,30 @@ Exercises
                 # Print the results
                 print(sum(*FIXME*)/*FIXME*)
             
-            Run the code with the following batch script (HPC2N):
+         Run the code with the following batch script:
 
-                    .. code-block:: sh
+         .. tabs::
+
+            .. tab:: UPPMAX
+
+               .. code-block:: bash
                         
+                       #!/bin/bash -l
+                       #SBATCH -A naiss2024-22-107     # your project_ID
+                       #SBATCH -J job-serial        # name of the job
+                       #SBATCH -n 4                 # nr. tasks/coresw
+                       #SBATCH --time=00:20:00      # requested time
+                       #SBATCH --error=job.%J.err   # error file
+                       #SBATCH --output=job.%J.out  # output file
+
+                       ml R_packages/4.1.1
+
+                       Rscript --no-save --no-restore script-df.R
+
+            .. tab:: HPC2N
+
+               .. code-block:: bash
+
                         #!/bin/bash            
                         #SBATCH -A hpc2n2023-110     # your project_ID       
                         #SBATCH -J job-serial        # name of the job         
@@ -551,7 +620,7 @@ Exercises
                         ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
                         Rscript --no-save --no-restore script-df.R
 
-            UPPMAX ...
+
 
 .. solution:: Solution
 
@@ -610,11 +679,11 @@ Exercises
                 # Define a function to compute the sum in parallel
                 function parallel_sum(data)
                     # Initialize an array to store thread-local sums
-                    local_sums = zeros(eltype(data), *FIXME*)
+                    local_sums = zeros(eltype(data), nthreads())
                     # Iterate through each value in the 'Value' column in parallel
                     @threads for i =1:length(data)
                         # Add the value to the thread-local sum
-                        local_sums[*FIXME*] += data[i]
+                        local_sums[threadid()] += data[i]
                     end
                     # Combine the local sums to obtain the total sum
                     total_sum_parallel = sum(local_sums)
@@ -625,7 +694,7 @@ Exercises
                 total_sum_parallel = parallel_sum(data_df.Value)
 
                 # Compute the mean
-                mean_value_parallel = *FIXME* / length(data_df.Value)
+                mean_value_parallel = total_sum_parallel / length(data_df.Value)
 
                 # Print the mean value
                 println(mean_value_parallel)   

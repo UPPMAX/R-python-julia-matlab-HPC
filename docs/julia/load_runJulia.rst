@@ -1,7 +1,15 @@
 Load and run Julia
 ===================
 
-At both UPPMAX and HPC2N we call the applications available via the module system modules. 
+.. Discussion:: **Menti**
+
+   - What would you like to use Julia for?
+   - What do you want to learn today?
+
+
+.. note::
+
+    - At both UPPMAX and HPC2N we call the applications available via the module system modules. 
     - https://www.uppmax.uu.se/resources/software/module-system/ 
     - https://www.hpc2n.umu.se/documentation/environment/lmod 
 
@@ -17,6 +25,8 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
    - Lecture and demo 15 min
    - Exercise 15 min
    - Total time 30 min
+
+
 
 As for Python, Julia can be started after a Julia module is loaded. The module activates paths to a specific version of the julia interpreter and its libraries and packages. 
 
@@ -270,6 +280,14 @@ Exercises
                 $ ml julia/1.8.5      # Julia module
                
                 julia serial-sum.jl Arg1 Arg2    # run the serial script
+
+.. Discussion:: **Menti**
+
+   - Can you start Julia without loading a Julia module?
+   - How do you activate Julia packages in the Julia REPL?
+   - How do you toggle to the package mode?
+
+
 
 .. keypoints::
 
