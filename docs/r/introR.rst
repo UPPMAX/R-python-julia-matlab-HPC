@@ -68,7 +68,13 @@ R is used in many NAISS centres:
 
 - `here is an overview of 6 NAISS centres and their R documentation <http://docs.uppmax.uu.se/software/r/#overview-of-naiss-centers-and-their-documentation-about-r>`_
 - `here is an (incomplete) overview of R courses being taught at NAISS <http://docs.uppmax.uu.se/software/r/#learning-r>`_
-  
+
+.. admonition:: R Exercise files
+
+   - On HPC2N, you can copy the R exercise tarball from /proj/nobackup/hpc2n2024-025/exercises-r.tar.gz 
+   - On UPPMAX, you can copy the R exercise tarball from /proj/naiss2024-22-107/exercises-r.tar.gz 
+
+
 Preliminary schedule
 --------------------
 
