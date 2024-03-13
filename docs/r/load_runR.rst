@@ -180,16 +180,75 @@ Here is how to find out how to load an R module of a specific version:
         where ``<version>`` is an R version, in ``major.minor.patch`` format, 
         for example, ``module spider R/4.1.2``
 
-    .. tab:: HPC2N
-   
-        To see how to load a specific version of R, including the prerequisites, do 
+		.. admonition:: How does the output look like ?
+			:class: dropdown
 
-        .. code-block:: console
-   
-            module spider R/<version>
+            Your output will look similar to this:
 
-        where ``<version>`` is an R version, in ``major.minor.patch`` format, 
-        for example, ``module spider R/4.1.2``
+	        .. code-block:: console
+
+				[bbrydsoe@rackham3 bbrydsoe]$ module load spider R/4.1.1
+
+				----------------------------------------------------------------------------
+				 R: R/4.1.1
+				----------------------------------------------------------------------------
+
+					This module can be loaded directly: module load R/4.1.1
+
+				Help:
+					R - use R Version 4.1.1
+				 
+					https://www.r-project.org
+				 
+				  Many, many R and Bioconductor packages are available in the module 
+				  'R_packages/4.1.2'
+
+	.. tab:: HPC2N
+   
+		To see how to load a specific version of R, including the prerequisites, do 
+
+		.. code-block:: console
+   
+			module spider R/<version>
+
+		where ``<version>`` is an R version, in ``major.minor.patch`` format, 
+		for example, ``module spider R/4.1.2``
+
+		.. admonition:: How does the output look like ?
+			:class: dropdown
+
+            Your output will look similar to this:
+
+            .. code-block:: sh
+	    
+				b-an01 [~]$ module spider R/4.1.2
+
+				----------------------------------------------------------------------------
+				R: R/4.1.2
+				----------------------------------------------------------------------------
+				Description:
+				R is a free software environment for statistical computing and
+				graphics.
+
+
+				You will need to load all module(s) on any one of the lines below before 
+				the "R/4.1.2" module is available to load.
+
+				GCC/10.2.0  CUDA/11.1.1  OpenMPI/4.0.5
+				GCC/10.2.0  OpenMPI/4.0.5
+
+				This module provides the following extensions:
+
+				abc.data/1.0 (E), abc/2.1 (E), abe/3.0.1 (E), abind/1.4-5 (E), acepack/1.4.1 (E), 
+				adabag/4.2 (E), ade4/1.7-16 (E), ADGofTest/0.3 (E), aggregation/1.0.1 (E), 
+				AICcmodavg/2.3-1 (E), akima/0.6-2.1 (E), AlgDesign/1.2.0 (E), AnalyzeFMRI/1.1-23 (E), 
+				animation/2.6 (E), aod/1.3.1 (E), ape/5.4-1 (E), argparse/2.0.3 (E), arm/1.11-2 (E), 
+				askpass/1.1 (E), asnipe/1.1.15 (E), assertive.base/0.0-9 (E), assertive.code/0.0-3 (E), 
+				assertive.data.uk/0.0-2 (E), assertive.data.us/0.0-2 (E), assertive.data/0.0-3 (E),
+				assertive.datetimes/0.0-3 (E), assertive.files/0.0-2 (E), assertive.matrices/0.0-2 (E), 
+				assertive.models/0.0-2 (E), assertive.numbers/0.0-2 (E), assertive.properties/0.0-4 (E), 
+				assertive.reflection/0.0-5 (E), assertive.sets/0.0-3 (E), assertive.strings/0.0-3 (E), 
+				assertive.types/0.0-3 (E), assertive/0.3-6 (E), assertthat/0.2.1 (E), AUC/0.3.0 (E), 
 
 2. Load an R module
 -------------------
@@ -227,265 +286,300 @@ here is how you load that module:
 If you care about reproducibility of your programming environments and R scripts,
 you should always load a specific version of a module.
 
-3. Run the R interpreter
+3. Use the R interpreter
 ------------------------
 
-- For this course, we recommend using ``R/4.1.1`` on UPPMAX clusters and ``4.1.2`` on Kebnekaise
+3.1. Start the R interpreter
+----------------------------
+
+Now you have loaded a module for a specific version of R,
+from the terminal, we can start the R interpreter like this:
+
+.. code-block:: console
+
+	R
+
+.. admonition:: How does the output look like ?
+	:class: dropdown
+
+    It will look similar to this:
+
+    .. code-block:: console
+     
+		R version 4.0.4 (2021-02-15) -- "Lost Library Book"
+		Copyright (C) 2021 The R Foundation for Statistical Computing
+		Platform: x86_64-pc-linux-gnu (64-bit)
+
+		R is free software and comes with ABSOLUTELY NO WARRANTY.
+		You are welcome to redistribute it under certain conditions.
+		Type 'license()' or 'licence()' for distribution details.
+
+		Natural language support but running in an English locale
+
+		R is a collaborative project with many contributors.
+		Type 'contributors()' for more information and
+		'citation()' on how to cite R or R packages in publications.
+
+		Type 'demo()' for some demos, 'help()' for on-line help, or
+		'help.start()' for an HTML browser interface to help.
+		Type 'q()' to quit R.
+
+		> 
 
 .. warning::
 
-   + UPPMAX: Don’t use system-installed R/3.6.0
-   + HPC2N: No system installed R 
-   + ALWAYS use R module
+    Only do lightweight things!
 
+    We are still on the login node, which is shared with many other users.
+    This means, that if we do heavy calculations, all these other users
+    are affected.
 
-.. type-along::
+    If you need to do heavy calculations:
 
-    - After loading the R module (and its prerequisites), you start R like this:
-    - The output from below is from an older version
+    - Submit that calculation as a batch job
+    - UPPMAX only: use an interactive session
 
-Exit R with ``q()`` in the R prompt. Decide if you want to save your workspace image or not. 
+    This will be shown in the course in a later session
 
+Within the R interpreter we can give R commands:
 
-   .. code-block:: console
+.. code-block:: rconsole
 
-      $ R
-     
-      R version 4.0.4 (2021-02-15) -- "Lost Library Book"
-      Copyright (C) 2021 The R Foundation for Statistical Computing
-      Platform: x86_64-pc-linux-gnu (64-bit)
-     
-      R is free software and comes with ABSOLUTELY NO WARRANTY.
-      You are welcome to redistribute it under certain conditions.
-      Type 'license()' or 'licence()' for distribution details.
-     
-        Natural language support but running in an English locale
-       
-      R is a collaborative project with many contributors.
-      Type 'contributors()' for more information and
-      'citation()' on how to cite R or R packages in publications.
-     
-      Type 'demo()' for some demos, 'help()' for on-line help, or
-      'help.start()' for an HTML browser interface to help.
-      Type 'q()' to quit R.
-     
-      > 
+	print("Hello world")
 
-   .. code-block:: rconsole
+Which will give the output:
 
-      > 4+7
-      [1] 11
-      > j=4+7
-      > j
-      [1] 11
-      > a=3
-      > b=7
-      > c=a+b
-      > c
-      [1] 10
+.. code-block:: rconsole
+
+	[1] "Hello world"
+
+From within the R interpreter, we can check which packages are installed using:
+
+.. code-block:: console
+
+    installed.packages()
+
+.. admonition:: How does the output look like ?
+	:class: dropdown
+
+		Output will look similar to this:
+
+		.. code-block:: console
+
+						  Package      LibPath
+			base       "base"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+			boot       "boot"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+			class      "class"      "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+			cluster    "cluster"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+			codetools  "codetools"  "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+			compiler   "compiler"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+			datasets   "datasets"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+			foreign    "foreign"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+			graphics   "graphics"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+			grDevices  "grDevices"  "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+			grid       "grid"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+			KernSmooth "KernSmooth" "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+			lattice    "lattice"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+			MASS       "MASS"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+			Matrix     "Matrix"     "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+			...
+
+From within the R interpreter, we can load a package like:
+
+.. code-block:: console
+
+    library(ggplot2)
+
+To quit the R interpreter, use the ``quit`` function:
+
+.. code-block:: rconsole
+
+	quit()
+
+You will get the question:
+
+.. code-block:: rconsole
+
+	Save workspace image? [y/n/c]: 
+
+where you type ``n`` until you know what that is :-)
 
 4. Run an R script
 ------------------
 
-You can run an R script in the bash shell like this:
+Now you have loaded a module for a specific version of R,
+from the terminal, we can run an R script like this:
 
 .. code-block:: console
 
-   $ Rscript example.R
+   Rscript <r_script_name>
+
+where ``<r_script_name>`` is the path to an R script, 
+for example ``Rscript hello.R``.
 
 .. warning::
 
-   *only* run jobs that are short and/or do not use a lot of resources from the command line. Otherwise ALWAYS use the batch system!
-    
-   More information will follow on running R from within a **batch job**. 
+    Only do lightweight things!
 
-.. type-along::
+    We are still on the login node, which is shared with many other users.
+    This means, that if we do heavy calculations, all these other users
+    are affected.
 
-   Here is an example of running a short, serial R program at Kebnekaise: 
+    If you need to do heavy calculations:
 
-   .. admonition:: Serial R program (add2.R) to add two arguments
-      :class: dropdown
+    - Submit that calculation as a batch job
+    - UPPMAX only: use an interactive session
 
-      .. code-block:: R
-        
-         
-         args <- commandArgs(trailingOnly = TRUE)
-         num1 <- as.numeric(args[1])
-         num2 <- as.numeric(args[2])
-            
-         answer <- num1 + num2
-         cat("Sum of arguments is: ", answer)
-         cat("\n")
-           
-           
-   .. code-block:: console
-
-      $ Rscript add2.R 3 4
-       Sum of arguments is:  7
-      $
-
-
-.. admonition:: Workflow
-
-   In addition to loading R, you will also often need to (install and) use own-installed R packages. The work-flow would be something like this: 
-    
-   1) Load R and prerequisites: ``module load <pre-reqs> R/<version>``
-   2) Check which extensions your R version has. They are generally listed under "Extensions" when you do: 
-   
-      - ``module spider R/<version>``. 
-      - Otherwise, you can do ``installed.packages()`` from within R. 
-      - NOTE that the latter option generates a LOT of output, but also gives versions of the R packages (Extensions, as they are called by the module system). 
-      
-   3) Install any extra R packages you need (optional): 
-    
-      - Automatical download and install: ``R --quiet --no-save --no-restore -e "install.packages('<r-package>', repos='http://ftp.acc.umu.se/mirror/CRAN/')"`` 
-      - Manual download and install: ``R CMD INSTALL -l <path-to-R-package>/R-package.tar.gz``
-    
-   4) 
-    
-      - Start R: ``R``
-      - run ``Rscript <program.R>``
-      - batch job for R program: ``sbatch <my-R-batch-job.sh>``
-
-   - Installed R packages can be accessed within R with ``library("package")`` as usual. 
-
-   - The command ``installed.packages()`` given within R will list the available packages to import. 
-
-   - More about installing your own R packages to follow in later sections of the course! 
+    This will be shown in the course in a later session
 
 Exercises
 ---------
 
-Exercise 1: load an R module
+Exercise 1: find an R module
+----------------------------
+
+.. tabs::
+
+    .. tab:: Exercise 1: find an R module
+
+    Use the module system to find which versions of R are provided
+    by your cluster's module system.
+
+    .. tab:: UPPMAX
+
+        From a terminal, do:
+
+        .. code-block:: console
+ 
+           module spider R
+
+        You will see a list of modules that provide for different versions of R.
+
+    .. tab:: HPC2N
+   
+        From a terminal, do:
+
+        .. code-block:: console
+ 
+            module spider R
+
+        You will see a list of modules that provide for different versions of R.
+
+Exercise 2: load an R module
+----------------------------
+
+For this course, we recommend these versions of R:
+
+- HPC2N: R version 4.1.1
+- UPPMAX: R version 4.1.2
+
+.. tabs::
+
+    .. tab:: Exercise 2: load an R module
+
+        Load the module for the R version recommended to use in this course:
+
+		- HPC2N: R version 4.1.1
+		- UPPMAX: R version 4.1.2
+
+    .. tab:: UPPMAX
+
+        .. code-block:: console
+
+            module load R/4.1.1
+
+    .. tab:: HPC2N
+
+        .. code-block:: console
+
+            module load GCC/10.2.0 OpenMPI/4.0.5 R/4.1.2
+
+Exercise 3: use the R interpreter
+---------------------------------
+
+Here we 
+- start the R interpreter
+- find out which packages are already installed
+- load an R package
+
+Exercise 3.1: start the R interpreter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+    .. tab:: Exercise 3.1: start the R interpreter
+
+        Start the R interpreter.
+
+    .. tab:: UPPMAX
+
+        .. code-block:: console
+
+            R
+
+    .. tab:: HPC2N
+
+        .. code-block:: console
+
+            R
+
+Exercise 3.2: check which packages are installed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+    .. tab:: Exercise 3.2: check which packages are installed
+
+        From within the R interpreter, check which packages are installed.
+
+    .. tab:: UPPMAX
+
+        .. code-block:: console
+
+            installed.packages()
+
+    .. tab:: HPC2N
+
+        .. code-block:: console
+
+            installed.packages()
+
+Exercise 3.3: load a package
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Exercise 2: run the R interpreter
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. tabs::
 
-.. challenge:: Try yourself to load R, start it, check libraries, load a library, quit R
-    
-   .. code-block:: R
-   
-      1) Load R version 4.1.X 
-      2) Start R. Check which libraries are installed. Load one of them.
-      3) Quit R
-	
-   Remember to check if a module you are loading has prerequisites, and load those first if it does. In this case it depends on whether you do the exercises on Kebnekaise or Rackham. 
+    .. tab:: Exercise 3.3: load a package
+
+        From within the R interpreter, load the ``parallel`` package.
+
+    .. tab:: UPPMAX
+
+        .. code-block:: console
+
+            library(parallel)
+
+    .. tab:: HPC2N
+
+        .. code-block:: console
+
+            library(parallel)
 
 
 
-.. solution:: Solution
 
-   .. tabs:: 
 
-      .. tab:: UPPMAX
- 
-            This is for Rackham.
-          
-            .. code-block:: sh
-	    
-	       [bbrydsoe@rackham3 bbrydsoe]$ ml spider R/4.1.1
-	    
-  	       ----------------------------------------------------------------------------
-	         R: R/4.1.1
-	       ----------------------------------------------------------------------------
-	     
-	            This module can be loaded directly: module load R/4.1.1
-		 
-		    Help:
-		        R - use R Version 4.1.1
-		     
-		        https://www.r-project.org
-		     
-		      Many, many R and Bioconductor packages are available in the module 
-		      'R_packages/4.1.2'
 
-	       [bbrydsoe@rackham3 bbrydsoe]$ module load R/4.1.2
-	       Nearly all CRAN and BioConductor packages are installed and available by
-   	       loading the module R_packages/4.1.2 
-	       [bbrydsoe@rackham3 bbrydsoe]$
-	    
-	       [bbrydsoe@rackham3 bbrydsoe]$ R
 
-               R version 4.0.4 (2021-02-15) -- "Lost Library Book"
-	       Copyright (C) 2021 The R Foundation for Statistical Computing
-	       Platform: x86_64-pc-linux-gnu (64-bit)
-	    
-	       R is free software and comes with ABSOLUTELY NO WARRANTY.
-	       You are welcome to redistribute it under certain conditions.
-	       Type 'license()' or 'licence()' for distribution details.
-	    
-	         Natural language support but running in an English locale
-	      
-	       R is a collaborative project with many contributors.
-	       Type 'contributors()' for more information and
-	       'citation()' on how to cite R or R packages in publications.
-	    
-	       Type 'demo()' for some demos, 'help()' for on-line help, or
-	       'help.start()' for an HTML browser interface to help.
-	       Type 'q()' to quit R.
-	    
-	       > installed.packages()
-                          Package      LibPath
-               base       "base"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       boot       "boot"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       class      "class"      "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       cluster    "cluster"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       codetools  "codetools"  "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       compiler   "compiler"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       datasets   "datasets"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       foreign    "foreign"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       graphics   "graphics"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       grDevices  "grDevices"  "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       grid       "grid"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       KernSmooth "KernSmooth" "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       lattice    "lattice"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       MASS       "MASS"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       Matrix     "Matrix"     "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-	       ...
-	    
-	       > library("parallel")
-	       > quit()
-	       Save workspace image? [y/n/c]: 
-	    
 
-            The list of installed packages is very long, as you will see for yourself. 
-	 
+
+
+
 	     
       .. tab:: HPC2N
    
             This is for Kebnekaise.
           
-            .. code-block:: sh
-	    
-	       b-an01 [~]$ ml spider R/4.1.2
-
-               ----------------------------------------------------------------------------
-	         R: R/4.1.2
-	       ----------------------------------------------------------------------------
-	           Description:
-		     R is a free software environment for statistical computing and
-		     graphics.
-		     
-		     
-		   You will need to load all module(s) on any one of the lines below before 
-		   the "R/4.1.2" module is available to load.
-		   
-		     GCC/10.2.0  CUDA/11.1.1  OpenMPI/4.0.5
-		     GCC/10.2.0  OpenMPI/4.0.5
-		     
-	           This module provides the following extensions:
-
-                      abc.data/1.0 (E), abc/2.1 (E), abe/3.0.1 (E), abind/1.4-5 (E), acepack/1.4.1 (E), 
-		      adabag/4.2 (E), ade4/1.7-16 (E), ADGofTest/0.3 (E), aggregation/1.0.1 (E), 
-		      AICcmodavg/2.3-1 (E), akima/0.6-2.1 (E), AlgDesign/1.2.0 (E), AnalyzeFMRI/1.1-23 (E), 
-		      animation/2.6 (E), aod/1.3.1 (E), ape/5.4-1 (E), argparse/2.0.3 (E), arm/1.11-2 (E), 
-		      askpass/1.1 (E), asnipe/1.1.15 (E), assertive.base/0.0-9 (E), assertive.code/0.0-3 (E), 
-		      assertive.data.uk/0.0-2 (E), assertive.data.us/0.0-2 (E), assertive.data/0.0-3 (E),
-		      assertive.datetimes/0.0-3 (E), assertive.files/0.0-2 (E), assertive.matrices/0.0-2 (E), 
-		      assertive.models/0.0-2 (E), assertive.numbers/0.0-2 (E), assertive.properties/0.0-4 (E), 
-		      assertive.reflection/0.0-5 (E), assertive.sets/0.0-3 (E), assertive.strings/0.0-3 (E), 
-		      assertive.types/0.0-3 (E), assertive/0.3-6 (E), assertthat/0.2.1 (E), AUC/0.3.0 (E), 
 		      ...
 		      
 		      b-an01 [~]$ module load GCC/10.2.0  OpenMPI/4.0.5 R/4.1.2
@@ -520,7 +614,7 @@ Exercise 2: run the R interpreter
 	    As you can see above, the main differences here compared to Rackham is that you need to load some prerequisites before you can load R and that doing ``ml spider R/<version>`` will give you a long list of "extensions" which is what the module system calls the system installed R packages. 
  	    
 
-Exercise 3: run an R script
+Exercise 4: run an R script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. admonition:: Exercise files
@@ -581,6 +675,31 @@ Exercise 3: run an R script
 
 	    
       As you can see, it is working the same. 
+
+.. type-along::
+
+   Here is an example of running a short, serial R program at Kebnekaise: 
+
+   .. admonition:: Serial R program (add2.R) to add two arguments
+      :class: dropdown
+
+      .. code-block:: R
+        
+         
+         args <- commandArgs(trailingOnly = TRUE)
+         num1 <- as.numeric(args[1])
+         num2 <- as.numeric(args[2])
+            
+         answer <- num1 + num2
+         cat("Sum of arguments is: ", answer)
+         cat("\n")
+           
+           
+   .. code-block:: console
+
+      $ Rscript add2.R 3 4
+       Sum of arguments is:  7
+      $
       
 
 Module system cheat sheet
@@ -595,6 +714,37 @@ Module system cheat sheet
 - More information about a module: ``module show <module>/<version>``
 - Unload all modules except the 'sticky' modules: ``module purge``
 
+R workflow
+----------
+
+.. admonition:: Workflow
+
+   In addition to loading R, you will also often need to (install and) use own-installed R packages. The work-flow would be something like this: 
+    
+   1) Load R and prerequisites: ``module load <pre-reqs> R/<version>``
+   2) Check which extensions your R version has. They are generally listed under "Extensions" when you do: 
+   
+      - ``module spider R/<version>``. 
+      - Otherwise, you can do ``installed.packages()`` from within R. 
+      - NOTE that the latter option generates a LOT of output, but also gives versions of the R packages (Extensions, as they are called by the module system). 
+      
+   3) Install any extra R packages you need (optional): 
+    
+      - Automatical download and install: ``R --quiet --no-save --no-restore -e "install.packages('<r-package>', repos='http://ftp.acc.umu.se/mirror/CRAN/')"`` 
+      - Manual download and install: ``R CMD INSTALL -l <path-to-R-package>/R-package.tar.gz``
+    
+   4) 
+    
+      - Start R: ``R``
+      - run ``Rscript <program.R>``
+      - batch job for R program: ``sbatch <my-R-batch-job.sh>``
+
+   - Installed R packages can be accessed within R with ``library("package")`` as usual. 
+
+   - The command ``installed.packages()`` given within R will list the available packages to import. 
+
+   - More about installing your own R packages to follow in later sections of the course! 
+
 Conclusions
 -----------
 
@@ -607,3 +757,4 @@ Conclusions
        - if you care about reproducibility, use explicit versions
    - start the R interpreter with ``R``
    - run R scripts scripts with ``Rscript``
+
