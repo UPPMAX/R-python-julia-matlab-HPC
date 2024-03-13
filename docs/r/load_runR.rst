@@ -289,6 +289,8 @@ you should always load a specific version of a module.
 3. Use the R interpreter
 ------------------------
 
+.. mermaid:: load_run_r_interpreter.mmd 
+
 Now you have loaded a module for a specific version of R,
 from the terminal, we can use the R interpreter.
 
