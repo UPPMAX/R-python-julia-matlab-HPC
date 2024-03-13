@@ -96,61 +96,51 @@ Here is how to find out how to load an R module of a specific version:
  
             $ module spider R
 
-        .. admonition:: How does the output look like A?
-        :class: dropdown
-
             Text here
 
         .. admonition:: How does the output look like B?
             :class: dropdown
-
-            Text here
-
-
-        .. admonition:: How does the output look like C?
-
-            :class: dropdown
     
-                The output will look similar to this output
-                (run at UPPMAX on October 15 2023):
+            The output will look similar to this output
+            (run at UPPMAX on October 15 2023):
 
-                .. code-block::  tcl
+            .. code-block::  tcl
 
-                    [bbrydsoe@rackham3 bbrydsoe]$ module spider R
+                [bbrydsoe@rackham3 bbrydsoe]$ module spider R
 
-                    ----------------------------------------------------------------------------
-                    R:
-                    ----------------------------------------------------------------------------
-                       Versions:
-                          R/3.0.2
-                          R/3.2.3
-                          R/3.3.2
-                          R/3.4.0
-                          R/3.4.3
-                          R/3.5.0
-                          R/3.5.2
-                          R/3.6.0
-                          R/3.6.1
-                          R/4.0.0
-                          R/4.0.4
-                          R/4.1.1
-                          R/4.2.1
-                          R/4.3.1
-                       Other possible modules matches:
-                          454-dataprocessing  ADMIXTURE  ANTLR  ARCS  ARC_assembler  ARPACK-NG  ..
-                    .
-                    ----------------------------------------------------------------------------
-                      To find other possible module matches execute:
+                ----------------------------------------------------------------------------
+                R:
+                ----------------------------------------------------------------------------
+                   Versions:
+                      R/3.0.2
+                      R/3.2.3
+                      R/3.3.2
+                      R/3.4.0
+                      R/3.4.3
+                      R/3.5.0
+                      R/3.5.2
+                      R/3.6.0
+                      R/3.6.1
+                      R/4.0.0
+                      R/4.0.4
+                      R/4.1.1
+                      R/4.2.1
+                      R/4.3.1
+                   Other possible modules matches:
+                      454-dataprocessing  ADMIXTURE  ANTLR  ARCS  ARC_assembler  ARPACK-NG  ..
+                .
+                ----------------------------------------------------------------------------
+                  To find other possible module matches execute:
             
-                          $ module -r spider '.*R.*'
+                      $ module -r spider '.*R.*'
 
-                    ----------------------------------------------------------------------------
-                      For detailed information about a specific "R" package (including how to load the modules) use the module's full name.
-                      Note that names that have a trailing (E) are extensions provided by other modules.
-                      For example:
+                ----------------------------------------------------------------------------
+                  For detailed information about a specific "R" package (including how to load the modules) use the module's full name.
+                  Note that names that have a trailing (E) are extensions provided by other modules.
+                  For example:
             
-                         $ module spider R/4.2.1
-                    ----------------------------------------------------------------------------
+                     $ module spider R/4.2.1
+                ----------------------------------------------------------------------------
 
     .. tab:: HPC2N
    
@@ -206,24 +196,24 @@ Here is how to find out how to load an R module of a specific version:
 
 !!! important
 
-    - For reproducibility, we recommend ALWAYS loading a specific module instead of using the default version! 
-   -  For this course, we recommend using ``R/4.1.1`` on UPPMAX clusters and ``4.1.2`` on Kebnekaise
+  - For reproducibility, we recommend ALWAYS loading a specific module instead of using the default version! 
+  -  For this course, we recommend using ``R/4.1.1`` on UPPMAX clusters and ``4.1.2`` on Kebnekaise
 
 .. tabs::
 
-  .. tab:: UPPMAX
+    .. tab:: UPPMAX
 
-    Go back and check which R modules were available. To load version 4.1.1, do:
+        To load version 4.1.1, do:
 
-    .. code-block:: console
+        .. code-block:: console
 
-      $ module load R/4.1.1        
+            module load R/4.1.1        
 
-  .. tab:: HPC2N
+    .. tab:: HPC2N
 
-    .. code-block:: console
+        .. code-block:: console
 
-      $ module load GCC/10.2.0 OpenMPI/4.0.5 R/4.1.2
+            module load GCC/10.2.0 OpenMPI/4.0.5 R/4.1.2
 
 .. warning::
 
