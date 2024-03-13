@@ -31,22 +31,28 @@ Introduction R
 
 . admonition:: **Course learning objectives**
  
-   - use the module system to load R
-   - use the module system to load site-installed R packages
-   - find out which versions of R and packages are installed
-   - run R scripts
-   - write a batch script for running R
-   - install R packages from CRAN
-   - see how to install other R packages yourself
-   - start batch jobs 
-   - run RStudion
+    These are the course learning objectives:
 
-   on HPC2N or UPPMAX
+    - use the module system to load R
+    - use the module system to load site-installed R packages
+    - find out which versions of R and packages are installed
+    - run R scripts
+    - write a batch script for running R
+    - install R packages from CRAN
+    - see how to install other R packages yourself
+    - start batch jobs 
+    - run RStudion
+
+    on HPC2N or UPPMAX
+
 
 . admonition:: **Course non-goals**
 
-   - improve R coding skills 
-   - use R on other HPC clusters
+    These are non-goals for this course:
+
+    - improve R coding skills 
+    - use R on other HPC clusters
+
 
 First overview of R
 -------------------
