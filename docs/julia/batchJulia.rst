@@ -693,7 +693,7 @@ reference point, we show the simulation on CPUs as well.
             #SBATCH --time=00:03:00      # requested time
             #SBATCH --error=job.%J.err   # error file
             #SBATCH --output=job.%J.out  # output file  
-            #SBATCH --gres=gpu:k80:1     # 1 GPU K80 card
+            #SBATCH --gres=gpu:v100:1     # 1 GPU v100 card
 
             ml purge  > /dev/null 2>&1
             ml Julia/1.8.5-linux-x86_64
@@ -886,7 +886,7 @@ Exercises
                 #SBATCH --time=00:03:00      # requested time
                 #SBATCH --error=job.%J.err   # error file
                 #SBATCH --output=job.%J.out  # output file  
-                #SBATCH --gres=gpu:V100:1     # 1 GPU K80 card
+                #SBATCH --gres=gpu:v100:1     # 1 GPU v100 card
 
                 ml purge  > /dev/null 2>&1
                 ml Julia/1.8.5-linux-x86_64
@@ -985,7 +985,7 @@ Exercises
             #SBATCH --time=00:15:00      # requested time
             #SBATCH --error=job.%J.err   # error file
             #SBATCH --output=job.%J.out  # output file  
-            #SBATCH --gres=gpu:v100:1     # 1 GPU K80 card   #remove this line for UPPMAX
+            #SBATCH --gres=gpu:v100:1     # 1 GPU v100 card   #remove this line for UPPMAX
             # On Rackham use the follwing lines instead (rm one #) by subsituting the related HPC2N lines, se above
             ##SBATCH -M snowy
             ##SBATCH -p node
@@ -1072,7 +1072,7 @@ Exercises
                 #SBATCH --time=00:20:00      # requested time
                 #SBATCH --error=job.%J.err   # error file
                 #SBATCH --output=job.%J.out  # output file  
-                #SBATCH --gres=gpu:v100:1     # 1 GPU K80 card
+                #SBATCH --gres=gpu:v100:1     # 1 GPU v100 card
 
                 ml purge  > /dev/null 2>&1
                 ml Julia/1.8.5-linux-x86_64
