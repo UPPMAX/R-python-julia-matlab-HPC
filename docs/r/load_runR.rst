@@ -76,29 +76,7 @@ Here is how to find the R modules of all versions:
  
            $ module spider R
 
-    .. tab:: HPC2N
-   
-        From a terminal, do:
-
-        .. code-block:: console
- 
-            $ module spider R
-
-Here is how to find out how to load an R module of a specific version:
-
-.. tabs::
-
-    .. tab:: UPPMAX
-
-        Check all available R versions with:
-
-        .. code-block:: console
- 
-            $ module spider R
-
-            Text here
-
-        .. admonition:: How does the output look like B?
+        .. admonition:: How does the output look like ?
             :class: dropdown
     
             The output will look similar to this output
@@ -144,6 +122,55 @@ Here is how to find out how to load an R module of a specific version:
 
     .. tab:: HPC2N
    
+        From a terminal, do:
+
+        .. code-block:: console
+ 
+            $ module spider R
+
+        .. admonition:: How does the output look like ?
+            :class: dropdown
+
+            Output at HPC2N as of 15 October 2023:
+
+            .. code-block:: tcl
+
+                b-an01 [~]$ module spider R
+
+                -----------------------------------------------------------------------------------------------------------------------------------------------
+                R:
+                -----------------------------------------------------------------------------------------------------------------------------------------------
+                Description:
+                R is a free software environment for statistical computing and graphics.
+
+                Versions:
+                R/4.0.0
+                R/4.0.4
+                R/4.1.0
+                R/4.1.2
+                R/4.1.3
+                Other possible modules matches:
+                AMPtorch  Amber  Armadillo  Arrow  Bader  BerkeleyGW  BioPerl  ...
+
+                -----------------------------------------------------------------------------------------------------------------------------------------------
+                To find other possible module matches execute:
+
+                $ module -r spider '.*R.*'
+
+                -----------------------------------------------------------------------------------------------------------------------------------------------
+                For detailed information about a specific "R" package (including how to load the modules) use the module's full name.
+                Note that names that have a trailing (E) are extensions provided by other modules.
+                For example:
+
+                $ module spider R/4.1.3
+                -----------------------------------------------------------------------------------------------------------------------------------------------
+
+Here is how to find out how to load an R module of a specific version:
+
+.. tabs::
+
+    .. tab:: UPPMAX
+
         To see how to load a specific version of R, including the prerequisites, do 
 
         .. code-block:: console
@@ -153,40 +180,18 @@ Here is how to find out how to load an R module of a specific version:
          where ``<version>`` is an R version, in ``major.minor.patch`` format, 
          for example, ``module spider R/4.1.2``
 
-.. admonition:: Output at HPC2N as of 15 October 2023
-    :class: dropdown
 
-        .. code-block:: tcl
+    .. tab:: HPC2N
+   
+        To see how to load a specific version of R, including the prerequisites, do 
 
-           b-an01 [~]$ module spider R
+        .. code-block:: console
+   
+            $ module spider R/<version>
 
-           -----------------------------------------------------------------------------------------------------------------------------------------------
-           R:
-           -----------------------------------------------------------------------------------------------------------------------------------------------
-             Description:
-               R is a free software environment for statistical computing and graphics.
-               
-              Versions:
-                 R/4.0.0
-                 R/4.0.4
-                 R/4.1.0
-                 R/4.1.2
-                 R/4.1.3
-              Other possible modules matches:
-                 AMPtorch  Amber  Armadillo  Arrow  Bader  BerkeleyGW  BioPerl  ...
-                    
-           -----------------------------------------------------------------------------------------------------------------------------------------------
-             To find other possible module matches execute:
-             
-                 $ module -r spider '.*R.*'
-                 
-           -----------------------------------------------------------------------------------------------------------------------------------------------
-             For detailed information about a specific "R" package (including how to load the modules) use the module's full name.
-             Note that names that have a trailing (E) are extensions provided by other modules.
-             For example:
-             
-                $ module spider R/4.1.3
-           -----------------------------------------------------------------------------------------------------------------------------------------------
+         where ``<version>`` is an R version, in ``major.minor.patch`` format, 
+         for example, ``module spider R/4.1.2``
+
 
 2. Load an R module
 -------------------
