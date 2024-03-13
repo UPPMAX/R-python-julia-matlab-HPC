@@ -29,10 +29,8 @@ Introduction R
       - 5 mins: presentation: Course schedule
       - 5 mins: feedback
 
-. admonition:: **Course learning objectives**
+.. admonition:: **Course learning objectives**
  
-    These are the course learning objectives:
-
     - use the module system to load R
     - use the module system to load site-installed R packages
     - find out which versions of R and packages are installed
@@ -46,9 +44,7 @@ Introduction R
     on HPC2N or UPPMAX
 
 
-. admonition:: **Course non-goals**
-
-    These are non-goals for this course:
+.. admonition:: **Course non-goals**
 
     - improve R coding skills 
     - use R on other HPC clusters
