@@ -180,75 +180,75 @@ Here is how to find out how to load an R module of a specific version:
         where ``<version>`` is an R version, in ``major.minor.patch`` format, 
         for example, ``module spider R/4.1.2``
 
-		.. admonition:: How does the output look like ?
-			:class: dropdown
+        .. admonition:: How does the output look like ?
+            :class: dropdown
 
             Your output will look similar to this:
 
-	        .. code-block:: console
+            .. code-block:: console
 
-				[bbrydsoe@rackham3 bbrydsoe]$ module load spider R/4.1.1
+                [bbrydsoe@rackham3 bbrydsoe]$ module load spider R/4.1.1
 
-				----------------------------------------------------------------------------
-				 R: R/4.1.1
-				----------------------------------------------------------------------------
+                ----------------------------------------------------------------------------
+                 R: R/4.1.1
+                ----------------------------------------------------------------------------
 
-					This module can be loaded directly: module load R/4.1.1
+                    This module can be loaded directly: module load R/4.1.1
 
-				Help:
-					R - use R Version 4.1.1
-				 
-					https://www.r-project.org
-				 
-				  Many, many R and Bioconductor packages are available in the module 
-				  'R_packages/4.1.2'
+                Help:
+                    R - use R Version 4.1.1
+                 
+                    https://www.r-project.org
+                 
+                  Many, many R and Bioconductor packages are available in the module 
+                  'R_packages/4.1.2'
 
-	.. tab:: HPC2N
+    .. tab:: HPC2N
    
-		To see how to load a specific version of R, including the prerequisites, do 
+        To see how to load a specific version of R, including the prerequisites, do 
 
-		.. code-block:: console
+        .. code-block:: console
    
-			module spider R/<version>
+            module spider R/<version>
 
-		where ``<version>`` is an R version, in ``major.minor.patch`` format, 
-		for example, ``module spider R/4.1.2``
+        where ``<version>`` is an R version, in ``major.minor.patch`` format, 
+        for example, ``module spider R/4.1.2``
 
-		.. admonition:: How does the output look like ?
-			:class: dropdown
+        .. admonition:: How does the output look like ?
+            :class: dropdown
 
             Your output will look similar to this:
 
             .. code-block:: sh
-	    
-				b-an01 [~]$ module spider R/4.1.2
+        
+                b-an01 [~]$ module spider R/4.1.2
 
-				----------------------------------------------------------------------------
-				R: R/4.1.2
-				----------------------------------------------------------------------------
-				Description:
-				R is a free software environment for statistical computing and
-				graphics.
+                ----------------------------------------------------------------------------
+                R: R/4.1.2
+                ----------------------------------------------------------------------------
+                Description:
+                R is a free software environment for statistical computing and
+                graphics.
 
 
-				You will need to load all module(s) on any one of the lines below before 
-				the "R/4.1.2" module is available to load.
+                You will need to load all module(s) on any one of the lines below before 
+                the "R/4.1.2" module is available to load.
 
-				GCC/10.2.0  CUDA/11.1.1  OpenMPI/4.0.5
-				GCC/10.2.0  OpenMPI/4.0.5
+                GCC/10.2.0  CUDA/11.1.1  OpenMPI/4.0.5
+                GCC/10.2.0  OpenMPI/4.0.5
 
-				This module provides the following extensions:
+                This module provides the following extensions:
 
-				abc.data/1.0 (E), abc/2.1 (E), abe/3.0.1 (E), abind/1.4-5 (E), acepack/1.4.1 (E), 
-				adabag/4.2 (E), ade4/1.7-16 (E), ADGofTest/0.3 (E), aggregation/1.0.1 (E), 
-				AICcmodavg/2.3-1 (E), akima/0.6-2.1 (E), AlgDesign/1.2.0 (E), AnalyzeFMRI/1.1-23 (E), 
-				animation/2.6 (E), aod/1.3.1 (E), ape/5.4-1 (E), argparse/2.0.3 (E), arm/1.11-2 (E), 
-				askpass/1.1 (E), asnipe/1.1.15 (E), assertive.base/0.0-9 (E), assertive.code/0.0-3 (E), 
-				assertive.data.uk/0.0-2 (E), assertive.data.us/0.0-2 (E), assertive.data/0.0-3 (E),
-				assertive.datetimes/0.0-3 (E), assertive.files/0.0-2 (E), assertive.matrices/0.0-2 (E), 
-				assertive.models/0.0-2 (E), assertive.numbers/0.0-2 (E), assertive.properties/0.0-4 (E), 
-				assertive.reflection/0.0-5 (E), assertive.sets/0.0-3 (E), assertive.strings/0.0-3 (E), 
-				assertive.types/0.0-3 (E), assertive/0.3-6 (E), assertthat/0.2.1 (E), AUC/0.3.0 (E), 
+                abc.data/1.0 (E), abc/2.1 (E), abe/3.0.1 (E), abind/1.4-5 (E), acepack/1.4.1 (E), 
+                adabag/4.2 (E), ade4/1.7-16 (E), ADGofTest/0.3 (E), aggregation/1.0.1 (E), 
+                AICcmodavg/2.3-1 (E), akima/0.6-2.1 (E), AlgDesign/1.2.0 (E), AnalyzeFMRI/1.1-23 (E), 
+                animation/2.6 (E), aod/1.3.1 (E), ape/5.4-1 (E), argparse/2.0.3 (E), arm/1.11-2 (E), 
+                askpass/1.1 (E), asnipe/1.1.15 (E), assertive.base/0.0-9 (E), assertive.code/0.0-3 (E), 
+                assertive.data.uk/0.0-2 (E), assertive.data.us/0.0-2 (E), assertive.data/0.0-3 (E),
+                assertive.datetimes/0.0-3 (E), assertive.files/0.0-2 (E), assertive.matrices/0.0-2 (E), 
+                assertive.models/0.0-2 (E), assertive.numbers/0.0-2 (E), assertive.properties/0.0-4 (E), 
+                assertive.reflection/0.0-5 (E), assertive.sets/0.0-3 (E), assertive.strings/0.0-3 (E), 
+                assertive.types/0.0-3 (E), assertive/0.3-6 (E), assertthat/0.2.1 (E), AUC/0.3.0 (E), 
 
 2. Load an R module
 -------------------
@@ -297,34 +297,34 @@ from the terminal, we can start the R interpreter like this:
 
 .. code-block:: console
 
-	R
+    R
 
 .. admonition:: How does the output look like ?
-	:class: dropdown
+    :class: dropdown
 
     It will look similar to this:
 
     .. code-block:: console
      
-		R version 4.0.4 (2021-02-15) -- "Lost Library Book"
-		Copyright (C) 2021 The R Foundation for Statistical Computing
-		Platform: x86_64-pc-linux-gnu (64-bit)
+        R version 4.0.4 (2021-02-15) -- "Lost Library Book"
+        Copyright (C) 2021 The R Foundation for Statistical Computing
+        Platform: x86_64-pc-linux-gnu (64-bit)
 
-		R is free software and comes with ABSOLUTELY NO WARRANTY.
-		You are welcome to redistribute it under certain conditions.
-		Type 'license()' or 'licence()' for distribution details.
+        R is free software and comes with ABSOLUTELY NO WARRANTY.
+        You are welcome to redistribute it under certain conditions.
+        Type 'license()' or 'licence()' for distribution details.
 
-		Natural language support but running in an English locale
+        Natural language support but running in an English locale
 
-		R is a collaborative project with many contributors.
-		Type 'contributors()' for more information and
-		'citation()' on how to cite R or R packages in publications.
+        R is a collaborative project with many contributors.
+        Type 'contributors()' for more information and
+        'citation()' on how to cite R or R packages in publications.
 
-		Type 'demo()' for some demos, 'help()' for on-line help, or
-		'help.start()' for an HTML browser interface to help.
-		Type 'q()' to quit R.
+        Type 'demo()' for some demos, 'help()' for on-line help, or
+        'help.start()' for an HTML browser interface to help.
+        Type 'q()' to quit R.
 
-		> 
+        > 
 
 .. warning::
 
@@ -345,13 +345,13 @@ Within the R interpreter we can give R commands:
 
 .. code-block:: rconsole
 
-	print("Hello world")
+    print("Hello world")
 
 Which will give the output:
 
 .. code-block:: rconsole
 
-	[1] "Hello world"
+    [1] "Hello world"
 
 From within the R interpreter, we can check which packages are installed using:
 
@@ -360,29 +360,29 @@ From within the R interpreter, we can check which packages are installed using:
     installed.packages()
 
 .. admonition:: How does the output look like ?
-	:class: dropdown
+    :class: dropdown
 
-		Output will look similar to this:
+        Output will look similar to this:
 
-		.. code-block:: console
+        .. code-block:: console
 
-						  Package      LibPath
-			base       "base"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-			boot       "boot"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-			class      "class"      "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-			cluster    "cluster"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-			codetools  "codetools"  "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-			compiler   "compiler"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-			datasets   "datasets"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-			foreign    "foreign"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-			graphics   "graphics"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-			grDevices  "grDevices"  "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-			grid       "grid"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-			KernSmooth "KernSmooth" "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-			lattice    "lattice"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-			MASS       "MASS"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-			Matrix     "Matrix"     "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
-			...
+                          Package      LibPath
+            base       "base"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+            boot       "boot"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+            class      "class"      "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+            cluster    "cluster"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+            codetools  "codetools"  "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+            compiler   "compiler"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+            datasets   "datasets"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+            foreign    "foreign"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+            graphics   "graphics"   "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+            grDevices  "grDevices"  "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+            grid       "grid"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+            KernSmooth "KernSmooth" "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+            lattice    "lattice"    "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+            MASS       "MASS"       "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+            Matrix     "Matrix"     "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
+            ...
 
 From within the R interpreter, we can load a package like:
 
@@ -394,13 +394,13 @@ To quit the R interpreter, use the ``quit`` function:
 
 .. code-block:: rconsole
 
-	quit()
+    quit()
 
 You will get the question:
 
 .. code-block:: rconsole
 
-	Save workspace image? [y/n/c]: 
+    Save workspace image? [y/n/c]: 
 
 where you type ``n`` until you know what that is :-)
 
@@ -479,8 +479,8 @@ For this course, we recommend these versions of R:
 
         Load the module for the R version recommended to use in this course:
 
-		- HPC2N: R version 4.1.1
-		- UPPMAX: R version 4.1.2
+        - HPC2N: R version 4.1.1
+        - UPPMAX: R version 4.1.2
 
     .. tab:: UPPMAX
 
@@ -575,44 +575,44 @@ Exercise 3.3: load a package
 
 
 
-	     
+         
       .. tab:: HPC2N
    
             This is for Kebnekaise.
           
-		      ...
-		      
-		      b-an01 [~]$ module load GCC/10.2.0  OpenMPI/4.0.5 R/4.1.2
-		      b-an01 [~]$ R
-		      
-		      R version 4.1.2 (2021-02-15) -- "Lost Library Book"
-		      Copyright (C) 2021 The R Foundation for Statistical Computing
-		      Platform: x86_64-pc-linux-gnu (64-bit)
-		      
-		      R is free software and comes with ABSOLUTELY NO WARRANTY.
-		      You are welcome to redistribute it under certain conditions.
-		      Type 'license()' or 'licence()' for distribution details.
-		      
-		        Natural language support but running in an English locale
-			
-		      R is a collaborative project with many contributors.
-		      Type 'contributors()' for more information and
-		      'citation()' on how to cite R or R packages in publications.
-		      
-		      Type 'demo()' for some demos, 'help()' for on-line help, or
-		      'help.start()' for an HTML browser interface to help.
-		      Type 'q()' to quit R.
-		      
-		      > installed.packages()
-		      ... 
-		      
-		      > library("parallel")
-		      > quit()
-		      Save workspace image? [y/n/c]: 
+              ...
+              
+              b-an01 [~]$ module load GCC/10.2.0  OpenMPI/4.0.5 R/4.1.2
+              b-an01 [~]$ R
+              
+              R version 4.1.2 (2021-02-15) -- "Lost Library Book"
+              Copyright (C) 2021 The R Foundation for Statistical Computing
+              Platform: x86_64-pc-linux-gnu (64-bit)
+              
+              R is free software and comes with ABSOLUTELY NO WARRANTY.
+              You are welcome to redistribute it under certain conditions.
+              Type 'license()' or 'licence()' for distribution details.
+              
+                Natural language support but running in an English locale
+            
+              R is a collaborative project with many contributors.
+              Type 'contributors()' for more information and
+              'citation()' on how to cite R or R packages in publications.
+              
+              Type 'demo()' for some demos, 'help()' for on-line help, or
+              'help.start()' for an HTML browser interface to help.
+              Type 'q()' to quit R.
+              
+              > installed.packages()
+              ... 
+              
+              > library("parallel")
+              > quit()
+              Save workspace image? [y/n/c]: 
 
          
-	    As you can see above, the main differences here compared to Rackham is that you need to load some prerequisites before you can load R and that doing ``ml spider R/<version>`` will give you a long list of "extensions" which is what the module system calls the system installed R packages. 
- 	    
+        As you can see above, the main differences here compared to Rackham is that you need to load some prerequisites before you can load R and that doing ``ml spider R/<version>`` will give you a long list of "extensions" which is what the module system calls the system installed R packages. 
+         
 
 Exercise 4: run an R script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -637,8 +637,8 @@ Exercise 4: run an R script
     .. code-block:: sh
     
         1) Load R version 4.1.X (if you have not done so already)
-	2) Run the small R script called ``hello.R``, using ``Rscript``
-	
+    2) Run the small R script called ``hello.R``, using ``Rscript``
+    
     Remember to check if a module you are loading has prerequisites, and load those first if it does. In this case it depends on whether you do the exercises on Kebnekaise or Rackham. 
 
    .. admonition:: "hello.R" (it can also be found under "R" in the "Exercises" directory on the course GitHub repository (https://github.com/UPPMAX/R-python-julia-HPC). 
@@ -658,22 +658,22 @@ Exercise 4: run an R script
             This is for Rackham.
           
             .. code-block:: console
-	    
-	       [bbrydsoe@rackham2 bbrydsoe]$ Rscript hello.R
-	       [1] "Hello World!"
-	       [bbrydsoe@rackham2 bbrydsoe]$
+        
+           [bbrydsoe@rackham2 bbrydsoe]$ Rscript hello.R
+           [1] "Hello World!"
+           [bbrydsoe@rackham2 bbrydsoe]$
 
       .. tab:: HPC2N
  
             This is for Kebnekaise. 
           
             .. code-block:: sh
-	    
-	       b-an01 [~]$ Rscript hello.R
-	       [1] "Hello World!"
-	       b-an01 [~]$ 
+        
+           b-an01 [~]$ Rscript hello.R
+           [1] "Hello World!"
+           b-an01 [~]$ 
 
-	    
+        
       As you can see, it is working the same. 
 
 .. type-along::
