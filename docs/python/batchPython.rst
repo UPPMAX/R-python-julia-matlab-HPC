@@ -228,6 +228,8 @@ Send the script to the batch:
 
    $ sbatch <batch script>
 
+Note that the slurm output file will be empty on success, and it will just create the file ``tipsplot.png``.
+
 GPU code
 ''''''''
 
