@@ -128,7 +128,7 @@ Here is how to find the modules that load different versions of R:
  
             module spider R
 
-        .. admonition:: How does the output look like ?
+        .. admonition:: How does the output look like?
             :class: dropdown
 
             Output at HPC2N as of 15 October 2023:
@@ -178,9 +178,9 @@ Here is how to find out how to load an R module of a specific version:
             module spider R/<version>
 
         where ``<version>`` is an R version, in ``major.minor.patch`` format, 
-        for example, ``module spider R/4.1.2``
+        for example, ``module spider R/4.1.2``.
 
-        .. admonition:: How does the output look like ?
+        .. admonition:: How does the output look like?
             :class: dropdown
 
             Your output will look similar to this:
@@ -289,8 +289,19 @@ you should always load a specific version of a module.
 3. Use the R interpreter
 ------------------------
 
+Now you have loaded a module for a specific version of R,
+from the terminal, we can use the R interpreter.
+
+Here we show:
+
+- how to start the interpreter
+- how to do a trivial R thing
+- how to see the list of installed R packages
+- how to load an R package
+- how to quit the interpreter
+
 3.1. Start the R interpreter
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now you have loaded a module for a specific version of R,
 from the terminal, we can start the R interpreter like this:
@@ -326,6 +337,9 @@ from the terminal, we can start the R interpreter like this:
 
         > 
 
+3.2 how to do a trivial R thing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. warning::
 
     Only do lightweight things!
@@ -352,6 +366,9 @@ Which will give the output:
 .. code-block:: rconsole
 
     [1] "Hello world"
+
+3.3. how to see the list of installed R packages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 From within the R interpreter, we can check which packages are installed using:
 
@@ -384,11 +401,17 @@ From within the R interpreter, we can check which packages are installed using:
             Matrix     "Matrix"     "/sw/apps/R/x86_64/4.0.4/rackham/lib64/R/library"
             ...
 
+3.4. how to load an R package
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 From within the R interpreter, we can load a package like:
 
 .. code-block:: console
 
     library(ggplot2)
+
+3.5. how to quit the interpreter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To quit the R interpreter, use the ``quit`` function:
 
