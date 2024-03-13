@@ -64,7 +64,7 @@ HPC2N and UPPMAX do differ how their module systems show results when searching 
 - HPC2N: a module is hidden from search until a prerequisite module is loaded
 - UPPMAX: when searching for a module, one can always see all modules
 
-Here is how to find the R modules of all versions:
+Here is how to find the modules that load different versions of R:
 
 .. tabs::
 
@@ -174,12 +174,11 @@ Here is how to find out how to load an R module of a specific version:
         To see how to load a specific version of R, including the prerequisites, do 
 
         .. code-block:: console
-   
-            $ module spider R/<version>
 
-         where ``<version>`` is an R version, in ``major.minor.patch`` format, 
-         for example, ``module spider R/4.1.2``
+            module spider R/<version>
 
+        where ``<version>`` is an R version, in ``major.minor.patch`` format, 
+        for example, ``module spider R/4.1.2``
 
     .. tab:: HPC2N
    
@@ -187,38 +186,51 @@ Here is how to find out how to load an R module of a specific version:
 
         .. code-block:: console
    
-            $ module spider R/<version>
+            module spider R/<version>
 
-         where ``<version>`` is an R version, in ``major.minor.patch`` format, 
-         for example, ``module spider R/4.1.2``
-
+        where ``<version>`` is an R version, in ``major.minor.patch`` format, 
+        for example, ``module spider R/4.1.2``
 
 2. Load an R module
 -------------------
 
-- For reproducibility reasons, you should always load a specific version of a module instead of just the default version
-- Many modules have prerequisite modules which needs to be loaded first (at HPC2N this is also the case for the R modules). When doing ``module spider <module>/<version>`` you will get a list of which other modules needs to be loaded first
-
-!!! important
-
-  - For reproducibility, we recommend ALWAYS loading a specific module instead of using the default version! 
-  -  For this course, we recommend using ``R/4.1.1`` on UPPMAX clusters and ``4.1.2`` on Kebnekaise
+When you have a found a modules to load your favorite version of R,
+here is how you load that module:
 
 .. tabs::
 
     .. tab:: UPPMAX
 
-        To load version 4.1.1, do:
+        To load an R module of a specific version, do:
 
         .. code-block:: console
 
-            module load R/4.1.1        
+            module load R/<version>
+
+        where ``<version>`` is an R version, in ``major.minor.patch`` format, 
+        for example, ``module load R/4.1.1``
 
     .. tab:: HPC2N
 
+        After having done ``module spider R/4.1.2``,
+        you will get a list of which other modules needs to be loaded first,
+        resulting in:
+
         .. code-block:: console
 
-            module load GCC/10.2.0 OpenMPI/4.0.5 R/4.1.2
+            module load GCC/10.2.0 OpenMPI/4.0.5 R/<version>
+
+        where ``<version>`` is an R version, in ``major.minor.patch`` format, 
+        for example, ``module load GCC/10.2.0 OpenMPI/4.0.5 R/4.1.2``
+
+
+If you care about reproducibility of your programming environments and R scripts,
+you should always load a specific version of a module.
+
+3. Run the R interpreter
+------------------------
+
+- For this course, we recommend using ``R/4.1.1`` on UPPMAX clusters and ``4.1.2`` on Kebnekaise
 
 .. warning::
 
@@ -227,13 +239,10 @@ Here is how to find out how to load an R module of a specific version:
    + ALWAYS use R module
 
 
-3. Run the R interpreter
-------------------------
-
 .. type-along::
 
-   - After loading the R module (and its prerequisites), you start R like this:
-	- The output from below is from an older version
+    - After loading the R module (and its prerequisites), you start R like this:
+    - The output from below is from an older version
 
 Exit R with ``q()`` in the R prompt. Decide if you want to save your workspace image or not. 
 
