@@ -593,6 +593,7 @@ Exercise 3.3: load a package
         .. code-block:: console
 
             library(parallel)
+
          
 Exercise 4: run an R script
 ---------------------------
@@ -689,59 +690,22 @@ Exercise 4.2: run
             [1] "Hello World!"
             b-an01 [~]$ 
 
-Module system cheat sheet
--------------------------
-
-- See which modules are currently loaded: ``module list``
-- See which modules exists: ``module spider`` or ``module spider``
-- Find module versions for a particular software: ``module spider <software>``
-- Modules depending only on what is currently loaded: ``module avail``
-- Load a module: ``module load <module>/<version>``
-- Unload a module: ``module unload <module>/<version>``
-- More information about a module: ``module show <module>/<version>``
-- Unload all modules except the 'sticky' modules: ``module purge``
-
-R workflow
-----------
-
-.. admonition:: Workflow
-
-   In addition to loading R, you will also often need to (install and) use own-installed R packages. The work-flow would be something like this: 
-    
-   1) Load R and prerequisites: ``module load <pre-reqs> R/<version>``
-   2) Check which extensions your R version has. They are generally listed under "Extensions" when you do: 
-   
-      - ``module spider R/<version>``. 
-      - Otherwise, you can do ``installed.packages()`` from within R. 
-      - NOTE that the latter option generates a LOT of output, but also gives versions of the R packages (Extensions, as they are called by the module system). 
-      
-   3) Install any extra R packages you need (optional): 
-    
-      - Automatical download and install: ``R --quiet --no-save --no-restore -e "install.packages('<r-package>', repos='http://ftp.acc.umu.se/mirror/CRAN/')"`` 
-      - Manual download and install: ``R CMD INSTALL -l <path-to-R-package>/R-package.tar.gz``
-    
-   4) 
-    
-      - Start R: ``R``
-      - run ``Rscript <program.R>``
-      - batch job for R program: ``sbatch <my-R-batch-job.sh>``
-
-   - Installed R packages can be accessed within R with ``library("package")`` as usual. 
-
-   - The command ``installed.packages()`` given within R will list the available packages to import. 
-
-   - More about installing your own R packages to follow in later sections of the course! 
-
 Conclusions
 -----------
 
 .. keypoints::
 
-    You need to:
+    One needs to:
 
-   - first find a module to run R
-   - load one or more modules to run R. 
-       - if you care about reproducibility, use explicit versions
-   - start the R interpreter with ``R``
-   - run R scripts scripts with ``Rscript``
+    - first find a module to run R
+    - load one or more modules to run R. 
+        - if you care about reproducibility, use explicit versions
+    - start the R interpreter with ``R``
+    - run R scripts scripts with ``Rscript``
 
+    However:
+
+    - we can only use the R packages installed with the R module
+    - we do not work in an isolated environment
+
+    This will be discussed in other sessions.
