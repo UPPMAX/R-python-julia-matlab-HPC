@@ -96,7 +96,18 @@ Here is how to find out how to load an R module of a specific version:
  
             $ module spider R
 
-        .. admonition:: How does the output look like?
+        .. admonition:: How does the output look like A?
+        :class: dropdown
+
+            Text here
+
+        .. admonition:: How does the output look like B?
+            :class: dropdown
+
+            Text here
+
+
+        .. admonition:: How does the output look like C?
 
             :class: dropdown
     
