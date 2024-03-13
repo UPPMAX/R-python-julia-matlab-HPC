@@ -74,7 +74,7 @@ Here is how to find the modules that load different versions of R:
 
         .. code-block:: console
  
-           $ module spider R
+           module spider R
 
         .. admonition:: How does the output look like ?
             :class: dropdown
@@ -126,7 +126,7 @@ Here is how to find the modules that load different versions of R:
 
         .. code-block:: console
  
-            $ module spider R
+            module spider R
 
         .. admonition:: How does the output look like ?
             :class: dropdown
