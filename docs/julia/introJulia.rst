@@ -29,7 +29,7 @@ Introduction Julia
 .. admonition:: Julia Exercise files
 
     - On HPC2N, you can copy the Julia exercises in a tarball 
-      from ``/proj/nobackup/hpc2n2024-025/Exercises.tar.gz``
+      from ``/proj/nobackup/hpc2n2024-025/juliaExercises.tar.gz``
     - On UPPMAX you can copy the exercises in a tarball 
       from ``/proj/naiss2024-22-107/juliaExercises.tar``
 
@@ -39,7 +39,7 @@ Introduction Julia
 
     .. code-block:: bash
 
-       cd /proj/naiss2024-22-107/<your-name>
+       cd /proj/naiss2024-22-107/<your-name>   # on Kebnekaise: cd /proj/nobackup/hpc2n2024-025/<your-name>
        cp ../juliaExercises.tar .
        tar xvf juliaExercises.tar
        tree julia
