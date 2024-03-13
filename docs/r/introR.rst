@@ -39,7 +39,7 @@ Introduction R
     - install R packages from CRAN
     - see how to install other R packages yourself
     - start batch jobs 
-    - run RStudion
+    - run RStudio
 
     on HPC2N or UPPMAX
 
