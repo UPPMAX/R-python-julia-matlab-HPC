@@ -37,100 +37,120 @@ Introduction
 
 .. mermaid:: load_run_r_overview.mmd 
 
+To allow us to work with R on an HPC cluster, we will:
+
+- find the module to be able to run R, 
+  so we know which versions of R we can pick from
+- load the module to be able to run R,
+  so we can actually run R
+- run the R interpreter, so we can test/develop R code
+- run an R script from the command-line, so we can run R code
+
+In this session, we will follow this typical user journey.
+
 1. Find an R module
 -------------------
 
-At both UPPMAX and HPC2N we call the applications available via the module system modules. 
-    - https://www.uppmax.uu.se/resources/software/module-system/ 
-    - https://www.hpc2n.umu.se/documentation/environment/lmod 
-   
+To be able to work with R on an HPC cluster, 
+we will need to find a module that loads a specific version of R.
 
-.. admonition:: Short cheat sheet
-    :class: dropdown 
-    
-    - See which modules exists: ``module spider`` or ``ml spider``
-    - Find module versions for a particular software: ``module spider <software>``
-    - Modules depending only on what is currently loaded: ``module avail`` or ``ml av``
-    - See which modules are currently loaded: ``module list`` or ``ml``
-    - Load a module: ``module load <module>/<version>`` or ``ml <module>/<version>``
-    - Unload a module: ``module unload <module>/<version>`` or ``ml -<module>/<version>``
-    - More information about a module: ``module show <module>/<version>`` or ``ml show <module>/<version>``
-    - Unload all modules except the 'sticky' modules: ``module purge`` or ``ml purge``
-    
-.. warning::
-   Note that the module systems at UPPMAX and HPC2 are slightly different. While all modules at UPPMAX not directly related to bio-informatics are shown by ``ml avail``, most modules at HPC2N are hidden until one has loaded a prerequisite like the compiler ``GCC``.
+HPC2N and UPPMAX use the same module system:
+
+- `the HPC2N documentation of the module system <https://www.hpc2n.umu.se/documentation/environment/lmod>`_
+- `the UPPMAX documentation of the module system <http://docs.uppmax.uu.se/cluster_guides/modules/>`_
+
+HPC2N and UPPMAX do differ how their module systems show results when searching for a module:
+
+- HPC2N: a module is hidden from search until a prerequisite module is loaded
+- UPPMAX: when searching for a module, one can always see all modules
+
+Here is how to find the R modules of all versions:
 
 .. tabs::
 
-   .. tab:: UPPMAX
+    .. tab:: UPPMAX
 
-     Check all available R versions with:
+        From a terminal, do:
 
-      .. code-block:: console
+        .. code-block:: console
  
            $ module spider R
 
-   .. tab:: HPC2N
+    .. tab:: HPC2N
    
-      Check all available version R versions with:
+        From a terminal, do:
 
-      .. code-block:: console
+        .. code-block:: console
  
-         $ module spider R
-      
-      To see how to load a specific version of R, including the prerequisites, do 
+            $ module spider R
 
-      .. code-block:: console
+Here is how to find out how to load an R module of a specific version:
+
+.. tabs::
+
+    .. tab:: UPPMAX
+
+        Check all available R versions with:
+
+        .. code-block:: console
+ 
+            $ module spider R
+
+        .. admonition:: How does the output look like?
+
+            :class: dropdown
+    
+                The output will look similar to this output
+                (run at UPPMAX on October 15 2023):
+
+                .. code-block::  tcl
+
+                    [bbrydsoe@rackham3 bbrydsoe]$ module spider R
+
+                    ----------------------------------------------------------------------------
+                    R:
+                    ----------------------------------------------------------------------------
+                       Versions:
+                          R/3.0.2
+                          R/3.2.3
+                          R/3.3.2
+                          R/3.4.0
+                          R/3.4.3
+                          R/3.5.0
+                          R/3.5.2
+                          R/3.6.0
+                          R/3.6.1
+                          R/4.0.0
+                          R/4.0.4
+                          R/4.1.1
+                          R/4.2.1
+                          R/4.3.1
+                       Other possible modules matches:
+                          454-dataprocessing  ADMIXTURE  ANTLR  ARCS  ARC_assembler  ARPACK-NG  ..
+                    .
+                    ----------------------------------------------------------------------------
+                      To find other possible module matches execute:
+            
+                          $ module -r spider '.*R.*'
+
+                    ----------------------------------------------------------------------------
+                      For detailed information about a specific "R" package (including how to load the modules) use the module's full name.
+                      Note that names that have a trailing (E) are extensions provided by other modules.
+                      For example:
+            
+                         $ module spider R/4.2.1
+                    ----------------------------------------------------------------------------
+
+    .. tab:: HPC2N
    
-         $ module spider R/<version>
+        To see how to load a specific version of R, including the prerequisites, do 
 
-      Example for R 4.1.2 (recommended version)
+        .. code-block:: console
+   
+            $ module spider R/<version>
 
-      .. code-block:: console
-
-         $ module spider R/4.1.2 
-
-.. admonition:: Output at UPPMAX as of October 15 2023
-   :class: dropdown
-    
-       .. code-block::  tcl
-    
-          [bbrydsoe@rackham3 bbrydsoe]$ module spider  R
-
-          ----------------------------------------------------------------------------
-          R:
-          ----------------------------------------------------------------------------
-             Versions:
-                R/3.0.2
-                R/3.2.3
-                R/3.3.2
-                R/3.4.0
-                R/3.4.3
-                R/3.5.0
-                R/3.5.2
-                R/3.6.0
-                R/3.6.1
-                R/4.0.0
-                R/4.0.4
-                R/4.1.1
-                R/4.2.1
-                R/4.3.1
-             Other possible modules matches:
-                454-dataprocessing  ADMIXTURE  ANTLR  ARCS  ARC_assembler  ARPACK-NG  ..
-          .
-          ----------------------------------------------------------------------------
-            To find other possible module matches execute:
-            
-                $ module -r spider '.*R.*'
-
-          ----------------------------------------------------------------------------
-            For detailed information about a specific "R" package (including how to load the modules) use the module's full name.
-            Note that names that have a trailing (E) are extensions provided by other modules.
-            For example:
-            
-               $ module spider R/4.2.1
-          ----------------------------------------------------------------------------
-
+         where ``<version>`` is an R version, in ``major.minor.patch`` format, 
+         for example, ``module spider R/4.1.2``
 
 .. admonition:: Output at HPC2N as of 15 October 2023
     :class: dropdown
@@ -222,12 +242,12 @@ At both UPPMAX and HPC2N we call the applications available via the module syste
 3. Run the R interpreter
 ------------------------
 
-Exit R with ``q()`` in the R prompt. Decide if you want to save your workspace image or not. 
-
 .. type-along::
 
    - After loading the R module (and its prerequisites), you start R like this:
 	- The output from below is from an older version
+
+Exit R with ``q()`` in the R prompt. Decide if you want to save your workspace image or not. 
 
 
    .. code-block:: console
@@ -565,6 +585,18 @@ Exercise 3: run an R script
 	    
       As you can see, it is working the same. 
       
+
+Module system cheat sheet
+-------------------------
+
+- See which modules are currently loaded: ``module list``
+- See which modules exists: ``module spider`` or ``module spider``
+- Find module versions for a particular software: ``module spider <software>``
+- Modules depending only on what is currently loaded: ``module avail``
+- Load a module: ``module load <module>/<version>``
+- Unload a module: ``module unload <module>/<version>``
+- More information about a module: ``module show <module>/<version>``
+- Unload all modules except the 'sticky' modules: ``module purge``
 
 Conclusions
 -----------
