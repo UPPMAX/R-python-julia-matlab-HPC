@@ -700,7 +700,7 @@ Conclusions
 
     - first find a module to run R
     - load one or more modules to run R. 
-        - if you care about reproducibility, use explicit versions
+    - if one cares about reproducibility, use explicit versions of modules
     - start the R interpreter with ``R``
     - run R scripts scripts with ``Rscript``
 
@@ -710,4 +710,4 @@ Conclusions
     - we can only use the R packages installed with the R module
     - we do not work in an isolated environment
 
-    This will be discussed in other sessions.
+    These will be discussed in other sessions.
