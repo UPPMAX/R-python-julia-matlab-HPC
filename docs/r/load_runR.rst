@@ -188,18 +188,18 @@ Here is how to find out how to load an R module of a specific version:
             .. code-block:: console
 
                 [bbrydsoe@rackham3 bbrydsoe]$ module load spider R/4.1.1
-
+                
                 ----------------------------------------------------------------------------
                  R: R/4.1.1
                 ----------------------------------------------------------------------------
-
+                
                     This module can be loaded directly: module load R/4.1.1
-
+                
                 Help:
                     R - use R Version 4.1.1
-                 
+                
                     https://www.r-project.org
-                 
+                
                   Many, many R and Bioconductor packages are available in the module 
                   'R_packages/4.1.2'
 
