@@ -17,7 +17,7 @@ However, we recommend you to use a RStudio module.
 
 .. warning::
 
-   We recommend ThinLinc becasue the graphics is more effective there!
+   We recommend ThinLinc because the graphics is more effective there!
 
    **Using ThinLinc**
 
