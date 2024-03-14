@@ -237,7 +237,7 @@ Passing Interface (MPI). In general, MPI requires refactoring of your code.
 
          - Dask divides arrays into many small pieces (chunks), as small as necessary to fit it into memory. 
          - Operations are delayed (lazy computing) e.g. tasks are queue and no computation is performed until 
-          you actually ask values to be computed (for instance print mean values). 
+           you actually ask values to be computed (for instance print mean values). 
          - Then data is loaded into memory and computation proceeds in a streaming fashion, block-by-block.
 
 
