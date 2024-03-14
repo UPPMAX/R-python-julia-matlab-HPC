@@ -161,8 +161,9 @@ Example **Type along**
 
    **The script** 
    Adding two numbers from user input (``serial_sum.R``)
-   - You will find it in the exercise directory ``exercises/r/`` so go there with ``cd ``.
-   - Otherwise, use your favourite editor and add the text below and save as ``serial_sum.R``
+   
+   - You will find it in the exercise directory ``exercises/r/`` so go there with ``cd``.
+   - Otherwise, use your favourite editor and add the text below and save as ``serial_sum.R``.
    
          
    .. code-block:: R
