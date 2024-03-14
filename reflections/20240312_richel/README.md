@@ -1,5 +1,9 @@
 # Reflection
 
+ * Teaching day: 2023-03-12
+ * Topic: Python
+ * Written on 2023-03-12
+
 I prepared well for the lessons, as I remembered from the
 previous course iteration that my material was not blended
 in with the others. This iteration, my material was 100% part of the
