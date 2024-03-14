@@ -4,18 +4,16 @@ Interactive work on the compute nodes
 .. note::
 
    - It is possible to run R directly on the login (including ThinLinc) nodes.
-   - But this should *only* be done for shorter jobs or jobs that do not use a
-     lot of resources, as the login nodes can otherwise become slow for all
-     users. 
-   - If you want to work interactively with your code or data, you should start
-     an interactive session.
-   - If you rather will run a script which won't use any interactive user input
-     while running, you should instead start a batch job, see previous session.
+      - *only* be done for short and small jobs 
+      - otherwise become slow for all users. 
+   - If you want to work interactively with your code or data, you should 
+      - start an **interactive session**.
+   - If you rather will run a script which won't use any interactive user input while running, you should
+      - start a **batch job, see previous session.
    
 .. questions::
 
-   - How to reach the calculation nodes
-   - How do I proceed to work interactively?
+   - How do I proceed to work interactively on a compute node
    
 .. objectives:: 
 
@@ -37,25 +35,11 @@ Overview of the HPC2N system
 
 .. mermaid:: ../mermaid/kebnekaise.mmd
 
-
-
-There are several ways to run R interactively
-
-- Directly on the login nodes: **only** do this for short jobs that do not take
-  a lot of resources. E.g. a simple visualization.
-- As an interactive job on the computer nodes, launched via the batch system
-- Using Rstudio (more on this later)
-
-
 General
 -------
 
 In order to run interactively, you need to have compute nodes allocated to run
 on, and this is done through the batch system.  
-
-Because you will have to wait until the nodes are allocated, and because you
-cannot know when this happens, this is not usually a recommended way to run
-R, but it is possible. 
 
 .. warning::
 
@@ -70,7 +54,7 @@ R "interactively" on the compute nodes
 -------------------------------------------
 
 To run interactively, you need to allocate resources on the cluster first. You
-can use the command salloc to allow interactive use of resources allocated to
+can use the command ``salloc``/``intereactive`` to allow interactive use of resources allocated to
 your job. When the resources are allocated, you need to preface commands with
 ``srun`` in order to run on the allocated nodes instead of the login node. 
       
@@ -106,21 +90,7 @@ You can now run R scripts on the allocated resources directly instead of waiting
       your batch job to return a result. This is an advantage if you want to test your R 
       script or perhaps figure out which parameters are best.
                   
-
-.. tip::
-   
-   If you haven´t done already:
-   
-   .. code-block:: console
-   
-      $ git clone https://github.com/UPPMAX/R-python-julia-HPC.git                 
-   
-   or update, standing in the ``R-python-julia-HPC`` directory:
-   
-   .. code-block:: console
-   
-      $ git pull                
-   
+ 
 
 Example **Type along**
 ######################
@@ -191,6 +161,9 @@ Example **Type along**
 
    **The script** 
    Adding two numbers from user input (``serial_sum.R``)
+   - You will find it in the exercise directory ``exercises/r/`` so go there with ``cd ``.
+   - Otherwise, use your favourite editor and add the text below and save as ``serial_sum.R``
+   
          
    .. code-block:: R
       
