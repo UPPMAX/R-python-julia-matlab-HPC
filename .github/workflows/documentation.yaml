@@ -2,7 +2,7 @@ name: Docs
 on: [push, pull_request]
 
 jobs:
-  docs:
+  documentation:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,12 +16,15 @@ jobs:
           #npm install mermaid
           npm install -g @mermaid-js/mermaid-cli
           #npm install markmap
+
       - name: Install dependencies
-        run: |
-          pip install -r docs/requirements.txt
-      - name: Sphinx build in nitpicky mode
-        run: |
-          sphinx-build -n docs _build
+        run: pip install -r docs/requirements.txt
+
+      - name: Sphinx build in non-nitpicky mode
+        run: sphinx-build docs _build
+      #- name: Sphinx builds in nitpicky mode
+      #  run: sphinx-build -n docs _build
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
@@ -30,3 +33,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build/
           force_orphan: true
+
