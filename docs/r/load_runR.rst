@@ -530,7 +530,7 @@ For this course, we recommend these versions of R:
 
         .. code-block:: console
 
-            module load GCC/11.2.0 OpenMPI/4.11 R/4.1.2
+            module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2
 
 Exercise 3: use the R interpreter
 ---------------------------------
