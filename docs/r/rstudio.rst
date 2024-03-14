@@ -33,7 +33,7 @@ However, we recommend you to use a RStudio module.
    - Remember to have X11 installed!
    - On Mac
 
-      - install XQUARTZ
+      - install XQuartz
 
    - On Windows
 
