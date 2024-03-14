@@ -103,7 +103,7 @@ You can now run R scripts on the allocated resources directly instead of waiting
    - Remember to have X11 installed!
    - On Mac
 
-      - install XQUARTZ
+      - install XQuartz
 
    - On Windows
 
