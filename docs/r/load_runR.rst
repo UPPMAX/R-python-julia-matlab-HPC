@@ -373,7 +373,7 @@ Which will give the output:
     [1] "Hello world"
 
 3.3. how to see the list of installed R packages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 From within the R interpreter, we can check which packages are installed using:
 

@@ -638,7 +638,7 @@ Exercise 3.7: deactivate the virtual environment
           deactivate
 
 Conclusion
----------
+----------
 
 .. keypoints::
 
