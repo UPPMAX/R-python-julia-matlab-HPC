@@ -85,7 +85,7 @@ Here is how to find the modules that load different versions of R:
             The output will look similar to this output
             (run at UPPMAX on October 15 2023):
 
-            .. code-block::  tcl
+            .. code-block::
 
                 [bbrydsoe@rackham3 bbrydsoe]$ module spider R
 
