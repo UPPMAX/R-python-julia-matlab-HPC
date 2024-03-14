@@ -179,7 +179,7 @@ Exercise 1.1: load the modules needed
           module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07 matplotlib/3.7.2
 
 Exercise 1.2: create the virtual environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -529,7 +529,7 @@ Installing these packages takes around 13 minutes.
 
    .. tab:: UPPMAX
 
-      Use `any text editor available on UPPMAX<http://docs.uppmax.uu.se/software/text_editors/>`_.
+      Use `any text editor available on UPPMAX <http://docs.uppmax.uu.se/software/text_editors/>`_.
 
    .. tab:: HPC2N
 
