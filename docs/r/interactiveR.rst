@@ -134,7 +134,6 @@ Example **Type along**
             Waiting for job 29556505 to start...
             Starting job now -- you waited for 1 second.
           
-            [bjornc@r484 ~]$ module load R/4.1.1
 
          Let us check that we actually run on the compute node: 
 
@@ -178,6 +177,14 @@ Example **Type along**
       
    Running a script
    ''''''''''''''''
+
+   .. warning::
+
+      - You need to reload all modules you used on the login node!!!
+
+
+   [bjornc@r484 ~]$ module load R/4.1.1
+
 
    **The script** 
    Adding two numbers from user input (``serial_sum.R``)
