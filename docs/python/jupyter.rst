@@ -322,7 +322,7 @@ If you need extra Python modules and these modules are already installed at HPC2
    #SBATCH --time=01:00:00
 
    # Clear the environment from any previously loaded modules
-module purge > /dev/null 2>&1
+   module purge > /dev/null 2>&1
 
    # Load the module environment suitable for the job
    module load GCC/12.3.0 JupyterLab/4.0.5 SciPy-bundle/2023.07 matplotlib/3.7.2

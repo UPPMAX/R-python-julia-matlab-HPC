@@ -205,7 +205,7 @@ Exercise 1.2: create the virtual environment
 
 
 Exercise 1.3: activate the virtual environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -231,7 +231,7 @@ Exercise 1.3: activate the virtual environment
 
 
 Exercise 1.4: install Python packages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -252,7 +252,7 @@ Exercise 1.4: install Python packages
           pip install --no-cache-dir --no-build-isolation spacy seaborn 
 
 Exercise 1.5: check if the Python packages are installed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -285,7 +285,7 @@ Exercise 1.5: check if the Python packages are installed
             pip list --user
 
 Exercise 1.6: use the virtual environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -314,7 +314,7 @@ Exercise 1.6: use the virtual environment
          >>> 
 
 Exercise 1.7: deactivate the virtual environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -362,7 +362,7 @@ by using the ``numba`` and ``PyTorch`` Python packages.
 Because the structure is the same as Exercise 1, see exercise 1 for details.
 
 Exercise 2.1: load the modules needed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Here we need an older Python module, 
 as that is what available on the Snowy computer cluster:
@@ -372,7 +372,7 @@ as that is what available on the Snowy computer cluster:
     module load python/3.9.5
 
 Exercise 2.2: create the virtual environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -381,7 +381,7 @@ Exercise 2.2: create the virtual environment
 where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl/sven/python/Example-gpu``.
 
 Exercise 2.3: activate the virtual environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -390,7 +390,7 @@ Exercise 2.3: activate the virtual environment
 where ``[username]`` is your UPPMAX username, for example ``source /proj/r-py-jl/sven/python/Example-gpu/bin/activate``.
 
 Exercise 2.4: install Python packages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Installing these packages takes around 6 minutes.
 
@@ -401,7 +401,7 @@ Installing these packages takes around 6 minutes.
     pip install --upgrade numpy scipy numba torch
 
 Exercise 2.5: check if the Python packages are installed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. prompt:: 
     :language: bash
@@ -410,12 +410,12 @@ Exercise 2.5: check if the Python packages are installed
     pip list
 
 Exercise 2.6: use the virtual environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Not now :-)
 
 Exercise 2.7: deactivate the virtual environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. prompt:: 
     :language: bash
@@ -447,7 +447,7 @@ as we have done this earlier, the answers will now be hidden :-)
 .. mermaid:: isolated_workflow_vpyenv.mmd
 
 Exercise 3.1: load the modules needed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -468,7 +468,7 @@ Exercise 3.1: load the modules needed
           module load GCC/12.3.0 Python/3.11.3 
 
 Exercise 3.2: create the virtual environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -490,7 +490,7 @@ Exercise 3.2: create the virtual environment
 
 
 Exercise 3.3: activate the virtual environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -511,7 +511,7 @@ Exercise 3.3: activate the virtual environment
           source /proj/nobackup/hpc2n2024-025/[username]/python/analysis/bin/activate
 
 Exercise 3.4: install Python packages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Installing these packages takes around 13 minutes.
 
@@ -563,7 +563,7 @@ Installing these packages takes around 13 minutes.
 
 
 Exercise 3.5: check if the Python packages are installed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -586,7 +586,7 @@ Exercise 3.5: check if the Python packages are installed
 
 
 Exercise 3.6: use the virtual environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -617,7 +617,7 @@ Exercise 3.6: use the virtual environment
           cat requirements.txt
 
 Exercise 3.7: deactivate the virtual environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
