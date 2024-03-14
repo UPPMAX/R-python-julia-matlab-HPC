@@ -648,3 +648,5 @@ Menti
 alvj
 kukhz
 menti
+XMING
+XQuartz
