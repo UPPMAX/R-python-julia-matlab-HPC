@@ -8,8 +8,8 @@ Interactive work on the compute nodes
       - otherwise become slow for all users. 
    - If you want to work interactively with your code or data, you should 
       - start an **interactive session**.
-   - If you rather will run a script which won't use any interactive user input while running, you should
-      - start a **batch job, see previous session.
+   - If you rather will run a script which **won't use any interactive user input while running**, you should
+      - start a **batch job**, see previous session.
    
 .. questions::
 
@@ -208,9 +208,14 @@ Example **Type along**
              4
 
 
-   **Exit**
+Exit
+####
 
-   When you have finished using the allocation, either wait for it to end, or close it with ``exit``
+When you have finished using the allocation, either wait for it to end, or close it with ``exit``
+
+**Don't do it now!** 
+
+- We shall test RStudio first in the next session!
 
    .. tabs::
 
