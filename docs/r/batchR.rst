@@ -24,7 +24,15 @@ Running R in batch mode
    - Rackham: ``/proj/r-py-jl``
    - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
 
-   
+Overview of the UPPMAX systems
+##############################
+
+.. mermaid:: ../mermaid/uppmax2.mmd
+
+Overview of the HPC2N system
+############################
+
+.. mermaid:: ../mermaid/kebnekaise.mmd   
 
 
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
