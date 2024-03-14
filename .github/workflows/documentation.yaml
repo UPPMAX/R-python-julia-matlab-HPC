@@ -20,8 +20,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r docs/requirements.txt
 
-      - name: Sphinx build in non-nitpicky mode
-        run: sphinx-build docs _build
+      - name: Sphinx build in non-nitpicky mode, if fails, show the error log
+        run: sphinx-build docs _build || /tmp/sphinx-err-kxuvbc_i.log
       #- name: Sphinx builds in nitpicky mode
       #  run: sphinx-build -n docs _build
 
