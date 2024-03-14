@@ -90,7 +90,27 @@ You can now run R scripts on the allocated resources directly instead of waiting
       your batch job to return a result. This is an advantage if you want to test your R 
       script or perhaps figure out which parameters are best.
                   
- 
+
+.. warning::
+
+   **Let us use ThinLinc**
+
+   - ThinLinc app: ``<user>@rackham-gui.uppmax.uu.se``
+   - ThinLinc in web browser: ``https://rackham-gui.uppmax.uu.se``   This requires 2FA!
+
+   **Using terminal**
+
+   - Remember to have X11 installed!
+   - On Mac
+
+      - install XQUARTZ
+
+   - On Windows
+
+      - Use MobaXterm or
+      - install XMING and use with Putty or PowerShell
+
+
 
 Example **Type along**
 ######################
