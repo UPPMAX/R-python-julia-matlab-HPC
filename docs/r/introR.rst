@@ -19,6 +19,7 @@ Introduction R
 
       Lesson plan (20 minutes in total):
 
+      - 2 min: discuss random people with videos, based on recommendation by [Bell, Mike. The fundamentals of teaching: A five-step model to put the research evidence into practice. Routledge, 2020]
       - 5 mins: prior knowledge
          - What is R?
          - Why use R?
@@ -27,7 +28,7 @@ Introduction R
          - What are R packages?
       - 5 mins: presentation: First overview of R
       - 5 mins: presentation: Course schedule
-      - 5 mins: feedback
+      - 3 mins: feedback
 
 .. admonition:: **Course learning objectives**
  

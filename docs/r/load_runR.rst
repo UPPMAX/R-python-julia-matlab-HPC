@@ -8,6 +8,7 @@ Load and run R
       - find the module to be able to run R
       - load the module to be able to run R
       - run the R interpreter
+      - run the R command to get the list of installed R packages
       - run an R script from the command-line
 
    .. tab:: For teachers
@@ -17,6 +18,7 @@ Load and run R
       - Learners have found the module to be able to run R
       - Learners have loaded the module to be able to run R
       - Learners have run the R interpreter
+      - Learners have run the R command to get the list of installed R packages
       - Learners have run an R script from the command-line
       - Learners have been able to use the exercise files
 
@@ -466,6 +468,10 @@ Exercises
 Exercise 1: find an R module
 ----------------------------
 
+.. tab:: Learning objectives
+
+    - find the module to be able to run R
+
 .. tabs::
 
     .. tab:: Exercise 1: find an R module
@@ -496,6 +502,10 @@ Exercise 1: find an R module
 Exercise 2: load an R module
 ----------------------------
 
+.. tab:: Learning objectives
+
+    - load the module to be able to run R
+
 For this course, we recommend these versions of R:
 
 - HPC2N: R version 4.1.1
@@ -524,6 +534,11 @@ For this course, we recommend these versions of R:
 
 Exercise 3: use the R interpreter
 ---------------------------------
+
+.. tab:: Learning objectives
+
+    - run the R interpreter
+    - run the R command to get the list of installed R packages
 
 .. mermaid:: load_run_r_interpreter.mmd 
 
@@ -598,6 +613,10 @@ Exercise 3.3: load a package
          
 Exercise 4: run an R script
 ---------------------------
+
+.. tab:: Learning objectives
+
+    - run an R script from the command-line
 
 .. mermaid:: load_run_r_script.mmd 
 
