@@ -595,7 +595,7 @@ Exercise 0.1. be able to use the first Python script
       After loading the modules needed to run Python, run the script as indicated.
                   
 Exercise 0.2. be able to use the second Python script
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
