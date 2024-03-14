@@ -283,7 +283,7 @@ here is how you load that module:
             module load GCC/10.2.0 OpenMPI/4.0.5 R/<version>
 
         where ``<version>`` is an R version, in ``major.minor.patch`` format, 
-        for example, ``module load GCC/11.2.0 OpenMPI/4.11 R/4.1.2``
+        for example, ``module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2``
 
 
 If you care about reproducibility of your programming environments and R scripts,
