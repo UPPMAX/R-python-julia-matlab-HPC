@@ -468,7 +468,7 @@ Exercises
 Exercise 1: find an R module
 ----------------------------
 
-.. tab:: Learning objectives
+.. note:: Learning objectives
 
     - find the module to be able to run R
 
@@ -502,7 +502,7 @@ Exercise 1: find an R module
 Exercise 2: load an R module
 ----------------------------
 
-.. tab:: Learning objectives
+.. note:: Learning objectives
 
     - load the module to be able to run R
 
@@ -535,7 +535,7 @@ For this course, we recommend these versions of R:
 Exercise 3: use the R interpreter
 ---------------------------------
 
-.. tab:: Learning objectives
+.. note:: Learning objectives
 
     - run the R interpreter
     - run the R command to get the list of installed R packages
@@ -614,7 +614,7 @@ Exercise 3.3: load a package
 Exercise 4: run an R script
 ---------------------------
 
-.. tab:: Learning objectives
+.. note:: Learning objectives
 
     - run an R script from the command-line
 
