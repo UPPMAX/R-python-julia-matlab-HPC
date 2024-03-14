@@ -508,8 +508,8 @@ Exercise 2: load an R module
 
 For this course, we recommend these versions of R:
 
-- HPC2N: R version 4.1.1
-- UPPMAX: R version 4.1.2
+- HPC2N: R version 4.1.2
+- UPPMAX: R version 4.1.1
 
 .. tabs::
 
@@ -517,8 +517,8 @@ For this course, we recommend these versions of R:
 
         Load the module for the R version recommended to use in this course:
 
-        - HPC2N: R version 4.1.1
-        - UPPMAX: R version 4.1.2
+        - HPC2N: R version 4.1.2
+        - UPPMAX: R version 4.1.1
 
     .. tab:: UPPMAX
 
