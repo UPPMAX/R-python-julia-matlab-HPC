@@ -5,6 +5,8 @@ Using RStudio
 
    Using RStudio differs between different HPC clusters.
 
+   - We also recommend ThinLinc!
+
 On UPPMAX
 ----------
 
@@ -13,15 +15,31 @@ will get RStudio/1.1.423).
 
 However, we recommend you to use a RStudio module.
 
-Also, we recommend to use ThinLinc. Login using
+.. warning::
 
-- server: rackham-gui.uppmax.uu.se
-- username
-- password
+   We recommend ThinLinc because the graphics is more effective there!
+
+   **Using ThinLinc**
+
+   - ThinLinc app: ``<user>@rackham-gui.uppmax.uu.se``
+   - ThinLinc in web browser: ``https://rackham-gui.uppmax.uu.se``   This requires 2FA!
+
+   - Choose Xfce as the desktop environment (faster)
+   - start a command line window
 
 
-- Choose Xfce as the desktop environment (faster)
-- start a command line window
+   **Using terminal**
+
+   - Remember to have X11 installed!
+   - On Mac
+
+      - install XQuartz
+
+   - On Windows
+
+      - Use MobaXterm or
+
+
 
 Check for RStudio versions
 ..........................
@@ -51,11 +69,11 @@ Check all available  versions with:
           Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 
 
-- load R_packages/4.1.1, use 'module help R_packages/4.1.1' to see what is available in this certain version 
-- module load RStudio/1.4.1106
+- load R_packages
+- module load RStudio
 - run ``rstudio &`` from the command line, and wait
   
-   - it might take 5-10 minutes for RStudio to start, but once it starts, there should be no further delays
+   - it might take 5-10 minutes for RStudio to start, especially if you loaded R_packages as well, but once it starts, there should be no further delays
    - do *not* start RStudio through the graphical menu system in ThinLinc, this will not have access to loaded modules.
    - if it takes a long time and might be due to that you have saved a lot of workspace
   
@@ -66,6 +84,7 @@ Example:
 
    .. code:: console 
 
+      $ module load R/4.1.1
       $ module load RStudio/2023.12.1-402
       $ rstudio &
 

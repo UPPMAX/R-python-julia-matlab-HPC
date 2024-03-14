@@ -6,8 +6,7 @@
 #SBATCH -p node
 #SBATCH -N 1
 #SBATCH -M snowy
-#SBATCH --gpus=1
-#SBATCH --gpus-per-node=1
+#SBATCH --gres=gpu:1
 #Writing output and error files
 #SBATCH --output=output%J.out
 #SBATCH --error=error%J.error

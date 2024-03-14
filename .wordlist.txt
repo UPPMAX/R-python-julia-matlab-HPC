@@ -649,3 +649,5 @@ alvj
 kukhz
 menti
 bjornc
+XMING
+XQuartz
