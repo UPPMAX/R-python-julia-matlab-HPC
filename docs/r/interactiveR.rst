@@ -27,6 +27,17 @@ Interactive work on the compute nodes
    - Rackham: ``naiss2024-22-107``
    - Kebnekaise: ``hpc2n2024-025``
 
+Overview of the UPPMAX systems
+##############################
+
+.. mermaid:: ../mermaid/uppmax2.mmd
+
+Overview of the HPC2N system
+############################
+
+.. mermaid:: ../mermaid/kebnekaise.mmd
+
+
 
 There are several ways to run R interactively
 
