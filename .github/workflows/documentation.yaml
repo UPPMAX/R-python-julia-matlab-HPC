@@ -20,6 +20,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r docs/requirements.txt
 
+      - name: remove unused folders
+        run: |
+          rm -rf docs/julia/not_used
+          rm -rf docs/python/not_used
+
       - name: Sphinx builds in nitpicky mode
         run: sphinx-build -n docs _build
 
