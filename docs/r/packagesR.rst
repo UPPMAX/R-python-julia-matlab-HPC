@@ -328,8 +328,8 @@ It should look something like this when you are done:
    $ R_LIBS_USER="/home/u/user/R-packages-%V"
 
 
-|:NOTE:| Replace ``/home/u/user`` with the value of ``$HOME``. Run ``echo $HOME`` to see its value.
-|:NOTE:| The ``%V`` should be written as-is, it's substituted at runtime with the active R version.
+**NOTE** Replace ``/home/u/user`` with the value of ``$HOME``. Run ``echo $HOME`` to see its value.
+**NOTE** The ``%V`` should be written as-is, it's substituted at runtime with the active R version.
 
 For each version of R you are using, create a directory matching the pattern
 used in ``.Renviron`` to store your packages in. This example is shown for R
