@@ -1,6 +1,5 @@
 Introduction Julia
-
-===================
+==================
 
 `Welcome page and syllabus <https://uppmax.github.io/HPC-python/index.html>`_
    - Also link at House symbol |:house:| at top of page 
@@ -156,7 +155,6 @@ Among the different features of Julia, is its capability of integrating both asp
    in the traditional paradigms, productivity vs. performance. 
 
 Workflow in Julia (DEMO)
-
 ------------------------
 
 .. demo::
@@ -251,7 +249,6 @@ More detailed information about the modes in Julia can be found `here <https://d
 
 
 Features of Julia
-
 -----------------
 
 According to the `Julia documentation <https://docs.julialang.org/en/v1/>`_ some of
@@ -264,7 +261,6 @@ the features of this language are:
 - A fast growing community of users and developers
 
 Shortcomings of Julia
-
 ---------------------
 
 - As this is a new language, the libraries ecosystem is not as rich as in Python or R, for instance
@@ -279,7 +275,6 @@ Shortcomings of Julia
 
 
 More on Julia?
-
 --------------
 
 - Documentation at the HPC centres UPPMAX and HPC2N
@@ -313,7 +308,6 @@ CodeRefinery develops and maintains training material on software best practices
 
 
 Other NAISS centres
-
 -------------------
 
 - NSC
