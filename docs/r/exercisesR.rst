@@ -26,68 +26,68 @@ Load and run
           
             .. code-block:: sh
 	    
-	       $ ml spider R/4.1.1
-	    
-  	       ----------------------------------------------------------------------------
-	         R: R/4.1.1
-	       ----------------------------------------------------------------------------
-	     
-	            This module can be loaded directly: module load R/4.1.1
-		 
-		    Help:
-		        R - use R Version 4.1.1
-		     
-		        https://www.r-project.org
-		     
-		      Many, many R and Bioconductor packages are available in the module 
-		      'R_packages/4.1.1'
+               $ ml spider R/4.1.1
+            
+               ----------------------------------------------------------------------------
+               R: R/4.1.1
+               ----------------------------------------------------------------------------
+            
+                  This module can be loaded directly: module load R/4.1.1
+            
+               Help:
+                  R - use R Version 4.1.1
+               
+                  https://www.r-project.org
+               
+               Many, many R and Bioconductor packages are available in the module 
+               'R_packages/4.1.1'
 
-	       $ module load R/4.1.1
-	       Nearly all CRAN and BioConductor packages are installed and available by loading the module R_packages/4.1.1
-	       $
-	    
-	       $ R
+               $ module load R/4.1.1
+               Nearly all CRAN and BioConductor packages are installed and available by loading the module R_packages/4.1.1
+               $
+            
+               $ R
 
-               R version 4.1.1 (2021-08-10) -- "Kick Things"
-	       Copyright (C) 2021 The R Foundation for Statistical Computing 
-               Platform: x86_64-pc-linux-gnu (64-bit)
-	    
-	       R is free software and comes with ABSOLUTELY NO WARRANTY.
-	       You are welcome to redistribute it under certain conditions.
-	       Type 'license()' or 'licence()' for distribution details.
-	    
-	         Natural language support but running in an English locale
-	      
-	       R is a collaborative project with many contributors.
-	       Type 'contributors()' for more information and
-	       'citation()' on how to cite R or R packages in publications.
-	    
-	       Type 'demo()' for some demos, 'help()' for on-line help, or
-	       'help.start()' for an HTML browser interface to help.
-	       Type 'q()' to quit R.
-	    
-	       > installed.packages()
-           Package      LibPath                                    Version  
-           base       "base"       "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
-           boot       "boot"       "/sw/apps/R/4.1.1/rackham/lib64/R/library" "1.3-28" 
-           class      "class"      "/sw/apps/R/4.1.1/rackham/lib64/R/library" "7.3-19" 
-           cluster    "cluster"    "/sw/apps/R/4.1.1/rackham/lib64/R/library" "2.1.2"  
-           codetools  "codetools"  "/sw/apps/R/4.1.1/rackham/lib64/R/library" "0.2-18" 
-           compiler   "compiler"   "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
-           datasets   "datasets"   "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
-           foreign    "foreign"    "/sw/apps/R/4.1.1/rackham/lib64/R/library" "0.8-81" 
-           graphics   "graphics"   "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
-           grDevices  "grDevices"  "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
-           grid       "grid"       "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
-           KernSmooth "KernSmooth" "/sw/apps/R/4.1.1/rackham/lib64/R/library" "2.23-20"
-           lattice    "lattice"    "/sw/apps/R/4.1.1/rackham/lib64/R/library" "0.20-45"
-           MASS       "MASS"       "/sw/apps/R/4.1.1/rackham/lib64/R/library" "7.3-54" 
-           Matrix     "Matrix"     "/sw/apps/R/4.1.1/rackham/lib64/R/library" "1.3-4"  
-           ...
-	    
-	       > library("parallel")
-	       > quit()
-	       Save workspace image? [y/n/c]: 
+                  R version 4.1.1 (2021-08-10) -- "Kick Things"
+               Copyright (C) 2021 The R Foundation for Statistical Computing 
+                  Platform: x86_64-pc-linux-gnu (64-bit)
+            
+               R is free software and comes with ABSOLUTELY NO WARRANTY.
+               You are welcome to redistribute it under certain conditions.
+               Type 'license()' or 'licence()' for distribution details.
+            
+               Natural language support but running in an English locale
+            
+               R is a collaborative project with many contributors.
+               Type 'contributors()' for more information and
+               'citation()' on how to cite R or R packages in publications.
+            
+               Type 'demo()' for some demos, 'help()' for on-line help, or
+               'help.start()' for an HTML browser interface to help.
+               Type 'q()' to quit R.
+            
+               > installed.packages()
+               Package      LibPath                                    Version  
+               base       "base"       "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
+               boot       "boot"       "/sw/apps/R/4.1.1/rackham/lib64/R/library" "1.3-28" 
+               class      "class"      "/sw/apps/R/4.1.1/rackham/lib64/R/library" "7.3-19" 
+               cluster    "cluster"    "/sw/apps/R/4.1.1/rackham/lib64/R/library" "2.1.2"  
+               codetools  "codetools"  "/sw/apps/R/4.1.1/rackham/lib64/R/library" "0.2-18" 
+               compiler   "compiler"   "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
+               datasets   "datasets"   "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
+               foreign    "foreign"    "/sw/apps/R/4.1.1/rackham/lib64/R/library" "0.8-81" 
+               graphics   "graphics"   "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
+               grDevices  "grDevices"  "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
+               grid       "grid"       "/sw/apps/R/4.1.1/rackham/lib64/R/library" "4.1.1"  
+               KernSmooth "KernSmooth" "/sw/apps/R/4.1.1/rackham/lib64/R/library" "2.23-20"
+               lattice    "lattice"    "/sw/apps/R/4.1.1/rackham/lib64/R/library" "0.20-45"
+               MASS       "MASS"       "/sw/apps/R/4.1.1/rackham/lib64/R/library" "7.3-54" 
+               Matrix     "Matrix"     "/sw/apps/R/4.1.1/rackham/lib64/R/library" "1.3-4"  
+               ...
+            
+               > library("parallel")
+               > quit()
+               Save workspace image? [y/n/c]: 
 	    
 
             The list of installed packages is very long, as you will see for yourself. 
