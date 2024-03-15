@@ -100,7 +100,7 @@ load a modern Python module:
 
 Then, start ``jupyter-notebook`` (or ``jupyter-lab``):
 
-.. code-block:: sh``
+.. code-block:: sh
 
    jupyter-notebook --ip 0.0.0.0 --no-browser
 
