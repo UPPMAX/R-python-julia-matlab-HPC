@@ -51,7 +51,7 @@ I feel the pre-requirements page, https://uppmax.github.io/R-python-julia-HPC/pr
 I feel it should link to regular documentation and mostly show
 how to determine you fulfilled all pre-requirements.
 
-## Interactive
+### Interactive
 
 The session on starting an interactive session feels too fancy twice:
 - create an interactive session 
@@ -63,16 +63,16 @@ The session on starting an interactive session feels too fancy twice:
 I think, for 15 minutes, one can only do 1 node and no Python script,
 to achieve the teaching goals.
 
-## Impressed by Birgitte
+### Impressed by Birgitte
 
 I think it was impressive that Birgitte logs in into both clusters at the start.
 I want that too!
 
-## Why ssh `-Y`
+### Why ssh `-Y`
 
 Unrelated to the course, Birgitte does so.
 
-## Loading Python
+### Loading Python
 
 If the session is about loading Python,
 maybe seeing module dependencies can removed.
@@ -81,29 +81,34 @@ Also, don't care about python3?
 
 Also, don't care about IPython?
 
-## Suggest to Arvid
+### Suggest to Arvid
 
 The Bianca portal is great. Could you do the same for Rackham?
 Not every user understands one needs to use 2FA now, and how
 
-## More time for sbatch
+### More time for sbatch
 
 There was no time for an exercise.
 
 I would have enjoy to be sure that the learners have been able
 to submit a job and see the results.
 
-## More time for GPU
+### More time for GPU
 
 There was no time for an exercise.
 
-## More time for UPPMAX interactive and Jupyter
+### More time for UPPMAX interactive and Jupyter
 
 There was no time for an exercise.
 
-## Parallel programming
+### Parallel programming
 
 I feel that making a script suitable (with `**FIX**` in it) 
 for a parallel run is at the 'Synthesis' level of Blooms taxonomy.
 I feel that some levels lower, e.g. 'Apply' with a step-by-step
 guide would be more suitable.
+
+## Evaluations
+
+
+
