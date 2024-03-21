@@ -312,6 +312,7 @@ Running IJulia and Jupyter notebooks
       .. code-block:: julia-repl
 
          (v1.8) pkg>add IJulia
+         (v1.8) pkg>build IJulia         
 
       Write a bash script similar  to this (call it `job_jupyter.sh`, for instance):
 
