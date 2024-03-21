@@ -404,8 +404,22 @@ Instead, doing Pair-Share-Pound in little groups would make it work.
 
 I agree that the Zoom setup could be improved, next to the technical problems.
 
+I think the evaluation questions are mostly useless for me,
+as judged by me thinking about them. 
+
+My dream evaluation would be:
+
+- What should we keep doing?
+- Which teacher(s) scheduled enough time for exercises?
+- What should we improve?
+- Other comments?
+
 ### Course-wide interpretation
 
 I think the general course advice would be: talk/demonstrate less, 
 do more exercises instead.
+
+
+
+
 
