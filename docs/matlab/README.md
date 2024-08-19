@@ -1,15 +1,21 @@
 # MATLAB content
 
-## Introduction to MATLB
+## Introduction to MATLAB
 
 ## Load and run MATLAB
 
+### compute node allocation already here?
 
-## Add-ons??
+## Add-ons/Toolbox
+??
+- github
+- local MATLAB folder
 
 ### Preinstalled
 
 ## Parallel jobs
+### Intro about pools and batch
+### Syntax
 
 
 
