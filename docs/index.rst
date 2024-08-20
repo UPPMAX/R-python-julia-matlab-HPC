@@ -1,16 +1,16 @@
-.. R-python-julia-HPC documentation master file, created by
+.. R-python-julia-matlab-HPC documentation master file, created by
    sphinx-quickstart on Fri Jan 21 18:24:04 2022.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Introduction to running R, Python, and Julia in HPC
+Introduction to running R, Python, Julia, and Matlab in HPC
 ===================================================
 
 .. admonition:: Content
 
-   - This course aims to give a brief, but comprehensive introduction to using Python, Julia and R in an HPC environment.
+   - This course aims to give a brief, but comprehensive introduction to using Python, Julia, R, and Matlab in an HPC environment.
    - You will learn how to
-      - start the **interpreters** of Python, Julia and R by the HPC module system
+      - start the **interpreters** of Python, Julia, R, and Matlab by the HPC module system
       - find site **installed packages/libraries**
       - **install packages/libraries** yourself
       - use **virtual** environments
@@ -32,7 +32,7 @@ Introduction to running R, Python, and Julia in HPC
    - The general information given in the course will be true for all/most HPC centres in Sweden. 
 
       - The examples will often have specific information, like module names and versions, which may vary. What you learn here should help you to make any changes needed for the other centres. 
-      - When present, links to the Python/Julia/R documentation at other NAISS centres are given in the corresponding session.
+      - When present, links to the Python/Julia/R/Matlab documentation at other NAISS centres are given in the corresponding session.
 
 
 Schedule Spring 2024
