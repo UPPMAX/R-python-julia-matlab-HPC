@@ -44,12 +44,14 @@ Schedule Spring 2024
 
    * - Day
      - Language
-   * - Tuesday 12 March
+   * - Tuesday 22 October
      - Python 
-   * - Wednesday 13 March
+   * - Wednesday 23 October
      - Julia
-   * - Thursday 14 March
+   * - Thursday 24 October
      - R 
+   * - Friday 25 October
+     - Matlab
    
 
 Some practicals
@@ -332,6 +334,13 @@ Content of the course
    r/rstudio.rst
    r/exercisesR.rst
    r/summaryR.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Matlab Lessons:
+
+   matlab/introMatlab.rst
+
 
 .. toctree::
    :maxdepth: 2
