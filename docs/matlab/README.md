@@ -27,7 +27,7 @@
 
 ### Shell Batch
 
-## On desktop
+### On-Demand desktop
 
 ### At UPPMAX just matlab batch works
 - download desktop.zip
