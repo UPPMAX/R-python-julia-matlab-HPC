@@ -30,10 +30,10 @@ When should I use or not use it?
 --------------------------------
 Desktop On-Demand is most appropriate for *interactive* work requiring small-to-medium amounts of computing resources. Most applications available with On-Demand can only be set to run on one node, so you are constrained by the resources available to one compute node. For information about the capabilities of each node, you can explore the `LUNARC homepage's Systems tab<https://www.lunarc.lu.se/systems/>`_ and follow the links to your desired resource. (Note: COSMOS-SENS is past the installation phase and is available as a resource; hopefully I can delete this comment before the workshop.)
 
-When you should **not** use Desktop On-Demand:
-* When your job uses multiple nodes,
-* When your job does not require interaction or supervision, or
-* When you need a walltime of more than about half a workday.
+When you should *not* use Desktop On-Demand:
+ - When your job uses multiple nodes,
+ - When your job does not require interaction or supervision, or
+ - When you need a walltime of more than about half a workday.
 
 Desktop On-Demand puts your resource requests into the same SLURM queue as every other job, so depending on the time and resources you request, you may have to wait a while for your session to start.
 
