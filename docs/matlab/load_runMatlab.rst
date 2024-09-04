@@ -71,14 +71,14 @@ Check for MATLAB versions
 
 
       .. tab:: LUNARC
+    
+        See all available MATLAB versions at the command line with:
 
-         See all available MATLAB versions at the command line with:
-
-         .. code-block:: console
+        .. code-block:: console
 
             $ ml spider matlab
 
-         Or, if on Desktop On-Demand, select Applications in the top left corner and hover over `Applications - Matlab`
+        Or, if on Desktop On-Demand, select Applications in the top left corner and hover over `Applications - Matlab`
 
 .. note::
   
@@ -89,24 +89,21 @@ Check for MATLAB versions
 
         .. code-block:: console
 
-           $ ml spider matlab
-        ----------------------------------------------------------------------------
-          matlab:
-        ----------------------------------------------------------------------------
-             Versions:
-                matlab/2022a
-                matlab/2023a
-                matlab/2023b
-        
-        ----------------------------------------------------------------------------
-          For detailed information about a specific "matlab" package (including how to l
-        oad the modules) use the module's full name.
-          Note that names that have a trailing (E) are extensions provided by other modu
-        les.
-          For example:
-        
-             $ module spider matlab/2023b
-        ----------------------------------------------------------------------------
+            $ ml spider matlab
+            ----------------------------------------------------------------------------
+            matlab:
+            ----------------------------------------------------------------------------
+                Versions:
+                    matlab/2022a
+                    matlab/2023a
+                    matlab/2023b
+                  
+            ----------------------------------------------------------------------------
+            For detailed information about a specific "matlab" package (including how to load the modules) use the module's full name. Note that names that have a trailing (E) are extensions provided by other modules.
+            For example:
+                  
+            $ module spider matlab/2023b
+            ----------------------------------------------------------------------------
 
 
 Load a MATLAB module
