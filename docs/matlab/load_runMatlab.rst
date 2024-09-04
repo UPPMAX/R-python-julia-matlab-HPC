@@ -36,7 +36,7 @@ Check for MATLAB versions
 
 .. type-along::
    
-   Checking for Python versions 
+   Checking for MATLAB versions 
    
    .. tabs::
 
@@ -51,13 +51,13 @@ Check for MATLAB versions
 
       .. tab:: HPC2N
    
-         Check all available version Python versions with:
+         Check all available version MATLAB versions with:
 
          .. code-block:: console
  
             $ module spider matlab
       
-         To see how to load a specific version of Python, including the prerequisites, do 
+         To see how to load a specific version of MATLAB, including the prerequisites, do 
 
          .. code-block:: console
    
@@ -124,7 +124,7 @@ For this course, we recommend using MATLAB R2023x at UPPMAX (2023?), LUNARC (202
 
       .. tab:: UPPMAX and LUNARC
    
-         Go back and check which Python modules were available. To load version 3.11.8, do:
+         Go back and check which MATLAB modules were available. To load version 2023b, do:
 
          .. code-block:: console
 
