@@ -31,7 +31,7 @@ Most HPC centres in Sweden is using the same or similar module system for their 
    - Thus, you need to use ``module spider`` to see all modules at HPC2N and LUNARC, and ``ml avail`` for those available to load given your currently loaded prerequisites.  
    - There is no system MATLAB that comes preloaded like Python, but `ml load matlab` with no release date will load the latest release, which is periodically updated. For reproducibility reasons, you should be sure to load the same release throughout a given project.
 
-Check for Python versions
+Check for MATLAB versions
 -------------------------
 
 .. type-along::
@@ -107,3 +107,46 @@ Check for Python versions
         
              $ module spider matlab/2023b
         ----------------------------------------------------------------------------
+
+
+Load a MATLAB module
+--------------------
+
+For reproducibility, we recommend ALWAYS loading a specific module instead of using the default version! 
+
+For this course, we recommend using MATLAB R2023x at UPPMAX (2023?), LUNARC (2023b), and HPC2N (2023?).
+
+.. type-along::
+    
+   Loading a Matlab module at the command line, here R2023b
+
+   .. tabs::
+
+      .. tab:: UPPMAX and LUNARC
+   
+         Go back and check which Python modules were available. To load version 3.11.8, do:
+
+         .. code-block:: console
+
+            $ module load matlab/2023b
+        
+         Note: all lowercase.
+         For short, you can also use: 
+
+         .. code-block:: console
+
+            $ ml matlab/2023b
+
+ 
+      .. tab:: HPC2N 
+
+         .. code-block:: console
+
+            $ module load MATLAB/2023B
+
+         Note: all Uppercase except for the letter after the year.   
+         For short, you can also use: 
+
+         .. code-block:: console
+
+            $ ml MATLAB/2023b
