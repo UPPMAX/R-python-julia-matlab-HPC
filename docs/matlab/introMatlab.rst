@@ -211,9 +211,7 @@ Material for improving your programming skills
 First level
 ...........
 
-`The Carpentries <https://carpentries.org/>`_  teaches basic lab skills for research computing.
-
-- `Programming with Matlab  <https://carpentries-incubator.github.io/Matlab-novice/>`_ (alpha)
+If you have a Mathworks account that is less than 2 years old, you can take advantage of Mathworks' free MATLAB self-paced online training courses at <https://matlabacademy.mathworks.com/?page=1&fq=all-matlab&sort=featured&s_tid=ln_acad_learn_oc>_. At any academic institution with a campus-wide license, students can use their university email addresses to create a free account to access these resources.
 
 Second level
 ::::::::::::
