@@ -186,14 +186,12 @@ After loading the appropriate modules for Matlab, you can start the IDE from the
 
    .. tab:: LUNARC
 
-      You could go to `Applications - General`, select the interactive terminal, and type the following...
+        On HPC desktop, you can go to `Applications - MATLAB` and launch the On-Demand app directly. Alternatively, if you use SSH or prefer to use the interactive terminal under `Applications - General`, you can type the following...
+
         .. code-block:: Matlab-repl
          
          $ module load matlab/2023b
-         $ matlab -SingleCompThread
-
-      Or, you could just go to `Applications - MATLAB` and launch the On-Demand app directly.
-
+         $ matlab -SingleCompThread &
 
 
 More on Matlab?
@@ -213,6 +211,8 @@ First level
 
 If you have a Mathworks account that is less than 2 years old, you can take advantage of Mathworks' free MATLAB self-paced online training courses at <https://matlabacademy.mathworks.com/?page=1&fq=all-matlab&sort=featured&s_tid=ln_acad_learn_oc>_. At any academic institution with a campus-wide license, students can use their university email addresses to create a free account to access these resources.
 
+There is also the Mondays with Matlab lecture series every September, which along with other events gets posted here: <https://se.mathworks.com/company/events.html>_.
+
 Second level
 ::::::::::::
 
@@ -221,6 +221,8 @@ CodeRefinery develops and maintains training material on software best practices
 - Not yet anything Matlab specific
 
 `ENCCS (EuroCC National Competence Centre Sweden) <https://enccs.se/>`_ is a national centre that supports industry, public administration and academia accessing and using European supercomputers. They give higher-level training of programming and specific software.
+
+- Not yet anything Matlab specific
 
 Other NAISS centres
 -------------------
@@ -232,6 +234,6 @@ Other NAISS centres
 
 .. keypoints::
 
-   - MATLAB is a 4th generation language with an interactive environment that can generate code for common procedures for you.
-   - Parallelization is easy with the graphic user interface, but be careful to set -SingleCompThread when starting it at the command line or it may hog the nodes.
+   - MATLAB is a 4th generation language with an interactive environment that can generate code that handles common problems for you.
+   - Parallelization is easy with the graphic user interface, but be careful to set `-SingleCompThread` when starting it at the command line or it may hog the nodes.
 
