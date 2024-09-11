@@ -17,8 +17,8 @@ Introduction Matlab
 .. admonition:: Your expectations?
    
     - Find best practices for using Matlab at UPPMAX and HPC2N
-    - Packages
-    - Use the HPC performance with Matlab
+    - Packages and Toolboxes
+    - HPC performance with Matlab
 
     
     **Not covered**
@@ -28,14 +28,16 @@ Introduction Matlab
       
 .. admonition:: Matlab Exercise files
 
-    - On HPC2N, you can copy the Matlab exercises in a tarball 
+    - At HPC2N, you can copy the Matlab exercises in a tarball 
       from ``/proj/nobackup/hpc2n2024-025/MatlabExercises.tar.gz``
-    - On UPPMAX you can copy the exercises in a tarball 
+    - At UPPMAX you can copy the exercises in a tarball 
       from ``/proj/naiss2024-22-107/MatlabExercises.tar``
+    - At LUNARC, you can copy the exercises in a tarball
+      from ``/lunarc/nobackup/projects/lu2024-07-68/MatlabExercises.tar``
 
 .. challenge:: Download the exercise files
 
-    - Copy the file and un-tar it in you personal project folder you created a while ago (https://uppmax.github.io/R-python-Matlab-HPC/index.html#prepare-your-environment-now). Finally enter the directory and list the content with the ``tree`` command.
+    - Copy the file and un-tar it in your personal project folder, which you should have created a while ago (https://uppmax.github.io/R-python-Matlab-HPC/index.html#prepare-your-environment-now). Then, enter the directory and list the content with the ``tree`` command.
 
     .. code-block:: bash
 
@@ -92,11 +94,14 @@ Preliminary schedule
      - **break**
      - 
    * - 14.00
-     - Parallel session — UPPMAX: Jupyter and interactive work
+     - Parallel session — UPPMAX: Interactive work
      - Lecture+code along 25m
    * - .
-     - Parallel session — HPC2N: Jupyter
+     - Parallel session — HPC2N: Interactive work
      - Lecture+code along 25m   
+   * - .
+     - Parallel session — LUNARC: Interactive work
+     - Lecture+code along 25m  
    * - 14.25
      - Summary 
      -
@@ -134,25 +139,24 @@ Preliminary schedule
 
 What is Matlab?
 --------------
-
-Matlab is a relatively new Programming language (pre-released 1.0 announced in 2018), compared to well-known and standard languages such as Fortran, C, C++, R, and Python (some of them dated back to the 70's). 
-A common pattern in those well-established languages (traditional paradigm) is that they look after either:
-
-  - productivity (fast deployment, fast prototyping) or,
-  - performance (fast numerical computations). 
-
-This pattern created the so called **two-language problem** where programmers had to choose between **productivity** (R, Python) or **performance** (Fortran, C/C++) and when both were needed programmers had to learn the language that offered the desired capability and use some interface between different languages. 
-Performant languages traditionally needed to be compiled while languages focusing on productivity are interpreted.
-
-Among the different features of Matlab, is its capability of integrating both aspects **productivity and performance into a single language**. In this way, Matlab programmers can in principle write software without changing their focus to learn a new language. 
+MATLAB is a numerical computing environment and fourth generation programming language. Developed by MathWorks, MATLAB allows matrix manipulation, plotting of functions and data, implementation of algorithms, creation of user interfaces, and interfacing with programs in other languages. Although it is numeric only, an optional toolbox uses the MuPAD symbolic engine, allowing access to computer algebra capabilities.
 
 
-.. figure:: ../../img/two-language.png
-   :width: 450
-   :align: center
+Features of Matlab
+-----------------
 
-   Two-language problem where Matlab is shown as a bridge between the languages
-   in the traditional paradigms, productivity vs. performance. 
+Distinguishing pros of MATLAB include:
+   - A "low-code" interactive development environment (IDE) in which many common data import methods, analysis techniques, plotting formats, and even AI/ML techniques can be run from menus and generate the code required to reproduce the results automatically
+   - A rich library of Toolboxes for different STEM disciplines, especially for modeling and simulations, all written and tested by professionals
+   - Automatic multi-threading (note: this can also be a drawback)
+   - The ability to set cluster configurations and parallelization settings graphically, and save them to profiles that can be reloaded at a click.
+   - Full documentation available straight from the command line (requires internet)
+
+Of course MATLAB also has some drawbacks:
+   - It is proprietary software, so you need to buy a license and sign up for an account.
+   - With respect to the 2-language problem (where one can optimize for either performance or ease of prototyping, but not both), MATLAB even moreso than Python is geared toward usability. It can be slow.
+   - The way MATLAB automates multithreading means it will hog a full node unless you explicitly tell it not to by setting `-SingleCompThread` as an option at startup. 
+   - The built-in plotting functions generate only very low-resolution raster graphics with no anti-aliasing, not suitable for publication.
 
 Workflow in Matlab (DEMO)
 ------------------------
@@ -161,8 +165,7 @@ Workflow in Matlab (DEMO)
 
    The teacher will do this as a demo. You will have the opportunity to test in the next session!
 
-After loading the appropriate modules for Matlab, you will have access to the
-read-eval-print-loop (REPL) command line by typing ``Matlab``: 
+After loading the appropriate modules for Matlab, you can start the IDE from the command line by typing ``Matlab``: 
 
 .. tabs::
 
@@ -170,119 +173,35 @@ read-eval-print-loop (REPL) command line by typing ``Matlab``:
 
         .. code-block:: Matlab-repl
          
-         $ ml Matlab/1.8.5
-         $ Matlab 
-
-            _       _ _(_)_     |  Documentation: https://docs.Matlablang.org
-           (_)     | (_) (_)    |
-            _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
-           | | | | | | |/ _` |  |
-           | | |_| | | | (_| |  |  Version 1.8.5 (2023-01-08)
-          _/ |\__'_|_|_|\__'_|  |  Official https://Matlablang.org/ release
-         |__/                   |
-
-         Matlab> 
+         $ module load matlab/2023b
+         $ matlab -SingleCompThread &
 
 
    .. tab:: HPC2N
 
         .. code-block:: Matlab-repl
          
-         $ ml Matlab/1.8.5-linux-x86_64
-         $ Matlab 
+         $ module load MATLAB/2023b
+         $ matlab -SingleCompThread
 
-            _       _ _(_)_     |  Documentation: https://docs.Matlablang.org
-           (_)     | (_) (_)    |
-            _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
-           | | | | | | |/ _` |  |
-           | | |_| | | | (_| |  |  Version 1.8.5 (2023-01-08)
-          _/ |\__'_|_|_|\__'_|  |  Official https://Matlablang.org/ release
-         |__/                   |
+   .. tab:: LUNARC
 
-         Matlab> 
+        On HPC desktop, you can go to `Applications - MATLAB` and launch the On-Demand app directly. Alternatively, if you use SSH or prefer to use the interactive terminal under `Applications - General`, you can type the following...
 
-Matlab has different modes, the one mentioned above is the so-called ``Matlabn`` mode
-where one can execute commands. The description for accessing these modes will be
-given in the following paragraphs. Once you are done with your work in any of the modes,
-you can return to the ``Matlabn`` mode by pressing the ``backspace`` key.
-
-While being on the Matlabn mode you can enter the ``shell`` mode by typing ``;``:
-
-.. code-block:: Matlab
-
-   Matlab>; 
-   shell>pwd
-   /current-folder-path
-
-this will allow you to use Linux commands. Notice that the availability of these commands
-depend on the OS, for instance, on Windows it will depend on the terminal that you have
-installed and if it is visible to the Matlab installation. 
-
-Another mode available in Matlab is the ``package manager`` mode, it can be accessed by typing ``]`` in the ``Matlabn`` mode:
-
-.. code-block:: Matlab-repl
-
-   Matlab>]
-   (v1.8) pkg>
-
-this will make your interaction with the package manager **Pkg** easier, for instance,
-instead of typing the complete name of **Pkg** commands such as ``Pkg.status()`` in the
-``Matlabn`` mode, you can just type ``status`` in the ``package`` mode. 
-
-The last mode is the ``help`` mode, you can enter this mode from the ``Matlabn`` one by
-typing ``?``, then you may type some string from which you need more information:
-
-.. code-block:: Matlab
-
-   Matlab>?
-
-   help?> ans
-   search: ans transpose transcode contains expanduser instances MathConstants readlines 
-   LinearIndices leading_ones leading_zeros
-
-   ans
-
-   A variable referring to the last computed value, automatically set at the interactive prompt.
-
-
-More detailed information about the modes in Matlab can be found `here <https://docs.Matlablang.org/en/v1/stdlib/REPL/>`_.
-
-
-Features of Matlab
------------------
-
-According to the `Matlab documentation <https://docs.Matlablang.org/en/v1/>`_ some of
-the features of this language are:
-
-- Good Base library with efficiently implemented operations written in Matlab itself
-- "Good performance, approaching that of statically-compiled languages like C"
-- Modular and self-contained approach for libraries and development
-- "A rich language of types for constructing and describing objects"
-- A fast growing community of users and developers
-
-Shortcomings of Matlab
----------------------
-
-- As this is a new language, the libraries ecosystem is not as rich as in Python or R, for instance
-- Currently, using Matlab for simple tasks (for instance, opening a file and writing text, plotting) is not as
-  efficient as using Linux tools (AWK, GREP) or compiled languages (Fortran, C/C++, Rust)
-- Previous situation is more noticeable upon running simple tasks in parallel mode (MPI, Threads)
-- An initial code version can be fast (compared to base Python) with a code that is clear to
-  novices and without spending a long time writing. However, if one needs to get a more optimized code, 
-  it would most likely increase its complexity (readability) and one would need to spend more time 
-  (learning/programming) as in the case of C/C++/Fortran.  
-
+        .. code-block:: Matlab-repl
+         
+         $ module load matlab/2023b
+         $ matlab -SingleCompThread &
 
 
 More on Matlab?
 --------------
 
 - Documentation at the HPC centres UPPMAX and HPC2N
-   - UPPMAX: http://docs.uppmax.uu.se/software/Matlab/
-   - HPC2N: https://www.hpc2n.umu.se/resources/software/Matlab
-- Official Matlab documentation is found `here: <https://docs.Matlablang.org/en/v1/>`_
-- Slack channel for Matlab and instructions for joining it are found here: https://Matlablang.org/slack/
-- `HPC2N YouTube video on Matlab in HPC <https://www.youtube.com/watch?v=bXHe7Kj3Xxg>`_
+   - UPPMAX: http://docs.uppmax.uu.se/software/matlab/
+   - HPC2N: https://www.hpc2n.umu.se/resources/software/matlab and https://www.hpc2n.umu.se/documentation/guides/parallel-matlab
+   - LUNARC: https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/MATLAB/
+- Official Matlab documentation is found `here: <https://se.mathworks.com/help/matlab/index.html?s_tid=hc_panel>`_
 
 Material for improving your programming skills
 ::::::::::::::::::::::::::::::::::::::::::::::
@@ -290,9 +209,9 @@ Material for improving your programming skills
 First level
 ...........
 
-`The Carpentries <https://carpentries.org/>`_  teaches basic lab skills for research computing.
+If you have a Mathworks account that is less than 2 years old, you can take advantage of Mathworks' free MATLAB self-paced online training courses at <https://matlabacademy.mathworks.com/?page=1&fq=all-matlab&sort=featured&s_tid=ln_acad_learn_oc>_. At any academic institution with a campus-wide license, students can use their university email addresses to create a free account to access these resources.
 
-- `Programming with Matlab  <https://carpentries-incubator.github.io/Matlab-novice/>`_ (alpha)
+There is also the Mondays with Matlab lecture series every September, which along with other events gets posted here: <https://se.mathworks.com/company/events.html>_.
 
 Second level
 ::::::::::::
@@ -303,21 +222,18 @@ CodeRefinery develops and maintains training material on software best practices
 
 `ENCCS (EuroCC National Competence Centre Sweden) <https://enccs.se/>`_ is a national centre that supports industry, public administration and academia accessing and using European supercomputers. They give higher-level training of programming and specific software.
 
-- `Matlab for high-performance Computing <https://enccs.github.io/Matlab-for-hpc/>`_ 
-- `Matlab for High-performance data analytics <https://enccs.github.io/Matlab-for-hpda/>`_ 
-
+- Not yet anything Matlab specific
 
 Other NAISS centres
 -------------------
 
 - NSC
-   - `Matlab <https://www.nsc.liu.se/software/installed/tetralith/Matlab/>`_
+   - `Matlab <https://www.nsc.liu.se/software/catalogue/tetralith/modules/matlab.html>`_
 - PDC
-   - `Matlab <https://www.pdc.kth.se/software/software/Matlab/index_general.html>`_
+   - `Matlab <https://www.pdc.kth.se/software/software/matlab/index_general.html>`_
 
 .. keypoints::
 
-   - Matlab is a relatively new language with several attractive features.
-   - It offers several modes that can make your workflow easier, i.e., ``Matlabn``, 
-     ``shell``, ``package manager``, and ``help`` modes.
+   - MATLAB is a 4th generation language with an interactive environment that can generate code that handles common problems for you.
+   - Parallelization is easy with the graphic user interface, but be careful to set `-SingleCompThread` when starting it at the command line or it may hog the nodes.
 
