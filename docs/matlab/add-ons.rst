@@ -1,9 +1,9 @@
 Add-ons
 =======
 
-.. admonition:: Matlab add-ons and environments
+.. admonition:: MATLAB add-ons and environments
    
-   - Matlab **add-ons broaden the use of Matlab** considerably! 
+   - MATLAB **add-ons broaden the use of MATLAB** considerably! 
    - Instead of writing code yourself there may be others that have done the same!
    - Isolated environments solve a couple of problems:
 
@@ -22,12 +22,19 @@ Add-ons
 
    - Give a general *theoretical* introduction to isolated environments 
    - Show how to install own add-ons
-   - Show how to check for Matlab add-ons at UPPMAX
+   - Show how to check for MATLAB add-ons at UPPMAX
    
-- Before going into installing add-ons let's have a background to the Matlab environments and ecosystem!
+- Before going into installing add-ons let's have a background to the MATLAB environments and ecosystem!
 
-Matlab add-ons manager
+MATLAB Add-Ons manager
 ----------------------
+In the GUI, the Add-Ons manager can be selected from the menu at the top. The drop-down menu options allow users to:
+   - **Browse a library of Add-Ons to download.** Note that some Add-Ons require a separate license.
+   - **Manage Add-Ons already downloaded.**
+   - Package user-generated code as a Toolbox or App
+   - Get hardware-related support packages
+Here we will only focus on the first two options.
+
 
 
 Exercises
