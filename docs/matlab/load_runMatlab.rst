@@ -111,7 +111,7 @@ Load a MATLAB module
 
 For reproducibility, we recommend ALWAYS loading a specific module instead of using the default version! 
 
-For this course, we recommend using MATLAB R2023x at UPPMAX (2023?), LUNARC (2023b), and HPC2N (2023?).
+For this course, we recommend using MATLAB R2023x at UPPMAX (202??), LUNARC (2023b), and HPC2N (202??).
 
 .. type-along::
     
@@ -147,3 +147,7 @@ For this course, we recommend using MATLAB R2023x at UPPMAX (2023?), LUNARC (202
          .. code-block:: console
 
             $ ml MATLAB/2023b
+
+Run a MATLAB script
+--------------------
+Most of the time, you will run either MATLAB live scripts (.mlx) or basic script or function files (.m). Live scripts can only be opened and worked on in the graphical interface, so we'll start with running a basic MATLAB function.
