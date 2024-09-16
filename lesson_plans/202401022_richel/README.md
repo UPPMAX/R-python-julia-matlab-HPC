@@ -109,3 +109,12 @@ Time       |Topic                                                 |Teacher
 15:00-15:15|Break                                                 |.
 15:15-15:35|Parallel session 20/30 mins                           |BB * RB
 15:35-16:00|Parallel and multithreaded functions                  |PO
+
+Discussion points:
+
+- For this schedules, breaks were scheduled first, so that
+  (1) schedule is simple, and (2) all session lengths are 45 or 60 mins.
+  However, assuming all durations are correct (!), some sessions will be
+  cut by a break. Is that acceptable?
+  - If yes: no problemo
+  - No: where should the breaks be instead? Who makes a new schedule?
