@@ -1,4 +1,4 @@
-# Lesson plan 
+# Lesson plan R by Richel
 
 - Date: Tuesday 2024-10-24
 - Course: R, part of [R, Python, Julia, and Matlab in HPC](https://github.com/UPPMAX/R-python-julia-matlab-HPC/)
