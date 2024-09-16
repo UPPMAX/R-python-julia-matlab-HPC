@@ -8,6 +8,8 @@ This repository contains the source code for the UPPMAX/HPC2N [R, Python, Julia,
 [mkdocs-material](https://squidfunk.github.io/mkdocs-material). 
 --->
 
+Built with Sphinx using a theme provided by Read the Docs. 
+
 ## Files used by continuous integration scripts
 
 Filename                           |Descriptions
