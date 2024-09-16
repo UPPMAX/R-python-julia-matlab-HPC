@@ -28,4 +28,13 @@ Time     |Topic                      |Teacher
 **14.45**|.                          |.
 **15.00**|END 
 
+Notes:
+
+- 9:15-10:00 is first login
+- 10:00-10:15 is first break
+- Day ends at 16.00
+- interactive must get 15 more minutes to do 1 core + 2 core
+- more time for sbatch and GPU
+
 ### Suggestion
+
