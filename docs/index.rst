@@ -340,6 +340,11 @@ Content of the course
    :caption: Matlab Lessons:
 
    matlab/introMatlab.rst
+   matlab/load_runMatlab.rst
+   matlab/add_onsMatlab.rst
+   common/parallel.rst
+   matlab/local_desktopMatlab.rst
+   matlab/interactionsMatlab.rst
 
 
 .. toctree::
