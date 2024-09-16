@@ -1,0 +1,31 @@
+# Lesson plan by Richel
+
+- Date: Tuesday 2024-10-22
+- Course: Python, part of [R, Python, Julia, and Matlab in HPC](https://github.com/UPPMAX/R-python-julia-matlab-HPC/)
+
+## Suggest new schedule
+
+### Old schedule
+
+Time     |Topic                      |Teacher
+---------|---------------------------|-------
+**9.00** |Syllabus                   |Rebecca
+**9.10** |Python in general          |Rebecca
+**9.20** |Load modules and run       |Rebecca
+**9.45** |Break                      |.
+**10:00**|Packages  (45-->30)        |Richel
+**10.30**|Break                      |.
+**10.45**|Isolated environments (ML, venv, **conda**)|Richel (45-->60)
+**11:45**|Break or informal chat     |Richel 
+**12.00**|Lunch                      |.
+**13.00**|Batch                      |Birgitte
+**13:20**|GPU                        |Birgitte
+**13.30**|Kebnekaise: Jupyter        |Birgitte
+.        |Rackham:  Interactive session and Jupyter         |Richel
+**13.45**|Break                      |.
+**14.00**|Parallel and multithreaded functions|Pedro
+**14.25**|Conclusion & Q/A           |Birgitte
+**14.45**|.                          |.
+**15.00**|END 
+
+### Suggestion
