@@ -59,9 +59,9 @@ Session durations in time:
 
 Time       |Topic                                      |Duration (mins)
 -----------|-------------------------------------------|-------
-09:15-10:00|First login                                |.
-10:00-10:15|Break                                      |.
-10:15-11:00|Session 1                                  |45
+09:00-09:45|First login                                |(45)
+09:45-10:00|Break                                      |.
+10:00-11:00|Session 1                                  |60
 11:00-11:15|Break                                      |.
 11:15-12:00|Session 2                                  |45
 12:00-13:00|Lunch                                      |.
@@ -70,9 +70,9 @@ Time       |Topic                                      |Duration (mins)
 14:15-15:00|Session 4                                  |45
 15:00-15:15|Break                                      |.
 15:15-16:00|Session 5                                  |45
-Total                                                  |240
+Total                                                  |255
 
-This means I can add 15 minutes. Here I distribute these from the notes:
+This means I can add 30 minutes. Here I distribute these from the notes:
 
 Topic                            |Current duration (mins)
 ---------------------------------|---------------
@@ -83,33 +83,33 @@ Packages                         |30
 Kebnekaise, ThinLinc & RStudio   |30 + 15
 UPPMAX: ThinLinc, RStudio, inter-|. (in parallel)
 Parallel                         |35 + 10
-Isolated environments            |20
+Isolated environments            |20 + 5
 Batch                            |30
-Machine learning                 |35 - 10
+Machine learning                 |35
 Total                            |240
 
 Now fitting this into the schedule:
 
 Time       |Topic                          |Teacher
 -----------|-------------------------------|-------
-09:15-10:00|First login                    |?RB
-10:00-10:15|Break                          |.
-10:15-10:25|Syllabus                       |RB
-10:25-10:35|R in general                   |RB
-10:35-11:00|Load modules and run           |RB
+09:00-09:45|First login                    |?RB
+09:45-10:00|Break                          |.
+10:00-10:10|Syllabus                       |RB
+10:10-10:20|R in general                   |RB
+10:20-10:45|Load modules and run           |RB
+10:45-11:00|Packages 15/30                 |BB
 11:00-11:15|Break                          |.
-11:15-11:45|Packages                       |BB
-11:45-12:00|Parallel session 15/45 mins    |PO * RB
+11:15-11:30|Packages 15/30                 |BB
+11:30-12:00|Parallel session 30/45 mins    |PO * RB
 12:00-13:00|Lunch                          |.
-13:00-13:30|Parallel session 30/45 mins    |PO * RB
-13:30-14:00|Parallel 30/45 mins            |PO
+13:00-13:15|Parallel session 15/45 mins    |PO * RB
+13:15-14:00|Parallel                       |PO
 14:00-14:15|Break                          |.
-14:15-14:30|Parallel 15/45 mins            |PO
-14:30-14:50|Isolated                       |BB
-14:50-15:00|Batch 10/30 mins               |BB
-15:00-15:15|Break                          |.
-15:15-15:35|Batch 20/30 mins               |BB
-15:35-16:00|Machine learning               |BB or PO
+14:15-14:40|Isolated                       |BB
+14:40-14:55|Batch 15/30 mins               |BB
+14:55-15:10|Break                          |.
+15:10-15:25|Batch 15/30 mins               |BB
+15:25-16:00|Machine learning               |BB or PO
 
 Parallel session:
  - Kebnekaise: ThinLinc & RStudio, by PO
@@ -126,7 +126,3 @@ Discussion points:
   cut by a break. Is that acceptable?
   - If yes: no problemo
   - No: where should the breaks be instead? Who makes a new schedule?
-
-
-
-
