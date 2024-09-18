@@ -106,11 +106,11 @@ HPC resources. The situation would be similar to turn on many washing machines t
 a single item, we can waste energy easily.
 
 .. figure:: ../../img/laundry-machines.svg
-   :width: 300
+   :width: 200
    :align: center
 
 .. figure:: ../../img/laundry-machines.svg
-   :width: 300
+   :width: 200
    :align: center
 
    Under-using a cluster.
@@ -355,6 +355,9 @@ Passing Interface (MPI). In general, MPI requires refactoring of your code.
 
          Run the script with the command  ``Rscript --no-save --no-restore clusterapply.R``.
 
+      .. tab:: Matlab 
+   
+         In the following 
 
 Exercises
 ---------
