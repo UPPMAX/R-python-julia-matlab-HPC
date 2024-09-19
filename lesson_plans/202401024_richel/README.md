@@ -92,28 +92,31 @@ Now fitting this into the schedule:
 
 Time       |Topic                          |Teacher
 -----------|-------------------------------|-------
-09:00-09:45|First login                    |?RB
+09:00-09:45|First login                    |BB + PO + RB
 09:45-10:00|Break                          |.
 10:00-10:10|Syllabus                       |RB
 10:10-10:20|R in general                   |RB
 10:20-10:45|Load modules and run           |RB
-10:45-11:00|Packages 15/30                 |BB
-11:00-11:15|Break                          |.
-11:15-11:30|Packages 15/30                 |BB
-11:30-12:00|Parallel session 30/45 mins    |PO * RB
+10:45-11:00|Break                          |.
+11:00-11:30|Packages 30/30                 |BB
+11:30-12:00|Isolated environments          |BB
 12:00-13:00|Lunch                          |.
-13:00-13:15|Parallel session 15/45 mins    |PO * RB
-13:15-14:00|Parallel                       |PO
-14:00-14:15|Break                          |.
-14:15-14:40|Isolated                       |BB
-14:40-14:55|Batch 15/30 mins               |BB
-14:55-15:10|Break                          |.
-15:10-15:25|Batch 15/30 mins               |BB
-15:25-16:00|Machine learning               |BB or PO
+13:00-13:30|Batch 30/30 mins               |BB
+13:30-14:15|Parallel                       |PO
+14:15-14:30|Break                          |.
+14:30-15:15|Simultaneous session 45/45 mins|PO * RB
+15:15-15:30|Break                          |.
+15:30-16:00|Machine learning               |BB or PO
+16:00-16:15|Summary and evaluation         |RB
 
 Parallel session:
- - Kebnekaise: ThinLinc & RStudio, by PO
+ - HPC2N: ThinLinc & RStudio, by PO
  - UPPMAX: ThinLinc, RStudio, interactive, by RB
+ - ?LUNARC, by ?RP
+
+TODO:
+
+- [ ] Ask RP about simultaneous session
 
 Discussion points:
 
