@@ -145,7 +145,7 @@ the code you are writing (R, Julia, Python, or Matlab) can also have some intern
    - Check if the libraries/packages that you are using have a threaded mechanism. 
    - Monitor the usage of hardware resources with tools offered at your HPC center:
 
-   .. raw::html
+   .. code-block:: HTML
 
         <a href="https://hpc2n.github.io/intro-course/software/#best__practices" target="_blank"> job-usage at HPC2N </a>).   
 
