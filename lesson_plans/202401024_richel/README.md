@@ -126,5 +126,13 @@ Discussion points:
   cut by a break. Is that acceptable?
   - If yes: no problemo
   - No: where should the breaks be instead? Who makes a new schedule?
-- R: There is no time for evaluation at the end. I feel 5 minutes
+- R: There is no time for evaluation at the end. I feel 10 minutes
   is enough and the time is worth it. I suggest to add it.
+- If evaluation, suggest questions on confidence, 
+  see [here](https://github.com/UPPMAX/uppmax_intro_day_1/tree/main/evaluations/20240827)
+  - Pro: useful to asses stronger/weaker sessions of the course
+  - Con: maybe must use a standard evaluation form, needs teachers to formulate
+    their lesson goals
+  - Vote:
+    - Yes:
+    - No:
