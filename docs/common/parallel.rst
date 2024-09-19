@@ -229,7 +229,8 @@ Passing Interface (MPI). In general, MPI requires refactoring of your code.
 
       .. tab:: Matlab 
 
-         In Matlab one can use the ``parpool('my-cluster',X)`` where *X* is the number of workers.
+         In Matlab one can use the ``parpool('my-cluster',X)`` where *X* is the number of workers. See the 
+         `documentation for parpool <https://se.mathworks.com/help/parallel-computing/parpool.html>`_ from MatWorks.
 
 
 .. demo:: 
