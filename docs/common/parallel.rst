@@ -165,9 +165,9 @@ data from or should transfer data to another process, it can do that by using `s
 Passing Interface (MPI). In general, MPI requires refactoring of your code.
 
 .. demo:: 
+   :class: dropdown
 
    .. tabs::
-
 
       .. tab:: Python
 
