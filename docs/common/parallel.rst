@@ -146,7 +146,31 @@ by setting environment variables such as `OMP_NUM_THREADS`.
 A common issue with shared memory programming is *data racing* which happens when 
 different threads write on the same memory address. 
 
-GPU programming has similar patterns to shared memory programming but there are
+.. admonition:: Language-specific nuances for threaded programming
+   :class: dropdown
+
+   .. tabs::
+
+      .. tab:: Python
+
+         In the    
+
+      .. tab:: Julia 
+
+         oou 
+
+      .. tab:: R 
+
+         oou 
+
+      .. tab:: Matlab 
+
+         oou 
+
+
+**GPUs**
+
+Graphical processing unit (GPU) programming has similar patterns to shared memory programming but there are
 major differences, for instance in the former one works with highly optimized 
 pieces of code that can run on thousand of cores (*kernels*). Also the APIs
 are different, with NVIDIA and ROCM being two of the most common ones in GPU
