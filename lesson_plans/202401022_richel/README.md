@@ -85,7 +85,7 @@ GPU                                        |10 + 10
 Kebnekaise: Jupyter                        |15 + 15
 Rackham: Interactive session and Jupyter   |. (parallel with Kebnekaise)
 Parallel and multithreaded functions       |25 + 10
-Total                                      |205
+Total                                      |205 + 50 = 255
 
 Now fitting this into the schedule:
 

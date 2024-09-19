@@ -86,7 +86,7 @@ Parallel                         |35 + 10
 Isolated environments            |20 + 5
 Batch                            |30
 Machine learning                 |35
-Total                            |240
+Total                            |225 + 30 = 255
 
 Now fitting this into the schedule:
 
