@@ -127,3 +127,6 @@ Time       |Topic                                                 |Teacher
 13:35-14:00|Batch 25/30 mins                                      |BB
 14:00-14:15|Break                                                 |.
 14:15-14:20|Batch 5/30 mins                                       |BB
+
+- R: There is no time for evaluation at the end. I feel 5 minutes
+  is enough and the time is worth it. I suggest to add it.
