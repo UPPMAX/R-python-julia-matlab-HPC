@@ -133,7 +133,7 @@ application programming interface (API) to parallelize programs by using a threa
 Here, all threads have access to the same data and can do computations simultaneously. 
 From this  we infer that without doing any modification to our code
 we can get the benefits from parallel computing by turning-on/off external libraries,
-by setting environment variables such as `OMP_NUM_THREADS`.
+by setting environment variables such as ``OMP_NUM_THREADS``.
 
 Higher-level languages have their own mechanisms to generate threads and this can be
 confusing especially if the code is using external libraries, linear algebra for instance
@@ -143,12 +143,12 @@ the code you are writing (R, Julia, Python, or Matlab) can also have some intern
 .. warning::
    
    - Check if the libraries/packages that you are using have a threaded mechanism. 
-   - Monitor the usage of hardware resources with tools offered at your HPC center 
-     (`job-usage at HPC2N <a href="https://hpc2n.github.io/intro-course/software/#best__practices" target="_blank">`_).   
+   - Monitor the usage of hardware resources with tools offered at your HPC center:
 
- 
+   .. raw::html
 
-            
+        <a href="https://hpc2n.github.io/intro-course/software/#best__practices" target="_blank"> job-usage at HPC2N </a>).   
+
 
 A common issue with shared memory programming is *data racing* which happens when 
 different threads write on the same memory address. 
