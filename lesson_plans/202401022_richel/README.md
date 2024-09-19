@@ -87,28 +87,32 @@ Rackham: Interactive session and Jupyter   |. (parallel with Kebnekaise)
 Parallel and multithreaded functions       |25 + 10
 Total                                      |205 + 50 = 255
 
-Now fitting this into the schedule:
+Now fitting this into this decided schedule:
 
 Time       |Topic                                                 |Teacher
 -----------|------------------------------------------------------|-------
-09:00-09:45|First login                                           |?RB
+09:00-09:45|First login                                           |BB + PO+ RB + RP
 09:45-10:00|Break                                                 |.
-10:00-10:10|Syllabus                                              |RP
-10:10-10:20|Python in general                                     |RP
-10:20-10:50|Load modules and run                                  |RP
-10:50-11:00|Packages 10/30                                        |RB
-11:00-11:15|Break                                                 |.
-11:15-11:35|Packages 20/30                                        |RB
-11:35-12:00|Isolated environments (ML, venv, **conda**) 25/60 mins|RB
+10:00-10:10|Syllabus BB, RB,                                      |RP
+10:10-10:20|Python in general BB, RB                              |RP
+10:20-10:50|Load modules and run BB, RB                           |RP
+10:50-11:05|Break                                                 |.
+11:05-11:35|Packages 30/30                                        |RB
+11:35-12:00|Isolated environments (ML, venv, conda) 25/60 mins    |RB
 12:00-13:00|Lunch                                                 |.
-13:00-13:35|Isolated environments (ML, venv, **conda**) 35/60 mins|RB
+13:00-13:35|Isolated environments (ML, venv, conda) 35/60 mins    |RB
 13:35-14:05|Batch 30/30 mins                                      |BB
 14:05-14:20|Break                                                 |.
 14:20-14:40|GPU                                                   |BB
-14:40-15:00|Parallel session 20/30 mins                           |BB * RB
-15:00-15:15|Break                                                 |.
-15:15-15:25|Parallel session 10/30 mins                           |BB * RB
+14:40-15:10|Simultaneous session 30/30 mins                       |BB * RB * RP
+15:10-15:25|Break                                                 |.
 15:25-16:00|Parallel and multithreaded functions                  |PO
+16:00-16:15|Summary and evaluation                                |RB
+
+Simultaneous session:
+- Kebnekaise: Jupyter, by BB
+- Rackham:  Interactive session and Jupyter, by RB
+- LUNARC, by RP
 
 Discussion points:
 
