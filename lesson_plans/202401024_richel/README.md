@@ -128,6 +128,11 @@ Discussion points:
   - No: where should the breaks be instead? Who makes a new schedule?
 - R: There is no time for evaluation at the end. I feel 10 minutes
   is enough and the time is worth it. I suggest to add it.
+  - Pro: helps us improve the course, shows we care about our learners' opinion
+  - Con: takes time away
+  - Vote:
+    - Yes:
+    - No:
 - If evaluation, suggest questions on confidence, 
   see [here](https://github.com/UPPMAX/uppmax_intro_day_1/tree/main/evaluations/20240827)
   - Pro: useful to asses stronger/weaker sessions of the course
