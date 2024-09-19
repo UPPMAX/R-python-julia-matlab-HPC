@@ -232,6 +232,79 @@ Passing Interface (MPI). In general, MPI requires refactoring of your code.
          In Matlab one can use the ``parpool('my-cluster',X)`` where *X* is the number of workers. See the 
          `documentation for parpool <https://se.mathworks.com/help/parallel-computing/parpool.html>`_ from MatWorks.
 
+Big data
+''''''''
+
+.. demo:: 
+   :class: dropdown
+
+   .. tabs::
+
+      .. tab:: Python
+
+         In the following example ``sleep.py`` the `sleep()` function is called `n` times first in serial mode and then by using `n` processes. 
+
+         **DASK**
+        
+ 
+         There are other strategies that are more automatic. **Dask** is a array model extension and task scheduler. By using the new array 
+         classes, you can automatically distribute operations across multiple CPUs.
+
+         Dask is very popular for data analysis and is used by a number of high-level Python libraries:
+
+            - Dask arrays scale NumPy (see also xarray)
+            - Dask dataframes scale Pandas workflows
+            - Dask-ML scales Scikit-Learn
+
+         - Dask divides arrays into many small pieces (chunks), as small as necessary to fit it into memory. 
+         - Operations are delayed (lazy computing) e.g. tasks are queue and no computation is performed until 
+           you actually ask values to be computed (for instance print mean values). 
+         - Then data is loaded into memory and computation proceeds in a streaming fashion, block-by-block.
+
+      .. tab:: Julia
+
+         In the following 
+
+         .. code-block:: julia
+
+            using BenchmarkTools
+
+
+         Run the script with the command  ``julia -p 6 sleep-distributed.jl`` to use 6 Julia processes.
+
+      .. tab:: R 
+   
+         In the following example ``sleep.R`` the `sleep()` function is called `n` times
+         first in serial mode and then by using `n` processes. Start by loading the 
+         modules ``ml GCC/10.2.0 OpenMPI/4.0.5 R/4.0.4``
+
+         .. code-block:: r
+        
+            library(doParallel)
+
+
+         Run the script with the command  ``Rscript --no-save --no-restore sleep.R``.
+
+         In this second example, a *lapply* function is used in parallel mode to compute the root
+         square of a sequence of numbers (call the script ``clusterapply.R``):
+
+         .. code-block:: r
+        
+            library(parallel)
+
+
+         Run the script with the command  ``Rscript --no-save --no-restore clusterapply.R``.
+
+      .. tab:: Matlab 
+   
+         In the following 
+
+         .. code-block:: matlab
+        
+            n = 6;  % Number of iterations
+
+
+-------------------
 
 .. demo:: 
    :class: dropdown
