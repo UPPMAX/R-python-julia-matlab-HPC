@@ -176,7 +176,7 @@ different threads write on the same memory address.
 
       .. tab:: Matlab 
 
-         Starting from version 2020a, Matlab offers the `ThreadPool <https://se.mathworks.com/help/parallel-computing/parallel.threadpool.html>` 
+         Starting from version 2020a, Matlab offers the `ThreadPool <https://se.mathworks.com/help/parallel-computing/parallel.threadpool.html>`_ 
          functionality that can leverage the power of threads sharing a common memory. This could 
          potentially lead to a faster code compared to other schemes (Distributed discussed below)
          but notice that the code is not expected to support multi-node simulations. 
