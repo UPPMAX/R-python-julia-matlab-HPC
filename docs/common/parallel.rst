@@ -128,20 +128,27 @@ Threaded programming
 ''''''''''''''''''''
 
 To take advantage of the shared memory of the cores, **threaded** mechanisms can be used.
-Low-level programming languages, such as Fortra/C/C++, use OpenMP as the standard
+Low-level programming languages, such as Fortran/C/C++, use OpenMP as the standard
 application programming interface (API) to parallelize programs by using a threaded mechanism.
 Here, all threads have access to the same data and can do computations simultaneously. 
+From this  we infer that without doing any modification to our code
+we can get the benefits from parallel computing by turning-on/off external libraries,
+by setting environment variables such as `OMP_NUM_THREADS`.
+
 Higher-level languages have their own mechanisms to generate threads and this can be
 confusing especially if the code is using external libraries, linear algebra for instance
 (LAPACK, BLAS, ...). These libraries have their own threads (OpenMP for example) and
-the code you are writing can also have some threded mechanism such as `Julia threads`.
-Due to a locking mechanism in Python, `Python threads` are not efficient for computation.
-However, the `Mojo project <https://docs.modular.com/mojo/notebooks/Mandelbrot.html#benchmarking>`_
-is striving to leverage the threaded parallelism in Python.
+the code you are writing (R, Julia, Python, or Matlab) can also have some internal threded mechanism.
+
+.. warning::
+   
+   - Check if the libraries/packages that you are using have a threaded mechanism. 
+   - Monitor the usage of hardware resources with tools offered at your HPC center 
+     (`job-usage at HPC2N <https://hpc2n.github.io/intro-course/software/#best__practices>`_)   
+
+ 
+
             
-From the previous paragraph we infer that without doing any modification to our code
-we can get the benefits from parallel computing by turning-on/off external libraries,
-by setting environment variables such as `OMP_NUM_THREADS`.
 
 A common issue with shared memory programming is *data racing* which happens when 
 different threads write on the same memory address. 
@@ -153,19 +160,29 @@ different threads write on the same memory address.
 
       .. tab:: Python
 
-         In the    
+         Python offers its own threaded mechanism but due to a locking mechanism, `Python threads` 
+         are not efficient for computation. However, Python threads could be useful for I/O files handling. 
+         Code modifications are required to support the threads.
 
       .. tab:: Julia 
 
-         oou 
+         The mechanism here is called `Julia threads` which is performant and can be activated by 
+         executing a script as follows ``julia --threads X sleep-threads.jl``, where *X* is the number of
+         threads. Code modifications are required to support the threads.
 
       .. tab:: R 
 
-         oou 
+         R doesn't have a threaded mechanism as in the other languages discussed in this course. Some 
+         functions provided by certain packages (parallel, doParallel, etc.), for instance, *foreach*, 
+         offer parallel features but memory is not shared across the workers. This could lead to 
+         `data replication <https://hpc2n.github.io/intro-course/software/#recommendations>`_.
 
       .. tab:: Matlab 
 
-         oou 
+         Starting from version 2020a, Matlab offers the `ThreadPool <https://se.mathworks.com/help/parallel-computing/parallel.threadpool.html>` 
+         functionality that can leverage the power of threads sharing a common memory. This could 
+         potentially lead to a faster code compared to other schemes (Distributed discussed below)
+         but notice that the code is not expected to support multi-node simulations. 
 
 
 **GPUs**
