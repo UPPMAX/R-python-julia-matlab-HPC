@@ -439,34 +439,7 @@ available for each language.
 
          Run the script with the command  ``Rscript --no-save --no-restore sleep.R``.
 
-         In this second example, a *lapply* function is used in parallel mode to compute the root
-         square of a sequence of numbers (call the script ``clusterapply.R``):
 
-         .. code-block:: r
-        
-            library(parallel)
-
-            # Define a function to be applied
-            square_function <- function(x) {
-                return(sqrt(x))
-            }
-
-            # Create the sequence of values
-            numbers <- seq(1,1000000)
-
-            # Create a cluster with 4 workers
-            cl <- makeCluster(4)
-
-            # Use a parallel lapply function
-            result_parallel <- clusterApply(cl, numbers, square_function)
-
-            # Stop the cluster
-            stopCluster(cl)
-
-            # Print the result
-            print(unlist(result_parallel))
-
-         Run the script with the command  ``Rscript --no-save --no-restore clusterapply.R``.
 
       .. tab:: Matlab 
    
