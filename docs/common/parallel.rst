@@ -502,6 +502,7 @@ Exercises
 ---------
 
 .. challenge:: Parallelizing a *for loop* workflow
+   :class: dropdown
 
    .. tabs:: 
 
