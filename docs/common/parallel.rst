@@ -121,7 +121,7 @@ Common parallel programming paradigms
 
 Now the question is how to take advantage of modern architectures which consist of many-cores,
 interconnected through networks, and that have different types of memory available?
-Python, Julia, and R languages have different tools and libraries that can help you
+Python, Julia, Matlab, and R languages have different tools and libraries that can help you
 to get more from your local machine or HPC cluster resources.
 
 Threaded programming
@@ -235,19 +235,20 @@ Passing Interface (MPI). In general, MPI requires refactoring of your code.
 Big data
 ''''''''
 
-.. admonition:: Language-specific nuances for big data
+Sometimes the workflow you are targeting doesn't require extensive computations but mainly dealing with
+big pieces of data. An example can be, reading a column-structured file and doing some transformation per-column.
+Fortunately, all languages covered in this course have already several tools to deal with big data.
+
+.. admonition:: Language-specific tools for big data
    :class: dropdown
 
    .. tabs::
 
       .. tab:: Python
 
-         In the following example ``sleep.py`` the `sleep()` function is called `n` times first in serial mode and then by using `n` processes. 
-
          **DASK**
-        
  
-         There are other strategies that are more automatic. **Dask** is a array model extension and task scheduler. By using the new array 
+         **Dask** is a array model extension and task scheduler. By using the new array 
          classes, you can automatically distribute operations across multiple CPUs.
 
          Dask is very popular for data analysis and is used by a number of high-level Python libraries:
@@ -265,12 +266,6 @@ Big data
 
          In the following 
 
-         .. code-block:: julia
-
-            using BenchmarkTools
-
-
-         Run the script with the command  ``julia -p 6 sleep-distributed.jl`` to use 6 Julia processes.
 
       .. tab:: R 
    
@@ -278,30 +273,11 @@ Big data
          first in serial mode and then by using `n` processes. Start by loading the 
          modules ``ml GCC/10.2.0 OpenMPI/4.0.5 R/4.0.4``
 
-         .. code-block:: r
-        
-            library(doParallel)
-
-
-         Run the script with the command  ``Rscript --no-save --no-restore sleep.R``.
-
-         In this second example, a *lapply* function is used in parallel mode to compute the root
-         square of a sequence of numbers (call the script ``clusterapply.R``):
-
-         .. code-block:: r
-        
-            library(parallel)
-
-
-         Run the script with the command  ``Rscript --no-save --no-restore clusterapply.R``.
 
       .. tab:: Matlab 
    
          In the following 
 
-         .. code-block:: matlab
-        
-            n = 6;  % Number of iterations
 
 
 -------------------
