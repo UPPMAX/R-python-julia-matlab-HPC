@@ -190,8 +190,10 @@ pieces of code that can run on thousand of cores (*kernels*). Also the APIs
 are different, with CUDA (NVIDIA) and ROCM (AMD) being two of the most common ones in GPU
 programming.
 
-NVIDIA GPUs can be found at: HPC2N, UPPMAX, LUNARC, NSC, and C3SE.
-AMD GPUs can be found at: HPC2N and PDC.
+.. admonition:: Keep in mind 
+
+   - NVIDIA GPUs can be found at: HPC2N, UPPMAX, LUNARC, NSC, and C3SE.
+   - AMD GPUs can be found at: HPC2N and PDC.
 
 Distributed programming
 '''''''''''''''''''''''
