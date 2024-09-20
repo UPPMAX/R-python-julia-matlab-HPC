@@ -238,6 +238,8 @@ Big data
 Sometimes the workflow you are targeting doesn't require extensive computations but mainly dealing with
 big pieces of data. An example can be, reading a column-structured file and doing some transformation per-column.
 Fortunately, all languages covered in this course have already several tools to deal with big data.
+We list some of these tools in what follows but notice that other tools doing similar jobs can be 
+available for each language. 
 
 .. admonition:: Language-specific tools for big data
    :class: dropdown
@@ -246,9 +248,9 @@ Fortunately, all languages covered in this course have already several tools to 
 
       .. tab:: Python
 
-         **DASK**
+         **Dask**
  
-         **Dask** is a array model extension and task scheduler. By using the new array 
+         `Dask <https://www.dask.org/>`_ is a array model extension and task scheduler. By using the new array 
          classes, you can automatically distribute operations across multiple CPUs.
 
          Dask is very popular for data analysis and is used by a number of high-level Python libraries:
@@ -261,18 +263,22 @@ Fortunately, all languages covered in this course have already several tools to 
          - Operations are delayed (lazy computing) e.g. tasks are queue and no computation is performed until 
            you actually ask values to be computed (for instance print mean values). 
          - Then data is loaded into memory and computation proceeds in a streaming fashion, block-by-block.
+         - An example of a Jupyter notebook running Dask can be found 
+           `here <https://github.com/UPPMAX/HPC-python/blob/main/Exercises/examples/Dask-Ini.ipynb>`_. 
 
       .. tab:: Julia
 
-         In the following 
+         **Dagger** 
 
+         According to the developers of this framework, `Dagger <https://juliaparallel.org/Dagger.jl/dev/>`_ 
+         is heavily inspired on Dask. It support distributed arrays so that they could fit the memory and
+         also the possibility of parallelizing the computations on these arrays. 
 
       .. tab:: R 
    
-         In the following example ``sleep.R`` the `sleep()` function is called `n` times
-         first in serial mode and then by using `n` processes. Start by loading the 
-         modules ``ml GCC/10.2.0 OpenMPI/4.0.5 R/4.0.4``
-
+         `Arrow <https://arrow.apache.org/docs/r/index.html>`_ (previously *disk.frame*) can deal with 
+         big arrays. Other tools include `data.table <https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html>`_
+         and `bigmemory <https://cran.r-project.org/web/packages/bigmemory/index.html>`_. 
 
       .. tab:: Matlab 
    
