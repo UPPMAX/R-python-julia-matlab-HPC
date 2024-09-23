@@ -449,23 +449,31 @@ available for each language.
         
             n = 6;  % Number of iterations
 
+            % Start timming
+            tic;
+            sleep_serial(n);
+            t_serial = toc;  % stop timing
+            fprintf('Time taken for serial version: %.2f seconds\n', t_serial);
+
+            % Matlab uses the so called parpool to create some workers 
+            parpool('kebnekaise', 4);
+            p = gcp; % handler for the parpool
+
+            % Start timing
+            tic;
+            sleep_parallel(n);
+            t_parallel = toc; % stop timing
+            fprintf('Time taken for parallel version: %.2f seconds\n', t_parallel);
+            
+            % Delete the pool
+            delete(gcp);
+
             % Serial version
             function sleep_serial(n)
                 for i = 1:n
                   pause(1); 
                end
             end
-
-            % Measure time
-            tic;
-            sleep_serial(n);
-            t_serial = toc;
-            fprintf('Time taken for serial version: %.2f seconds\n', t_serial);
-
-            % Matlab uses the so called parpool to create some workers 
-            parpool('kebnekaise', 4);
-            p = gcp; 
-            n = 6;  % Number of iterations
 
             % Parallel version
             function sleep_parallel(n)
@@ -474,14 +482,7 @@ available for each language.
                end
             end
 
-            % Measure time
-            tic;
-            sleep_parallel(n);
-            t_parallel = toc;
-            fprintf('Time taken for parallel version: %.2f seconds\n', t_parallel);
-            
-            % Delete the pool
-            delete(gcp);
+
 
 Exercises
 ---------
