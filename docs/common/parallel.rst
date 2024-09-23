@@ -875,7 +875,50 @@ Exercises
 
                 # Print the results
                 print(sum(result)/10000)	     
-	     
+
+      .. tab:: Matlab
+      
+            .. code-block:: matlab
+	 
+                % Create a table with two columns: ID and Value
+                ID = (1:10000)';  % Column for IDs
+                Value = (3:2:20001)';  Column for values
+                data_tbl = table(ID, Value);
+
+                % Matlab uses the so called parpool to create some workers
+                parpool('kebnekaise', 4);
+                p = gcp;
+                % Function to compute the sum in parallel
+                function total_sum_parallel = parallel_sum(values)
+                  n = length(values);
+                  num_workers = 4;
+                  local_sums = zeros(1, num_workers);  % Preallocate thread-local sums
+
+                  parfor i = 1:n
+                     worker_id = getCurrentTask().ID;  % Get the ID of the current worker
+                     local_sums(worker_id) = local_sums(worker_id) + values(i);
+                  end
+
+                  % Combine the local sums to get the total sum
+                  total_sum_parallel = sum(local_sums);
+                end
+
+                % Measure time
+                tic;
+                % Compute the sum in parallel
+                total_sum_parallel = parallel_sum(data_tbl.Value);
+
+                % Compute the mean
+                mean_value_parallel = total_sum_parallel / length(data_tbl.Value);
+                t_parallel = toc;
+                fprintf('Time taken for parallel version: %.2f seconds\n', t_parallel);
+
+                % Display the mean value
+                disp(mean_value_parallel);
+
+                % Delete the pool
+                delete(gcp);
+
 
 
 .. admonition:: More info
