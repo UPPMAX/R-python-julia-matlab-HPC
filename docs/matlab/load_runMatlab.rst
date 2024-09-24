@@ -203,5 +203,9 @@ The GUI is typically the recommended interface where it is offered.
          The `-singleCompThread` is important to prevent MATLAB from spawning as many processes as it thinks it needs, which can result it in taking up a whole node, and the `-nodisplay` flag prevents the GUI from launching.
 
 Example Scripts and Functions
-=============================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Try them yourself!
+
+.. code-block:: console
+
+   $ matlab ...
