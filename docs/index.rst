@@ -345,6 +345,7 @@ Content of the course
    common/parallel.rst
    matlab/local_desktopMatlab.rst
    matlab/interactionsMatlab.rst
+   matlab/interactiveMatlab.rst
 
 
 .. toctree::
