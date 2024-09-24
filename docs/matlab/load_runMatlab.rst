@@ -147,7 +147,61 @@ For this course, we recommend using MATLAB R2023x at UPPMAX (202??), LUNARC (202
          .. code-block:: console
 
             $ ml MATLAB/2023b
+    
 
-Run a MATLAB script
---------------------
-Most of the time, you will run either MATLAB live scripts (.mlx) or basic script or function files (.m). Live scripts can only be opened and worked on in the graphical interface, so we'll start with running a basic MATLAB function.
+Start MATLAB and Run a Script
+-----------------------------
+Most of the time, you will run either MATLAB live scripts (.mlx) or basic script or function files (.m). Live scripts can only be opened and worked on in the graphical interface, while basic function or script files can also be run from a batch script and/or at the command line.
+
+The GUI is typically the recommended interface where it is offered.
+
+.. type-along::
+    
+   Starting MATLAB at the command line, here R2023b
+
+   .. tabs::
+
+      .. tab:: UPPMAX
+   
+         Once you've loaded matlab/2023b, or your preferred version, type:
+
+         .. code-block:: console
+
+            $ matlab
+
+         to start the GUI, or
+
+         .. code-block:: console
+
+            $ matlab -nodisplay
+
+         to start MATLAB in the terminal.
+ 
+      .. tab:: HPC2N 
+
+         The GUI can be started in a Thinlinc session by going to "Application" &rarr; "HPC2N Applications" &rarr; "Applications" &rarr; "Matlab <version>" and clicking the desired version.
+
+         To start MATLAB in the terminal, load matlab/2023b or your preferred version, and then type:
+
+         .. code-block:: console
+
+            $ matlab -singleCompThread -nodisplay
+
+         to start MATLAB in the terminal. The `-singleCompThread` is important to prevent MATLAB from spawning as many processes as it thinks it needs, which can result it in taking up a whole node, and the `-nodisplay` flag prevents the GUI from launching.
+
+      .. tab:: LUNARC 
+
+         The GUI can be started in Thinlinc at the LUNARC HPC Desktop On-Demand by going to "Applications" &rarr; "Applications - Matlab" &rarr; "Matlab <version>" and clicking the desired version number. A GfxLauncher window will pop up where you can specify your account, requested resources, and walltime. For more details, see the section on `Desktop On-Demand https://uppmax.github.io/R-python-julia-matlab-HPC/common/ondemand-desktop.html`_
+
+         To start MATLAB in the terminal, load matlab/2023b or your preferred version, and then type:
+
+         .. code-block:: console
+
+            $ matlab -singleCompThread -nodisplay
+
+         to start MATLAB in the terminal. 
+         The `-singleCompThread` is important to prevent MATLAB from spawning as many processes as it thinks it needs, which can result it in taking up a whole node, and the `-nodisplay` flag prevents the GUI from launching.
+
+Example Scripts and Functions
+=============================
+Try them yourself!
