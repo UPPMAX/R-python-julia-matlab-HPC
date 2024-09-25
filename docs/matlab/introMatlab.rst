@@ -165,6 +165,8 @@ Workflow in MATLAB (DEMO)
 
    The teacher will do this as a demo. You will have the opportunity to test in the next session!
 
+It is recommended to use Thinlinc to log in and work in the MATLAB graphic user interface (GUI) where the option exists. 
+
 After loading the appropriate modules for MATLAB, you can start the IDE from the command line by typing ``matlab``: 
 
 .. tabs::
@@ -186,12 +188,12 @@ After loading the appropriate modules for MATLAB, you can start the IDE from the
 
    .. tab:: LUNARC
 
-        On HPC desktop, you can go to `Applications - MATLAB` and launch the On-Demand app directly. Alternatively, if you use SSH or prefer to use the interactive terminal under `Applications - General`, you can type the following...
+        On HPC desktop, you can go to ``Applications`` &rarr; ``Applications - Matlab`` &rarr; ``Matlab <version>``  and launch the GUI directly. Alternatively, if you use SSH or otherwise can't load the GUI, you can type the following to start MATLAB in the terminal:
 
         .. code-block:: Matlab-repl
          
          $ module load matlab/2023b
-         $ matlab -SingleCompThread &
+         $ matlab -SingleCompThread -nodisplay
 
 
 More on MATLAB?
