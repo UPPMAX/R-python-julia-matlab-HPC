@@ -416,7 +416,7 @@ available for each language.
 
       .. tab:: R 
    
-         In the following example ``sleep.R`` the `sleep()` function is called `n` times
+         In the following example ``sleep.R`` the `Sys.sleep()` function is called `n` times
          first in serial mode and then by using `n` processes. Start by loading the 
          modules ``ml GCC/10.2.0 OpenMPI/4.0.5 R/4.0.4``
 
@@ -450,44 +450,54 @@ available for each language.
 
       .. tab:: Matlab 
    
-         In the following 
+         In Matlab one can use the function `pause()` to wait for some number of secods.
+         The Matlab module we tested can be loaded as ``ml MATLAB/2023a.Update4``.  
 
          .. code-block:: matlab
         
+            % Get a handler for the cluster
+            c=parcluster('kebnekaise');
+
             n = 6;  % Number of iterations
 
-            % Start timming
-            tic;
-            sleep_serial(n);
-            t_serial = toc;  % stop timing
-            fprintf('Time taken for serial version: %.2f seconds\n', t_serial);
+            % Run the job with 1 worker and submit the job to the batch queue
+            j = c.batch(@sleep_serial, 1, {6}, 'pool', 1);
+            % Wait till the job has finished
+            j.wait;
+            % Fetch the result after the job has finished
+            t = j.fetchOutputs{:};
+            fprintf('Time taken for serial version: %.2f seconds\n', t);
 
-            % Matlab uses the so called parpool to create some workers 
-            parpool('kebnekaise', 4);
-            p = gcp; % handler for the parpool
-
-            % Start timing
-            tic;
-            sleep_parallel(n);
-            t_parallel = toc; % stop timing
-            fprintf('Time taken for parallel version: %.2f seconds\n', t_parallel);
-            
-            % Delete the pool
-            delete(gcp);
+            % Run the job with 6 worker and submit the job to the batch queue
+            j = c.batch(@sleep_parallel, 1, {6}, 'pool', 6);
+            % Wait till the job has finished
+            j.wait;
+            % Fetch the result after the job has finished
+            t = j.fetchOutputs{:};
+            fprintf('Time taken for parallel version: %.2f seconds\n', t);
 
             % Serial version
-            function sleep_serial(n)
-                for i = 1:n
-                  pause(1); 
+            function t_serial = sleep_serial(n)
+            % Start timming
+            tic;
+               for i = 1:n
+                  pause(1);
                end
+            t_serial = toc;  % stop timing
             end
 
             % Parallel version
-            function sleep_parallel(n)
+            function t_parallel = sleep_parallel(n)
+            % Start timing
+            tic;
                parfor i = 1:n
-                  pause(1);  
+                  pause(1);
                end
+            t_parallel = toc; % stop timing
             end
+
+         You can run this code directly in the Matlab GUI.
+
 
 
 
@@ -496,6 +506,16 @@ Exercises
 
 .. challenge:: Parallelizing a *for loop* workflow
    :class: dropdown
+
+   Create a Data Frame containing two features, one called **ID** which has integer values 
+   from 1 to 10000, and the other called **Value** that contains 10000 integers starting from 3
+   and goes in steps of 2 (3, 5, 7, ...). The following codes contain parallelized workflows
+   whose goal is to compute the average of the whole feature **Value** using some number of 
+   workers. Substitute the **FIXME** strings in the following codes to perform the tasks given
+   in the comments. 
+
+   *The main idea for all languages is how to divide the workload across all workers*.
+   You can run the codes as suggested for each language. 
 
    .. tabs:: 
 
@@ -577,9 +597,6 @@ Exercises
                         # Load any modules you need, here for Python 3.11.3 and compatible SciPy-bundle
                         module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07
                         python script-df.py
-
-
-
 
 
       .. tab:: Julia
@@ -763,19 +780,19 @@ Exercises
                 % Create a table with two columns: ID and Value
                 ID = (1:10000)';  % Column for IDs
                 Value = (3:2:20001)'; % Column for values
-                data_tbl = table(ID, Value);
+                data_tbl = table(*FIXME*, *FIXME*); % Create a table with the previous two features
 
                 % Matlab uses the so called parpool to create some workers
-                parpool('kebnekaise', 4);
+                parpool('kebnekaise', *FIXME*);
                 p = gcp;
 
                 % Measure time
                 tic;
-                % Compute the sum in parallel
-                total_sum_parallel = parallel_sum(data_tbl.Value);
+                % Compute the sum in parallel for the Value feature
+                total_sum_parallel = parallel_sum(data_tbl.*FIXME*);
 
                 % Compute the mean
-                mean_value_parallel = total_sum_parallel / length(data_tbl.Value);
+                mean_value_parallel = total_sum_parallel / length(data_tbl.*FIXME*);
 
                 % Stop measuring time
                 t_parallel = toc;
@@ -789,18 +806,19 @@ Exercises
 
                 % Function to compute the sum in parallel
                 function total_sum_parallel = parallel_sum(values)
-                n = length(values);
+                n = length(*FIXME*);
                
                 local_sums = 0.0;
-                parfor i = 1:n
-                   local_sums = local_sums + values(i);
+                parfor i = 1:*FIXME*        % run the loop over the number of elements
+                   local_sums = local_sums + *FIXME*(i);    % add the values to the partial sum
                 end
 
                 % Set the total sum
                 total_sum_parallel = local_sums;
                 end
 
-
+         You can run this code directly from the Matlab GUI.   
+      
 .. solution:: Solution
 
    .. tabs:: 
