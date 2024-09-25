@@ -3,14 +3,14 @@ Load and Run MATLAB
 
 Different recommended procedures for each HPC center:
   - **UPPMAX and HPC2N**: use module system to load at command line
-  - **LUNARC**: recommended to use Desktop On-Demand menu, but interactive command line available
+  - **LUNARC**: recommended to use Desktop On-Demand menu, but interactive and non-interactive command lines available
 
 Most HPC centres in Sweden is using the same or similar module system for their software. The difference lies in which modules are installed and their versions/naming. The general examples below will be the same for all/most HPC centres in Sweden - the specific names for the modules will vary a little.
    
 .. objectives:: 
 
-   - Show how to load Matlab
-   - Show how to run Matlab scripts and start the Matlab user interface
+   - Show how to load MATLAB
+   - Show how to run MATLAB scripts and start the MATLAB graphical user interface (GUI)
 
 .. admonition:: Short cheat sheet
     :class: dropdown 
@@ -151,9 +151,11 @@ For this course, we recommend using MATLAB R2023x at UPPMAX (202??), LUNARC (202
 
 Start MATLAB and Run a Script
 -----------------------------
-Most of the time, you will run either MATLAB live scripts (.mlx) or basic script or function files (.m). Live scripts can only be opened and worked on in the graphical interface, while basic function or script files can also be run from a batch script and/or at the command line.
+Most of the time, you will run either MATLAB live scripts (``.mlx``) or basic script or function files (``.m``). Live scripts can only be opened and worked on in the GUI, while basic function or script files can also be run from a batch script and/or at the command line.
 
-The GUI is typically the recommended interface where it is offered.
+It is important to note that at the command line, function definition is typically not supported unless the function is short and anonymous; user-defined functions must generally be written up and saved to separate ``.m`` files.
+
+The GUI is typically the recommended interface where it is offered. The GUI provides ways to set up SLURM jobs through the ``Parallel Computing Toolbox``, which will be discussed later. 
 
 .. type-along::
     
@@ -187,11 +189,11 @@ The GUI is typically the recommended interface where it is offered.
 
             $ matlab -singleCompThread -nodisplay
 
-         to start MATLAB in the terminal. The `-singleCompThread` is important to prevent MATLAB from spawning as many processes as it thinks it needs, which can result it in taking up a whole node, and the `-nodisplay` flag prevents the GUI from launching.
+         to start MATLAB in the terminal. The ``-singleCompThread`` is important to prevent MATLAB from hogging a whole node, and the `-nodisplay` flag prevents the GUI from launching.
 
       .. tab:: LUNARC 
 
-         The GUI can be started in Thinlinc at the LUNARC HPC Desktop On-Demand by going to "Applications" &rarr; "Applications - Matlab" &rarr; "Matlab <version>" and clicking the desired version number. A GfxLauncher window will pop up where you can specify your account, requested resources, and walltime. For more details, see the section on `Desktop On-Demand https://uppmax.github.io/R-python-julia-matlab-HPC/common/ondemand-desktop.html`_
+         It is recommended that GUI be started in Thinlinc at the LUNARC HPC Desktop On-Demand by going to "Applications" &rarr; "Applications - Matlab" &rarr; "Matlab <version>" and clicking the desired version number. A GfxLauncher window will pop up where you can specify your account, requested resources, and walltime for the GUI itself; these settings are distinct from and do not constrain SLURM jobs sent from the GUI to the compute nodes. For more details, see the section on `Desktop On-Demand https://uppmax.github.io/R-python-julia-matlab-HPC/common/ondemand-desktop.html`_
 
          To start MATLAB in the terminal, load matlab/2023b or your preferred version, and then type:
 
@@ -199,13 +201,52 @@ The GUI is typically the recommended interface where it is offered.
 
             $ matlab -singleCompThread -nodisplay
 
-         to start MATLAB in the terminal. 
-         The `-singleCompThread` is important to prevent MATLAB from spawning as many processes as it thinks it needs, which can result it in taking up a whole node, and the `-nodisplay` flag prevents the GUI from launching.
+         There are 2 possible terminals: one in "Applications" &rarr; "Favorites" &rarr; "Terminal", which runs on a login node, and one at "Applications" &rarr; "Applications - General" &rarr; "Interactive Terminal", which can safely launch either the MATLAB GUI or MATLAB command line on a compute node. Starting the latter will open the GfxLauncher and prompt you for your account and resource requests first. 
 
-Example Scripts and Functions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+For most of the resources above, the ``-singleCompThread`` is essential to prevent MATLAB from spawning as many processes as it thinks it needs, which can result it in hogging a full node. Most terminal instances launch MATLAB (either the GUI or command line) on a login node by default, so hogging a node can stall other users' jobs, a violation of the NAISS user agreement. Setting ``-singleCompThread`` does **not** prevent MATLAB from sending parallelized and/or multi-threaded jobs to SLURM or the MATLAB Distributed Computing Server (MDCS).
+
+Examples
+^^^^^^^^
 Try them yourself!
+
+1. Load MATLAB in the terminal and do a few simple commands.
 
 .. code-block:: console
 
-   $ matlab ...
+   $ ml matlab/2023b
+   $ matlab -singleCompThread -nodisplay
+                               < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+             R2023b Update 7 (23.2.0.2515942) 64-bit (glnxa64)
+                              January 30, 2024
+   To get started, type doc.
+   For product information, visit www.mathworks.com.
+   >> a = 5;
+   >> b = eye(2);
+   >> c = a+b
+   c =
+       6     5
+       5     6
+
+2. Run an example function, ``add2(a,b)`` (the function file is in the exercises folder).
+
+.. code-block:: console
+
+   >> sum2 = add2(5,8);
+   result =
+       13
+   The sum of 5 and 8 is 13
+   >> sum2
+   sum2 =
+       13
+
+3. Exit the MATLAB command line with ``quit`` or ``exit`` (this can take a few seconds).
+
+.. code-block:: console
+
+   >> exit
+
+.. keypoints::
+
+   - You can start MATLAB either in a GUI (recommended) or, with the ``-nodisplay flag``, run it in the terminal.
+   - If you start either interface from the terminal, you must first load the correct module and always include ``-singleCompThread`` to avoid hogging a login node.
