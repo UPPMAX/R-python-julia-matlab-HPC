@@ -297,17 +297,17 @@ available for each language.
 .. demo:: 
    :class: dropdown
 
+   The idea is to parallelize a simple *for loop* (language-agnostic): 
+
+   .. code-block:: sh 
+
+      for i start at 1 end at 6 
+         wait 1 second 
+      end the for loop
+
+   The waiting step is used to realize how faster the loop can be executed when more threads are added.
+
    .. tabs::
-
-      The idea is to parallelize a simple *for loop* (language-agnostic): 
-
-      .. code-block:: sh 
-
-         for i start at 1 end at 6 
-              wait 1 second 
-         end the for loop
-
-      The waiting step is used to realize how faster the loop can be executed when more threads are added.
 
       .. tab:: Python
 
