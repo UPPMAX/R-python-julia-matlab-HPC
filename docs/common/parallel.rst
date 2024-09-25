@@ -299,6 +299,16 @@ available for each language.
 
    .. tabs::
 
+      The idea is to parallelize a simple *for loop* (language-agnostic): 
+
+      .. code-block:: sh 
+
+         for i start at 1 end at 6 
+              wait 1 second 
+         end the for loop
+
+      The waiting step is used to realize how faster the loop can be executed when more threads are added.
+
       .. tab:: Python
 
          In the following example ``sleep.py`` the `sleep()` function is called `n` times first in serial mode and then by using `n` processes. 
@@ -353,7 +363,6 @@ available for each language.
 
          First load the modules ``ml GCCcore/10.3.0 Python/3.9.5`` and then run the script
          with the command  ``python sleep.py`` to use 6 processes.
-
 
       .. tab:: Julia
 
@@ -438,8 +447,6 @@ available for each language.
             parallel_time
 
          Run the script with the command  ``Rscript --no-save --no-restore sleep.R``.
-
-
 
       .. tab:: Matlab 
    
