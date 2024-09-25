@@ -78,7 +78,7 @@ Check for MATLAB versions
 
             $ ml spider matlab
 
-        Or, if on Desktop On-Demand, select Applications in the top left corner and hover over `Applications - Matlab`
+        Or, if on Desktop On-Demand, select ``Applications`` in the top left corner and hover over ``Applications - Matlab``
 
 .. note::
   
@@ -193,7 +193,7 @@ The GUI is typically the recommended interface where it is offered. The GUI prov
 
       .. tab:: LUNARC 
 
-         It is recommended that GUI be started in Thinlinc at the LUNARC HPC Desktop On-Demand by going to "Applications" &rarr; "Applications - Matlab" &rarr; "Matlab <version>" and clicking the desired version number. A GfxLauncher window will pop up where you can specify your account, requested resources, and walltime for the GUI itself; these settings are distinct from and do not constrain SLURM jobs sent from the GUI to the compute nodes. For more details, see the section on `Desktop On-Demand https://uppmax.github.io/R-python-julia-matlab-HPC/common/ondemand-desktop.html`_
+         It is recommended that GUI be started in Thinlinc at the LUNARC HPC Desktop On-Demand by going to ``Applications`` &rarr; ``Applications - Matlab`` &rarr; ``Matlab <version>`` and clicking the desired version number. A GfxLauncher window will pop up where you can specify your account, requested resources, and walltime for the GUI itself; these settings are distinct from and do not constrain SLURM jobs sent from the GUI to the compute nodes. For more details, see the section on `Desktop On-Demand https://uppmax.github.io/R-python-julia-matlab-HPC/common/ondemand-desktop.html`_
 
          To start MATLAB in the terminal, load matlab/2023b or your preferred version, and then type:
 
@@ -201,7 +201,7 @@ The GUI is typically the recommended interface where it is offered. The GUI prov
 
             $ matlab -singleCompThread -nodisplay
 
-         There are 2 possible terminals: one in "Applications" &rarr; "Favorites" &rarr; "Terminal", which runs on a login node, and one at "Applications" &rarr; "Applications - General" &rarr; "Interactive Terminal", which can safely launch either the MATLAB GUI or MATLAB command line on a compute node. Starting the latter will open the GfxLauncher and prompt you for your account and resource requests first. 
+         There are 2 possible terminals: one in ``Applications`` &rarr; ``Favorites`` &rarr; ``Terminal``, which runs on a login node, and one at ``Applications`` &rarr; ``Applications - General`` &rarr; ``Interactive Terminal``, which can safely launch either the MATLAB GUI or MATLAB command line on a compute node. Starting the latter will open the GfxLauncher (the user and prompt you for your account and resource requests first. 
 
 For most of the resources above, the ``-singleCompThread`` is essential to prevent MATLAB from spawning as many processes as it thinks it needs, which can result it in hogging a full node. Most terminal instances launch MATLAB (either the GUI or command line) on a login node by default, so hogging a node can stall other users' jobs, a violation of the NAISS user agreement. Setting ``-singleCompThread`` does **not** prevent MATLAB from sending parallelized and/or multi-threaded jobs to SLURM or the MATLAB Distributed Computing Server (MDCS).
 
