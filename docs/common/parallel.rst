@@ -514,7 +514,7 @@ Exercises
    workers. Substitute the **FIXME** strings in the following codes to perform the tasks given
    in the comments. 
 
-   *The main idea for all languages is how to divide the workload across all workers*.
+   *The main idea for all languages is to divide the workload across all workers*.
    You can run the codes as suggested for each language. 
 
    .. tabs:: 
