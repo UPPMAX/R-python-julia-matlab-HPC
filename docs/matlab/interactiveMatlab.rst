@@ -26,7 +26,7 @@ Interactive work on compute nodes
 There are several ways to run Matlab interactively
 
 - Directly on the login nodes: **only** do this for short jobs that do not take a lot of resources
-- As an interactive job on the computer nodes, launched via the batch system or Desktop On-Demand
+- As an interactive job on the computer nodes, launched via the batch system or Desktop On-Demand (LUNARC)
 - Jupyter notebooks (HPC2N, UPPMAX)
 
 General
@@ -35,7 +35,7 @@ General
 In order to run interactively, you need to have compute nodes allocated to run on, and this is done through the batch system.  
 
 Because you will have to wait until the nodes are allocated, and because you cannot know when this happens, 
-this is not usually a recommended way to run Matlab, but it is possible. 
+this is not usually a recommended way to run MATLAB, but it is possible. 
 
 .. warning::
 
@@ -69,7 +69,9 @@ run on the allocated nodes instead of the login node.
       .. code-block:: console
           
          $ salloc -n <tasks> --time=HHH:MM:SS -A hpc2n2023-110
-         
+
+   .. tab:: LUNARC (On-Demand Desktop/GfxLauncher)
+      
       
 where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in 
       hours, minutes, and seconds (maximum T168 hours), and then you give the id for your project 
@@ -82,7 +84,7 @@ Your request enters the job queue just like any other job, and interactive/sallo
       If you do not preface with ``srun`` the command is run on the login node! 
       
 
-You can now run Julia scripts on the allocated resources directly instead of waiting for 
+You can now run MATLAB scripts on the allocated resources directly instead of waiting for 
       your batch job to return a result. This is an advantage if you want to test your Julia 
       script or perhaps figure out which parameters are best.
                   
