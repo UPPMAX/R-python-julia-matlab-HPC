@@ -82,7 +82,33 @@ Check for MATLAB versions
 
 .. note::
   
-  In this course we will use MATLAB R2023b.
+  In this course we will use MATLAB R202??.
+
+.. admonition:: Output at HPC2N (Kebnekaise) as of 26 Sep 2024  
+    :class: dropdown
+
+        .. code-block:: console
+
+            $ ml spider MATLAB
+            ----------------------------------------------------------------------------
+              MATLAB:
+            ----------------------------------------------------------------------------
+                Description:
+                  MATLAB is a high-level language and interactive environment that
+                  enables you to perform computationally intensive tasks faster than
+                  with traditional programming languages such as C, C++, and Fortran.
+            
+                 Versions:
+                    MATLAB/2019b.Update2
+                    MATLAB/2021a
+                    MATLAB/2021b
+                    MATLAB/2022b.Update3
+                    MATLAB/2023a.Update4
+                 Other possible modules matches:
+                    MATLAB-parallel-support
+            
+            ----------------------------------------------------------------------------
+
 
 .. admonition:: Output at LUNARC (Cosmos nodes) as of 4 Sep 2024  
     :class: dropdown
