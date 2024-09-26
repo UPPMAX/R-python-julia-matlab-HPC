@@ -1,4 +1,4 @@
-function [dstats, t] = par_dice_stats(iter)
+function [dstats, t] = dice_stats_par(iter)
 % All numbers N for which there exist fair dice with N faces 
 nsides = [2:22 24:2:32 36 38 48 50 60 62 92 100 120];
 % pre-allocate array for stats
