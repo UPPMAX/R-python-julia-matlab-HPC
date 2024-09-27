@@ -140,11 +140,17 @@ confusing especially if the code is using external libraries, linear algebra for
 (LAPACK, BLAS, ...). These libraries have their own threads (OpenMP for example) and
 the code you are writing (R, Julia, Python, or Matlab) can also have some internal threded mechanism.
 
-.. warning::
+.. warning:: Exceeding allocated resources
    
    - Check if the libraries/packages that you are using have a threaded mechanism. 
    - Monitor the usage of hardware resources with tools offered at your HPC center, for instance
      `job-usage at HPC2N <https://hpc2n.github.io/intro-course/software/#best__practices>`_.   
+
+   .. tabs:: Some examples (of many)
+
+      .. tab:: Python
+
+         Pyth
 
 
 A common issue with shared memory programming is *data racing* which happens when 
