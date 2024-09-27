@@ -53,6 +53,11 @@ Preliminary schedule
     15:25-16:00|Parallel and multithreaded functions                  |PO
     16:00-16:15|Summary and evaluation                                |RB
 
+    Simultaneous session:
+    - Kebnekaise: Jupyter, by BB
+    - Rackham:  Interactive session and Jupyter, by RB
+    - LUNARC, by RP
+
 
 .. list-table:: Preliminary times
    :widths: 25 25 50
@@ -117,6 +122,12 @@ Preliminary schedule
    * - 16:15
      - End of the day
      - .
+
+Simultaneous session:
+
+    - Kebnekaise: Jupyter, by BB
+    - Rackham:  Interactive session and Jupyter, by RB
+    - LUNARC, by RP
 
 What is python?
 ---------------
