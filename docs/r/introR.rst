@@ -76,7 +76,7 @@ R is used in many NAISS centres:
    - On UPPMAX, you can copy the R exercise tarball from /proj/naiss2024-22-107/exercises-r.tar.gz 
 
 
-Preliminary schedule
+Schedule
 --------------------
 
 .. mermaid::  intro_r_overview_course_login_and_scheduler.mmd
@@ -110,7 +110,7 @@ Preliminary schedule
      - UPPMAX: ThinLinc, RStudio, interactive, by RB
      - ?LUNARC, by ?RP
 
-.. list-table:: Preliminary times
+.. list-table:: Schedule
    :widths: 25 25 50
    :header-rows: 1
 
