@@ -56,9 +56,7 @@ Schedule
 .. _Comment - Rackham:  Interactive session and Jupyter, by RB
 .. _Comment - LUNARC, by RP
 
-Course schedule:
-
-.. list-table:: Preliminary times
+.. list-table:: Course schedule
    :widths: 25 25 50
    :header-rows: 1
 
