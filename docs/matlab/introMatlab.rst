@@ -114,20 +114,6 @@ Preliminary schedule
    * - 15.00
      - END
      -
-.. important:: 
-
-   - **Menti:**
-   - https://www.menti.com/alvj5kukhz75
-   - with code valid the week: `12 40 73 1` https://www.menti.com.
-
-
-.. Discussion:: **Menti**
-
-   - Which University?
-   - Which scientific topic?
-
-
-
 
 .. instructor-note::
 
@@ -157,43 +143,6 @@ Of course MATLAB also has some drawbacks:
    - With respect to the 2-language problem (where one can optimize for either performance or ease of prototyping, but not both), MATLAB even moreso than Python is geared toward usability. It can be slow.
    - The way MATLAB automates multithreading means it will hog a full node unless you explicitly tell it not to by setting `-SingleCompThread` as an option at startup. 
    - The built-in plotting functions generate only very low-resolution raster graphics with no anti-aliasing, not suitable for publication.
-
-Workflow in MATLAB (DEMO)
-------------------------
-
-.. demo::
-
-   The teacher will do this as a demo. You will have the opportunity to test in the next session!
-
-It is recommended to use Thinlinc to log in and work in the MATLAB graphic user interface (GUI) where the option exists. 
-
-After loading the appropriate modules for MATLAB, you can start the IDE from the command line by typing ``matlab``: 
-
-.. tabs::
-
-   .. tab:: UPPMAX 
-
-        .. code-block:: Matlab-repl
-         
-         $ module load matlab/2023b
-         $ matlab -SingleCompThread &
-
-
-   .. tab:: HPC2N
-
-        .. code-block:: Matlab-repl
-         
-         $ module load MATLAB/2023b
-         $ matlab -SingleCompThread
-
-   .. tab:: LUNARC
-
-        On HPC desktop, you can go to ``Applications`` &rarr; ``Applications - Matlab`` &rarr; ``Matlab <version>``  and launch the GUI directly. Alternatively, if you use SSH or otherwise can't load the GUI, you can type the following to start MATLAB in the terminal:
-
-        .. code-block:: Matlab-repl
-         
-         $ module load matlab/2023b
-         $ matlab -SingleCompThread -nodisplay
 
 
 More on MATLAB?
