@@ -140,18 +140,43 @@ confusing especially if the code is using external libraries, linear algebra for
 (LAPACK, BLAS, ...). These libraries have their own threads (OpenMP for example) and
 the code you are writing (R, Julia, Python, or Matlab) can also have some internal threded mechanism.
 
-.. warning:: Exceeding allocated resources
+.. warning::
    
    - Check if the libraries/packages that you are using have a threaded mechanism. 
    - Monitor the usage of hardware resources with tools offered at your HPC center, for instance
      `job-usage at HPC2N <https://hpc2n.github.io/intro-course/software/#best__practices>`_.   
+   - Here there are some examples (of many) of what you will need to pay attention when porting 
+     a parallel code from your laptop (or another HPC center) to our clusters:
 
-   .. tabs:: Some examples (of many)
+   .. tabs::
 
       .. tab:: Python
 
-         Pyth
+         For some linear algebra operations Numpy supports threads (set with the ``OMP_NUM_THREADS`` variable). 
+         If your code contains calls to these operations in a loop that is already parallelized by *n* processes, 
+         and you allocate *n* cores for this job, this job will exceed the allocated resources unless the 
+         number of threads is explicitly set to 1.
 
+      .. tab:: Julia 
+
+         For some linear algebra operations Julia supports threads (set with the ``OMP_NUM_THREADS`` variable). 
+         If your code contains calls to these operations in a loop that is already parallelized by *n* processes, 
+         and you allocate *n* cores for this job, this job will exceed the allocated resources unless the 
+         number of threads is explicitly set to 1. Notice that Julia also has its own threaded mechanism.
+
+      .. tab:: R  
+
+         Creating a cluster with *n* cores (makeCluster) and start traing a ML model with flags such as 
+         ``allowParallel`` set to ``TRUE`` or ``num.threads`` set to a value such as the total number of requested
+         cores is exceeded.
+
+      .. tab:: Matlab 
+
+         Using a **CPLEX** solver inside a *parfor* loop. These solvers work in a *oportunistic* manner meaning that
+         they will try to use all the resources available in the machine. If you request *n* cores for *parfor* in 
+         your batch job, these cores will be used by the solver. Theoretically, you will be using *nxn* cores although 
+         only *n* were requested. One way to solve this issue is by setting the number of threads 
+         ``cplex.Param.threads.Cur`` to 1. 
 
 A common issue with shared memory programming is *data racing* which happens when 
 different threads write on the same memory address. 
