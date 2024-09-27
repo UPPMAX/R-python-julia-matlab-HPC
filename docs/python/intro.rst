@@ -29,71 +29,94 @@ Introduction Python
 Preliminary schedule
 --------------------
 
+..
+
+    Schedule in Markdown, as voted for on around 2024-09-21:
+
+    Time       |Topic                                                 |Teacher
+    -----------|------------------------------------------------------|-------
+    09:00-09:45|First login                                           |BB + PO+ RB + RP
+    09:45-10:00|Break                                                 |.
+    10:00-10:10|Syllabus BB, RB,                                      |RP
+    10:10-10:20|Python in general BB, RB                              |RP
+    10:20-10:50|Load modules and run BB, RB                           |RP
+    10:50-11:05|Break                                                 |.
+    11:05-11:35|Packages 30/30                                        |RB
+    11:35-12:00|Isolated environments (ML, venv, conda) 25/60 mins    |RB
+    12:00-13:00|Lunch                                                 |.
+    13:00-13:35|Isolated environments (ML, venv, conda) 35/60 mins    |RB
+    13:35-14:05|Batch 30/30 mins                                      |BB
+    14:05-14:20|Break                                                 |.
+    14:20-14:40|GPU                                                   |BB
+    14:40-15:10|Simultaneous session 30/30 mins                       |BB * RB * RP
+    15:10-15:25|Break                                                 |.
+    15:25-16:00|Parallel and multithreaded functions                  |PO
+    16:00-16:15|Summary and evaluation                                |RB
+
+
 .. list-table:: Preliminary times
    :widths: 25 25 50
    :header-rows: 1
 
    * - Time
      - Topic
-     - Activity
+     - Teacher(s)
    * - 9:00
-     - Course intro
-     - 5m  
-   * - 9:05
-     - Syllabus 
-     - 5m
-   * - 9.10
-     - Python in general 
-     - Lecture 10 m 
-   * - 9.20
-     - Loading modules and running Python codes 
-     - Lecture+code along 25m
-   * - 9.45
-     - **Coffee break**
-     - 
+     - First login
+     - BB + PO + RB + RP
+   * - 9:45
+     - Break 
+     - .
+     - .
    * - 10:00
-     - Packages  
-     - Lecture+code along 45m
-   * - 10.45
-     - **Leg stretch**
-     - 
-   * - 11:00
-     - Isolated environments (venv, conda) 
-     - Lecture+code along 60m
+     - Syllabus
+     - Lecture 10 m 
+     - RP
+   * - 10:10
+     - Python in general
+     - RP
+   * - 10:20
+     - Load modules and run
+     - RP
+   * - 10:50
+     - Break
+     - .
+   * - 11:05
+     - Packages
+     - RB
+   * - 11:35
+     - Isolated environments 1
+     - RB
    * - 12:00
-     - **LUNCH BREAK**
-     - 
-   * - 13:00  
-     - SLURM Batch scripts for Python jobs  
-     - Lecture+code along 20m
-   * - 13.20
-     - Using GPUs 
-     - 10m
-   * - 13:30
-     - Parallel session — HPC2N: Jupyter
-     - 15m
-   * - 
-     - Parallel session — UPPMAX: Jupyter + interactive
-     - 
-   * - 13:45
-     - **Break**
-     - 
-   * - 14:00  
+     - Lunch
+     - .
+   * - 13:00
+     - Isolated environments 2
+     - RB
+   * - 13:35
+     - Batch
+     - BB
+   * - 14:05
+     - Break
+     - .
+   * - 14:20
+     - GPU
+     - BB
+   * - 14:40
+     - Simulataneous sessions
+     - BB * RB * RP
+   * - 15:10
+     - Break
+     - .
+   * - 15:25
      - Parallel and multi-threaded functions
-     - 25m
-   * - 14.25
-     - Summary 
-     -
-   * - 14.35
-     - Evaluation
-     -
-   * - 14.45
-     - Q&A on-demand
-     -
-   * - 15:00
-     - END
-     -
-    
+     - PO
+   * - 16:00
+     - Summary and evaluation
+     - RB
+   * - 16:15
+     - End of the day
+     - .
 
 What is python?
 ---------------
