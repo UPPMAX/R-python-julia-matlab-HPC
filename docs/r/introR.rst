@@ -84,8 +84,7 @@ Preliminary schedule
 .. mermaid::  intro_r_overview_course_r_and_modules.mmd
 
 ..
-
-    _This is the schedule as decided around 2024-09-23:
+    _Comment This is the schedule as decided around 2024-09-23:
 
     Time       |Topic                          |Teacher
     -----------|-------------------------------|-------

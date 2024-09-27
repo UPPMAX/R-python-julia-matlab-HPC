@@ -30,8 +30,7 @@ Preliminary schedule
 --------------------
 
 ..
-
-    _This is the schedule in Markdown, as voted for on around 2024-09-21:
+    _Comment This is the schedule in Markdown, as voted for on around 2024-09-21:
 
     Time       |Topic                                                 |Teacher
     -----------|------------------------------------------------------|-------
