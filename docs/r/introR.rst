@@ -85,7 +85,7 @@ Preliminary schedule
 
 ..
 
-    Schedule, as decided around 2024-09-23:
+    _This is the schedule as decided around 2024-09-23:
 
     Time       |Topic                          |Teacher
     -----------|-------------------------------|-------
