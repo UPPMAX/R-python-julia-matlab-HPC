@@ -83,67 +83,96 @@ Preliminary schedule
 
 .. mermaid::  intro_r_overview_course_r_and_modules.mmd
 
+..
+
+    Schedule, as decided around 2024-09-23:
+
+    Time       |Topic                          |Teacher
+    -----------|-------------------------------|-------
+    09:00-09:45|First login                    |BB + PO + RB
+    09:45-10:00|Break                          |.
+    10:00-10:10|Syllabus                       |RB
+    10:10-10:20|R in general                   |RB
+    10:20-10:45|Load modules and run           |RB
+    10:45-11:00|Break                          |.
+    11:00-11:30|Packages 30/30                 |BB
+    11:30-12:00|Isolated environments          |BB
+    12:00-13:00|Lunch                          |.
+    13:00-13:30|Batch 30/30 mins               |BB
+    13:30-14:15|Parallel                       |PO
+    14:15-14:30|Break                          |.
+    14:30-15:15|Simultaneous session 45/45 mins|PO * RB
+    15:15-15:30|Break                          |.
+    15:30-16:00|Machine learning               |BB or PO
+    16:00-16:15|Summary and evaluation         |RB
+
+    Parallel session:
+     - HPC2N: ThinLinc & RStudio, by PO
+     - UPPMAX: ThinLinc, RStudio, interactive, by RB
+     - ?LUNARC, by ?RP
+
 .. list-table:: Preliminary times
    :widths: 25 25 50
    :header-rows: 1
 
    * - Time
      - Topic
-     - Activity
+     - Teacher(s)
    * - 9:00
-     - Syllabus 
-     - 10m
-   * - 9:10
-     - Introduction, R in general
-     - Lecture 10 m 
-   * - 9:20
-     - Loading modules and running R codes 
-     - Lecture+code along 25m
+     - First login
+     - BB + PO + RB
    * - 9:45
-     - **Coffee break**
-     - 
+     - Break
+     - .
    * - 10:00
-     - Packages
-     - Lecture+code along 30m
-   * - 10.30
-     - Isolated environments
-     - Lecture+code along 20m
-   * - 10:50
-     - **break**
-     - 
+     - First login
+     - BB + PO + RB
+   * - 10:10
+     - Syllabus
+     - RB
+   * - 10:20
+     - Load modules and run
+     - RB
+   * - 10:45
+     - Break
+     - .
    * - 11:00
-     - SLURM Batch scripts for R jobs  
-     - Lecture+code along + exercise 30m
+     - Packages
+     - BB
    * - 11:30
-     - Parallel and multithreaded functions
-     - Lecture+code along 35m   
+     - Isolated environments
+     - BB
    * - 12:00
-     - **LUNCH**
-     -
-   * - 13.00
-     - Exercises and informal chat (or break) 
-     - 
-   * - 13.15
-     - ML  
-     - Lecture+code along 35m
-   * - 13:50
-     - **break**
-     - 
-   * - 14.00
-     - Parallel session - HPC2N: ThinLinc & RStudio 
-     - Lecture+code along 25m
-   * - 
-     - Parallel session - UPPMAX: Interactive/ThinLinc & RStudio
-     - Lecture+code along 25m 
-   * - 14.25
-     - Summary 
-     -
-   * - 14.35
-     - Evaluation
-     -
-   * - 14.45
-     - Q&A on-demand
-     -
-   * - 15:00
-     - END
-     -
+     - Lunch
+     - .
+   * - 13:00
+     - Batch
+     - BB
+   * - 13:30
+     - Parallel
+     - PO
+   * - 14:15
+     - Break  
+     - .
+   * - 14:30
+     - Simultaneous session
+     - PO * RB * ?RP
+   * - 15:15
+     - Break
+     - .
+   * - 15:30
+     - Machine learning
+     - BB or PO
+   * - 16:00
+     - Summary and evaluation
+     - RB
+   * - 16:15
+     - Done
+     - .
+
+Simultaneous session:
+
+ - HPC2N: ThinLinc & RStudio, by PO
+ - UPPMAX: ThinLinc, RStudio, interactive, by RB
+ - LUNARC, by ?RP
+
