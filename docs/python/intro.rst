@@ -26,7 +26,7 @@ Introduction Python
     - Improve python *coding* skills 
     - Other clusters (though they work in a mostly very similar way)
 
-Preliminary schedule
+Schedule
 --------------------
 
 .. _Comment This is the schedule in Markdown, as voted for on around 2024-09-21:
@@ -56,6 +56,7 @@ Preliminary schedule
 .. _Comment - Rackham:  Interactive session and Jupyter, by RB
 .. _Comment - LUNARC, by RP
 
+Course schedule:
 
 .. list-table:: Preliminary times
    :widths: 25 25 50
