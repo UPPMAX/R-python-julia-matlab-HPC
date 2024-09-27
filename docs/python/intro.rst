@@ -71,10 +71,8 @@ Course schedule:
    * - 9:45
      - Break 
      - .
-     - .
    * - 10:00
      - Syllabus
-     - Lecture 10 m 
      - RP
    * - 10:10
      - Python in general
