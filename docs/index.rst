@@ -240,6 +240,7 @@ Content of the course
    :caption: Pre-requirements:
 
    prereqs.md
+   common/login.rst
 
 .. toctree::
    :maxdepth: 2
