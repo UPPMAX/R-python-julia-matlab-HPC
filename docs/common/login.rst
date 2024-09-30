@@ -49,3 +49,16 @@ Prepare your environment now!
            .. code-block:: console
          
               $ /proj/nobackup/hpc2n2023-110/bbrydsoe/
+
+      .. tab:: Cosmos
+
+         - Cosmos through terminal: ``<user>@cosmos.lunarc.lu.se``     
+         - Cosmos through ThinLinc, use: ``<user>@cosmos-dt.lunarc.lu.se ``
+
+         - Create a working directory where you can code along.    
+      
+           - Example. If your username is bbrydsoe and you are at HPC2N, then we recommend you create this folder: 
+     
+           .. code-block:: console
+         
+              $ /proj/nobackup/hpc2n2023-110/bbrydsoe/
