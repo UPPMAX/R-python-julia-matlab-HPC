@@ -1,6 +1,16 @@
 Load and run Julia
 ===================
 
+[RB: All my feedback is added like this: between square brackets
+and starting with ``RB:``.
+
+Feel free to ignore all this. The goal is to make one consider or
+reconsider, not bluntly accepting other's (potentially worse!) ideas.
+
+I enjoy to see the attempt of having a focus in the material:
+compared to earlier work, this is definitely more focused, well done!
+I think my comments will help focus it even more :-). ]
+
 .. Discussion:: **Menti**
 
    - What would you like to use Julia for? [RB: Suggest to remove or move to 
@@ -30,7 +40,8 @@ Load and run Julia
 .. instructor-note::
 
     [RB: This is quite short, I suggest 5 mins of lecture and 25 mins of 
-    exercise]
+    exercise. Asking 45 mins for this sessions seems more reasonable to me,
+    with 5 mins lecture, 35 mins exercise and 5 mins discussion]
 
    - Lecture and demo 15 min
    - Exercise 15 min
