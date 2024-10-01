@@ -240,7 +240,13 @@ Content of the course
    :caption: Pre-requirements:
 
    prereqs.md
+
+.. toctree::
+   :maxdepth: 2
+   :caption: COMMON:
+
    common/login.rst
+   common/parallel.rst
 
 .. toctree::
    :maxdepth: 2
@@ -300,12 +306,6 @@ Content of the course
    matlab/interactionsMatlab.rst
    matlab/interactiveMatlab.rst
 
-
-.. toctree::
-   :maxdepth: 2
-   :caption: COMMON:
-
-   common/parallel.rst
 
 .. toctree::
    :maxdepth: 2
