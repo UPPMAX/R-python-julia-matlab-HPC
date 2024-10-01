@@ -14,25 +14,38 @@ Introduction to running R, Python, Julia, and Matlab in HPC
       - find site **installed packages/libraries**
       - **install packages/libraries** yourself
       - use **virtual** environments
+        [RB: if the goal is to use a programming language in an HPC environment,
+        virtual environments are not necessary for this, hence this should be 
+        removed. If there is a language that does enforce to use venvs, then,
+        yes, this should be in. Virtual environments are a useful tool for
+        users that need multiple environments at the same time, such
+        as developers or advanced users. I feel this course does not assume
+        this level of knowledge]
       - use the **computation nodes**
         
          - write batch scripts 
          - work interactivly
+      - [RB: I miss the parallel computing and the machine learning sessions. 
+        I would enjoy to see their goals here too]
 
-   - This course will consist of lectures interspersed with hands-on sessions where you get to try out what you have just learned.    
+   - This course will consist of lectures interspersed with hands-on sessions
+     where you get to try out what you have just learned.
+     [RB: one could consider this false, as consistently the evaluations give
+     back that there should be more exercises. I do hope this will be true.]
 
    - We aim to give this course in **spring and fall every year**.
 
 
-.. admonition:: Cluster-specific approaches
+.. admonition:: Course approach to deal with multiple HPC centers
 
-   - The course is a cooperation between **UPPMAX** (Rackham, Snowy, Bianca) and **HPC2N** (Kebnekaise) and will focus on the compute systems at both centres.
-   - Although there are differences we will only have **few seperate sessions**.
-   - Most participants will use UPPMAX's systems for the course, as Kebnekaise is only for local (UmU, IRF, MIUN, SLU, LTU) users.
-   - The general information given in the course will be true for all/most HPC centres in Sweden. 
-
-      - The examples will often have specific information, like module names and versions, which may vary. What you learn here should help you to make any changes needed for the other centres. 
-      - When present, links to the Python/Julia/R/Matlab documentation at other NAISS centres are given in the corresponding session.
+   - The course is a cooperation between HPC2N, LUNARC and UPPMAX
+   - For each center, we discuss one HPC cluster
+   - Most course content is relevant to most HPC clusters
+   - The information specific to a cluster will be presented as such
+   - By default, UPPMAX's Rackham cluster is used, as this is the
+     only Sweden-wide resource
+   - There are simultaneous sessions for topics that
+     are truly specific to a center
 
 
 Schedule Spring 2024
@@ -60,6 +73,13 @@ Some practicals
 Code of Conduct
 :::::::::::::::
 
+[RB: I suggest to remove the CoC, as we should, as teachers, have high
+epxpectations of our learners and a CoC shows we assume otherwise.
+Sure, having the standard ``CODE_OF_CONDUCT.md`` in the root folder
+of this repo is fine. Putting it this explicitly in the course material,
+however, feels like showing we expect our learners to misbehave. Maybe
+we need to vote on this?]
+
 We strive to follow the Contributor Covenant Code of Conduct to foster an inclusive and welcoming environment for everyone.
 
 In short:
@@ -75,7 +95,14 @@ Furthermore, as this is a hands-on, interactive workshop:
 - Be kind to each other and help each other as best you can.
 - If you can't help someone or there is some problem, let someone know.
 
+[RB: I enjoy the intention behind the text below. However, we can/should expect
+our learners to do so: they are responsible for their learning too!
+Of course, we should give them the space/time to correct us somehwere. 
+
 Finally, if you notice something that prevents you from learning as well as you can, let us know and don't suffer silently, even the "little things":
+
+[RB: I don't think we need to
+give examples of what causes some learners to suffer]
 
   - Volume too low?
   - Font size too small?
@@ -85,36 +112,38 @@ Finally, if you notice something that prevents you from learning as well as you 
  
 .. admonition:: Zoom
 
-    - The course is run over Zoom. You should have gotten an email with the links
-        
-    - There will be a zoom for the lectures
-   
-    - When you join the Zoom meeting, use your REAL NAME.
-    
-    - The lectures and demos will be recorded, but NOT the exercises. 
-    
-      - If you ask questions during the lectures, you may thus be recorded. 
-      - If you do not wish to be recorded, then please keep your microphone muted and your camera off during lectures and write your questions in the Q/A document (see below about Microsoft-365 collaboration document).
-    
-    - Please MUTE your microphone when you are not speaking and use the “Raise hand” functionality under the “Participants” window during the lecture. Please do not clutter the Zoom chat. Behave politely!
-
-    - There will be **breakout rooms for the exercises**. 
-    
-      - You may enter there and you will get personal help
-      - There will be a "silent" room for those who just want to sit and work
+    The course is run over Zoom. You should have gotten an email with the links
       
+    This is the Zoom policy:
+  
+    - Use your real name when joining the meeting
+    - Mute your microphone when you are not speaking
+    - Use the Zoom 'Raise hand' functionality to indicate you have a question
+    - Use the collaboration document (see below) for questions
+      regarding the course content
+    - Use the chat for questions that are unrelated
+      to the course content (e.g. 'My mic does not work')
+    - The Zoom main room is used for most lectures
+    - Some sessions use breakout rooms for exercises, 
+      some of which use a silent room
+       
+    This is the recording policy:
     
-.. admonition:: Collaboration document (Microsoft-365)
+    - The lectures and demos will be recorded.
+    - The questions asked per microphone during these sessions will be recorded
+    - For unrecorded questions during these sessions,
+      use the collaboration document (see below)
+
+    
+.. admonition:: Collaboration document
 
    - .. raw:: html
 
         <a target='_blank' href="https://umeauniversity.sharepoint.com/:w:/s/HPC2N630/EY1_M9pARplGrJq4N81bkQQB3S4wwb-HcNA2byoKTnMXHw">Q/A collaboration document</a>
 
-   - Use this page for the workshop with your questions.
-   - It becomes part of the course and some Q/A:s may be **more relevant to you at a later occasion!!**
-   - Depending on how many helpers there are we'll see how fast there are answers. 
-
-        - Some answers may come after the workshop day.
+   - Use this page for the workshop with your questions
+   - It helps us identify content that is missing in the course material
+   - We answer those questions as soon as possible
 
         
 .. hint::
@@ -136,6 +165,11 @@ Finally, if you notice something that prevents you from learning as well as you 
 Example of screen arrangement
 :::::::::::::::::::::::::::::
 
+[RB: I think the example screen arrangement should be removed.
+I think we can assume our
+learners have their own preference for how they setup their windows;
+it makes us come across like parents do to little kids]
+
 If you only have one screen to work with for the course, try to fit: 
 
 .. code-block:: sh
@@ -148,6 +182,7 @@ If you only have one screen to work with for the course, try to fit:
    ║            ║ ║   BROWSER    ║
    ║            ║ ║  W/MATERIAL  ║
    ╚════════════╝ ╚══════════════╝
+
 
 .. warning::
 
