@@ -17,13 +17,11 @@ Add-ons
    - How to work with isolated environments?
    - How to check for and use the UPPMAX pre-installed add-ons?
    
-
-.. objectives:: 
-
-   - Give a general *theoretical* introduction to isolated environments 
-   - Show how to install own add-ons
-   - Show how to check for MATLAB add-ons at UPPMAX
+.. admonition:: **Learning outcomes**
    
+   - Be able to find installed add-ons
+   - Be able to install new add-ons
+
 - Before going into installing add-ons let's have a background to the MATLAB environments and ecosystem!
 
 MATLAB Add-Ons manager
@@ -35,10 +33,17 @@ In the GUI, the Add-Ons manager can be selected from the menu at the top. The dr
    - Get hardware-related support packages
 Here we will only focus on the first two options.
 
+What is installed at the centres
+--------------------------------
 
+- UPPMAX
+- HPC2N
+- LUNARC
 
 Exercises
 ---------
 
+1. Use an add-on
+2. Install a package
 
 
