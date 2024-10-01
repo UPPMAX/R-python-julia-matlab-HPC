@@ -1,6 +1,32 @@
 Log in session 
 ==============
 
+.. admonition:: Cluster-specific approaches
+
+   - The course is a cooperation between **UPPMAX** (Rackham, Snowy, Bianca), **HPC2N** (Kebnekaise) and **LUNARC** (Cosmos) and will focus on the compute systems at all these centres.
+   - Although there are differences we will only have **few seperate sessions**.
+   - Most participants will use UPPMAX's systems for the course, as Kebnekaise and Cosmos are only for local (UmU, IRF, MIUN, SLU, LTU, LU) users.
+   - The general information given in the course will be true for all/most HPC centres in Sweden. 
+
+      - The examples will often have specific information, like module names and versions, which may vary. What you learn here should help you to make any changes needed for the other centres. 
+      - When present, links to the Python/Julia/R/Matlab documentation at other NAISS centres are given in the corresponding session.
+
+.. info::
+
+   - You were invited to be part of the course project for Rackham/Snowy (UPPMAX).
+If you already have research projects in any of the clusters you can use them. The CPU-hours required dutring the course will be low!
+
+.. admonition:: **Learning outcomes**
+   
+   - Be able to login, where you are
+
+.. tip:: 
+
+   - If you have user account and _research_ project on Kebnekaise, follow the **HPC2N** track below.
+   - If you have user account and _research_ project on Cosmos, follow the **LUNARC** track below.
+   - If you have user account and course/research project on Rackham, follow the **UPPMAX** track below.
+
+
 Prepare your environment now!
 -----------------------------
 
@@ -50,7 +76,7 @@ Prepare your environment now!
          
               $ /proj/nobackup/hpc2n2023-110/bbrydsoe/
 
-      .. tab:: Cosmos
+      .. tab:: LUNARC
 
          - Cosmos through terminal: ``<user>@cosmos.lunarc.lu.se``     
          - Cosmos through ThinLinc, use: ``<user>@cosmos-dt.lunarc.lu.se``
