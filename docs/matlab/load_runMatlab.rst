@@ -9,8 +9,8 @@ Most HPC centres in Sweden is using the same or similar module system for their 
    
 .. objectives:: 
 
-   - Show how to load MATLAB
-   - Show how to run MATLAB scripts and start the MATLAB graphical user interface (GUI)
+   - Be able to load MATLAB
+   - Be able to run MATLAB scripts and start the MATLAB graphical user interface (GUI)
 
 .. admonition:: Short cheat sheet
     :class: dropdown 
