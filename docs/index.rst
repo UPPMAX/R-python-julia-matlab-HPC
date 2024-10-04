@@ -246,7 +246,6 @@ Content of the course
    :caption: COMMON:
 
    common/login.rst
-   common/parallel.rst
 
 .. toctree::
    :maxdepth: 2
@@ -308,7 +307,7 @@ Content of the course
 
 .. toctree::
    :maxdepth: 2
-   :caption: Reference:
+   :caption: Extra reading:
 
 
 .. Indices and tables
