@@ -26,16 +26,16 @@ Introduction to running R, Python, Julia, and Matlab in HPC
 
 .. admonition:: Cluster-specific approaches
 
-   - The course is a cooperation between **UPPMAX** (Rackham, Snowy, Bianca) and **HPC2N** (Kebnekaise) and will focus on the compute systems at both centres.
+   - The course is a cooperation between **UPPMAX** (Rackham, Snowy, Bianca), **HPC2N** (Kebnekaise), and **LUNARC** (Cosmos) and will focus on the compute systems at all three centres.
    - Although there are differences we will only have **few seperate sessions**.
-   - Most participants will use UPPMAX's systems for the course, as Kebnekaise is only for local (UmU, IRF, MIUN, SLU, LTU) users.
+   - Most participants will use UPPMAX's systems for the course, as Kebnekaise and Cosmos are only for local users. Kebnekaise: UmU, IRF, MIUN, SLU, LTU. Cosmos: LU. 
    - The general information given in the course will be true for all/most HPC centres in Sweden. 
 
       - The examples will often have specific information, like module names and versions, which may vary. What you learn here should help you to make any changes needed for the other centres. 
       - When present, links to the Python/Julia/R/Matlab documentation at other NAISS centres are given in the corresponding session.
 
 
-Schedule Spring 2024
+Schedule Fall 2024
 --------------------
 
 .. list-table:: 
@@ -108,7 +108,7 @@ Finally, if you notice something that prevents you from learning as well as you 
 
    - .. raw:: html
 
-        <a target='_blank' href="https://umeauniversity.sharepoint.com/:w:/s/HPC2N630/EY1_M9pARplGrJq4N81bkQQB3S4wwb-HcNA2byoKTnMXHw">Q/A collaboration document</a>
+        <a target='_blank' href="https://umeauniversity.sharepoint.com/:w:/s/HPC2N630/Ebo1tbwHnz5GhBq7p04ex6sB9or9WlqWHHWIlcUTW230mA?e=45q4Aa">Q/A collaboration document</a>
 
    - Use this page for the workshop with your questions.
    - It becomes part of the course and some Q/A:s may be **more relevant to you at a later occasion!!**
@@ -121,16 +121,16 @@ Finally, if you notice something that prevents you from learning as well as you 
 
    - Main project on UPPMAX:
      
-        - Project ID: ``naiss2024-22-107``
-        - Directory name on rackham: ``/proj/r-py-jl``
-        - Please create a suitably named subdirectory below ``/proj/r-py-jl``, for your own exercises. 
+        - Project ID: ``naiss2024-22-1202``
+        - Directory name on rackham: ``/proj/r-py-jl-m-rackham``
+        - Please create a suitably named subdirectory below ``/proj/r-py-jl-m-rackham``, for your own exercises. 
    
 
    - Local project on HPC2N: 
 
-        - Project ID: ``hpc2n2024-025``
-        - Directory name on Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
-        - Please create a suitably named subdirectory below ``/proj/nobackup/hpc2n2024-025``, for your own exercises.
+        - Project ID: ``hpc2n2024-114``
+        - Directory name on Kebnekaise: ``/proj/nobackup/r-py-jl-m``
+        - Please create a suitably named subdirectory below ``/proj/nobackup/r-py-jl-m``, for your own exercises.
 
    
 Example of screen arrangement
