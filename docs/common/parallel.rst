@@ -329,12 +329,16 @@ available for each language.
 
    .. code-block:: sh 
 
-      for i start at 1 end at 6 
+      for i start at 1 end at 4 
          wait 1 second 
       end the for loop
 
    The waiting step is used to simulate a task without writing too much code. In this waye,
    one can realize how faster the loop can be executed when more threads are added.
+
+   .. figure:: ../../img/parallel-loop.svg
+      :width: 200
+      :align: center
 
    .. tabs::
 
