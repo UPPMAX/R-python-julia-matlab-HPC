@@ -336,7 +336,7 @@ available for each language.
    The waiting step is used to simulate a task without writing too much code. In this waye,
    one can realize how faster the loop can be executed when more threads are added.
 
-   .. figure:: ../../img/parallel-loop.svg
+   .. figure:: ../../img/parallel-loop.png
       :width: 200
       :align: center
 
