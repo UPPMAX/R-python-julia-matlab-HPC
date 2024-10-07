@@ -6,24 +6,22 @@ Parallel and multithreaded functions
 
    - What is parallel programming?
    - Why do we need it?
-   - Where I can use it?
+   - When can I use it?
 
-   
-   
 .. objectives:: 
 
-   - Short introduction to parallel programming
-   - Common paradigms to write a parallel code
+   - Learn basic concepts in parallel programming
+   - Gain knowledge on the tools for parallel programming in different languages
+   - Familiarize with the tools to monitor the usage of resources 
 
-    
 
 What is parallel programming?
 -----------------------------
 
-Parallel programming is the art of writing code that execute tasks on different
+Parallel programming is the science and art of writing code that execute tasks on different
 computing units (cores) simultaneously. In the past computers were shiped with a
-single core per Central Processing Unit (CPU) and therefore it could only perform
-a single computation at the time (serial program).
+single core per Central Processing Unit (CPU) and therefore only
+a single computation at the time (serial program) could be executed.
 
 Nowadays computer architectures are more complex than the single core CPU mentioned
 already. For instance, common architectures include those where several cores in a
@@ -46,7 +44,7 @@ form the socket and the two sockets shown in this picture constitute a node.
 
    1 standard node on Kebnekaise @HPC2N 
 
-It is interesting to notice that there are different types of memory that are
+It is interesting to notice that there are different types of memory
 available for the cores, ranging from the L1 cache to the node's memory for a single
 node. In the former, the bandwidth can be TB/s while in the latter GB/s.
 
@@ -55,28 +53,8 @@ Now you can see that on a single node you already have several computing units
 Memory Access (NUMA).
 
 Besides the standard CPUs, nowadays one finds Graphic Processing Units (GPUs) 
-architectures in HPC clusters, a K80 engine looks like this:
+architectures in HPC clusters.
 
-.. figure:: ../../img/gpu.png
-   :align: center
-
-   A single GPU engine of a K80 card. Each green dot represents a core (single precision) which
-   runs at a frequency of 562 MHz. The cores are arranged in slots called streaming multiprocessors (SMX)
-   in the figure. Cores in the same SMX share some local and fast cache memory.
-
-In a typical cluster, some GPUs are attached to a single node resulting in a CPU-GPU
-hybrid architecture. The CPU component is called the host and the GPU part the device.
-One possible layout (Kebnekaise) is as follows:
-
-
-.. figure:: ../../img/cpu-gpu.png
-   :width: 450  
-   :align: center
-
-   Schematics of a hybrid CPU-GPU architecture. A GPU K80 card consisting of two engines is attached
-   to a NUMA island which in turn contains 14 cores. The NUMA island and the GPUs are
-   connected through a PCI-E interconnect which makes the data transfer between both components rather
-   slow.
 
 
 Why is parallel programming needed?
@@ -95,25 +73,41 @@ etc. One alternative to your local machine can be a High Performance Computing (
 cluster another could be a cloud service. A common layout for the resources in an
 HPC cluster is a shown in the figure below.
 
-.. figure:: ../../img/workflow-hpc.svg
+.. figure:: ../../img/workflow-hpc.png
    :width: 550
    :align: center
 
    High Performance Computing (HPC) cluster.
 
 Although a serial application can run in such a cluster, it would not gain much of the
-HPC resources. The situation would be similar to turn on many washing machines to wash
-a single item, we can waste energy easily.
-
-.. figure:: ../../img/laundry-machines.svg
-   :width: 200
-   :align: center
+HPC resources. If fact, one can underuse the cluster if one allocates more resources than
+what the simulation requires. 
 
 .. figure:: ../../img/laundry-machines.svg
    :width: 200
    :align: center
 
    Under-using a cluster.
+
+.. warning::
+   
+   - Check if the resources that you allocated are being used properly.  
+   - Monitor the usage of hardware resources with tools offered at your HPC center, for instance
+     `job-usage at HPC2N <https://hpc2n.github.io/intro-course/software/#best__practices>`_.   
+   - Here there are some examples (of many) of what you will need to pay attention when porting 
+     a parallel code from your laptop (or another HPC center) to our clusters:
+
+   .. tabs::
+
+      .. tab:: HPC2N
+
+         We have a tool to monitor the usage of resources called: 
+         `job-usage at HPC2N <https://hpc2n.github.io/intro-course/software/#best__practices>`_.
+
+      .. tab:: UPPMAX 
+
+         If you are in a interactive node session the ``top`` command will give you information
+         of the resources usage. 
 
 
 Common parallel programming paradigms
@@ -339,7 +333,8 @@ available for each language.
          wait 1 second 
       end the for loop
 
-   The waiting step is used to realize how faster the loop can be executed when more threads are added.
+   The waiting step is used to simulate a task without writing too much code. In this waye,
+   one can realize how faster the loop can be executed when more threads are added.
 
    .. tabs::
 
@@ -538,7 +533,7 @@ available for each language.
 Exercises
 ---------
 
-.. challenge:: Parallelizing a *for loop* workflow
+.. challenge:: Parallelizing a *for loop* workflow (Advanced)
    :class: dropdown
 
    Create a Data Frame containing two features, one called **ID** which has integer values 
