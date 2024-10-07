@@ -96,7 +96,7 @@ Check for Julia versions
           Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 
 
-.. admonition:: Output at HPC2N as of Feb 29 2024 **FIX**
+.. admonition:: Output at HPC2N as of Oct 2024 
     :class: dropdown
 
         .. code-block:: console
@@ -113,7 +113,7 @@ Check for Julia versions
                 Julia/1.5.3-linux-x86_64
                 Julia/1.7.1-linux-x86_64
                 Julia/1.8.5-linux-x86_64
-
+                Julia/1.9.3-linux-x86_64
            ------------------------------------------------------------------------------------------------
              For detailed information about a specific "Julia" package (including how to load the modules) use the module's full name.
              Note that names that have a trailing (E) are extensions provided by other modules.
@@ -122,7 +122,26 @@ Check for Julia versions
                 $ module spider Julia/1.8.5-linux-x86_64
            ------------------------------------------------------------------------------------------------
 
+.. admonition:: Output at LUNARC as of Oct 2024 
+    :class: dropdown
 
+        .. code-block:: console
+
+           $ module spider julia
+           -----------------------------------------------------------------------------------------------------
+             Julia:
+           -----------------------------------------------------------------------------------------------------
+               Description:
+                 Julia is a high-level, high-performance dynamic programming language for numerical computing
+
+                Versions:
+                   Julia/1.8.5-linux-x86_64
+                   Julia/1.9.0-linux-x86_64
+                   Julia/1.9.2-linux-x86_64
+                   Julia/1.9.3-linux-x86_64
+                   Julia/1.10.4-linux-x86_64
+
+           
 Load a Julia module
 --------------------
 
