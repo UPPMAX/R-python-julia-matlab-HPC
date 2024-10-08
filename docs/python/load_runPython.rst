@@ -240,7 +240,7 @@ Load a Python module
 
 For reproducibility, we recommend ALWAYS loading a specific module instead of using the default version! 
 
-For this course, we recommend using Python 3.11.x at UPPMAX (3.11.8) and HPC2N (3.11.3).
+For this course, we recommend using Python 3.11.x, at UPPMAX (3.11.8), at HPC2N (3.11.3), and at LUNARC (3.11.3).
 
 .. type-along::
     
@@ -277,12 +277,26 @@ For this course, we recommend using Python 3.11.x at UPPMAX (3.11.8) and HPC2N (
 
             $ ml GCC/12.3.0 Python/3.11.3
 
+        .. tab:: LUNARC 
+
+           .. code-block:: console
+
+              $ module load GCC/12.3.0 Python/3.11.3 
+
+           Note: Uppercase ``P``.
+           For short, you can also use: 
+
+           .. code-block:: console 
+
+              $ ml GCC/12.3.0 Python/3.11.3 
+
 .. warning::
 
    + UPPMAX: Don’t use system-installed python (2.7.5)
    + UPPMAX: Don't use system installed python3 (3.6.8)
    + HPC2N: Don’t use system-installed python (2.7.18)
    + HPC2N: Don’t use system-installed python3  (3.8.10)
+   + LUNARC: Don’t use system-installed python/python3 (3.9.18) 
    + ALWAYS use python module
 
 .. admonition:: Why are there both Python/2.X.Y and Python/3.Z.W modules?
@@ -374,7 +388,29 @@ For more interactiveness you can run Ipython.
 
             $ ipython
 
-         HPC2N also has Jupyter notebook. More about that in the specific session.
+         HPC2N also has Jupyter notebook/JupyterLab. More about that in the specific session.
+
+      .. tab:: LUNARC    
+
+         NOTE: remember to load an **IPython** module first. You can see possible modules with 
+
+         .. code-block:: console
+
+            $ module spider IPython 
+
+         Then load one of them, for instance 8.14.0: 
+
+         .. code-block:: console 
+
+            $ module load GCC/12.2.0 IPython/8.14.0 
+
+         Then start IPython with (lowercase): 
+
+         .. code-block:: console 
+
+            $ ipython 
+
+         LUNARC also has also has Jupyter notebook/JupyterLab. More about that in the specific session.
 
 **Examples** (Try them out! Remember to load suitable modules first!) 
 
