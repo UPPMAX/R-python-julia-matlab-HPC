@@ -229,7 +229,7 @@ The GUI is typically the recommended interface where it is offered. The GUI prov
 
          There are 2 possible terminals: one in ``Applications`` &rarr; ``Favorites`` &rarr; ``Terminal``, which runs on a login node, and one at ``Applications`` &rarr; ``Applications - General`` &rarr; ``Interactive Terminal``, which can safely launch either the MATLAB GUI or MATLAB command line on a compute node. Starting the latter will open the GfxLauncher (the user and prompt you for your account and resource requests first. 
 
-For most of the resources above, the ``-singleCompThread`` is essential to prevent MATLAB from spawning as many processes as it thinks it needs, which can result it in hogging a full node. Most terminal instances launch MATLAB (either the GUI or command line) on a login node by default, so hogging a node can stall other users' jobs, a violation of the NAISS user agreement. Setting ``-singleCompThread`` does **not** prevent MATLAB from sending parallelized and/or multi-threaded jobs to SLURM or the MATLAB Distributed Computing Server (MDCS).
+The ``-singleCompThread`` is usually required to prevent MATLAB from spawning as many processes as it thinks it needs, which can cause the user to accidentally take over a full node. Most terminal instances launch MATLAB (either the GUI or command line) on a login node by default, so hogging a node can stall other users' jobs, a violation of the NAISS user agreement. Setting ``-singleCompThread`` does **not** prevent MATLAB from sending parallelized and/or multi-threaded jobs to SLURM or the MATLAB Distributed Computing Server (MDCS).
 
 Examples
 ^^^^^^^^
