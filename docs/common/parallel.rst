@@ -621,44 +621,58 @@ Exercises
                    print("Time spent: %.2f sec" % (endtime-starttime))
 
 
-            Run the code with the batch script: 
-            
-            .. tabs::
+            Run the code with the following batch script.             
 
-               .. tab:: UPPMAX
+            .. admonition:: Batch script
+               :class: dropdown
 
-                    .. code-block:: sh
-                        
-                       #!/bin/bash -l
-                       #SBATCH -A naiss202X-XY-XYZ     # your project_ID
-                       #SBATCH -J job-serial           # name of the job
-                       #SBATCH -n *FIXME*              # nr. tasks/coresw
-                       #SBATCH --time=00:20:00         # requested time
-                       #SBATCH --error=job.%J.err      # error file
-                       #SBATCH --output=job.%J.out     # output file
+               .. tabs::
 
-                       # Load any modules you need, here for Python 3.11.8 and compatible SciPy-bundle
-                       module load python/3.11.8
-                       python integration2d_multiprocessing.py
+                  .. tab:: UPPMAX
 
-               .. tab:: HPC2N
+                       .. code-block:: sh
+                           
+                          #!/bin/bash -l
+                          #SBATCH -A naiss202X-XY-XYZ     # your project_ID
+                          #SBATCH -J job-serial           # name of the job
+                          #SBATCH -n *FIXME*              # nr. tasks/coresw
+                          #SBATCH --time=00:20:00         # requested time
+                          #SBATCH --error=job.%J.err      # error file
+                          #SBATCH --output=job.%J.out     # output file
 
-                    .. code-block:: sh
-                        
-                        #!/bin/bash            
-                        #SBATCH -A hpc2n202X-XYZ     # your project_ID       
-                        #SBATCH -J job-serial        # name of the job         
-                        #SBATCH -n *FIXME*           # nr. tasks  
-                        #SBATCH --time=00:20:00      # requested time
-                        #SBATCH --error=job.%J.err   # error file
-                        #SBATCH --output=job.%J.out  # output file  
+                          # Load any modules you need, here for Python 3.11.8 and compatible SciPy-bundle
+                          module load python/3.11.8
+                          python integration2d_multiprocessing.py
 
-                        # Do a purge and load any modules you need, here for Python 
-                        ml purge > /dev/null 2>&1
-                        ml GCCcore/11.2.0 Python/3.9.6
-                        python integration2d_multiprocessing.py
+                  .. tab:: HPC2N
+
+                       .. code-block:: sh
+                           
+                           #!/bin/bash            
+                           #SBATCH -A hpc2n202X-XYZ     # your project_ID       
+                           #SBATCH -J job-serial        # name of the job         
+                           #SBATCH -n *FIXME*           # nr. tasks  
+                           #SBATCH --time=00:20:00      # requested time
+                           #SBATCH --error=job.%J.err   # error file
+                           #SBATCH --output=job.%J.out  # output file  
+
+                           # Do a purge and load any modules you need, here for Python 
+                           ml purge > /dev/null 2>&1
+                           ml GCCcore/11.2.0 Python/3.9.6
+                           python integration2d_multiprocessing.py
    
-   
+            Try different number of cores for this batch script (*FIXME* string) using the sequence:
+            1,2,4,8,12, and 14. Note: this number should match the number of processes 
+            (also a *FIXME* string) in the Python script. Collect the timings that are
+            printed out in the **job.*.out**. According to these execution times what would be
+            the number of cores that gives the optimal (fastest) simulation? 
+
+            Challenge: Increase the grid size to 15000 and submit the batch job with 4 workers (in the
+            Python script) and request 5 cores in the batch script. Monitor the usage of resources
+            with tools available at your center, for instance ``top`` (UPPMAX) or
+            ``job-usage`` (HPC2N).
+
+
 
 
 
