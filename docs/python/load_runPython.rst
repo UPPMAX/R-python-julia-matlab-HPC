@@ -74,6 +74,7 @@ Check for Python versions
 
             $ module spider Python/3.11.3 
 
+
       .. tab:: LUNARC
    
          Check all available version Python versions with:
@@ -374,6 +375,7 @@ For more interactiveness you can run Ipython.
          .. code-block:: console
 
             $ jupyter-notebook 
+
          
       .. tab:: HPC2N
       
@@ -397,28 +399,6 @@ For more interactiveness you can run Ipython.
 
          HPC2N also has Jupyter notebook/JupyterLab. More about that in the specific session.
 
-      .. tab:: LUNARC    
-
-         NOTE: remember to load an **IPython** module first. You can see possible modules with 
-
-         .. code-block:: console
-
-            $ ml spider IPython 
-
-         Then load one of them, for instance 8.14.0: 
-
-         .. code-block:: console 
-
-            $ ml load GCC/12.2.0 IPython/8.14.0 
-
-         Then start IPython with (lowercase): 
-
-         .. code-block:: console 
-
-            $ ipython 
-
-         LUNARC also has also has Jupyter notebook/JupyterLab. More about that in the specific session.
-
 
       .. tab:: LUNARC
 
@@ -433,7 +413,7 @@ For more interactiveness you can run Ipython.
 
          .. code-block:: sh
 
-            $ ml GCC/12.3.0 IPython/8.14.0
+            $ ml GCC/12.2.0 IPython/8.14.0
 
          Then start Ipython with (lowercase):
 
