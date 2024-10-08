@@ -560,103 +560,119 @@ Exercises
             Here is a parallel code using the ``multiprocessing`` module in Python (call it 
             ``integration2d_multiprocessing.py``):  
 
-            .. code-block:: python
+            .. admonition:: Python
                :class: dropdown
 
-                import multiprocessing
-                from multiprocessing import Array
-                import math
-                import sys
-                from time import perf_counter
+               .. code-block:: python
 
-                # grid size
-                n = 5000
-                # number of processes
-                numprocesses = *FIXME*
-                # partial sum for each thread
-                partial_integrals = Array('d',[0]*numprocesses, lock=False)
+                   import multiprocessing
+                   from multiprocessing import Array
+                   import math
+                   import sys
+                   from time import perf_counter
 
-                def integration2d_multiprocessing(n,numprocesses,processindex):
-                   global partial_integrals;
-                   # interval size (same for X and Y)
-                   h = math.pi / float(n)
-                   # cummulative variable 
-                   mysum = 0.0
-                   # workload for each process
-                   workload = n/numprocesses
+                   # grid size
+                   n = 5000
+                   # number of processes
+                   numprocesses = *FIXME*
+                   # partial sum for each thread
+                   partial_integrals = Array('d',[0]*numprocesses, lock=False)
 
-                   begin = int(workload*processindex)
-                   end = int(workload*(processindex+1))
-                   # regular integration in the X axis
-                   for i in range(begin,end):
-                      x = h * (i + 0.5)
-                      # regular integration in the Y axis
-                      for j in range(n):
-                            y = h * (j + 0.5)
-                            mysum += math.sin(x + y)
-                  
-                   partial_integrals[processindex] = h**2 * mysum
+                   def integration2d_multiprocessing(n,numprocesses,processindex):
+                      global partial_integrals;
+                      # interval size (same for X and Y)
+                      h = math.pi / float(n)
+                      # cummulative variable 
+                      mysum = 0.0
+                      # workload for each process
+                      workload = n/numprocesses
 
-
-                if __name__ == "__main__":
-
-                   starttime = perf_counter()
-                  
-                   processes = []
-                   for i in range(numprocesses):
-                      p = multiprocessing.Process(target=integration2d_multiprocessing, args=(n,numprocesses,i))
-                      processes.append(p)
-                      p.start()
-
-                   # waiting for the processes
-                   for p in processes:
-                      p.join()
-
-                   integral = sum(partial_integrals)
-                   endtime = perf_counter()
-
-                print("Integral value is %e, Error is %e" % (integral, abs(integral - 0.0)))
-                print("Time spent: %.2f sec" % (endtime-starttime))
+                      begin = int(workload*processindex)
+                      end = int(workload*(processindex+1))
+                      # regular integration in the X axis
+                      for i in range(begin,end):
+                         x = h * (i + 0.5)
+                         # regular integration in the Y axis
+                         for j in range(n):
+                               y = h * (j + 0.5)
+                               mysum += math.sin(x + y)
+                     
+                      partial_integrals[processindex] = h**2 * mysum
 
 
-            Run the code with the batch script: 
-            
-            .. tabs::
+                   if __name__ == "__main__":
 
-               .. tab:: UPPMAX
+                      starttime = perf_counter()
+                     
+                      processes = []
+                      for i in range(numprocesses):
+                         p = multiprocessing.Process(target=integration2d_multiprocessing, args=(n,numprocesses,i))
+                         processes.append(p)
+                         p.start()
 
-                    .. code-block:: sh
-                        
-                       #!/bin/bash -l
-                       #SBATCH -A naiss202X-XY-XYZ     # your project_ID
-                       #SBATCH -J job-serial           # name of the job
-                       #SBATCH -n *FIXME*              # nr. tasks/coresw
-                       #SBATCH --time=00:20:00         # requested time
-                       #SBATCH --error=job.%J.err      # error file
-                       #SBATCH --output=job.%J.out     # output file
+                      # waiting for the processes
+                      for p in processes:
+                         p.join()
 
-                       # Load any modules you need, here for Python 3.11.8 and compatible SciPy-bundle
-                       module load python/3.11.8
-                       python integration2d_multiprocessing.py
+                      integral = sum(partial_integrals)
+                      endtime = perf_counter()
 
-               .. tab:: HPC2N
+                   print("Integral value is %e, Error is %e" % (integral, abs(integral - 0.0)))
+                   print("Time spent: %.2f sec" % (endtime-starttime))
 
-                    .. code-block:: sh
-                        
-                        #!/bin/bash            
-                        #SBATCH -A hpc2n202X-XYZ     # your project_ID       
-                        #SBATCH -J job-serial        # name of the job         
-                        #SBATCH -n *FIXME*           # nr. tasks  
-                        #SBATCH --time=00:20:00      # requested time
-                        #SBATCH --error=job.%J.err   # error file
-                        #SBATCH --output=job.%J.out  # output file  
 
-                        # Do a purge and load any modules you need, here for Python 
-                        ml purge > /dev/null 2>&1
-                        ml GCCcore/11.2.0 Python/3.9.6
-                        python integration2d_multiprocessing.py
+            Run the code with the following batch script.             
+
+            .. admonition:: Batch script
+               :class: dropdown
+
+               .. tabs::
+
+                  .. tab:: UPPMAX
+
+                       .. code-block:: sh
+                           
+                          #!/bin/bash -l
+                          #SBATCH -A naiss202X-XY-XYZ     # your project_ID
+                          #SBATCH -J job-serial           # name of the job
+                          #SBATCH -n *FIXME*              # nr. tasks/coresw
+                          #SBATCH --time=00:20:00         # requested time
+                          #SBATCH --error=job.%J.err      # error file
+                          #SBATCH --output=job.%J.out     # output file
+
+                          # Load any modules you need, here for Python 3.11.8 and compatible SciPy-bundle
+                          module load python/3.11.8
+                          python integration2d_multiprocessing.py
+
+                  .. tab:: HPC2N
+
+                       .. code-block:: sh
+                           
+                           #!/bin/bash            
+                           #SBATCH -A hpc2n202X-XYZ     # your project_ID       
+                           #SBATCH -J job-serial        # name of the job         
+                           #SBATCH -n *FIXME*           # nr. tasks  
+                           #SBATCH --time=00:20:00      # requested time
+                           #SBATCH --error=job.%J.err   # error file
+                           #SBATCH --output=job.%J.out  # output file  
+
+                           # Do a purge and load any modules you need, here for Python 
+                           ml purge > /dev/null 2>&1
+                           ml GCCcore/11.2.0 Python/3.9.6
+                           python integration2d_multiprocessing.py
    
-   
+            Try different number of cores for this batch script (*FIXME* string) using the sequence:
+            1,2,4,8,12, and 14. Note: this number should match the number of processes 
+            (also a *FIXME* string) in the Python script. Collect the timings that are
+            printed out in the **job.*.out**. According to these execution times what would be
+            the number of cores that gives the optimal (fastest) simulation? 
+
+            Challenge: Increase the grid size to 15000 and submit the batch job with 4 workers (in the
+            Python script) and request 5 cores in the batch script. Monitor the usage of resources
+            with tools available at your center, for instance ``top`` (UPPMAX) or
+            ``job-usage`` (HPC2N).
+
+
 
 
 

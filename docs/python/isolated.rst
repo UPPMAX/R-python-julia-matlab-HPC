@@ -41,29 +41,24 @@ Isolated environments
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: ``naiss2024-22-107``
-   - Kebnekaise: ``hpc2n2024-025``
+   - Rackham: ``naiss2024-22-1202``
+   - Kebnekaise: ``hpc2n2024-114``
 
 .. admonition:: Storage space for this workshop 
 
-   - Rackham: ``/proj/r-py-jl``
-   - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
+   - Rackham: ``/proj/r-py-jl-m-rackham``
+   - Kebnekaise: ``/proj/nobackup/r-py-jl-m``
 
 Introduction
 ------------
 
 Different experiments may need different versions of Python and/or Python packages.
-Virtual environments allow one to work with multiple sets 
-of (potentially incompatible) packages, 
-where each set is independent and isolated.
+Virtual environments allow one to work with multiple sets of (potentially incompatible) packages, where each set is independent and isolated.
 
-Additionally, you may want to have a reproducible computational environment,
-so that others can reproduce your computational experiments.
-Virtual environments can be exported and imported to provide for better
-reproducible computational environments.
+Additionally, you may want to have a reproducible computational environment, so that others can reproduce your computational experiments.
+Virtual environments can be exported and imported to provide for better reproducible computational environments.
 
-In this session, we create, activate, use, deactivate, export and import 
-some virtual environments.
+In this session, we create, activate, use, deactivate, export and import some virtual environments.
 
 Virtual environment managers
 ----------------------------
@@ -83,7 +78,7 @@ In this course, we will look at the following environment managers:
 Both centers have their documentation on virtual environment managers:
 
 - `UPPMAX <http://docs.uppmax.uu.se/software/python_virtual_environments/>`_
-- `HPC2N <https://www.hpc2n.umu.se/resources/software/user_installed/python>`_
+- `HPC2N <https://docs.hpc2n.umu.se/tutorials/userinstalls/#python__packages>`_
 
 In this session, we use ``venv``, as it works for both UPPMAX and HPC2N.
 
@@ -100,8 +95,7 @@ Whatever environment manager you use, this is the workflow:
   Here you install (or update) the environment with the packages you need
 - You deactivate the environment after use 
 
-A virtual environment can be created in multiple ways,
-for example, from scratch.
+A virtual environment can be created in multiple ways, for example, from scratch.
 However, there are more efficient ways, which we will use.
 
 Exercises
@@ -127,11 +121,9 @@ Tip for UPPMAX users: do exercise 2 and 3 in parallel by logging in twice.
 Exercise 0: remove the Python packages installed in the home folder
 -------------------------------------------------------------------
 
-In the previous session, we have installed Python packages in the
-home folder. This will interfere with our virtual environments.
+In the previous session, we have installed Python packages in the home folder. This will interfere with our virtual environments.
 
-To make sure your virtual environments work, ruthlessly delete
-the Python packages in your home folder:
+To make sure your virtual environments work, ruthlessly delete the Python packages in your home folder:
 
 .. code-block:: console
 

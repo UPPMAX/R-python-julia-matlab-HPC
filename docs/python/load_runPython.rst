@@ -1,9 +1,10 @@
 Load and run python
 ===================
 
-At both UPPMAX and HPC2N we call the applications available via the module system modules. 
-    - https://www.uppmax.uu.se/resources/software/module-system/ 
-    - https://www.hpc2n.umu.se/documentation/environment/lmod 
+At UPPMAX, HPC2N, and LUNARC we call the applications available via the module system modules. 
+    - https://docs.uppmax.uu.se/cluster_guides/modules/ 
+    - https://docs.hpc2n.umu.se/documentation/modules/
+    - https://lunarc-documentation.readthedocs.io/en/latest/manual/manual_modules/ 
 
 Most HPC centres in Sweden is using the same or similar module system for their software. The difference lies in which modules are installed and their versions/naming. The general examples below will be the same for all/most HPC centres in Sweden - the specific names for the modules will vary a little.
    
@@ -55,7 +56,7 @@ Check for Python versions
 
       .. tab:: HPC2N
    
-         Check all available version Python versions with:
+         Check all available Python versions with:
 
          .. code-block:: console
  
@@ -72,7 +73,6 @@ Check for Python versions
          .. code-block:: console
 
             $ module spider Python/3.11.3 
-
 
       .. tab:: LUNARC
    
@@ -143,8 +143,10 @@ Check for Python versions
           $ module spider python/3.12.1
           -------------------------------------------------------------------------------------------------------
 
-.. admonition:: Output at HPC2N (Skylake nodes) as of 28 Feb 2024  
+.. admonition:: Output at HPC2N (regular login node = Skylake nodes) as of 28 Feb 2024  
     :class: dropdown
+
+        Note that the output may/will be different for the AMD Zen3/Zen4 nodes. Check if you want by logging in to kebnekaise-amd.hpc2n.umu.se and doing "module spider Python" there! 
 
         .. code-block:: console
 
@@ -186,6 +188,7 @@ Check for Python versions
             For example:
             $ module spider Python/3.11.3
             ----------------------------------------------------------------------------
+
 
 .. admonition:: Output at LUNARC (Milan nodes) as of Oct 8 2024
    :class: dropdown
@@ -236,7 +239,7 @@ Load a Python module
 
 For reproducibility, we recommend ALWAYS loading a specific module instead of using the default version! 
 
-For this course, we recommend using Python 3.11.x at UPPMAX (3.11.8) and HPC2N (3.11.3).
+For this course, we recommend using Python 3.11.x, at UPPMAX (3.11.8), at HPC2N (3.11.3), and at LUNARC (3.11.3).
 
 .. type-along::
     
@@ -260,7 +263,7 @@ For this course, we recommend using Python 3.11.x at UPPMAX (3.11.8) and HPC2N (
             $ ml python/3.11.8
 
  
-      .. tab:: HPC2N and LUNARC
+      .. tab:: HPC2N
 
          .. code-block:: console
 
@@ -273,13 +276,29 @@ For this course, we recommend using Python 3.11.x at UPPMAX (3.11.8) and HPC2N (
 
             $ ml GCC/12.3.0 Python/3.11.3
 
+
+      .. tab:: LUNARC 
+
+         .. code-block:: console
+
+            $ module load GCC/12.3.0 Python/3.11.3 
+
+         Note: Uppercase ``P``.
+         For short, you can also use: 
+
+         .. code-block:: console 
+
+            $ ml GCC/12.3.0 Python/3.11.3 
+
+
 .. warning::
 
    + UPPMAX: Don’t use system-installed python (2.7.5)
    + UPPMAX: Don't use system installed python3 (3.6.8)
    + HPC2N: Don’t use system-installed python (2.7.18)
    + HPC2N: Don’t use system-installed python3  (3.8.10)
-   + LUNARC: Don’t use system-installed python or python3 (3.9.18)
+   + LUNARC: Don’t use system-installed python/python3 (3.9.18) 
+
    + ALWAYS use python module
 
 .. admonition:: Why are there both Python/2.X.Y and Python/3.Z.W modules?
@@ -376,7 +395,30 @@ For more interactiveness you can run Ipython.
 
             $ ipython
 
-         HPC2N also has Jupyter notebook. More about that in the specific session.
+         HPC2N also has Jupyter notebook/JupyterLab. More about that in the specific session.
+
+      .. tab:: LUNARC    
+
+         NOTE: remember to load an **IPython** module first. You can see possible modules with 
+
+         .. code-block:: console
+
+            $ ml spider IPython 
+
+         Then load one of them, for instance 8.14.0: 
+
+         .. code-block:: console 
+
+            $ ml load GCC/12.2.0 IPython/8.14.0 
+
+         Then start IPython with (lowercase): 
+
+         .. code-block:: console 
+
+            $ ipython 
+
+         LUNARC also has also has Jupyter notebook/JupyterLab. More about that in the specific session.
+
 
       .. tab:: LUNARC
 
