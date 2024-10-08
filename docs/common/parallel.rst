@@ -334,7 +334,7 @@ available for each language.
       end the for loop
 
    The waiting step is used to simulate a task without writing too much code. In this waye,
-   one can realize how faster the loop can be executed when more threads are added.
+   one can realize how faster the loop can be executed when threads are added:
 
    .. figure:: ../../img/parallel-loop.png
       :width: 200
@@ -344,7 +344,10 @@ available for each language.
 
       .. tab:: Python
 
-         In the following example ``sleep.py`` the `sleep()` function is called `n` times first in serial mode and then by using `n` processes. 
+         In the following example ``sleep.py`` the `sleep()` function is called `n` times first in 
+         serial mode and then by using `n` processes. To parallelize the serial code we can use 
+         the ``multiprocessing`` module that is shipped with the base library in Python so that 
+         you don't need to install it.  
 
          .. code-block:: python
 
@@ -353,9 +356,9 @@ available for each language.
             import multiprocessing
 
             # number of iterations 
-            n = 6
+            n = 4
             # number of processes
-            numprocesses = 6
+            numprocesses = 4
 
             def sleep_serial(n):
                 for i in range(n):
@@ -395,20 +398,21 @@ available for each language.
                 print("Time spent parallel: %.2f sec" % (endtime-starttime))
 
          First load the modules ``ml GCCcore/10.3.0 Python/3.9.5`` and then run the script
-         with the command  ``python sleep.py`` to use 6 processes.
+         with the command  ``python sleep.py`` to use 4 processes.
 
       .. tab:: Julia
 
          In the following example ``sleep-threads.jl`` the `sleep()` function is called `n` times
          first in serial mode and then by using `n` threads. The *BenchmarkTools* package
-         help us to time the code (this package is not in the base Julia installation).
+         help us to time the code (as this package is not in the base Julia installation you will need
+         to install it).
 
          .. code-block:: julia
 
             using BenchmarkTools
             using .Threads
             
-            n = 6   # number of iterations
+            n = 4   # number of iterations
              
             function sleep_serial(n)   #Serial version
                 for i in 1:n
@@ -427,7 +431,7 @@ available for each language.
             @btime sleep_threaded(n) evals=1 samples=1
             
          First load the Julia module ``ml Julia/1.8.5-linux-x86_64`` and then run the script
-         with the command  ``julia --threads 6 sleep-threads.jl`` to use 6 Julia threads.
+         with the command  ``julia --threads 6 sleep-threads.jl`` to use 4 Julia threads.
 
          We can also use the *Distributed* package that allows the scaling of simulations beyond
          a single node (call the script ``sleep-distributed.jl``): 
@@ -437,7 +441,7 @@ available for each language.
             using BenchmarkTools
             using Distributed 
 
-            n = 6   # number of iterations
+            n = 4   # number of iterations
 
             function sleep_parallel(n)
                 @distributed for i in 1:n
@@ -445,7 +449,7 @@ available for each language.
                 end
             end         
 
-         Run the script with the command  ``julia -p 6 sleep-distributed.jl`` to use 6 Julia processes.
+         Run the script with the command  ``julia -p 4 sleep-distributed.jl`` to use 4 Julia processes.
 
       .. tab:: R 
    
@@ -458,7 +462,7 @@ available for each language.
             library(doParallel)
 
             # number of iterations = number of processes
-            n <- 6
+            n <- 4
 
             sleep_serial <- function(n) {
               for (i in 1:n) {
@@ -491,18 +495,18 @@ available for each language.
             % Get a handler for the cluster
             c=parcluster('kebnekaise');
 
-            n = 6;  % Number of iterations
+            n = 4;  % Number of iterations
 
             % Run the job with 1 worker and submit the job to the batch queue
-            j = c.batch(@sleep_serial, 1, {6}, 'pool', 1);
+            j = c.batch(@sleep_serial, 1, {4}, 'pool', 1);
             % Wait till the job has finished
             j.wait;
             % Fetch the result after the job has finished
             t = j.fetchOutputs{:};
             fprintf('Time taken for serial version: %.2f seconds\n', t);
 
-            % Run the job with 6 worker and submit the job to the batch queue
-            j = c.batch(@sleep_parallel, 1, {6}, 'pool', 6);
+            % Run the job with 4 worker and submit the job to the batch queue
+            j = c.batch(@sleep_parallel, 1, {4}, 'pool', 4);
             % Wait till the job has finished
             j.wait;
             % Fetch the result after the job has finished
