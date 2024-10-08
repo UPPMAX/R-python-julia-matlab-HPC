@@ -11,13 +11,13 @@ Introduction Python
    - Install Python packages with pip (Kebnekaise, Rackham, Snowy)
    - Write a batch script for running Python
   
-.. admonition:: Exercises **FIX**
+.. admonition:: Exercises 
 
-    - You can download the exercises from the course GitHub repo, under the "Exercises" directory: https://github.com/UPPMAX/R-python-julia-HPC 
+    - You can download the exercises from the course GitHub repo, under the "exercises" -> "python" directory: https://github.com/UPPMAX/R-python-julia-matlab-HPC/tree/main/exercises/python 
     
 .. admonition:: **Your expectations?**
    
-    - Find best practices for using Python at UPPMAX and HPC2N
+    - Find best practices for using Python at UPPMAX, HPC2N, and LUNARC
     - Packages
     - Use the HPC performance with Python
 
