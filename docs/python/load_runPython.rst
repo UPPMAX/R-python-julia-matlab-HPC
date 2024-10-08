@@ -277,18 +277,20 @@ For this course, we recommend using Python 3.11.x, at UPPMAX (3.11.8), at HPC2N 
 
             $ ml GCC/12.3.0 Python/3.11.3
 
-        .. tab:: LUNARC 
 
-           .. code-block:: console
+      .. tab:: LUNARC 
 
-              $ module load GCC/12.3.0 Python/3.11.3 
+         .. code-block:: console
 
-           Note: Uppercase ``P``.
-           For short, you can also use: 
+            $ module load GCC/12.3.0 Python/3.11.3 
 
-           .. code-block:: console 
+         Note: Uppercase ``P``.
+         For short, you can also use: 
 
-              $ ml GCC/12.3.0 Python/3.11.3 
+         .. code-block:: console 
+
+            $ ml GCC/12.3.0 Python/3.11.3 
+
 
 .. warning::
 
