@@ -1,9 +1,10 @@
 Load and run python
 ===================
 
-At both UPPMAX and HPC2N we call the applications available via the module system modules. 
-    - https://www.uppmax.uu.se/resources/software/module-system/ 
-    - https://www.hpc2n.umu.se/documentation/environment/lmod 
+At UPPMAX, HPC2N, and LUNARC we call the applications available via the module system modules. 
+    - https://docs.uppmax.uu.se/cluster_guides/modules/ 
+    - https://docs.hpc2n.umu.se/documentation/modules/
+    - https://lunarc-documentation.readthedocs.io/en/latest/manual/manual_modules/ 
 
 Most HPC centres in Sweden is using the same or similar module system for their software. The difference lies in which modules are installed and their versions/naming. The general examples below will be the same for all/most HPC centres in Sweden - the specific names for the modules will vary a little.
    
@@ -55,7 +56,7 @@ Check for Python versions
 
       .. tab:: HPC2N
    
-         Check all available version Python versions with:
+         Check all available Python versions with:
 
          .. code-block:: console
  
@@ -72,6 +73,27 @@ Check for Python versions
          .. code-block:: console
 
             $ module spider Python/3.11.3 
+
+      .. tab:: LUNARC 
+
+         Check all available Python versions with:  
+
+         .. code-block:: console
+
+            $ module spider Python
+
+         To see how to load a specific version of Python, including the prerequisites, do
+
+         .. code-block:: console
+
+            $ module spider Python/<version>
+
+         Example for Python/3.11.3 
+
+         .. code-block:: console
+
+            $ module spider Python/3.11.3 
+
 
 .. note::
 
@@ -122,8 +144,10 @@ Check for Python versions
           $ module spider python/3.12.1
           -------------------------------------------------------------------------------------------------------
 
-.. admonition:: Output at HPC2N (Skylake nodes) as of 28 Feb 2024  
+.. admonition:: Output at HPC2N (regular login node = Skylake nodes) as of 28 Feb 2024  
     :class: dropdown
+
+        Note that the output may/will be different for the AMD Zen3/Zen4 nodes. Check if you want by logging in to kebnekaise-amd.hpc2n.umu.se and doing "module spider Python" there! 
 
         .. code-block:: console
 
@@ -165,6 +189,51 @@ Check for Python versions
             For example:
             $ module spider Python/3.11.3
             ----------------------------------------------------------------------------
+
+.. admonition:: Output at LUNARC as of 8 October 2024
+    :class: dropdown 
+
+        .. code-block:: console
+
+           $ module spider Python 
+           ----------------------------------------------------------------------------
+             Python:
+           ----------------------------------------------------------------------------
+               Description:
+                 Python is a programming language that lets you work more quickly and
+                 integrate your systems more effectively.
+
+                Versions:
+                   Python/2.7.18-bare
+                   Python/2.7.18
+                   Python/3.8.6
+                   Python/3.9.5-bare
+                   Python/3.9.5
+                   Python/3.9.6-bare
+                   Python/3.9.6
+                   Python/3.10.4-bare
+                   Python/3.10.4
+                   Python/3.10.8-bare
+                   Python/3.10.8
+                   Python/3.11.3
+                   Python/3.11.5
+                   Python/3.12.3
+                Other possible modules matches:
+                   Biopython  GitPython  IPython  Python-bundle  Python-bundle-PyPI  ...
+
+            ----------------------------------------------------------------------------
+             To find other possible module matches execute:
+
+                 $ module -r spider '.*Python.*'
+
+           ----------------------------------------------------------------------------
+             For detailed information about a specific "Python" package (including how to load the modules) use the module's full name.
+             Note that names that have a trailing (E) are extensions provided by other modules.
+             For example:
+
+                $ module spider Python/3.12.3
+           ----------------------------------------------------------------------------
+
 
 Load a Python module
 --------------------
