@@ -1028,6 +1028,7 @@ Exercises
 .. admonition:: More info
 
    - `HPC2N Julia documentation <https://www.hpc2n.umu.se/resources/software/julia>`_.
+   - `White paper on Julia parallel computing <https://juliahub.com/assets/pdf/Parallel-Computing-Guide-for-Julia-byJuliaHub.pdf>`_.
    - `HPC2N R documentation <https://www.hpc2n.umu.se/resources/software/r>`_.
    - `Introduction to Dask by Aalto Scientific Computing and CodeRefinery <https://aaltoscicomp.github.io/python-for-scicomp/parallel/#dask-and-task-queues>`_
    - `Intermediate level Dask by ENCCS <https://enccs.github.io/hpda-python/dask/>`_.
