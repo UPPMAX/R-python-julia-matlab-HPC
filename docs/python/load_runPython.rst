@@ -412,6 +412,7 @@ For more interactiveness you can run Ipython.
 
          LUNARC also has also has Jupyter notebook/JupyterLab. More about that in the specific session.
 
+
 **Examples** (Try them out! Remember to load suitable modules first!) 
 
 Python
