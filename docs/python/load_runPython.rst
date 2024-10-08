@@ -9,8 +9,8 @@ Most HPC centres in Sweden is using the same or similar module system for their 
    
 .. objectives:: 
 
-   - Show how to load Python
-   - Show how to run Python scripts and start the Python command line
+   - Learn how to load Python
+   - Learn how to run Python scripts and start the Python command line
 
 .. admonition:: Short cheat sheet
     :class: dropdown 
@@ -26,9 +26,9 @@ Most HPC centres in Sweden is using the same or similar module system for their 
     
 .. warning::
    
-   - Note that the module systems at UPPMAX and HPC2N are slightly different. 
-   - While all modules at UPPMAX not directly related to bio-informatics are shown by ``ml avail``, modules at HPC2N are hidden until one has loaded a prerequisite like the compiler ``GCC``.
-   - Thus, you need to use ``module spider`` to see all modules at HPC2N, and ``ml avail`` for those available to load given your currently loaded prerequisites.  
+   - Note that the module systems at UPPMAX, HPC2N, and LUNARC are slightly different. 
+   - While all modules at UPPMAX not directly related to bio-informatics are shown by ``ml avail``, some modules at HPC2N and LUNARC are hidden until one has loaded a prerequisite like the compiler ``GCC``.
+   - Thus, you need to use ``module spider`` or ``ml spider`` to see all modules at HPC2N and LUNARC, and ``ml avail`` for those available to load given your currently loaded prerequisites.  
 
 
 - For reproducibility reasons, you should always load a specific version of a module instead of just the default version
@@ -66,6 +66,27 @@ Check for Python versions
          .. code-block:: console
    
             $ module spider Python/<version>
+
+         Example for Python 3.11.3 
+
+         .. code-block:: console
+
+            $ module spider Python/3.11.3 
+
+
+      .. tab:: LUNARC
+   
+         Check all available version Python versions with:
+
+         .. code-block:: console
+ 
+            $ ml spider Python
+      
+         To see how to load a specific version of Python, including the prerequisites, do 
+
+         .. code-block:: console
+   
+            $ ml spider Python/<version>
 
          Example for Python 3.11.3 
 
@@ -166,6 +187,50 @@ Check for Python versions
             $ module spider Python/3.11.3
             ----------------------------------------------------------------------------
 
+.. admonition:: Output at LUNARC (Milan nodes) as of Oct 8 2024
+   :class: dropdown
+    
+       .. code-block::  console
+    
+          $ ml spider Python
+           ----------------------------------------------------------------------------
+           Python:
+           ----------------------------------------------------------------------------
+           Description:
+              Python is a programming language that lets you work more quickly and integrate your systems more effectively.
+        
+            Versions:
+                Python/2.7.18-bare
+                Python/2.7.18
+                Python/3.8.6
+                Python/3.9.5-bare
+                Python/3.9.5
+                Python/3.9.6-bare
+                Python/3.9.6
+                Python/3.10.4-bare
+                Python/3.10.4
+                Python/3.10.8-bare
+                Python/3.10.8
+                Python/3.11.3
+                Python/3.11.5
+                Python/3.12.3
+             Other possible modules matches:
+                Biopython  GitPython  IPython  Python-bundle  Python-bundle-PyPI  bx-python  flatbuffers-python  meson-python  netcdf4-python  protobuf-python
+
+           -----------------------------------------------------------------------------
+              To find other possible module matches execute:
+            
+                  $ module -r spider '.*Python.*'
+
+           ----------------------------------------------------------------------------
+              For detailed information about a specific "Python" package (including how to load the modules) use the module's full name.
+              Note that names that have a trailing (E) are extensions provided by other modules.
+              For example:
+            
+                 $ module spider Python/3.12.3
+           ----------------------------------------------------------------------------
+
+
 Load a Python module
 --------------------
 
@@ -195,7 +260,7 @@ For this course, we recommend using Python 3.11.x at UPPMAX (3.11.8) and HPC2N (
             $ ml python/3.11.8
 
  
-      .. tab:: HPC2N 
+      .. tab:: HPC2N and LUNARC
 
          .. code-block:: console
 
@@ -214,11 +279,12 @@ For this course, we recommend using Python 3.11.x at UPPMAX (3.11.8) and HPC2N (
    + UPPMAX: Don't use system installed python3 (3.6.8)
    + HPC2N: Don’t use system-installed python (2.7.18)
    + HPC2N: Don’t use system-installed python3  (3.8.10)
+   + LUNARC: Don’t use system-installed python or python3 (3.9.18)
    + ALWAYS use python module
 
 .. admonition:: Why are there both Python/2.X.Y and Python/3.Z.W modules?
 
-    Some existing software might use `Python2` and some will use `Python3`. Some of the Python packages have both `Python2` and `Python3` versions. Check what your software as well as the installed modules need when you pick!   
+    Some existing software might use `Python2` and some will use `Python3`. Some of the Python packages have both `Python2` and `Python3` versions. Check what your software as well as the installed modules need when you pick!  
     
 .. admonition:: UPPMAX: Why are there both python/3.X.Y and python3/3.X.Y modules?
 
@@ -226,6 +292,11 @@ For this course, we recommend using Python 3.11.x at UPPMAX (3.11.8) and HPC2N (
     Here's how you handle that situation:
     
     + You can run two python modules at the same time if ONE of the module is ``python/2.X.Y`` and the other module is ``python3/3.X.Y`` (not ``python/3.X.Y``).
+
+.. admonition:: LUNARC: Are ``python`` and ``python3`` equivalent, or does the former load Python/2.X.Y?
+
+    The answer depends on which module is loaded. If Python/3.X.Y is loaded, then ``python`` is just an alias for ``python3`` and it will start the same command line. However, if Python/2.7.X is loaded, then `python` will start the Python/2.7.X command line while `python3` will start the system version (3.9.18).
+    If you load Python/2.7.X and then try to load Python/3.X.Y as well, or vice-versa, the most recently loaded Python version will replace anything loaded prior, and all dependencies will be upgraded or downgraded to match. Only the system's Python/3.X.Y version can be run at the same time as a version of Python/2.7.X.
     
 Run
 ---
@@ -306,6 +377,28 @@ For more interactiveness you can run Ipython.
             $ ipython
 
          HPC2N also has Jupyter notebook. More about that in the specific session.
+
+      .. tab:: LUNARC
+
+         LUNARC provides Jupyter Lab, Jupyter Notebook, and Spyder in ``Applications-Python``. LUNARC favors graphical development environments for interactive scripts; these are configured to run on our compute nodes with GfxLauncher as long as they are started from the ``Applications-Python`` menu (or the interactive terminal in ``Applications-General``). Jupyter Lab will be discussed in a later session. The Spyder IDE is currently associated with Anaconda3, but will be maintained separately and kept available after Anaconda is removed. However, if you want to use Python at the command line, with syntax coloring and without using a batch script, you can use IPython in the regular (front-end) or interactive (back-end) terminals.
+         NOTE: remember to load an **IPython** module first. You can see possible modules and their prerequisites with 
+
+         .. code-block:: console
+
+            $ ml spider IPython
+
+         Then load one of them, for instance 8.14.0:
+
+         .. code-block:: sh
+
+            $ ml GCC/12.3.0 IPython/8.14.0
+
+         Then start Ipython with (lowercase):
+
+         .. code-block:: console
+
+            $ ipython
+
 
 **Examples** (Try them out! Remember to load suitable modules first!) 
 
