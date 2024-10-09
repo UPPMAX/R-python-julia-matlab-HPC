@@ -31,7 +31,7 @@ $ jupyter notebook --ip 0.0.0.0 --no-browser
 ## 3. Connect to the running notebook 
 Keep this session open and running. Note the node on which you are got the interactive job i.e. something like "r141".
 
-- If you are connected to Rackham via [Thinlinc session](https://www.uppmax.uu.se/support/user-guides/thinlinc-graphical-connection-guide/), open a browser with the link you got but modified to point to r141 i.e. 
+- If you are connected to Rackham via [Thinlinc session](https://docs.uppmax.uu.se/software/thinlinc/), open a browser with the link you got but modified to point to r141 i.e. 
 http://r141:8888/?token=5c3aeee9fbfc75f7a11c4a64b2b5b7ec49622231388241c2
 - If you use ssh to connect to Rackham, you need to forward the port of the interactive node to your local computer.
     - On Linux or Mac this is done by running in another terminal. Make sure you have the ports changed if they are not at the default 8888.
