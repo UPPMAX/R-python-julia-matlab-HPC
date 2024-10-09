@@ -33,7 +33,7 @@ Introduction to MATLAB
     - At UPPMAX you can copy the exercises in a tarball 
       from ``/proj/r-py-jl-m-rackham/MatlabExercises.tar.gz``
     - At LUNARC, you can copy the exercises in a tarball
-      from ``/lunarc/nobackup/projects/lu2024-07-68/MatlabExercises.tar.gz``
+      from ``/lunarc/nobackup/projects/TBD...``
 
 .. challenge:: Download the exercise files
 
