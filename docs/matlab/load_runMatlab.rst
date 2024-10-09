@@ -274,5 +274,5 @@ Try them yourself!
 
 .. keypoints::
 
-   - You can start MATLAB either in a GUI (recommended) or, with the ``-nodisplay flag``, run it in the terminal.
+   - You can start MATLAB either in a GUI (recommended) or, with the ``-nodisplay`` flag, run it in the terminal.
    - If you start either interface from the terminal, you must first load the correct module and always include ``-singleCompThread`` to avoid hogging a login node.
