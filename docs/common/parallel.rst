@@ -667,13 +667,140 @@ Exercises
             printed out in the **job.*.out**. According to these execution times what would be
             the number of cores that gives the optimal (fastest) simulation? 
 
-            Challenge: Increase the grid size to 15000 and submit the batch job with 4 workers (in the
+            Challenge: Increase the grid size (``n``) to 15000 and submit the batch job with 4 workers (in the
             Python script) and request 5 cores in the batch script. Monitor the usage of resources
             with tools available at your center, for instance ``top`` (UPPMAX) or
             ``job-usage`` (HPC2N).
 
 
+      .. tab:: Julia
+         
 
+            Here is a parallel code using the ``Distributed`` package in Julia (call it 
+            ``integration2d_distributed.jl``):  
+
+            .. admonition:: integration2D_distributed.jl
+               :class: dropdown
+
+               .. code-block:: julia
+
+                   using Distributed
+                   using SharedArrays
+                   using LinearAlgebra
+                   using Printf
+                   using Dates
+                   
+                   # Add worker processes (replace with actual number of cores you want to use)
+                   nworkers = *FIXME*
+                   addprocs(nworkers)
+                   
+                   # Grid size
+                   n = 20000
+                   # Number of processes
+                   numprocesses = nworkers
+                   # Shared array to store partial sums for each process
+                   partial_integrals = SharedVector{Float64}(numprocesses)
+                   
+                   # Function for 2D integration using multiprocessing
+                   @everywhere function integration2d_multiprocessing(n, numprocesses, processindex, partial_integrals)
+                       # Interval size (same for X and Y)
+                       h = π / n
+                       # Cumulative variable
+                       mysum = 0.0
+                       # Workload for each process
+                       workload = div(n, numprocesses)
+                   
+                       # Define the range of work for each process according to index
+                       begin_index = workload * (processindex - 1) + 1
+                       end_index = workload * processindex
+                   
+                       # Regular integration in the X axis
+                       for i in begin_index:end_index
+                           x = h * (i - 0.5)
+                           # Regular integration in the Y axis
+                           for j in 1:n
+                               y = h * (j - 0.5)
+                               mysum += sin(x + y)
+                           end
+                       end
+                   
+                       # Store the result in the shared array
+                       partial_integrals[processindex] = h^2 * mysum
+                   end
+                   
+                   # function for main
+                   function main()
+                       # Start the timer
+                       starttime = now()
+                   
+                       # Distribute tasks to processes
+                       @sync for i in 1:numprocesses
+                           @spawnat i integration2d_multiprocessing(n, numprocesses, i, partial_integrals)
+                       end
+                   
+                       # Calculate the total integral by summing over partial integrals
+                       integral = sum(partial_integrals)
+                       endtime = now()
+                   
+                       # Output results
+                       println("Integral value is $(integral), Error is $(abs(integral - 0.0))")
+                       println("Time spent: $(Dates.value(endtime - starttime) / 1000) sec")
+                   end
+                   
+                   # Run the main function
+                   main()
+
+            Run the code with the following batch script.             
+
+            .. admonition:: job.sh
+               :class: dropdown
+
+               .. tabs::
+      
+                  .. tab:: UPPMAX
+      
+                     .. code-block:: bash
+      
+                             #!/bin/bash -l
+                             #SBATCH -A naiss202X-XY-XYZ  # your project_ID
+                             #SBATCH -J job-serial        # name of the job
+                             #SBATCH -n *FIXME*           # nr. tasks/coresw
+                             #SBATCH --time=00:20:00      # requested time
+                             #SBATCH --error=job.%J.err   # error file
+                             #SBATCH --output=job.%J.out  # output file
+      
+                             ml julia/1.8.5
+      
+                             julia integration2D_distributed.jl 
+         
+                  .. tab:: HPC2N
+      
+                     .. code-block:: bash
+                              
+                             #!/bin/bash            
+                             #SBATCH -A hpc2n202x-xyz     # your project_ID       
+                             #SBATCH -J job-serial        # name of the job         
+                             #SBATCH -n *FIXME*           # nr. tasks  
+                             #SBATCH --time=00:20:00      # requested time
+                             #SBATCH --error=job.%J.err   # error file
+                             #SBATCH --output=job.%J.out  # output file  
+      
+                             ml purge  > /dev/null 2>&1
+                             ml Julia/1.9.3-linux-x86_64
+      
+                             julia integration2D_distributed.jl 
+
+
+            Try different number of cores for this batch script (*FIXME* string) using the sequence:
+            1,2,4,8,12, and 14. Note: this number should match the number of processes 
+            (also a *FIXME* string) in the Julia script. Collect the timings that are
+            printed out in the **job.*.out**. According to these execution times what would be
+            the number of cores that gives the optimal (fastest) simulation? 
+
+            Challenge: Increase the grid size (``n``) to 100000 and submit the batch job with 4 workers (in the
+            Julia script) and request 5 cores in the batch script. Monitor the usage of resources
+            with tools available at your center, for instance ``top`` (UPPMAX) or
+            ``job-usage`` (HPC2N).
 
 
 
