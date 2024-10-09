@@ -157,23 +157,10 @@ More on MATLAB?
 Material for improving your programming skills
 ::::::::::::::::::::::::::::::::::::::::::::::
 
-First level
-...........
-
 If you have a Mathworks account that is less than 2 years old, you can take advantage of Mathworks' free MATLAB self-paced online training courses at <https://matlabacademy.mathworks.com/?page=1&fq=all-matlab&sort=featured&s_tid=ln_acad_learn_oc>_. At any academic institution with a campus-wide license, students can use their university email addresses to create a free account to access these resources.
 
-There is also the Mondays with MATLAB lecture series every September, which along with other events gets posted here: <https://se.mathworks.com/company/events.html>_.
+There is also the Mondays with MATLAB lecture series every September, which along with other events gets posted here: <https://se.mathworks.com/company/events.html>_. These tend to be the more introductory-level seminars.  If you have an account, you will be automatically signed up for the Mathworks mailing list, which will notify you of upcoming webinars as well as some featured packages. The webinars cover a broad range of topics and disciplines at varying skill levels, although these seminars on average tend to be fairly advanced.
 
-Second level
-::::::::::::
-
-CodeRefinery develops and maintains training material on software best practices for researchers that already write code. Their material addresses all academic disciplines and tries to be as **programming language-independent as possible**. 
-
-- Not yet anything MATLAB specific
-
-`ENCCS (EuroCC National Competence Centre Sweden) <https://enccs.se/>`_ is a national centre that supports industry, public administration and academia accessing and using European supercomputers. They give higher-level training of programming and specific software.
-
-- Not yet anything MATLAB specific
 
 Other NAISS centres
 -------------------
@@ -186,5 +173,5 @@ Other NAISS centres
 .. keypoints::
 
    - MATLAB is a 4th generation language with an interactive environment that can generate code that handles common problems for you.
-   - Parallelization is easy with the graphic user interface, but be careful to set `-SingleCompThread` when starting it at the command line or it may hog the nodes.
+   - Parallelization is easy with the graphic user interface, but be careful to set ``-SingleCompThread`` when starting it at the command line or it may hog the nodes.
 
