@@ -31,9 +31,9 @@ Introduction to MATLAB
     - At HPC2N, you can copy the MATLAB exercises in a tarball 
       from ``/proj/nobackup/r-py-jl-m/MatlabExercises.tar.gz``
     - At UPPMAX you can copy the exercises in a tarball 
-      from ``/proj/r-py-jl-rackham/MatlabExercises.tar``
+      from ``/proj/r-py-jl-m-rackham/MatlabExercises.tar.gz``
     - At LUNARC, you can copy the exercises in a tarball
-      from ``/lunarc/nobackup/projects/lu2024-07-68/MatlabExercises.tar``
+      from ``/lunarc/nobackup/projects/lu2024-07-68/MatlabExercises.tar.gz``
 
 .. challenge:: Download the exercise files
 
