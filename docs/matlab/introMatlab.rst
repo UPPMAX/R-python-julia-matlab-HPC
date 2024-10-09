@@ -29,9 +29,9 @@ Introduction to MATLAB
 .. admonition:: MATLAB Exercise files
 
     - At HPC2N, you can copy the MATLAB exercises in a tarball 
-      from ``/proj/nobackup/hpc2n2024-025/MatlabExercises.tar.gz``
+      from ``/proj/nobackup/r-py-jl-m/MatlabExercises.tar.gz``
     - At UPPMAX you can copy the exercises in a tarball 
-      from ``/proj/naiss2024-22-107/MatlabExercises.tar``
+      from ``/proj/r-py-jl-rackham/MatlabExercises.tar``
     - At LUNARC, you can copy the exercises in a tarball
       from ``/lunarc/nobackup/projects/lu2024-07-68/MatlabExercises.tar``
 
@@ -41,7 +41,7 @@ Introduction to MATLAB
 
     .. code-block:: bash
 
-       cd /proj/naiss2024-22-107/<your-name>   # on Kebnekaise: cd /proj/nobackup/hpc2n2024-025/<your-name>
+       cd /proj/r-py-jl-m-rackham/<your-name>   # on Kebnekaise: cd /proj/nobackup/r-py-jl-m/<your-name>
        cp ../MatlabExercises.tar .
        tar xvf MatlabExercises.tar
        tree Matlab
