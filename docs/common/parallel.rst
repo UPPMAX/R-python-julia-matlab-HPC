@@ -560,7 +560,7 @@ Exercises
             Here is a parallel code using the ``multiprocessing`` module in Python (call it 
             ``integration2d_multiprocessing.py``):  
 
-            .. admonition:: Python
+            .. admonition:: integration2d_multiprocessing.py
                :class: dropdown
 
                .. code-block:: python
@@ -623,7 +623,7 @@ Exercises
 
             Run the code with the following batch script.             
 
-            .. admonition:: Batch script
+            .. admonition:: job.sh
                :class: dropdown
 
                .. tabs::
