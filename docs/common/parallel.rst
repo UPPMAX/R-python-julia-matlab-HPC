@@ -207,19 +207,6 @@ different threads write on the same memory address.
          but notice that the code is not expected to support multi-node simulations. 
 
 
-**GPUs**
-
-Graphical processing unit (GPU) programming has similar patterns to shared memory programming but there are
-major differences, for instance in the former one works with highly optimized 
-pieces of code that can run on thousand of cores (*kernels*). Also the APIs
-are different, with CUDA (NVIDIA) and ROCM (AMD) being two of the most common ones in GPU
-programming.
-
-.. admonition:: Keep in mind 
-
-   - NVIDIA GPUs can be found at: HPC2N, UPPMAX, LUNARC, NSC, and C3SE.
-   - AMD GPUs can be found at: HPC2N and PDC.
-
 Distributed programming
 '''''''''''''''''''''''
 
