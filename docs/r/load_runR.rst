@@ -301,6 +301,61 @@ Here is how to find out how to load an R module of a specific version:
                 assertive.reflection/0.0-5 (E), assertive.sets/0.0-3 (E), assertive.strings/0.0-3 (E), 
                 assertive.types/0.0-3 (E), assertive/0.3-6 (E), assertthat/0.2.1 (E), AUC/0.3.0 (E), 
 
+    .. tab:: LUNARC
+
+        To see how to load a specific version of R, including the prerequisites, do 
+
+        .. code-block:: console
+   
+            module spider R/<version>
+
+        where ``<version>`` is an R version, in ``major.minor.patch`` format, for example, ``module spider R/4.2.1``.
+
+        .. admonition:: How does the output look like ?
+            :class: dropdown
+
+            Your output will look similar to this:
+
+            .. code-block:: sh
+
+               [bbrydsoe@cosmos3 python]$ module spider R/4.2.1
+
+               ------------------------------------------------------------------------------------------
+                 R: R/4.2.1
+               ------------------------------------------------------------------------------------------
+                   Description:
+                     R is a free software environment for statistical computing and graphics.
+
+
+                   You will need to load all module(s) on any one of the lines below before the "R/4.2.1" module is available to load.
+
+                     GCC/11.3.0  OpenMPI/4.1.4
+ 
+                   Help:
+      
+                     Description
+                     ===========
+                     R is a free software environment for statistical computing and graphics.
+      
+      
+                     More information
+                     ================
+                      - Homepage: https://www.r-project.org/
+      
+      
+                     Included extensions
+                     ===================
+                     abc-2.2.1, abc.data-1.0, abe-3.0.1, abind-1.4-5, acepack-1.4.1, adabag-4.2,
+                     ade4-1.7-19, ADGofTest-0.3, admisc-0.29, aggregation-1.0.1, AICcmodavg-2.3-1,
+                     akima-0.6-3.4, alabama-2022.4-1, AlgDesign-1.2.1, alluvial-0.1-2,
+                     AMAPVox-0.12.0, animation-2.7, aod-1.3.2, apcluster-1.4.10, ape-5.6-2,
+                     aplot-0.1.9, argparse-2.1.5, aricode-1.0.2, arm-1.12-2, askpass-1.1,
+                     asnipe-1.1.16, assertive-0.3-6, assertive.base-0.0-9, assertive.code-0.0-3,
+                     assertive.data-0.0-3, assertive.data.uk-0.0-2, assertive.data.us-0.0-2,
+                     assertive.datetimes-0.0-3, assertive.files-0.0-2, assertive.matrices-0.0-2,
+                     ... 
+        
+  
 2. Load an R module
 -------------------
 
