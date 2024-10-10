@@ -59,13 +59,13 @@ Interactive work on the compute nodes
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: ``naiss2024-22-107``
-   - Kebnekaise: ``hpc2n2024-025``
+   - Rackham: ``naiss2024-22-1202``
+   - Kebnekaise: ``hpc2n2024-114``
 
 .. admonition:: Storage space for this workshop 
 
-   - Rackham: ``/proj/r-py-jl``
-   - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
+   - Rackham: ``/proj/r-py-jl-m-rackham``
+   - Kebnekaise: ``/proj/nobackup/r-py-jl-m``
 
 Introduction
 ------------
@@ -90,25 +90,26 @@ In such a case: use an interactive session.
 .. admonition:: **About Jupyter**
 
     For HPC2N, using 
-    `Jupyter on HPC2N <https://www.hpc2n.umu.se/resources/software/jupyter>`_ is possible, 
-    yet harder to get to work correctly
-    If you need it anyway, please contact ``support@hpc2n.umu.se``.
+    `Jupyter on HPC2N <https://docs.hpc2n.umu.se/tutorials/jupyter/>`_ is possible, 
+    through a batch job. This will be show in the Kebnekaise part of the simultaneous session. 
 
     For UPPMAX, using Jupyter is easier 
     and this will be shown in this course, in `the UPPMAX-only session on Jupyter <https://uppmax.github.io/HPC-python/jupyter.html>`_.
+
+    For LUNARC, using Jupyter https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/#jupyter-lab() is done through Anaconda and works best using the LUNARC HPC Desktop: https://lunarc-documentation.readthedocs.io/using_hpc_desktop 
 
 An interactive session is a session with direct access to a compute node.
 Or alternatively: an interactive session is a session,
 in which there is no queue before a command is run on a compute node.
 
 In this session, we show how to:
-- the different way HPC2N and UPPMAX provide for an interactive session
+- the different ways HPC2N, UPPMAX, and LUNARC provide for an interactive session
 - start an interactive session
 - check to be in an interactive session
 - check to have booked the expected amount of cores
 - end the interactive session
 
-The different way HPC2N and UPPMAX provide for an interactive session
+The different way HPC2N, UPPMAX, and LUNARC provide for an interactive session
 ---------------------------------------------------------------------
 
 .. mermaid:: interactive_node_transitions.mmd 
@@ -118,11 +119,13 @@ with direct access to a compute node.
 Or alternatively: an interactive session is a session,
 in which there is no queue before a command is run on a compute node.
 
-This differs between HPC2N and UPPMAX:
+This differs between HPC2N, UPPMAX, and LUNARC:
 
 - HPC2N: the user remains on a login node. 
   All commands can be sent directly to the compute node using ``srun``
 - UPPMAX: the user is actually on a computer node.
+  Whatever command is done, it is run on the compute node
+- LUNARC: the user is actually on a computer node.
   Whatever command is done, it is run on the compute node
 
 Start an interactive session
@@ -139,6 +142,8 @@ The command to request an interactive node differs per HPC cluster:
 | HPC2N   | Works           | Recommended |
 +---------+-----------------+-------------+
 | UPPMAX  | Recommended     | Works       |
++---------+-----------------+-------------+
+| LUNARC  |                 |             |
 +---------+-----------------+-------------+
 
 Start an interactive session in the simplest way
