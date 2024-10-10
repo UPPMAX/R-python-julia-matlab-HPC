@@ -678,7 +678,7 @@ GfxLauncher
 IDEs
 CosmosAppMenu
 Gfx
-OnDeman
+OnDemand
 preloaded
 MDCS
 MuPAD
@@ -696,3 +696,12 @@ MemUsage
 WallTime
 Spyder
 Ons
+focussed
+moreso
+Logg
+uppsala
+lunarc
+ondemand
+advreqs
+gpua
+batchsystem

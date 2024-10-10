@@ -72,8 +72,9 @@ R is used in many NAISS centres:
 
 .. admonition:: R Exercise files
 
-   - On HPC2N, you can copy the R exercise tarball from /proj/nobackup/hpc2n2024-025/exercises-r.tar.gz 
-   - On UPPMAX, you can copy the R exercise tarball from /proj/naiss2024-22-107/exercises-r.tar.gz 
+   - On HPC2N, you can copy the R exercise tarball from /proj/nobackup/r-py-jl-m/exercises-r.tar.gz 
+   - On UPPMAX, you can copy the R exercise tarball from /proj/r-py-jl-m-rackham/exercises-r.tar.gz 
+   - On LUNARC, you can copy the R exercise tarball from 
 
 
 Schedule

@@ -21,7 +21,7 @@ What is Desktop On-Demand?
 --------------------------
 At LUNARC (and coming to other HPC centers in the not-too-distant future), Desktop On-Demand provides an interactive environment for submitting single-node programs to SLURM without the typical shell script. It uses the graphical application launcher (GfxLauncher) to submit jobs to SLURM, connect to the application running on the Compute node, and monitor the application's progress. It is not itself an option in the Applications menu; rather, it's the engine that lets you run the listed applications interactively.
 
-Of the coding languages in the course, all but Julia has at least one interactive development environment (IDE) that can be run with Desktop On-Demand: Both Spyder and Jupyter notebooks are available for Python users, R can be used via one of a couple releases of RStudio, and the standard MATLAB IDE is available for the 3 most recent releases. Other applications not explicitly listed but that can be launched from an Interactive Terminal or Acclerated Terminal session.
+Of the coding languages in the course, all but Julia has at least one interactive development environment (IDE) that can be run with Desktop On-Demand: Both Spyder and Jupyter notebooks are available for Python users, R can be used via one of a couple releases of RStudio, and the standard MATLAB IDE is available for the 3 most recent releases. Other applications not explicitly listed but that can be launched from an Interactive Terminal or Accelerated Terminal session.
 
 Desktop On-Demand requires the use of the Thinlinc interface. It is not accessible via ssh. 
 
@@ -41,7 +41,8 @@ Some On-Demand applications will let you configure and submit separate batch job
 
 How do I start?
 ---------------
-On the LUNARC HPC Desktop, the Applications menu lists all the applications availble to be run interactively, and opening one prefixed by "Applications -" will start it in Desktop On-Demand. There is no specific "Desktop On-Demand" application in the list. Most common IDEs can be found in a drop-down menu that appears when you hover over ``Applications - <Language>`` for your language of choice, but more niche packages may be listed under a subject-matter field instead, like ``Applications - Engineering``. If you don't see the program you want to run interactively listed under any other ``Applications`` sub-menus, you may still be able to launch it via the **Interactive Terminal** (CPU only) under ``Applications - General``, or the **Accelerated Terminal** (GPU support) under ``Applications - Visualization``.  
+On the LUNARC HPC Desktop, the Applications menu lists all the applications available to be run interactively, and opening one prefixed by "Applications -" will start it in Desktop On-Demand. There is no specific "Desktop On-Demand" application in the list. Most common IDEs can be found in a drop-down menu that appears when you hover over ``Applications - <Language>`` for your language of choice, but more niche packages may be listed under a subject-matter field instead, like ``Applications - Engineering``. If you don't see the program you want to run interactively listed under any other ``Applications`` sub-menus, you may still be able to launch it via the **Interactive Terminal** (CPU only) under ``Applications - General``, or the **Accelerated Terminal** (GPU support) under ``Applications - Visualization``.  
+
 
 .. figure:: ../../img/CosmosAppMenu.png
    :align: center
