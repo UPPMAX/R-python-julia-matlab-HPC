@@ -578,6 +578,7 @@ Exercises
                    # partial sum for each thread
                    partial_integrals = Array('d',[0]*numprocesses, lock=False)
 
+                   # Implementation of the 2D integration function (non-optimal implementation)
                    def integration2d_multiprocessing(n,numprocesses,processindex):
                       global partial_integrals;
                       # interval size (same for X and Y)
@@ -702,6 +703,7 @@ Exercises
                    partial_integrals = SharedVector{Float64}(numprocesses)
                    
                    # Function for 2D integration using multiprocessing
+                   # the decorator @everywher instruct Julia to transfer this function to all workers
                    @everywhere function integration2d_multiprocessing(n, numprocesses, processindex, partial_integrals)
                        # Interval size (same for X and Y)
                        h = π / n
@@ -740,6 +742,8 @@ Exercises
                    
                        # Calculate the total integral by summing over partial integrals
                        integral = sum(partial_integrals)
+
+                       # end timing
                        endtime = now()
                    
                        # Output results
@@ -802,7 +806,127 @@ Exercises
             with tools available at your center, for instance ``top`` (UPPMAX) or
             ``job-usage`` (HPC2N).
 
+      .. tab:: R
+         
 
+            Here is a parallel code using the ``parallel`` and ``doParallel`` packages in R (call it 
+            ``integration2d.R``). Note: check if those packages are already installed for the required
+            R version, otherwise install them with ``install.packages()``.
+
+            .. admonition:: integrationd.R
+               :class: dropdown
+
+               .. code-block:: R
+
+                   library(parallel)
+                   library(doParallel)
+                   
+                   # nr. of workers/cores that will solve the tasks
+                   nworkers <- *FIXME*
+                   
+                   # grid size
+                   n <- 840
+                   
+                   # Function for 2D integration (non-optimal implementation)
+                   integration2d <- function(n, numprocesses, processindex) {
+                     # Interval size (same for X and Y)
+                     h <- pi / n
+                     # Cumulative variable
+                     mysum <- 0.0
+                     # Workload for each process
+                     workload <- floor(n / numprocesses)
+                     
+                     # Define the range of work for each process according to index
+                     begin_index <- workload * (processindex - 1) + 1
+                     end_index <- workload * processindex
+                     
+                     # Regular integration in the X axis
+                     for (i in begin_index:end_index) {
+                       x <- h * (i - 0.5)
+                       # Regular integration in the Y axis
+                       for (j in 1:n) {
+                         y <- h * (j - 0.5)
+                         mysum <- mysum + sin(x + y)
+                       }
+                     }
+                     # Return the result
+                     return(h^2 * mysum)
+                   }
+                   
+                   
+                   # Set up the cluster for doParallel
+                   cl <- makeCluster(nworkers)
+                   registerDoParallel(cl)
+                   
+                       # Start the timer
+                       starttime <- Sys.time()
+                       
+                       # Distribute tasks to processes and combine the outputs into the results list
+                       results <- foreach(i = 1:nworkers, .combine = c) %dopar% { integration2d(n, nworkers, i) }
+                       
+                       # Calculate the total integral by summing over partial integrals
+                       integral <- sum(results)
+
+                       # End the timing
+                       endtime <- Sys.time()
+                       
+                       # Print out the result
+                       print(paste("Integral value is", integral, "Error is", abs(integral - 0.0)))
+                       print(paste("Time spent:", difftime(endtime, starttime, units = "secs"), "seconds"))
+                   
+                   # Stop the cluster after computation
+                   stopCluster(cl)
+
+
+            Run the code with the following batch script.             
+
+            .. admonition:: job.sh
+               :class: dropdown
+
+               .. tabs::
+      
+                  .. tab:: UPPMAX
+      
+                     .. code-block:: bash
+      
+                             #!/bin/bash -l
+                             #SBATCH -A naiss202X-XY-XYZ  # your project_ID
+                             #SBATCH -J job-serial        # name of the job
+                             #SBATCH -n *FIXME*           # nr. tasks/coresw
+                             #SBATCH --time=00:20:00      # requested time
+                             #SBATCH --error=job.%J.err   # error file
+                             #SBATCH --output=job.%J.out  # output file
+      
+                             ml R_packages/4.1.1
+      
+                             Rscript --no-save --no-restore integration2d.R
+      
+                  .. tab:: HPC2N
+      
+                     .. code-block:: bash
+      
+                              #!/bin/bash            
+                              #SBATCH -A hpc2n202X-XYZ     # your project_ID       
+                              #SBATCH -J job-serial        # name of the job         
+                              #SBATCH -n *FIXME*           # nr. tasks  
+                              #SBATCH --time=00:20:00      # requested time
+                              #SBATCH --error=job.%J.err   # error file
+                              #SBATCH --output=job.%J.out  # output file  
+      
+                              ml purge > /dev/null 2>&1
+                              ml GCC/12.2.0  OpenMPI/4.1.4 R/4.2.2
+                              Rscript --no-save --no-restore integration2d.R
+
+            Try different number of cores for this batch script (*FIXME* string) using the sequence:
+            1,2,4,8,12, and 14. Note: this number should match the number of processes 
+            (also a *FIXME* string) in the R script. Collect the timings that are
+            printed out in the **job.*.out**. According to these execution times what would be
+            the number of cores that gives the optimal (fastest) simulation? 
+
+            Challenge: Increase the grid size (``n``) to 10000 and submit the batch job with 4 workers (in the
+            R script) and request 5 cores in the batch script. Monitor the usage of resources
+            with tools available at your center, for instance ``top`` (UPPMAX) or
+            ``job-usage`` (HPC2N).
 
 
 
