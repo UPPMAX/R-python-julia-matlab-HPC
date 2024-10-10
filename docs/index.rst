@@ -72,7 +72,7 @@ Code of Conduct
 :::::::::::::::
 
 [RB: I suggest to remove the CoC, as we should, as teachers, have high
-epxpectations of our learners and a CoC shows we assume otherwise.
+expectations of our learners and a CoC shows we assume otherwise.
 Sure, having the standard ``CODE_OF_CONDUCT.md`` in the root folder
 of this repo is fine. Putting it this explicitly in the course material,
 however, feels like showing we expect our learners to misbehave. Maybe
@@ -95,7 +95,7 @@ Furthermore, as this is a hands-on, interactive workshop:
 
 [RB: I enjoy the intention behind the text below. However, we can/should expect
 our learners to do so: they are responsible for their learning too!
-Of course, we should give them the space/time to correct us somehwere. 
+Of course, we should give them the space/time to correct us somewhere. 
 
 Finally, if you notice something that prevents you from learning as well as you can, let us know and don't suffer silently, even the "little things":
 
