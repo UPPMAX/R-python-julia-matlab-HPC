@@ -16,17 +16,19 @@ Running Python in batch mode
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: ``naiss2024-22-107``
-   - Kebnekaise: ``hpc2n2024-025``
+   - Rackham: ``naiss2024-22-1202``
+   - Kebnekaise: ``hpc2n2024-114``
+   - Cosmos:   
 
 .. admonition:: Storage space for this workshop 
 
-   - Rackham: ``/proj/r-py-jl``
-   - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
+   - Rackham: ``/proj/r-py-jl-m-rackham``
+   - Kebnekaise: ``/proj/nobackup/r-py-jl-m``
+   - Cosmos: 
 
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
 
-The batch system used at both UPPMAX and HPC2N is called SLURM. The same is the case at most of the Swedish HPC centres. 
+The batch system used at UPPMAX, HPC2N, and LUNARC is called SLURM. The same is the case at most of the Swedish HPC centres. 
 
 SLURM is an Open Source job scheduler, which provides three key functions
 
@@ -36,7 +38,7 @@ SLURM is an Open Source job scheduler, which provides three key functions
 
 In order to run a batch job, you need to create and submit a SLURM submit file (also called a batch submit file, a batch script, or a job script).
 
-Guides and documentation at: http://www.hpc2n.umu.se/support and https://www.uppmax.uu.se/support/user-guides/slurm-user-guide/ 
+Guides and documentation at: https://docs.hpc2n.umu.se/documentation/batchsystem/intro/ and https://docs.uppmax.uu.se/cluster_guides/slurm/  
 
 **Workflow**
 
@@ -49,7 +51,7 @@ Guides and documentation at: http://www.hpc2n.umu.se/support and https://www.upp
 
 - Submit batch script with ``sbatch <my-python-script.sh>`` 
 
-Common file extensions for batch scripts are ``.sh`` or ``.batch``, but they are not necessary. You can choose any name that makes sense to you. 
+Common file extensions for batch scripts are ``.sh`` or ``.batch``, but they are not necessary. You can choose any name and extension that makes sense to you. 
 
 Useful commands to the batch system
 -----------------------------------
@@ -76,7 +78,7 @@ Serial code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A naiss2024-22-107 # Change to your own after the course
+            #SBATCH -A naiss2024-22-1202 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -94,7 +96,7 @@ Serial code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2n2024-025 # Change to your own after the course
+            #SBATCH -A hpc2n2024-114 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -105,6 +107,23 @@ Serial code
             python mmmult.py    
             
             
+   .. tab:: LUNARC 
+
+        Short serial example for running on Kebnekaise. Loading SciPy-bundle/2023.07, Python/3.11.3 and prerequisites 
+
+        .. code-block:: sh
+
+           #!/bin/bash
+           #SBATCH -A luXXXX-Y-ZZ # Change to your own after the course
+           #SBATCH --time=00:10:00 # Asking for 10 minutes
+           #SBATCH -n 1 # Asking for 1 core 
+
+           # Load any modules you need, here for Python 3.11.3 and compatible SciPy-bundle
+           module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07
+
+           # Run your Python script
+           python mmmult.py
+
    .. tab:: mmmult.py 
    
         Python example code
@@ -146,7 +165,7 @@ Send the script to the batch:
 Serial code + self-installed package in virt. env. 
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 
-Here we are using the virtual environment we created under the "isolated environments" session earlier. It is using the Python package "<a href="https://github.com/mwaskom/seaborn">seaborn</a>". In order to run the seaborn-code.py example, you need to download the data set "tips.csv" which you can find here: <a href="https://github.com/mwaskom/seaborn-data">https://github.com/mwaskom/seaborn-data</a>. If you want, there are other datasets there to play with.  
+Here we are using the virtual environment we created under the "isolated environments" session earlier. It is using the Python package "<a href="https://github.com/mwaskom/seaborn">seaborn</a>". In order to run the seaborn-code.py example, you need to download the data set "tips.csv" which you can find here: <a href="https://github.com/mwaskom/seaborn-data">https://github.com/mwaskom/seaborn-data</a>. If you want, there are other datasets there to play with. (Note: the data set in question can now also be found in the exercises python section). 
 
 .. tabs::
 
@@ -157,7 +176,7 @@ Here we are using the virtual environment we created under the "isolated environ
         .. code-block:: sh
         
             #!/bin/bash
-            #SBATCH -A naiss2024-22-107 # Change to your own after the course
+            #SBATCH -A naiss2024-22-1202 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -166,8 +185,8 @@ Here we are using the virtual environment we created under the "isolated environ
             
             # Activate your virtual environment. 
             # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
-            # Example: /proj/naiss2024-22-107/<user-dir>/python/<venv-name>
-            source /proj/naiss2024-22-107/<user-dir>/<path-to-virt-env>/<venv-name>/bin/activate
+            # Example: /proj/r-py-jl-m-rackham/<user-dir>/python/<venv-name>
+            source /proj/r-py-jl-m-rackham/<user-dir>/<path-to-virt-env>/<venv-name>/bin/activate
             
             # Run your Python script
             python seaborn-code.py
@@ -180,7 +199,7 @@ Here we are using the virtual environment we created under the "isolated environ
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2n2024-025 # Change to your own after the course
+            #SBATCH -A hpc2n2024-114 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -189,8 +208,30 @@ Here we are using the virtual environment we created under the "isolated environ
             
             # Activate your virtual environment. 
             # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
-            # Example: /proj/nobackup/hpc2n2024-025/bbrydsoe/python/vpyenv  
-            source /proj/nobackup/hpc2n2024-025/<user-dir>/<path-to-virt-env>/vpyenv/bin/activate
+            # Example: /proj/nobackup/r-py-jl-m/bbrydsoe/python/vpyenv  
+            source /proj/nobackup/r-py-jl-m/<user-dir>/<path-to-virt-env>/vpyenv/bin/activate
+            
+            # Run your Python script 
+            python seaborn-code.py
+
+   .. tab:: LUNARC 
+
+        Short serial example for running on Cosmos. Loading SciPy-bundle/2023.07, Python/3.11.3, matplotlib + using any Python packages you have installed yourself with virtual environment - the one we named "vpyenv" should work well here. During the isolated environments session there was more about how to install something yourself this way. 
+
+        .. code-block:: sh 
+
+            #!/bin/bash
+            #SBATCH -A luXXXX-Y-ZZZ # Change to your own after the course
+            #SBATCH --time=00:10:00 # Asking for 10 minutes
+            #SBATCH -n 1 # Asking for 1 core
+            
+            # Load any modules you need, here for Python 3.11.3 and compatible SciPy-bundle
+            module load GCC/12.3.0  Python/3.11.3 SciPy-bundle/2023.07 matplotlib/3.7.2
+            
+            # Activate your virtual environment. 
+            # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
+            # Example: /proj/nobackup/r-py-jl-m/bbrydsoe/python/vpyenv  
+            source /proj/nobackup/<project-dir>/<user-dir>/<path-to-virt-env>/vpyenv/bin/activate
             
             # Run your Python script 
             python seaborn-code.py
@@ -211,7 +252,7 @@ Here we are using the virtual environment we created under the "isolated environ
 
             # Load an example dataset (local, with pandas)
             tips = pd.read.csv('tips.csv')
-            # Load an example dataset (remotely from repo. Only works at HPC2N - remove outcomment to use and comment out above line instead)
+            # Load an example dataset (remotely from repo. Only works at HPC2N and LUNARC - remove outcomment to use and comment out above line instead)
             #tips = sns.load_dataset("tips")
 
             # Create a visualization
@@ -233,7 +274,7 @@ Note that the slurm output file will be empty on success, and it will just creat
 GPU code
 ''''''''
 
-**We'll not test this live, but you can try if you have Snowy access or if you have an account on Kebnekaise with GPU access**
+**We'll not test this live, but you can try if you have Snowy access or if you have an account on Kebnekaise/Cosmos with GPU access**
 
 .. note:: 
 

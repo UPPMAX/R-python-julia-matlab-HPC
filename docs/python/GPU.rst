@@ -14,9 +14,11 @@ Using GPUs with Python
    - Learn common schemes for GPU code acceleration
    - Learn about the GPU nodes at HPC2N and UPPMAX
 
-GPU-accelerated computing is when you use a graphics processing unit (GPU) along with a computer processing unit (CPU) to facilitate processing-intensive operations such as deep learning, analytics and engineering applications.
+GPU-accelerated computing is when you use a graphics processing unit (GPU) along with a computer 
+processing unit (CPU) to facilitate processing-intensive operations such as deep learning, analytics and engineering applications.
 
-A GPU is a processor which is from many smaller and more specialized cores. When these cores work together, you can get a large performance boost for tasks that can be divided up and processed across many cores.
+A GPU is a processor which is from many smaller and more specialized cores. When these cores work 
+together, you can get a large performance boost for tasks that can be divided up and processed across many cores.
 
 In a typical cluster, some GPUs are attached to a single node resulting in a CPU-GPU
 hybrid architecture. The CPU component is called the host and the GPU part the device.
@@ -34,7 +36,31 @@ racing cars can drive whereas a GPU would be a broader road where plenty of slow
    :width: 450
    :align: center
 
-Cars and roads analogy for the CPU and GPU behavior. The compact road is analogous to the CPU (low latency, low throughput) and the broader road is analogous to the GPU (high latency, high throughput)
+Cars and roads analogy for the CPU and GPU behavior. The compact road is analogous to the CPU 
+(low latency, low throughput) and the broader road is analogous to the GPU (high latency, high throughput)
+
+As an illustration a K80 GPU engine looks like this:
+
+.. figure:: ../../img/gpu.png
+   :align: center
+
+   A single GPU engine of a K80 card. Each green dot represents a core (single precision) which
+   runs at a frequency of 562 MHz. The cores are arranged in slots called streaming multiprocessors (SMX)
+   in the figure. Cores in the same SMX share some local and fast cache memory.
+
+In a typical cluster, some GPUs are attached to a single node resulting in a CPU-GPU
+hybrid architecture. The CPU component is called the host and the GPU part the device.
+One possible layout (Kebnekaise) is as follows:
+
+
+.. figure:: ../../img/cpu-gpu.png
+   :width: 450  
+   :align: center
+
+   Schematics of a hybrid CPU-GPU architecture. A GPU K80 card consisting of two engines is attached
+   to a NUMA island which in turn contains 14 cores. The NUMA island and the GPUs are
+   connected through a PCI-E interconnect which makes the data transfer between both components rather
+   slow.
 
 Not every Python program is suitable for GPU acceleration. GPUs process simple functions rapidly, 
 and are best suited for repetitive and highly-parallel computing tasks. GPUs were originally 
@@ -56,7 +82,8 @@ and GPU processing internally without the programmer needing to do so.
 GPUs on UPPMAX and HPC2N systems
 --------------------------------
 
-There are generally either not GPUs on the login nodes or they cannot be accessed for computations. To use them you need to either launch an interactive job or submit a batch job.
+There are generally either not GPUs on the login nodes or they cannot be accessed for computations. 
+To use them you need to either launch an interactive job or submit a batch job.
 
 **UPPMAX only**
 
@@ -80,7 +107,8 @@ And for the A100 GPUs you also need to use ``#SBATCH -p amd_gpu``
 Numba example
 -------------
 
-Numba is installed on HPC2N. We also need numpy, so we are loading SciPy-bundle as we have done before. We will use Python 3.9.x on both  UPPMAX and HPC2N since that is the only version where the GPU packages are currently working correctly.  
+Numba is installed on HPC2N. We also need numpy, so we are loading SciPy-bundle as we have done before. 
+We will use Python 3.9.x on both  UPPMAX and HPC2N since that is the only version where the GPU packages are currently working correctly.  
 
 We are going to use the following program for testing (it was taken from 
 https://linuxhint.com/gpu-programming-python/ but there are also many great examples at 
@@ -142,7 +170,8 @@ As before, we need the batch system to run the code. There are no GPUs on the lo
 
       .. tab:: UPPMAX
       
-         Here we need to use the numba we installed in the "Example-gpu" virtual environment because of some temporary error (otherwise we would use the module ``python_ML_packages/3.9.5-gpu`` on Snowy)
+         Here we need to use the numba we installed in the "Example-gpu" virtual environment because 
+         of some temporary error (otherwise we would use the module ``python_ML_packages/3.9.5-gpu`` on Snowy)
          When you code-along, remember to change the activation path for the virtual environment to your own!
 
          .. code-block:: console
@@ -182,7 +211,9 @@ As before, we need the batch system to run the code. There are no GPUs on the lo
 
       .. tab:: Batch script for HPC2N
 
-         Batch script, "add-list.sh", to run the same GPU Python script (the numba code, "add-list.py") at Kebnekaise. As before, submit with "sbatch add-list.sh" (assuming you called the batch script thus - change to fit your own naming style). 
+         Batch script, "add-list.sh", to run the same GPU Python script (the numba code, "add-list.py") 
+         at Kebnekaise. As before, submit with "sbatch add-list.sh" (assuming you called the batch 
+         script thus - change to fit your own naming style). 
       
          .. code-block:: console
 

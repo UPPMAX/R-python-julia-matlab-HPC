@@ -42,21 +42,20 @@ Packages
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: ``naiss2024-22-107``
-   - Kebnekaise: ``hpc2n2024-025``
+   - Rackham: ``naiss2024-22-1202``
+   - Kebnekaise: ``hpc2n2024-114``
 
 .. admonition:: Storage space for this workshop 
 
-   - Rackham: ``/proj/r-py-jl``
-   - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
+   - Rackham: ``/proj/r-py-jl-m-rackham``
+   - Kebnekaise: ``/proj/nobackup/r-py-jl-m``
 
 Introduction
 ------------
 
 Packages are pieces of Python code written to be used by others.
 When possible, using an existing Python package is usually smarter than writing code yourself.
-In this session, 
-we practice working with packages.
+In this session, we practice working with packages.
 
 Finding packages
 ----------------
@@ -106,10 +105,8 @@ As a first impression, here is a simple comparison between the two:
 +------------------------------+-----------+----------+
 
 In this session, we will install packages to your default user folder.
-Because this one default user folder,
-installing a different version of one package
-for one computational experiment,
-may have consequences for others.
+Because this one default user folder, installing a different version of one package
+for one computational experiment, may have consequences for others.
 These problems are addressed in the session on isolated environments.
 
 Exercises
@@ -260,8 +257,7 @@ Exercise 2
     - Observe how it looks like when a package is not installed
 
 Imagine you want to use the Python packages ``pandas`` and ``tensorflow-cpu`` and ``mhcnuggets``.
-Here we see that two come already installed with a Python
-machine learning module.
+Here we see that two come already installed with a Python machine learning module.
 
 .. tabs::
 

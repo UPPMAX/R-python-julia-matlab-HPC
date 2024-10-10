@@ -6,24 +6,22 @@ Parallel and multithreaded functions
 
    - What is parallel programming?
    - Why do we need it?
-   - Where I can use it?
+   - When can I use it?
 
-   
-   
 .. objectives:: 
 
-   - Short introduction to parallel programming
-   - Common paradigms to write a parallel code
+   - Learn basic concepts in parallel programming
+   - Gain knowledge on the tools for parallel programming in different languages
+   - Familiarize with the tools to monitor the usage of resources 
 
-    
 
 What is parallel programming?
 -----------------------------
 
-Parallel programming is the art of writing code that execute tasks on different
+Parallel programming is the science and art of writing code that execute tasks on different
 computing units (cores) simultaneously. In the past computers were shiped with a
-single core per Central Processing Unit (CPU) and therefore it could only perform
-a single computation at the time (serial program).
+single core per Central Processing Unit (CPU) and therefore only
+a single computation at the time (serial program) could be executed.
 
 Nowadays computer architectures are more complex than the single core CPU mentioned
 already. For instance, common architectures include those where several cores in a
@@ -46,7 +44,7 @@ form the socket and the two sockets shown in this picture constitute a node.
 
    1 standard node on Kebnekaise @HPC2N 
 
-It is interesting to notice that there are different types of memory that are
+It is interesting to notice that there are different types of memory
 available for the cores, ranging from the L1 cache to the node's memory for a single
 node. In the former, the bandwidth can be TB/s while in the latter GB/s.
 
@@ -55,28 +53,8 @@ Now you can see that on a single node you already have several computing units
 Memory Access (NUMA).
 
 Besides the standard CPUs, nowadays one finds Graphic Processing Units (GPUs) 
-architectures in HPC clusters, a K80 engine looks like this:
+architectures in HPC clusters.
 
-.. figure:: ../../img/gpu.png
-   :align: center
-
-   A single GPU engine of a K80 card. Each green dot represents a core (single precision) which
-   runs at a frequency of 562 MHz. The cores are arranged in slots called streaming multiprocessors (SMX)
-   in the figure. Cores in the same SMX share some local and fast cache memory.
-
-In a typical cluster, some GPUs are attached to a single node resulting in a CPU-GPU
-hybrid architecture. The CPU component is called the host and the GPU part the device.
-One possible layout (Kebnekaise) is as follows:
-
-
-.. figure:: ../../img/cpu-gpu.png
-   :width: 450  
-   :align: center
-
-   Schematics of a hybrid CPU-GPU architecture. A GPU K80 card consisting of two engines is attached
-   to a NUMA island which in turn contains 14 cores. The NUMA island and the GPUs are
-   connected through a PCI-E interconnect which makes the data transfer between both components rather
-   slow.
 
 
 Why is parallel programming needed?
@@ -95,25 +73,41 @@ etc. One alternative to your local machine can be a High Performance Computing (
 cluster another could be a cloud service. A common layout for the resources in an
 HPC cluster is a shown in the figure below.
 
-.. figure:: ../../img/workflow-hpc.svg
+.. figure:: ../../img/workflow-hpc.png
    :width: 550
    :align: center
 
    High Performance Computing (HPC) cluster.
 
 Although a serial application can run in such a cluster, it would not gain much of the
-HPC resources. The situation would be similar to turn on many washing machines to wash
-a single item, we can waste energy easily.
-
-.. figure:: ../../img/laundry-machines.svg
-   :width: 200
-   :align: center
+HPC resources. If fact, one can underuse the cluster if one allocates more resources than
+what the simulation requires. 
 
 .. figure:: ../../img/laundry-machines.svg
    :width: 200
    :align: center
 
    Under-using a cluster.
+
+.. warning::
+   
+   - Check if the resources that you allocated are being used properly.  
+   - Monitor the usage of hardware resources with tools offered at your HPC center, for instance
+     `job-usage at HPC2N <https://hpc2n.github.io/intro-course/software/#best__practices>`_.   
+   - Here there are some examples (of many) of what you will need to pay attention when porting 
+     a parallel code from your laptop (or another HPC center) to our clusters:
+
+   .. tabs::
+
+      .. tab:: HPC2N
+
+         We have a tool to monitor the usage of resources called: 
+         `job-usage at HPC2N <https://hpc2n.github.io/intro-course/software/#best__practices>`_.
+
+      .. tab:: UPPMAX 
+
+         If you are in a interactive node session the ``top`` command will give you information
+         of the resources usage. 
 
 
 Common parallel programming paradigms
@@ -335,17 +329,25 @@ available for each language.
 
    .. code-block:: sh 
 
-      for i start at 1 end at 6 
+      for i start at 1 end at 4 
          wait 1 second 
       end the for loop
 
-   The waiting step is used to realize how faster the loop can be executed when more threads are added.
+   The waiting step is used to simulate a task without writing too much code. In this way,
+   one can realize how faster the loop can be executed when threads are added:
+
+   .. figure:: ../../img/parallel-loop.png
+      :width: 200
+      :align: center
 
    .. tabs::
 
       .. tab:: Python
 
-         In the following example ``sleep.py`` the `sleep()` function is called `n` times first in serial mode and then by using `n` processes. 
+         In the following example ``sleep.py`` the `sleep()` function is called `n` times first in 
+         serial mode and then by using `n` processes. To parallelize the serial code we can use 
+         the ``multiprocessing`` module that is shipped with the base library in Python so that 
+         you don't need to install it.  
 
          .. code-block:: python
 
@@ -354,9 +356,9 @@ available for each language.
             import multiprocessing
 
             # number of iterations 
-            n = 6
+            n = 4
             # number of processes
-            numprocesses = 6
+            numprocesses = 4
 
             def sleep_serial(n):
                 for i in range(n):
@@ -396,20 +398,21 @@ available for each language.
                 print("Time spent parallel: %.2f sec" % (endtime-starttime))
 
          First load the modules ``ml GCCcore/10.3.0 Python/3.9.5`` and then run the script
-         with the command  ``python sleep.py`` to use 6 processes.
+         with the command  ``python sleep.py`` to use 4 processes.
 
       .. tab:: Julia
 
          In the following example ``sleep-threads.jl`` the `sleep()` function is called `n` times
          first in serial mode and then by using `n` threads. The *BenchmarkTools* package
-         help us to time the code (this package is not in the base Julia installation).
+         help us to time the code (as this package is not in the base Julia installation you will need
+         to install it).
 
          .. code-block:: julia
 
             using BenchmarkTools
             using .Threads
             
-            n = 6   # number of iterations
+            n = 4   # number of iterations
              
             function sleep_serial(n)   #Serial version
                 for i in 1:n
@@ -428,7 +431,7 @@ available for each language.
             @btime sleep_threaded(n) evals=1 samples=1
             
          First load the Julia module ``ml Julia/1.8.5-linux-x86_64`` and then run the script
-         with the command  ``julia --threads 6 sleep-threads.jl`` to use 6 Julia threads.
+         with the command  ``julia --threads 6 sleep-threads.jl`` to use 4 Julia threads.
 
          We can also use the *Distributed* package that allows the scaling of simulations beyond
          a single node (call the script ``sleep-distributed.jl``): 
@@ -438,7 +441,7 @@ available for each language.
             using BenchmarkTools
             using Distributed 
 
-            n = 6   # number of iterations
+            n = 4   # number of iterations
 
             function sleep_parallel(n)
                 @distributed for i in 1:n
@@ -446,7 +449,7 @@ available for each language.
                 end
             end         
 
-         Run the script with the command  ``julia -p 6 sleep-distributed.jl`` to use 6 Julia processes.
+         Run the script with the command  ``julia -p 4 sleep-distributed.jl`` to use 4 Julia processes.
 
       .. tab:: R 
    
@@ -459,7 +462,7 @@ available for each language.
             library(doParallel)
 
             # number of iterations = number of processes
-            n <- 6
+            n <- 4
 
             sleep_serial <- function(n) {
               for (i in 1:n) {
@@ -492,18 +495,18 @@ available for each language.
             % Get a handler for the cluster
             c=parcluster('kebnekaise');
 
-            n = 6;  % Number of iterations
+            n = 4;  % Number of iterations
 
             % Run the job with 1 worker and submit the job to the batch queue
-            j = c.batch(@sleep_serial, 1, {6}, 'pool', 1);
+            j = c.batch(@sleep_serial, 1, {4}, 'pool', 1);
             % Wait till the job has finished
             j.wait;
             % Fetch the result after the job has finished
             t = j.fetchOutputs{:};
             fprintf('Time taken for serial version: %.2f seconds\n', t);
 
-            % Run the job with 6 worker and submit the job to the batch queue
-            j = c.batch(@sleep_parallel, 1, {6}, 'pool', 6);
+            % Run the job with 4 worker and submit the job to the batch queue
+            j = c.batch(@sleep_parallel, 1, {4}, 'pool', 4);
             % Wait till the job has finished
             j.wait;
             % Fetch the result after the job has finished
@@ -538,7 +541,467 @@ available for each language.
 Exercises
 ---------
 
-.. challenge:: Parallelizing a *for loop* workflow
+.. challenge:: Running a parallel code efficiently
+   :class: dropdown
+
+   In this exercise we will run a parallelized code that performs a 2D integration:
+
+      .. math:: 
+          \int^{\pi}_{0}\int^{\pi}_{0}\sin(x+y)dxdy = 0
+
+   One way to perform the integration is by creating a grid in the ``x`` and ``y`` directions.
+   More specifically, one divides the integration range in both directions into ``n`` bins.
+
+   .. tabs:: 
+
+      .. tab:: Python
+         
+
+            Here is a parallel code using the ``multiprocessing`` module in Python (call it 
+            ``integration2d_multiprocessing.py``):  
+
+            .. admonition:: integration2d_multiprocessing.py
+               :class: dropdown
+
+               .. code-block:: python
+
+                   import multiprocessing
+                   from multiprocessing import Array
+                   import math
+                   import sys
+                   from time import perf_counter
+
+                   # grid size
+                   n = 5000
+                   # number of processes
+                   numprocesses = *FIXME*
+                   # partial sum for each thread
+                   partial_integrals = Array('d',[0]*numprocesses, lock=False)
+
+                   # Implementation of the 2D integration function (non-optimal implementation)
+                   def integration2d_multiprocessing(n,numprocesses,processindex):
+                      global partial_integrals;
+                      # interval size (same for X and Y)
+                      h = math.pi / float(n)
+                      # cummulative variable 
+                      mysum = 0.0
+                      # workload for each process
+                      workload = n/numprocesses
+
+                      begin = int(workload*processindex)
+                      end = int(workload*(processindex+1))
+                      # regular integration in the X axis
+                      for i in range(begin,end):
+                         x = h * (i + 0.5)
+                         # regular integration in the Y axis
+                         for j in range(n):
+                               y = h * (j + 0.5)
+                               mysum += math.sin(x + y)
+                     
+                      partial_integrals[processindex] = h**2 * mysum
+
+
+                   if __name__ == "__main__":
+
+                      starttime = perf_counter()
+                     
+                      processes = []
+                      for i in range(numprocesses):
+                         p = multiprocessing.Process(target=integration2d_multiprocessing, args=(n,numprocesses,i))
+                         processes.append(p)
+                         p.start()
+
+                      # waiting for the processes
+                      for p in processes:
+                         p.join()
+
+                      integral = sum(partial_integrals)
+                      endtime = perf_counter()
+
+                   print("Integral value is %e, Error is %e" % (integral, abs(integral - 0.0)))
+                   print("Time spent: %.2f sec" % (endtime-starttime))
+
+
+            Run the code with the following batch script.             
+
+            .. admonition:: job.sh
+               :class: dropdown
+
+               .. tabs::
+
+                  .. tab:: UPPMAX
+
+                       .. code-block:: sh
+                           
+                          #!/bin/bash -l
+                          #SBATCH -A naiss202X-XY-XYZ     # your project_ID
+                          #SBATCH -J job-serial           # name of the job
+                          #SBATCH -n *FIXME*              # nr. tasks/coresw
+                          #SBATCH --time=00:20:00         # requested time
+                          #SBATCH --error=job.%J.err      # error file
+                          #SBATCH --output=job.%J.out     # output file
+
+                          # Load any modules you need, here for Python 3.11.8 and compatible SciPy-bundle
+                          module load python/3.11.8
+                          python integration2d_multiprocessing.py
+
+                  .. tab:: HPC2N
+
+                       .. code-block:: sh
+                           
+                           #!/bin/bash            
+                           #SBATCH -A hpc2n202X-XYZ     # your project_ID       
+                           #SBATCH -J job-serial        # name of the job         
+                           #SBATCH -n *FIXME*           # nr. tasks  
+                           #SBATCH --time=00:20:00      # requested time
+                           #SBATCH --error=job.%J.err   # error file
+                           #SBATCH --output=job.%J.out  # output file  
+
+                           # Do a purge and load any modules you need, here for Python 
+                           ml purge > /dev/null 2>&1
+                           ml GCCcore/11.2.0 Python/3.9.6
+                           python integration2d_multiprocessing.py
+   
+            Try different number of cores for this batch script (*FIXME* string) using the sequence:
+            1,2,4,8,12, and 14. Note: this number should match the number of processes 
+            (also a *FIXME* string) in the Python script. Collect the timings that are
+            printed out in the **job.*.out**. According to these execution times what would be
+            the number of cores that gives the optimal (fastest) simulation? 
+
+            Challenge: Increase the grid size (``n``) to 15000 and submit the batch job with 4 workers (in the
+            Python script) and request 5 cores in the batch script. Monitor the usage of resources
+            with tools available at your center, for instance ``top`` (UPPMAX) or
+            ``job-usage`` (HPC2N).
+
+
+      .. tab:: Julia
+         
+
+            Here is a parallel code using the ``Distributed`` package in Julia (call it 
+            ``integration2d_distributed.jl``):  
+
+            .. admonition:: integration2D_distributed.jl
+               :class: dropdown
+
+               .. code-block:: julia
+
+                   using Distributed
+                   using SharedArrays
+                   using LinearAlgebra
+                   using Printf
+                   using Dates
+                   
+                   # Add worker processes (replace with actual number of cores you want to use)
+                   nworkers = *FIXME*
+                   addprocs(nworkers)
+                   
+                   # Grid size
+                   n = 20000
+                   # Number of processes
+                   numprocesses = nworkers
+                   # Shared array to store partial sums for each process
+                   partial_integrals = SharedVector{Float64}(numprocesses)
+                   
+                   # Function for 2D integration using multiprocessing
+                   # the decorator @everywher instruct Julia to transfer this function to all workers
+                   @everywhere function integration2d_multiprocessing(n, numprocesses, processindex, partial_integrals)
+                       # Interval size (same for X and Y)
+                       h = π / n
+                       # Cumulative variable
+                       mysum = 0.0
+                       # Workload for each process
+                       workload = div(n, numprocesses)
+                   
+                       # Define the range of work for each process according to index
+                       begin_index = workload * (processindex - 1) + 1
+                       end_index = workload * processindex
+                   
+                       # Regular integration in the X axis
+                       for i in begin_index:end_index
+                           x = h * (i - 0.5)
+                           # Regular integration in the Y axis
+                           for j in 1:n
+                               y = h * (j - 0.5)
+                               mysum += sin(x + y)
+                           end
+                       end
+                   
+                       # Store the result in the shared array
+                       partial_integrals[processindex] = h^2 * mysum
+                   end
+                   
+                   # function for main
+                   function main()
+                       # Start the timer
+                       starttime = now()
+                   
+                       # Distribute tasks to processes
+                       @sync for i in 1:numprocesses
+                           @spawnat i integration2d_multiprocessing(n, numprocesses, i, partial_integrals)
+                       end
+                   
+                       # Calculate the total integral by summing over partial integrals
+                       integral = sum(partial_integrals)
+
+                       # end timing
+                       endtime = now()
+                   
+                       # Output results
+                       println("Integral value is $(integral), Error is $(abs(integral - 0.0))")
+                       println("Time spent: $(Dates.value(endtime - starttime) / 1000) sec")
+                   end
+                   
+                   # Run the main function
+                   main()
+
+            Run the code with the following batch script.             
+
+            .. admonition:: job.sh
+               :class: dropdown
+
+               .. tabs::
+      
+                  .. tab:: UPPMAX
+      
+                     .. code-block:: bash
+      
+                             #!/bin/bash -l
+                             #SBATCH -A naiss202X-XY-XYZ  # your project_ID
+                             #SBATCH -J job-serial        # name of the job
+                             #SBATCH -n *FIXME*           # nr. tasks/coresw
+                             #SBATCH --time=00:20:00      # requested time
+                             #SBATCH --error=job.%J.err   # error file
+                             #SBATCH --output=job.%J.out  # output file
+      
+                             ml julia/1.8.5
+      
+                             julia integration2D_distributed.jl 
+         
+                  .. tab:: HPC2N
+      
+                     .. code-block:: bash
+                              
+                             #!/bin/bash            
+                             #SBATCH -A hpc2n202x-xyz     # your project_ID       
+                             #SBATCH -J job-serial        # name of the job         
+                             #SBATCH -n *FIXME*           # nr. tasks  
+                             #SBATCH --time=00:20:00      # requested time
+                             #SBATCH --error=job.%J.err   # error file
+                             #SBATCH --output=job.%J.out  # output file  
+      
+                             ml purge  > /dev/null 2>&1
+                             ml Julia/1.9.3-linux-x86_64
+      
+                             julia integration2D_distributed.jl 
+
+
+            Try different number of cores for this batch script (*FIXME* string) using the sequence:
+            1,2,4,8,12, and 14. Note: this number should match the number of processes 
+            (also a *FIXME* string) in the Julia script. Collect the timings that are
+            printed out in the **job.*.out**. According to these execution times what would be
+            the number of cores that gives the optimal (fastest) simulation? 
+
+            Challenge: Increase the grid size (``n``) to 100000 and submit the batch job with 4 workers (in the
+            Julia script) and request 5 cores in the batch script. Monitor the usage of resources
+            with tools available at your center, for instance ``top`` (UPPMAX) or
+            ``job-usage`` (HPC2N).
+
+      .. tab:: R
+         
+
+            Here is a parallel code using the ``parallel`` and ``doParallel`` packages in R (call it 
+            ``integration2d.R``). Note: check if those packages are already installed for the required
+            R version, otherwise install them with ``install.packages()``.
+
+            .. admonition:: integrationd.R
+               :class: dropdown
+
+               .. code-block:: R
+
+                   library(parallel)
+                   library(doParallel)
+                   
+                   # nr. of workers/cores that will solve the tasks
+                   nworkers <- *FIXME*
+                   
+                   # grid size
+                   n <- 840
+                   
+                   # Function for 2D integration (non-optimal implementation)
+                   integration2d <- function(n, numprocesses, processindex) {
+                     # Interval size (same for X and Y)
+                     h <- pi / n
+                     # Cumulative variable
+                     mysum <- 0.0
+                     # Workload for each process
+                     workload <- floor(n / numprocesses)
+                     
+                     # Define the range of work for each process according to index
+                     begin_index <- workload * (processindex - 1) + 1
+                     end_index <- workload * processindex
+                     
+                     # Regular integration in the X axis
+                     for (i in begin_index:end_index) {
+                       x <- h * (i - 0.5)
+                       # Regular integration in the Y axis
+                       for (j in 1:n) {
+                         y <- h * (j - 0.5)
+                         mysum <- mysum + sin(x + y)
+                       }
+                     }
+                     # Return the result
+                     return(h^2 * mysum)
+                   }
+                   
+                   
+                   # Set up the cluster for doParallel
+                   cl <- makeCluster(nworkers)
+                   registerDoParallel(cl)
+                   
+                       # Start the timer
+                       starttime <- Sys.time()
+                       
+                       # Distribute tasks to processes and combine the outputs into the results list
+                       results <- foreach(i = 1:nworkers, .combine = c) %dopar% { integration2d(n, nworkers, i) }
+                       
+                       # Calculate the total integral by summing over partial integrals
+                       integral <- sum(results)
+
+                       # End the timing
+                       endtime <- Sys.time()
+                       
+                       # Print out the result
+                       print(paste("Integral value is", integral, "Error is", abs(integral - 0.0)))
+                       print(paste("Time spent:", difftime(endtime, starttime, units = "secs"), "seconds"))
+                   
+                   # Stop the cluster after computation
+                   stopCluster(cl)
+
+
+            Run the code with the following batch script.             
+
+            .. admonition:: job.sh
+               :class: dropdown
+
+               .. tabs::
+      
+                  .. tab:: UPPMAX
+      
+                     .. code-block:: bash
+      
+                             #!/bin/bash -l
+                             #SBATCH -A naiss202X-XY-XYZ  # your project_ID
+                             #SBATCH -J job-serial        # name of the job
+                             #SBATCH -n *FIXME*           # nr. tasks/coresw
+                             #SBATCH --time=00:20:00      # requested time
+                             #SBATCH --error=job.%J.err   # error file
+                             #SBATCH --output=job.%J.out  # output file
+      
+                             ml R_packages/4.1.1
+      
+                             Rscript --no-save --no-restore integration2d.R
+      
+                  .. tab:: HPC2N
+      
+                     .. code-block:: bash
+      
+                              #!/bin/bash            
+                              #SBATCH -A hpc2n202X-XYZ     # your project_ID       
+                              #SBATCH -J job-serial        # name of the job         
+                              #SBATCH -n *FIXME*           # nr. tasks  
+                              #SBATCH --time=00:20:00      # requested time
+                              #SBATCH --error=job.%J.err   # error file
+                              #SBATCH --output=job.%J.out  # output file  
+      
+                              ml purge > /dev/null 2>&1
+                              ml GCC/12.2.0  OpenMPI/4.1.4 R/4.2.2
+                              Rscript --no-save --no-restore integration2d.R
+
+            Try different number of cores for this batch script (*FIXME* string) using the sequence:
+            1,2,4,8,12, and 14. Note: this number should match the number of processes 
+            (also a *FIXME* string) in the R script. Collect the timings that are
+            printed out in the **job.*.out**. According to these execution times what would be
+            the number of cores that gives the optimal (fastest) simulation? 
+
+            Challenge: Increase the grid size (``n``) to 10000 and submit the batch job with 4 workers (in the
+            R script) and request 5 cores in the batch script. Monitor the usage of resources
+            with tools available at your center, for instance ``top`` (UPPMAX) or
+            ``job-usage`` (HPC2N).
+
+
+      .. tab:: Matlab
+         
+
+            Here is a parallel code using the ``parfor`` tool from Matlab (call it 
+            ``integration2d.m``). 
+
+            .. admonition:: integrationd.m
+               :class: dropdown
+
+               .. code-block:: matlab
+
+                   % Number of workers/processes
+                   num_workers = *FIXME*;
+                   
+                   % Use parallel pool with 'parfor'
+                   parpool('kebnekaise',num_workers);  % Start parallel pool with num_workers workers
+                   
+                   % Grid size
+                   n = 6720;
+                   
+                   % bin size
+                   h = pi / n;
+                   
+                   tic;  % Start timer
+                   % Shared variable to collect partial sums
+                   partial_integrals = 0.0;
+                   
+                   % In Matlab one can use parfor to parallelize loops
+                   parfor i = 1:n
+                       partial_integrals = partial_integrals + integration2d_partial(n,i);
+                   end
+                   
+                   % Compute the integrals by multilpying by the bin size
+                   integral = partial_integrals * h^2;
+                   elapsedTime = toc;  % Stop timer
+                   
+                   fprintf("Integral value is %e\n", integral);
+                   fprintf("Error is %e\n", abs(integral - 0.0));
+                   fprintf("Time spent: %.2f sec\n", elapsedTime);
+                   
+                   % Clean up the parallel pool
+                   delete(gcp('nocreate'));
+                   
+                   
+                   % Function for the 2D integration only computes a single bin
+                   function mysum = integration2d_partial(n,i)
+                       % bin size
+                       h = pi / n;
+                       % Partial summation
+                       mysum = 0.0;
+                           % A single bin is computed 
+                           x = h * (i - 0.5);
+                           % Regular integration in the Y axis
+                           for j = 1:n
+                               y = h * (j - 0.5);
+                               mysum = mysum + sin(x + y);
+                           end
+                   end
+
+            You can run directly this script from the Matlab GUI.
+            Try different number of cores for this batch script (*FIXME* string) using the sequence:
+            1,2,4,8,12, and 14. Collect the timings that are printed out in the Matlab command window. 
+            According to these execution times what would be
+            the number of cores that gives the optimal (fastest) simulation? 
+
+            Challenge: Increase the grid size (``n``) to 100000 and submit the batch job with 4 workers. 
+            Monitor the usage of resources with tools available at your center, for instance ``top`` (UPPMAX) or
+            ``job-usage`` (HPC2N). For ``job-usage``, you can see the job ID if you type ``squeue --me``
+            on a terminal on Kebnekaise.
+
+
+
+.. challenge:: Parallelizing a *for loop* workflow (Advanced)
    :class: dropdown
 
    Create a Data Frame containing two features, one called **ID** which has integer values 
@@ -596,7 +1059,7 @@ Exercises
                 # Print the mean value
                 print(mean_value)
 
-            Run the code with the batch script (HPC2N): 
+            Run the code with the batch script: 
             
             .. tabs::
 
@@ -1029,6 +1492,7 @@ Exercises
 .. admonition:: More info
 
    - `HPC2N Julia documentation <https://www.hpc2n.umu.se/resources/software/julia>`_.
+   - `White paper on Julia parallel computing <https://juliahub.com/assets/pdf/Parallel-Computing-Guide-for-Julia-byJuliaHub.pdf>`_.
    - `HPC2N R documentation <https://www.hpc2n.umu.se/resources/software/r>`_.
    - `Introduction to Dask by Aalto Scientific Computing and CodeRefinery <https://aaltoscicomp.github.io/python-for-scicomp/parallel/#dask-and-task-queues>`_
    - `Intermediate level Dask by ENCCS <https://enccs.github.io/hpda-python/dask/>`_.
