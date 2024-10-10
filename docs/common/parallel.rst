@@ -333,7 +333,7 @@ available for each language.
          wait 1 second 
       end the for loop
 
-   The waiting step is used to simulate a task without writing too much code. In this waye,
+   The waiting step is used to simulate a task without writing too much code. In this way,
    one can realize how faster the loop can be executed when threads are added:
 
    .. figure:: ../../img/parallel-loop.png
