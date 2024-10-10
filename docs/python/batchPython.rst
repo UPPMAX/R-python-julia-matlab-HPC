@@ -278,7 +278,6 @@ GPU code
 
 .. note:: 
 
-   Since the newest Python package modules on UPPMAX and HPC2N do not contain CUDA, we will use Python 3.9.x for these examples.
    There is some problem with PyTorch under the ML package on UPPMAX, so you need to use the virtual environment   
 
 .. tabs::
@@ -318,17 +317,43 @@ GPU code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2n2024-025 # Change to your own after the course
+            #SBATCH -A hpc2n2024-114 # Change to your own after the course
             #SBATCH --time=00:10:00  # Asking for 10 minutes
-            # Asking for one V100 card
-            #SBATCH --gres=gpu:v100:1
+            # Asking for one A100 card
+            #SBATCH --gpus=1
+            #SBATCH -C a100
             
             # Remove any loaded modules and load the ones we need
             module purge  > /dev/null 2>&1
-            module load GCC/11.2.0 OpenMPI/4.1.1 PyTorch/1.12.1-CUDA-11.4.1
+            module load GCC/12.3.0 OpenMPI/4.1.5 PyTorch/2.1.2-CUDA-12.1.1
             
             # Run your Python script
             srun python pytorch_fitting_gpu.py
+
+   .. tab:: LUNARC 
+
+        Short GPU example for running on Cosmos. 
+
+        .. code-block:: sh 
+
+            #!/bin/bash
+            # Remember to change this to your own project ID after the course!
+            #SBATCH -A luXXXX-Y-ZZZ
+            # We are asking for 5 minutes
+            #SBATCH --time=00:05:00
+            # The following two lines splits the output in a file for any errors and a file for other output.
+            #SBATCH --error=job.%J.err
+            #SBATCH --output=job.%J.out
+            # Asking for one A100. You need to give the gpua100 partition and then ask for one GPU 
+            #SBATCH -p gpua100
+            #SBATCH --gres=gpu:1
+
+            # Remove any loaded modules and load the ones we need
+            module purge  > /dev/null 2>&1
+            ml GCC/11.3.0 OpenMPI/4.1.4 PyTorch/1.12.1-CUDA-11.7.0
+
+            srun python pytorch_fitting_gpu.py
+
 
 Send the script to the batch:
 
@@ -390,6 +415,25 @@ Exercises
             # Run your Python script 
             python sum-2args.py 2 3 
 
+.. solution:: Solution for LUNARC 
+    :class: dropdown 
+
+          This batch script is for LUNARC (Cosmos). Adding the numbers 2 and 3. 
+
+          .. code-block:: sh
+
+            #!/bin/bash
+            #SBATCH -A luXXXX-Y-ZZZ # Change to your own after the course
+            #SBATCH --time=00:05:00 # Asking for 5 minutes
+            #SBATCH -n 1 # Asking for 1 core
+            
+            # Load any modules you need, here for Python 3.11.3
+            module load GCC/12.3.0  Python/3.11.3
+            
+            # Run your Python script 
+            python sum-2args.py 2 3 
+ 
+            
 .. tip::
 
    - For parallel computing, you may get an introduction here: (https://uppmax.github.io/HPC-python/parallel.html)
