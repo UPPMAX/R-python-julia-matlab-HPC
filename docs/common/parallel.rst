@@ -2,38 +2,6 @@ Parallel and multithreaded functions
 ====================================
 
 
-[RB: All my feedback is added like this: between square brackets
-and starting with ``RB:``.
-
-Feel free to ignore all this. The goal is to make one consider or
-reconsider, not bluntly accepting other's (potentially worse!) ideas.
-
-I enjoy to see the enthusiasm shown by the extensive course material on
-the theory behind parallel programming, especially the picture with the
-washing machines. However, I see a mismatch between
-what is in the course material and the exercise: there is nearly no
-overlap. Due to this, I cannot review this material in-detail, as I
-cannot conclude what the teaching goal is, as usually the teaching goal
-can be inferred by the content that is present in both the content and exercise.
-
-If this session's goal is 'To understand parallel programming in
-detail' (as is the content),
-the exercises should reflect that and be more discussion-focussed,
-e.g. 'A user runs parallel code on one node. Why is that smart? Why is it not?'
-and 'How to find the best amount of allocated nodes?'
-
-If the session's goal is 'To make existing code parallel' (as that is
-what is tested in the exercise), the session's content should reflect that,
-with code snippets being made from single-thread to multiple threads.
-
-If this session's goal is 'To run programs with parallel code' 
-(which I think would fit this session best),
-the session content and exercises should reflect that: which modules to load,
-how to submit the job, how to run some example code.
-
-Again, feel free to ignore all this. The goal is to make one consider or
-reconsider, not bluntly accepting other's (potentially worse!) ideas.]
-
 .. questions::
 
    - What is parallel programming?
