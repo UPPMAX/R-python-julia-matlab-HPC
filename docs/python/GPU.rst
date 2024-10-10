@@ -110,8 +110,33 @@ where type is
 - h100
 - mi100 
 
-For more information, see HPC2N's guide to the <a href="https://docs.hpc2n.umu.se/documentation/batchsystem/resources/" target="_blank">different parts of the batch system</a>. 
+For more information, see HPC2N's guide to the different parts of the batch system: https://docs.hpc2n.umu.se/documentation/batchsystem/resources/
    
+**LUNARC** 
+
+LUNARC has Nvidia A100 GPUs and Nvidia A40 GPUs, but the latter ones are reserved for interactive graphics work on the on-demand system, and Slurm jobs should not be submitted to them. 
+
+Thus in order to use the A100 GPUs on Cosmos, add this to your batch script: 
+
+A100 GPUs on AMD nodes: 
+
+```bash
+#SBATCH -p gpua100
+#SBATCH --gres=gpu:1
+```
+
+These nodes are configured as exclusive access and will not be shared between users. User projects will be charged for the entire node (48 cores). A job on a node will also have access to all memory on the node.
+
+A100 GPUs on Intel nodes: 
+
+```bash
+#SBATCH -p gpua100i
+#SBATCH --gres=gpu:<number>
+```
+
+where ``<number>`` is 1 or 2 (Two of the nodes have 1 GPU and two have 2 GPUs). 
+
+
 Numba example
 -------------
 
