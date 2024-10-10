@@ -14,7 +14,7 @@ Log in session
 .. info::
 
    - You were invited to be part of the course project for Rackham/Snowy (UPPMAX).
-   - If you already have research projects in any of the clusters you can use them. The CPU-hours required dutring the course will be low!
+   - If you already have research projects in any of the clusters you can use them. The CPU-hours required during the course will be low!
 
 .. admonition:: **Learning outcomes**
    
