@@ -279,6 +279,7 @@ Content of the course
    :caption: COMMON:
 
    common/login.rst
+   common/ondemand-desktop.rst
 
 .. toctree::
    :maxdepth: 2
