@@ -103,6 +103,7 @@ Or alternatively: an interactive session is a session,
 in which there is no queue before a command is run on a compute node.
 
 In this session, we show how to:
+
 - the different ways HPC2N, UPPMAX, and LUNARC provide for an interactive session
 - start an interactive session
 - check to be in an interactive session
