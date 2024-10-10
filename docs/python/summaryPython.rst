@@ -15,7 +15,7 @@ Summary
          
             - ``pip list`` command at both centers
             - ``ml help python/3.11.8`` at UPPMAX
-            - ``module -r spider '.*Python.*'`` at HPC2N
+            - ``module -r spider '.*Python.*'`` at HPC2N and LUNARC
             
       - Installation with *PYPI*
       
@@ -45,6 +45,8 @@ Summary
             
               - requires that you install all packages needed. 
 
+         - LUNARC has ``virtualenv``, ``venv``, and ``conda`` 
+
    - Batch mode
       - The SLURM scheduler handles allocations to the calculation nodes
       - Batch jobs runs without interaction with user
@@ -56,6 +58,7 @@ Summary
       
          - At HPC2N: ``salloc`` ...       not really interactive
          - At UPPMAX: ``interactive`` ...
+         - At LUNARC: ``interactive`` ...   
          
       - Follow the same procedure as usual by loading the Python module and possible prerequisites
 
