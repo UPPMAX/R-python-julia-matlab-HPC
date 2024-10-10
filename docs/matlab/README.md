@@ -1,38 +1,23 @@
 # MATLAB content
 
-## Introduction to MATLAB
+- Introduction to MATLAB
 
-## Load and run MATLAB
+- Load and run MATLAB
 
-### compute node allocation already here?
+- Add-Ons/Toolbox
 
-## Add-ons/Toolbox
-??
-- github
-- local MATLAB folder
+- Parallel jobs
 
-### Preinstalled
+  - Pool
 
-## Parallel jobs
-### Intro about pools and batch
-### Syntax
+  - Matlab batch
 
+  - (Shell Batch)
 
+- On-Demand desktop
 
-## Interactive
+- At UPPMAX just matlab batch works
 
-### Pool
-
-### Matlab batch
-
-### Shell Batch
-
-### On-Demand desktop
-
-### At UPPMAX just matlab batch works
-- download desktop.zip
-- configCluster
-
-## Interaction with other tools
-### Comsol
-### Gurobi
+- Interaction with other tools?
+  - Comsol
+  - Gurobi
