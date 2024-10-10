@@ -103,7 +103,7 @@ Schedule
      - GPU
      - BB
    * - 14:40
-     - Simulataneous sessions
+     - Simultaneous sessions
      - BB * RB * RP
    * - 15:10
      - Break
