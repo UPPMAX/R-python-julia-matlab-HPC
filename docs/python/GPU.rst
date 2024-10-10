@@ -120,19 +120,19 @@ Thus in order to use the A100 GPUs on Cosmos, add this to your batch script:
 
 A100 GPUs on AMD nodes: 
 
-```bash
-#SBATCH -p gpua100
-#SBATCH --gres=gpu:1
-```
+.. code-block::
+  
+   #SBATCH -p gpua100
+   #SBATCH --gres=gpu:1
 
 These nodes are configured as exclusive access and will not be shared between users. User projects will be charged for the entire node (48 cores). A job on a node will also have access to all memory on the node.
 
 A100 GPUs on Intel nodes: 
 
-```bash
-#SBATCH -p gpua100i
-#SBATCH --gres=gpu:<number>
-```
+.. code-block::
+
+   #SBATCH -p gpua100i
+   #SBATCH --gres=gpu:<number>
 
 where ``<number>`` is 1 or 2 (Two of the nodes have 1 GPU and two have 2 GPUs). 
 
@@ -140,8 +140,8 @@ where ``<number>`` is 1 or 2 (Two of the nodes have 1 GPU and two have 2 GPUs).
 Numba example
 -------------
 
-Numba is installed on HPC2N. We also need numpy, so we are loading SciPy-bundle as we have done before. 
-We will use Python 3.9.x on both  UPPMAX and HPC2N since that is the only version where the GPU packages are currently working correctly.  
+Numba is installed on HPC2N and LUNARC as a module. We also need numpy, so we are loading SciPy-bundle as we have done before. 
+On UPPMAX numba is part of python_ML_packages, so we use that. 
 
 We are going to use the following program for testing (it was taken from 
 https://linuxhint.com/gpu-programming-python/ but there are also many great examples at 
@@ -203,25 +203,35 @@ As before, we need the batch system to run the code. There are no GPUs on the lo
 
       .. tab:: UPPMAX
       
-         Here we need to use the numba we installed in the "Example-gpu" virtual environment because 
-         of some temporary error (otherwise we would use the module ``python_ML_packages/3.9.5-gpu`` on Snowy)
-         When you code-along, remember to change the activation path for the virtual environment to your own!
-
          .. code-block:: console
       
-            $ interactive -A naiss2024-22-107 -n 1 -M snowy --gres=gpu:1  -t 1:00:01 --gres=gpu:1  -t 1:00:01 
+            $ interactive -A naiss2024-22-1202 -n 1 -M snowy --gres=gpu:1  -t 1:00:01 --gres=gpu:1  -t 1:00:01 
             You receive the high interactive priority.
 
             Please, use no more than 8 GB of RAM.
 
-            Waiting for job 8483006 to start...
-            Starting job now -- you waited for 10 seconds.
+            salloc: Pending job allocation 9697978
+            salloc: job 9697978 queued and waiting for resources
+            salloc: job 9697978 has been allocated resources
+            salloc: Granted job allocation 9697978
+            salloc: Waiting for resource configuration
+            salloc: Nodes s195 are ready for job
+             _   _ ____  ____  __  __    _    __  __
+            | | | |  _ \|  _ \|  \/  |  / \   \ \/ /   | System:    s195
+            | | | | |_) | |_) | |\/| | / _ \   \  /    | User:      bbrydsoe
+            | |_| |  __/|  __/| |  | |/ ___ \  /  \    | 
+             \___/|_|   |_|   |_|  |_/_/   \_\/_/\_\   | 
 
-            $ ml python/3.9.5
-	    $ source <path-to-virtual-environment>/Example-gpu/bin/activate
-            (Example-gpu) $ python add-list.py
-            CPU function took 36.849201 seconds.
-            GPU function took 1.574953 seconds.
+            ###############################################################################
+
+                    User Guides: https://docs.uppmax.uu.se/
+
+                    Write to support@uppmax.uu.se, if you have questions or comments.
+
+            [bbrydsoe@s195 python]$ ml uppmax python/3.11.8 python_ML_packages/3.11.8-gpu
+            [bbrydsoe@s195 python]$ python add-list.py 
+            CPU function took 35.272032 seconds.
+            GPU function took 1.324215 seconds.
 
       .. tab:: HPC2N
    
@@ -229,43 +239,64 @@ As before, we need the batch system to run the code. There are no GPUs on the lo
 
          .. code-block:: console
 
-            $ salloc -A hpc2n2024-025 --time=00:30:00 -n 1 --gres=gpu:v100:1 
-            salloc: Pending job allocation 20346979
-            salloc: job 20346979 queued and waiting for resources
-            salloc: job 20346979 has been allocated resources
-            salloc: Granted job allocation 20346979
+            $ salloc -A hpc2n2024-114 --time=00:30:00 -n 1 --gpus=1 -C a100  
+            salloc: Pending job allocation 29039771
+            salloc: job 29039771 queued and waiting for resources
+            salloc: job 29039771 has been allocated resources
+            salloc: Granted job allocation 29039771
             salloc: Waiting for resource configuration
-            salloc: Nodes b-cn1504 are ready for job
+            salloc: Nodes b-cn1610 are ready for job
             $
-            $ module load GCC/10.3.0 OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1
+            $ module load GCC/12.3.0 OpenMPI/4.1.5 numba/0.58.1 SciPy-bundle/2023.07 CUDA/12.0.0
             $ srun python add-list.py
-            CPU function took 31.905025 seconds.
-            GPU function took 0.684060 seconds.
+            CPU function took 19.601633 seconds.
+            GPU function took 0.194873 seconds.
 
       .. tab:: Batch script for HPC2N
 
-         Batch script, "add-list.sh", to run the same GPU Python script (the numba code, "add-list.py") 
-         at Kebnekaise. As before, submit with "sbatch add-list.sh" (assuming you called the batch 
-         script thus - change to fit your own naming style). 
+         Batch script, "add-list-kebnekaise.sh", to run the same GPU Python script (the numba code, "add-list.py") at Kebnekaise. As before, submit with "sbatch add-list-kebnekaise.sh" (assuming you called the batch script thus - change to fit your own naming style). 
       
          .. code-block:: console
 
             #!/bin/bash
             # Remember to change this to your own project ID after the course!
-            #SBATCH -A hpc2n2025-025     
+            #SBATCH -A hpc2n2024-114     
             # We are asking for 5 minutes
             #SBATCH --time=00:05:00
-            # Asking for one GPU
-            #SBATCH --gres=gpu:v100:1    
+            # Asking for one A100 GPU
+            #SBATCH --gpus=1
+            "SBATCH -C a100    
 
             # Remove any loaded modules and load the ones we need
             module purge  > /dev/null 2>&1
-            module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1 
+            module load GCC/12.3.0 OpenMPI/4.1.5 numba/0.58.1 SciPy-bundle/2023.07 CUDA/12.0.0 
 
             # Run your Python script
             python add-list.py
 
+      .. tab:: Batch script for LUNARC
 
+         Batch script, "add-list-cosmos.sh", to run the same GPU Python script (the numba code, "add-list-cosmos.py") at Cosmos. As before, submit with "sbatch add-list-cosmos.sh" (assuming you called the batch script thus - change to fit your own naming style).
+
+         .. code-block:: console
+
+            #!/bin/bash
+            # Remember to change this to your own project ID after the course!
+            #SBATCH -A luXXXX-Y-ZZZ
+            # We are asking for 5 minutes
+            #SBATCH --time=00:05:00
+            # Asking for one A100 GPU
+            #SBATCH -p gpua100
+            #SBATCH --gres=gpu:1    
+
+            # Remove any loaded modules and load the ones we need
+            module purge  > /dev/null 2>&1
+            module load GCC/12.2.0  OpenMPI/4.1.4 numba/0.58.0 SciPy-bundle/2023.02 
+
+            # Run your Python script
+            python add-list.py
+
+            
 Exercises
 ---------
 
@@ -406,7 +437,7 @@ Exercises
    Prepare a batch script to run these two versions of the integration 2D with Numba support
    and monitor the timings for both cases.
 
-Here follows a solution for HPC2N. Try and make it run on Snowy, by using a numba you install in a virtual environment and doing the changes suggested by the UPPMAX solution for add-list.py above. 
+Here follows a solution for HPC2N. Try and make it run on Snowy, using the python_ML_packages for Python 3.11.8 and the changes suggested by the UPPMAX solution for add-list.py above. 
    
 .. solution:: Solution for HPC2N
     :class: dropdown
@@ -420,28 +451,25 @@ Here follows a solution for HPC2N. Try and make it run on Snowy, by using a numb
 
             #!/bin/bash
             # Remember to change this to your own project ID after the course!
-            #SBATCH -A hpc2n2024-025
+            #SBATCH -A hpc2n2024-114
             #SBATCH -t 00:08:00
             #SBATCH -N 1
             #SBATCH -n 28
             #SBATCH -o output_%j.out   # output file
             #SBATCH -e error_%j.err    # error messages
-            #SBATCH --gres=gpu:v100:1
-            #SBATCH --exclusive
+            #SBATCH --gpus=1
+            #SBATCH -C a100
      
             ml purge > /dev/null 2>&1
-            module load GCC/10.3.0  OpenMPI/4.1.1 Python/3.9.5 SciPy-bundle/2021.05 CUDA/11.3.1
+            module load GCC/12.3.0 OpenMPI/4.1.5 numba/0.58.1 SciPy-bundle/2023.07 CUDA/12.0.0
     
             python integration2d_gpu.py
             python integration2d_gpu_shared.py
 
      For the ``integration2d_gpu.py`` implementation, the time for executing the kernel 
-     and doing some postprocessing to the outputs (copying the C array and doing a reduction)  
-     was 4.35 sec. which is a much smaller value than the time for the serial numba code of 152 sec
-     obtained previously. 
+     and doing some postprocessing to the outputs (copying the C array and doing a reduction) was 4.35 sec. which is a much smaller value than the time for the serial numba code of 152 sec obtained previously. 
 
-     The simulation time for the ``integration2d_shared.py`` implementation was 1.87 sec. 
-     by using the shared memory trick. 
+     The simulation time for the ``integration2d_shared.py`` implementation was 1.87 sec. by using the shared memory trick. 
 
 .. keypoints::
 
