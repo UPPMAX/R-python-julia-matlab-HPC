@@ -12,6 +12,9 @@ jobs:
   check_spelling:
 
     runs-on: ubuntu-latest
+    runs:
+      using: 'node20'
+      main: 'main.js'
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
