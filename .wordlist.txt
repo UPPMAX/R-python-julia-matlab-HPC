@@ -696,3 +696,7 @@ MemUsage
 WallTime
 Spyder
 Ons
+focussed
+moreso
+OnDemand
+Logg
