@@ -289,14 +289,12 @@ GPU code
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A naiss2024-22-107
+            #SBATCH -A naiss2024-22-1202
             #SBATCH -t 00:10:00
             #SBATCH --exclusive
             #SBATCH -p node
-            #SBATCH -N 1
             #SBATCH -M snowy
-            #SBATCH --gpus=1
-            #SBATCH --gpus-per-node=1
+            #SBATCH --gres=gpu:1
             
             # Load any modules you need, here loading Python 3.9.5 and the corresponding ML packages module 
 

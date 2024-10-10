@@ -25,34 +25,30 @@ Jupyter on compute nodes
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: ``naiss2024-22-107``
-   - Kebnekaise: ``hpc2n2024-025``
+   - Rackham: ``naiss2024-22-1202``
+   - Kebnekaise: ``hpc2n2024-114``
 
 .. admonition:: Storage space for this workshop 
 
-   - Rackham: ``/proj/r-py-jl``
-   - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
+   - Rackham: ``/proj/r-py-jl-m-rackham``
+   - Kebnekaise: ``/proj/nobackup/r-py-jl-m``
 
 Introduction
 ------------
 
-Jupyter is web application that allows literature programming
-for Python. That is, Jupyter allows to create documents 
-where Python code is shown and run and its results shown, 
-surrounded by written text (e.g. English).
+Jupyter is web application that (among other things) allows literature programming for Python. That is, Jupyter allows to create documents where Python code is shown and run and its results shown, surrounded by written text (e.g. English).
 
 Additionally, Jupyter allows to share files and hence includes a file manager.
 
 Jupyter is:
 
-- started and running on a server, for example, an interactive node
+- started and run on a server, for example, an interactive node
 - displayed in a **web browser**, such as ``firefox``.
 
 Jupyter can be slow when using a remote desktop website 
 (e.g. ``rackham-gui.uppmax.uu.se`` or ``kebnekaise-tl.hpc2n.umu.se``).
 
-- For HPC2N, as ``JupyterLab`` is only accessible from within HPC2N's, 
-  there is no way to improve it
+- For HPC2N, as ``JupyterLab`` it is only accessible from within HPC2N's, and there is no way to improve any slowness
 - For UPPMAX, one can use a locally installed ThinLinc client to speed up Jupyter.
   See `the UPPMAX documentation on ThinLinc <https://www.uppmax.uu.se/support/user-guides/thinlinc-graphical-connection-guide>`_
   on how to install the ThinLinc client locally
@@ -202,7 +198,7 @@ Something like the file below will work. Remember to change the project id after
 .. code-block:: slurm
 		
    #!/bin/bash
-   #SBATCH -A hpc2n2024-025
+   #SBATCH -A hpc2n2024-114
    # This example asks for 1 core
    #SBATCH -n 1
    # Ask for a suitable amount of time. Remember, this is the time the Jupyter notebook will be available! HHH:MM:SS.
@@ -280,7 +276,7 @@ To access the server, go to
 
 from a browser within the ThinLinc session. <newest> is a number that you find by looking in the directory ``.local/share/jupyter/runtime/`` under your home directory.
 
-Or, to access the server you can copy and paste this URLs from the file:
+Or, to access the server you can copy and paste the URL from the file that is SIMILAR to this:
 
 .. code-block:: sh
 
