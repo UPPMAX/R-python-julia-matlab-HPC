@@ -57,15 +57,19 @@ In this session, we will follow this typical user journey.
 To be able to work with R on an HPC cluster, 
 we will need to find a module that loads a specific version of R.
 
-HPC2N and UPPMAX use the same module system:
+HPC2N, UPPMAX, LUNARC, and most of the Swedish HPC centres use the same module system:
 
-- `the HPC2N documentation of the module system <https://www.hpc2n.umu.se/documentation/environment/lmod>`_
+- `the HPC2N documentation of the module system <https://docs.hpc2n.umu.se/documentation/modules/>`_
 - `the UPPMAX documentation of the module system <http://docs.uppmax.uu.se/cluster_guides/modules/>`_
+- `the LUNARC documentation of the module system <https://lunarc-documentation.readthedocs.io/en/latest/manual/manual_modules/#using-modules>`_ 
 
-HPC2N and UPPMAX do differ how their module systems show results when searching for a module:
+HPC2N, LUNARC, and UPPMAX do differ how their module systems show results when searching for a module with ``ml avail``:
 
 - HPC2N: a module is hidden from search until a prerequisite module is loaded
 - UPPMAX: when searching for a module, one can always see all modules
+- LUNARC: a module is hidden from search until a prerequisite module is loaded
+
+All modules can be found with ``module spider`` though. 
 
 Here is how to find the modules that load different versions of R:
 
@@ -134,7 +138,7 @@ Here is how to find the modules that load different versions of R:
         .. admonition:: How does the output look like?
             :class: dropdown
 
-            Output at HPC2N as of 15 October 2023:
+            Output at HPC2N as of 15 October 2023 (on main Kebnekaise login node):
 
             .. code-block:: tcl
 
@@ -168,6 +172,50 @@ Here is how to find the modules that load different versions of R:
                 $ module spider R/4.1.3
                 -----------------------------------------------------------------------------------------------------------------------------------------------
 
+    .. tab:: LUNARC
+
+        From a terminal, do:
+
+        .. code-block:: console
+
+            module spider R
+
+        .. admonition:: How does the output look like?
+            :class: dropdown 
+
+            Output at LUNARC as of 10 October 2024: 
+
+            .. code-block:: tcl 
+
+                [bbrydsoe@cosmos3 python]$ ml spider R
+
+                ------------------------------------------------------------------------------------------
+                  R:
+                ------------------------------------------------------------------------------------------
+                    Description:
+                      R is a free software environment for statistical computing and graphics.
+
+                     Versions:
+                        R/4.2.1
+                        R/4.3.2
+                        R/4.4.1
+                      Other possible modules matches:
+                         ANTLR  APR  APR-util  Amber  AmberTools  Archive-Zip  Armadillo  Arrow  BioPerl  ...
+
+                ------------------------------------------------------------------------------------------
+                  To find other possible module matches execute:
+
+                      $ module -r spider '.*R.*'
+
+                ------------------------------------------------------------------------------------------
+                  For detailed information about a specific "R" package (including how to load the modules) use the module's full name.
+                  Note that names that have a trailing (E) are extensions provided by other modules.
+                  For example:
+
+                     $ module spider R/4.4.1
+                ------------------------------------------------------------------------------------------
+
+ 
 Here is how to find out how to load an R module of a specific version:
 
 .. tabs::
