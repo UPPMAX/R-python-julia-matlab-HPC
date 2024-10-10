@@ -5,39 +5,32 @@ Using GPUs with Python
 
    - What is GPU acceleration?
    - How to enable GPUs (for instance with CUDA) in Python code?
-   - How to deploy GPUs at HPC2N and UPPMAX?
+   - How to deploy GPUs at HPC2N, UPPMAX, and LUNARC?
    
    
 
 .. objectives::
 
    - Learn common schemes for GPU code acceleration
-   - Learn about the GPU nodes at HPC2N and UPPMAX
+   - Learn about the GPU nodes at HPC2N, UPPMAX, and LUNARC 
 
-GPU-accelerated computing is when you use a graphics processing unit (GPU) along with a computer 
-processing unit (CPU) to facilitate processing-intensive operations such as deep learning, analytics and engineering applications.
+GPU-accelerated computing is when you use a graphics processing unit (GPU) along with a computer processing unit (CPU) to facilitate processing-intensive operations such as deep learning, analytics and engineering applications.
 
-A GPU is a processor which is from many smaller and more specialized cores. When these cores work 
-together, you can get a large performance boost for tasks that can be divided up and processed across many cores.
+A GPU is a processor which is from many smaller and more specialized cores. When these cores work together, you can get a large performance boost for tasks that can be divided up and processed across many cores.
 
 In a typical cluster, some GPUs are attached to a single node resulting in a CPU-GPU
 hybrid architecture. The CPU component is called the host and the GPU part the device.
 
 We can characterize the CPU and GPU performance with two quantities: the **latency** and the **throughput**.
 
-**Latency** refers to the time spent in a sole computation. **Throughput** denotes the number of 
-computations that can be performed in parallel. Then, we can say that a CPU has low latency
-(able to do fast computations) but low throughput (only a few computations simultaneously).
-In the case of GPUs, the latency is high and the throughput is also high. We can visualize the behavior
-of the CPUs and GPUs with cars as in the figure below. A CPU would be compact road where only a few 
-racing cars can drive whereas a GPU would be a broader road where plenty of slow cars can drive.
+**Latency** refers to the time spent in a sole computation. **Throughput** denotes the number of computations that can be performed in parallel. Then, we can say that a CPU has low latency (able to do fast computations) but low throughput (only a few computations simultaneously).
+In the case of GPUs, the latency is high and the throughput is also high. We can visualize the behavior of the CPUs and GPUs with cars as in the figure below. A CPU would be compact road where only a few racing cars can drive whereas a GPU would be a broader road where plenty of slow cars can drive.
 
 .. figure:: ../../img/cpu-gpu-highway.png
    :width: 450
    :align: center
 
-Cars and roads analogy for the CPU and GPU behavior. The compact road is analogous to the CPU 
-(low latency, low throughput) and the broader road is analogous to the GPU (high latency, high throughput)
+Cars and roads analogy for the CPU and GPU behavior. The compact road is analogous to the CPU (low latency, low throughput) and the broader road is analogous to the GPU (high latency, high throughput)
 
 As an illustration a K80 GPU engine looks like this:
 
@@ -50,36 +43,23 @@ As an illustration a K80 GPU engine looks like this:
 
 In a typical cluster, some GPUs are attached to a single node resulting in a CPU-GPU
 hybrid architecture. The CPU component is called the host and the GPU part the device.
-One possible layout (Kebnekaise) is as follows:
+One possible layout (Kebnekaise - the K80s are now retired) is as follows:
 
 
 .. figure:: ../../img/cpu-gpu.png
    :width: 450  
    :align: center
 
-   Schematics of a hybrid CPU-GPU architecture. A GPU K80 card consisting of two engines is attached
-   to a NUMA island which in turn contains 14 cores. The NUMA island and the GPUs are
-   connected through a PCI-E interconnect which makes the data transfer between both components rather
-   slow.
+   Schematics of a hybrid CPU-GPU architecture. A GPU K80 card consisting of two engines is attached to a NUMA island which in turn contains 14 cores. The NUMA island and the GPUs are connected through a PCI-E interconnect which makes the data transfer between both components rather slow.
 
-Not every Python program is suitable for GPU acceleration. GPUs process simple functions rapidly, 
-and are best suited for repetitive and highly-parallel computing tasks. GPUs were originally 
-designed to render high-resolution images and video concurrently and fast, but since they can 
-perform parallel operations on multiple sets of data, they are also often used for other, 
-non-graphical tasks. Common uses are machine learning and scientific computation were the GPUs can 
-take advantage of massive parallelism. 
+Not every Python program is suitable for GPU acceleration. GPUs process simple functions rapidly, and are best suited for repetitive and highly-parallel computing tasks. GPUs were originally designed to render high-resolution images and video concurrently and fast, but since they can perform parallel operations on multiple sets of data, they are also often used for other, non-graphical tasks. Common uses are machine learning and scientific computation were the GPUs can take advantage of massive parallelism. 
 
 Many Python packages are not CUDA aware, but some have been written specifically with GPUs in mind. 
-If you are usually working with for instance NumPy and SciPy, you could optimize your code for GPU 
-computing by using CuPy which mimics most of the NumPy functions. Another option is using Numba, which 
-has bindings to CUDA and lets you write CUDA kernels in Python yourself. This means you can
-use custom algorithms. 
+If you are usually working with for instance NumPy and SciPy, you could optimize your code for GPU computing by using CuPy which mimics most of the NumPy functions. Another option is using Numba, which has bindings to CUDA and lets you write CUDA kernels in Python yourself. This means you can use custom algorithms. 
 
-One of the most common use of GPUs with Python is for machine learning or deep learning. For 
-these cases you would use something like Tensorflow or PyTorch libraries which can handle CPU
-and GPU processing internally without the programmer needing to do so. 
+One of the most common use of GPUs with Python is for machine learning or deep learning. For these cases you would use something like Tensorflow or PyTorch libraries which can handle CPU and GPU processing internally without the programmer needing to do so. 
 
-GPUs on UPPMAX and HPC2N systems
+GPUs on UPPMAX, HPC2N, and LUNARC systems
 --------------------------------
 
 There are generally either not GPUs on the login nodes or they cannot be accessed for computations. 
@@ -100,9 +80,37 @@ You need to use this batch command (for x being the number of cards, 1 or 2):
 
 Kebnekaise's GPU nodes are considered a separate resource, and the regular compute nodes do not have GPUs.
 
-You need to use this to the batch system: ``#SBATCH --gres=gpu:<card>:x``, for <card>=v100 or a100 and x=1 or 2. 
+Kebnekaise has a great many different types of GPUs:
 
-And for the A100 GPUs you also need to use ``#SBATCH -p amd_gpu``
+- V100 (2 cards/node)
+- A40 (8 cards/node)
+- A6000 (2 cards/node) 
+- L40s (2 or 6 cards/node)
+- A100 (2 cards/node)
+- H100 (4 cards/node)
+- MI100 (2 cards/node) 
+
+To access them, you need to use this to the batch system: 
+
+``#SBATCH --gpus=x``
+
+where x is the number of GPU cards you want. Above are given how many are on each type, so you can ask for up to that number. 
+
+In addition, you need to add this to the batch system: 
+
+``#SBATCH -C <type>``
+
+where type is 
+
+- v100
+- a40
+- a6000
+- l40s
+- a100
+- h100
+- mi100 
+
+For more information, see HPC2N's guide to the <a href="https://docs.hpc2n.umu.se/documentation/batchsystem/resources/" target="_blank">different parts of the batch system</a>. 
    
 Numba example
 -------------
