@@ -929,7 +929,75 @@ Exercises
             ``job-usage`` (HPC2N).
 
 
+      .. tab:: Matlab
+         
 
+            Here is a parallel code using the ``parfor`` tool from Matlab (call it 
+            ``integration2d.m``). 
+
+            .. admonition:: integrationd.m
+               :class: dropdown
+
+               .. code-block:: matlab
+
+                   % Number of workers/processes
+                   num_workers = *FIXME*;
+                   
+                   % Use parallel pool with 'parfor'
+                   parpool('kebnekaise',num_workers);  % Start parallel pool with num_workers workers
+                   
+                   % Grid size
+                   n = 6720;
+                   
+                   % bin size
+                   h = pi / n;
+                   
+                   tic;  % Start timer
+                   % Shared variable to collect partial sums
+                   partial_integrals = 0.0;
+                   
+                   % In Matlab one can use parfor to parallelize loops
+                   parfor i = 1:n
+                       partial_integrals = partial_integrals + integration2d_partial(n,i);
+                   end
+                   
+                   % Compute the integrals by multilpying by the bin size
+                   integral = partial_integrals * h^2;
+                   elapsedTime = toc;  % Stop timer
+                   
+                   fprintf("Integral value is %e\n", integral);
+                   fprintf("Error is %e\n", abs(integral - 0.0));
+                   fprintf("Time spent: %.2f sec\n", elapsedTime);
+                   
+                   % Clean up the parallel pool
+                   delete(gcp('nocreate'));
+                   
+                   
+                   % Function for the 2D integration only computes a single bin
+                   function mysum = integration2d_partial(n,i)
+                       % bin size
+                       h = pi / n;
+                       % Partial summation
+                       mysum = 0.0;
+                           % A single bin is computed 
+                           x = h * (i - 0.5);
+                           % Regular integration in the Y axis
+                           for j = 1:n
+                               y = h * (j - 0.5);
+                               mysum = mysum + sin(x + y);
+                           end
+                   end
+
+            You can run directly this script from the Matlab GUI.
+            Try different number of cores for this batch script (*FIXME* string) using the sequence:
+            1,2,4,8,12, and 14. Collect the timings that are printed out in the Matlab command window. 
+            According to these execution times what would be
+            the number of cores that gives the optimal (fastest) simulation? 
+
+            Challenge: Increase the grid size (``n``) to 100000 and submit the batch job with 4 workers. 
+            Monitor the usage of resources with tools available at your center, for instance ``top`` (UPPMAX) or
+            ``job-usage`` (HPC2N). For ``job-usage``, you can see the job ID if you type ``squeue --me``
+            on a terminal on Kebnekaise.
 
 
 
