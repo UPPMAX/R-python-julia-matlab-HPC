@@ -661,7 +661,7 @@ matlab
 nodisplay
 singleCompThread
 multithreading
-Add-ons
+Add-Ons
 configCluster
 Comsol
 Gurobi
@@ -694,3 +694,5 @@ AccountName
 AdditionalProperties
 MemUsage
 WallTime
+Spyder
+Ons
