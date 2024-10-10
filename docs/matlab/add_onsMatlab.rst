@@ -3,19 +3,19 @@ Add-Ons
 
 .. admonition:: MATLAB Add-Ons and environments
    
-   - MATLAB **Add-Ons broaden the use of MATLAB** cOnsiderably! 
+   - MATLAB **Add-Ons broaden the use of MATLAB** considerably! 
    - Instead of writing code yourself there may be others that have done the same!
    - Isolated environments solve a couple of problems:
 
-      - You can install specific, also older, versiOns into them.
-      - You can create one for each project and no problem if the two projects require different versiOns.
+      - You can install specific, also older, versions into them.
+      - You can create one for each project and no problem if the two projects require different versions.
       - You can remove the environment and create a new one, if not needed or with errors.
    
-.. questiOns::
+.. questions::
 
    - How to install Add-Ons?
    - How to work with isolated environments?
-   - How to check for and use the UPPMAX pre-installed Add-ns?
+   - How to check for and use the UPPMAX pre-installed Add-Ons?
    
 
 .. objectives:: 
@@ -28,7 +28,7 @@ Add-Ons
 
 MATLAB Add-Ons manager
 ----------------------
-In the GUI, the Add-Ons manager can be selected from the menu at the top. The drop-down menu optiOns allow users to:
+In the GUI, the Add-Ons manager can be selected from the menu at the top. The drop-down menu options allow users to:
    - **Browse a library of Add-Ons to download.** Note that some Add-Ons require a separate license.
    - **Manage Add-Ons already downloaded.**
    - Package user-generated code as a Toolbox or App
