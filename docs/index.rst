@@ -346,6 +346,7 @@ Content of the course
    :maxdepth: 2
    :caption: Extra reading:
 
+   r/morepackages.rst
 
 .. Indices and tables
 .. ==================
