@@ -1,4 +1,7 @@
 More about R packages
+=====================
+
+This page contains some more advanced information about R packages. 
 
 R packages: A short Primer
 --------------------------
@@ -113,4 +116,69 @@ An R packages can exist in five possible states
 | Source:
 | https://r-pkgs.org/structure.html and
 | https://nbisweden.github.io/RaukR-2021/rpackages_Sebastian/presentation/rpackages_Sebastian.html
+
+Finding out if an R package is installed 
+----------------------------------------
+
+Another option would be to create a dataframe of all the installed packages
+
+.. code-block:: R
+
+   ip <- as.data.frame(installed.packages()[,c(1,3:4)])
+
+   rownames(ip) <- NULL
+
+   ip <- ip[is.na(ip$Priority),1:2,drop=FALSE]
+
+   print(ip, row.names=FALSE)
+
+However, this might not be so helpful unless you do additional filtering.
+<br>
+
+Another simple option is to ``grep`` the library directory. For example, both when loading ``R_packages`` at UPPMAX and ``R-bundle-Bioconductor`` at HPC2N the environment variable ``R_LIBS_SITE`` will be set to the path of the package
+library.
+
+.. tabs::
+
+   .. tab:: UPPMAX
+
+      Load ``R_packages``
+
+      .. code-block:: console
+
+         $ ml R_packages/4.1.1
+
+      Then grep for some package
+
+      .. code-block:: console
+
+         $ ls -l $R_LIBS_SITE | grep glmnet
+         dr-xr-sr-x  9 douglas sw  4096 Sep  6  2021 EBglmnet
+         dr-xr-sr-x 11 douglas sw  4096 Nov 11  2021 glmnet
+         dr-xr-sr-x  8 douglas sw  4096 Sep  7  2021 glmnetcr
+         dr-xr-sr-x  7 douglas sw  4096 Sep  7  2021 glmnetUtils
+
+   .. tab:: HPC2N
+
+      Load ``R-bundle-Bioconductor``
+
+      .. code-block:: console
+
+         $ ml GCC/11.2.0  OpenMPI/4.1.1 R-bundle-Bioconductor/3.14-R-4.1.2
+
+      Check the ``R_LIBS_SITE`` environment variable
+
+      .. code-block:: console
+
+         $ echo $R_LIBS_SITE
+         /hpc2n/eb/software/R-bundle-Bioconductor/3.14-foss-2021b-R-4.1.2:/hpc2n/eb/software/arrow-R/6.0.0.2-foss-2021b-R-4.1.2
+
+      Then grep for some package in the BioConductor package library
+
+      .. code-block:: console
+
+         $ ls -l /hpc2n/eb/software/R-bundle-Bioconductor/3.14-foss-2021b-R-4.1.2 | grep RNA
+         drwxr-xr-x  9 easybuild easybuild 4096 Dec 30  2021 DeconRNASeq/
+         drwxr-xr-x  7 easybuild easybuild 4096 Dec 30  2021 RNASeqPower/
+
 
