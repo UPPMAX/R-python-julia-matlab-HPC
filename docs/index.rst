@@ -212,6 +212,9 @@ Briefly about the cluster hardware and system at UPPMAX and HPC2N
 .. figure:: ../img/node.png
    :align: center
 
+[RB: I like the picture at https://docs.hpc2n.umu.se/tutorials/clusterguide/
+better, as I feel this one is not as pretty as that one]
+
 - The user logs in to **login nodes**  via Internet through ssh or Thinlinc.
 
   - Here the file management and lighter data analysis can be performed.
