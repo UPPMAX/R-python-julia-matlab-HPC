@@ -14,19 +14,12 @@ Introduction to running R, Python, Julia, and Matlab in HPC
       - find site **installed packages/libraries**
       - **install packages/libraries** yourself
       - use **virtual** environments
-        [RB: if the goal is to use a programming language in an HPC environment,
-        virtual environments are not necessary for this, hence this should be 
-        removed. If there is a language that does enforce to use venvs, then,
-        yes, this should be in. Virtual environments are a useful tool for
-        users that need multiple environments at the same time, such
-        as developers or advanced users. I feel this course does not assume
-        this level of knowledge]
       - use the **computation nodes**
         
          - write batch scripts 
          - work interactivly
-      - [RB: I miss the parallel computing and the machine learning sessions. 
-        I would enjoy to see their goals here too]
+      - [BB will add her things]
+      - [PO will add his things]
 
    - This course will consist of lectures interspersed with hands-on sessions
      where you get to try out what you have just learned.
@@ -71,6 +64,7 @@ Some practicals
 Code of Conduct
 :::::::::::::::
 
+[RB will put it somewhere in README.md]
 [RB: I suggest to remove the CoC, as we should, as teachers, have high
 expectations of our learners and a CoC shows we assume otherwise.
 Sure, having the standard ``CODE_OF_CONDUCT.md`` in the root folder
@@ -159,29 +153,6 @@ give examples of what causes some learners to suffer]
         - Directory name on Kebnekaise: ``/proj/nobackup/r-py-jl-m``
         - Please create a suitably named subdirectory below ``/proj/nobackup/r-py-jl-m``, for your own exercises.
 
-   
-Example of screen arrangement
-:::::::::::::::::::::::::::::
-
-[RB: I think the example screen arrangement should be removed.
-I think we can assume our
-learners have their own preference for how they setup their windows;
-it makes us come across like parents do to little kids]
-
-If you only have one screen to work with for the course, try to fit: 
-
-.. code-block:: sh
-
-   ╔════════════╗ ╔══════════════╗
-   ║            ║ ║  TERMINAL    ║
-   ║            ║ ║   WINDOW     ║
-   ║   ZOOM     ║ ╚══════════════╝
-   ║  WINDOW    ║ ╔══════════════╗
-   ║            ║ ║   BROWSER    ║
-   ║            ║ ║  W/MATERIAL  ║
-   ╚════════════╝ ╚══════════════╝
-
-
 .. warning::
 
    - **Please be sure that you have gone through the `pre-requirements <https://uppmax.github.io/R-python-julia-HPC/prereqs.html>`_**
@@ -212,6 +183,7 @@ Briefly about the cluster hardware and system at UPPMAX and HPC2N
 .. figure:: ../img/node.png
    :align: center
 
+[BC: fixes this]
 [RB: I like the picture at https://docs.hpc2n.umu.se/tutorials/clusterguide/
 better, as I feel this one is not as pretty as that one]
 
