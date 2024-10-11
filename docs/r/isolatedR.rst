@@ -18,7 +18,7 @@ The goal is for ``renv`` to be a robust, stable replacement for the Packrat pack
 
 .. questions::
 
-   - How to work with isolated R environments at HPC2N and UPPMAX?
+   - How to work with isolated R environments at HPC2N, UPPMAX and LUNARC?
  
 .. objectives:: 
 

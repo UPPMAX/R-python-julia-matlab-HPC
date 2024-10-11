@@ -42,7 +42,7 @@ Introduction R
     - start batch jobs 
     - run RStudio
 
-    on HPC2N or UPPMAX
+    on HPC2N, UPPMAX, or LUNARC
 
 
 .. admonition:: **Course non-goals**

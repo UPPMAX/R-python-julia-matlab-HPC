@@ -102,9 +102,7 @@ UPPMAX, HPC2N, and LUNARC offer a large amount of preinstalled packages.
 
 .. admonition:: HPC2N
 
-   - On HPC2N most of these (around 750 packages) come with the ``R`` module and additional ones in the ``R-bundle-Bioconductor``.
-
-   - NOTE: that on HPC2N, there are currently only two versions of the ``R-bundle-Bioconductor`` module, one that is compatible with ``R/4.0.0`` and one with ``R/4.1.2``. Thus, if you need the extra packages included in the ``R-bundle-Bioconductor`` module, you should use one of the compatible R versions. Use ``module spider <module>/<version>`` to check for prerequisites, as usual. 
+   - On HPC2N most of these (around 750 packages) come with the ``R`` module and additional ones in the ``R-bundle-Bioconductor``. However, for the newer versions of R, the packages on CRAN can be found in the module ``R-bundle-CRAN``. Use ``module spider <module>/<version>`` to check for prerequisites, as usual. 
 
 .. admonition:: UPPMAX
 
