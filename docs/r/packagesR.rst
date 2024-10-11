@@ -335,62 +335,7 @@ repository http://ftp.acc.umu.se/mirror/CRAN/
           install.packages('stringr', repos='http://ftp.acc.umu.se/mirror/CRAN/')
 
 
-
-Automatic download and install from GitHub
-##########################################
-
-If you want to install a package that is not on CRAN, but which do have a
-GitHub page, then there is an automatic way of installing, but you need to
-handle prerequsites yourself by installing those first. It can also be that the
-package is not in as finished a state as those on CRAN, so be careful. 
-
-To install packages from GitHub directly, from inside R, you first need to
-install the devtools package. Note that you only need to install this **once**. 
-
-This is how you install a package from GitHub, inside R:
-
- .. code-block:: R
- 
-    install.packages("devtools")   # ONLY ONCE
-    devtools::install_github("DeveloperName/package")
-    
-
-Example
-*******
-
-.. type-along::
-
-   In this example we want to install the package ``quantstrat``. It is not on CRAN, so let's get it from the GitHub page for the project:
-   https://github.com/braverock/quantstrat 
-
-   We also need to install devtools so we can install packages from GitHub. In
-   addition, ``quantstrat`` has some prerequisites, some on CRAN, some on GitHub,
-   so we need to install those as well. 
-
-   .. code-block:: R 
-
-      install.packages("devtools") # ONLY ONCE
-      install.packages("FinancialInstrument") 
-      install.packages("PerformanceAnalytics") 
-   
-      devtools::install_github("braverock/blotter")
-      devtools::install_github("braverock/quantstrat")
-
-    
-Manual download and install
-###########################
-
-If the package is not on CRAN or you want the development version, or you for
-other reason want to install a package you downloaded, then this is how to
-install from the command line: 
-
-.. code-block:: console 
-
-   $ R CMD INSTALL -l <path-to-R-package>/R-package.tar.gz
-    
-
-**NOTE** that if you install a package this way, you need to handle any
-dependencies yourself. 
+For other ways to install R packages, including from GitHub or manually, look at the "More about R packages" from the "Extra reading" section in the bottom left side of the menu. 
 
 .. note:: 
 
@@ -436,7 +381,7 @@ Exercises
 
 .. challenge:: Install a package with automatic download
 
-   1. First do the setup of `.Renviron` and create the directory for installing R packages (Recommended load R version 4.1.1 on Rackham, 4.1.2 on Kebnekaise)
+   1. First do the setup of `.Renviron` and create the directory for installing R packages (Recommended load R version 4.1.1 on Rackham, 4.1.2 on Kebnekaise, and 4.2.1 on LUNARC)
    2. From the command line. Suggestion: ``anomalize``
    3. From inside R. Suggestion: `tidyr`
    4. Start R and see if the library can be loaded. 
