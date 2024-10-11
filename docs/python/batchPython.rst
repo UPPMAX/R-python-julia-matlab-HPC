@@ -18,13 +18,12 @@ Running Python in batch mode
 
    - Rackham: ``naiss2024-22-1202``
    - Kebnekaise: ``hpc2n2024-114``
-   - Cosmos:   
-
+   - Cosmos: ``lu2024-7-80``
+ 
 .. admonition:: Storage space for this workshop 
 
    - Rackham: ``/proj/r-py-jl-m-rackham``
-   - Kebnekaise: ``/proj/nobackup/r-py-jl-m``
-   - Cosmos: 
+   - Kebnekaise: ``/proj/nobackup/r-py-jl-m`` 
 
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
 
@@ -114,7 +113,7 @@ Serial code
         .. code-block:: sh
 
            #!/bin/bash
-           #SBATCH -A luXXXX-Y-ZZ # Change to your own after the course
+           #SBATCH -A lu2024-7-80 # Change to your own after the course
            #SBATCH --time=00:10:00 # Asking for 10 minutes
            #SBATCH -n 1 # Asking for 1 core 
 
@@ -221,7 +220,7 @@ Here we are using the virtual environment we created under the "isolated environ
         .. code-block:: sh 
 
             #!/bin/bash
-            #SBATCH -A luXXXX-Y-ZZZ # Change to your own after the course
+            #SBATCH -A lu2024-7-80 # Change to your own after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -231,7 +230,7 @@ Here we are using the virtual environment we created under the "isolated environ
             # Activate your virtual environment. 
             # CHANGE <path-to-virt-env> to the full path where you installed your virtual environment
             # Example: /proj/nobackup/r-py-jl-m/bbrydsoe/python/vpyenv  
-            source /proj/nobackup/<project-dir>/<user-dir>/<path-to-virt-env>/vpyenv/bin/activate
+            source <path-to-my virt-env>/vpyenv/bin/activate
             
             # Run your Python script 
             python seaborn-code.py
@@ -336,7 +335,7 @@ GPU code
 
             #!/bin/bash
             # Remember to change this to your own project ID after the course!
-            #SBATCH -A luXXXX-Y-ZZZ
+            #SBATCH -A lu2024-7-80
             # We are asking for 5 minutes
             #SBATCH --time=00:05:00
             # The following two lines splits the output in a file for any errors and a file for other output.
@@ -421,7 +420,7 @@ Exercises
           .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A luXXXX-Y-ZZZ # Change to your own after the course
+            #SBATCH -A lu2024-7-80 # Change to your own after the course
             #SBATCH --time=00:05:00 # Asking for 5 minutes
             #SBATCH -n 1 # Asking for 1 core
             

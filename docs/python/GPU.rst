@@ -282,7 +282,7 @@ As before, we need the batch system to run the code. There are no GPUs on the lo
 
             #!/bin/bash
             # Remember to change this to your own project ID after the course!
-            #SBATCH -A luXXXX-Y-ZZZ
+            #SBATCH -A lu2024-7-80
             # We are asking for 5 minutes
             #SBATCH --time=00:05:00
             # Asking for one A100 GPU
