@@ -120,6 +120,10 @@ An R packages can exist in five possible states
 Finding out if an R package is installed 
 ----------------------------------------
 
+There are many different ways to check if the package you are after is already installed - chances are it is! The simplest way is probably to simply try loading the package from within R
+
+``library(package-name)``
+
 Another option would be to create a dataframe of all the installed packages
 
 .. code-block:: R
