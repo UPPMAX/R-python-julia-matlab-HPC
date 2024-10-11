@@ -63,8 +63,8 @@ Calling ``renv::init()`` will also write out the infrastructure necessary to aut
 
 If you’d like to initialize a project without attempting dependency discovery and installation – that is, you’d prefer to manually install the packages your project requires on your own – you can use ``renv::init(bare = TRUE)`` to initialize a project with an empty project library.
 
-Example - Installing ``knitr``
-********************************
+Example - Creating a renv and installing ``knitr``
+*************************************
 
 .. type-along::
 
@@ -114,31 +114,31 @@ Example - Installing ``knitr``
 
    - Next, launch the ``R`` interpreter and initialize a ``renv`` environment.
 
-   .. code-block:: R
+     .. code-block:: R
    
-      > renv::init()
+        > renv::init()
       
-   Exit the session
+   - Exit the session
    
-   .. code-block:: R
+     .. code-block:: R
 
-      > quit()
+        > quit()
 
-   Verify that the ``renv`` directory as well as lock file was created
+   - Verify that the ``renv`` directory as well as lock file was created
 
-   .. code-block:: console
+     .. code-block:: console
 
-      $ ls -l
-      drwxrwsr-x 4 matpiq p_py-r-jl 4096 Feb  9 16:32 renv
-      -rw-rw-r-- 1 matpiq p_py-r-jl  354 Feb  9 16:32 renv.lock
+        $ ls -l
+        drwxrwsr-x 4 matpiq p_py-r-jl 4096 Feb  9 16:32 renv
+        -rw-rw-r-- 1 matpiq p_py-r-jl  354 Feb  9 16:32 renv.lock
 
-   Relaunch R and check the library paths
+   - Relaunch R and check the library paths
 
-   .. code-block:: Rconsole
+     .. code-block:: Rconsole
 
-      > .libPaths()
-      [1] "/crex/proj/py-r-jl/matpiq/r_proj/renv/library/R-4.1/x86_64-pc-linux-gnu"
-      [2] "/scratch/RtmpMgprgX/renv-system-library"
+        > .libPaths()
+        [1] "/crex/proj/py-r-jl/matpiq/r_proj/renv/library/R-4.1/x86_64-pc-linux-gnu"
+        [2] "/scratch/RtmpMgprgX/renv-system-library"
 
    **Question**: What happens if you leave the project directory? 
 
@@ -167,11 +167,9 @@ Example - Installing ``knitr``
 
 .. note::
 
-   To access the packages installed in the renv, you either need to activate it or be in that directory. Load the R module and prerequisites (and possibly R_packages on UPPMAX and R-bundle-Bioconductor on HPC2N) and do: 
+   To access the packages installed in the renv, you either need to activate it or be in that directory. Load the R module and prerequisites (and possibly R_packages on UPPMAX and R-bundle-Bioconductor / R-bundle-CRAN on HPC2N) and do: 
 
-   - On UPPMAX, just do ``renv::load("<path-to-your-renv>")`` inside your R script to access the packages installed in it. Or run from inside your renv directory. 
-   - On HPC2N, ``renv`` is not installed, so you need to do that yourself, as shown further above on this page. It also means you can only access it from the directory you installed the packages in, so install any other R packages in that as well, and run R from there (either by putting your R scripts there or by giving full path to them). 
-     
+   - ``renv::load("<path-to-your-renv>")`` inside your R script to access the packages installed in it. Or run from inside your renv directory. 
 
 Conda (UPPMAX)
 --------------
@@ -217,4 +215,4 @@ Benefits of using Conda:
 
    - With a virtual environment you can tailor an environment with specific versions for R and packages, not interfering with other installed versions.
    - Make it for each project you have for reproducibility.
-   - UPPMAX has Conda as an alternative to ``renv``
+   - UPPMAX and LUNARC have Conda as an alternative to ``renv``
