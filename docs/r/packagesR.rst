@@ -416,7 +416,7 @@ Exercises
 
    1. First do the setup of `.Renviron` and create the directory for installing R packages (Recommended load R version 4.1.1 on Rackham, 4.1.2 on Kebnekaise, and 4.2.1 on LUNARC)
    2. From the command line. Suggestion: ``anomalize``
-   3. From inside R. Suggestion: `BGLR`
+   3. From inside R. Suggestion: ``BGLR``
    4. Start R and see if the library can be loaded. 
    
    These are both on CRAN, and this way any dependencies will be installed as well. 
