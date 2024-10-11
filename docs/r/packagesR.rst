@@ -114,6 +114,95 @@ There are many different ways to check if the package you are after is already i
 To learn about other ways, see the page "More about R packages" under "Extra reading" in the left menu. 
 
 
+.. exercise::
+
+   Start R (remember to load a module + prerequisites if you have not already). Check if the packages ``pillar`` and ``caret`` are installed, as shown above. 
+
+.. tabs::
+
+   .. tab:: UPPMAX
+
+      .. admonition:: Solution
+
+         If you want, you can try loading the libraries inside R without loading the R_packages module and see almost nothing is installed. 
+
+         .. code-block:: console 
+
+            $ module load R/4.1.1 
+            Nearly all CRAN and BioConductor packages are installed and available by
+            loading the module R_packages/4.1.1
+            $ module load R_packages/4.1.1
+            R_packages/4.1.1: The RStudio packages pane is disabled when loading this module, due to performance issues. All packages are still available.
+            R_packages/4.1.1: For more information and instructions to re-enable it, see 'module help R_packages/4.1.1'
+            
+            $ R
+            
+            R version 4.1.1 (2021-08-10) -- "Kick Things"
+            Copyright (C) 2021 The R Foundation for Statistical Computing
+            Platform: x86_64-pc-linux-gnu (64-bit)
+
+            R is free software and comes with ABSOLUTELY NO WARRANTY.
+            You are welcome to redistribute it under certain conditions.
+            Type 'license()' or 'licence()' for distribution details.
+
+              Natural language support but running in an English locale
+
+            R is a collaborative project with many contributors.
+            Type 'contributors()' for more information and
+            'citation()' on how to cite R or R packages in publications.
+
+            Type 'demo()' for some demos, 'help()' for on-line help, or
+            'help.start()' for an HTML browser interface to help.
+            Type 'q()' to quit R.
+
+            > library(pillar)
+            > library(caret)
+            Loading required package: ggplot2
+            Loading required package: lattice
+            >   
+
+    .. tab:: HPC2N
+       
+       .. admonition:: Solution
+
+          .. code-block:: console
+
+             $ module load GCC/11.2.0  OpenMPI/4.1.1 R/4.1.2
+             $ R
+             R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+             Copyright (C) 2021 The R Foundation for Statistical Computing
+             Platform: x86_64-pc-linux-gnu (64-bit)
+
+             R is free software and comes with ABSOLUTELY NO WARRANTY.
+             You are welcome to redistribute it under certain conditions.
+             Type 'license()' or 'licence()' for distribution details.
+
+               Natural language support but running in an English locale
+
+             R is a collaborative project with many contributors.
+             Type 'contributors()' for more information and
+             'citation()' on how to cite R or R packages in publications.
+
+             Type 'demo()' for some demos, 'help()' for on-line help, or
+             'help.start()' for an HTML browser interface to help.
+             Type 'q()' to quit R.
+
+             [Previously saved workspace restored]
+
+             > library(pillar)
+             > library(caret)
+             Loading required package: ggplot2
+             Loading required package: lattice
+             >
+
+    .. tab:: LUNARC
+
+       .. admonition:: Solution 
+
+          -- code-block:: console 
+
+
+
 Installing your own packages
 ----------------------------
 
