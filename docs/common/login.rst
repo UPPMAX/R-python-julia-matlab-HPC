@@ -60,8 +60,7 @@ Prepare your environment now!
      
             .. code-block:: console
          
-               $ mkdir /proj/r-py-jl/mrspock/
-               $ mkdir /proj/naiss2024-22-107/mrspock/
+               $ mkdir /proj/r-py-jl-m-rackham/mrspock/
 
       .. tab:: HPC2N
 
@@ -74,7 +73,7 @@ Prepare your environment now!
      
            .. code-block:: console
          
-              $ /proj/nobackup/hpc2n2023-110/bbrydsoe/
+              $ mkdir /proj/nobackup/r-py-jl-m/bbrydsoe/
 
       .. tab:: LUNARC
 
@@ -83,8 +82,8 @@ Prepare your environment now!
 
          - Create a working directory where you can code along.    
       
-           - Example. If your username is bbrydsoe and you are at HPC2N, then we recommend you create this folder: 
+           - Example. Create this folder: 
      
            .. code-block:: console
          
-              $ /proj/nobackup/hpc2n2023-110/bbrydsoe/
+              $ mkdir $HOME/r-py-jl-m
