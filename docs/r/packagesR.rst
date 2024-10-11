@@ -199,9 +199,34 @@ To learn about other ways, see the page "More about R packages" under "Extra rea
 
        .. admonition:: Solution 
 
-          -- code-block:: console 
+          .. code-block:: console 
 
+             $ module load GCC/11.3.0  OpenMPI/4.1.4 R/4.2.1
+             $ R
 
+             R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+             Copyright (C) 2022 The R Foundation for Statistical Computing
+             Platform: x86_64-pc-linux-gnu (64-bit)
+
+             R is free software and comes with ABSOLUTELY NO WARRANTY.
+             You are welcome to redistribute it under certain conditions.
+             Type 'license()' or 'licence()' for distribution details.
+
+               Natural language support but running in an English locale
+
+             R is a collaborative project with many contributors.
+             Type 'contributors()' for more information and
+             'citation()' on how to cite R or R packages in publications.
+ 
+             Type 'demo()' for some demos, 'help()' for on-line help, or
+             'help.start()' for an HTML browser interface to help.
+             Type 'q()' to quit R.
+
+             > library(pillar)
+             > library(caret)
+             Loading required package: ggplot2
+             Loading required package: lattice
+             > 
 
 Installing your own packages
 ----------------------------
