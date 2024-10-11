@@ -282,6 +282,22 @@ version 4.1.1:
 
    $ mkdir -p $HOME/R-packages-4.1.1
 
+.. note::
+
+   If you will be installing many R packages yourself, it is a good idea to place them in your project storage instead, as they can take up a lot of space and your home directory is not very large.
+
+   In that case you would instead do the setup as: 
+
+   .. code-block:: console
+
+      $ echo R_LIBS_USER="<path-to-your-space-on-proj-storage>/R-packages-%V" > ~/.Renviron
+
+   And then create directories for each R version you use there, like this, for R/4.1.1
+
+   .. code-block:: console
+
+      mkdir -p <path-to-your-space-on-proj-storage>/R-packages-4.1.1
+
 
 Automatical download and install from CRAN
 ##########################################
@@ -315,7 +331,7 @@ installed as well.
 Example
 *******
 
-In this example, we will install the R package ``stringr`` and use the
+In this example, we will install the R package ``nuggets`` and use the
 repository http://ftp.acc.umu.se/mirror/CRAN/ 
 
 **Note**: You need to load R (and any prerequisites, and possibly R-bundle-Bioconductor if you need packages from that) before installing packages. 
@@ -326,13 +342,13 @@ repository http://ftp.acc.umu.se/mirror/CRAN/
 
       .. code-block:: console 
 
-         $ R --quiet --no-save --no-restore -e "install.packages('stringr', repos='http://ftp.acc.umu.se/mirror/CRAN/')"
+         $ R --quiet --no-save --no-restore -e "install.packages('nuggets', repos='http://ftp.acc.umu.se/mirror/CRAN/')"
        
    .. tab:: From inside R
 
       .. code-block:: R 
 
-          install.packages('stringr', repos='http://ftp.acc.umu.se/mirror/CRAN/')
+          install.packages('nuggets', repos='http://ftp.acc.umu.se/mirror/CRAN/')
 
 
 For other ways to install R packages, including from GitHub or manually, look at the "More about R packages" from the "Extra reading" section in the bottom left side of the menu. 
@@ -383,7 +399,7 @@ Exercises
 
    1. First do the setup of `.Renviron` and create the directory for installing R packages (Recommended load R version 4.1.1 on Rackham, 4.1.2 on Kebnekaise, and 4.2.1 on LUNARC)
    2. From the command line. Suggestion: ``anomalize``
-   3. From inside R. Suggestion: `tidyr`
+   3. From inside R. Suggestion: `BGLR`
    4. Start R and see if the library can be loaded. 
    
    These are both on CRAN, and this way any dependencies will be installed as well. 
@@ -392,6 +408,8 @@ Exercises
 
 
 .. solution:: Solution for 4.1.1 on Rackham (change <user>) 
+
+   Solution is very similar for the other centres - just change the R version (for instance to R/4.2.1 for LUNARC and R/4.1.2 for HPC2N).  
 
    .. tabs:: 
 
@@ -416,11 +434,11 @@ Exercises
 	 
       .. tab:: Inside R
       
-            Installing package "tidyr". Using the repo http://ftp.acc.umu.se/mirror/CRAN/
+            Installing package "BGLR". Using the repo http://ftp.acc.umu.se/mirror/CRAN/
 
             .. code-block:: R 
 
-               > install.packages('tidyr', repo='http://ftp.acc.umu.se/mirror/CRAN/')	     
+               > install.packages('BGLR', repo='http://ftp.acc.umu.se/mirror/CRAN/')	     
 	     
       .. tab:: Load library
 
@@ -428,6 +446,6 @@ Exercises
 	 
 	       $ R
 	       > library("anomalize")
-	       > library("tidyr")
+	       > library("BGLR")
 	    
-	   "anomalize" outputs some text/advertisment when loaded. You can ignore this. 
+	   "BGLR" outputs some text/advertisment when loaded. You can ignore this. 
