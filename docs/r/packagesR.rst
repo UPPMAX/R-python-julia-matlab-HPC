@@ -77,6 +77,23 @@ way to check is probably starting the interpreter and running the ``libPaths()``
          [1] "/pfs/stor10/users/home/b/bbrydsoe/R-packages-4.1.2"                                     
          [2] "/cvmfs/ebsw.hpc2n.umu.se/amd64_ubuntu2004_bdw/software/R/4.1.2-foss-2021b/lib/R/library"
 
+   .. tab:: LUNARC
+   
+      Load ``R``, e.g. version 4.2.1 and start the Interpreter
+
+      .. code-block:: console 
+
+         $ ml GCC/11.3.0  OpenMPI/4.1.4 R/4.2.1
+         $ R
+
+      Then check find the path of the library using the ``libPaths()`` function.
+
+      .. code-block:: rconsole
+      
+         > .libPaths()
+         [1] "/home/bbrydsoe/R-packages-4.2.1"                                     
+         [2] "/sw/easybuild_milan/software/R/4.2.1-foss-2022a/lib64/R/library"
+
 
 Preinstalled package libraries
 ------------------------------
