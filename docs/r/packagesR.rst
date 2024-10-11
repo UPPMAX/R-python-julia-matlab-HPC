@@ -212,11 +212,11 @@ To learn about other ways, see the page "More about R packages" under "Extra rea
              Loading required package: lattice
              >
 
-    .. tab:: LUNARC
+   .. tab:: LUNARC
 
-       .. admonition:: Solution 
+      .. admonition:: Solution 
 
-          .. code-block:: console 
+         .. code-block:: console 
 
              $ module load GCC/11.3.0  OpenMPI/4.1.4 R/4.2.1
              $ R
