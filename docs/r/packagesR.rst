@@ -178,11 +178,11 @@ To learn about other ways, see the page "More about R packages" under "Extra rea
             Loading required package: lattice
             >   
 
-    .. tab:: HPC2N
+   .. tab:: HPC2N
        
-       .. admonition:: Solution
+      .. admonition:: Solution
 
-          .. code-block:: console
+         .. code-block:: console
 
              $ module load GCC/11.2.0  OpenMPI/4.1.1 R/4.1.2
              $ R
