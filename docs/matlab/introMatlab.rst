@@ -28,23 +28,13 @@ Introduction to MATLAB
       
 .. admonition:: MATLAB Exercise files
 
-    - At HPC2N, you can copy the MATLAB exercises in a tarball 
-      from ``/proj/nobackup/r-py-jl-m/MatlabExercises.tar.gz``
-    - At UPPMAX you can copy the exercises in a tarball 
-      from ``/proj/r-py-jl-m-rackham/MatlabExercises.tar.gz``
-    - At LUNARC, you can copy the exercises in a tarball
-      from ``/lunarc/nobackup/projects/TBD...``
+    - files are in: https://github.com/UPPMAX/R-python-julia-matlab-HPC/tree/main/exercises/matlab/MatlabExercises.tar.gz[RP: exact name and path subject to change]
 
 .. challenge:: Download the exercise files
 
-    - Copy the file and un-tar it in your personal project folder, which you should have created a while ago (https://uppmax.github.io/R-python-julia-matlab-HPC/index.html#prepare-your-environment-now). Then, enter the directory and list the content with the ``tree`` command.
-
-    .. code-block:: bash
-
-       cd /proj/r-py-jl-m-rackham/<your-name>   # on Kebnekaise: cd /proj/nobackup/r-py-jl-m/<your-name>
-       cp ../MatlabExercises.tar .
-       tar xvf MatlabExercises.tar
-       tree Matlab
+    - Use ``wget`` to download the tarball above.
+    - Un-tar it with ``tar -xvf <filename.tar.gz>`` in your personal project folder, which you should have created a while ago (https://uppmax.github.io/R-python-julia-matlab-HPC/index.html#prepare-your-environment-now).
+    - Enter the directory and list the content with the ``tree`` command.
 
 
 Preliminary schedule
@@ -157,9 +147,12 @@ More on MATLAB?
 Material for improving your programming skills
 ::::::::::::::::::::::::::::::::::::::::::::::
 
-If you have a Mathworks account that is less than 2 years old, you can take advantage of Mathworks' free MATLAB self-paced online training courses at <https://matlabacademy.mathworks.com/?page=1&fq=all-matlab&sort=featured&s_tid=ln_acad_learn_oc>_. At any academic institution with a campus-wide license, students can use their university email addresses to create a free account to access these resources.
+If you have a Mathworks account that is less than 2 years old, Mathworks offers free MATLAB self-paced online training courses at <https://matlabacademy.mathworks.com/?page=1&fq=all-matlab&sort=featured&s_tid=ln_acad_learn_oc>_. Students at any academic institution with a campus-wide license can use their university email addresses to create a free account to access these resources.
 
-There is also the Mondays with MATLAB lecture series every September, which along with other events gets posted here: <https://se.mathworks.com/company/events.html>_. These tend to be the more introductory-level seminars.  If you have an account, you will be automatically signed up for the Mathworks mailing list, which will notify you of upcoming webinars as well as some featured packages. The webinars cover a broad range of topics and disciplines at varying skill levels, although these seminars on average tend to be fairly advanced.
+The Mondays with MATLAB lecture series is offered every September. These and other events are posted here: <https://se.mathworks.com/company/events.html>_. Mondays with MATLAB consist of 3 introductory lectures:
+- Introduction to MATLAB
+
+If you have an account, you will be automatically signed up for the Mathworks mailing list, which will notify you of upcoming webinars as well as some featured packages. The webinars cover a broad range of topics and disciplines at varying skill levels, although these seminars tend to be more advanced.
 
 
 Other NAISS centres
