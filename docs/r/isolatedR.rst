@@ -22,24 +22,23 @@ The goal is for ``renv`` to be a robust, stable replacement for the Packrat pack
  
 .. objectives:: 
 
-   - Give a general an introduction to isolated environments in R.
+   - Give a general introduction to isolated environments in R.
+   - Show an example with installing an R package to an isolated renv environment. 
 
+.. goal:: 
+
+   - You will learn how to create a renv and install a package to it. 
 
 General procedures   
 ------------------
 
-You will now and then  have the situation that your project(s) use different
-versions of R and different versions of packages. This is great if you need
-different versions of a package for different tasks, for instance. This is
-easily solved with isolated environments.
+You will now and then have the situation that your project(s) use different versions of R and different versions of packages. This is great if you need different versions of a package for different tasks, for instance. This is easily solved with isolated environments.
 
-Isolated environments lets you create separate workspaces for different
-versions of R and/or different versions of packages. You can activate and
-deactivate them one at a time, and work as if the other workspace does not
-exist.
+Isolated environments lets you create separate workspaces for different versions of R and/or different versions of packages. You can activate and deactivate them one at a time, and work as if the other workspace does not exist.
 
-Underlying the philosophy of ``renv`` is that any of your existing workflows should just work as they did before.
-– ``renv`` helps manage library paths (and other project-specific state) to help isolate your project’s R dependencies
+Underlying the philosophy of ``renv`` is that any of your existing workflows should just work as they did before. 
+
+- ``renv`` helps manage library paths (and other project-specific state) to help isolate your project’s R dependencies
 - the existing tools you’ve used for managing R packages (e.g. ``install.packages()``, ``remove.packages()``) should work as they did before. 
 - [Introduction to renv](https://rstudio.github.io/renv/articles/renv.html)
 
@@ -48,46 +47,28 @@ Workflow
 
 The general workflow when working with ``renv`` is:
 
-    1. Call ``renv::init()`` 
-       to initialize a new project-local environment with a private R library,
+    1. Call ``renv::init()`` from inside ``R`` to initialize a new project-local environment with a private R library,
 
-    2. Work 
-       in the project as normal, installing and removing new R packages as they are needed in the project,
+    2. Work in the project as normal, installing and removing new R packages as they are needed in the project,
 
-    3. Call ``renv::snapshot()`` 
-       to save the state of the project library to the lockfile (called ``renv.lock``),
+    3. Call ``renv::snapshot()`` to save the state of the project library to the lockfile (called ``renv.lock``),
 
-    4. Continue working 
-       on your project, installing and updating R packages as needed.
+    4. Continue working on your project, installing and updating R packages as needed.
 
-    5. Call ``renv::snapshot()`` 
-       again to save the state of your project library if your attempts to update R packages were successful, or call ``renv::restore()`` to revert to the previous state as encoded in the lockfile if your attempts to update packages introduced some new problems.
+    5. Call ``renv::snapshot()`` again to save the state of your project library if your attempts to update R packages were successful, or call ``renv::restore()`` to revert to the previous state as encoded in the lockfile if your attempts to update packages introduced some new problems.
 
-The ``renv::init()`` function attempts to ensure the newly-created project
-library includes all R packages currently used by the project. It does this by
-crawling R files within the project for dependencies with the
-``renv::dependencies()`` function. The discovered packages are then installed
-into the project library with the ``renv::hydrate()`` function, which will also
-attempt to save time by copying packages from your user library (rather than
-reinstalling from CRAN) as appropriate.
+The ``renv::init()`` function attempts to ensure the newly-created project library includes all R packages currently used by the project. It does this by crawling R files within the project for dependencies with the ``renv::dependencies()`` function. The discovered packages are then installed into the project library with the ``renv::hydrate()`` function, which will also attempt to save time by copying packages from your user library (rather than reinstalling from CRAN) as appropriate.
 
-Calling ``renv::init()`` will also write out the infrastructure necessary to
-automatically load and use the private library for new R sessions launched from
-the project root directory. This is accomplished by creating (or amending) a
-project-local ``.Rprofile`` with the necessary code to load the project when the R
-session is started.
+Calling ``renv::init()`` will also write out the infrastructure necessary to automatically load and use the private library for new R sessions launched from the project root directory. This is accomplished by creating (or amending) a project-local ``.Rprofile`` with the necessary code to load the project when the R session is started.
 
-If you’d like to initialize a project without attempting dependency discovery
-and installation – that is, you’d prefer to manually install the packages your
-project requires on your own – you can use ``renv::init(bare = TRUE)`` to
-initialize a project with an empty project library.
+If you’d like to initialize a project without attempting dependency discovery and installation – that is, you’d prefer to manually install the packages your project requires on your own – you can use ``renv::init(bare = TRUE)`` to initialize a project with an empty project library.
 
 Example - Installing ``knitr``
 ********************************
 
 .. type-along::
 
-   - First create a project under the course project directory and cd to it
+   - First create a project under the course project directory (Kebnekaise and Rackham) or in your home directory (Cosmos) and cd to it
 
    .. tabs::
 
@@ -95,15 +76,21 @@ Example - Installing ``knitr``
 
          .. code-block:: console
    
-            $ mkdir -v /proj/r-py-jl/<your-dir>/r_proj && cd $_    
+            $ mkdir -v /proj/r-py-jl-m-rackham/<your-dir>/r_proj && cd $_    
 
       .. tab:: HPC2N
  
          .. code-block:: console
    
-            $ mkdir -v /proj/nobackup/hpc2n2024-025/<your-dir>/r_proj && cd $_
+            $ mkdir -v /proj/nobackup/r-py-jl-m/<your-dir>/r_proj && cd $_
 
-   - Make sure you have loaded ``R`` and ``R_packages`` on UPPMAX or ``R`` and ``R-bundle-Bioconductor`` on HPC2N. 
+      .. tab:: LUNARC 
+
+         .. code-block:: console
+
+            $ mkdir -v $HOME/r_proj && cd $_ 
+
+   - Make sure you have loaded ``R`` and ``R_packages`` on UPPMAX or ``R`` and ``R-bundle-Bioconductor (and possibly R-bundle-CRAN if you use one of the newest versions of R)`` on HPC2N and ``R`` on LUNARC. 
 
    .. tabs::
 
@@ -117,7 +104,13 @@ Example - Installing ``knitr``
 
          .. code-block:: console
 
-            $ ml GCC/11.2.0  OpenMPI/4.1.1  R-bundle-Bioconductor/3.14-R-4.1.2
+            $ ml GCC/11.2.0  OpenMPI/4.1.1  R/4.1.2 R-bundle-Bioconductor/3.14-R-4.1.2 
+
+      .. tab:: LUNARC 
+
+         .. code-block:: console 
+
+            $ ml GCC/11.3.0  OpenMPI/4.1.4 R/4.2.1 
 
    - Next, launch the ``R`` interpreter and initialize an ``renv`` environment.
 
