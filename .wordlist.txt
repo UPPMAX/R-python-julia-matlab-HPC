@@ -77,6 +77,7 @@ HackMD
 harbour
 HPC
 html
+htmlcontent
 https
 Huawei
 ies
@@ -127,6 +128,7 @@ rackham
 RaspBerry
 RaspberryPi
 Readthedocs
+README
 Renviron
 reproducibility
 RfsmQQu
@@ -420,6 +422,7 @@ cb
 cba
 ccd
 centric
+clusterguide
 CMD
 cn
 codeing
