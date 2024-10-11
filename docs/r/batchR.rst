@@ -12,17 +12,18 @@ Running R in batch mode
 
    - Short introduction to SLURM scheduler
    - Show structure of a batch script
-   - Example to try
+   - Examples to try
 
 .. admonition:: Compute allocations in this workshop 
 
    - Rackham: ``naiss2024-22-107``
    - Kebnekaise: ``hpc2n2024-025``
+   - Cosmos: ``lu2024-7-80``
 
 .. admonition:: Storage space for this workshop 
 
-   - Rackham: ``/proj/r-py-jl``
-   - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
+   - Rackham: ``/proj/r-py-jl-m-rackham``
+   - Kebnekaise: ``/proj/nobackup/r-py-jl-m``
 
 Overview of the UPPMAX systems
 ##############################
@@ -37,9 +38,9 @@ Overview of the HPC2N system
 
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
 
-The batch system used at both UPPMAX and HPC2N (and most other HPC centres in Sweden) is called SLURM. 
+The batch system used at UPPMAX, HPC2N, and LUNARC (and most other HPC centres in Sweden) is called Slurm.  
 
-SLURM is an Open Source job scheduler, which provides three key functions
+Slurm is an Open Source job scheduler, which provides three key functions
 
 - Keeps track of available system resources
 - Enforces local system resource usage and job scheduling policies
@@ -47,7 +48,7 @@ SLURM is an Open Source job scheduler, which provides three key functions
 
 In order to run a batch job, you need to create and submit a SLURM submit file (also called a batch submit file, a batch script, or a job script).
 
-Guides and documentation at: http://www.hpc2n.umu.se/support and https://www.uppmax.uu.se/support/user-guides/slurm-user-guide/ 
+Guides and documentation at: https://docs.hpc2n.umu.se/documentation/batchsystem/intro/ and https://docs.uppmax.uu.se/cluster_guides/slurm/ and https://lunarc-documentation.readthedocs.io/en/latest/manual/manual_intro/  
 
 **Workflow**
 
@@ -75,10 +76,10 @@ Useful commands to the batch system
 
 .. keypoints::
 
-   - The SLURM scheduler handles allocations to the calculation nodes
+   - The Slurm scheduler handles allocations to the calculation nodes
    - Interactive sessions was presented in the previous presentation
    - Batch jobs runs without interaction with the user
-   - A batch script consists of a part with SLURM parameters describing the allocation and a second part describing the actual work within the job, for instance one or several R scripts.
+   - A batch script consists of a part with Slurm parameters describing the allocation and a second part describing the actual work within the job, for instance one or several R scripts.
       - Remember to include possible input arguments to the R script in the batch script.
     
 
@@ -102,7 +103,7 @@ Serial code
          .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A naiss2024-22-107 # Course project id. Change to your own project ID after the course
+            #SBATCH -A naiss2024-22-1202 # Course project id. Change to your own project ID after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -121,7 +122,7 @@ Serial code
          .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2n2024-025 # Change to your own project ID
+            #SBATCH -A hpc2n2024-114 # Change to your own project ID
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -132,6 +133,23 @@ Serial code
             R --no-save --quiet < hello.R
             
             
+      .. tab:: LUNARC 
+
+         Short serial example for running on Cosmos. Loading R/4.2.1 and prerequisites
+
+         .. code-block:: sh 
+
+            #!/bin/bash
+            #SBATCH -A lu2024-7-80 # Change to your own project ID
+            #SBATCH --time=00:10:00 # Asking for 10 minutes
+            #SBATCH -n 1 # Asking for 1 core
+            
+            # Load any modules you need, here R/4.1.2 and prerequisites 
+            module load GCC/11.3.0  OpenMPI/4.1.4 R/4.2.1
+            
+            # Run your R script (here 'hello.R')
+            R --no-save --quiet < hello.R
+
       .. tab:: hello.R
    
          R example code
@@ -167,7 +185,7 @@ foreach and doParallel
          .. code-block:: sh
         
             #!/bin/bash
-            #SBATCH -A naiss2024-22-107
+            #SBATCH -A naiss2024-22-1202
             #SBATCH -t 00:10:00
             #SBATCH -N 1
             #SBATCH -c 4
@@ -186,7 +204,7 @@ foreach and doParallel
          .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2n2024-025 # Change to your own project ID
+            #SBATCH -A hpc2n2024-114 # Change to your own project ID
             #SBATCH -t 00:10:00
             #SBATCH -N 1
             #SBATCH -c 4
