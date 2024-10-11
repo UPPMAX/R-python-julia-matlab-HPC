@@ -387,6 +387,7 @@ For other ways to install R packages, including from GitHub or manually, look at
 	- from BASH shell with the 
 		- ``ml help R/<version>`` at UPPMAX
 		- ``ml spider R/<version>`` at HPC2N
+                - ``ml spider R/<version>`` at LUNARC 
    - Installation of R packages can be done either from within R or from the
      command line (BASH shell)
    - CRAN is the recommended place to look for R-packages, but many packages
