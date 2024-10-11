@@ -435,8 +435,7 @@ Exercises
       
             .. code-block:: console
 	 
-               $ echo R_LIBS_USER=\"$HOME/R-packages-%V\" > ~/.Renviron
-	       R_LIBS_USER="/home/<user>/R-packages-%V"
+               $ echo R_LIBS_USER="$HOME/R-packages-%V" > ~/.Renviron
 	       $ mkdir -p $HOME/R-packages-4.1.1
 	    
 
