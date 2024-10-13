@@ -309,6 +309,7 @@ Content of the course
    matlab/introMatlab.rst
    matlab/load_runMatlab.rst
    matlab/add_onsMatlab.rst
+   matlab/batchMatlab_BC.rst
    common/parallel.rst
    matlab/local_desktopMatlab.rst
    matlab/interactionsMatlab.rst
