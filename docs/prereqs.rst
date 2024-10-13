@@ -11,7 +11,7 @@ Technical on local computer
 
 
 Basic terminal clients 
-#######################
+######################
 
 **If you are in a hurry or get problems in the installation procedure you can do most of the work from these first steps.**
 
@@ -154,7 +154,7 @@ Try to log in
 .. warning::
 
    - Using ThinLinc to log in to Rackham may require 2FA
-     - https://www.uppmax.uu.se/support/user-guides/setting-up-two-factor-authentication/
+     - https://www.uu.se/en/centre/uppmax/get-started/2-factor
 
 - When logging in the first time in ThinLinc, choose XFCE desktop. 
 
@@ -324,7 +324,7 @@ The two HPC centers UPPMAX and HPC2N
 .. warning:: 
 
    - At both HPC2N and UPPMAX we call the applications available via the *module system* **modules**. 
-   - https://www.uppmax.uu.se/resources/software/module-system/ 
+   - https://docs.uppmax.uu.se/cluster_guides/modules/ 
    - https://www.hpc2n.umu.se/documentation/environment/lmod
    
    To distinguish these modules from the **python** *modules* that work as libraries we refer to the later ones as **packages**.
