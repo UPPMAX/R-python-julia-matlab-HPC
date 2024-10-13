@@ -35,7 +35,7 @@ Introduction Julia
 
 .. challenge:: Download the exercise files
 
-    - Copy the file and un-tar it in you personal project folder you created a while ago (https://uppmax.github.io/R-python-julia-HPC/index.html#prepare-your-environment-now). Finally enter the directory and list the content with the ``tree`` command.
+    - Copy the file and un-tar it in you personal project folder you created a while ago (https://uppmax.github.io/R-python-julia-HPC/login.html#prepare-your-environment-now). Finally enter the directory and list the content with the ``tree`` command.
 
     .. code-block:: bash
 
