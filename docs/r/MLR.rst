@@ -4,7 +4,7 @@ ML with R
 .. questions::
 
    - Is R suitable for Machine Learning (ML)?
-   - How to run R ML jobs on a HPC system (UPPMAX, HPC2N, ...)
+   - How to run R ML jobs on a HPC system (UPPMAX, HPC2N, LUNARC, ...)
    
 .. objectives:: 
 
@@ -50,6 +50,8 @@ Running your code
 
    If you cannot access remote data-sets, change the R code as mentioned inside to use a local data-set, which has already been downloaded 
 
+   **NOTE**: normally we would not run this on the command line, but through a batch script, but since these are short examples we will run it on the command line. 
+
    .. tabs::
 
       .. tab:: UPPMAX
@@ -66,6 +68,13 @@ Running your code
             $ module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2 R-bundle-Bioconductor/3.14-R-4.1.2 
             $ Rscript iris_ml.R
 
+      .. tab:: LUNARC 
+
+         .. code-block:: console 
+
+            $ module load GCC/11.3.0 OpenMPI/4.1.4 R/4.2.1 R-bundle-Bioconductor/3.15-R-4.2.1 
+            $ Rscript iris_ml.R 
+            
       .. tab:: iris_ml.R
 
          .. code-block:: R 
@@ -184,6 +193,22 @@ ML on CPUs
             # Run your R script (here 'iris_ml.R')
             R --no-save --quiet < iris_ml.R
             
+
+      .. tab:: LUNARC 
+
+         Short serial example for running on Kebnekaise. Loading R/4.2.1 and prerequisites, alsoa suitable R-bundle-Bioconductor 
+
+            #!/bin/bash
+            #SBATCH -A lu2024-7-80 # Change to your own project ID
+            #SBATCH --time=00:10:00 # Asking for 10 minutes
+            #SBATCH -n 1 # Asking for 1 core
+
+            # Load any modules you need, here R/4.2.1 and prerequisites + R-bundle-Bioconductor
+            module load GCC/11.3.0  OpenMPI/4.1.4  R/4.2.1 R-bundle-Bioconductor/3.15-R-4.2.1
+
+            # Run your R script (here 'iris_ml.R')
+            R --no-save --quiet < iris_ml.R
+
    Send the script to the batch:
 
    .. code-block:: console
@@ -205,7 +230,7 @@ ML on GPUs
          .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A naiss2024-22-107
+            #SBATCH -A naiss2024-22-1202
             #Asking for 10 min.
             #SBATCH -t 00:10:00
             #SBATCH --exclusive
@@ -230,22 +255,43 @@ ML on GPUs
          .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2n2024-025 # Change to your own project ID
+            #SBATCH -A hpc2n2024-114 # Change to your own project ID
             #Asking for 10 min.
             #SBATCH -t 00:10:00
             #SBATCH -n 1
-            #SBATCH --gres=gpu:v100:1
+            #SBATCH --gpus:1
+            #SBATCH -C l40s
             #Writing output and error files
             #SBATCH --output=output%J.out
             #SBATCH --error=error%J.error
             
             ml purge > /dev/null 2>&1
-            #R version 4.0.4 is the only one compiled for CUDA
-            ml GCC/10.2.0  CUDA/11.1.1 OpenMPI/4.0.5
-            ml R/4.0.4
-            
+            module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2 CUDA/12.1.1
+                        
             R --no-save --no-restore -f Rscript.R
 
+      .. tab:: LUNARC
+
+         Short ML example for running on Cosmos. 
+
+         .. code-block:: sh
+
+            #!/bin/bash
+            #SBATCH -A lu2024-7-80 # Change to your own project ID
+            #Asking for 10 min.
+            #SBATCH -t 00:10:00
+            #SBATCH -n 1
+            #SBATCH --gres=gpus:1
+            #SBATCH -p gpua100
+            #Writing output and error files
+            #SBATCH --output=output%J.out
+            #SBATCH --error=error%J.error
+            
+            ml purge > /dev/null 2>&1
+            module load GCC/11.3.0 OpenMPI/4.1.4 R/4.2.1 CUDA/12.1.1
+                        
+            R --no-save --no-restore -f Rscript.R
+   
 
       .. tab:: Rscript.R
 
@@ -312,10 +358,6 @@ Exercises
 
    This example is taken from https://www.geeksforgeeks.org/cross-validation-in-r-programming/
 
-   To run this, you need to install the ``datarium`` package in your ``renv`` on HPC2N. This is already installed in R_packages on UPPMAX.  
-   
-   **Note** Remember that for HPC2N you need to run in the ``renv`` directory.  
-
 .. admonition:: ``validation.R``
    :class: dropdown 
       
@@ -359,55 +401,9 @@ Exercises
 
 
 
-.. solution:: Solution for HPC2N
-   :class: dropdown
+.. solution:: Solution
 
-      1) Create a directory to work in: ``mkdir -v /proj/nobackup/hpc2n2024-025/<your-dir>/r_proj_val && cd $_``
-      2) Load modules
-
-      .. code-block:: console
-
-         module load GCC/11.2.0  OpenMPI/4.1.1  R/4.1.2 R-bundle-Bioconductor/3.14-R-4.1.2
-
-      3) Install ``renv`` as shown under here: https://uppmax.github.io/R-python-julia-HPC/r/isolatedR.html#example-installing-knitr
-      4) Start R 
-
-      .. code-block:: console
-
-         $ R
-
-      5) Initialize a ``renv`` and exit R
-
-      .. code-block:: R
-
-         > renv::init()
-         > quit()  
-
-      6) Start R again and install the package ``datarium`` (Pick CRAN mirror 59: Sweden (Umeå) [https] )
-
-      .. code-block:: console
-
-         $ R
-
-      .. code-block:: R
-
-         > install.packages("datarium")   
-
-      7) Exit R
-      
-      .. code-block:: R
-
-         > quit()
-         
-      8) You are now ready to run ``validation.R``
-
-      .. code-block:: console
-
-         $ Rscript validation.R
-
-.. solution:: Solution for UPPMAX
-
-   .. code-block:: console 
+   .. code-block:: console
 
       $ Rscript validation.R
 
