@@ -39,8 +39,7 @@ Overview of the LUNARC system
 #############################
 
 .. figure:: ../../img/cosmos-resources.png
-      :width: 400
-      :align: center
+      :width: 500
 
 
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
