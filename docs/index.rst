@@ -314,7 +314,7 @@ Content of the course
    matlab/interactionsMatlab.rst
    common/parallel.rst
    matlab/local_desktopMatlab.rst
-   matlab/interactiveMatlab.rst
+   matlab/jupyterMatlab.rst
 
 .. toctree::
    :maxdepth: 2
