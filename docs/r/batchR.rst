@@ -54,7 +54,8 @@ In order to run a batch job, you need to create and submit a SLURM submit file (
 
 Guides and documentation at: https://docs.hpc2n.umu.se/documentation/batchsystem/intro/ and https://docs.uppmax.uu.se/cluster_guides/slurm/ and https://lunarc-documentation.readthedocs.io/en/latest/manual/manual_intro/  
 
-**Workflow**
+Workflow
+########
 
 - Write a batch script
 
@@ -68,7 +69,7 @@ Guides and documentation at: https://docs.hpc2n.umu.se/documentation/batchsystem
 Common file extensions for batch scripts are ``.sh`` or ``.batch``, but they are not necessary. You can choose any name that makes sense to you. 
 
 Useful commands to the batch system
------------------------------------
+###################################
 
 - Submit job: ``sbatch <jobscript.sh>``
 - Get list of your jobs: ``squeue -u <username>``
@@ -89,10 +90,10 @@ Useful commands to the batch system
 
 
 Example R batch scripts
------------------------
+#######################
 
 Serial code
-'''''''''''
+-----------
 
 .. type-along:: 
 
@@ -171,10 +172,10 @@ Serial code
 
         
 Parallel code 
-'''''''''''''
+-------------
 
 foreach and doParallel
-::::::::::::::::::::::
+''''''''''''''''''''''
 
 .. type-along:: 
 
@@ -286,7 +287,7 @@ foreach and doParallel
       $ sbatch <batch script>
 
 Rmpi
-::::
+''''
 
 .. type-along:: 
 
@@ -406,11 +407,12 @@ Rmpi
 
 
 Using GPUs in a batch job
-'''''''''''''''''''''''''
+-------------------------
 
 There are generally either not GPUs on the login nodes or they cannot be accessed for computations. To use them you need to either launch an interactive job or submit a batch job.
 
-**UPPMAX only**
+UPPMAX only
+'''''''''''
 
 Rackham’s compute nodes do not have GPUs. You need to use Snowy for that. 
 
@@ -421,7 +423,8 @@ You need to use this batch command (for x being the number of cards, 1 or 2):
    #SBATCH -M snowy
    #SBATCH --gres=gpu:x
 
-**HPC2N**
+HPC2N
+'''''
 
 Kebnekaise’s GPU nodes are considered a separate resource, and the regular compute nodes do not have GPUs.  
 
@@ -457,7 +460,8 @@ where type is
 
 For more information, see HPC2N’s guide to the different parts of the batch system: https://docs.hpc2n.umu.se/documentation/batchsystem/resources/
 
-**LUNARC** 
+LUNARC
+''''''
 
 LUNARC has Nvidia A100 GPUs and Nvidia A40 GPUs, but the latter ones are reserved for interactive graphics work on the on-demand system, and Slurm jobs should not be submitted to them.
 
@@ -482,7 +486,8 @@ These nodes are configured as exclusive access and will not be shared between us
 
 where <number> is 1 or 2 (Two of the nodes have 1 GPU and two have 2 GPUs).
 
-**Example batch script**
+Example batch script
+''''''''''''''''''''
 
 .. tabs::
 
@@ -556,7 +561,7 @@ where <number> is 1 or 2 (Two of the nodes have 1 GPU and two have 2 GPUs).
 
 
 Exercises
----------
+#########
 
 .. challenge:: Serial batch script for R
 
