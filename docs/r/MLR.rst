@@ -196,7 +196,9 @@ ML on CPUs
 
       .. tab:: LUNARC 
 
-         Short serial example for running on Kebnekaise. Loading R/4.2.1 and prerequisites, alsoa suitable R-bundle-Bioconductor 
+         Short serial example for running on Cosmos. Loading R/4.2.1 and prerequisites, alsoa suitable R-bundle-Bioconductor 
+
+         .. code-block:: sh 
 
             #!/bin/bash
             #SBATCH -A lu2024-7-80 # Change to your own project ID
