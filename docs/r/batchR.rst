@@ -38,6 +38,9 @@ Overview of the HPC2N system
 Overview of the LUNARC system
 #############################
 
+.. figure:: ../../img/cosmos-resources.png
+      :width: 400
+      :align: center
 
 
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
