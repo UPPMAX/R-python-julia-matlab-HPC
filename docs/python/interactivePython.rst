@@ -116,6 +116,8 @@ The different way HPC2N, UPPMAX, and LUNARC provide for an interactive session
 
 .. mermaid:: interactive_node_transitions.mmd 
 
+.. image:: img/cosmos-interactive.png 
+
 Here we define an interactive session as a session 
 with direct access to a compute node.
 Or alternatively: an interactive session is a session,
