@@ -40,29 +40,38 @@ SLURM is an Open Source job scheduler, which provides three key functions:
    - If you have attended the other days you have learned that you ask for compute resources via the sbatch command.
        - In order to run a batch job, you need to create and submit a SLURM submit file (also called a batch submit file, a batch script, or a job script).
        - Guides and documentation at: https://docs.hpc2n.umu.se/documentation/batchsystem/intro/ and https://docs.uppmax.uu.se/cluster_guides/slurm/  
-   - For MATLAB jobs, you may instead use the job scheduler in MATLAB Desktop/graphical interface. This is the Recommended Use.
-   - Still,  understanding how Slurm queue works and how to check your current running jobs from the ordinary terminal is quite valuable!
+   - MATLAB is well integrated with SLURM and because of that there are several ways to run these jobs:
+       - Using the job scheduler (``batch`` command) in MATLAB Desktop/graphical interface (This is the Recommended Use).
+       - Starting a ``parpool`` with a predefined cluster (This allows for more interactivity).
+       - Writing a batch script as for any other software and submitting the job with the ``sbatch`` command from SLURM 
+         (This could be useful if you want to run long jobs and you don't need to modify the code in the meantime).
+   - In the following sections we will extend these concepts. 
 
-Useful commands to the batch system
------------------------------------
+First time configuration
+------------------------
 
-- Submit job: ``sbatch <jobscript.sh>``
-- Get list of your jobs: ``squeue -u <username>``
-- Check on a specific job: ``scontrol show job <job-id>``
-- Delete a specific job: ``scancel <job-id>``
-- Useful info about a job: ``sacct -l -j <job-id> | less -S``
-- Url to a page with info about the job (Kebnekaise only): ``job-usage <job-id>``
+In order to be able to submit jobs to the SLURM queue, you need to configure MATLAB:
+
+.. admonition:: Content
+
+   - `HPC2N <https://www.hpc2n.umu.se/resources/software/configure-matlab-2018>`_
+   - `UPPMAX <https://docs.uppmax.uu.se/software/matlab/#first-time-since-may-13-2024>`_
+   - `LUNARC <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/MATLAB/#configuration-at-the-command-line>`_
+
+
 
 MATLAB Desktop/graphical interface
 ----------------------------------
 
-**PICTURE**
 
 .. figure:: ../img/matlab-gui.png
-   :width: 550
+   :width: 350
    :align: center
 
-   Matlab Gui
+   MATLAB GUI
+
+
+
 
 .. admonition:: Content
 
@@ -80,6 +89,15 @@ MATLAB Desktop/graphical interface
    - On the login-nodes MATLAB MUST be started with the option '-singleCompThread', preventing MATLAB from using more than one thread.
    - ``parpool`` can only be used on UPPMAX and Cosmos.
   
+Useful commands to the batch system
+-----------------------------------
+
+- Submit job: ``sbatch <jobscript.sh>``
+- Get list of your jobs: ``squeue -u <username>``
+- Check on a specific job: ``scontrol show job <job-id>``
+- Delete a specific job: ``scancel <job-id>``
+- Useful info about a job: ``sacct -l -j <job-id> | less -S``
+- Url to a page with info about the job (Kebnekaise only): ``job-usage <job-id>``
 
 Serial batch jobs 
 ''''''''''''''''''''''''''''''''''''''''''''''''''
