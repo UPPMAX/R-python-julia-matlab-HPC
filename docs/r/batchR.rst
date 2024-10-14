@@ -35,6 +35,10 @@ Overview of the HPC2N system
 
 .. mermaid:: ../mermaid/kebnekaise.mmd   
 
+Overview of the LUNARC system
+#############################
+
+
 
 Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
 
@@ -215,6 +219,24 @@ foreach and doParallel
             # Batch script to submit the R program parallel_foreach.R 
             R -q --slave -f parallel_foreach.R
 
+      .. tab:: LUNARC
+
+         Short parallel example (using packages "foreach" and "doParallel" which are included in the R module) for running on Cosmos. Loading R/4.2.1 and its prerequisites.
+
+         .. code-block:: sh
+
+            #!/bin/bash
+            # A batch script for running the R program parallel_foreach.R on Kebnekaise 
+            #SBATCH -A lu2024-7-80 # Change to your own project ID
+            #SBATCH -t 00:10:00
+            #SBATCH -N 1
+            #SBATCH -c 4
+
+            ml purge > /dev/null 2>&1
+            ml GCC/11.3.0  OpenMPI/4.1.4  R/4.2.1
+
+            # Batch script to submit the R program parallel_foreach.R
+            R -q --slave -f parallel_foreach.R
 
       .. tab:: parallel_foreach.R
  
@@ -279,7 +301,7 @@ Rmpi
          .. code-block:: sh
         
             #!/bin/bash
-            #SBATCH -A naiss2024-22-107
+            #SBATCH -A naiss2024-22-1202
             #Asking for 10 min.
             #SBATCH -t 00:10:00
             #SBATCH -n 8
@@ -302,7 +324,7 @@ Rmpi
          .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2n2024-025# Change to your own project ID
+            #SBATCH -A hpc2n2024-114 # Change to your own project ID
             #Asking for 10 min.
             #SBATCH -t 00:10:00
             #SBATCH -n 8
@@ -314,6 +336,26 @@ Rmpi
             ml R/4.1.1
             
             mpirun -np 1 R CMD BATCH --no-save --no-restore Rmpi.R output.out 
+
+      .. tab:: LUNARC 
+
+         Short parallel example (using packages "Rmpi"). Loading R/4.0.4 and its prerequisites. 
+       
+         .. code-block:: sh
+
+            #!/bin/bash
+            #SBATCH -A lu2024-7-80 # Change to your own project ID
+            # Asking for 10 min.
+            #SBATCH -t 00:10:00
+            #SBATCH -n 8
+
+            export OMPI_MCA_mpi_warn_on_fork=0
+
+            ml purge > /dev/null 2>&1
+            ml GCC/11.3.0  OpenMPI/4.1.4
+            ml R/4.2.1
+
+            mpirun -np 1 R CMD BATCH --no-save --no-restore Rmpi.R output.out
    
 
       .. tab:: Rmpi.R
@@ -381,22 +423,65 @@ You need to use this batch command (for x being the number of cards, 1 or 2):
 
 **HPC2N**
 
-Kebnekaise’s GPU nodes are considered a separate resource, and the regular compute nodes do not have GPUs.
+Kebnekaise’s GPU nodes are considered a separate resource, and the regular compute nodes do not have GPUs.  
 
-You need to use this to access the batch system: 
+Kebnekaise has a great many different types of GPUs:
+
+- V100 (2 cards/node)
+- A40 (8 cards/node)
+- A6000 (2 cards/node)
+- L40s (2 or 6 cards/node)
+- A100 (2 cards/node)
+- H100 (4 cards/node)
+- MI100 (2 cards/node)
+
+To access them, you need to use this to the batch system:
+
+``#SBATCH --gpus=x``
+
+where ``x`` is the number of GPU cards you want. Above are given how many are on each type, so you can ask for up to that number.
+
+In addition, you need to add this to the batch system:
+
+``#SBATCH -C <type>``
+
+where type is
+
+- v100
+- a40
+- a6000
+- l40s
+- a100
+- h100
+- mi100
+
+For more information, see HPC2N’s guide to the different parts of the batch system: https://docs.hpc2n.umu.se/documentation/batchsystem/resources/
+
+**LUNARC** 
+
+LUNARC has Nvidia A100 GPUs and Nvidia A40 GPUs, but the latter ones are reserved for interactive graphics work on the on-demand system, and Slurm jobs should not be submitted to them.
+
+Thus in order to use the A100 GPUs on Cosmos, add this to your batch script:
+
+- A100 GPUs on AMD nodes:
 
 .. code-block::
 
-   #SBATCH --gres=gpu:<card>:x 
-   
-   for <card>=v100 or a100 and x=1 or 2.
+   #SBATCH -p gpua100
+   #SBATCH --gres=gpu:1
 
-In addition, for the A100 GPUs you also need to use 
+These nodes are configured as exclusive access and will not be shared between users. User projects will be charged for the entire node (48 cores). A job on a node will also have access to all memory on the node.
 
-.. code-block::
+- A100 GPUs on Intel nodes:
 
-   #SBATCH -p amd_gpu
-   
+
+ .. code-block::
+
+    #SBATCH -p gpua100i
+    #SBATCH --gres=gpu:<number>
+
+where <number> is 1 or 2 (Two of the nodes have 1 GPU and two have 2 GPUs).
+
 **Example batch script**
 
 .. tabs::
@@ -406,7 +491,7 @@ In addition, for the A100 GPUs you also need to use
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A naiss2024-22-107
+            #SBATCH -A naiss2024-22-1202
             #Asking for runtime: hours, minutes, seconds. At most 1 week
             #SBATCH -t HHH:MM:SS
             #SBATCH --exclusive
@@ -430,11 +515,13 @@ In addition, for the A100 GPUs you also need to use
         .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2n2024-025 # Change to your own project ID
+            #SBATCH -A hpc2n2024-114 # Change to your own project ID
             #Asking for runtime: hours, minutes, seconds. At most 1 week
             #SBATCH -t HHH:MM:SS
-            #Ask for GPU resources, card is v100 or a100, x is 1 or 2
-            #SBATCH --gres=gpu:<card>:x
+            #Ask for GPU resources. You pick type as one of the ones shown above 
+            #x is how many cards you want, at most as many as shown above 
+            #SBATCH --gpus:x
+            #SBATCH -C type
             #Outcomment the below if you asked for A100 cards
             #SBATCH -p amd_gpu 
             #Writing output and error files
@@ -447,6 +534,26 @@ In addition, for the A100 GPUs you also need to use
             ml R/4.0.4
             
             R --no-save --no-restore -f MY-R-GPU-SCRIPT.R
+
+   .. tab:: LUNARC
+
+        .. code-block:: sh 
+
+           #!/bin/bash
+           # Remember to change this to your own project ID after the course!
+           #SBATCH -A lu2024-7-80
+           # Asking for runtime: hours, minutes, seconds. At most 1 week
+           #SBATCH --time=HHH:MM:SS
+           # Ask for GPU resources - x is how many cards, 1 or 2 
+           #SBATCH -p gpua100
+           #SBATCH --gres=gpu:x
+
+           # Remove any loaded modules and load the ones we need
+           module purge  > /dev/null 2>&1
+           module load GCC/11.3.0  OpenMPI/4.1.4 R/4.2.1 CUDA/12.1.1 
+
+           R --no-save --no-restore -f MY-R-GPU-SCRIPT.R
+
 
 Exercises
 ---------
@@ -463,7 +570,7 @@ Exercises
           .. code-block:: sh
  
              #!/bin/bash
-             #SBATCH -A naiss2024-22-107 # Change to your own after the course
+             #SBATCH -A naiss2024-22-1202 # Change to your own after the course
              #SBATCH --time=00:10:00 # Asking for 10 minutes
              #SBATCH -n 1 # Asking for 1 core
              
@@ -482,7 +589,7 @@ Exercises
           .. code-block:: sh
  
              #!/bin/bash
-             #SBATCH -A hpc2n2024-025 # Change to your own project ID
+             #SBATCH -A hpc2n2024-114 # Change to your own project ID
              #SBATCH --time=00:10:00 # Asking for 10 minutes
              #SBATCH -n 1 # Asking for 1 core
              
@@ -492,6 +599,23 @@ Exercises
              # Run your R script 
              Rscript add2.R 2 3 
 
+.. solution:: Solution for LUNARC 
+    :class: dropdown 
+
+          Serial script on R
+
+          .. code-block:: sh
+
+             #!/bin/bash
+             #SBATCH -A lu2024-7-80 # Change to your own project ID
+             #SBATCH --time=00:10:00 # Asking for 10 minutes
+             #SBATCH -n 1 # Asking for 1 core
+             
+             # Load any modules you need, here for R/4.2.1
+             module load GCC/11.3.0  OpenMPI/4.1.4 R/4.2.1
+             
+             # Run your R script 
+             Rscript add2.R 2 3 
 
 
 .. challenge:: Parallel job run

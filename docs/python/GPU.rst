@@ -265,7 +265,7 @@ As before, we need the batch system to run the code. There are no GPUs on the lo
             #SBATCH --time=00:05:00
             # Asking for one A100 GPU
             #SBATCH --gpus=1
-            "SBATCH -C a100    
+            #SBATCH -C a100    
 
             # Remove any loaded modules and load the ones we need
             module purge  > /dev/null 2>&1
