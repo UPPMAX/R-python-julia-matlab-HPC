@@ -1,12 +1,12 @@
 # Check that there is correct spelling in all files
 name: Check spelling
 
+# Only run this on the main branch, or with Pull Requests
 on:
   push:
+    branches:
+      - main
   pull_request:
-  schedule:
-  - cron: "0 0 16 * *"
-
 
 jobs:
   check_spelling:
