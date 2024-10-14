@@ -52,7 +52,7 @@ First time configuration
 
 In order to be able to submit jobs to the SLURM queue, you need to configure MATLAB:
 
-.. admonition:: Content
+.. admonition:: Follow these instructions to configure MATLAB
 
    - `HPC2N <https://www.hpc2n.umu.se/resources/software/configure-matlab-2018>`_
    - `UPPMAX <https://docs.uppmax.uu.se/software/matlab/#first-time-since-may-13-2024>`_
