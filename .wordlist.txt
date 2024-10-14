@@ -713,3 +713,6 @@ useit
 livescript
 batchMatlab
 parpool
+jobsMatlab
+jupyterMatlab
+slurmMatlab
