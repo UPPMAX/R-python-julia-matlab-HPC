@@ -14,7 +14,10 @@ jobs:
 
       - name: Link Checker
         id: lychee
-        uses: lycheeverse/lychee-action@v1
+        uses: lycheeverse/lychee-action@v1.10.0
+        with:
+          # Check all markdown, html and reStructuredText files in repo (default)
+          args: --base docs/ --verbose --no-progress './**/*.rst'
 
       - name: Create Issue From File
         if: env.lychee_exit_code != 0

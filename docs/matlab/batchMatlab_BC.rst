@@ -35,10 +35,10 @@ SLURM is an Open Source job scheduler, which provides three key functions
 
 .. note:: 
 
-   - If you have attended the other days you have learnt that you ask for compute resources via the sbatch command.
+   - If you have attended the other days you have learned that you ask for compute resources via the sbatch command.
        - In order to run a batch job, you need to create and submit a SLURM submit file (also called a batch submit file, a batch script, or a job script).
        - Guides and documentation at: https://docs.hpc2n.umu.se/documentation/batchsystem/intro/ and https://docs.uppmax.uu.se/cluster_guides/slurm/  
-   - For MATLAB jobs, you may instead use the jobscheduler in MATLAB Desktop/graphical interface. This is the Recommended Use.
+   - For MATLAB jobs, you may instead use the job scheduler in MATLAB Desktop/graphical interface. This is the Recommended Use.
    - Still,  understanding how Slurm queue works and how to check your current running jobs from the ordinary terminal is quite valuable!
 
 Useful commands to the batch system

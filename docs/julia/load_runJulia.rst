@@ -5,7 +5,7 @@ Load and run Julia
     
     At the Swedish HPC centers we call the applications available via the module system modules:
 
-    - https://www.uppmax.uu.se/resources/software/module-system/ 
+    - https://docs.uppmax.uu.se/cluster_guides/modules/ 
     - https://www.hpc2n.umu.se/documentation/environment/lmod 
     - https://lunarc-documentation.readthedocs.io/en/latest/manual/manual_modules/#hierarchical-naming-scheme-concept
 
