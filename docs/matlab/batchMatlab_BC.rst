@@ -57,11 +57,12 @@ MATLAB Desktop/graphical interface
 ----------------------------------
 
 **PICTURE**
-.. figure:: ../../img/matlab-gui.png
+
+.. figure:: ../img/matlab-gui.png
    :width: 550
    :align: center
 
-   Matlab Gui.
+   Matlab Gui
 
 .. admonition:: Content
 
