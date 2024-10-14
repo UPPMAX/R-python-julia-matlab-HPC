@@ -56,8 +56,7 @@ In order to be able to submit jobs to the SLURM queue, you need to configure MAT
 
    - `HPC2N <https://www.hpc2n.umu.se/resources/software/configure-matlab-2018>`_
    - `UPPMAX <https://docs.uppmax.uu.se/software/matlab/#first-time-since-may-13-2024>`_
-   - `LUNARC <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/MATLAB/#configuration-at-the-command-line>`_
-
+   - LUNARC: `configure at the command line <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/MATLAB/#configuration-at-the-command-line>`_ or `configure in the GUI <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/MATLAB/#cluster-profiles-in-the-gui>`_
 
 
 MATLAB Desktop/graphical interface
@@ -87,17 +86,18 @@ MATLAB Desktop/graphical interface
 .. warning::
 
    - On the login-nodes MATLAB MUST be started with the option '-singleCompThread', preventing MATLAB from using more than one thread.
-   - ``parpool`` can only be used on UPPMAX and Cosmos.
+   - ``parpool`` should be used only for parallelized jobs requiring user interaction or supervision. For other parallel jobs, use ``.batch(clusterProfile)``.
   
 Useful commands to the batch system
 -----------------------------------
 
+- **FIX**: .sh scripts are not recommended for Matlab batch jobs unless the Matlab code is part of a pipeline that also uses other coding languages 
 - Submit job: ``sbatch <jobscript.sh>``
 - Get list of your jobs: ``squeue -u <username>``
 - Check on a specific job: ``scontrol show job <job-id>``
 - Delete a specific job: ``scancel <job-id>``
 - Useful info about a job: ``sacct -l -j <job-id> | less -S``
-- Url to a page with info about the job (Kebnekaise only): ``job-usage <job-id>``
+- URL to a page with info about the job (Kebnekaise only): ``job-usage <job-id>``
 
 Serial batch jobs 
 ''''''''''''''''''''''''''''''''''''''''''''''''''
