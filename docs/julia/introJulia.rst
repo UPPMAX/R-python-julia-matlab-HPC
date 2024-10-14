@@ -39,7 +39,8 @@ Introduction Julia
 
     .. code-block:: bash
 
-       cd /proj/r-py-jl-m-rackham/<your-name>   # on Kebnekaise: cd /proj/nobackup/hpc2n2024-025/<your-name>
+       cd /proj/r-py-jl-m-rackham/<your-name>        # on Rackham
+       cd /proj/nobackup/r-py-jl-m/<your-name>       # on Kebnekaise
        cp ../juliaExercises.tar .
        tar xvf juliaExercises.tar
        tree julia
@@ -188,14 +189,14 @@ read-eval-print-loop (REPL) command line by typing ``julia``:
 
         .. code-block:: julia-repl
          
-         $ ml Julia/1.8.5-linux-x86_64
+         $ ml Julia/1.9.3-linux-x86_64
          $ julia 
 
             _       _ _(_)_     |  Documentation: https://docs.julialang.org
            (_)     | (_) (_)    |
             _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
            | | | | | | |/ _` |  |
-           | | |_| | | | (_| |  |  Version 1.8.5 (2023-01-08)
+           | | |_| | | | (_| |  |  Version 1.9.3 (2023-08-24)
           _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
          |__/                   |
 
