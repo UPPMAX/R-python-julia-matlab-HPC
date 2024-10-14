@@ -155,6 +155,77 @@ parpool command
 
 parpool starts a parallel pool of workers using the default profile. With default preferences, MATLAB® starts a pool on the local machine with one worker per physical CPU core up to the limit set in the default profile. For more information on parallel preferences, see
 
+Running Matlab in a Jupyter notebook 
+------------------------------------
+
+.. tabs::
+
+   .. tab:: UPPMAX
+
+      - For more interactiveness you can run 
+
+   .. tab:: HPC2N
+
+      - Like for Python it is possible to run Matlab in a notebook, i.e. in a web interface with possibility of inline 
+        figures and debugging. An easy way to do this is to load *Python* and *Matlab* modules. In shell:
+
+      .. code-block:: console
+
+         # Load Matlab 
+         $ ml MATLAB/2023a.Update4
+         # Load a Python version compatible with Matlab and also CUDA (if you will run on GPUs)
+         $ ml GCCcore/11.3.0  Python/3.10.4 CUDA/11.7.0
+         # Create an environment called matlabenv (you can change this name)
+         $ python -m venv ./matlabenv
+         # Activate this environment
+         $ source matlabenv/bin/activate
+         # Perform installations: upgrade pip, and packages that you will need
+         $ pip install --upgrade pip
+         $ pip install -U scikit-learn
+         # Install Jupyterlab
+         $ pip install jupyterlab
+         # Install the Matlab proxy
+         pip install jupyter-matlab-proxy
+
+
+      Fix the project ID in this batch job job.sh and send it to the queue:
+
+      .. code-block:: bash
+
+         #!/bin/bash
+         # Here you should put your own project id
+         #SBATCH -A Project_ID
+         # This example asks for 1 core
+         #SBATCH -n 1         
+         # Ask for a suitable amount of time. Remember, this is the time the Jupyter notebook will be available! HHH:MM:SS.
+         #SBATCH --time=06:20:00
+         # If you use the GPU nodes uncomment the following lines
+         #SBATCH --gpus=l40s:1
+
+         # Clear the environment from any previously loaded modules
+         module purge > /dev/null 2>&1
+         # Load the module environment suitable for the job                                                                                       
+         ml MATLAB/2023a.Update4 
+         ml GCCcore/11.3.0  Python/3.10.4 
+         ml CUDA/11.7.0 
+
+         # Source the environment
+         source matlabenv/bin/activate
+         # Start JupyterLab
+         jupyter lab --no-browser --ip $(hostname)
+
+      Then, in the output file *slurm-<jobID>.out* file, copy the url that starts with *http://b-cn1403.hpc2n.umu.se:8888/lab* and 
+      paste it in a Firefox browser on Kebnekaise. When the Jupyter notebook interface starts, you can choose the **MATLAB kernel**
+      version from the module you loaded. When you try to run a notebook, Matlab will ask for a type of license. Because you are 
+      running this notebook on our HPC center, you can choose the option Existing License and then Start MATLAB.
+
+      .. admonition:: Running Julia in Jupyter on compute nodes at HPC2N
+
+         - On Kebnekaise, you can run Jupyter notebooks with Matlab kernels by using batch scripts    
+         - Notebook example: https://github.com/hpc2n/intro-course/blob/master/exercises/JUPYTERNOTEBOOKS/MATLAB/matlab_kernel.ipynb
+         - https://www.hpc2n.umu.se/resources/software/jupyter-julia
+
+
                
 
 
