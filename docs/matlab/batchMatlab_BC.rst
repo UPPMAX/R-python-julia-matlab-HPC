@@ -23,11 +23,13 @@ The Slurm job scheduler and MATLAB
    - Rackham: ``/proj/r-py-jl-m-rackham``
    - Kebnekaise: ``/proj/nobackup/r-py-jl-m`` 
 
-Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
+.. warning::
+
+   Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
 
 The batch system used at UPPMAX, HPC2N, and LUNARC is called SLURM. The same is the case at most of the Swedish HPC centres. 
 
-SLURM is an Open Source job scheduler, which provides three key functions
+SLURM is an Open Source job scheduler, which provides three key functions:
 
 - Keeps track of available system resources
 - Enforces local system resource usage and job scheduling policies
