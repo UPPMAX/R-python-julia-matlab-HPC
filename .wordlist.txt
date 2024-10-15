@@ -716,3 +716,6 @@ parpool
 jobsMatlab
 jupyterMatlab
 slurmMatlab
+emacs
+SPMD
+performant
