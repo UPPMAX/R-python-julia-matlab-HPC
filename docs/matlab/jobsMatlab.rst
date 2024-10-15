@@ -99,6 +99,18 @@ Jobs can be parallelized in MATLAB using functionalities such as ``parfor``, ``s
 ``parfor``
 ~~~~~~~~~~
 
+This function will assist you if you want to parallelize a *for loop*. Although it will be performant, 
+it imposses some constraints on the loops: first the number of iterations is well-defined, second 
+there is no control on the individual workers, and third there is no data dependencies for the 
+iterations. In the following example the name of the host machine will be printed ``n`` number of times 
+and this number will be divided across the available number of workers:
+
+.. code-block:: matlab
+
+    parfor i=1:4
+       disp(getenv("HOSTNAME"))
+    end
+
 ``spmd``
 ~~~~~~~~
 
@@ -114,24 +126,77 @@ example the name of the host will be displayed as many times as the present numb
         disp(getenv("HOSTNAME"))   % display the name of the host
     end
 
+``parfeval``
+
+This function is more advanced than the previous two and it allows you to do asynchornous calculations,
+which means that those calculations can start when resources are available but the execution order is not needed.
+The results can be fetched once the simulation finishes.  
+
+.. code-block:: matlab
+
+    f = parfeval(@myFunction,'nr. of outputs', 'list of input arguments'); 
+    results = fetchOutputs(f);
 
 
 
-
-
-Parallel jobs can be handled in two ways either by using the ``batch`` command we already saw or by creating
-a ``parpool``. 
+Parallel jobs which include functions like ``parfor``, ``spmd``, and ``parfeval`` can be handled in two ways 
+in the MATLAB GUI either by using the ``batch`` command (we mentioned above for serial jobs) or by creating a ``parpool``. 
 
 
 
 Using ``batch``
 ~~~~~~~~~~~~~~~
 
+It is recommended that you enclose the parallel code into a function and place it into a MATLAB script. In 
+the ``parfor`` example mentioned above, we can write a script called ``hostnm.m`` containing this code:
 
+.. code-block:: matlab
+
+    function hn_all = hostnm(n)
+        hn_all = [];
+        parfor i=1:n
+           hn = (getenv('HOSTNAME'));
+           hn_all = [hn_all,hn];          % This array stores the host names for each worker
+        end
+    end 
+
+Then, in the MATLAB GUI I can execute this function and retrieve/print out the results as follows:
+
+.. code-block:: matlab
+   
+    c=parcluster('name-of-your-cluster');
+    j = c.batch(@hostnm,'nr. outputs',{'list of input args'},'pool','nr. workers');      
+    j.wait;                               % wait for the results
+    t = j.fetchOutputs{:};                % fetch the results
+    fprintf('Name of host: %s \n', t);    % Print out the results
+
+Notice that if you will use this sequence of commands to launch many jobs, it will be convenient to write 
+a MATLAB script so that next time you have these commands at hand. 
 
 Creating a ``parpool``
 ~~~~~~~~~~~~~~~~~~~~~~
 
+If you are doing continuous modifications to your code and running it to make sure that it works, 
+using a ``parpool`` could be a better option than the ``batch`` command. Here, you create a 
+pool of workers with the ``parpool`` function that are available to run parallel functions such
+as those mentioned above (``parfor``, ``spmd``, and ``parfeval``) until this pool is deleted. 
+In the following example a pool of ``4`` workers is created that will solve a ``parfor`` loop 
+which will display the host name:
+
+.. code-block:: matlab
+   
+    % Use parallel pool with 'parfor'
+    parpool('name-of-your-cluster',4);  % Start parallel pool with num_workers = 4 workers
+
+        parfor i=1:4
+            disp(getenv("HOSTNAME"))
+        end
+
+    % Clean up the parallel pool
+    delete(gcp('nocreate'));
+
+Notice that the host name displayed is the one where the job ran not where the MATLAB GUI is running.
+All parallel functionalities in MATLAB can be executed inside a ``parpool``. 
 
 
 Exercises
