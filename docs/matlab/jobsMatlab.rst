@@ -99,11 +99,13 @@ Jobs can be parallelized in MATLAB using functionalities such as ``parfor``, ``s
 ``parfor``
 ~~~~~~~~~~
 
-This function will assist you if you want to parallelize a *for loop*. Although it will be performant, 
-it imposses some constraints on the loops: first the number of iterations is well-defined, second 
-there is no control on the individual workers, and third there is no data dependencies for the 
-iterations. In the following example the name of the host machine will be printed ``n`` number of times 
-and this number will be divided across the available number of workers:
+This function will assist you if you want to parallelize a *for loop*. Although it will be performant, it imposes some constraints on the loops:
+
+#. The number of iterations must be well-defined,
+#. There can be no control over the individual workers, and
+#. There must be no data dependencies between the iterations.
+
+In the following example the name of the host machine will be printed ``n`` number of times  and this number will be divided across the available number of workers:
 
 .. code-block:: matlab
 
@@ -128,7 +130,7 @@ example the name of the host will be displayed as many times as the present numb
 
 ``parfeval``
 
-This function is more advanced than the previous two and it allows you to do asynchornous calculations,
+This function is more advanced than the previous two and it allows you to do asynchronous calculations,
 which means that those calculations can start when resources are available but the execution order is not needed.
 The results can be fetched once the simulation finishes.  
 
