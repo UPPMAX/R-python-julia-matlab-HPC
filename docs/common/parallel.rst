@@ -166,8 +166,8 @@ the code you are writing (R, Julia, Python, or Matlab) can also have some intern
 
       .. tab:: Matlab 
 
-         Using a **CPLEX** solver inside a *parfor* loop. These solvers work in a *oportunistic* manner meaning that
-         they will try to use all the resources available in the machine. If you request *n* cores for *parfor* in 
+         Using a **CPLEX** solver inside a ``parfor`` loop: These solvers work in a *opportunistic* manner meaning that
+         they will try to use all the resources available in the machine. If you request *n* cores for ``parfor`` in 
          your batch job, these cores will be used by the solver. Theoretically, you will be using *nxn* cores although 
          only *n* were requested. One way to solve this issue is by setting the number of threads 
          ``cplex.Param.threads.Cur`` to 1. 
@@ -247,7 +247,7 @@ Passing Interface (MPI). In general, MPI requires refactoring of your code.
 
       .. tab:: Matlab 
 
-         In Matlab one can use the ``parpool('my-cluster',X)`` where *X* is the number of workers. See the 
+         In Matlab one can use the ``parpool('my-cluster',X)`` where *X* is the number of workers.  The total number of processes spawned will always be *X+1* where the extra process handles the overhead for the rest. See the 
          `documentation for parpool <https://se.mathworks.com/help/parallel-computing/parpool.html>`_ from MatWorks.
          Matlab doesn't support MPI function calls in Matlab code, it could be used indirectly through 
          `mex <https://se.mathworks.com/help/matlab/ref/mex.html>`_ functions though. 
@@ -632,6 +632,7 @@ Exercises
                           module load python/3.11.8
                           python integration2d_multiprocessing.py
 
+
                   .. tab:: HPC2N
 
                        .. code-block:: sh
@@ -648,6 +649,26 @@ Exercises
                            ml purge > /dev/null 2>&1
                            ml GCCcore/11.2.0 Python/3.9.6
                            python integration2d_multiprocessing.py
+
+
+                  .. tab:: LUNARC
+
+                       .. code-block:: sh
+                           
+                           #!/bin/bash            
+                           #SBATCH -A lu202X-XX-XX      # your project_ID
+                           #SBATCH -J job-serial        # name of the job         
+                           #SBATCH -n *FIXME*           # nr. tasks  
+                           #SBATCH --time=00:20:00      # requested time
+                           #SBATCH --error=job.%J.err   # error file
+                           #SBATCH --output=job.%J.out  # output file 
+			   #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
+
+                           # Do a purge and load any modules you need, here for Python 
+                           ml purge > /dev/null 2>&1
+                           ml GCCcore/12.3.0 Python/3.11.3
+                           python integration2d_multiprocessing.py
+
    
             Try different number of cores for this batch script (*FIXME* string) using the sequence:
             1,2,4,8,12, and 14. Note: this number should match the number of processes 
@@ -782,6 +803,24 @@ Exercises
                              julia integration2D_distributed.jl 
 
 
+                  .. tab:: LUNARC
+
+                       .. code-block:: sh
+                           
+                           #!/bin/bash            
+                           #SBATCH -A lu202X-XX-XX      # your project_ID
+                           #SBATCH -J job-serial        # name of the job         
+                           #SBATCH -n *FIXME*           # nr. tasks  
+                           #SBATCH --time=00:20:00      # requested time
+                           #SBATCH --error=job.%J.err   # error file
+                           #SBATCH --output=job.%J.out  # output file 
+			   #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
+
+                           ml purge  > /dev/null 2>&1
+                           ml Julia/1.9.3-linux-x86_64
+      
+                           julia integration2D_distributed.jl 
+
             Try different number of cores for this batch script (*FIXME* string) using the sequence:
             1,2,4,8,12, and 14. Note: this number should match the number of processes 
             (also a *FIXME* string) in the Julia script. Collect the timings that are
@@ -892,17 +931,34 @@ Exercises
       
                      .. code-block:: bash
       
-                              #!/bin/bash            
-                              #SBATCH -A hpc2n202X-XYZ     # your project_ID       
-                              #SBATCH -J job-serial        # name of the job         
-                              #SBATCH -n *FIXME*           # nr. tasks  
-                              #SBATCH --time=00:20:00      # requested time
-                              #SBATCH --error=job.%J.err   # error file
-                              #SBATCH --output=job.%J.out  # output file  
+                             #!/bin/bash            
+                             #SBATCH -A hpc2n202X-XYZ     # your project_ID       
+                             #SBATCH -J job-serial        # name of the job         
+                             #SBATCH -n *FIXME*           # nr. tasks  
+                             #SBATCH --time=00:20:00      # requested time
+                             #SBATCH --error=job.%J.err   # error file
+                             #SBATCH --output=job.%J.out  # output file  
       
-                              ml purge > /dev/null 2>&1
-                              ml GCC/12.2.0  OpenMPI/4.1.4 R/4.2.2
-                              Rscript --no-save --no-restore integration2d.R
+                             ml purge > /dev/null 2>&1
+                             ml GCC/12.2.0  OpenMPI/4.1.4 R/4.2.2
+                             Rscript --no-save --no-restore integration2d.R
+
+                  .. tab:: LUNARC
+
+                       .. code-block:: sh
+                           
+                            #!/bin/bash            
+                            #SBATCH -A lu202X-XX-XX      # your project_ID
+                            #SBATCH -J job-serial        # name of the job         
+                            #SBATCH -n *FIXME*           # nr. tasks  
+                            #SBATCH --time=00:20:00      # requested time
+                            #SBATCH --error=job.%J.err   # error file
+                            #SBATCH --output=job.%J.out  # output file 
+			    #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
+
+                            ml purge > /dev/null 2>&1
+                            ml GCC/11.3.0  OpenMPI/4.1.4  R/4.2.1
+                            Rscript --no-save --no-restore integration2d.R
 
             Try different number of cores for this batch script (*FIXME* string) using the sequence:
             1,2,4,8,12, and 14. Note: this number should match the number of processes 
@@ -982,9 +1038,8 @@ Exercises
             the number of cores that gives the optimal (fastest) simulation? 
 
             Challenge: Increase the grid size (``n``) to 100000 and submit the batch job with 4 workers. 
-            Monitor the usage of resources with tools available at your center, for instance ``top`` (UPPMAX) or
-            ``job-usage`` (HPC2N). For ``job-usage``, you can see the job ID if you type ``squeue --me``
-            on a terminal on Kebnekaise.
+            Monitor the usage of resources with tools available at your center, for instance ``top`` (UPPMAX),
+            ``job-usage`` (HPC2N), or if you're working in the GUI (e.g. on LUNARC), you can click ``Parallel`` and then ``Monitor Jobs``. For ``job-usage``, you can see the job ID if you type ``squeue --me`` on a terminal on Kebnekaise.
 
 
 
@@ -1055,8 +1110,8 @@ Exercises
                     .. code-block:: sh
                         
                        #!/bin/bash -l
-                       #SBATCH -A naiss2024-22-107     # your project_ID
-                       #SBATCH -J job-serial        # name of the job
+                       #SBATCH -A naiss2024-22-107  # your project_ID
+                       #SBATCH -J job-parallel      # name of the job
                        #SBATCH -n 4                 # nr. tasks/coresw
                        #SBATCH --time=00:20:00      # requested time
                        #SBATCH --error=job.%J.err   # error file
@@ -1071,9 +1126,9 @@ Exercises
                     .. code-block:: sh
                         
                         #!/bin/bash            
-                        #SBATCH -A hpc2n2023-110     # your project_ID       
-                        #SBATCH -J job-serial        # name of the job         
-                        #SBATCH -n 1                 # nr. tasks  
+                        #SBATCH -A hpc2n202x-XXX     # your project_ID       
+                        #SBATCH -J job-parallel      # name of the job         
+                        #SBATCH -n 4                 # nr. tasks  
                         #SBATCH --time=00:20:00      # requested time
                         #SBATCH --error=job.%J.err   # error file
                         #SBATCH --output=job.%J.out  # output file  
@@ -1082,6 +1137,23 @@ Exercises
                         module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07
                         python script-df.py
 
+               .. tab:: LUNARC
+
+                    .. code-block:: sh
+                           
+                        #!/bin/bash            
+                        #SBATCH -A lu202X-XX-XX      # your project_ID
+                        #SBATCH -J job-parallel      # name of the job         
+                        #SBATCH -n 4	             # nr. tasks  
+                        #SBATCH --time=00:20:00      # requested time
+                        #SBATCH --error=job.%J.err   # error file
+                        #SBATCH --output=job.%J.out  # output file 
+			#SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
+
+                        # Purge and load any modules you need, here for Python & SciPy-bundle
+                        ml purge
+                        ml GCCcore/12.3.0  Python/3.11.3  SciPy-bundle/2023.07
+                        python dscript-df.py
 
       .. tab:: Julia
 
@@ -1142,7 +1214,7 @@ Exercises
 
                        #!/bin/bash -l
                        #SBATCH -A naiss2024-22-107     # your project_ID
-                       #SBATCH -J job-serial        # name of the job
+                       #SBATCH -J job-parallel      # name of the job
                        #SBATCH -n 4                 # nr. tasks/coresw
                        #SBATCH --time=00:20:00      # requested time
                        #SBATCH --error=job.%J.err   # error file
@@ -1158,7 +1230,7 @@ Exercises
                         
                         #!/bin/bash            
                         #SBATCH -A hpc2n2023-110     # your project_ID       
-                        #SBATCH -J job-serial        # name of the job         
+                        #SBATCH -J job-parallel      # name of the job         
                         #SBATCH -n 4                 # nr. tasks  
                         #SBATCH --time=00:20:00      # requested time
                         #SBATCH --error=job.%J.err   # error file
@@ -1169,6 +1241,24 @@ Exercises
 
                         julia --threads 4 script-df.jl  # X number of threads
 
+
+            .. tab:: LUNARC
+
+                 .. code-block:: sh
+                           
+                       #!/bin/bash            
+                       #SBATCH -A lu202X-XX-XX      # your project_ID
+                       #SBATCH -J job-parallel      # name of the job         
+                       #SBATCH -n 4	            # nr. tasks  
+                       #SBATCH --time=00:20:00      # requested time
+                       #SBATCH --error=job.%J.err   # error file
+                       #SBATCH --output=job.%J.out  # output file 
+		       #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
+
+                       ml purge
+                       ml Julia/1.9.3-linux-x86_64
+
+                       julia --threads 4 script-df.jl  # X number of threads
 
       .. tab:: R
 
@@ -1231,7 +1321,7 @@ Exercises
                         
                        #!/bin/bash -l
                        #SBATCH -A naiss2024-22-107     # your project_ID
-                       #SBATCH -J job-serial        # name of the job
+                       #SBATCH -J job-parallel      # name of the job
                        #SBATCH -n 4                 # nr. tasks/coresw
                        #SBATCH --time=00:20:00      # requested time
                        #SBATCH --error=job.%J.err   # error file
@@ -1247,8 +1337,8 @@ Exercises
 
                         #!/bin/bash            
                         #SBATCH -A hpc2n2023-110     # your project_ID       
-                        #SBATCH -J job-serial        # name of the job         
-                        #SBATCH -n 1                 # nr. tasks  
+                        #SBATCH -J job-parallel      # name of the job         
+                        #SBATCH -n 4                 # nr. tasks  
                         #SBATCH --time=00:20:00      # requested time
                         #SBATCH --error=job.%J.err   # error file
                         #SBATCH --output=job.%J.out  # output file  
@@ -1256,6 +1346,24 @@ Exercises
                         ml purge > /dev/null 2>&1
                         ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
                         Rscript --no-save --no-restore script-df.R
+
+
+            .. tab:: LUNARC
+
+                 .. code-block:: sh
+                           
+                       #!/bin/bash            
+                       #SBATCH -A lu202X-XX-XX      # your project_ID
+                       #SBATCH -J job-parallel      # name of the job         
+                       #SBATCH -n 4                 # nr. tasks  
+                       #SBATCH --time=00:20:00      # requested time
+                       #SBATCH --error=job.%J.err   # error file
+                       #SBATCH --output=job.%J.out  # output file 
+		       #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
+
+                       ml purge > /dev/null 2>&1
+                       ml GCC/11.3.0  OpenMPI/4.1.4  R/4.2.1
+                       Rscript --no-save --no-restore script-df.R
 
       .. tab:: Matlab
       
