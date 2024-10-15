@@ -1,13 +1,12 @@
 Pre-requirements
 ================
 
-To be able to follow this course,
-you need to be able to log in to at least one of
-our HPC clusters, in at least one way.
+To be able to follow this course, you need to be able to log in to at least one of our HPC clusters, in at least one way.
 
 .. info::
 
-   There will be an opportunity to get help with log in every morning of the workshop at 9.00.
+   - There will be an opportunity to get help with log in every morning of the workshop at 9.00.
+   - You are also welcome to join the On-boarding The Day before the Ordinary program starts.
 
 Log in to one of the HPC systems covered in this course
 -------------------------------------------------------
@@ -92,7 +91,7 @@ Get familiar with the Linux/Bash command line
   - `HPC2N's YouTube channel video on Linux <https://www.youtube.com/watch?v=gq4Dvt2LeDg>`_
 
 - LUNARC
-  - Any of the above links whould be helpful for you
+    - Any of the above links would be helpful for you
 
 
 Get familiar with a text editor on a cluster
@@ -106,7 +105,7 @@ The clusters provide these text editors on the command line:
 
 We recommend ``nano`` unless you are used to another editor:
 
-- `Text editors at HPC2N <http://docs.uppmax.uu.se/software/text_editors/>`_ 
-- `Text editors at UPPMAX <https://docs.hpc2n.umu.se/tutorials/linuxguide/#editors>`_ 
-
+- `Text editors at HPC2N <https://docs.hpc2n.umu.se/tutorials/linuxguide/#editors>`_ 
+- `Text editors at UPPMAX <http://docs.uppmax.uu.se/software/text_editors/>`_ 
+  - Any of the above links would be helpful for you
 
