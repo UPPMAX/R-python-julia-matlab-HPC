@@ -129,6 +129,7 @@ example the name of the host will be displayed as many times as the present numb
     end
 
 ``parfeval``
+~~~~~~~~~~~~
 
 This function is more advanced than the previous two and it allows you to do asynchronous calculations,
 which means that those calculations can start when resources are available but the execution order is not needed.
@@ -200,9 +201,46 @@ which will display the host name:
 Notice that the host name displayed is the one where the job ran not where the MATLAB GUI is running.
 All parallel functionalities in MATLAB can be executed inside a ``parpool``. 
 
+-------------------
 
 Exercises
 ---------
+
+
+.. challenge:: Create and run a parallel code
+   :class: dropdown
+
+   We have the following code in MATLAB that generates an array of 10000 random numbers and then the 
+   sum of all elements is stored in a variable called **s**:
+
+   .. code-block:: matlab 
+
+       r = rand(1,10000);
+       s = sum(r); 
+
+    We want now to repeat these steps (generating the numbers and taking the sum) 6 times so that 
+    the steps are run at the same time. Use ``parfor`` to parallelize these steps. Once your code is
+    parallelized enclose it in a ``parpool`` section and send the job to the queue. 
+
+.. solution:: Solution 
+
+    % Nr. of workers
+    nworkers = 6;
+
+    % Use parallel pool with 'parfor'
+    parpool('name-of-your-cluster',nworkers);  % Start parallel pool with nworkers workers
+
+    myarray = []; % Optional in this exercise to store partial results
+    parfor i=1:nworkers
+       r = rand(1,10000);
+       s = sum(r);
+       myarray = [myarray,s];
+    end
+
+    myarray  % print out the results from the workers
+
+    % Clean up the parallel pool
+    delete(gcp('nocreate')); 
 
 .. keypoints::
 

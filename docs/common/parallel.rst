@@ -662,7 +662,7 @@ Exercises
                            #SBATCH --time=00:20:00      # requested time
                            #SBATCH --error=job.%J.err   # error file
                            #SBATCH --output=job.%J.out  # output file 
-			   #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
+			                  #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
 
                            # Do a purge and load any modules you need, here for Python 
                            ml purge > /dev/null 2>&1
@@ -814,7 +814,7 @@ Exercises
                            #SBATCH --time=00:20:00      # requested time
                            #SBATCH --error=job.%J.err   # error file
                            #SBATCH --output=job.%J.out  # output file 
-			   #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
+			                  #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
 
                            ml purge  > /dev/null 2>&1
                            ml Julia/1.9.3-linux-x86_64
@@ -954,7 +954,7 @@ Exercises
                             #SBATCH --time=00:20:00      # requested time
                             #SBATCH --error=job.%J.err   # error file
                             #SBATCH --output=job.%J.out  # output file 
-			    #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
+			                   #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
 
                             ml purge > /dev/null 2>&1
                             ml GCC/11.3.0  OpenMPI/4.1.4  R/4.2.1
@@ -1039,7 +1039,8 @@ Exercises
 
             Challenge: Increase the grid size (``n``) to 100000 and submit the batch job with 4 workers. 
             Monitor the usage of resources with tools available at your center, for instance ``top`` (UPPMAX),
-            ``job-usage`` (HPC2N), or if you're working in the GUI (e.g. on LUNARC), you can click ``Parallel`` and then ``Monitor Jobs``. For ``job-usage``, you can see the job ID if you type ``squeue --me`` on a terminal on Kebnekaise.
+            ``job-usage`` (HPC2N), or if you're working in the GUI (e.g. on LUNARC), you can click ``Parallel`` 
+            and then ``Monitor Jobs``. For ``job-usage``, you can see the job ID if you type ``squeue --me`` on a terminal on Kebnekaise.
 
 
 
@@ -1148,7 +1149,7 @@ Exercises
                         #SBATCH --time=00:20:00      # requested time
                         #SBATCH --error=job.%J.err   # error file
                         #SBATCH --output=job.%J.out  # output file 
-			#SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
+			               #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
 
                         # Purge and load any modules you need, here for Python & SciPy-bundle
                         ml purge
@@ -1171,7 +1172,8 @@ Exercises
 
          - Here is an exercise to fix some code snippets. Call the script ``script-df.jl``.
          - Watch out for ``*FIXME*`` and replace with suitable functions
-         - The functions ``nthreads()`` (number of available threads), and ``threadid()`` (the thread identification number) will be useful in this task. 
+         - The functions ``nthreads()`` (number of available threads), and ``threadid()`` 
+           (the thread identification number) will be useful in this task. 
 
          .. code-block:: julia
 
@@ -1253,7 +1255,7 @@ Exercises
                        #SBATCH --time=00:20:00      # requested time
                        #SBATCH --error=job.%J.err   # error file
                        #SBATCH --output=job.%J.out  # output file 
-		       #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
+		                 #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
 
                        ml purge
                        ml Julia/1.9.3-linux-x86_64
@@ -1359,7 +1361,7 @@ Exercises
                        #SBATCH --time=00:20:00      # requested time
                        #SBATCH --error=job.%J.err   # error file
                        #SBATCH --output=job.%J.out  # output file 
-		       #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
+		                 #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
 
                        ml purge > /dev/null 2>&1
                        ml GCC/11.3.0  OpenMPI/4.1.4  R/4.2.1
