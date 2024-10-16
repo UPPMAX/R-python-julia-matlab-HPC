@@ -33,16 +33,32 @@ There are several ways to run Matlab interactively
 Running Matlab in a Jupyter notebook 
 ------------------------------------
 
+- Like for Python it is possible to run Matlab in a notebook, i.e. in a web interface with possibility of inline 
+        figures and debugging. An easy way to do this is to load *Python* and *Matlab* modules. In shell:
+
 .. tabs::
 
    .. tab:: UPPMAX
 
-      - For more interactiveness you can run FIXME
+      .. code-block:: console
+
+         # Load Matlab 
+         $ ml matlab/2023a
+         # Load a Python version compatible with Matlab
+         $ ml python/3.10.8
+         # Create an environment called matlabenv (you can change this name)
+         $ python -m venv ./matlabenv
+         # Activate this environment
+         $ source matlabenv/bin/activate
+         # Perform installations: upgrade pip, and packages that you will need
+         $ pip install --upgrade pip
+         $ pip install -U scikit-learn
+         # Install Jupyterlab
+         $ pip install jupyterlab
+         # Install the Matlab proxy
+         pip install jupyter-matlab-proxy
 
    .. tab:: HPC2N
-
-      - Like for Python it is possible to run Matlab in a notebook, i.e. in a web interface with possibility of inline 
-        figures and debugging. An easy way to do this is to load *Python* and *Matlab* modules. In shell:
 
       .. code-block:: console
 
