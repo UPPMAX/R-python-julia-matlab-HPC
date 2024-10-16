@@ -56,7 +56,36 @@ Running Matlab in a Jupyter notebook
          # Install Jupyterlab
          $ pip install jupyterlab
          # Install the Matlab proxy
-         pip install jupyter-matlab-proxy
+         $ pip install jupyter-matlab-proxy
+         $ deactivate
+
+      Start interactive session to not interfere with other users
+
+      .. code-block:: console
+
+         # Ask for a suitable amount of time. Remember, this is the time the Jupyter notebook will be available! HHH:MM:SS.
+         $ interactive -A Project_ID -p core -n 1 -t 1:0:0
+         # If you use a GPU node add this snippet to the interactive command (for clarity after project ID
+         # -M snowy --gres:gpu:1 
+
+         $ ml matlab/2023a
+         $ ml python/3.10.8
+
+         # Source the environment
+         $ source matlabenv/bin/activate
+         # Start JupyterLab
+         $ jupyter lab --no-browser &
+         $ <press enter to get to active prompt>
+         $ firefox <url from output above> &
+
+      When the Jupyter notebook interface starts, you can choose the **MATLAB kernel** version from the module you loaded. When you try to run a notebook, Matlab will ask for a type of license. Because you are running this notebook on our HPC center, you can choose the option Existing License and then Start MATLAB. It can take a minute or so to start.
+
+      .. admonition:: Running Julia in Jupyter on compute nodes at HPC2N
+
+         - On Kebnekaise, you can run Jupyter notebooks with Matlab kernels by using batch scripts    
+         - Notebook example: https://github.com/hpc2n/intro-course/blob/master/exercises/JUPYTERNOTEBOOKS/MATLAB/matlab_kernel.ipynb
+         - https://www.hpc2n.umu.se/resources/software/jupyter-julia
+
 
    .. tab:: HPC2N
 
@@ -76,7 +105,8 @@ Running Matlab in a Jupyter notebook
          # Install Jupyterlab
          $ pip install jupyterlab
          # Install the Matlab proxy
-         pip install jupyter-matlab-proxy
+         $ pip install jupyter-matlab-proxy
+         $ deactivate
 
 
       Fix the project ID in this batch job job.sh and send it to the queue:
