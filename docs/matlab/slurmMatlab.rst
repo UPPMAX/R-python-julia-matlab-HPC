@@ -4,12 +4,12 @@ The Slurm job scheduler and MATLAB
 .. questions::
 
    - What is a batch job?
-   - How to make a batch for MATLAB?
+   - How to make a batch job for MATLAB?
    
 .. objectives:: 
 
    - Understand and use the Slurm scheduler
-   - Start batch jobs from MATLAB Graphical User Interface
+   - Start (Matlab) batch jobs from the command line
    - Try example
 
 .. admonition:: Compute allocations in this workshop 
