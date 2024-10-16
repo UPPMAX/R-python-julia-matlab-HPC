@@ -10,13 +10,11 @@ The Rackham MATLAB support package can be found at [uppsala.Desktop.zip](https:/
 
    >> userpath
 
-
 - You can unzip from MATLAB's Command window.
 
 - Configure MATLAB to run parallel jobs on the cluster by calling ``configCluster``. ``configCluster`` only needs to be called once per version of MATLAB.
 
 .. code-block:: matlab
-
 
    >> configCluster
 
@@ -25,7 +23,6 @@ Jobs will now default to the cluster rather than submit to the local machine.
 NOTE: To submit to the local machine instead of the cluster, run the following:
 
 .. code-block:: matlab
-
 
    >> % Get a handle to the local resources
    >> c = parcluster('local');
@@ -73,7 +70,7 @@ Prior to submitting the job, various parameters can be assigned, such as queue, 
 
    >> % Use reservation 
    >> c.AdditionalProperties.Reservation = 'reservation-name';
-```
+
 
 Save changes after modifying AdditionalProperties for the above changes to persist between MATLAB sessions.
 
