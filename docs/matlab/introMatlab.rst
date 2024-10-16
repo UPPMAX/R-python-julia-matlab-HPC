@@ -66,8 +66,8 @@ Preliminary schedule
      - **Break**
      - 
    * - 11.05
-     - Add-ons/packages 
-     - Lecture+code along 45m
+     - Add-Ons/packages 
+     - Lecture+code along 25m
    * - 11.30
      - Slurm jobs on the command line  
      - Lecture+code along + exercise 45m
