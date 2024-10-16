@@ -227,29 +227,31 @@ Exercises
        r = rand(1,10000);
        s = sum(r); 
 
-    We want now to repeat these steps (generating the numbers and taking the sum) 6 times so that 
-    the steps are run at the same time. Use ``parfor`` to parallelize these steps. Once your code is
-    parallelized enclose it in a ``parpool`` section and send the job to the queue. 
+   We want now to repeat these steps (generating the numbers and taking the sum) 6 times so that 
+   the steps are run at the same time. Use ``parfor`` to parallelize these steps. Once your code is
+   parallelized enclose it in a ``parpool`` section and send the job to the queue. 
 
 .. solution:: Solution 
 
-    % Nr. of workers
-    nworkers = 6;
+    .. code-block:: matlab 
 
-    % Use parallel pool with 'parfor'
-    parpool('name-of-your-cluster',nworkers);  % Start parallel pool with nworkers workers
+        % Nr. of workers
+        nworkers = 6;
 
-    myarray = []; % Optional in this exercise to store partial results
-    parfor i=1:nworkers
-       r = rand(1,10000);
-       s = sum(r);
-       myarray = [myarray,s];
-    end
+        % Use parallel pool with 'parfor'
+        parpool('name-of-your-cluster',nworkers);  % Start parallel pool with nworkers workers
 
-    myarray  % print out the results from the workers
+        myarray = []; % Optional in this exercise to store partial results
+        parfor i=1:nworkers
+           r = rand(1,10000);
+           s = sum(r);
+           myarray = [myarray,s];
+        end
 
-    % Clean up the parallel pool
-    delete(gcp('nocreate')); 
+        myarray  % print out the results from the workers
+
+        % Clean up the parallel pool
+        delete(gcp('nocreate')); 
 
 .. challenge:: Run a parallel code with ``batch`` MATLAB function
    :class: dropdown
@@ -263,8 +265,8 @@ Exercises
             results = parfeval(@mean, 1, rand(nsize))
         end
 
-    Place this function in a file called **parfeval_mean.m** and submit this function with 
-    the MATLAB ``batch`` command.
+   Place this function in a file called **parfeval_mean.m** and submit this function with 
+   the MATLAB ``batch`` command.
 
 
 .. keypoints::
