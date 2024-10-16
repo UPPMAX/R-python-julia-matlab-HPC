@@ -84,12 +84,12 @@ Check for MATLAB versions
   
   In this course we will use MATLAB R202??.
 
-.. admonition:: Output at HPC2N (Kebnekaise) as of 26 Sep 2024  
+.. admonition:: Output at UPPMAX (Rackham) as of 16 October 2024  
     :class: dropdown
 
         .. code-block:: console
 
-            $ ml spider MATLAB
+            $ ml avail matlab
             ----------------------------------------------------------------------------
               MATLAB:
             ----------------------------------------------------------------------------
@@ -108,6 +108,27 @@ Check for MATLAB versions
                     MATLAB-parallel-support
             
             ----------------------------------------------------------------------------
+
+.. admonition:: Output at HPC2N (Kebnekaise) as of 26 Sep 2024  
+    :class: dropdown
+
+        .. code-block:: console
+
+            $ ml spider MATLAB
+            ---------------------------- /sw/mf/rackham/applications ----------------------------
+               matlab/R2014a    matlab/R2018a    matlab/R2022b          matlab/7.10
+               matlab/R2015a    matlab/R2018b    matlab/R2023a          matlab/7.13
+               matlab/R2015b    matlab/R2019a    matlab/R2023b (L,D)    matlab/8.0
+               matlab/R2016a    matlab/R2020b    matlab/7.4             matlab/8.1
+               matlab/R2017a    matlab/R2022a    matlab/7.8
+
+              Where:
+               L:  Module is loaded
+               D:  Default Module
+
+            Use "module spider" to find all possible modules and extensions.
+            Use "module keyword key1 key2 ..." to search for all possible modules matching any
+            of the "keys".
 
 
 .. admonition:: Output at LUNARC (Cosmos nodes) as of 4 Sep 2024  
