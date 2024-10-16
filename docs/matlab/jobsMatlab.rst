@@ -185,6 +185,13 @@ If you are doing continuous modifications to your code and running it to make su
 using a ``parpool`` could be a better option than the ``batch`` command. Here, you create a 
 pool of workers with the ``parpool`` function that are available to run parallel functions such
 as those mentioned above (``parfor``, ``spmd``, and ``parfeval``) until this pool is deleted. 
+
+.. warning::
+   
+   Notice that if you run a serial function (that maybe consumes 100% of the CPU) inside a ``parpool``
+   block, this function will be executed on the local machine (maybe the login node) and not on a 
+   compute node.
+
 In the following example a pool of ``4`` workers is created that will solve a ``parfor`` loop 
 which will display the host name:
 
