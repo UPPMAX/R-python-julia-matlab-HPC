@@ -192,15 +192,15 @@ as those mentioned above (``parfor``, ``spmd``, and ``parfeval``) until this poo
    block, this function will be executed on the local machine (maybe the login node) and not on a 
    compute node.
 
-In the following example a pool of ``4`` workers is created that will solve a ``parfor`` loop 
+In the following example a pool of ``n`` workers is created that will solve a ``parfor`` loop 
 which will display the host name:
 
 .. code-block:: matlab
    
     % Use parallel pool with 'parfor'
-    parpool('name-of-your-cluster',4);  % Start parallel pool with num_workers = 4 workers
+    parpool('name-of-your-cluster',n);  % Start parallel pool with nworkers = n workers
 
-        parfor i=1:4
+        parfor i=1:n
             disp(getenv("HOSTNAME"))
         end
 
