@@ -48,60 +48,69 @@ Preliminary schedule
      - Topic
      - Activity
    * - 9:00
-     - Syllabus 
-     - 10m
-   * - 9.10
-     - Introduction, MATLAB in general
-     - Lecture 20 m 
-   * - 9.30
-     - Loading modules and running MATLAB codes 
-     - Lecture+code along 30m
+     - Log in 
+     - 45m
    * - 9.45
      - **Coffee break**
      - 
-   * - 10.00
-     - Packages and isolated environments   
-     - Lecture+code along 45m
-   * - 10.55
-     - **break**
+   * - 10:00
+     - Syllabus 
+     - 10m
+   * - 10.15
+     - Introduction, MATLAB in general
+     - Lecture 20 m 
+   * - 10.25
+     - Loading modules and running MATLAB codes 
+     - Lecture+code along 30m
+   * - 10.50
+     - **Break**
      - 
    * - 11.05
-     - SLURM Batch scripts for MATLAB jobs  
+     - Add-ons/packages 
+     - Lecture+code along 45m
+   * - 11.30
+     - Slurm jobs on the command line  
      - Lecture+code along + exercise 45m
-   * - 11.50
-     - Exercises and informal chat
-     - 
    * - 12.00
      - **LUNCH**
      -
    * - 13.00
-     - Exercises and informal chat
+     - Parallel, syntax, pool, matlab batch
      - 
-   * - 13.15
+   * - 13.30
      - Parallel and multithreaded functions   
      - Lecture+code along + exercise 30m
    * - 13.50
      - **break**
      - 
    * - 14.00
-     - Parallel session — UPPMAX: Interactive work
+     - Cont'd Parallel and multithreaded functions   
+     - Lecture+code along + exercise 30m
+   * - 14.30
+     - GPU 
+     - Lecture+code along + exercise 30m
+   * - 14.50
+     - **Coffee break**
+     - 
+   * - 15.05
+     - Simultaneous session — UPPMAX: Interactive work
      - Lecture+code along 25m
    * - .
-     - Parallel session — HPC2N: Interactive work
+     - Simultaneous session — HPC2N: Interactive work
      - Lecture+code along 25m   
    * - .
-     - Parallel session — LUNARC: Interactive work
+     - Simultaneous session — LUNARC: Interactive work
      - Lecture+code along 25m  
-   * - 14.25
+   * - 15.35
      - Summary 
      -
-   * - 14.35
+   * - 15.40
      - Evaluation
      -
-   * - 14.45
+   * - 15.50
      - Q&A on-demand
      -
-   * - 15.00
+   * - 16.00
      - END
      -
 
