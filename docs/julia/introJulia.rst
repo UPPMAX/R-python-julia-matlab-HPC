@@ -110,23 +110,11 @@ Preliminary schedule
    * - 15.00
      - END
      -
-.. important:: 
-
-   - **Menti:**
-   - https://www.menti.com/alvj5kukhz75
-   - with code valid the week: `12 40 73 1` https://www.menti.com.
-
-
-.. Discussion:: **Menti**
-
-   - Which University?
-   - Which scientific topic?
-
-
 
 
 .. instructor-note::
 
+   - **FIX**
    - Intro 10 min 
    - Lecture and demo 10 min
    - Exercise 0 min
