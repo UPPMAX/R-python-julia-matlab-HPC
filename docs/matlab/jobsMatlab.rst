@@ -141,6 +141,8 @@ The results can be fetched once the simulation finishes.
     results = fetchOutputs(f);
 
 
+Running parallel jobs
+'''''''''''''''''''''
 
 Parallel jobs which include functions like ``parfor``, ``spmd``, and ``parfeval`` can be handled in two ways 
 in the MATLAB GUI either by using the ``batch`` command (we mentioned above for serial jobs) or by creating a ``parpool``. 
@@ -242,12 +244,27 @@ Exercises
     % Clean up the parallel pool
     delete(gcp('nocreate')); 
 
+.. challenge:: Run a parallel code with ``batch`` MATLAB function
+   :class: dropdown
+
+   The following function uses ``parfeval`` to do some computation (specifically it takes the 
+   average per-column of a matrix with a size ``nsize``):
+
+   .. code-block:: matlab 
+
+        function results = parfeval_mean(nsize)
+            results = parfeval(@mean, 1, rand(nsize))
+        end
+
+    Place this function in a file called **parfeval_mean.m** and submit this function with 
+    the MATLAB ``batch`` command.
+
+
 .. keypoints::
 
-   - **FIX**
    - The SLURM scheduler handles allocations to the calculation nodes
-   - Batch jobs runs without interaction with user
-   - A batch script consists of a part with SLURM parameters describing the allocation and a second part describing the actual work within the job, for instance one or several Python scripts.
-      
-      - Remember to include possible input arguments to the Python script in the batch script.
+   - MATLAB has good integration with SLURM and because of that one can submit jobs to the
+     queue directly from the GUI.  
+   - MATLAB has several tools to parallelize your code and we have explored here ``parfor``, ``spmd``,
+     and ``parfeval``, but there are other `tools available <https://se.mathworks.com/help/overview/parallel-computing.html?s_tid=hc_product_group_bc>`_. 
     
