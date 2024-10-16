@@ -97,7 +97,7 @@ In such a case: use an interactive session.
     For UPPMAX, using Jupyter is easier 
     and this will be shown in this course, in `the UPPMAX-only session on Jupyter <https://uppmax.github.io/HPC-python/jupyter.html>`_.
 
-    For LUNARC, using Jupyter https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/#jupyter-lab() is done through Anaconda and works best using the LUNARC HPC Desktop: https://lunarc-documentation.readthedocs.io/using_hpc_desktop 
+    For LUNARC, using Jupyter https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/#jupyter-lab() works best using the `LUNARC HPC Desktop <https://lunarc-documentation.readthedocs.io/using_hpc_desktop>`_. Go to the Applications menu, hover over Applications - Python, and select Jupyter Lab from the menu that pops up to the right.
 
 An interactive session is a session with direct access to a compute node.
 Or alternatively: an interactive session is a session,
@@ -131,26 +131,27 @@ This differs between HPC2N, UPPMAX, and LUNARC:
   All commands can be sent directly to the compute node using ``srun``
 - UPPMAX: the user is actually on a computer node.
   Whatever command is done, it is run on the compute node
-- LUNARC: the user is actually on a computer node.
+- LUNARC: the user is actually on a computer node if the correct menu option is chosen.
   Whatever command is done, it is run on the compute node
 
 Start an interactive session
 ----------------------------
 
-To start an interactive session, 
-one needs to allocate resources on the cluster first.
+To start an interactive session, one needs to allocate resources on the cluster first.
+On the LUNARC HPC desktop, this is done by choosing applications from the Desktop On Demand
+Applications menu and selecting/filling in resources in the GfxLauncher popup.
+For HPC2N and UPPMAX, this must be done at the command line. See also the following table:
 
-The command to request an interactive node differs per HPC cluster:
++---------+-----------------+-------------+-------------+
+| Cluster | ``interactive`` | ``salloc``  | GfxLauncher |
++=========+=================+=============+=============+
+| HPC2N   | Works           | Recommended | N/A         |
++---------+-----------------+-------------+-------------+
+| UPPMAX  | Recommended     | Works       | N/A         |
++---------+-----------------+-------------+-------------+
+| LUNARC  | Works           | N/A         | Recommended |
++---------+-----------------+-------------+-------------+
 
-+---------+-----------------+-------------+
-| Cluster | ``interactive`` | ``salloc``  |
-+=========+=================+=============+
-| HPC2N   | Works           | Recommended |
-+---------+-----------------+-------------+
-| UPPMAX  | Recommended     | Works       |
-+---------+-----------------+-------------+
-| LUNARC  |                 |             |
-+---------+-----------------+-------------+
 
 Start an interactive session in the simplest way
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -229,8 +230,13 @@ To start an interactive session in the simplest way, is shown here:
           b-an01 [~]$ module load GCC/12.3.0 Python/3.11.3
           b-an01 [~]$ 
 
-Indeed, all you need is the UPPMAX/HPC2N project name.
-However, this simplest way may have some defaults settings 
+   .. tab:: LUNARC
+
+      See https://uppmax.github.io/R-python-julia-matlab-HPC/common/ondemand-desktop.html#how-do-i-start
+
+
+Indeed, all you really need is the project name.
+However, this way may have some default settings 
 that do not fit you.
 
 Start an interactive session in a more elaborate way
