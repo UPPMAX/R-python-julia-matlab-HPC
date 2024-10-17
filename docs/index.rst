@@ -190,6 +190,8 @@ Briefly about the cluster hardware and system at UPPMAX and HPC2N
 .. figure:: https://docs.hpc2n.umu.se/images/cluster.png
    :align: center
 
+   Source: https://docs.hpc2n.umu.se/images/cluster.png
+
 - The **calculation nodes** have to be used for intense computing. 
 
 The two HPC centers UPPMAX and HPC2N
