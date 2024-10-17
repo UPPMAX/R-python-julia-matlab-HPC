@@ -24,8 +24,10 @@ Running Julia in batch mode
    - Rackham: ``/proj/r-py-jl``
    - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
 
+.. warning::
 
-Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
+   - Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
+
 
 The batch system used at both UPPMAX and HPC2N is called SLURM. 
 
@@ -36,8 +38,7 @@ SLURM is an Open Source job scheduler, which provides three key functions
 - Manages a job queue, distributing work across resources according to policies
 
 In order to run a batch job, you need to create and submit a SLURM submit file (also called a batch submit file, a batch script, or a job script).
-
-Guides and documentation at: http://www.hpc2n.umu.se/support and https://docs.uppmax.uu.se/cluster_guides/slurm/
+Guides and documentation at: `HPC2N <http://www.hpc2n.umu.se/support>`_ and `UPPMAX <https://docs.uppmax.uu.se/cluster_guides/slurm/>`_. 
 
 **Workflow**
 
@@ -126,7 +127,7 @@ Serial code + self-installed package in virt. env.
    .. tab:: UPPMAX
 
         Short serial example for running on Rackham. Loading Julia v. 1.8.5 and using any Julia packages you have installed
-        yourself with virtual environment. 
+        with virtual environment. 
 
         .. code-block:: bash
         
@@ -154,7 +155,7 @@ Serial code + self-installed package in virt. env.
    .. tab:: HPC2N
 
         Short serial example for running on Kebnekaise. Loading Julia v. 1.8.5 and using any Julia packages you have installed
-        yourself with virtual environment. 
+        with virtual environment. 
        
         .. code-block:: bash
 
