@@ -33,12 +33,8 @@ In the GUI, the Add-Ons manager can be selected from the menu at the top. The dr
    - **Manage Add-Ons already downloaded.**
    - Package user-generated code as a Toolbox or App
    - Get hardware-related support packages
+
 Here we will only focus on the first two options.
-
-
 
 Exercises
 ---------
-
-
-
