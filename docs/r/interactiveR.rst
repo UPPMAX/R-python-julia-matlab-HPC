@@ -26,12 +26,12 @@ Interactive work on the compute nodes
    - Kebnekaise: ``hpc2n2024-025``
 
 Overview of the UPPMAX systems
-##############################
+------------------------------
 
 .. mermaid:: ../mermaid/uppmax2.mmd
 
 Overview of the HPC2N system
-############################
+----------------------------
 
 .. mermaid:: ../mermaid/kebnekaise.mmd
 
@@ -51,7 +51,7 @@ on, and this is done through the batch system.
 
 
 R "interactively" on the compute nodes 
--------------------------------------------
+--------------------------------------
 
 To run interactively, you need to allocate resources on the cluster first. You
 can use the command ``salloc``/``intereactive`` to allow interactive use of resources allocated to
@@ -174,10 +174,8 @@ Example **Type along**
       
          We are. Notice that we got a response from all four cores we have allocated.   
       
-      
-   Running a script
-   ''''''''''''''''
-
+   **Running a script**
+   
    .. warning::
 
       - You need to reload all modules you used on the login node!!!
