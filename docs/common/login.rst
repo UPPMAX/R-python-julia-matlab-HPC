@@ -11,7 +11,7 @@ Log in session
       - The examples will often have specific information, like module names and versions, which may vary. What you learn here should help you to make any changes needed for the other centres. 
       - When present, links to the Python/Julia/R/Matlab documentation at other NAISS centres are given in the corresponding session.
 
-.. info::
+.. note::
 
    - You were invited to be part of the course project for Rackham/Snowy (UPPMAX).
    - If you already have research projects in any of the clusters you can use them. The CPU-hours required during the course will be low!
@@ -103,7 +103,7 @@ We recommend ``nano`` unless you are used to another editor:
 - `Text editors at UPPMAX <http://docs.uppmax.uu.se/software/text_editors/>`_ 
   - Any of the above links would be helpful for you.
 
-.. question::
+.. challenge::
 
    - Let's make a script with the name ``example.py``  
 
