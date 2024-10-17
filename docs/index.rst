@@ -257,7 +257,7 @@ Content of the course
    common/ondemand-desktop.rst
 
 .. toctree::
-   :titlesonly:
+#   :titlesonly:
    :maxdepth: 2
    :caption: Python Lessons:
 
@@ -275,7 +275,7 @@ Content of the course
    python/summaryPython.rst
    
 .. toctree::
-   :titlesonly:
+#   :titlesonly:
    :maxdepth: 2
    :caption: Julia Lessons:
 
@@ -289,7 +289,7 @@ Content of the course
    julia/summaryJulia.rst
    
 .. toctree::
-   :titlesonly:
+#   :titlesonly:
    :maxdepth: 2
    :caption: R Lessons:
 
@@ -306,7 +306,7 @@ Content of the course
    r/summaryR.rst
 
 .. toctree::
-   :titlesonly:
+#   :titlesonly:
    :maxdepth: 2
    :caption: Matlab Lessons:
 
