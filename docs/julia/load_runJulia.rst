@@ -173,7 +173,7 @@ For this course, we recommend using the following Julia versions, because the ex
 
          .. code-block:: console
 
-            $ module load Julia/1.9.3-linux-x86_64
+            $ module load Julia/1.8.5-linux-x86_64
 
          Note: Uppercase ``J``.   
 
@@ -181,7 +181,7 @@ For this course, we recommend using the following Julia versions, because the ex
 
          .. code-block:: console
 
-            $ ml Julia/1.9.3-linux-x86_64
+            $ ml Julia/1.8.5-linux-x86_64
 
 Workflow in Julia (DEMO)
 ------------------------
@@ -217,14 +217,14 @@ read-eval-print-loop (REPL) command line by typing ``julia``:
 
         .. code-block:: julia-repl
          
-         $ ml Julia/1.9.3-linux-x86_64
+         $ ml Julia/1.8.5-linux-x86_64
          $ julia 
 
             _       _ _(_)_     |  Documentation: https://docs.julialang.org
            (_)     | (_) (_)    |
             _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
            | | | | | | |/ _` |  |
-           | | |_| | | | (_| |  |  Version 1.9.3 (2023-08-24)
+           | | |_| | | | (_| |  |  Version 1.8.5 (2023-01-08)
           _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
          |__/                   |
 
@@ -253,7 +253,7 @@ Another mode available in Julia is the ``package manager`` mode, it can be acces
 .. code-block:: julia-repl
 
    julia>]
-   (v1.9) pkg>
+   (v1.8) pkg>
 
 this will make your interaction with the package manager **Pkg** easier, for instance,
 instead of typing the complete name of **Pkg** commands such as ``Pkg.status()`` in the
@@ -373,7 +373,7 @@ Exercises
       .. code-block:: console
 
             $ ml purge  > /dev/null 2>&1       # recommended purge
-            $ ml Julia/1.9.3-linux-x86_64      # Julia module
+            $ ml Julia/1.8.5-linux-x86_64      # Julia module
                   
             $ julia serial-sum.jl Arg1 Arg2    # run the serial script
 
