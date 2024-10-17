@@ -60,7 +60,7 @@ If you are usually working with for instance NumPy and SciPy, you could optimize
 One of the most common use of GPUs with Python is for machine learning or deep learning. For these cases you would use something like Tensorflow or PyTorch libraries which can handle CPU and GPU processing internally without the programmer needing to do so. 
 
 GPUs on UPPMAX, HPC2N, and LUNARC systems
---------------------------------
+-----------------------------------------
 
 There are generally either not GPUs on the login nodes or they cannot be accessed for computations. 
 To use them you need to either launch an interactive job or submit a batch job.
