@@ -57,57 +57,57 @@ Preliminary schedule
      - Topic
      - Activity
    * - 9:00
-     - Syllabus 
-     - 10m
-   * - 9.10
-     - Introduction, Julia in general
-     - Lecture 20 m 
-   * - 9.30
-     - Loading modules and running Julia codes 
-     - Lecture+code along 30m
+     - Log in 
+     - 45m
    * - 9.45
      - **Coffee break**
      - 
-   * - 10.00
-     - Packages and isolated environments   
-     - Lecture+code along 45m
+   * - 10:00
+     - Syllabus 
+     - 10m
+   * - 10.15
+     - Introduction, Julia in general
+     - Lecture 10 m 
+   * - 10.25
+     - Loading modules and running Julia codes 
+     - Lecture+code along 30m
    * - 10.55
-     - **break**
+     - **Break**
      - 
-   * - 11.05
-     - SLURM Batch scripts for Julia jobs  
-     - Lecture+code along + exercise 45m
-   * - 11.50
-     - Exercises and informal chat
-     - 
+   * - 11.10
+     - Packages and isolated environments   
+     - Lecture+code along 50m
    * - 12.00
      - **LUNCH**
      -
    * - 13.00
-     - Exercises and informal chat
-     - 
-   * - 13.15
-     - Parallel and multithreaded functions   
-     - Lecture+code along + exercise 30m
+     - SLURM Batch scripts for Julia jobs  
+     - Lecture+code along + exercise 45m
    * - 13.50
      - **break**
      - 
-   * - 14.00
-     - Parallel session — UPPMAX: Jupyter and interactive work
+   * - 14.05
+     - Parallel and multithreaded functions   
+     - Lecture+code along + exercise 45m
+   * - 14.50
+     - **break**
+     - 
+   * - 15.00
+     - Simultaneous session — UPPMAX: Jupyter and interactive work
      - Lecture+code along 25m
    * - .
-     - Parallel session — HPC2N: Jupyter
+     - Simultaneous session — HPC2N: Jupyter
      - Lecture+code along 25m   
-   * - 14.25
+   * - 15.25
      - Summary 
      -
-   * - 14.35
+   * - 15.30
      - Evaluation
      -
-   * - 14.45
+   * - 15.40
      - Q&A on-demand
      -
-   * - 15.00
+   * - 16.00
      - END
      -
 
