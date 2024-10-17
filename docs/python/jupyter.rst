@@ -300,7 +300,7 @@ After a few moments JupyterLab starts up:
 You shut it down from the menu with "File" > "Shut Down"
 
 Running JupyterLab at HPC2N - extra Python package
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Already installed package at HPC2N
 ''''''''''''''''''''''''''''''''''
