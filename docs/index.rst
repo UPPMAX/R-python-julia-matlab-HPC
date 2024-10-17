@@ -312,12 +312,14 @@ Content of the course
    common/parallel.rst
    matlab/local_desktopMatlab.rst
    matlab/jupyterMatlab.rst
+   matlab/summaryMatlab.rst
 
 .. toctree::
    :maxdepth: 2
    :caption: Extra reading:
 
    r/morepackages.rst
+   r/packagesBianca.rst
    extra/matlab.rst
 
 .. Indices and tables
