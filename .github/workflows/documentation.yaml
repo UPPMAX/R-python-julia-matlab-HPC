@@ -7,6 +7,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.0
       - uses: actions/setup-python@v5
+        with: 
+          python-version: '3.10'
       # Install plantuml
       - name: Install OS package dependencies
         run: |
