@@ -191,7 +191,7 @@ Here we see that one comes already installed with the module system.
 
         Then among the list one can find: ``pandas 2.2.0``
 
-        So, yes, the Python package ``pandas``version 2.2.0 is installed!
+        So, yes, the Python package ``pandas`` version 2.2.0 is installed!
 
 .. tabs::
 
@@ -336,7 +336,7 @@ Here we see that two come already installed with a Python machine learning modul
 
         Then among the list one can find: ``pandas 2.2.0``
 
-        So, yes, the Python package ``pandas``version 2.2.0 is installed!
+        So, yes, the Python package ``pandas`` version 2.2.0 is installed!
 
 .. tabs::
 
