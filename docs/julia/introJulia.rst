@@ -7,7 +7,7 @@ Introduction Julia
 .. admonition:: Learning outcomes
    
    - Learn how to load Julia modules and access site-installed Julia packages
-   - Understant the Julia environments
+   - Grasp the concept of Julia environments
    - Familiarize with Julia packages installation with **Pkg**
    - Acquire the knowledge of writing batch scripts for running Julia
    - Discover and explore the different Julia parallelization tools
