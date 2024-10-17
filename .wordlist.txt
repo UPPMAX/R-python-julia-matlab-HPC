@@ -730,3 +730,11 @@ fetchOutputs
 myScript
 nodesktop
 nosplash
+AppMenu
+myfcn
+carlo
+monte
+XXXX
+YY
+nojvm
+srun
