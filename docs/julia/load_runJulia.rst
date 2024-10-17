@@ -397,5 +397,7 @@ Exercises
 
    - Before you can run Julia scripts or work in a Julia shell, first load a Julia module
    - Start a Julia shell session with ``julia``
+   - It offers several modes that can make your workflow easier, i.e., ``Julian``, 
+     ``shell``, ``package manager``, and ``help`` modes.
    - Run scripts with ``julia <script.jl>``
     

@@ -6,18 +6,18 @@ Introduction Julia
 
 .. admonition:: Learning outcomes
    
-   - Load Julia modules and site-installed Julia packages
-   - Create a Julia environment
-   - Install Julia packages with **Pkg**
-   - Write a batch script for running Julia
-   - Use Julia in parallel mode
-   - Use GPUs with Julia
-   - Use Julia for ML 
+   - Learn how to load Julia modules and access site-installed Julia packages
+   - Understant the Julia environments
+   - Familiarize with Julia packages installation with **Pkg**
+   - Acquire the knowledge of writing batch scripts for running Julia
+   - Discover and explore the different Julia parallelization tools
+   - Learn how Julia supports GPU computing
+   - Gain knowledge on how to run ML jobs in Julia 
     
 .. admonition:: Your expectations?
    
     - Find best practices for using Julia at UPPMAX and HPC2N
-    - Packages
+    - Get the hang of packages functioning
     - Use the HPC performance with Julia
 
     
@@ -124,16 +124,21 @@ Preliminary schedule
 What is Julia?
 --------------
 
-Julia is a relatively new Programming language (pre-released 1.0 announced in 2018), compared to well-known and standard languages such as Fortran, C, C++, R, and Python (some of them dated back to the 70's). 
+Julia is a relatively new Programming language (pre-released 1.0 announced in 2018), compared to well-known 
+and standard languages such as Fortran, C, C++, R, and Python (some of them dated back to the 70's). 
 A common pattern in those well-established languages (traditional paradigm) is that they look after either:
 
   - productivity (fast deployment, fast prototyping) or,
   - performance (fast numerical computations). 
 
-This pattern created the so called **two-language problem** where programmers had to choose between **productivity** (R, Python) or **performance** (Fortran, C/C++) and when both were needed programmers had to learn the language that offered the desired capability and use some interface between different languages. 
+This pattern created the so called **two-language problem** where programmers had to choose between **productivity** 
+(R, Python) or **performance** (Fortran, C/C++) and when both were needed programmers had to learn the language that 
+offered the desired capability and use some interface between different languages. 
 Performant languages traditionally needed to be compiled while languages focusing on productivity are interpreted.
 
-Among the different features of Julia, is its capability of integrating both aspects **productivity and performance into a single language**. In this way, Julia programmers can in principle write software without changing their focus to learn a new language. 
+Among the different features of Julia, is its capability of integrating both aspects **productivity and performance 
+into a single language**. In this way, Julia programmers can in principle write software without changing their focus 
+to learn a new language. 
 
 
 .. figure:: ../../img/two-language.png
@@ -194,11 +199,14 @@ First level
 Second level
 ::::::::::::
 
-CodeRefinery develops and maintains training material on software best practices for researchers that already write code. Their material addresses all academic disciplines and tries to be as **programming language-independent as possible**. 
+CodeRefinery develops and maintains training material on software best practices for researchers that already 
+write code. Their material addresses all academic disciplines and tries to be as **programming language-independent as possible**. 
 
 - Not yet anything Julia specific
 
-`ENCCS (EuroCC National Competence Centre Sweden) <https://enccs.se/>`_ is a national centre that supports industry, public administration and academia accessing and using European supercomputers. They give higher-level training of programming and specific software.
+`ENCCS (EuroCC National Competence Centre Sweden) <https://enccs.se/>`_ is a national centre that supports 
+industry, public administration and academia accessing and using European supercomputers. They give higher-level 
+training of programming and specific software.
 
 - `Julia for high-performance Computing <https://enccs.github.io/julia-for-hpc/>`_ 
 - `Julia for High-performance data analytics <https://enccs.github.io/julia-for-hpda/>`_ 
@@ -215,6 +223,6 @@ Other NAISS centres
 .. keypoints::
 
    - Julia is a relatively new language with several attractive features.
-   - It offers several modes that can make your workflow easier, i.e., ``Julian``, 
-     ``shell``, ``package manager``, and ``help`` modes.
+   - Julia purpose is to avoid changing between high performance and high productivity languages
+     in the different phases of code development.
 
