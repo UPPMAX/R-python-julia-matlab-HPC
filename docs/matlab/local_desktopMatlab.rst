@@ -19,7 +19,17 @@ Session: MATLAB client on the desktop
             - R2023a
             - R2023b
 
+
+Let's get started together!
+===========================
+
+.. demo::
+
+   - You can try to type-along
+
 The Rackham MATLAB support package can be found at [uppsala.Desktop.zip](https://github.com/UPPMAX/UPPMAX-documentation/raw/main/docs/software/files/matlab/uppsala.Desktop.zip).
+
+
 
 - Download the ZIP file and start MATLAB.
 - The ZIP file should be unzipped in the location returned by calling
@@ -35,27 +45,29 @@ The Rackham MATLAB support package can be found at [uppsala.Desktop.zip](https:/
 .. code-block:: matlab
 
    >> configCluster
-	    [1] rackham
-	    [2] uppmax
-    Select a cluster [1-2]: 1
-    Username on RACKHAM (e.g. jdoe): 
+   Username on RACKHAM (e.g. jdoe):  
 
-- Choose ``rackham``
-- Type your rackham user name
+- Type your rackham user name.
+- As a result the following 
 
-- Submission to the cluster requires SSH credentials. 
-- You will be prompted for username and password or identity file (private key).  -
-- The username and location of the private key will be stored in MATLAB for future sessions.
-- Jobs will now default to the cluster rather than submit to the local machine.
-- NOTE: To submit to the local machine instead of the cluster, run the following:
+.. code-block:: matlab 
+   
+   Complete.  Default cluster profile set to "Rackham R2022b".
 
-.. code-block:: matlab
 
-   >> % Get a handle to the local resources
-   >> c = parcluster('local');
+.. note:: 
+
+   - To submit to the local machine instead of the cluster, run the following:
+
+   .. code-block:: matlab
+
+      >> % Get a handle to the local resources
+      >> c = parcluster('local');
 
 
 CONFIGURING JOBS
+................
+
 Prior to submitting the job, various parameters can be assigned, such as queue, e-mail, walltime, etc.  The following is a partial list of parameters.  See AdditionalProperties for the complete list.  Only AccountName, Partition, MemUsage and WallTime.
 
 .. code-block:: matlab
@@ -63,40 +75,52 @@ Prior to submitting the job, various parameters can be assigned, such as queue, 
    >> % Get a handle to the cluster
    >> c = parcluster;
 
-   [REQUIRED]
+   c = 
+
+    Generic Cluster
+
+       Properties: 
+
+                      Profile: Rackham R2022b
+                     Modified: false
+                         Host: UUC-4GM8L33.user.uu.se
+                   NumWorkers: 100000
+                   NumThreads: 1
+
+        JobStorageLocation: <path to job outputs locally>
+         ClusterMatlabRoot: /sw/apps/matlab/x86_64/R2022b
+           OperatingSystem: unix
+
+Set some additional parameters related to Slurm on Rackham
+
+.. code-block: matlab
 
    >> % Specify the account
-   >> c.AdditionalProperties.AccountName = 'account-name';
+   >> c.AdditionalProperties.AccountName = 'naiss2024-22-1202';
 
    >> % Specify the partition
-   >> c.AdditionalProperties.Partition = 'partition-name';
+   >> c.AdditionalProperties.Partition = 'devcore';
 
-   >> % Specify memory to use, per core (default: 4gb)
-   >> c.AdditionalProperties.MemUsage = '6gb';
-
-   >> % Specify the wall time (e.g., 1 day, 5 hours, 30 minutes)
-   >> c.AdditionalProperties.WallTime = '1-05:30';
+   >> % Specify the wall time (e.g., 1 day, 5 hours, 30 minutes
+   >> c.AdditionalProperties.WallTime = '00:30:00';
 
    [OPTIONAL]
 
-   >> % Specify a constraint 
-   >> c.AdditionalProperties.Constraint = 'feature-name';
+   >> % Specify cores per node
+   >> c.AdditionalProperties.ProcsPerNode = 4;
 
-   >> % Request email notification of job status
-   >> c.AdditionalProperties.EmailAddress = 'user-id@uppmax.uu.se';
+   >> % Use reservation 
+   >> c.AdditionalProperties.Reservation = 'reservation-name';
 
    >> % Specify number of GPUs
    >> c.AdditionalProperties.GPUsPerNode = 1;
    >> c.AdditionalProperties.GPUCard = 'gpu-card';
 
-   >> % Specify cores per node
-   >> c.AdditionalProperties.ProcsPerNode = 4;
+- Submission to the cluster requires SSH credentials. 
+- You will be prompted for username and password or identity file (private key).  -
+- The username and location of the private key will be stored in MATLAB for future sessions.
+- Jobs will now default to the cluster rather than submit to the local machine.
 
-   >> % Set node exclusivity (default: false)
-   >> c.AdditionalProperties.RequireExclusiveNode = true;
-
-   >> % Use reservation 
-   >> c.AdditionalProperties.Reservation = 'reservation-name';
 
 
 Save changes after modifying AdditionalProperties for the above changes to persist between MATLAB sessions.
@@ -116,7 +140,16 @@ Unset a value when no longer needed.
 
 .. code-block:: matlab
 
-   >> % Turn off email notifications 
+   >> % Example Turn off email notifications
    >> c.AdditionalProperties.EmailAddress = '';
    >> c.saveProfile
+
+- check the queue on rackham
+
+.. code-block:: console
+
+   [bjornc2@rackham2 ~]$ squeue -u bjornc2
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+          50827312   devcore MATLAB_R  bjornc2  R       2:20      1 r483
+
 
