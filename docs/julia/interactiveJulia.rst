@@ -283,9 +283,8 @@ Running IJulia and Jupyter notebooks
          - Remember to load python as well and to go via the ``julia -p <number of cores>`` and ``notebook(<options>)`` inside the Julia session instead of starting ``jupiter-notebook`` in the bash shell.
          - https://uppmax.github.io/HPC-python/jupyter.html
 
-      Jupyter from terminal
-      #####################
-
+      **Jupyter from terminal**
+      
       If IJulia is precompiled once then you can run Julia from Jupyter directly from the terminal
 
          .. code-block: console
