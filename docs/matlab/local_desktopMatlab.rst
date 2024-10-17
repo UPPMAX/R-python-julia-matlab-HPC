@@ -35,10 +35,19 @@ The Rackham MATLAB support package can be found at [uppsala.Desktop.zip](https:/
 .. code-block:: matlab
 
    >> configCluster
+	    [1] rackham
+	    [2] uppmax
+    Select a cluster [1-2]: 1
+    Username on RACKHAM (e.g. jdoe): 
 
-Submission to the cluster requires SSH credentials.  You will be prompted for username and password or identity file (private key).  The username and location of the private key will be stored in MATLAB for future sessions.
-Jobs will now default to the cluster rather than submit to the local machine.
-NOTE: To submit to the local machine instead of the cluster, run the following:
+- Choose ``rackham``
+- Type your rackham user name
+
+- Submission to the cluster requires SSH credentials. 
+- You will be prompted for username and password or identity file (private key).  -
+- The username and location of the private key will be stored in MATLAB for future sessions.
+- Jobs will now default to the cluster rather than submit to the local machine.
+- NOTE: To submit to the local machine instead of the cluster, run the following:
 
 .. code-block:: matlab
 
