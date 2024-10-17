@@ -75,7 +75,7 @@ Need help? Contact support:
       `Contact LUNARC support <https://www.lunarc.lu.se/getting-help/>`_
 
 Get familiar with the Linux/Bash command line
---------------------------------------------
+---------------------------------------------
 
 - `Short introductions <https://uppsala.instructure.com/courses/67267/pages/using-the-command-line-bash?module_item_id=455632>`_
 - `Linux "cheat sheet" <https://www.hpc2n.umu.se/documentation/guides/linux-cheat-sheet>`_
