@@ -67,7 +67,7 @@ In order to be able to submit jobs to the SLURM queue, you need to configure MAT
    
    .. code-block:: 
 
-   configCluster.sh
+      configCluster.sh
   
    on the terminal, after loading the MATLAB version you want. 
 
@@ -76,6 +76,7 @@ In order to be able to submit jobs to the SLURM queue, you need to configure MAT
 .. figure:: ../../img/configcluster.png
    :width: 350
    :align: center
+
 
 .. exercise::
 
@@ -111,6 +112,55 @@ To start Matlab on the command line, without running the GUI, load the MATLAB ve
 .. code-block::
 
    matlab -singleCompThread -nodisplay -nosplash -nodesktop
+
+**Working in MATLAB**
+
+Of course, we can work in MATLAB like this in exactly the same way as in the GUI: 
+
+.. code-block::
+ 
+   $ matlab -singleCompThread -nodisplay -nosplash -nodesktop
+   Opening log file:  /home/b/bbrydsoe/java.log.43927
+
+                                     < M A T L A B (R) >
+                           Copyright 1984-2023 The MathWorks, Inc.
+                      R2023a Update 4 (9.14.0.2306882) 64-bit (glnxa64)
+                                        June 19, 2023
+
+ 
+   To get started, type doc.
+   For product information, visit www.mathworks.com.
+ 
+   >> a = [ 1 2 3 ; 4 5 6; 7 8 9];
+   >> b = [ 7 5 6 ; 2 0 8; 5 7 1];
+   >> c = a + b
+
+   c =
+
+        8     7     9
+        6     5    14
+       12    15    10
+
+   >> d = a - b
+
+   d =
+
+       -6    -3    -3
+        2     5    -2
+        2     1     8
+
+   >> e = c + d;
+   >> e 
+
+   e =
+
+        2     4     6
+        8    10    12
+       14    16    18
+
+   >> 
+
+However, we are now going to look at running in batch on the compute nodes. 
 
 Job settings
 ''''''''''''
@@ -235,10 +285,14 @@ Let us try running this on Kebnekaise, including checking state and then getting
    
    This exercise assumes you did the previous ones on this page; loading MATLAB, doing the configCluster.sh, adding the job settings. 
    
-   You can download <a href="the parallel_example.m here.  
+   You can download <a href="https://raw.githubusercontent.com/UPPMAX/R-python-julia-matlab-HPC/refs/heads/main/exercises/matlab/parallel_example.m" target="_blank">the parallel_example.m here</a>.  
 
+There is more information about batch jobs here on <a href="https://se.mathworks.com/help/parallel-computing/batch.html" target="_blank">Mathworks</a>.
+   
 MATLAB batch jobs
 -----------------
+
+
 
 .. warning::
 
