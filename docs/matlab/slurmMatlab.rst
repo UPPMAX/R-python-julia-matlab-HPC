@@ -87,19 +87,99 @@ MATLAB Desktop/graphical interface
 
    MATLAB GUI
 
-
-
+MATLAB terminal interface
+-------------------------
 
 .. admonition:: Content
 
-   - start scripts where needed (configCluster.sh)
-   - overview of GUI and jobs
-   - ``c.parcluster``
-   - ``c.AdditionalProperties.``
-   - ``c.batch``
-   - ...
+   - starting Matlab on the command line
+   - Job settings
+     - ``c.parcluster``
+     - ``c.AdditionalProperties.``
+     - ``c.batch``
+     - ...
 
+Starting MATLAB
+'''''''''''''''
+     
+To start Matlab on the command line, without running the GUI, load the MATLAB version and do 
+
+.. code-block::
+
+   matlab -singleCompThread -nodisplay -nosplash -nodesktop
+
+Job settings
+''''''''''''
+
+If you want to run a MATLAB program on the cluster with batch, you have to set some things for the job
+
+.. code-block::
+
+   >> c=parcluster('CLUSTER');
+   >> c.AdditionalProperties.AccountName = 'PROJECT-ID';
+   >> c.AdditionalProperties.WallTime = 'HHH1:MM:SS';
+   >> c.saveProfile
+
+**Example, for HPC2N**
+
+Asking for 1 hour walltime. 
+
+.. code-block:: 
+
+   >> c=parcluster('kebnekaise');
+   >> c.AdditionalProperties.AccountName = 'hpc2n2024-114';
+   >> c.AdditionalProperties.WallTime = '01:00:00';
+   >> c.saveProfile
+
+Running a job
+'''''''''''''
+
+Starting a simple MATLAB program inside MATLAB on the terminal. It will as default use your cluster profile which you just created and saved above. 
+
+.. code-block::
+
+   job = batch('myScript');
+
+batch does not block MATLAB and you can continue working while computations take place.
+
+If you want to block MATLAB until the job finishes, use the wait function on the job object.
+
+.. code-block::
+
+   wait(job);
+
+By default, MATLAB saves the Command Window output from the batch job to the diary of the job. To retrieve it, use the diary function.
+
+.. code-block:: 
+
+   diary(job)
+
+After the job finishes, fetch the results by using the load function.
+
+.. code-block::
+
+   load(job,'x');
    
+or with 
+
+.. code-block::
+
+   job.fetchOutputs{:}
+
+If you need the Job id, either run ``squeue --me`` on the command line or do ``id=job.ID`` within MATLAB. 
+
+To make a pool of workers, and to give input etc. 
+
+.. code-block::
+
+   >> j = c.batch(@SCRIPT, #output, {input1, input2, input3, ...}, 'pool', #workers);
+
+**Example:**
+
+
+
+MATLAB batch jobs
+-----------------
 
 .. warning::
 
