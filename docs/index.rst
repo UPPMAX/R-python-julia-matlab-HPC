@@ -318,6 +318,7 @@ Content of the course
    :caption: Extra reading:
 
    r/morepackages.rst
+   extra/matlab.rst
 
 .. Indices and tables
 .. ==================
