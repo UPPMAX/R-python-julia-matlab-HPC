@@ -167,10 +167,8 @@ If you have an account, you will be automatically signed up for the Mathworks ma
 Other NAISS centres
 -------------------
 
-- NSC
-   - `MATLAB <https://www.nsc.liu.se/software/catalogue/tetralith/modules/matlab.html>`_
-- PDC
-   - `MATLAB <https://www.pdc.kth.se/software/software/matlab/index_general.html>`_
+- `MATLAB at NSC <https://www.nsc.liu.se/software/catalogue/tetralith/modules/matlab.html>`_
+- `MATLAB at PDC <https://www.pdc.kth.se/software/software/matlab/index_general.html>`_
 
 .. keypoints::
 
