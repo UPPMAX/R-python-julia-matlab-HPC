@@ -79,5 +79,5 @@ For most programs, the start-up process is roughly the same:
 If you want, you can also look at the associated SLURM scripts by clicking the "More" button at the bottom of the Gfx Launcher menu and clicking the "Script" tab (example below), or view the logs under the "Logg" tab.
 
 .. figure:: ../../img/Cosmos-OnDemand-Matlab23b-more-script.png
-   :width: 400
+   :width: 550
    :align: center
