@@ -36,7 +36,6 @@ Introduction to MATLAB
     - Un-tar it with ``tar -xvf <filename.tar.gz>`` in your personal project folder, which you should have created a while ago (https://uppmax.github.io/R-python-julia-matlab-HPC/index.html#prepare-your-environment-now).
     - Enter the directory and list the content with the ``tree`` command.
 
-
 Preliminary schedule
 --------------------
 
@@ -123,12 +122,13 @@ Preliminary schedule
 
 
 What is MATLAB?
---------------
+---------------
+
 MATLAB is a numerical computing environment and fourth generation programming language. Developed by MathWorks, MATLAB allows matrix manipulation, plotting of functions and data, implementation of algorithms, creation of user interfaces, and interfacing with programs in other languages. Although it is numeric only, an optional toolbox uses the MuPAD symbolic engine, allowing access to computer algebra capabilities.
 
 
 Features of MATLAB
------------------
+------------------
 
 Distinguishing pros of MATLAB include:
    - A "low-code" interactive development environment (IDE) in which many common data import methods, analysis techniques, plotting formats, and even AI/ML techniques can be run from menus and generate the code required to reproduce the results automatically
@@ -145,7 +145,7 @@ Of course MATLAB also has some drawbacks:
 
 
 More on MATLAB?
---------------
+---------------
 
 - Documentation at the HPC centres UPPMAX and HPC2N
    - UPPMAX: http://docs.uppmax.uu.se/software/matlab/
