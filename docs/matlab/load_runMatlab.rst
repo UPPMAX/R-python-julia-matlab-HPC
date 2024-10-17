@@ -241,7 +241,7 @@ The GUI is typically the recommended interface where it is offered. The GUI prov
 
       .. tab:: LUNARC 
 
-         It is recommended that GUI be started in Thinlinc at the LUNARC HPC Desktop On-Demand by going to ``Applications`` &rarr; ``Applications - Matlab`` &rarr; ``Matlab <version>`` and clicking the desired version number. A GfxLauncher window will pop up where you can specify your account, requested resources, and walltime for the GUI itself; these settings are distinct from and do not constrain SLURM jobs sent from the GUI to the compute nodes. For more details, see the section on `Desktop On-Demand https://uppmax.github.io/R-python-julia-matlab-HPC/common/ondemand-desktop.html`_
+         It is recommended that GUI be started in Thinlinc at the LUNARC HPC Desktop On-Demand by going to ``Applications`` &rarr; ``Applications - Matlab`` &rarr; ``Matlab <version>`` and clicking the desired version number. A GfxLauncher window will pop up where you can specify your account, requested resources, and walltime for the GUI itself; these settings are distinct from and do not constrain SLURM jobs sent from the GUI to the compute nodes. For more details, see the section on `Desktop On-Demand <../common/ondemand-desktop.html>`_
 
          To start MATLAB in the terminal, load matlab/2023b or your preferred version, and then type:
 
