@@ -215,10 +215,8 @@ training of programming and specific software.
 Other NAISS centres
 -------------------
 
-- NSC
-   - `Julia <https://www.nsc.liu.se/software/installed/tetralith/julia/>`_
-- PDC
-   - `Julia <https://www.pdc.kth.se/software/software/Julia/index_general.html>`_
+- `Julia at NSC <https://www.nsc.liu.se/software/installed/tetralith/julia/>`_
+- `Julia at PDC <https://www.pdc.kth.se/software/software/Julia/index_general.html>`_
 
 .. keypoints::
 
