@@ -722,3 +722,9 @@ performant
 titlesonly
 parfeval
 Cont'd
+NODELIST
+additionalSubmitArgs
+fetchOutputs
+myScript
+nodesktop
+nosplash
