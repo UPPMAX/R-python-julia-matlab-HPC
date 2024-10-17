@@ -1346,7 +1346,7 @@ Exercises
                         #SBATCH --output=job.%J.out  # output file  
 
                         ml purge > /dev/null 2>&1
-                        ml GCC/10.2.0  OpenMPI/4.0.5  R/4.0.4
+                        ml GCC/12.2.0  OpenMPI/4.1.4 R/4.2.2
                         Rscript --no-save --no-restore script-df.R
 
 
