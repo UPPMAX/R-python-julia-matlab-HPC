@@ -22,6 +22,7 @@ MATLAB GUI and SLURM
 
    - Rackham: ``/proj/r-py-jl-m-rackham``
    - Kebnekaise: ``/proj/nobackup/r-py-jl-m`` 
+   - Cosmos: your home directory should have plenty of space
 
 .. warning::
 
@@ -32,7 +33,7 @@ MATLAB GUI and SLURM
 
    - MATLAB is well integrated with SLURM and because of that there are several options to run these jobs:
        - Writing a batch script as for any other software and submitting the job with the ``sbatch`` command from SLURM 
-         (This could be useful if you want to run long jobs and you don't need to modify the code in the meantime).
+         (This could be useful if you want to run long jobs, and you don't need to modify the code in the meantime).
          You have seen this in the previous section.
        - Using the job scheduler (``batch`` command) in MATLAB graphical user interface (GUI) (This is the Recommended Use).
        - Starting a ``parpool`` in the MATLAB GUI with a predefined cluster (This allows for more interactivity).
@@ -51,20 +52,23 @@ to the standard bash scripts that are used with the command ``sbatch my-script.s
 
    MATLAB GUI
 
-To submit a job from the GUI, you will need to create a handler to the cluster and then use this
-handler to send the job and control the outputs: 
+To submit a job from the GUI, you will need to create a handle for the cluster and then use this
+handle to send the job and control the outputs: 
 
 .. code-block:: matlab
 
     % Get a handle to the cluster
     c=parcluster('name-of-your-cluster')
     % Run the job on CPU
-    j = c.batch(@myfunction, 'nr. of output values', {'list of input arguments'},'pool','nr. workers')
+    j = c.batch(@myfunction, N_out_values, {input1, input2, ...}, 'pool', N_workers')
+    % alternatively, j=batch(c, @myfunction, N_out_values, {input1, input2, ...}, 'pool', N_workers')
     % Wait till the job has finished. Use j.State if you just want to poll the
     % status and be able to do other things while waiting for the job to finish.
     j.wait
     % Fetch the result after the job has finished
     j.fetchOutputs{:}
+
+Note that ``batch`` also accepts script names in place of function names, but these must be given in single quotes, with no ``@`` or ``.m``. This is useful if your script is a job farm.
 
 
 Serial jobs 
