@@ -3,7 +3,7 @@ Load and run Julia
 
 .. note::
     
-    At the Swedish HPC centers we call the applications available via the module system **modules**:
+    At the Swedish HPC centers we call the applications available via the *module system* **modules**:
 
     - `UPPMAX <https://docs.uppmax.uu.se/cluster_guides/modules/>`_ 
     - `HPC2N <https://www.hpc2n.umu.se/documentation/environment/lmod>`_ 
@@ -40,12 +40,13 @@ The module activates paths to a specific version of the julia interpreter and it
     Note that the module systems at UPPMAX and HPC2N are slightly different.
     All modules at UPPMAX not directly related to bio-informatics are shown
     by ``ml avail``. 
+
     Modules at HPC2N are only available when one has loaded all prerequisites,
     for instance the compilers (``GNU``, ``Intel``, etc.).
 
 
 Check for Julia versions
--------------------------
+------------------------
 
 .. tabs::
 
@@ -65,6 +66,10 @@ Check for Julia versions
       .. code-block:: console
  
          $ module spider julia
+
+      Notice that the output if you are working on the Intel (*kebnekaise.hpc2n.umu.se*) or AMD 
+      (*kebnekaise-amd.hpc2n.umu.se*) login nodes. In the former, you will see more installed versions of
+      Julia as this hardware is older.
       
       To see how to load a specific version of Julia, including the prerequisites, do 
 
@@ -101,7 +106,7 @@ Check for Julia versions
 
         .. code-block:: console
 
-           $ module spider julia
+           $ module spider julia  # Assuming you are working on the Intel login nodes
            ------------------------------------------------------------------------------------------------
              Julia:
            ------------------------------------------------------------------------------------------------
@@ -145,7 +150,8 @@ Check for Julia versions
 Load a Julia module
 --------------------
 
-For reproducibility, we recommend **ALWAYS** loading a specific module instead of using the default 
+For reproducibility, we recommend **ALWAYS** loading a specific module for the Julia version instead of using the 
+default one.
 
 For this course, we recommend using the following Julia versions, because the exercises are developed with them:
 
@@ -283,7 +289,7 @@ Run
 Run Julia script
 ################
 
-You can run a Julia script in the shell like this:
+You can run a Julia script on the Linux shell as follows:
 
 .. code-block:: console
 
