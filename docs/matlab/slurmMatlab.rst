@@ -74,15 +74,23 @@ In order to be able to submit jobs to the SLURM queue, you need to configure MAT
 - To be able to use MATLAB 2019b, and later, together with the batch system, MATLAB needs to be configured to use a cluster profile.
 - This needs to be done only once for each cluster and each version of MATLAB.
 
-.. admonition:: configCluster.sh
+.. admonition:: configCluster(.sh)
 
-   Run 
+   If you are working in the terminal, run 
    
    .. code-block:: 
 
       configCluster.sh
-  
-   on the terminal, after loading the MATLAB version you want. 
+
+   or 
+
+   .. code-block:: 
+
+      configCluster
+
+
+   on the terminal, after loading the MATLAB version you want.
+
 
 **Example (HPC2N):** 
 
@@ -90,7 +98,7 @@ In order to be able to submit jobs to the SLURM queue, you need to configure MAT
    :width: 350
    :align: center
 
-This should work the same at all centers. 
+Apart from whether or not to include the .sh, it should work the same at all centers. 
 
 .. exercise::
 
@@ -105,6 +113,8 @@ MATLAB Desktop/graphical interface
    :align: center
 
    MATLAB GUI
+
+If you go here, you will want to 
 
 MATLAB terminal interface
 -------------------------
