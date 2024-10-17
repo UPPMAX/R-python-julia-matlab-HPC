@@ -25,7 +25,7 @@ The goal is for ``renv`` to be a robust, stable replacement for the Packrat pack
    - Give a general introduction to isolated environments in R.
    - Show an example with installing an R package to an isolated renv environment. 
 
-.. goal:: 
+.. admonition:: Goal
 
    - You will learn how to create a renv and install a package to it. 
 
@@ -64,7 +64,7 @@ Calling ``renv::init()`` will also write out the infrastructure necessary to aut
 If you’d like to initialize a project without attempting dependency discovery and installation – that is, you’d prefer to manually install the packages your project requires on your own – you can use ``renv::init(bare = TRUE)`` to initialize a project with an empty project library.
 
 Example - Creating a renv and installing ``knitr``
-*************************************
+**************************************************
 
 .. type-along::
 
