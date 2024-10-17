@@ -3,18 +3,18 @@ Load and run Julia
 
 .. note::
     
-    At the Swedish HPC centers we call the applications available via the module system modules:
+    At the Swedish HPC centers we call the applications available via the module system **modules**:
 
-    - https://docs.uppmax.uu.se/cluster_guides/modules/ 
-    - https://www.hpc2n.umu.se/documentation/environment/lmod 
-    - https://lunarc-documentation.readthedocs.io/en/latest/manual/manual_modules/#hierarchical-naming-scheme-concept
+    - `UPPMAX <https://docs.uppmax.uu.se/cluster_guides/modules/>`_ 
+    - `HPC2N <https://www.hpc2n.umu.se/documentation/environment/lmod>`_ 
+    - `LUNARC <https://lunarc-documentation.readthedocs.io/en/latest/manual/manual_modules/#hierarchical-naming-scheme-concept>`_
 
    
 .. objectives:: 
 
-   - being able to load Julia
-   - being able to start and use the Julia command line
-   - being able to run Julia scripts
+   - Learn to load Julia
+   - Get started with the Julia command line
+   - Learn to run Julia scripts
 
 .. instructor-note::
 
@@ -38,14 +38,14 @@ The module activates paths to a specific version of the julia interpreter and it
     
 .. warning::
     Note that the module systems at UPPMAX and HPC2N are slightly different.
-    While all modules at UPPMAX not directly related to bio-informatics are shown
-    by ``ml avail``, 
-    modules at HPC2N are hidden until one has loaded a prerequisite
-    like the compiler ``GCC``.
+    All modules at UPPMAX not directly related to bio-informatics are shown
+    by ``ml avail``. 
+    Modules at HPC2N are only available when one has loaded all prerequisites,
+    for instance the compilers (``GNU``, ``Intel``, etc.).
+
 
 Check for Julia versions
 -------------------------
-
 
 .. tabs::
 
@@ -145,9 +145,9 @@ Check for Julia versions
 Load a Julia module
 --------------------
 
-For reproducibility, we recommend ALWAYS loading a specific module instead of using the default 
+For reproducibility, we recommend **ALWAYS** loading a specific module instead of using the default 
 
-For this course, we recommend using Julia 1.8.5, because the exercises are developed with this version.
+For this course, we recommend using the following Julia versions, because the exercises are developed with them:
 
 .. type-along::
 
@@ -173,7 +173,7 @@ For this course, we recommend using Julia 1.8.5, because the exercises are devel
 
          .. code-block:: console
 
-            $ module load Julia/1.8.5-linux-x86_64
+            $ module load Julia/1.9.3-linux-x86_64
 
          Note: Uppercase ``J``.   
 
@@ -181,7 +181,7 @@ For this course, we recommend using Julia 1.8.5, because the exercises are devel
 
          .. code-block:: console
 
-            $ ml Julia/1.8.5-linux-x86_64
+            $ ml Julia/1.9.3-linux-x86_64
 
 Workflow in Julia (DEMO)
 ------------------------
@@ -247,12 +247,13 @@ this will allow you to use Linux commands. Notice that the availability of these
 depend on the OS, for instance, on Windows it will depend on the terminal that you have
 installed and if it is visible to the Julia installation. 
 
-Another mode available in Julia is the ``package manager`` mode, it can be accessed by typing ``]`` in the ``Julian`` mode:
+Another mode available in Julia is the ``package manager`` mode, it can be accessed by typing 
+``]`` in the ``Julian`` mode:
 
 .. code-block:: julia-repl
 
    julia>]
-   (v1.8) pkg>
+   (v1.9) pkg>
 
 this will make your interaction with the package manager **Pkg** easier, for instance,
 instead of typing the complete name of **Pkg** commands such as ``Pkg.status()`` in the
@@ -291,12 +292,13 @@ You can run a Julia script in the shell like this:
 Run Julia as a session
 ######################
 
-.. admonition:: The Julian modes
+.. admonition:: The Julian modes summary
+   :class: dropdown
 
-  - enter the shell mode by typing ``;``
-  - go back to *Julian* mode by ``<backspace>``
-  - enter the package manager mode by typing ``]`` in the *Julian* mode
-  - enter the help mode by typing ``?`` in the *Julian mode*
+    - enter the shell mode by typing ``;``
+    - go back to *Julian* mode by ``<backspace>``
+    - access the package manager mode by typing ``]`` in the *Julian* mode
+    - use the help mode by typing ``?`` in the *Julian mode*
 
 .. type-along::
 
@@ -337,19 +339,19 @@ Exercises
        * Now, go to the ``package`` mode and list the currently installed packages
        * Finally, display help information of the function ``println`` in ``help`` mode.
 
-    .. solution:: Solution for centres
-        :class: dropdown
+.. solution:: Solution for centres
+    :class: dropdown
 
-            .. code-block:: julia
+       .. code-block:: julia
     
-                $ julia 
-                julia> 5 + 6
-                julia>;
-                shell> pwd 
-                julia>]
-                pkg> status 
-                julia>?
-                help?> println
+            $ julia 
+            julia> 5 + 6
+            julia>;
+            shell> pwd 
+            julia>]
+            pkg> status 
+            julia>?
+            help?> println
 
 .. challenge:: 2. Loading modules and running scripts
     
@@ -362,29 +364,29 @@ Exercises
                 summ = x + y
                 println("The sum of the two numbers is ", summ)
 
-    .. solution:: Solution for HPC2N
-        :class: dropdown
-        
-            This batch script is for Kebnekaise. 
-
-            
-            .. code-block:: console
-    
-                $ ml purge  > /dev/null 2>&1       # recommended purge
-                $ ml Julia/1.8.5-linux-x86_64      # Julia module
-                        
-                $ julia serial-sum.jl Arg1 Arg2    # run the serial script
-
-    .. solution:: Solution for UPPMAX
-        :class: dropdown
-        
-            This batch script is for UPPMAX. Adding the numbers 2 and 3. (FIX)
-
-            .. code-block:: console
+.. solution:: Solution for HPC2N
+   :class: dropdown
    
-                $ ml julia/1.8.5      # Julia module
-               
-                julia serial-sum.jl Arg1 Arg2    # run the serial script
+      This batch script is for Kebnekaise. 
+
+      
+      .. code-block:: console
+
+            $ ml purge  > /dev/null 2>&1       # recommended purge
+            $ ml Julia/1.9.3-linux-x86_64      # Julia module
+                  
+            $ julia serial-sum.jl Arg1 Arg2    # run the serial script
+
+.. solution:: Solution for UPPMAX
+   :class: dropdown
+   
+      This batch script is for UPPMAX. Adding the numbers 2 and 3. (FIX)
+
+      .. code-block:: console
+
+            $ ml julia/1.8.5                   # Julia module
+         
+            julia serial-sum.jl Arg1 Arg2      # run the serial script
 
 
 .. Discussion:: **Menti**
