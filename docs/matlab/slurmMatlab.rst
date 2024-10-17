@@ -47,6 +47,19 @@ SLURM is an Open Source job scheduler, which provides three key functions:
          (This could be useful if you want to run long jobs and you don't need to modify the code in the meantime).
    - In the following sections we will extend these concepts. 
 
+Useful commands to the batch system
+-----------------------------------
+
+Before going into MATLAB specifics for batch jobs, we should look briefly at some useful commands.                                                
+
+- Submit job: ``sbatch <jobscript.sh>``
+- Get list of your jobs: ``squeue --me``
+- Check on a specific job: ``scontrol show job <job-id>``
+- Delete a specific job: ``scancel <job-id>``
+- Useful info about a job: ``sacct -l -j <job-id> | less -S``
+- Url to a page with info about the job (Kebnekaise only): ``job-usage <job-id>``
+
+
 First time configuration
 ------------------------
 
@@ -77,6 +90,7 @@ In order to be able to submit jobs to the SLURM queue, you need to configure MAT
    :width: 350
    :align: center
 
+This should work the same at all centers. 
 
 .. exercise::
 
@@ -112,6 +126,14 @@ To start Matlab on the command line, without running the GUI, load the MATLAB ve
 .. code-block::
 
    matlab -singleCompThread -nodisplay -nosplash -nodesktop
+
+This starts MATLAB. 
+
+.. warning::
+
+   - On the login-nodes MATLAB MUST be started with the option '-singleCompThread', preventing MATLAB from using more than one thread.
+
+
 
 **Working in MATLAB**
 
@@ -234,8 +256,64 @@ or with
 - To get the MATLAB  jobid do ``id=job.ID`` within MATLAB. 
 - To see if the job is running, inside MATLAB, do ``job.State``
 
+Serial
+''''''
 
-To make a pool of workers, and to give input etc. 
+After starting MATLAB, you can use this 
+
+- Get a handle to the cluster
+
+.. code-block::
+
+   >> c=parcluster('CLUSTER')
+
+- myfcn is a command or serial MATLAB program.
+- N is the number of output arguments from the evaluated function
+- x1, x2, x3,... are the input arguments
+
+.. code-block:: 
+   
+   job = c.batch(@myfcn, N, {x1,x2,x3,...})
+
+- Query the state of the job
+
+.. code-block::
+
+   j.State
+
+- If the state of the job is finished, fetch the result
+
+.. code-block:: 
+
+   j.fetchOutputs{:}
+
+- when you do not need the result anymore, delete the job
+
+.. code-block::
+
+   j.delete
+
+If you are running a lot of jobs or if you want to quit MATLAB and restart it at a later time you can retrive the list of jobs:
+
+- Get the list of jobs 
+
+.. code-block::
+
+  jobs = c.Jobs
+
+- Retrive the output of the second job
+
+.. code-block::
+
+   j2=jobs(2)
+   output = j2.fetchOutputs{:}
+
+Parallel
+''''''''
+
+Running parallel batch jobs are quite similiar to running serial jobs, we just need to specify a MATLAB Pool to use and of course MATLAB code that are parallized. This is easiest illustrated with an example:
+
+- To make a pool of workers, and to give input etc. 
 
 .. code-block::
 
@@ -292,25 +370,85 @@ There is more information about batch jobs here on <a href="https://se.mathworks
 MATLAB batch jobs
 -----------------
 
+While we can submit batch jobs from inside MATLAB (and that may be the most common way of using the batch system with MATLAB), it is also possible to create a batch submit script and use that to run MATLAB. 
 
+The difference here is that when the batch script has been submitted, you cannot make changes to your job. It is not interactive. That is also an advantage - you can submit the job, log out, and then come back later and see the results. 
 
 .. warning::
 
-   - On the login-nodes MATLAB MUST be started with the option '-singleCompThread', preventing MATLAB from using more than one thread.
    - ``parpool`` can only be used on UPPMAX and Cosmos.
   
-Useful commands to the batch system
------------------------------------
-
-- Submit job: ``sbatch <jobscript.sh>``
-- Get list of your jobs: ``squeue -u <username>``
-- Check on a specific job: ``scontrol show job <job-id>``
-- Delete a specific job: ``scancel <job-id>``
-- Useful info about a job: ``sacct -l -j <job-id> | less -S``
-- Url to a page with info about the job (Kebnekaise only): ``job-usage <job-id>``
 
 Serial batch jobs 
 ''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. code-block:: 
+
+   #!/bin/bash
+   # Change to your actual project number later
+   #SBATCH -A hpc2n2024-114
+   # Asking for 1 core
+   #SBATCH -n 1
+   # Asking for 30 min (change as you want) 
+   #SBATCH -t 00:30:00
+   #SBATCH --error=matlab_%J.err
+   #SBATCH --output=matlab_%J.out
+
+   # Clean the environment 
+   module purge > /dev/null 2>&1
+
+   # Change depending on resource and MATLAB version
+   # to find out available versions: module spider matlab
+   module add MATLAB/2023a.Update4
+
+   # Executing the matlab program monte_carlo_pi.m for the value n=100000
+   # (n is number of steps - see program).
+   # The command 'time' is timing the execution
+   time matlab -nojvm -nodisplay -r "monte_carlo_pi(100000)"
+
+You can download <a href="https://raw.githubusercontent.com/UPPMAX/R-python-julia-matlab-HPC/refs/heads/main/exercises/matlab/monte_carlo_pi.m" target="_block">monte_carlo_pi.m</a> here or find it under matlab in the exercises directory. 
+
+You the submit it with 
+
+.. code-block::
+
+   sbatch <batchscript.sh>
+
+Where ``<batchscript.sh>`` is the name you gave your batchscript. You can find ones for each of the clusters in the ``exercises -> matlab`` directory, named ``monte_carlo_pi_<cluster>.sh``. 
+
+.. exercise:: 
+
+   Try run the serial batch script. Submit it, then check that it is running with ```squeue --me``. Check the output in the ``matlab_JOBID.out`` (and the rror in the ``matlab_JOBID.err`` file). 
+
+Parallel batch script
+'''''''''''''''''''''
+
+. code-block::
+
+   #!/bin/bash
+   # Change to your actual project number
+   #SBATCH -A XXXX-YY-ZZZ 
+   #SBATCH --cpus-per-task=<how many tasks>
+   #SBATCH --tasks=10
+
+   # Asking for 30 min (change as you want)
+   #SBATCH -t 00:30:00
+   #SBATCH --error=matlab_%J.err
+   #SBATCH --output=matlab_%J.out
+
+   # Clean the environment
+   module purge > /dev/null 2>&1
+
+   # Change depending on resource and MATLAB version
+   # to find out available versions: module spider matlab
+   module add MATLAB/<version>
+
+   # Executing the matlab program monte_carlo_pi.m for the value n=100000
+   # (n is number of steps - see program).
+   # The command 'time' is timing the execution
+   srun time matlab -nojvm -nodisplay -r "monte_carlo_pi(100000)"
+
+
 
 GPU code
 ''''''''
