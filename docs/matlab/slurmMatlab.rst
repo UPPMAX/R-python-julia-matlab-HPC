@@ -77,6 +77,10 @@ In order to be able to submit jobs to the SLURM queue, you need to configure MAT
    :width: 350
    :align: center
 
+.. exercise::
+
+   Login to HPC2N/UPPMAX/LUNARC, load the newest version of MATLAB (find with ``ml spider MATLAB``), and then run ``configCluster.sh`` on the command line.  
+
 MATLAB Desktop/graphical interface
 ----------------------------------
 
@@ -111,14 +115,14 @@ To start Matlab on the command line, without running the GUI, load the MATLAB ve
 Job settings
 ''''''''''''
 
-If you want to run a MATLAB program on the cluster with batch, you have to set some things for the job
+If you want to run a MATLAB program on the cluster with batch, you have to set some things for the job. Start MATLAB and do this.  
 
 .. code-block::
 
    >> c=parcluster('CLUSTER');
    >> c.AdditionalProperties.AccountName = 'PROJECT-ID';
    >> c.AdditionalProperties.WallTime = 'HHH1:MM:SS';
-   >> c.saveProfile
+   >> c.saveProfile; 
 
 **Example, for HPC2N**
 
@@ -129,7 +133,17 @@ Asking for 1 hour walltime.
    >> c=parcluster('kebnekaise');
    >> c.AdditionalProperties.AccountName = 'hpc2n2024-114';
    >> c.AdditionalProperties.WallTime = '01:00:00';
-   >> c.saveProfile
+   >> c.saveProfilei;
+
+.. exercise:: Run job settings
+
+   Do the job settings on HPC2N (kebnekaise)/UPPMAX (rackham)/LUNARC (cosmos). 
+   Remember, the project-id is:
+   - Rackham: naiss2024-22-1202
+   - Kebnekaise: hpc2n2024-114
+   - Cosmos: lu2024-7-80 
+
+   Since we are just doing a short test, you can use 15 min instead of 1 hour as I did.   
 
 Running a job
 '''''''''''''
@@ -166,17 +180,62 @@ or with
 
    job.fetchOutputs{:}
 
-If you need the Job id, either run ``squeue --me`` on the command line or do ``id=job.ID`` within MATLAB. 
+- If you need the Job id, run ``squeue --me`` on the command line.
+- To get the MATLAB  jobid do ``id=job.ID`` within MATLAB. 
+- To see if the job is running, inside MATLAB, do ``job.State``
+
 
 To make a pool of workers, and to give input etc. 
 
 .. code-block::
 
-   >> j = c.batch(@SCRIPT, #output, {input1, input2, input3, ...}, 'pool', #workers);
+   >> job = c.batch(@SCRIPT, #output, {input1, input2, input3, ...}, 'pool', #workers);
 
 **Example:**
 
+Running a simple Matlab script, parallel-example.m, giving the input "16", creating 4 workers, expecting 1 output. I use ``j`` instead of ``job`` to show that you can name as you want. 
 
+.. code-block::
+
+   >> j = c.batch(@parallel_example, 1, {16}, 'pool', 4);
+
+Let us try running this on Kebnekaise, including checking state and then getting output:
+
+.. code-block::
+
+   >> j = c.batch(@parallel_example, 1, {16}, 'pool', 4);                            
+
+   additionalSubmitArgs =
+
+      '--ntasks=5 --cpus-per-task=1 -A hpc2n2024-114 -t 01:00:00'
+
+   >> j.State
+
+   ans =
+
+       'running'
+
+   >> j.State
+
+   ans =
+
+       'finished'
+       
+   >> j.fetchOutputs{:}
+
+   ans =
+
+       9.3387
+
+   >>
+
+.. exercise:: Try the above example. 
+
+   It should work on all the clusters. 
+   
+   This exercise assumes you did the previous ones on this page; loading MATLAB, doing the configCluster.sh, adding the job settings. 
+   
+   You can download <a href="the parallel_example.m here.  
 
 MATLAB batch jobs
 -----------------
