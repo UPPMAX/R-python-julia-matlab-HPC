@@ -257,7 +257,7 @@ Exercises
    :class: dropdown
 
    The following function uses ``parfeval`` to do some computation (specifically it takes the 
-   average per-column of a matrix with a size ``nsize``):
+   average per-column of a matrix with a size ``nsize`` equal to 1000):
 
    .. code-block:: matlab 
 
@@ -268,6 +268,15 @@ Exercises
    Place this function in a file called **parfeval_mean.m** and submit this function with 
    the MATLAB ``batch`` command.
 
+.. solution:: Solution 
+
+    .. code-block:: matlab 
+
+        c=parcluster('name-of-your-cluster');
+        j = c.batch(@parfeval_mean,1,{1000},'pool',1);      
+        j.wait;                               % wait for the results
+        t = j.fetchOutputs{:};                % fetch the results
+        fprintf('Name of host: %.5f \n', t);    % Print out the results
 
 .. keypoints::
 
