@@ -27,6 +27,7 @@ jobs:
           rm -rf docs/julia/not_used
           rm -rf docs/python/not_used
           rm -rf docs/matlab/not_used
+          rm -rf docs/matlab/README.md
           rm -rf docs/not_used
 
       - name: Sphinx builds in nitpicky mode
