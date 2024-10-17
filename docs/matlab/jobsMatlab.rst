@@ -35,7 +35,7 @@ MATLAB GUI and SLURM
          (This could be useful if you want to run long jobs and you don't need to modify the code in the meantime).
          You have seen this in the previous section.
        - Using the job scheduler (``batch`` command) in MATLAB graphical user interface (GUI) (This is the Recommended Use).
-       - Starting a ``parpool``in the MATLAB GUI with a predefined cluster (This allows for more interactivity).
+       - Starting a ``parpool`` in the MATLAB GUI with a predefined cluster (This allows for more interactivity).
 
    - In the following sections we will extend the last two options. 
 
