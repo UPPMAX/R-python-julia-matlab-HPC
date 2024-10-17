@@ -120,8 +120,8 @@ Schedule
 
 Simultaneous session:
 
-    - Kebnekaise: Jupyter, by BB
-    - Rackham:  Interactive session and Jupyter, by RB
+    - Kebnekaise: er, by BB
+    - Rackham:  Interactive session and er, by RB
     - LUNARC, by RP
 
 What is python?
@@ -159,7 +159,7 @@ CodeRefinery develops and maintains training material on software best practices
 
 - `Lessons <https://coderefinery.org/lessons/)>`_ 
 - `Data visualization using Python <https://coderefinery.github.io/data-visualization-python/>`_
-- `Jupyter <https://coderefinery.github.io/jupyter/>`_
+- `Jupyter <https://coderefinery.github.io/jupyter/>`__
 
 Aalto Scientific Computing
 
@@ -185,15 +185,15 @@ Other NAISS centres
 -------------------
 
 - LUNARC
-   - `Python <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/>`_
-   - `Jupyter <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/?query=jupyter#jupyter-lab>`_
+   - `Python <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/>`__
+   - `Jupyter <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/?query=jupyter#jupyter-lab>`__
 - C3SE
-   - `Python <https://www.c3se.chalmers.se/documentation/applications/python/>`_
-   - `Jupyter <https://www.c3se.chalmers.se/documentation/applications/jupyter/>`_
+   - `Python <https://www.c3se.chalmers.se/documentation/applications/python/>`__
+   - `Jupyter <https://www.c3se.chalmers.se/documentation/applications/jupyter/>`__
 - NSC
-   - `Python <https://www.nsc.liu.se/software/python/>`_
+   - `Python <https://www.nsc.liu.se/software/python/>`__
 - PDC
-   - `Python <https://www.pdc.kth.se/software/software/python/index_general.html>`_
+   - `Python <https://www.pdc.kth.se/software/software/python/index_general.html>`__
 
 .. objectives:: 
 
