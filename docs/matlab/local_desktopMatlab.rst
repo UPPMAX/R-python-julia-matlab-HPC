@@ -1,7 +1,7 @@
 Session: MATLAB client on the desktop
 =====================================
 
-.. admonition::
+.. admonition:: Use own computer's matlab
 
    - Would you like to try run batch jobs on the Rackham or Snowy cluster but use the faster graphics that you can achieve on your own computer?
    - UPPMAX offers this now.
