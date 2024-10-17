@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Introduction to running R, Python, Julia, and Matlab in HPC
-===================================================
+===========================================================
 
 .. admonition:: Content
 
@@ -309,10 +309,8 @@ Content of the course
    matlab/introMatlab.rst
    matlab/load_runMatlab.rst
    matlab/add_onsMatlab.rst
-   matlab/batchMatlab_BC.rst
    matlab/slurmMatlab.rst
    matlab/jobsMatlab.rst
-   matlab/interactionsMatlab.rst
    common/parallel.rst
    matlab/local_desktopMatlab.rst
    matlab/jupyterMatlab.rst
