@@ -112,7 +112,7 @@ In this session, we show how to:
 - end the interactive session
 
 The different way HPC2N, UPPMAX, and LUNARC provide for an interactive session
----------------------------------------------------------------------
+------------------------------------------------------------------------------
 
 .. mermaid:: interactive_node_transitions.mmd 
 
