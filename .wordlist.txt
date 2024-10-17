@@ -733,6 +733,7 @@ nosplash
 AppMenu
 myfcn
 carlo
+gurobi
 monte
 XXXX
 YY
