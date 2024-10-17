@@ -723,6 +723,8 @@ titlesonly
 parfeval
 Cont'd
 NODELIST
+configcluster
+lu
 additionalSubmitArgs
 fetchOutputs
 myScript
