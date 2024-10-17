@@ -1,5 +1,23 @@
-Local desktop
-=============
+Session: MATLAB client on the desktop
+=====================================
+
+.. admonition::
+
+   - Would you like to try run batch jobs on the Rackham or Snowy cluster but use the faster graphics that you can achieve on your own computer?
+   - UPPMAX offers this now.
+
+.. warning::
+
+   - This solution is possible only if
+      - you have an UPPMAX compute project and 
+      - a working matlab on your computer with one of the version available on the cluster:
+         - check with ``module avail matlab``
+         - Examples of the newest ones: 
+            - R2020b
+            - R2022a
+            - R2022b
+            - R2023a
+            - R2023b
 
 The Rackham MATLAB support package can be found at [uppsala.Desktop.zip](https://github.com/UPPMAX/UPPMAX-documentation/raw/main/docs/software/files/matlab/uppsala.Desktop.zip).
 
