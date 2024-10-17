@@ -3,7 +3,7 @@ Pre-requirements
 
 To be able to follow this course, you need to be able to log in to at least one of our HPC clusters, in at least one way.
 
-.. info::
+.. note::
 
    - There will be an opportunity to get help with log in every morning of the workshop at 9:00.
    - You are also welcome to join the On-boarding at 11:00 the day before the ordinary program starts.
