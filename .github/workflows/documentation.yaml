@@ -24,6 +24,7 @@ jobs:
         run: |
           rm -rf docs/julia/not_used
           rm -rf docs/python/not_used
+          rm -rf docs/not_used
 
       - name: Sphinx builds in nitpicky mode
         run: sphinx-build -n docs _build
