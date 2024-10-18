@@ -73,6 +73,7 @@ In order to be able to submit jobs to the SLURM queue, you need to configure MAT
 
 - To be able to use MATLAB 2019b, and later, together with the batch system, MATLAB needs to be configured to use a cluster profile.
 - This needs to be done only once for each cluster and each version of MATLAB.
+- Note that this is done AFTER loading MATLAB 
 
 .. admonition:: configCluster(.sh)
 
@@ -91,6 +92,14 @@ In order to be able to submit jobs to the SLURM queue, you need to configure MAT
 
    on the terminal, after loading the MATLAB version you want.
 
+   **Note**, that on UPPMAX you need to do: 
+
+   .. code-block::
+
+      configCluster.sh <project-ID>
+
+   in order to use the full features of running parallel jobs. 
+
 
 **Example (HPC2N):** 
 
@@ -98,7 +107,7 @@ In order to be able to submit jobs to the SLURM queue, you need to configure MAT
    :width: 350
    :align: center
 
-Apart from whether or not to include the .sh, it should work the same at all centers. 
+Apart from whether or not to include the .sh and the project-id, it should work the same at all centers. 
 
 .. exercise::
 
@@ -310,7 +319,7 @@ If you are running a lot of jobs or if you want to quit MATLAB and restart it at
 Parallel
 ''''''''
 
-Running parallel batch jobs are quite similar to running serial jobs, we just need to specify a MATLAB Pool to use and of course MATLAB code that are parallelized. This is easiest illustrated with an example:
+Running parallel batch jobs are quite similar to running serial jobs, we just need to specify a MATLAB Pool to use and of course MATLAB code that is parallelized. This is easiest illustrated with an example:
 
 - To make a pool of workers, and to give input etc. 
 
@@ -381,29 +390,87 @@ The difference here is that when the batch script has been submitted, you cannot
 Serial batch jobs 
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. code-block:: 
+Here is an example of a serial batch job for UPPMAX/HPC2N/LUNARC. 
 
-   #!/bin/bash
-   # Change to your actual project number later
-   #SBATCH -A hpc2n2024-114
-   # Asking for 1 core
-   #SBATCH -n 1
-   # Asking for 30 min (change as you want) 
-   #SBATCH -t 00:30:00
-   #SBATCH --error=matlab_%J.err
-   #SBATCH --output=matlab_%J.out
+.. tabs::
 
-   # Clean the environment 
-   module purge > /dev/null 2>&1
+   .. tab:: UPPMAX
 
-   # Change depending on resource and MATLAB version
-   # to find out available versions: module spider matlab
-   module add MATLAB/2023a.Update4
+      .. code-block:: 
 
-   # Executing the matlab program monte_carlo_pi.m for the value n=100000
-   # (n is number of steps - see program).
-   # The command 'time' is timing the execution
-   time matlab -nojvm -nodisplay -r "monte_carlo_pi(100000)"
+         #!/bin/bash
+         # Change to your actual project number later
+         #SBATCH -A naiss2024-22-1202
+         # Asking for 1 core
+         #SBATCH -n 1
+         # Asking for 30 min (change as you want) 
+         #SBATCH -t 00:30:00
+         #SBATCH --error=matlab_%J.err
+         #SBATCH --output=matlab_%J.out
+
+         # Clean the environment 
+         module purge > /dev/null 2>&1
+
+         # Change depending on resource and MATLAB version
+         # to find out available versions: module spider matlab
+         module add matlab/R2023b
+
+         # Executing the matlab program monte_carlo_pi.m for the value n=100000
+         # (n is number of steps - see program).
+         # The command 'time' is timing the execution
+         time matlab -nojvm -nodisplay -r "monte_carlo_pi(100000)"
+    
+   .. tab:: HPC2N 
+
+      .. code-block:: 
+
+      #!/bin/bash
+      # Change to your actual project number later
+      #SBATCH -A hpc2n2024-114
+      # Asking for 1 core
+      #SBATCH -n 1
+      # Asking for 30 min (change as you want) 
+      #SBATCH -t 00:30:00
+      #SBATCH --error=matlab_%J.err
+      #SBATCH --output=matlab_%J.out
+
+      # Clean the environment 
+      module purge > /dev/null 2>&1
+
+      # Change depending on resource and MATLAB version
+      # to find out available versions: module spider matlab
+      module add MATLAB/2023a.Update4
+
+      # Executing the matlab program monte_carlo_pi.m for the value n=100000
+      # (n is number of steps - see program).
+      # The command 'time' is timing the execution
+      time matlab -nojvm -nodisplay -r "monte_carlo_pi(100000)"
+
+   .. tab:: LUNARC 
+
+      .. code-block:: 
+
+         #!/bin/bash
+         # Change to your actual project number later
+         #SBATCH -A lu2024-7-80 
+         # Asking for 1 core
+         #SBATCH -n 1
+         # Asking for 30 min (change as you want) 
+         #SBATCH -t 00:30:00
+         #SBATCH --error=matlab_%J.err
+         #SBATCH --output=matlab_%J.out
+
+         # Clean the environment 
+         module purge > /dev/null 2>&1
+
+         # Change depending on resource and MATLAB version
+         # to find out available versions: module spider matlab
+         module add matlab/2023b
+
+         # Executing the matlab program monte_carlo_pi.m for the value n=100000
+         # (n is number of steps - see program).
+         # The command 'time' is timing the execution
+         time matlab -nojvm -nodisplay -r "monte_carlo_pi(100000)"
 
 You can download <a href="https://raw.githubusercontent.com/UPPMAX/R-python-julia-matlab-HPC/refs/heads/main/exercises/matlab/monte_carlo_pi.m" target="_block">monte_carlo_pi.m</a> here or find it under matlab in the exercises directory. 
 
