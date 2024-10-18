@@ -13,11 +13,12 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Remove folders that need not to be checked
-        run: rm -rf /docs/not_used/
-        run: rm -rf /docs/python/not_used/
-        run: rm -rf /docs/julia/not_used/
-        run: rm -rf /docs/R/not_used/
-        run: rm -rf /docs/matlab/not_used/
+        run: |
+          rm -rf /docs/not_used/
+          rm -rf /docs/python/not_used/
+          rm -rf /docs/julia/not_used/
+          rm -rf /docs/R/not_used/
+          rm -rf /docs/matlab/not_used/
 
       - name: Link Checker
         id: lychee
