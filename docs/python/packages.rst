@@ -80,7 +80,7 @@ the two HPC clusters used in this course:
 +-------------------+-----------------+------------------+-----------------+
 | Package installer | HPC2N           | UPPMAX (Rackham) | UPPMAX (Bianca) |
 +===================+=================+==================+=================+
-| ``conda``         | Unsupported [1] | Recommended      | Recommended     |
+| ``conda``         | Unsupported [1] | Supported        | Recommended     |
 +-------------------+-----------------+------------------+-----------------+
 | ``pip``           | Recommended     | Supported        | Unsupported [2] |
 +-------------------+-----------------+------------------+-----------------+
@@ -93,7 +93,7 @@ because it is a commonly-used package installation system
 that works on both HPC clusters used in this course.
 
 We have not scheduled to discuss Conda in this course, 
-yet teaching materials can be found at `Conda at UPPMAX <https://uppmax.github.io/R-python-julia-HPC/python/condaUPPMAX.html>`_.
+yet teaching materials can be found at `Conda at UPPMAX <https://uppmax.github.io/R-python-julia-matlab-HPC/python/condaUPPMAX.html>`_.
 
 As a first impression, here is a simple comparison between the two:
 
