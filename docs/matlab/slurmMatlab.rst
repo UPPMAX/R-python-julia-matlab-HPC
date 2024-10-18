@@ -371,9 +371,9 @@ Let us try running this on Kebnekaise, including checking state and then getting
    
    This exercise assumes you did the previous ones on this page; loading MATLAB, doing the configCluster.sh, adding the job settings. 
    
-   You can download <a href="https://raw.githubusercontent.com/UPPMAX/R-python-julia-matlab-HPC/refs/heads/main/exercises/matlab/parallel_example.m" target="_blank">the parallel_example.m here</a>.  
+   You can download `parallel_example.m <https://raw.githubusercontent.com/UPPMAX/R-python-julia-matlab-HPC/refs/heads/main/exercises/matlab/parallel_example.m>`_ here.  
 
-There is more information about batch jobs here on <a href="https://se.mathworks.com/help/parallel-computing/batch.html" target="_blank">Mathworks</a>.
+There is more information about batch jobs here on `Mathworks <https://se.mathworks.com/help/parallel-computing/batch.html>`_ .
    
 MATLAB batch jobs
 -----------------
@@ -472,7 +472,7 @@ Here is an example of a serial batch job for UPPMAX/HPC2N/LUNARC.
          # The command 'time' is timing the execution
          time matlab -nojvm -nodisplay -r "monte_carlo_pi(100000)"
 
-You can download <a href="https://raw.githubusercontent.com/UPPMAX/R-python-julia-matlab-HPC/refs/heads/main/exercises/matlab/monte_carlo_pi.m" target="_block">monte_carlo_pi.m</a> here or find it under matlab in the exercises directory. 
+You can download `monte_carlo_pi.m <https://raw.githubusercontent.com/UPPMAX/R-python-julia-matlab-HPC/refs/heads/main/exercises/matlab/monte_carlo_pi.m>`_ here or find it under matlab in the exercises directory. 
 
 You the submit it with 
 
