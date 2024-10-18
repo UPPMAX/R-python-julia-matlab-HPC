@@ -1,13 +1,13 @@
 flowchart TD
 
-  use_r_interpreter[3. Use the R interpreter\nR]
-  start_r_interpreter[3.1 Start the R interpreter\nR]
+  use_r_interpreter[3.Use the R interpreter R]
+  start_r_interpreter[3.1 Start the R interpreter R]
   subgraph R
-    say_hello[3.2 Say hello\nprint]
-    see_installed_packages[3.3 See installed packages\ninstalled.packages]
-    load_package[3.4 Load a package\nlibrary]
+    say_hello[3.2 Say hello print]
+    see_installed_packages[3.3 See installed packages installed.packages]
+    load_package[3.4 Load a package library]
   end
-  stop_r_interpreter[3.5 Stop the R interpreter\nquit]
+  stop_r_interpreter[3.5 Stop the R interpreter quit]
 
   use_r_interpreter --> start_r_interpreter
   use_r_interpreter --> say_hello
