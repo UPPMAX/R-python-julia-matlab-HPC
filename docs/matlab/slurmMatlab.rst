@@ -494,8 +494,8 @@ Parallel batch script
    #!/bin/bash
    # Change to your actual project number
    #SBATCH -A XXXX-YY-ZZZ 
-   #SBATCH --cpus-per-task=<how many tasks>
-   #SBATCH --tasks=10
+   #SBATCH --ntasks-per-node=<how many tasks>
+   #SBATCH --nodes <how many nodes> 
 
    # Asking for 30 min (change as you want)
    #SBATCH -t 00:30:00
@@ -509,16 +509,22 @@ Parallel batch script
    # to find out available versions: module spider matlab
    module add MATLAB/<version>
 
-   # Executing the matlab program monte_carlo_pi.m for the value n=100000
-   # (n is number of steps - see program).
-   # The command 'time' is timing the execution
-   srun time matlab -nojvm -nodisplay -r "monte_carlo_pi(100000)"
-
-
+   # Executing a parallel matlab program 
+   srun matlab -nojvm -nodisplay -r "parallel-matlab-script.m"
 
 GPU code
 ''''''''
 
+In order to use GPUs, you have to ask for them. 
+
+.. note:: 
+
+   if you are running from inside MATLAB (whether GUI or terminal), you ask for GPUs by adding: 
+
+   .. code-block:: 
+
+      c.AdditionalProperties.GpuCard = 'v100';
+c.AdditionalProperties.GpusPerNode = 1;
 
 Exercises
 ---------
