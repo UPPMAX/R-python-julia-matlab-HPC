@@ -102,19 +102,7 @@ Apart from whether or not to include the .sh, it should work the same at all cen
 
 .. exercise::
 
-   Login to HPC2N/UPPMAX/LUNARC, load the newest version of MATLAB (find with ``ml spider MATLAB``), and then run ``configCluster.sh`` on the command line.  
-
-MATLAB Desktop/graphical interface
-----------------------------------
-
-
-.. figure:: ../img/matlab-gui.png
-   :width: 350
-   :align: center
-
-   MATLAB GUI
-
-If you go here, you will want to 
+   Login to HPC2N/UPPMAX/LUNARC, load the newest version of MATLAB (find with ``ml spider MATLAB``), and then run ``configCluster.sh`` / ``configCluster`` on the command line.  
 
 MATLAB terminal interface
 -------------------------
@@ -221,6 +209,7 @@ Asking for 1 hour walltime.
 
    Do the job settings on HPC2N (kebnekaise)/UPPMAX (rackham)/LUNARC (cosmos). 
    Remember, the project-id is:
+
    - Rackham: naiss2024-22-1202
    - Kebnekaise: hpc2n2024-114
    - Cosmos: lu2024-7-80 

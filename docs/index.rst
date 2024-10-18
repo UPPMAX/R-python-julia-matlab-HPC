@@ -16,9 +16,10 @@ Introduction to running R, Python, Julia, and Matlab in HPC
       - use **virtual** environments
       - use the **computation nodes**
         
-         - write batch scripts 
+         - write and submit batch scripts 
          - work interactivly
-      - [BB will add her things]
+      - Learn about the batch system
+      - Learn about GPUs and Python
       - access parallel tools and run parallel codes 
 
    - This course will consist of lectures interspersed with hands-on sessions
