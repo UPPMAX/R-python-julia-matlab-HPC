@@ -19,7 +19,8 @@ These are the ways to access your HPC cluster:
 
       Kebnekaise and Rackham offer a website to access a remote desktop
       environment that one can use without any installation.
-      COSMOS does not have this functionality yet.
+
+      COSMOS does not have this functionality.
 
       .. figure:: img/rackham_remote_desktop_via_website_480_x_270.png
          :width: 480
