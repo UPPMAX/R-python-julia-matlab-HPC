@@ -51,23 +51,24 @@ Check for MATLAB versions
 
       .. tab:: HPC2N
    
-         Check all available version MATLAB versions with:
+         Check all available MATLAB versions with:
 
          .. code-block:: console
  
-            $ module spider matlab
+            $ module spider MATLAB
       
+         Note that it is case-sensitive and must be in ALL-CAPS. There will be results if you type ``matlab``, but they won't be the ones you want. 
          To see how to load a specific version of MATLAB, including the prerequisites, do 
 
          .. code-block:: console
    
-            $ module spider matlab/<version>
+            $ module spider MATLAB/<version>
 
-         Example for MATLAB R2023b 
+         Example for MATLAB 2023a.Update4 
 
          .. code-block:: console
 
-            $ module spider matlab/2023b 
+            $ module spider MATLAB/2023a.Update4 
 
 
       .. tab:: LUNARC
@@ -78,7 +79,7 @@ Check for MATLAB versions
 
             $ ml spider matlab
 
-        Or, if on Desktop On-Demand, select ``Applications`` in the top left corner and hover over ``Applications - Matlab``
+        Or, if on Desktop On-Demand, select ``Applications`` in the top left corner and hover over ``Applications - Matlab`` (see also GUI section below).
 
 .. note::
   
@@ -253,11 +254,34 @@ The GUI is typically the recommended interface where it is offered. The GUI prov
 
 The ``-singleCompThread`` is usually required to prevent MATLAB from spawning as many processes as it thinks it needs, which can cause the user to accidentally take over a full node. Most terminal instances launch MATLAB (either the GUI or command line) on a login node by default, so hogging a node can stall other users' jobs, a violation of the NAISS user agreement. Setting ``-singleCompThread`` does **not** prevent MATLAB from sending parallelized and/or multi-threaded jobs to SLURM or the MATLAB Distributed Computing Server (MDCS).
 
+
+Starting the MATLAB GUI
+-----------------------
+
+Running the MATLAB GUI requires that users be logged into a Thinlinc session. See https://uppmax.github.io/R-python-julia-matlab-HPC/common/login.html#log-in
+
+For HPC2N and UPPMAX users, once logged into the remote desktop, the procedure for starting the MATLAB GUI is the same as what was shown above to start it at the command line, except that the ``-nodisplay`` flag is omitted (as are ``-nodesktop -nosplash`` if applicable). You must still include ``-singleCompThread``!
+
+.. figure:: ../../img/Rackham-Matlab.png
+   :width: 350
+   :align: center
+
+   Both ways of starting MATLAB on Rackham.
+
+On the LUNARC HPC desktop, if you want to use the MATLAB graphical user interface (GUI), nothing needs to be loaded in a terminal: you can simply go to the Applications menu at the top left and mouse over ``Applications-Matlab`` to see the versions available. There you will see 3 versions per release: regular, (CPU), and (HEP,CPU).
+
+.. figure:: ../../img/Cosmos-AppMenu-Matlab.png
+   :width: 350
+   :align: center
+
+The (HEP,CPU) nodes are private, so avoid those. The regular versions run on our Intel 32-core nodes because they have built-in GPU partitions. If you don't plan to do any graphical work inside the GUI, you can choose the (CPU) version of your preferred release to get onto an AMD 48-core node, which also allows you to run for up to 7 days (168:00:00) instead of the usual 2-day limit.
+
+
 Examples
 ^^^^^^^^
 Try them yourself!
 
-1. Load MATLAB in the terminal and do a few simple commands.
+1. Load MATLAB in the terminal or GUI and do a few simple commands at the command line.
 
 .. code-block:: console
 
