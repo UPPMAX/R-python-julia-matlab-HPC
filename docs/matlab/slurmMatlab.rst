@@ -5,11 +5,13 @@ The Slurm job scheduler and MATLAB
 
    - What is a batch job?
    - How to make a batch job for MATLAB?
+   - How to configure clusters and cluster profiles for MATLAB?
    
 .. objectives:: 
 
    - Understand and use the Slurm scheduler
-   - Start (Matlab) batch jobs from the command line
+   - Configure the cluster
+   - Start (MATLAB) batch jobs from the command line
    - Try example
 
 .. admonition:: Compute allocations in this workshop 
@@ -77,7 +79,7 @@ In order to be able to submit jobs to the SLURM queue, you need to configure MAT
 
 .. admonition:: configCluster(.sh) from the terminal 
 
-   You do all these ONCE for each cluster, and for each version of MATLAB you use. You do this AFTER loading MATLAB. 
+   You do all these ONCE for each cluster, and for each version of MATLAB you use. You do this AFTER loading MATLAB but before starting the MATLAB command line or GUI.
 
    .. tabs:: 
 
@@ -102,11 +104,13 @@ In order to be able to submit jobs to the SLURM queue, you need to configure MAT
          
 .. note:: 
 
-   At LUNARC it is also possible do the cluster profile configuration inside the GUI. In that case you just do 
+   At LUNARC it is also possible do the cluster profile configuration on the MATLAB command line. In that case you just do 
    
    .. code-block:: 
 
-      configCluster  
+      >> configCluster  
+
+   Be sure to choose "cosmos" when prompted.
 
 
 **Example (HPC2N):** 
@@ -191,8 +195,6 @@ This starts MATLAB.
 
    - On the login-nodes MATLAB MUST be started with the option '-singleCompThread', preventing MATLAB from using more than one thread.
 
-
-
 **Working in MATLAB**
 
 Of course, we can work in MATLAB like this in exactly the same way as in the GUI: 
@@ -242,8 +244,8 @@ Of course, we can work in MATLAB like this in exactly the same way as in the GUI
 
 However, we are now going to look at running in batch on the compute nodes. 
 
-Job settings
-''''''''''''
+Job settings at the command line
+''''''''''''''''''''''''''''''''
 
 If you want to run a MATLAB program on the cluster with batch, you have to set some things for the job. Start MATLAB and do this.  
 
@@ -276,7 +278,7 @@ Asking for 1 hour walltime.
    - Kebnekaise: hpc2n2024-114
    - Cosmos: lu2024-7-80 
 
-   Since we are just doing a short test, you can use 15 min instead of 1 hour as I did.   
+   Since we are just doing a short test, you can use 15 min instead of 1 hour as I did. 
 
    Test that it was added (with ``c.AdditionalProperties``). 
 
