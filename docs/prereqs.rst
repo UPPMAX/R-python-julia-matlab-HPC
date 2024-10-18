@@ -19,6 +19,7 @@ These are the ways to access your HPC cluster:
 
       Kebnekaise and Rackham offer a website to access a remote desktop
       environment that one can use without any installation.
+      COSMOS does not have this functionality yet.
 
       .. figure:: img/rackham_remote_desktop_via_website_480_x_270.png
          :width: 480
@@ -56,7 +57,8 @@ To learn how to log in to your cluster so, follow its documentation:
 
    .. tab:: COSMOS
 
-      LUNARC does not have documentation yet. If they do, please `contribute <https://github.com/UPPMAX/R-python-julia-matlab-HPC/blob/main/CONTRIBUTING.md>`_
+      See the LUNARC documentation on `how to log in to COSMOS's remote desktop <https://lunarc-documentation.readthedocs.io/en/latest/getting_started/using_hpc_desktop//>`_
+      and `how to log in to COSMOS using SSH <https://lunarc-documentation.readthedocs.io/en/latest/getting_started/login_howto/>`_
 
 Need help? Contact support:
 
