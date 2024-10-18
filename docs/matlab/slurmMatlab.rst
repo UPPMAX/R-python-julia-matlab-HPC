@@ -5,7 +5,7 @@ The Slurm job scheduler and MATLAB
 
    - What is a batch job?
    - How to make a batch job for MATLAB?
-   - How to configure clusters and cluster profiles for MATLAB?
+   - How to configure the cluster for MATLAB?
    
 .. objectives:: 
 
@@ -75,7 +75,9 @@ In order to be able to submit jobs to the SLURM queue, you need to configure MAT
 
 - To be able to use MATLAB 2019b, and later, together with the batch system, MATLAB needs to be configured to use a cluster profile.
 - This needs to be done only once for each cluster and each version of MATLAB.
-- Note that this is done AFTER loading MATLAB 
+- Note that this is done AFTER loading MATLAB.
+
+This will provide a set of default specifications for batch and parallel jobs called a **cluster profile**. These specifications can be changed or added to at runtime, and it is possible to have more than one profile for a single release.
 
 .. admonition:: configCluster(.sh) from the terminal 
 
@@ -110,7 +112,7 @@ In order to be able to submit jobs to the SLURM queue, you need to configure MAT
 
       >> configCluster  
 
-   Be sure to choose "cosmos" when prompted.
+   Be sure to choose "cosmos" when prompted. After this, you can use the Cluster Profile Manager to add to or refine submission parameters.
 
 
 **Example (HPC2N):** 
@@ -282,6 +284,45 @@ Asking for 1 hour walltime.
 
    Test that it was added (with ``c.AdditionalProperties``). 
 
+
+Job settings in the Cluster Profile Manager
+'''''''''''''''''''''''''''''''''''''''''''
+
+If you run MATLAB in the GUI after having configured the cluster, MATLAB will start with a default cluster profile, typically something that includes the name of the cluster. This is just the set of configurations that were set by `configCluster`. You can view, edit, and/or add to this profile by clicking the ``Parallel`` menu icon and selecting ``Create and Manage Clusters``.
+
+.. figure:: ../../Rackham-matlab-parallel.png
+   :width: 550
+   :align: center
+
+   Location of Parallel Menu in GUI.
+
+.. figure:: ../../Rackham-matlab-cluster-profile-mgr.png
+   :width: 550
+   :align: center
+
+   Cluster Profile Manager.
+
+If you scroll down in the window that appears when you select the right cluster, you will see a box titled ``Scheduler Plugin``. This box lets you set SBATCH parameters like
+ - Your account name (project name),
+ - Your email address,
+ - The memory per CPU, including units,
+ - The number of processes per node,
+ - Which partition you want,
+ - Whether you need an exclusive node,
+ - The name of your reservation, and most importantly,
+ - The wall time for your job.
+
+.. figure:: ../../Rackham-matlab-cluster-profile-mgr2.png
+   :width: 550
+   :align: center
+
+   Editing parameters of Scheduler Plugin in Cluster Profile Manager.
+
+In other words, anything you might otherwise set by calling ``c.AdditionalProperties.<insert_property>=...`` can be set in the GUI in this scheduler plugin. Just keep in mind that these settings are saved between sessions.
+
+If you are on Desktop On Demand on LUNARC, these settings do not override the parameters set in the GfxLauncher for the MATLAB GUI session itself, but rather to any batch jobs you submit from *within* the GUI.
+
+
 Running a job
 '''''''''''''
 
@@ -422,6 +463,7 @@ Let us try running this on Kebnekaise, including checking state and then getting
 
    >>
 
+
 .. exercise:: Try the above example. 
 
    It should work on all the clusters. 
@@ -435,7 +477,7 @@ There is more information about batch jobs here on `Mathworks <https://se.mathwo
 MATLAB batch jobs
 -----------------
 
-While we can submit batch jobs from inside MATLAB (and that may be the most common way of using the batch system with MATLAB), it is also possible to create a batch submit script and use that to run MATLAB. 
+While we can submit batch jobs (or even batch jobs of batch jobs) from inside MATLAB (and that may be the most common way of using the batch system with MATLAB), it is also possible to create a batch submit script and use that to run MATLAB. 
 
 The difference here is that when the batch script has been submitted, you cannot make changes to your job. It is not interactive. That is also an advantage - you can submit the job, log out, and then come back later and see the results. 
 
@@ -770,12 +812,11 @@ In order to use GPUs in a batch job, you do something like this:
          matlab -nodisplay -nosplash -r "gpu-matlab-script.m"
 
 
-
 .. keypoints::
 
    - The SLURM scheduler handles allocations to the calculation/compute nodes
-   - Batch jobs runs without interaction with user
+   - Batch jobs run without interaction with user
    - A batch script consists of a part with SLURM parameters describing the allocation and a second part describing the actual work within the job, for instance one or several Matlab scripts.
    - You can run MATLAB as a batch job through a batch script or from inside MATLAB (shell or GUI)       
    - Remember to include possible input arguments to the MATLAB script in the batch script.
-   - You need to configure MATLAB before submitting batch jobs.  
+   - **You need to configure MATLAB before submitting batch jobs.** 
