@@ -324,6 +324,7 @@ mypythonpackages
 mystorage
 networkx
 nobackup
+ntasks
 NPython
 NUMA
 Numba
@@ -331,6 +332,8 @@ numba
 numexpr
 numpy
 NumPy
+NumWorkers
+numworkers
 OpenMP
 OpenMPI
 packagesPython
