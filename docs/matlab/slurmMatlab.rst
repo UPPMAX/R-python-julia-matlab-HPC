@@ -75,30 +75,38 @@ In order to be able to submit jobs to the SLURM queue, you need to configure MAT
 - This needs to be done only once for each cluster and each version of MATLAB.
 - Note that this is done AFTER loading MATLAB 
 
-.. admonition:: configCluster(.sh)
+.. admonition:: configCluster(.sh) from the terminal 
 
-   If you are working in the terminal, run 
+   You do all these ONCE for each cluster, and for each version of MATLAB you use. You do this AFTER loading MATLAB. 
+
+   .. tabs:: 
+
+      .. tab:: UPPMAX 
+
+         .. code-block:: 
+
+            configCluster.sh <project-id> 
+
+      .. tab:: HPC2N 
+
+         .. code-block:: 
+
+            configCluster.sh 
+
+
+      .. tab:: LUNARC
+
+         .. code-block::
+
+            configCluster.sh <project-id> 
+         
+.. note:: 
+
+   At LUNARC it is also possible do the cluster profile configuration inside the GUI. In that case you just do 
    
    .. code-block:: 
 
-      configCluster.sh
-
-   or 
-
-   .. code-block:: 
-
-      configCluster
-
-
-   on the terminal, after loading the MATLAB version you want.
-
-   **Note**, that on UPPMAX you need to do: 
-
-   .. code-block::
-
-      configCluster.sh <project-ID>
-
-   in order to use the full features of running parallel jobs. 
+      configCluster  
 
 
 **Example (HPC2N):** 
@@ -108,6 +116,49 @@ In order to be able to submit jobs to the SLURM queue, you need to configure MAT
    :align: center
 
 Apart from whether or not to include the .sh and the project-id, it should work the same at all centers. 
+
+**Example (LUNARC):**
+
+.. code-block::
+
+   [bbrydsoe@cosmos3 ~]$ configCluster.sh lu2024-7-68
+   salloc: Granted job allocation 927531
+   salloc: Waiting for resource configuration
+   salloc: Nodes cn011 are ready for job
+
+                               < M A T L A B (R) >
+                     Copyright 1984-2023 The MathWorks, Inc.
+                R2023b Update 7 (23.2.0.2515942) 64-bit (glnxa64)
+                                 January 30, 2024
+
+
+   To get started, type doc.
+   For product information, visit www.mathworks.com.
+
+
+   ip =
+
+       "10.21.0.11"
+
+    	   [1] aurora
+   	   [2] cosmos
+   2
+   Select a cluster [1-2]: >>Complete.  Default cluster profile set to "cosmos R2023b".
+
+   	   Must set AccountName and WallTime before submitting jobs to COSMOS.  E.g.
+
+   	   >> c = parcluster;
+   	   >> c.AdditionalProperties.AccountName = 'account-name';
+   	   >> % 5 hour walltime
+   	   >> c.AdditionalProperties.WallTime = '05:00:00';
+   	   >> c.saveProfile
+
+   MATLAB is configured for multi-node parallelism.
+
+   salloc: Relinquishing job allocation 927531
+   salloc: Job allocation 927531 has been revoked.
+   [bbrydsoe@cosmos3 ~]$
+
 
 .. exercise::
 
