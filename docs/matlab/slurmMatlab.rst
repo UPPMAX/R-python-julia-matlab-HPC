@@ -271,7 +271,9 @@ In order to list the content of your profile, do ``c.AdditionalProperties``.
    
    instead of 
    
-   ``c=parcluster('CLUSiTER')``. 
+   ``c=parcluster('CLUSTER')``. 
+
+   You also need to add ``c.AdditionalProperties.ProcsPerNode=20;`` for UPPMAX. 
 
 **Example, for HPC2N**
 
@@ -299,6 +301,8 @@ Asking for 1 hour walltime.
    - Cosmos: lu2024-7-80 
 
    Since we are just doing a short test, you can use 15 min instead of 1 hour as I did. 
+
+   Also remember the ``c.AdditionalProperties.ProcsPerNode=20`` if you are on UPPMAX. 
 
    Test that it was added (with ``c.AdditionalProperties``). 
 
@@ -654,7 +658,6 @@ Inside MATLAB
          .. code-block:: matlab 
 
             c.AdditionalProperties.GpusPerNode = 1;
-            c.AdditionalProperties.ProcsPerNode=20
             c.saveProfile
 
       .. tab:: HPC2N
