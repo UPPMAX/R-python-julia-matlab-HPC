@@ -101,7 +101,8 @@ In order to be able to submit jobs to the SLURM queue, you need to configure MAT
          .. code-block::
 
             configCluster.sh <project-id> 
-         
+        
+         Choose "cosmos" when prompted.  
 .. note:: 
 
    At LUNARC it is also possible do the cluster profile configuration on the MATLAB command line. In that case you just do 
@@ -166,7 +167,11 @@ Apart from whether or not to include the .sh and the project-id, it should work 
 
 .. exercise::
 
-   Login to HPC2N/UPPMAX/LUNARC, load the newest version of MATLAB (find with ``ml spider MATLAB``), and then run ``configCluster.sh`` / ``configCluster.sh <project-id>`` on the command line.  
+   Login to either HPC2N, UPPMAX, or LUNARC if you have not already. 
+   
+   Load the newest version of MATLAB (find with ``ml spider MATLAB``).
+   
+   On the command line, run ``configCluster.sh`` on HPC2N or ``configCluster.sh <project-id>`` on UPPMAX/LUNARC.   
 
 MATLAB terminal interface
 -------------------------
