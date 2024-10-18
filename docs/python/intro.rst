@@ -120,9 +120,9 @@ Schedule
 
 Simultaneous session:
 
-    - Kebnekaise: er, by BB
-    - Rackham:  Interactive session and er, by RB
-    - LUNARC, by RP
+    - Kebnekaise: Jupyter, by BB
+    - Rackham:  Interactive session and Jupyter, by RB
+    - Cosmos: Interactive session with Spyder and Jupyter by RP
 
 What is python?
 ---------------
@@ -135,10 +135,10 @@ As you probably already know…
 
 In particular, what sets Python apart from other languages is its fantastic
 open-source ecosystem for scientific computing and machine learning with
-libraries like NumPy, SciPy, scikit-learn and Pytorch.
+libraries like NumPy, SciPy, scikit-learn, and Pytorch.
 
-- Official Python documentation is found here https://www.python.org/doc/ .
-- Python forum is found here https://python-forum.io/ .
+- Official Python documentation is found at https://www.python.org/doc/ .
+- Python forum is found at https://python-forum.io/ .
 
 Material for improving your programming skills
 ::::::::::::::::::::::::::::::::::::::::::::::
@@ -148,16 +148,16 @@ First level
 
 `The Carpentries <https://carpentries.org/>`_  teaches basic lab skills for research computing.
 
-- `Programming with Python <https://swcarpentry.github.io/python-novice-inflammation/>`_ 
+- `"Programming with Python" <https://swcarpentry.github.io/python-novice-inflammation/>`_ 
 
-- `Plotting and Programming in Python <http://swcarpentry.github.io/python-novice-gapminder/>`_ 
+- `"Plotting and Programming in Python" <http://swcarpentry.github.io/python-novice-gapminder/>`_ 
 
 Second level
 ::::::::::::
 
 CodeRefinery develops and maintains training material on software best practices for researchers that already write code. Their material addresses all academic disciplines and tries to be as programming language-independent as possible. 
 
-- `Lessons <https://coderefinery.org/lessons/)>`_ 
+- `Lessons <https://coderefinery.org/lessons/>`_ 
 - `Data visualization using Python <https://coderefinery.github.io/data-visualization-python/>`_
 - `Jupyter <https://coderefinery.github.io/jupyter/>`__
 
@@ -184,9 +184,6 @@ Third level
 Other NAISS centres
 -------------------
 
-- LUNARC
-   - `Python <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/>`__
-   - `Jupyter <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/?query=jupyter#jupyter-lab>`__
 - C3SE
    - `Python <https://www.c3se.chalmers.se/documentation/applications/python/>`__
    - `Jupyter <https://www.c3se.chalmers.se/documentation/applications/jupyter/>`__
