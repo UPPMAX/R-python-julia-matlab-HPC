@@ -281,7 +281,12 @@ Asking for 1 hour walltime.
 
 .. exercise:: Run job settings
 
-   Do the job settings on HPC2N (kebnekaise)/UPPMAX (with no cluster, as said above)/LUNARC (cosmos R2023b). 
+   Do the job settings on of:
+   
+   - HPC2N: CLUSTER=kebnekaise
+   - UPPMAX: no CLUSTER, as said above - i.e. just c=parcluster;
+   - LUNARC: CLUSTER=cosmos R2023b
+
    Remember, the project-id is:
 
    - Rackham: naiss2024-22-1202
