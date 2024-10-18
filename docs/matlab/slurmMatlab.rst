@@ -258,6 +258,16 @@ If you want to run a MATLAB program on the cluster with batch, you have to set s
 
 In order to list the content of your profile, do ``c.AdditionalProperties``. 
 
+.. note::
+
+   On UPPMAX, you should do 
+   
+   ``c=parcluster;`` 
+   
+   instead of 
+   
+   ``c=parcluster('CLUSiTER')``. 
+
 **Example, for HPC2N**
 
 Asking for 1 hour walltime. 
@@ -271,7 +281,7 @@ Asking for 1 hour walltime.
 
 .. exercise:: Run job settings
 
-   Do the job settings on HPC2N (kebnekaise)/UPPMAX (UPPMAX)/LUNARC (cosmos R2023b). 
+   Do the job settings on HPC2N (kebnekaise)/UPPMAX (with no cluster, as said above)/LUNARC (cosmos R2023b). 
    Remember, the project-id is:
 
    - Rackham: naiss2024-22-1202
@@ -596,7 +606,7 @@ Inside MATLAB
 
       c.AdditionalProperties.GpuCard = '';
       c.AdditionalProperties.GpusPerNode = '';
-
+      
 .. admonition:: 
 
    This is how you add GPUs to use in batch jobs submitted inside MATLAB: 
@@ -634,6 +644,7 @@ Inside MATLAB
          .. code-block:: matlab 
 
             c.AdditionalProperties.GpusPerNode = 1;
+            c.AdditionalProperties.ProcsPerNode=20
             c.saveProfile
 
       .. tab:: HPC2N
