@@ -254,6 +254,8 @@ If you want to run a MATLAB program on the cluster with batch, you have to set s
    >> c.AdditionalProperties.WallTime = 'HHH1:MM:SS';
    >> c.saveProfile 
 
+In order to list the content of your profile, do ``c.AdditionalProperties``. 
+
 **Example, for HPC2N**
 
 Asking for 1 hour walltime. 
@@ -275,6 +277,8 @@ Asking for 1 hour walltime.
    - Cosmos: lu2024-7-80 
 
    Since we are just doing a short test, you can use 15 min instead of 1 hour as I did.   
+
+   Test that it was added (with ``c.AdditionalProperties``). 
 
 Running a job
 '''''''''''''
@@ -665,7 +669,7 @@ Inside MATLAB
 
 .. exercise:: 
 
-   Try and add GPUs to your cluster profile. Run 
+   Try and add GPUs to your cluster profile, save it. Run ``c.AdditionalProperties`` to see what was added. Then do ``c.AdditionalProperties.GpusPerNode = '';`` to remove it. See that it was removed. 
          
 Batch scripts 
 '''''''''''''
@@ -765,14 +769,11 @@ In order to use GPUs in a batch job, you do something like this:
 
 
 
----------
-
 .. keypoints::
 
-   - **FIX**
-   - The SLURM scheduler handles allocations to the calculation nodes
+   - The SLURM scheduler handles allocations to the calculation/compute nodes
    - Batch jobs runs without interaction with user
-   - A batch script consists of a part with SLURM parameters describing the allocation and a second part describing the actual work within the job, for instance one or several Python scripts.
-      
-      - Remember to include possible input arguments to the Python script in the batch script.
-    
+   - A batch script consists of a part with SLURM parameters describing the allocation and a second part describing the actual work within the job, for instance one or several Matlab scripts.
+   - You can run MATLAB as a batch job through a batch script or from inside MATLAB (shell or GUI)       
+   - Remember to include possible input arguments to the MATLAB script in the batch script.
+   - You need to configure MATLAB before submitting batch jobs.  
