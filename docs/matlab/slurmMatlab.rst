@@ -571,7 +571,9 @@ Where ``<batchscript.sh>`` is the name you gave your batchscript. You can find o
 Parallel batch script
 '''''''''''''''''''''
 
-. code-block::
+This is an example batch script for parallel MATLAB 
+
+.. code-block::
 
    #!/bin/bash
    # Change to your actual project number
@@ -592,7 +594,7 @@ Parallel batch script
    module add MATLAB/<version>
 
    # Executing a parallel matlab program 
-   srun matlab -nojvm -nodisplay -r "parallel-matlab-script.m"
+   srun matlab -nojvm -nodisplay -r parallel-matlab-script.m
 
 
 Inside the MATLAB code, the number of CPU-cores (NumWorkers in MATLAB terminology) can be specified when creating the parallel pool, for example, with 8 threads:
@@ -601,6 +603,47 @@ Inside the MATLAB code, the number of CPU-cores (NumWorkers in MATLAB terminolog
 
    poolobj = parpool('local', 8);
 
+.. exercise:: 
+
+   Try making a batch script for running the ``parallel_example.m`` that was run in the example from inside MATLAB above. 
+
+.. solution::
+
+   .. tabs::
+
+      .. tab:: UPPMAX 
+         :class: dropdown
+          
+         .. code-block:: 
+
+            #!/bin/bash
+            # Change to your actual project number
+            #SBATCH -A naiss2024-22-1202 
+            # Remember, there are 4 workers and 1 master! 
+            #SBATCH --ntasks=5
+            #SBATCH --cpus-per-task=1
+            #SBATCH --ntasks-per-node=5
+            #SBATCH --ntasks-per-core=1
+            # Asking for 30 min (change as you want)
+            #SBATCH -t 00:30:00
+            #SBATCH --error=matlab_%J.err
+            #SBATCH --output=matlab_%J.out
+
+            # Clean the environment
+            module purge > /dev/null 2>&1
+
+            # Change depending on resource and MATLAB version
+            # to find out available versions: module spider matlab
+            module add matlab/R2023b
+
+            # Executing a parallel matlab program 
+            srun matlab -nojvm -nodisplay -r parallel_example.m
+
+      .. tab::
+         :class: dropdown
+
+      .. tab:: 
+         :class: dropdown
 
 GPU code
 --------
