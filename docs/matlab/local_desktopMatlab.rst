@@ -21,13 +21,13 @@ Session: MATLAB client on the desktop
 
 
 Let's get started together!
-===========================
+---------------------------
 
 .. demo::
 
    - You can try to type-along
 
-The Rackham MATLAB support package can be found at [uppsala.Desktop.zip](https://github.com/UPPMAX/UPPMAX-documentation/raw/main/docs/software/files/matlab/uppsala.Desktop.zip).
+The Rackham MATLAB support package can be found at `uppsala.Desktop.zip <https://github.com/UPPMAX/UPPMAX-documentation/raw/main/docs/software/files/matlab/uppsala.Desktop.zip>`_.
 
 
 
