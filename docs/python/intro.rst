@@ -137,8 +137,8 @@ In particular, what sets Python apart from other languages is its fantastic
 open-source ecosystem for scientific computing and machine learning with
 libraries like NumPy, SciPy, scikit-learn, and Pytorch.
 
-- Official Python documentation is found at https://www.python.org/doc/ .
-- Python forum is found at https://python-forum.io/ .
+- `Official Python documentation <https://www.python.org/doc/>`_ .
+- `Python forum is found at <https://python-forum.io/>`_ .
 
 Material for improving your programming skills
 ::::::::::::::::::::::::::::::::::::::::::::::
