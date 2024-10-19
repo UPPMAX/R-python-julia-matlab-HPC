@@ -13,7 +13,7 @@ Introduction Python
   
 .. admonition:: Exercises 
 
-    - You can download the exercises from the course GitHub repo, under the "exercises" -> "python" directory: https://github.com/UPPMAX/R-python-julia-matlab-HPC/tree/main/exercises/python 
+    - You can download the exercises from the course GitHub repo, under the "exercises" -> "python" directory: <https://github.com/UPPMAX/R-python-julia-matlab-HPC/tree/main/exercises/python>
     
 .. admonition:: **Your expectations?**
    
@@ -110,8 +110,8 @@ In particular, what sets Python apart from other languages is its fantastic
 open-source ecosystem for scientific computing and machine learning with
 libraries like NumPy, SciPy, scikit-learn, and Pytorch.
 
-- `Official Python documentation <https://www.python.org/doc/>`_ .
-- `Python forum is found at <https://python-forum.io/index.php>`_ .
+- `Official Python documentation <https://www.python.org/doc/>`_
+- `Python forum <https://python-forum.io/index.php>`_
 
 Material for improving your programming skills
 ::::::::::::::::::::::::::::::::::::::::::::::
