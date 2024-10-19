@@ -24,11 +24,8 @@ Introduction to running R, Python, Julia, and Matlab in HPC
 
    - This course will consist of lectures interspersed with hands-on sessions
      where you get to try out what you have just learned.
-     [RB: one could consider this false, as consistently the evaluations give
-     back that there should be more exercises. I do hope this will be true.]
 
    - We aim to give this course in **spring and fall every year**.
-
 
 .. admonition:: Course approach to deal with multiple HPC centers
 
@@ -59,73 +56,39 @@ Schedule Fall 2024
      - Matlab
    
 
-Some practicals
----------------
+.. admonition:: Some practicals
 
-Code of Conduct
-:::::::::::::::
-
-[RB will put it somewhere in README.md]
-[RB: I suggest to remove the CoC, as we should, as teachers, have high
-expectations of our learners and a CoC shows we assume otherwise.
-Sure, having the standard ``CODE_OF_CONDUCT.md`` in the root folder
-of this repo is fine. Putting it this explicitly in the course material,
-however, feels like showing we expect our learners to misbehave. Maybe
-we need to vote on this?]
-
-We strive to follow the Contributor Covenant Code of Conduct to foster an inclusive and welcoming environment for everyone.
-
-In short:
-
-- Use welcoming and inclusive language
-- Be respectful of different viewpoints and experiences
-- Gracefully accept constructive criticism
-- Focus on what is best for the community
-- Show courtesy and respect towards other community members
-
-Furthermore, as this is a hands-on, interactive workshop:
-
-- Be kind to each other and help each other as best you can.
-- If you can't help someone or there is some problem, let someone know.
-
-[RB: I enjoy the intention behind the text below. However, we can/should expect
-our learners to do so: they are responsible for their learning too!
-Of course, we should give them the space/time to correct us somewhere. 
-
-Finally, if you notice something that prevents you from learning as well as you can, let us know and don't suffer silently, even the "little things":
-
-[RB: I don't think we need to
-give examples of what causes some learners to suffer]
-
-  - Volume too low?
-  - Font size too small?
-  - Generally confusing instructor?
-  - Not enough breaks?
-
+   - `Code of Conduct <https://github.com/UPPMAX/R-python-julia-matlab-HPC/blob/main/CODE_OF_CONDUCT.md>`_
+      - Be nice to each other!
  
-.. admonition:: Zoom
-
-    The course is run over Zoom. You should have gotten an email with the links
+   - Zoom
+       - You should have gotten an email with the links
       
-    This is the Zoom policy:
-  
-    - Use your real name when joining the meeting
-    - Mute your microphone when you are not speaking
-    - Use the Zoom 'Raise hand' functionality to indicate you have a question
-    - Use the collaboration document (see below) for questions
-      regarding the course content
-    - Use the chat for questions that are unrelated
-      to the course content (e.g. 'My mic does not work')
-    - The Zoom main room is used for most lectures
-    - Some sessions use breakout rooms for exercises, 
-      some of which use a silent room
+       - Zoom policy:
+
+          - Zoom chat (maintained by co-teachers):
+
+            - technical issues of zoom
+            - technical issues of your settings
+            - direct communication 
+            - each teacher may have somewhat different approach
+
+          -  collaboration document (see below):
+
+             - "explain again"         
+             - elaborating the course content
+             - solutions for your own work
+
+       - Recording policy:
+          - The lectures and demos will be recorded.
+          - The questions asked per microphone during these sessions will be recorded
+          - If you don't want your voice to appear use: 
+
+             - use the collaboration document (see below)
+
+       - The Zoom main room is used for most lectures
+       - Some sessions use breakout rooms for exercises, some of which use a silent room
        
-    This is the recording policy:
-    
-    - The lectures and demos will be recorded.
-    - The questions asked per microphone during these sessions will be recorded
-    - For unrecorded questions during these sessions,
-      use the collaboration document (see below)
 
     
 .. admonition:: Collaboration document
