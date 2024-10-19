@@ -63,7 +63,7 @@ Default Add-On Installation Folder
 
 The install location of an add-on depends on its type. MATLAB installs MathWorks® products in the matlabroot folder and hardware support packages in the folder returned by matlabshared.supportpkg.getSupportPackageRoot. For more information about a specific support package install location, see the documentation for the package.
 
-- Linux® — ~/MATLAB Add-
+- Linux® — ~/MATLAB Add-Ons
 
 It's in the path so it should be possible to run directly if you don't need to run a installation file.
 
