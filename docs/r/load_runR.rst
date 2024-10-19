@@ -185,7 +185,7 @@ Here is how to find the modules that load different versions of R:
 
             Output at LUNARC as of 10 October 2024: 
 
-            .. code-block:: tcl 
+            .. code-block:: console 
 
                 [bbrydsoe@cosmos3 python]$ ml spider R
 
