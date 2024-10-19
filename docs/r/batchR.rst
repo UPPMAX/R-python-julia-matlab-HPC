@@ -529,8 +529,6 @@ Example batch script
             #x is how many cards you want, at most as many as shown above 
             #SBATCH --gpus:x
             #SBATCH -C type
-            #Outcomment the below if you asked for A100 cards
-            #SBATCH -p amd_gpu 
             #Writing output and error files
             #SBATCH --output=output%J.out
             #SBATCH --error=error%J.error
@@ -627,6 +625,6 @@ Exercises
 
 .. challenge:: Parallel job run
 
-   Try running the parallel example with "foreach" from further up on the page. 
+   Try making a batch script for running the parallel example with "foreach" from further up on the page. 
 
 

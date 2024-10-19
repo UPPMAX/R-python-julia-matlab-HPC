@@ -164,7 +164,7 @@ ML on CPUs
          .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A naiss2024-22-107 # Course project id. Change to your own project ID after the course
+            #SBATCH -A naiss2024-22-1202 # Course project id. Change to your own project ID after the course
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
@@ -178,17 +178,17 @@ ML on CPUs
 
       .. tab:: HPC2N
 
-         Short serial example for running on Kebnekaise. Loading R/4.1.2 and prerequisites, also R-bundle-Bioconductor/3.14-R-4.1.2 
+         Short serial example for running on Kebnekaise. Loading R/4.2.1 and prerequisites, also R-bundle-Bioconductor/3.15-R-4.2.1 
        
          .. code-block:: sh
 
             #!/bin/bash
-            #SBATCH -A hpc2n2024-025 # Change to your own project ID
+            #SBATCH -A hpc2n2024-114 # Change to your own project ID
             #SBATCH --time=00:10:00 # Asking for 10 minutes
             #SBATCH -n 1 # Asking for 1 core
             
-            # Load any modules you need, here R/4.1.2 and prerequisites + R-bundle-Bioconductor/3.14-R-4.1.2 
-            module load GCC/11.2.0  OpenMPI/4.1.1  R/4.1.2 R-bundle-Bioconductor/3.14-R-4.1.2 
+            # Load any modules you need, here R/4.2.1 and prerequisites + R-bundle-Bioconductor/3.15-R-4.2.1 
+            module load GCC/11.3.0  OpenMPI/4.1.4  R/4.2.1 R-bundle-Bioconductor/3.15-R-4.2.1 
             
             # Run your R script (here 'iris_ml.R')
             R --no-save --quiet < iris_ml.R
@@ -237,7 +237,7 @@ ML on GPUs
             #SBATCH -t 00:10:00
             #SBATCH --exclusive
             #SBATCH -p node
-            #SBATCH -N 1
+            #SBATCH -n 1
             #SBATCH -M snowy
             #SBATCH --gres=gpu:1
             #Writing output and error files
@@ -268,7 +268,7 @@ ML on GPUs
             #SBATCH --error=error%J.error
             
             ml purge > /dev/null 2>&1
-            module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2 CUDA/12.1.1
+            module load GCC/11.3.0 OpenMPI/4.1.4 R/4.2.1 CUDA/12.1.1
                         
             R --no-save --no-restore -f Rscript.R
 
