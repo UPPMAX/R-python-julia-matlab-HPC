@@ -187,19 +187,12 @@ The two HPC centers UPPMAX and HPC2N
 .. warning:: 
 
    - At both HPC2N and UPPMAX we call the applications available via the *module system* **modules**. 
-   - https://https://docs.uppmax.uu.se/cluster_guides/modules/ 
-   - https://www.hpc2n.umu.se/documentation/environment/lmod
+   - https://docs.uppmax.uu.se/cluster_guides/modules/ 
+   - https://docs.hpc2n.umu.se/documentation/modules/#the__modules__system
    
    To distinguish these modules from the **python** *modules* that work as libraries we refer to the later ones as **packages**.
 
-.. seealso::
-
-   - Details about the systems 
-     - https://uppmax.github.io/R-python-julia-matlab-HPC/prereqs.html#common-features
-     - and below
-
-
-         
+        
 Content of the course
 ---------------------
 
