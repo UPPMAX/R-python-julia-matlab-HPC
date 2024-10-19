@@ -184,29 +184,18 @@ The two HPC centers UPPMAX and HPC2N
    - HPC2N has Kebnekaise with GPUs  
    - Conda is recommended only for UPPMAX users
     
-.. warning:: 
+Prepare your environment now!
+-----------------------------
 
-   - At both HPC2N and UPPMAX we call the applications available via the *module system* **modules**. 
-   - https://docs.uppmax.uu.se/cluster_guides/modules/ 
-   - https://docs.hpc2n.umu.se/documentation/modules/#the__modules__system
-   
-   To distinguish these modules from the **python** *modules* that work as libraries we refer to the later ones as **packages**.
+.. type-along::
 
- .. type-along::
-
-   - Please log in to Rackham, Kebnekaise or other cluster that you are using.
+   - Please log in to Rackham, Kebnekaise, Cosmos or other cluster that you are using.
 
    .. admonition:: Use Thinlinc or terminal?
 
       - It is up to you!
       - Graphics come easier with Thinlinc
       - For this course, when having many windows open, it may be better to run in terminal, for screen space issues.
-
-
-Prepare your environment now!
------------------------------
-
-.. challenge:: Set up a personal working directory
 
    .. tabs::
 
