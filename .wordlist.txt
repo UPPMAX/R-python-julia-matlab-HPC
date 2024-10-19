@@ -748,3 +748,7 @@ parcluster
 poolobj
 kalmanf
 add-ons
+getSupportPackageRoot
+matlabroot
+matlabshared
+supportpkg
