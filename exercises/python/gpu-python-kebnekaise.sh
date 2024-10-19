@@ -1,11 +1,12 @@
 #!/bin/bash
-#SBATCH -A hpc2n2024-025 # Change to your own after the course
+#SBATCH -A hpc2n2024-114 # Change to your own after the course
 #SBATCH --time=00:10:00 # Asking for 10 minutes
-# Asking for one V100 card
-#SBATCH --gres=gpu:v100:1
+# Asking for one A100 card
+#SBATCH --gpus=1
+#SBATCH -C a100 
 
 # Load any modules you need
-module load GCC/11.2.0 OpenMPI/4.1.1 Python/3.9.6 SciPy-bundle/2021.10 TensorFlow/2.7.1
+module load GCC/12.3.0 OpenMPI/4.1.5 TensorFlow/2.15.1-CUDA-12.1.1 SciPy-bundle/2023.07 scikit-learn/1.4.2
 
 # If you are using the example named "my_tf_program.py" in this directory, 
 # you need to create and activate a virtual environment containing 
