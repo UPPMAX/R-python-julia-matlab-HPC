@@ -146,7 +146,7 @@ First steps
     - Do a ``conda clean -a`` once in a while to remove unused and unnecessary files
     
     
-- `More info about Conda on UPPMAX <https://uppmax.uu.se/support/user-guides/conda-user-guide/>`_
+- `More info about Conda on UPPMAX <https://docs.uppmax.uu.se/software/conda/>`_
 - `Video: How to use conda on the Rackham UPPMAX HPC cluster (YouTube) <https://youtu.be/SMhawXQhtls>`_
 
 Working with Conda environments defined by files
@@ -231,7 +231,7 @@ Exercises
    - Bianca cluster does not have direct internet access
    - If a python package is not not available on Bianca already (like Conda repositories) you may have to use the wharf to install your tools
 
-   - `Install with pip to Bianca <https://uppmax.github.io/bianca_workshop/pip/>`_
+   - `Install with pip to Bianca <https://uppmax.github.io/bianca_workshop/extra/pip/>`_
 
 .. keypoints::
 
