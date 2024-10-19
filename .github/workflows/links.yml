@@ -32,7 +32,7 @@ jobs:
         uses: lycheeverse/lychee-action@v1.10.0
         with:
           # Check all reStructuredText files in repo 
-          args: --base docs/ --cache --max-cache-age 7d --verbose --no-progress './**/*.rst'
+          args: --base docs/ --max-redirects 10 --cache --max-cache-age 7d --verbose --no-progress './**/*.rst'
 
       - name: Create Issue From File
         if: env.lychee_exit_code != 0
