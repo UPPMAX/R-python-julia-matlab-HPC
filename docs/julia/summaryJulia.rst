@@ -67,12 +67,12 @@ Summary
 
 
      - Documentation at the HPC centres UPPMAX and HPC2N
-        - UPPMAX: https://www.uppmax.uu.se/support/user-guides/julia-user-guide/
+        - UPPMAX: https://docs.uppmax.uu.se/software/julia/
         - HPC2N: https://www.hpc2n.umu.se/resources/software/julia
      - Official Julia documentation is found here: https://docs.julialang.org/en/v1/
      - Slack channel for Julia and instructions for joining it are found here: https://julialang.org/slack/
      - HPC2N YouTube video on Julia in HPC: https://www.youtube.com/watch?v=bXHe7Kj3Xxg
-     - Julia for High Performance Computing course material from ENCCS: https://enccs.github.io/Julia-for-HPC/
+     - Julia for High Performance Computing course material from ENCCS: https://enccs.github.io/julia-for-hpc/
 
 
 .. note::
@@ -80,7 +80,7 @@ Summary
     - Julia language becomes increasingly popular.
     - We also have a web pages for Julia: 
   
-       - UPPMAX https://uppmax.uu.se/support/user-guides/julia-user-guide/
+       - UPPMAX https://docs.uppmax.uu.se/software/julia/
        - HPC2N https://www.hpc2n.umu.se/resources/software/julia
     
     
