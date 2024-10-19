@@ -6,7 +6,7 @@ Load and run Julia
     At the Swedish HPC centers we call the applications available via the *module system* **modules**:
 
     - `UPPMAX <https://docs.uppmax.uu.se/cluster_guides/modules/>`_ 
-    - `HPC2N <https://www.hpc2n.umu.se/documentation/environment/lmod>`_ 
+    - `HPC2N <https://docs.hpc2n.umu.se/documentation/modules/#the__modules__system>`_ 
     - `LUNARC <https://lunarc-documentation.readthedocs.io/en/latest/manual/manual_modules/#hierarchical-naming-scheme-concept>`_
 
    
