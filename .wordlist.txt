@@ -747,6 +747,7 @@ packagesBianca
 parcluster
 poolobj
 kalmanf
+ons
 add-ons
 getSupportPackageRoot
 matlabroot
