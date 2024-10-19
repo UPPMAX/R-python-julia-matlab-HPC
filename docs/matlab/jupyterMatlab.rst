@@ -80,13 +80,6 @@ Running Matlab in a Jupyter notebook
 
       When the Jupyter notebook interface starts, you can choose the **MATLAB kernel** version from the module you loaded. When you try to run a notebook, Matlab will ask for a type of license. Because you are running this notebook on our HPC center, you can choose the option Existing License and then Start MATLAB. It can take a minute or so to start.
 
-      .. admonition:: Running **FIXJulia** in Jupyter on compute nodes at HPC2N
-
-         - On Kebnekaise, you can run Jupyter notebooks with Matlab kernels by using batch scripts    
-         - Notebook example: https://github.com/hpc2n/intro-course/blob/master/exercises/JUPYTERNOTEBOOKS/MATLAB/matlab_kernel.ipynb
-         - 'Jupyter on kebnekaise <https://www.hpc2n.umu.se/resources/software/jupyter>`_ 
-
-
    .. tab:: HPC2N
 
       .. code-block:: console
@@ -140,11 +133,11 @@ Running Matlab in a Jupyter notebook
       version from the module you loaded. When you try to run a notebook, Matlab will ask for a type of license. Because you are 
       running this notebook on our HPC center, you can choose the option Existing License and then Start MATLAB.
 
-      .. admonition:: Running Julia in Jupyter on compute nodes at HPC2N
+      .. admonition:: Running Matlab in Jupyter on compute nodes at HPC2N
 
          - On Kebnekaise, you can run Jupyter notebooks with Matlab kernels by using batch scripts    
          - Notebook example: https://github.com/hpc2n/intro-course/blob/master/exercises/JUPYTERNOTEBOOKS/MATLAB/matlab_kernel.ipynb
-         - https://www.hpc2n.umu.se/resources/software/jupyter-julia
+         - https://docs.hpc2n.umu.se/tutorials/jupyter/
 
 
                
