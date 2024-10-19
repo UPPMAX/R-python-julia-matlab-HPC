@@ -97,7 +97,7 @@ In such a case: use an interactive session.
     For UPPMAX, using Jupyter is easier 
     and this will be shown in this course, in `the UPPMAX-only session on Jupyter <https://uppmax.github.io/HPC-python/jupyter.html>`_.
 
-    For LUNARC, using Jupyter https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/#jupyter-lab() works best using the `LUNARC HPC Desktop <https://lunarc-documentation.readthedocs.io/using_hpc_desktop>`_. Go to the Applications menu, hover over Applications - Python, and select Jupyter Lab from the menu that pops up to the right.
+    For LUNARC, using Jupyter https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/#jupyter-lab() works best using the `LUNARC HPC Desktop <https://lunarc-documentation.readthedocs.io/en/latest/getting_started/using_hpc_desktop/>`_. Go to the Applications menu, hover over Applications - Python, and select Jupyter Lab from the menu that pops up to the right.
 
 An interactive session is a session with direct access to a compute node.
 Or alternatively: an interactive session is a session,
