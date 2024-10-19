@@ -480,7 +480,7 @@ Here follows a solution for HPC2N. Try and make it run on Snowy, using the pytho
 Additional information
 ----------------------
          
-* `Numba documentation examples <http://numba.pydata.org/numba-doc/latest/cuda/examples.html>`_
+* `Numba documentation examples <https://numba.readthedocs.io/en/stable/cuda/examples.html>`_
 * `New York University CUDA/Numba lesson  <https://nyu-cds.github.io/python-numba/05-cuda/>`_
 * Hands-On GPU Programming with Python and CUDA : Explore High-Performance Parallel Computing with CUDA, Brian Tuomanen. Packt publishing.
 * Parallel and High Performance Computing, Robert Robey and Yuliana Zamora. Manning publishing.
