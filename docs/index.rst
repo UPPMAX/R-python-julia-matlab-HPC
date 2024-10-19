@@ -119,7 +119,7 @@ Schedule Fall 2024
 
 .. warning::
 
-   - **Please be sure that you have gone through the `pre-requirements <https://uppmax.github.io/R-python-julia-HPC/prereqs.html>`_**
+   - **Please be sure that you have gone through the `pre-requirements <https://uppmax.github.io/R-python-julia-matlab-HPC/prereqs.html>`_**
    - It mentions the familiarity with the LINUX command line.
    - The applications to connect to the clusters
       - terminals
@@ -130,8 +130,6 @@ Material for improving your programming skills
 
 - This course does not aim to improve your coding skills.
 - Rather you will learn to understand the ecosystems and navigations for the the different languages on a HPC cluster.
-
-See the pre-requirements, section `Coding <https://uppmax.github.io/R-python-julia-HPC/prereqs.html#coding>`_
 
 Briefly about the cluster hardware and system at UPPMAX and HPC2N
 -----------------------------------------------------------------
@@ -189,7 +187,7 @@ The two HPC centers UPPMAX and HPC2N
 .. warning:: 
 
    - At both HPC2N and UPPMAX we call the applications available via the *module system* **modules**. 
-   - https://www.uppmax.uu.se/resources/software/module-system/ 
+   - https://https://docs.uppmax.uu.se/cluster_guides/modules/ 
    - https://www.hpc2n.umu.se/documentation/environment/lmod
    
    To distinguish these modules from the **python** *modules* that work as libraries we refer to the later ones as **packages**.
@@ -197,7 +195,7 @@ The two HPC centers UPPMAX and HPC2N
 .. seealso::
 
    - Details about the systems 
-     - https://uppmax.github.io/R-python-julia-HPC/prereqs.html#common-features
+     - https://uppmax.github.io/R-python-julia-matlab-HPC/prereqs.html#common-features
      - and below
 
 
