@@ -747,3 +747,4 @@ packagesBianca
 parcluster
 poolobj
 kalmanf
+add-ons
