@@ -291,18 +291,15 @@ GPU code
             #SBATCH -A naiss2024-22-1202
             #SBATCH -t 00:10:00
             #SBATCH --exclusive
-            #SBATCH -p node
+            #SBATCH -n 1
             #SBATCH -M snowy
             #SBATCH --gres=gpu:1
             
             # Load any modules you need, here loading Python 3.9.5 and the corresponding ML packages module 
 
             module load uppmax
-            module load python_ML_packages/3.9.5-gpu python/3.9.5
+            module load python/3.11.8 python_ML_packages/3.11.8-gpu 
             
-            # Activate the Example-gpu environment to use the PyTorch we installed there 
-            source <path-to-to-your-virtual-environment>/Example-gpu/bin/activate 
-
             # Run your code
             srun python pytorch_fitting_gpu.py 
             
