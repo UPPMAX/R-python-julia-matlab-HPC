@@ -69,8 +69,8 @@ Summary
 
 .. seealso::
 
-    - For other topics, see python documentation https://www.python.org/doc/. 
-    - Python forum is found here https://python-forum.io/.
+    - For other topics, see `python documentation <https://www.python.org/doc/>`_. 
+    - `Python forum <https://python-forum.io/index.php>`_.
     - A nice introduction to packages can be found here: https://aaltoscicomp.github.io/python-for-scicomp/dependencies/
     - CodeRefinery develops and maintains training material on software best practices for researchers that already write code. 
     
