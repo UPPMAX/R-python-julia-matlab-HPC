@@ -138,7 +138,7 @@ open-source ecosystem for scientific computing and machine learning with
 libraries like NumPy, SciPy, scikit-learn, and Pytorch.
 
 - `Official Python documentation <https://www.python.org/doc/>`_ .
-- `Python forum is found at <https://python-forum.io/>`_ .
+- `Python forum is found at <https://python-forum.io/index.php>`_ .
 
 Material for improving your programming skills
 ::::::::::::::::::::::::::::::::::::::::::::::
