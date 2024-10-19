@@ -708,7 +708,7 @@ Inside MATLAB
       c.AdditionalProperties.GpuCard = '';
       c.AdditionalProperties.GpusPerNode = '';
       
-.. admonition:: 
+.. admonition:: GPU in batch job
 
    This is how you add GPUs to use in batch jobs submitted inside MATLAB: 
 
