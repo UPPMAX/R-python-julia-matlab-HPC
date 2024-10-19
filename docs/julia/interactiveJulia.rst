@@ -340,7 +340,7 @@ Running IJulia and Jupyter notebooks
       .. admonition:: Running Julia in Jupyter on compute nodes at HPC2N
 
          - On Kebnekaise, you can run Jupyter notebooks with Julia kernels by using batch scripts    
-         - https://www.hpc2n.umu.se/resources/software/jupyter-julia
+         - https://docs.hpc2n.umu.se/tutorials/jupyter/#jupyterlab__with__julia
 
 
 .. keypoints::
