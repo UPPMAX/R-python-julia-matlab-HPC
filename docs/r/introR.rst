@@ -55,7 +55,7 @@ First overview of R
 -------------------
 
 R is a programming language for statistical computing and data visualization
-(from `Wikipedia <https://en.wikipedia.org/wiki/R_(programming_language>`_).
+(from `Wikipedia <https://en.wikipedia.org/wiki/R_(programming_language)>`_).
 
 .. mermaid:: intro_r_overview_r.mmd 
 
