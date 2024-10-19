@@ -47,27 +47,25 @@ DUMP
 Install Add-Ons from File
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can install some add-ons manually using an installation file. This is useful in several situations:
+<https://se.mathworks.com/help/matlab/matlab_env/get-add-ons.html>
+
+You can install some Add-Ons manually using an installation file. This is useful in several situations:
 - The add-on is not available for installation through the Add-On Explorer, for example, if you create a custom add-on yourself or receive one from someone else.
 - You downloaded the add-on from the Add-On Explorer without installing it.
 - You downloaded the add-on from the File Exchange at MATLAB Central™.
-
-- Valid add-on installation files include .mltbx files (for toolboxes), .mlappinstall files (for apps), and .mlpkginstall files (for hardware support packages). To install an add-on from one of these files, in the MATLAB Current Folder browser, double-click the file. An installer opens to guide you through the installation process.
-- Note
-- Make sure to double-click the installation file in the MATLAB Current Folder browser. Double-clicking to install the add-on from the system file browser is not supported on all operating systems.
 
 .. warning::
 
    To be able to you need however use email for mathworks account.
 
-
 Default Add-On Installation Folder
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 The install location of an add-on depends on its type. MATLAB installs MathWorks® products in the matlabroot folder and hardware support packages in the folder returned by matlabshared.supportpkg.getSupportPackageRoot. For more information about a specific support package install location, see the documentation for the package.
 
 - Linux® — ~/MATLAB Add-
 
-It's in the path so it should be possible to run directly if you don't need to run a instalaltion file.
-
+It's in the path so it should be possible to run directly if you don't need to run a installation file.
 
 Exercises
 ---------
