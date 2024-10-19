@@ -51,7 +51,7 @@ Jupyter can be slow when using a remote desktop website
 
 - For HPC2N, as ``JupyterLab`` it is only accessible from within HPC2N's, and there is no way to improve any slowness
 - For UPPMAX, one can use a locally installed ThinLinc client to speed up Jupyter.
-  See `the UPPMAX documentation on ThinLinc <https://www.uppmax.uu.se/support/user-guides/thinlinc-graphical-connection-guide>`_
+  See `the UPPMAX documentation on ThinLinc <https://docs.uppmax.uu.se/software/thinlinc/>`_
   on how to install the ThinLinc client locally
 
 UPPMAX procedure
