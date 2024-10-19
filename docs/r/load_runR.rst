@@ -140,7 +140,7 @@ Here is how to find the modules that load different versions of R:
 
             Output at HPC2N as of 15 October 2023 (on main Kebnekaise login node):
 
-            .. code-block:: tcl
+            .. code-block:: console
 
                 b-an01 [~]$ module spider R
 
