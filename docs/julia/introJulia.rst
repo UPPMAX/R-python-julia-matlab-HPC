@@ -33,9 +33,10 @@ Introduction Julia
     - On UPPMAX you can copy the exercises in a tarball 
       from ``/proj/r-py-jl-m-rackham/juliaExercises.tar``
 
-.. challenge:: Download the exercise files
+.. admonition:: Exercises 
 
-    - Copy the file and un-tar it in you personal project folder you created a while ago (https://uppmax.github.io/R-python-julia-HPC/login.html#prepare-your-environment-now). Finally enter the directory and list the content with the ``tree`` command.
+    - You can download the exercises from the course GitHub repo, under the "exercises" -> "python" directory: https://github.com/UPPMAX/R-python-julia-matlab-HPC/tree/main/exercises/julia 
+    - Copy the file and un-tar it in you personal project folder you created a while ago (https://uppmax.github.io/R-python-julia-HPC/index.html#prepare-your-environment-now). Finally enter the directory and list the content with the ``tree`` command.
 
     .. code-block:: bash
 
