@@ -235,7 +235,7 @@ Prepare your environment now!
       .. tab:: Cosmos
 
          - Cosmos through terminal: ``<user>@cosmos.lunarc.lu.se``
-         - Cosmos through ThinLinc, use: ``<user>@cosmos-dt.lunarc.lu.se ``
+         - Cosmos through ThinLinc, use: ``<user>@cosmos-dt.lunarc.lu.se``
 
          - Create a working directory where you can code along.
 
