@@ -1,11 +1,11 @@
-Packages
-========
+Python packages
+===============
 
 .. tabs::
 
     .. tab:: Learning objectives
 
-        - load a Python module
+        - navigate the documentation
         - determine which Python packages are installed
         - load a module that adds more pre-installed Python packages
         - install a Python package
@@ -14,7 +14,7 @@ Packages
 
         Teaching goals are:
 
-        - Learners have loaded a Python module
+        - Learners have navigated the documentation
         - Learners have determined which Python packages are installed
         - Learners have loaded a module
           that adds more pre-installed Python packages
@@ -400,22 +400,17 @@ Install a Python package called ``mhcnuggets``. Which version gets installed?
 Conclusion
 ----------
 
-.. keypoints::
+You have:
 
-    You have:
+- determined if a Python package is installed yes/no using ``pip``
+- discovered some Python package are already installed upon
+  loading a module
+- installed a Python package using ``pip``
 
-    - determined if a Python package is installed yes/no using ``pip``
-    - discovered some Python package are already installed upon
-      loading a module
-    - installed a Python package using ``pip``
+However, the installed package was put into a shared (as in, not isolated)
+environment.
 
-    However, the installed package was put into a shared (as in, not isolated)
-    environment.
-
-    Luckily, isolated environments are discussed in this course too :-)
-
-
-
+Luckily, isolated environments are discussed in this course too :-)
 
 ..
    _This: is a comment
