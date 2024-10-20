@@ -20,6 +20,8 @@ matrix:
       - 'blockquote'
   sources:
   - 'docs/**/*.md'
+  - '/**/*.md'
+  - '*.md'
   default_encoding: utf-8
 - name: rst
   dictionary:
