@@ -18,7 +18,7 @@ jobs:
         run: pip install sphinx rstcheck rstcheck[sphinx]
 
       - name: Check docs/python/packages.rst
-        run: rstcheck docs/python/packages.rst || true
+        run: rstcheck --ignore-directives tabs,mermaid,dropdown,keypoints docs/python/packages.rst || true 
 
       - name: Check docs/python/isolated.rst
-        run: rstcheck docs/python/isolated.rst || true
+        run: rstcheck --ignore-directives tabs,mermaid,dropdown,keypoints docs/python/isolated.rst || true
