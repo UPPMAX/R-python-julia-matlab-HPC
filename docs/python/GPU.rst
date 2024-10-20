@@ -144,7 +144,7 @@ Numba is installed on HPC2N and LUNARC as a module. We also need numpy, so we ar
 On UPPMAX numba is part of python_ML_packages, so we use that. 
 
 We are going to use the following program for testing (it was taken from 
-https://linuxhint.com/gpu-programming-python/ but there are also many great examples at 
+a (now absent) linuxhint.com exercise but there are also many great examples at 
 https://numba.readthedocs.io/en/stable/cuda/examples.html): 
 
 .. admonition:: Python example ``add-list.py`` using Numba 

@@ -1,3 +1,11 @@
 {
     "aliveStatusCodes": [0, 40, 200, 401, 403, 418, 500, 503]
+  "ignorePatterns": [
+    {
+      "pattern": "^https://machinelearningmastery.com/machine-learning-in-r-step-by-step/$"
+    },
+    {
+      "pattern": "^https://python-forum.io/$"
+    },
+  ]
 }
