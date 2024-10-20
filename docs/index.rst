@@ -279,6 +279,7 @@ Content of the course
    python/condaUPPMAX.rst
    python/exercisesPython.rst
    python/summaryPython.rst
+   python/evaluationPython.rst
    
 .. toctree::
    :maxdepth: 2
@@ -308,6 +309,7 @@ Content of the course
    r/rstudio.rst
    r/exercisesR.rst
    r/summaryR.rst
+   r/evaluationR.rst
 
 .. toctree::
    :maxdepth: 2
