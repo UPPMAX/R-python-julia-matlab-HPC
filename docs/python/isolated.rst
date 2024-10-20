@@ -66,10 +66,13 @@ In this course, we will look at the following environment managers:
 +---------------+-----------------+-------------+------------------+
 | Manager       | HPC2N           | UPPMAX      |Scope             |
 +===============+=================+=============+==================+
-| ``conda``     | Avoid           | Recommended |Language agnostic |
+| ``conda``     | Avoid           | Avoid [1]   |Language agnostic |
 +---------------+-----------------+-------------+------------------+
-| ``venv``      | Recommended     | OK          |Python only       |
+| ``venv``      | Recommended     | Recommended |Python only       |
 +---------------+-----------------+-------------+------------------+
+
+- `[1]` With the exception of the Bianca cluster, where `conda` is the
+  only option
 
 Both centers have their documentation on virtual environment managers:
 
