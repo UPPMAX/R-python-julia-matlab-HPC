@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-python@v5
 
       - name: Install rstcheck with Sphinx support
-        run: pip install rstcheck rstcheck[sphinx]
+        run: pip install sphinx rstcheck rstcheck[sphinx]
 
       - name: Check docs/python/packages.rst
         run: rstcheck docs/python/packages.rst || true
