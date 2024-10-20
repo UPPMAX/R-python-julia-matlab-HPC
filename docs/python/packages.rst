@@ -5,19 +5,19 @@ Packages
 
     .. tab:: Learning objectives
 
-        - practice to determine the version of a Python package 
-        - practice to have loaded a module that adds more
-          pre-installed Python packages
-        - practice to install a Python package
+        - load a Python module
+        - determine which Python packages are installed
+        - load a module that adds more pre-installed Python packages
+        - install a Python package
 
     .. tab:: For teachers
 
         Teaching goals are:
 
-        - Learners have determined the version of a Python package 
-        - Learners have determined that a Python package is not installed
-        - Learners have loaded a module that adds more
-          pre-installed Python packages
+        - Learners have loaded a Python module
+        - Learners have determined which Python packages are installed
+        - Learners have loaded a module
+          that adds more pre-installed Python packages
         - Learners have installed a Python package
 
         Lesson plan (45 minutes in total):
@@ -122,8 +122,8 @@ for a user that needs to use a certain Python packages:
 - In exercise 2, we determine if a machine learning Python package is already installed
 - If all fails, in exercise 3, we install a Python package ourselves
 
-Like any user, we'll try to be autonomous and read the -hopefully well written!-
-UPPMAX documentation.
+Like any user, we'll try to be autonomous and read your favorite HPC center's
+documentation.
 
 Exercise 1: loading a Python package that comes with the Python module
 ----------------------------------------------------------------------
