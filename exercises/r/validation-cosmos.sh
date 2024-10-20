@@ -6,8 +6,8 @@
 # Load any modules you need, here R/4.2.1 and prerequisites + R-bundle-Bioconductor/3.15-R-4.2.1
 module load GCC/11.3.0  OpenMPI/4.1.4  R/4.2.1 R-bundle-Bioconductor/3.15-R-4.2.1
 
-#Make sure we use the renv with datarium installed
-#cd /proj/nobackup/naiss2024-025/<path-to-renv>
+#Make sure we use the renv with datarium installed - this was installed under the "Isolated environments with renv" section 
+cd <path-to-my-renv-project/<my-renv>
 
 # Run your R script (here 'validation.R'. Give the path if it is not located in the same directory as the renv)
-R --no-save --quiet < validation.R
+R --no-save --quiet < <path-to-script>/validation.R
