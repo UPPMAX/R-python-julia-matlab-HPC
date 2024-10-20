@@ -1,7 +1,10 @@
 # Checks if the rst files are formatted correctly.
 name: Check RST
 
-# This job will always pass.
+# Always run, it shold always pass
+on:
+  push:
+  pull_request:
 
 jobs:
   check_rst:
