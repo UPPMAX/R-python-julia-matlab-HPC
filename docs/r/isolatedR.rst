@@ -173,7 +173,7 @@ Example - Creating a renv and installing ``knitr``
 
 .. exercise:: Installing "datarium"
 
-   We will need this for an exercise in the "ML with R" section. 
+   We will need this for an exercise in the "ML with R" section (only on Cosmos and Kebnekaise - Rackham has the library included already). 
 
    - First create a new project under the course project directory (Kebnekaise and Rackham) or in your home directory (Cosmos) and cd to it. 
 
