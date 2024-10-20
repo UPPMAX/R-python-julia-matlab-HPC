@@ -1,4 +1,6 @@
-name: Docs
+# Creates the Sphinx website
+name: Create website
+
 on: [push, pull_request]
 
 jobs:
