@@ -376,7 +376,7 @@ Average: `((4 * 10) + (5 * 9) + (4 * 8) + (8 * 7) + (3 * 6)) / 24` = 8.0
 
 Agreed, I think learning-centered teaching would solve this.
 
-- Some students had problems logging in to the needed systems. I also just noted that there was this log-in session in Monday when you mentioned it on tuesday. Maybe advertise that in the very beginning of the information email so that it does not go unnoticed. I had no problems loggin etc, but those who had would have benefited participating on Monday
+- Some students had problems logging in to the needed systems. I also just noted that there was this log-in session in Monday when you mentioned it on tuesday. Maybe advertise that in the very beginning of the information email so that it does not go unnoticed. I had no problems logging etc, but those who had would have benefited participating on Monday
 
 Agreed, we could be more ruthless in letting our learners in, e.g. by putting
 the link to the Zoom on Rackham and Kebnekaise.
