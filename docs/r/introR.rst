@@ -125,8 +125,8 @@ Schedule
      - Break
      - .
    * - 10:00
-     - First login
-     - BB + PO + RB
+     - Introduction
+     - RB
    * - 10:10
      - Syllabus
      - RB
