@@ -400,17 +400,19 @@ Install a Python package called ``mhcnuggets``. Which version gets installed?
 Conclusion
 ----------
 
-You have:
+.. keypoints::
 
-- determined if a Python package is installed yes/no using ``pip``
-- discovered some Python package are already installed upon
-  loading a module
-- installed a Python package using ``pip``
+    You have:
 
-However, the installed package was put into a shared (as in, not isolated)
-environment.
+    - determined if a Python package is installed yes/no using ``pip``
+    - discovered some Python package are already installed upon
+      loading a module
+    - installed a Python package using ``pip``
 
-Luckily, isolated environments are discussed in this course too :-)
+    However, the installed package was put into a shared (as in, not isolated)
+    environment.
+
+    Luckily, isolated environments are discussed in this course too :-)
 
 ..
    _This: is a comment
