@@ -146,10 +146,9 @@ For this exercise, use the documentation of your HPC center:
 Load the Python module of the correct version,
 including prerequisite modules if needed:
 
-- HPC2N: ``Python 3.11.3``
+- HPC2N: version 3.11.3
 - LUNARC: TODO
-- UPPMAX: ``python/3.11.8``
-
+- UPPMAX: version 3.11.8
 
 .. dropdown:: Answer
 
@@ -163,91 +162,21 @@ How to determine if a Python package is installed?
 
     There are multiple ways. One easy one, is, in a terminal, type:
 
-        .. code-block::
+    .. code-block::
 
-            pip list
+        pip list
 
+Determine if the Python package ``pandas`` is installed. If yes, which version?
 
+.. dropdown:: Answer
 
-Determine if the Python package ``pandas`` installed? If yes, which version?
+    When doing ``pip list``, look for ``pandas`` in the list.
+    You'll find the following:
 
-.. tabs::
-
-    .. tab:: Answer HPC2N
-
-        Do:
-
-        .. code-block::
-
-            pip list
-
-        So for HPC2N you need to load ``pandas`` as a separate module or as part of SciPy-bundle. 
-
-    .. tab:: Answer UPPMAX
-
-        Do:
-
-        .. code-block::
-
-            pip list
-
-        Then among the list one can find: ``pandas 2.2.0``
-
-        So, yes, the Python package ``pandas`` version 2.2.0 is installed!
-
-.. tabs::
-
-    .. tab:: Exercise 1.3
-
-        Is the Python package ``tensorflow-cpu`` installed? If yes, which version?
-
-    .. tab:: Answer HPC2N
-
-        Do:
-
-        .. code-block::
-
-            pip list
-
-    .. tab:: Answer UPPMAX
-
-        Do:
-
-        .. code-block::
-
-            pip list
-
-        In the list, one cannot find ``tensorflow-cpu``.
-
-        So, no, the Python package ``tensorflow-cpu`` is not installed.
-
-
-.. tabs::
-
-    .. tab:: Exercise 1.4
-
-        Is the Python package ``mhcnuggets`` installed? If yes, which version?
-
-    .. tab:: Answer HPC2N
-
-        Do:
-
-        .. code-block::
-
-            pip list
-
-    .. tab:: Answer UPPMAX
-
-        Do:
-
-        .. code-block::
-
-            pip list
-
-        In the list, one cannot find ``mhcnuggets``.
-
-        So, no, the Python package ``mhcnuggets`` is not installed.
-
+    - HPC2N: ``pandas`` is absent, hence it is not installed.
+      Instead, one needs to load the ``pandas`` module
+    - LUNARC: Unknown.
+    - UPPMAX: ``pandas`` is among the list. It shows version ``pandas 2.2.0``
 
 Exercise 2
 ----------
@@ -486,3 +415,244 @@ Conclusion
     environment.
 
     Luckily, isolated environments are discussed in this course too :-)
+
+
+
+
+..
+   _This: is a comment
+
+    .. code-block::
+
+        [richel@rackham3 ~]$ pip list
+        Package                   Version
+        ------------------------- ---------------
+        anndata                   0.10.5.post1
+        anyio                     4.2.0
+        argon2-cffi               23.1.0
+        argon2-cffi-bindings      21.2.0
+        array_api_compat          1.4.1
+        arrow                     1.3.0
+        asteval                   0.9.31
+        asttokens                 2.4.1
+        async-lru                 2.0.4
+        attrs                     23.2.0
+        Automat                   22.10.0
+        Babel                     2.14.0
+        beautifulsoup4            4.12.3
+        black                     24.1.1
+        bleach                    6.1.0
+        blinker                   1.7.0
+        build                     1.0.3
+        CacheControl              0.13.1
+        certifi                   2024.2.2
+        cffi                      1.16.0
+        cget                      0.2.0
+        chardet                   5.2.0
+        charset-normalizer        3.3.2
+        cleo                      2.1.0
+        click                     8.1.7
+        cloudpickle               3.0.0
+        comm                      0.2.1
+        constantly                23.10.4
+        contourpy                 1.2.0
+        cramjam                   2.8.1
+        crashtest                 0.4.1
+        cryptography              42.0.2
+        cycler                    0.12.1
+        Cython                    3.0.8
+        dask                      2024.1.1
+        debugpy                   1.8.0
+        decorator                 5.1.1
+        defusedxml                0.7.1
+        distlib                   0.3.8
+        dulwich                   0.21.7
+        et-xmlfile                1.1.0
+        executing                 2.0.1
+        fastjsonschema            2.19.1
+        fastparquet               2023.10.1
+        filelock                  3.13.1
+        flake8                    7.0.0
+        Flask                     3.0.2
+        fonttools                 4.48.1
+        fqdn                      1.5.1
+        fsspec                    2024.2.0
+        future                    0.18.3
+        ghp-import                2.1.0
+        gitdb                     4.0.11
+        GitPython                 3.1.41
+        graphviz                  0.20.1
+        h11                       0.14.0
+        h5py                      3.10.0
+        httpcore                  1.0.2
+        httpx                     0.26.0
+        hyperlink                 21.0.0
+        idna                      3.6
+        importlib-metadata        7.0.1
+        incremental               22.10.0
+        iniconfig                 2.0.0
+        installer                 0.7.0
+        iohandler                 1.0.6
+        ipykernel                 6.29.2
+        ipython                   8.21.0
+        ipywidgets                8.1.1
+        isoduration               20.11.0
+        itsdangerous              2.1.2
+        jaraco.classes            3.3.1
+        jedi                      0.19.1
+        jeepney                   0.8.0
+        Jinja2                    3.1.3
+        joblib                    1.3.2
+        json5                     0.9.14
+        jsonpointer               2.4
+        jsonschema                4.21.1
+        jsonschema-specifications 2023.12.1
+        jupyter                   1.0.0
+        jupyter_client            8.6.0
+        jupyter-console           6.6.3
+        jupyter_core              5.7.1
+        jupyter-events            0.9.0
+        jupyter-lsp               2.2.2
+        jupyter_server            2.12.5
+        jupyter_server_terminals  0.5.2
+        jupyterlab                4.1.0
+        jupyterlab_pygments       0.3.0
+        jupyterlab_server         2.25.2
+        jupyterlab-widgets        3.0.9
+        keyring                   24.3.0
+        kiwisolver                1.4.5
+        lmfit                     1.2.2
+        locket                    1.0.0
+        Markdown                  3.5.2
+        MarkupSafe                2.1.5
+        matplotlib                3.8.2
+        matplotlib-inline         0.1.6
+        mccabe                    0.7.0
+        mergedeep                 1.3.4
+        mistune                   3.0.2
+        mkdocs                    1.5.3
+        mock                      5.1.0
+        more-itertools            10.2.0
+        mpmath                    1.3.0
+        msgpack                   1.0.7
+        mypy                      1.8.0
+        mypy-extensions           1.0.0
+        natsort                   8.4.0
+        nbclient                  0.9.0
+        nbconvert                 7.16.0
+        nbformat                  5.9.2
+        nest-asyncio              1.6.0
+        networkx                  3.2.1
+        nltk                      3.8.1
+        nose                      1.3.7
+        notebook                  7.0.7
+        notebook_shim             0.2.3
+        numpy                     1.26.4
+        openpyxl                  3.1.2
+        overrides                 7.7.0
+        packaging                 23.2
+        pandas                    2.2.0
+        pandocfilters             1.5.1
+        parso                     0.8.3
+        partd                     1.4.1
+        pathlib                   1.0.1
+        pathspec                  0.12.1
+        pexpect                   4.9.0
+        pillow                    10.2.0
+        pip                       24.0
+        pkginfo                   1.9.6
+        platformdirs              3.11.0
+        pluggy                    1.4.0
+        pocl-binary-distribution  3.0
+        poetry                    1.7.1
+        poetry-core               1.8.1
+        poetry-plugin-export      1.6.0
+        prometheus-client         0.19.0
+        prompt-toolkit            3.0.43
+        psutil                    5.9.8
+        ptyprocess                0.7.0
+        pure-eval                 0.2.2
+        pyarrow                   15.0.0
+        pybind11                  2.11.1
+        pybind11-global           2.11.1
+        pycodestyle               2.11.1
+        pycparser                 2.21
+        pydot                     2.0.0
+        pyflakes                  3.2.0
+        Pygments                  2.17.2
+        pyopencl                  2024.2.7
+        pyparsing                 3.1.1
+        pyproject_hooks           1.0.0
+        PyQt5                     5.15.10
+        PyQt5-Qt5                 5.15.2
+        PyQt5-sip                 12.13.0
+        pysqlite3                 0.5.2
+        pytest                    8.0.0
+        python-dateutil           2.8.2
+        python-graph-core         1.8.2
+        python-graph-dot          1.8.2
+        python-json-logger        2.0.7
+        python_qt_binding         0.3.4
+        pytools                   2024.1.14
+        pytz                      2024.1
+        PyYAML                    6.0.1
+        pyyaml_env_tag            0.1
+        pyzmq                     25.1.2
+        qtconsole                 5.5.1
+        qtgui                     0.0.1
+        QtPy                      2.4.1
+        rapidfuzz                 3.6.1
+        referencing               0.33.0
+        regex                     2023.12.25
+        renderer                  1.0.3
+        reportlab                 4.0.9
+        requests                  2.31.0
+        requests-toolbelt         1.0.0
+        rfc3339-validator         0.1.4
+        rfc3986-validator         0.1.1
+        rpds-py                   0.17.1
+        ruamel.yaml               0.18.6
+        ruamel.yaml.clib          0.2.8
+        scipy                     1.12.0
+        SecretStorage             3.3.3
+        Send2Trash                1.8.2
+        setuptools                69.0.3
+        shellingham               1.5.4
+        singledispatch            4.1.0
+        siphash24                 1.6
+        six                       1.16.0
+        smmap                     5.0.1
+        sniffio                   1.3.0
+        soupsieve                 2.5
+        spython                   0.3.13
+        stack-data                0.6.3
+        structlog                 24.1.0
+        sympy                     1.12
+        terminado                 0.18.0
+        tinycss2                  1.2.1
+        tomlkit                   0.12.3
+        toolz                     0.12.1
+        tornado                   6.4
+        tqdm                      4.66.1
+        traitlets                 5.14.1
+        trove-classifiers         2024.1.31
+        Twisted                   23.10.0
+        types-python-dateutil     2.8.19.20240106
+        typing                    3.7.4.3
+        typing_extensions         4.9.0
+        tzdata                    2023.4
+        uncertainties             3.1.7
+        uri-template              1.3.0
+        urllib3                   2.2.0
+        virtualenv                20.25.0
+        watchdog                  4.0.0
+        wcwidth                   0.2.13
+        webcolors                 1.13
+        webencodings              0.5.1
+        websocket-client          1.7.0
+        Werkzeug                  3.0.1
+        wheel                     0.42.0
+        widgetsnbextension        4.0.9
+        wrapt                     1.16.0
+        zipp                      3.17.0
+        zope.interface            6.1
