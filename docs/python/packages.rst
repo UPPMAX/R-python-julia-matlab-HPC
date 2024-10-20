@@ -55,7 +55,8 @@ Introduction
 ------------
 
 Packages are pieces of Python code written to be used by others.
-When possible, using an existing Python package is usually smarter than writing code yourself.
+When possible, using an existing Python package
+is usually smarter than writing code yourself.
 In this session, we practice working with packages.
 
 Finding packages
@@ -74,23 +75,23 @@ Python package installers
 
 There are two Python package installers, called ``conda`` and ``pip``.
 
-In this session, we use ``pip``, as it can be used on 
-the two HPC clusters used in this course:
+In this session, we use ``pip``, as it can be used on all
+the HPC clusters used in this course:
 
-+-------------------+-----------------+------------------+-----------------+
-| Package installer | HPC2N           | UPPMAX (Rackham) | UPPMAX (Bianca) |
-+===================+=================+==================+=================+
-| ``conda``         | Unsupported [1] | Supported        | Recommended     |
-+-------------------+-----------------+------------------+-----------------+
-| ``pip``           | Recommended     | Supported        | Unsupported [2] |
-+-------------------+-----------------+------------------+-----------------+
++-------------------+-----------------+------------------+------------------+
+| Package installer | HPC2N           | LUNARC           | UPPMAX's Rackham |
++===================+=================+==================+==================+
+| ``conda``         | Unsupported [1] | Recommended [2]  | Supported        |
++-------------------+-----------------+------------------+------------------+
+| ``pip``           | Recommended     | Available        | Recommended      |
++-------------------+-----------------+------------------+------------------+
 
 - ``[1]`` `HPC2N guide against using conda <https://www.hpc2n.umu.se/documentation/guides/anaconda>`_
-- ``[2]`` Bianca has no internet
+- ``[2]`` `LUNARC Python user guide <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/#recommended-use>_`
 
 In this session we use ``pip``, 
 because it is a commonly-used package installation system
-that works on both HPC clusters used in this course.
+that works on all HPC clusters used in this course.
 
 We have not scheduled to discuss Conda in this course, 
 yet teaching materials can be found at `Conda at UPPMAX <https://uppmax.github.io/R-python-julia-matlab-HPC/python/condaUPPMAX.html>`_.
@@ -123,8 +124,8 @@ for a user that needs to use a certain Python packages:
 Like any user, we'll try to be autonomous and read the -hopefully well written!-
 UPPMAX documentation.
 
-Exercise 1
-----------
+Exercise 1: loading a Python package that comes with the Python module
+----------------------------------------------------------------------
 
 .. admonition:: Learning objectives
 
@@ -136,40 +137,28 @@ Exercise 1
 Imagine you want to use the Python packages ``pandas`` and ``tensorflow-cpu`` and ``mhcnuggets``.
 Here we see that one comes already installed with the module system.
 
-.. tabs::
+For this exercise, use the documentation of your HPC center:
 
-    .. tab:: Exercise 1.1
+- `HPC2N<https://docs.hpc2n.umu.se/documentation/modules>`_
+- `LUNARC<https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/>`_
+- `UPPMAX<http://docs.uppmax.uu.se/software/python/>`_.
 
-        Read `the UPPMAX documentation on how to load Python <http://docs.uppmax.uu.se/software/python/#loading-python>`_.
+Load the Python module of the correct version,
+including prerequisite modules if needed:
 
-        Then do:
+- HPC2N: ``Python 3.11.3``
+- LUNARC: TODO
+- UPPMAX: ``python/3.11.8``
 
-        - HPC2N: load the modules ``GCC/12.3.0`` and ``Python 3.11.3``
-        - UPPMAX: load the module ``python/3.11.8``
+:::{dropdown} Answers
+HPC2N: ``module load GCC/12.3.0 Python/3.11.3``
+LUNARC: ``module load TODO``
+UPPMAX: ``module load python/3.11.8``
+:::
 
-    .. tab:: Answer HPC2N
-
-        Do:
-
-        .. code-block::
-
-            module load GCC/12.3.0 Python/3.11.3
-
-    .. tab:: Answer UPPMAX
-
-        Do:
-
-        .. code-block::
-
-            module load python/3.11.8
+Is the Python package ``pandas`` installed? If yes, which version?
 
 .. tabs::
-
-    .. tab:: Exercise 1.2
-
-        Read `the UPPMAX documentation on how to determine if a Python package comes with your Python module <http://docs.uppmax.uu.se/software/python/#determine-if-a-python-package-comes-with-your-python-module>`_.
-
-        Is the Python package ``pandas`` installed? If yes, which version?
 
     .. tab:: Answer HPC2N
 
@@ -179,7 +168,7 @@ Here we see that one comes already installed with the module system.
 
             pip list
 
-        So for HPC2N you need to load pandas as a separate module or as part of SciPy-bundle. 
+        So for HPC2N you need to load ``pandas`` as a separate module or as part of SciPy-bundle. 
 
     .. tab:: Answer UPPMAX
 
