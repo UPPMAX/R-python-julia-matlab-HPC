@@ -87,7 +87,7 @@ the HPC clusters used in this course:
 +-------------------+-----------------+------------------+------------------+
 
 - ``[1]`` `HPC2N guide against using conda <https://www.hpc2n.umu.se/documentation/guides/anaconda>`_
-- ``[2]`` `LUNARC Python user guide <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/#recommended-use>_`
+- ``[2]`` `LUNARC Python user guide <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/#recommended-use>`_
 
 In this session we use ``pip``, 
 because it is a commonly-used package installation system
