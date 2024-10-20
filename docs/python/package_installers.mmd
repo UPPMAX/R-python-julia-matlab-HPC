@@ -5,8 +5,9 @@ flowchart TD
   package_install_system[package installation system]
   pip[pip]
   conda[conda]
-  uppmax[UPPMAX]
+  uppmax[UPPMAX's Rackham]
   hpc2n[HPC2N]
+  lunarc[LUNARC]
 
   python -->|has| packages
   packages -->|are|code_written_by_others
@@ -14,5 +15,7 @@ flowchart TD
   package_install_system --> pip
   package_install_system --> conda
   conda -->|works on|uppmax
+  conda -->|works on|lunarc
   pip -->|works on|uppmax
   pip -->|works on|hpc2n
+  pip -->|works on|lunarc
