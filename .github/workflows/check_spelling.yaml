@@ -1,4 +1,7 @@
 # Check that there is correct spelling in all files
+#
+# Errors are reported via an Issue being created,
+# instead of via en email to all repository Watchers
 name: Check spelling
 
 # Only run this on the main branch, or with Pull Requests

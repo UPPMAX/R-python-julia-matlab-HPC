@@ -1,4 +1,7 @@
 # Checks if all links are valid, i.e. not broken
+#
+# Errors are reported via an Issue being created,
+# instead of via en email to all repository Watchers
 name: Check links
 
 # Only run this on the main branch, or with Pull Requests
