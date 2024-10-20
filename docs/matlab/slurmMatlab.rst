@@ -450,7 +450,7 @@ If you are running a lot of jobs or if you want to quit MATLAB and restart it at
 
 .. example:: Type-along!  
 
-   After doing the job settings further up, let us try running an example. We will use the example ``add2.m`` which adds two numbers. I just used 1 and 2, but you can pick any numbers you want. 
+   After doing the job settings further up, let us try running an example. We will use the example ``add2.m`` which adds two numbers. I just used 1 and 2, but you can pick any numbers you want. You can find the ``add2.m`` script in the exercises/matlab directory or you can 'download it <https://raw.githubusercontent.com/UPPMAX/R-python-julia-matlab-HPC/refs/heads/main/exercises/matlab/add2.m>'_ from here.  
 
    .. code-block::
 
@@ -583,27 +583,27 @@ Here is an example of a serial batch job for UPPMAX/HPC2N/LUNARC.
 
       .. code-block:: 
 
-      #!/bin/bash
-      # Change to your actual project number later
-      #SBATCH -A hpc2n2024-114
-      # Asking for 1 core
-      #SBATCH -n 1
-      # Asking for 30 min (change as you want) 
-      #SBATCH -t 00:30:00
-      #SBATCH --error=matlab_%J.err
-      #SBATCH --output=matlab_%J.out
+         #!/bin/bash
+         # Change to your actual project number later
+         #SBATCH -A hpc2n2024-114
+         # Asking for 1 core
+         #SBATCH -n 1
+         # Asking for 30 min (change as you want) 
+         #SBATCH -t 00:30:00
+         #SBATCH --error=matlab_%J.err
+         #SBATCH --output=matlab_%J.out
 
-      # Clean the environment 
-      module purge > /dev/null 2>&1
+         # Clean the environment 
+         module purge > /dev/null 2>&1
+ 
+         # Change depending on resource and MATLAB version
+         # to find out available versions: module spider matlab
+         module add MATLAB/2023a.Update4
 
-      # Change depending on resource and MATLAB version
-      # to find out available versions: module spider matlab
-      module add MATLAB/2023a.Update4
-
-      # Executing the matlab program monte_carlo_pi.m for the value n=100000
-      # (n is number of steps - see program).
-      # The command 'time' is timing the execution
-      time matlab -nojvm -nodisplay -r "monte_carlo_pi(100000)"
+         # Executing the matlab program monte_carlo_pi.m for the value n=100000
+         # (n is number of steps - see program).
+         # The command 'time' is timing the execution
+         time matlab -nojvm -nodisplay -r "monte_carlo_pi(100000)"
 
    .. tab:: LUNARC 
 
