@@ -190,7 +190,7 @@ MATLAB terminal interface
 This section will show you how to use MATLAB completely from the shell/terminal without having to open the GUI. This could be useful if you only have a regular SSH connection or otherwise need to run something fast and lightweight instead of having to open the GUI. This is an extra advantage when you have a poor network connection. 
 
 Starting MATLAB
-~~~~~~~~~~~~~~~~
+'''''''''''''''
      
 To start Matlab on the command line, without running the GUI, load the MATLAB version and do 
 
@@ -254,7 +254,7 @@ Of course, we can work in MATLAB like this in exactly the same way as in the GUI
 However, we are now going to look at running in batch on the compute nodes. 
 
 Job settings at the command line
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''''
 
 If you want to run a MATLAB program on the cluster with batch, you have to set some things for the job. Start MATLAB and do this.  
 
@@ -358,7 +358,7 @@ If you are on Desktop On Demand on LUNARC, these settings do not override the pa
 More about MATLAB in the GUI in the next session. 
 
 Running a job from within MATLAB terminal interface
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Starting a simple MATLAB program inside MATLAB on the terminal. It will as default use your cluster profile which you just created and saved above. 
 
@@ -397,7 +397,7 @@ or with
 - To see if the job is running, inside MATLAB, do ``job.State``
 
 Serial
-''''''
+~~~~~~
 
 After starting MATLAB, you can use this 
 
@@ -469,7 +469,7 @@ If you are running a lot of jobs or if you want to quit MATLAB and restart it at
       job.fetchOutputs{:}
 
 Parallel
-''''''''
+~~~~~~~~
 
 Running parallel batch jobs are quite similar to running serial jobs, we just need to specify a MATLAB Pool to use and of course MATLAB code that is parallelized. This is easiest illustrated with an example:
 
@@ -547,7 +547,7 @@ The difference here is that when the batch script has been submitted, you cannot
   
 
 Serial batch jobs 
-~~~~~~~~~~~~~~~~~~~~~~~~
+'''''''''''''''''''
 
 Here is an example of a serial batch job for UPPMAX/HPC2N/LUNARC. 
 
@@ -647,7 +647,7 @@ Where ``<batchscript.sh>`` is the name you gave your batchscript. You can find o
    Try run the serial batch script. Submit it, then check that it is running with ``squeue --me``. Check the output in the ``matlab_JOBID.out`` (and the error in the ``matlab_JOBID.err`` file). 
 
 Parallel batch script
-~~~~~~~~~~~~~~~~~~~~~~~~
+''''''''''''''''''''''
 
 This is an example batch script for parallel MATLAB 
 
@@ -683,7 +683,7 @@ Inside the MATLAB code, the number of CPU-cores (NumWorkers in MATLAB terminolog
 
 .. exercise:: 
 
-   Try making a batch script for running the ``parallel_example.m`` that was run in the example from inside MATLAB above. 
+   Try making a batch script for running the ``parallel_example.m`` that was run in the example from inside MATLAB above. You can use the above batch script as template.  
 
 .. solution::
 
@@ -717,11 +717,16 @@ Inside the MATLAB code, the number of CPU-cores (NumWorkers in MATLAB terminolog
             # Executing a parallel matlab program 
             srun matlab -nojvm -nodisplay -r parallel_example.m
 
-      .. tab::
+      .. tab:: HPC2N 
          :class: dropdown
 
-      .. tab:: 
+         .. code-block:: 
+
+      .. tab:: LUNARC 
          :class: dropdown
+
+         .. code-block:: 
+
 
 GPU code
 --------
@@ -735,7 +740,7 @@ GPU code
 In order to use GPUs, you have to ask for them. 
 
 Inside MATLAB
-~~~~~~~~~~~~~
+'''''''''''''''
 
 .. note:: 
 
@@ -825,7 +830,7 @@ Inside MATLAB
    Try and add GPUs to your cluster profile, save it. Run ``c.AdditionalProperties`` to see what was added. Then do ``c.AdditionalProperties.GpusPerNode = '';`` to remove it. See that it was removed. 
          
 Batch scripts 
-~~~~~~~~~~~~~~~~
+''''''''''''''
 
 In order to use GPUs in a batch job, you do something like this: 
 
