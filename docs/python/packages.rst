@@ -150,11 +150,17 @@ including prerequisite modules if needed:
 - LUNARC: TODO
 - UPPMAX: version 3.11.8
 
-.. dropdown:: Answer
+.. dropdown:: Answer HPC2N
 
-    - HPC2N: ``module load GCC/12.3.0 Python/3.11.3``
-    - LUNARC: TODO
-    - UPPMAX: ``module load python/3.11.8``
+    ``module load GCC/12.3.0 Python/3.11.3``
+
+.. dropdown:: Answer LUNARC
+
+    TODO
+
+.. dropdown:: Answer UPPMAX
+
+    ``module load python/3.11.8``
 
 How to determine if a Python package is installed?
 
