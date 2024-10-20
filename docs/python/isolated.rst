@@ -3,47 +3,47 @@ Isolated environments
 
 .. tabs::
 
-   .. tab:: Learning objectives
+    .. tab:: Learning objectives
 
-      - remember there are multiple virtual environment managers
-      - practice to create, activate, work in and deactive a virtual environment
+        - remember there are multiple virtual environment managers
+        - practice to create, activate, work in and deactive a virtual environment
 
-   .. tab:: For teachers
+    .. tab:: For teachers
 
-      Teaching goals are:
+        Teaching goals are:
 
-      - Learners have heard about Conda
-      - Learners have created, activated, worked in and deactived a virtual environment
-      - Learners have exported and imported a virtual environment
+        - Learners have heard about Conda
+        - Learners have created, activated, worked in and deactived a virtual environment
+        - Learners have exported and imported a virtual environment
 
-      Other teaching goals are:
+        Other teaching goals are:
 
-      - Create the virtual environment called ``vpyenv`` needed later on
+        - Create the virtual environment called ``vpyenv`` needed later on
 
-      Lesson plan (60 minutes in total):
+        Lesson plan (60 minutes in total):
 
-      - 5 mins: prior knowledge
-         - How to deal with two tools that need incompatible sets of Python packages?
-         - How to solve the problem when there are two tools that need incompatible sets of Python packages?
-         - What is a virtual environment manager?
-         - Which virtual environment managers exists? 
-         - What are the differences between virtual environment managers?
-      - 5 mins: presentation
-         - Why?
-         - Exercises
-      - 15 mins: challenge
-      - 5 mins: feedback
+        - 5 mins: prior knowledge
+        - How to deal with two tools that need incompatible sets of Python packages?
+        - How to solve the problem when there are two tools that need incompatible sets of Python packages?
+        - What is a virtual environment manager?
+        - Which virtual environment managers exists? 
+        - What are the differences between virtual environment managers?
+        - 5 mins: presentation
+        - Why?
+        - Exercises
+        - 15 mins: challenge
+        - 5 mins: feedback
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: ``naiss2024-22-1202``
-   - Kebnekaise: ``hpc2n2024-114``
-   - Cosmos: ``lu2024-7-80``
+    - Rackham: ``naiss2024-22-1202``
+    - Kebnekaise: ``hpc2n2024-114``
+    - Cosmos: ``lu2024-7-80``
 
 .. admonition:: Storage space for this workshop 
 
-   - Rackham: ``/proj/r-py-jl-m-rackham``
-   - Kebnekaise: ``/proj/nobackup/r-py-jl-m``
+    - Rackham: ``/proj/r-py-jl-m-rackham``
+    - Kebnekaise: ``/proj/nobackup/r-py-jl-m``
 
 Introduction
 ------------
@@ -63,23 +63,27 @@ Virtual environment managers
 
 In this course, we will look at the following environment managers:
 
-+---------------+-----------------+-------------+------------------+
-| Manager       | HPC2N           | UPPMAX      |Scope             |
-+===============+=================+=============+==================+
-| ``conda``     | Avoid           | Avoid [1]   |Language agnostic |
-+---------------+-----------------+-------------+------------------+
-| ``venv``      | Recommended     | Recommended |Python only       |
-+---------------+-----------------+-------------+------------------+
++---------------+-----------------+---------------+-----------------------+------------------+
+| Manager       | HPC2N           | LUNARC        | UPPMAX's Rackham      |Scope             |
++===============+=================+===============+=======================+==================+
+| ``conda``     | Avoid           | OK            | Avoid                 |Language agnostic |
++---------------+-----------------+---------------+-----------------------+------------------+
+| ``venv``      | Recommended     | ?Undocumented | Recommended           |Python only       |
++---------------+-----------------+---------------+-----------------------+------------------+
 
-- `[1]` With the exception of the Bianca cluster, where `conda` is the
-  only option
+All centers have their documentation on virtual environment managers:
 
-Both centers have their documentation on virtual environment managers:
-
-- `UPPMAX <http://docs.uppmax.uu.se/software/python_virtual_environments/>`_
 - `HPC2N <https://docs.hpc2n.umu.se/tutorials/userinstalls/#python__packages>`_
+- `LUNARC <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/#creating-conda-environments>`_
+- `UPPMAX <http://docs.uppmax.uu.se/software/python_virtual_environments/>`_
 
-In this session, we use ``venv``, as it works for both UPPMAX and HPC2N.
+In this session, we use ``venv``, as it works for all centers.
+
+
+- `HPC2N <https://docs.hpc2n.umu.se/tutorials/userinstalls/#venv>`_
+- LUNARC: TODO
+- `UPPMAX <https://docs.uppmax.uu.se/software/python_venv/>`_
+
 
 General workflow
 ----------------
