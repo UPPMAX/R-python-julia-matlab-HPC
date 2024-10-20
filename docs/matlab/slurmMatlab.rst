@@ -715,17 +715,63 @@ Inside the MATLAB code, the number of CPU-cores (NumWorkers in MATLAB terminolog
             module add matlab/R2023b
 
             # Executing a parallel matlab program 
-            srun matlab -nojvm -nodisplay -r parallel_example.m
+            srun matlab -nojvm -nodisplay -nodesktop -nosplash -r "parallel_example(16)"
 
       .. tab:: HPC2N 
          :class: dropdown
 
          .. code-block:: 
 
+            #!/bin/bash
+            # Change to your actual project number
+            #SBATCH -A hpc2n2024-114
+            # Remember, there are 4 workers and 1 master! 
+            #SBATCH --ntasks=5
+            #SBATCH --cpus-per-task=1
+            #SBATCH --ntasks-per-node=5
+            #SBATCH --ntasks-per-core=1
+            # Asking for 30 min (change as you want)
+            #SBATCH -t 00:30:00
+            #SBATCH --error=matlab_%J.err
+            #SBATCH --output=matlab_%J.out
+
+            # Clean the environment
+            module purge > /dev/null 2>&1
+
+            # Change depending on resource and MATLAB version
+            # to find out available versions: module spider matlab
+            module add MATLAB/2023a.Update4
+
+            # Executing a parallel matlab program 
+            srun matlab -nojvm -nodisplay -nodesktop -nosplash -r "parallel_example(16)"
+
       .. tab:: LUNARC 
          :class: dropdown
 
          .. code-block:: 
+
+            #!/bin/bash
+            # Change to your actual project number
+            #SBATCH -A lu2024-7-80
+            # Remember, there are 4 workers and 1 master! 
+            #SBATCH --ntasks=5
+            #SBATCH --cpus-per-task=1
+            #SBATCH --ntasks-per-node=5
+            #SBATCH --ntasks-per-core=1
+            # Asking for 30 min (change as you want)
+            #SBATCH -t 00:30:00
+            #SBATCH --error=matlab_%J.err
+            #SBATCH --output=matlab_%J.out
+
+            # Clean the environment
+            module purge > /dev/null 2>&1
+
+            # Change depending on resource and MATLAB version
+            # to find out available versions: module spider matlab
+            module add matlab/2023b
+
+            # Executing a parallel matlab program 
+            srun matlab -nojvm -nodisplay -nodesktop -nosplash -r "parallel_example(16)"
 
 
 GPU code
