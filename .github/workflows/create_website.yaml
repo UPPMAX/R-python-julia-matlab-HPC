@@ -1,7 +1,10 @@
 # Creates the Sphinx website
 name: Create website
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   documentation:
