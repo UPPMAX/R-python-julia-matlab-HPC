@@ -267,7 +267,7 @@ Running the MATLAB GUI requires that users be logged into a Thinlinc session. Se
       For HPC2N and UPPMAX users, once logged into the remote desktop, the procedure for starting the MATLAB GUI is the same as what was shown above to start it at the command line, except that the ``-nodisplay`` flag is omitted (as are ``-nodesktop -nosplash`` if applicable). You must still include ``-singleCompThread``!
       
       .. figure:: ../../img/Rackham-Matlab.png
-         :width: 350
+         :width: 450
          :align: center
       
          Both ways of starting MATLAB on Rackham.
