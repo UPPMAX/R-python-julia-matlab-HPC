@@ -672,7 +672,7 @@ This is an example batch script for parallel MATLAB
    module add MATLAB/<version>
 
    # Executing a parallel matlab program 
-   srun matlab -nojvm -nodisplay -r parallel-matlab-script.m
+   srun matlab -nojvm -nodisplay -nodesktop -nosplash -r parallel-matlab-script.m
 
 
 Inside the MATLAB code, the number of CPU-cores (NumWorkers in MATLAB terminology) can be specified when creating the parallel pool, for example, with 8 threads:
