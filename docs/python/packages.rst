@@ -3,53 +3,53 @@ Packages
 
 .. tabs::
 
-   .. tab:: Learning objectives
+    .. tab:: Learning objectives
 
-      - practice to determine the version of a Python package 
-      - practice to determine that a Python package is not installed
-      - practice to have loaded a Python machine learning module
-      - practice to install a Python package
+        - practice to determine the version of a Python package 
+        - practice to determine that a Python package is not installed
+        - practice to have loaded a Python machine learning module
+        - practice to install a Python package
 
-   .. tab:: For teachers
+    .. tab:: For teachers
 
-      Teaching goals are:
+        Teaching goals are:
 
-      - Learners have determined the version of a Python package 
-      - Learners have determined that a Python package is not installed
-      - Learners have loaded a Python machine learning module
-      - Learners have installed a Python package
+        - Learners have determined the version of a Python package 
+        - Learners have determined that a Python package is not installed
+        - Learners have loaded a Python machine learning module
+        - Learners have installed a Python package
 
-      Lesson plan (45 minutes in total):
+        Lesson plan (45 minutes in total):
 
-      - 5 mins: prior knowledge
-         - What are Python packages?
-         - Why use Python packages?
-         - How to find out if a package is already installed?
-         - What are some Python package installers?
-         - What are the differences?
-         - What are some Python package installers used on UPPMAX?
-         - What are some Python package installers used on HPC2N?
-      - 5 mins: presentation
-      - 20 mins: challenge
-      - 5 mins: feedback
-         - What are Python packages?
-         - Why use Python packages?
-         - How to find out if a package is already installed?
-         - What are some Python package installers?
-         - What are the differences?
-         - What are some Python package installers used on UPPMAX?
-         - What are some Python package installers used on HPC2N?
+        - 5 mins: prior knowledge
+            - What are Python packages?
+            - Why use Python packages?
+            - How to find out if a package is already installed?
+            - What are some Python package installers?
+            - What are the differences?
+            - What are some Python package installers used on UPPMAX?
+            - What are some Python package installers used on HPC2N?
+        - 5 mins: presentation
+        - 20 mins: challenge
+        - 5 mins: feedback
+            - What are Python packages?
+            - Why use Python packages?
+            - How to find out if a package is already installed?
+            - What are some Python package installers?
+            - What are the differences?
+            - What are some Python package installers used on UPPMAX?
+            - What are some Python package installers used on HPC2N?
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: ``naiss2024-22-1202``
-   - Kebnekaise: ``hpc2n2024-114``
-   - Cosmos: ``lu2024-7-80``
+    - Rackham: ``naiss2024-22-1202``
+    - Kebnekaise: ``hpc2n2024-114``
+    - Cosmos: ``lu2024-7-80``
 
 .. admonition:: Storage space for this workshop 
 
-   - Rackham: ``/proj/r-py-jl-m-rackham``
-   - Kebnekaise: ``/proj/nobackup/r-py-jl-m``
+    - Rackham: ``/proj/r-py-jl-m-rackham``
+    - Kebnekaise: ``/proj/nobackup/r-py-jl-m``
 
 Introduction
 ------------
@@ -93,10 +93,7 @@ In this session we use ``pip``,
 because it is a commonly-used package installation system
 that works on all HPC clusters used in this course.
 
-We have not scheduled to discuss Conda in this course, 
-yet teaching materials can be found at `Conda at UPPMAX <https://uppmax.github.io/R-python-julia-matlab-HPC/python/condaUPPMAX.html>`_.
-
-As a first impression, here is a simple comparison between the two:
+As a first impression, however, here is a simple comparison between the two:
 
 +------------------------------+-----------+----------+
 | Parameter                    | ``conda`` | ``pip``  |
@@ -105,6 +102,9 @@ As a first impression, here is a simple comparison between the two:
 +------------------------------+-----------+----------+
 | Installs non-Python software | Yes       | No       |
 +------------------------------+-----------+----------+
+
+We have not scheduled to discuss ``conda`` in this course, 
+yet teaching materials can be found at `Conda at UPPMAX <https://uppmax.github.io/R-python-julia-matlab-HPC/python/condaUPPMAX.html>`_.
 
 In this session, we will install packages to your default user folder.
 Because this one default user folder, installing a different version of one package
@@ -151,13 +151,25 @@ including prerequisite modules if needed:
 - UPPMAX: ``python/3.11.8``
 
 
-.. dropdown:: Answers
+.. dropdown:: Answer
 
     - HPC2N: ``module load GCC/12.3.0 Python/3.11.3``
     - LUNARC: ``module load TODO``
     - UPPMAX: ``module load python/3.11.8``
 
-Is the Python package ``pandas`` installed? If yes, which version?
+How to determine if a Python package is installed?
+
+.. dropdown:: Answer
+
+    There are multiple ways. One easy one, is, in a terminal, type:
+
+        .. code-block::
+
+            pip list
+
+
+
+Determine if the Python package ``pandas`` installed? If yes, which version?
 
 .. tabs::
 
