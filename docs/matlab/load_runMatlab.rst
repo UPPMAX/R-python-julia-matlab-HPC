@@ -250,7 +250,7 @@ The GUI is typically the recommended interface where it is offered. The GUI prov
 
             $ matlab -singleCompThread -nodisplay
 
-         There are 2 possible terminals: one in ``Applications`` &rarr; ``Favorites`` &rarr; ``Terminal``, which runs on a login node, and one at ``Applications`` &rarr; ``Applications - General`` &rarr; ``Interactive Terminal``, which can safely launch either the MATLAB GUI or MATLAB command line on a compute node. Starting the latter will open the GfxLauncher (the user and prompt you for your account and resource requests first. 
+         There are several terminals: one in ``Applications`` &rarr; ``Favorites`` &rarr; ``Terminal``, which runs on a login node, and three in ``Applications`` &rarr; ``Applications - General`` &rarr, which can safely launch either the MATLAB GUI or MATLAB command line on a compute node. Starting any of the three in ``Applications - General`` will open the GfxLauncher (the user and prompt you for your account and resource requests first. Even users who have been awarded GPU time are encouraged to use the CPU-only terminal whenever possible, as they are less resource intensive and we have many more of them.
 
 The ``-singleCompThread`` is usually required to prevent MATLAB from spawning as many processes as it thinks it needs, which can cause the user to accidentally take over a full node. Most terminal instances launch MATLAB (either the GUI or command line) on a login node by default, so hogging a node can stall other users' jobs, a violation of the NAISS user agreement. Setting ``-singleCompThread`` does **not** prevent MATLAB from sending parallelized and/or multi-threaded jobs to SLURM or the MATLAB Distributed Computing Server (MDCS).
 
@@ -260,21 +260,27 @@ Starting the MATLAB GUI
 
 Running the MATLAB GUI requires that users be logged into a Thinlinc session. See https://uppmax.github.io/R-python-julia-matlab-HPC/common/login.html#log-in
 
-For HPC2N and UPPMAX users, once logged into the remote desktop, the procedure for starting the MATLAB GUI is the same as what was shown above to start it at the command line, except that the ``-nodisplay`` flag is omitted (as are ``-nodesktop -nosplash`` if applicable). You must still include ``-singleCompThread``!
+.. tabs::
 
-.. figure:: ../../img/Rackham-Matlab.png
-   :width: 350
-   :align: center
+  .. tab:: HPC2N and UPPMAX
 
-   Both ways of starting MATLAB on Rackham.
+      For HPC2N and UPPMAX users, once logged into the remote desktop, the procedure for starting the MATLAB GUI is the same as what was shown above to start it at the command line, except that the ``-nodisplay`` flag is omitted (as are ``-nodesktop -nosplash`` if applicable). You must still include ``-singleCompThread``!
+      
+      .. figure:: ../../img/Rackham-Matlab.png
+         :width: 350
+         :align: center
+      
+         Both ways of starting MATLAB on Rackham.
 
-On the LUNARC HPC desktop, if you want to use the MATLAB graphical user interface (GUI), nothing needs to be loaded in a terminal: you can simply go to the Applications menu at the top left and mouse over ``Applications-Matlab`` to see the versions available. There you will see 3 versions per release: regular, (CPU), and (HEP,CPU).
+  .. tab:: LUNARC
 
-.. figure:: ../../img/Cosmos-AppMenu-Matlab.png
-   :width: 350
-   :align: center
-
-The (HEP,CPU) nodes are private, so avoid those. The regular versions run on our Intel 32-core nodes because they have built-in GPU partitions. If you don't plan to do any graphical work inside the GUI, you can choose the (CPU) version of your preferred release to get onto an AMD 48-core node, which also allows you to run for up to 7 days (168:00:00) instead of the usual 2-day limit.
+      On the LUNARC HPC desktop, if you want to use the MATLAB graphical user interface (GUI), nothing needs to be loaded in a terminal: you can simply go to the Applications menu at the top left and mouse over ``Applications-Matlab`` to see the versions available. There you will see 3 versions per release: regular, (CPU), and (HEP,CPU).
+      
+      .. figure:: ../../img/Cosmos-AppMenu-Matlab.png
+         :width: 350
+         :align: center
+      
+      The (HEP,CPU) nodes are private, so avoid those. The regular versions run on our Intel 32-core nodes because they have built-in GPU partitions. If you don't plan to do any graphical work inside the GUI, you can choose the (CPU) version of your preferred release to get onto an AMD 48-core node, which also allows you to run for up to 7 days (168:00:00) instead of the usual 2-day limit.
 
 
 Exercises
