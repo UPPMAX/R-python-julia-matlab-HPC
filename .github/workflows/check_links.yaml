@@ -1,10 +1,12 @@
-name: Links
+# Checks if all links are valid, i.e. not broken
+name: Check links
 
+# Only run this on the main branch, or with Pull Requests
 on:
-  repository_dispatch:
-  workflow_dispatch:
-  schedule:
-    - cron: "00 19 * * *"
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
   linkChecker:
