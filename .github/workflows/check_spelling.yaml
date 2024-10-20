@@ -26,4 +26,4 @@ jobs:
         run: |
           rm -rf evaluations
 
-      - uses: igsekor/pyspelling-any@v1.0.4 || true
+      - uses: igsekor/pyspelling-any@v1.0.4
