@@ -28,7 +28,7 @@ These are the ways to access your HPC cluster:
 
    .. tab:: Log in via a local ThinLinc client
 
-      Kebnekaise and Rackham allow to access a remote desktop
+      All centers allow to access a remote desktop
       environment via a local ThinLinc client.
 
       .. figure:: img/thinlinc_local_rackham_zoom.png
