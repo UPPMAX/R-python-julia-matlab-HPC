@@ -13,3 +13,14 @@ so I accepted the democratic decision to change the schedule again.
 I hope next time we can decide on the schedule earlier and freeze it,
 say, at least one week before the course.
 
+Before teaching, one thing that I think can be improved too,
+is to use Markdown instead of RestructuredText:
+using RestructuredText makes everything I do harder.
+Taking a look at
+[the StackOverflow developer survey of 2023](https://survey.stackoverflow.co/2023),
+Markdown is mentioned and admired, where RestructuredText is completely absent.
+I'd enjoy converting all these pages to Markdown and then use good MkDocs
+instead :+1:
+
+
+
