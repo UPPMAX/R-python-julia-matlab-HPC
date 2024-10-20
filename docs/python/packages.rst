@@ -139,9 +139,9 @@ Here we see that one comes already installed with the module system.
 
 For this exercise, use the documentation of your HPC center:
 
-- `HPC2N<https://docs.hpc2n.umu.se/documentation/modules>`_
-- `LUNARC<https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/>`_
-- `UPPMAX<http://docs.uppmax.uu.se/software/python/>`_.
+- `HPC2N <https://docs.hpc2n.umu.se/documentation/modules>`_
+- `LUNARC <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/>`_
+- `UPPMAX <http://docs.uppmax.uu.se/software/python/>`_
 
 Load the Python module of the correct version,
 including prerequisite modules if needed:
@@ -150,13 +150,12 @@ including prerequisite modules if needed:
 - LUNARC: TODO
 - UPPMAX: ``python/3.11.8``
 
-:::{dropdown} Answers
-HPC2N: ``module load GCC/12.3.0 Python/3.11.3``
-LUNARC: ``module load TODO``
-UPPMAX: ``module load python/3.11.8``
-:::
 
+.. dropdown:: Answers
 
+    - HPC2N: ``module load GCC/12.3.0 Python/3.11.3``
+    - LUNARC: ``module load TODO``
+    - UPPMAX: ``module load python/3.11.8``
 
 Is the Python package ``pandas`` installed? If yes, which version?
 
