@@ -28,7 +28,6 @@ Give you confidence levels of the following statements below:
 - I can load a Python (machine learning) module
 - I can install a Python package
 - I can work (create, activate, work, deactivate) with a `venv` virtual environment
-- I can export and import a virtual environment
 - I can write a bash script
 - I can submit a script to the job scheduler
 - I can write a bash script that uses GPUs
