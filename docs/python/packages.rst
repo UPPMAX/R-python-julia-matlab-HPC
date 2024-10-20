@@ -174,14 +174,20 @@ How to determine if a Python package is installed?
 
 The Python package ``wheels`` is known to be installed. Which version?
 
-.. dropdown:: Answer
+.. dropdown:: Answer HPC2N
 
     When doing ``pip list``, look for ``wheels`` in the list.
-    You'll find the following:
+    You'll find ``wheels`` to have version ``0.42.0``
 
-    - HPC2N: ``v0.42.0``
-    - LUNARC: Unknown.
-    - UPPMAX: ``0.40.0``
+.. dropdown:: Answer LUNARC
+
+    When doing ``pip list``, look for ``wheels`` in the list.
+    You'll find ``wheels`` to have version ``TODO``
+
+.. dropdown:: Answer UPPMAX
+
+    When doing ``pip list``, look for ``wheels`` in the list.
+    You'll find ``wheels`` to have version ``0.40.0``
 
 Exercise 2: loading a Python package that comes with a module
 -------------------------------------------------------------
@@ -221,71 +227,78 @@ package with.
 
 Load the module for the Python package and verify if it is loaded.
 
-.. dropdown:: Answer
+.. dropdown:: Answer HPC2N
 
-    Search the module system with these commands    
+    Search the module system with these commands:
 
-    - HPC2N: ``module spider Theano`` redirects you to 
-      ``module spider Theano/1.1.2-PyMC``. There, follow the instructions:
+    - ``module spider Theano`` redirects you to 
+      ``module spider Theano/1.1.2-PyMC``
+    - At ``module spider Theano/1.1.2-PyMC`` follow the instructions:
         - ``module load GCC/10.2.0``
         - ``module load OpenMPI/4.0.5``
         - ``module load Theano/1.1.2-PyMC``
         - ``pip list`` to find ``Theano-PyMC`` with version ``1.1.2``
 
-        ..
-            _This: is a comment!
+    ..
+        _This: is a comment!
 
-            b-an01 [~]$ module load GCC/10.2.0
-            b-an01 [~]$ module load OpenMPI/4.0.5
-            b-an01 [~]$ module load Theano/1.1.2-PyMC
-            b-an01 [~]$ pip list
-            Package                       Version
-            ----------------------------- ----------
-            alabaster                     0.7.12
-            appdirs                       1.4.4
-            asn1crypto                    1.4.0
-            [...]
-            sphinxcontrib-websupport      1.2.4
-            tabulate                      0.8.7
-            Theano-PyMC                   1.1.2
-            threadpoolctl                 2.1.0
-            toml                          0.10.1
-            tomlkit                       0.7.0
-            [...]
-            wheel                         0.35.1
-            xlrd                          1.2.0
-            zipp                          3.3.0
+        b-an01 [~]$ module load GCC/10.2.0
+        b-an01 [~]$ module load OpenMPI/4.0.5
+        b-an01 [~]$ module load Theano/1.1.2-PyMC
+        b-an01 [~]$ pip list
+        Package                       Version
+        ----------------------------- ----------
+        alabaster                     0.7.12
+        appdirs                       1.4.4
+        asn1crypto                    1.4.0
+        [...]
+        sphinxcontrib-websupport      1.2.4
+        tabulate                      0.8.7
+        Theano-PyMC                   1.1.2
+        threadpoolctl                 2.1.0
+        toml                          0.10.1
+        tomlkit                       0.7.0
+        [...]
+        wheel                         0.35.1
+        xlrd                          1.2.0
+        zipp                          3.3.0
+
+.. dropdown:: Answer LUNARC
+
+    Search the module system with these commands    
 
     - LUNARC: TODO
-    - UPPMAX: 
-        - Copy from the documentation: ``module load python_ML_packages/3.11.8-cpu``
-        - ``pip list`` to find ``tensorflow-cpu`` with version ``2.16.1``
 
-        ..
-            _This: is a comment!
+.. dropdown:: Answer UPPMAX
 
-            [richel@rackham3 ~]$ module list
+    - Copy from the documentation: ``module load python_ML_packages/3.11.8-cpu``
+    - ``pip list`` to find ``tensorflow-cpu`` with version ``2.16.1``
 
-            Currently Loaded Modules:
-              1) uppmax
+    ..
+        _This: is a comment!
 
-            [richel@rackham3 ~]$ module load python_ML_packages/3.11.8-cpu
-            [richel@rackham3 ~]$ pip list
-            Package                      Version
-            ---------------------------- ---------------
-            absl-py                      2.1.0
-            anndata                      0.10.5.post1
-            anyio                        4.2.0
-            [...]
-            tensorboard                  2.16.2
-            tensorboard-data-server      0.7.2
-            tensorflow-cpu               2.16.1
-            tensorflow-datasets          4.9.4
-            tensorflow-io-gcs-filesystem 0.37.0
-            [...]
-            xxhash                       3.4.1
-            zipp                         3.17.0
-            zope.interface               6.1
+        [richel@rackham3 ~]$ module list
+
+        Currently Loaded Modules:
+          1) uppmax
+
+        [richel@rackham3 ~]$ module load python_ML_packages/3.11.8-cpu
+        [richel@rackham3 ~]$ pip list
+        Package                      Version
+        ---------------------------- ---------------
+        absl-py                      2.1.0
+        anndata                      0.10.5.post1
+        anyio                        4.2.0
+        [...]
+        tensorboard                  2.16.2
+        tensorboard-data-server      0.7.2
+        tensorflow-cpu               2.16.1
+        tensorflow-datasets          4.9.4
+        tensorflow-io-gcs-filesystem 0.37.0
+        [...]
+        xxhash                       3.4.1
+        zipp                         3.17.0
+        zope.interface               6.1
 
 Exercise 3
 ----------
@@ -301,27 +314,33 @@ Here we install a Python package ourselves.
 Use your center's documentation to find out how to install Python packages
 using ``pip``.
 
-.. dropdown:: Answer
+.. dropdown:: Answer HPC2N
 
-    - HPC2N: Searching for 'pip install' at `the HPC2N documentation <https://docs.hpc2n.umu.se/>`
-      takes one to `Working with venv <https://docs.hpc2n.umu.se/tutorials/userinstalls/#working__with__venv>`_
-      (whatever that is). Searching for ``pip install`` takes use to
-      the HPC2N recommendation there to use ``pip install --no-cache-dir --no-build-isolation MYPACKAGE``
-    - LUNARC: TODO
-    - UPPMAX: searching for ``pip install`` at 
-      `the UPPMAX documentation <https://docs.uppmax.uu.se>`_
-      takes you to
-      `Installing Python packages <https://docs.uppmax.uu.se/software/python_install_packages/>`_.
-      There, clicking on the link 'pip' takes you to
-      `pip <https://docs.uppmax.uu.se/software/python_install_packages/#pip>`_.
-      The UPPMAX recommendation there to use ``pip install --user [package name]``
+    Searching for 'pip install' at `the HPC2N documentation <https://docs.hpc2n.umu.se/>`
+    takes one to `Working with venv <https://docs.hpc2n.umu.se/tutorials/userinstalls/#working__with__venv>`_
+    (whatever that is). Searching for ``pip install`` takes use to
+    the HPC2N recommendation there to use ``pip install --no-cache-dir --no-build-isolation MYPACKAGE``
+
+.. dropdown:: Answer LUNARC
+
+    TODO
+
+.. dropdown:: Answer UPPMAX
+
+    UPPMAX: searching for ``pip install`` at 
+    `the UPPMAX documentation <https://docs.uppmax.uu.se>`_
+    takes you to
+    `Installing Python packages <https://docs.uppmax.uu.se/software/python_install_packages/>`_.
+    There, clicking on the link 'pip' takes you to
+    `pip <https://docs.uppmax.uu.se/software/python_install_packages/#pip>`_.
+    The UPPMAX recommendation there to use ``pip install --user [package name]``
 
 Install a Python package called ``mhcnuggets``. Which version gets installed?
 
-.. dropdown:: Answer
+.. dropdown:: Answer HPC2N
 
-    - HPC2N: Do ``pip install --no-cache-dir --no-build-isolation mhcnuggets``,
-      then ``pip list`` to see that ``mhcnuggets`` version 2.4.1
+    Do ``pip install --no-cache-dir --no-build-isolation mhcnuggets``,
+    then ``pip list`` to see that ``mhcnuggets`` version 2.4.1
         
     ..
         _This: is a comment!
@@ -356,10 +375,14 @@ Install a Python package called ``mhcnuggets``. Which version gets installed?
         zipp                          3.20.2
         b-an01 [~]$ 
 
+.. dropdown:: Answer LUNARC
 
-    - LUNARC: TODO
-    - UPPMAX: Do ``pip install mhcnuggets``, then ``pip list`` to see that ``mhcnuggets`` version 2.4.1
-      gets installed
+    TODO
+
+.. dropdown:: Answer UPPMAX
+
+    Do ``pip install mhcnuggets``, then ``pip list`` to see that ``mhcnuggets`` version 2.4.1
+    gets installed
                 
     ..
         _This: is a comment!
