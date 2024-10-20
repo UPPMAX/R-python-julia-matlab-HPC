@@ -104,7 +104,7 @@ Example - Creating a renv and installing ``knitr``
 
          .. code-block:: console
 
-            $ ml GCC/11.2.0  OpenMPI/4.1.1  R/4.1.2 R-bundle-Bioconductor/3.14-R-4.1.2 
+            $ ml GCC/11.3.0  OpenMPI/4.1.4  R/4.2.1 R-bundle-Bioconductor/3.15-R-4.2.1 
 
       .. tab:: LUNARC 
 
@@ -170,6 +170,75 @@ Example - Creating a renv and installing ``knitr``
    To access the packages installed in the renv, you either need to activate it or be in that directory. Load the R module and prerequisites (and possibly R_packages on UPPMAX and R-bundle-Bioconductor / R-bundle-CRAN on HPC2N) and do: 
 
    - ``renv::load("<path-to-your-renv>")`` inside your R script to access the packages installed in it. Or run from inside your renv directory. 
+
+.. exercise:: Installing "datarium"
+
+   We will need this for an exercise in the "ML with R" section. 
+
+   - First create a new project under the course project directory (Kebnekaise and Rackham) or in your home directory (Cosmos) and cd to it. 
+
+   - Then make sure you have loaded the modules: 
+    
+      - Kebnekaise/Cosmos: R/4.2.1 and prerequsites + R-bundle-Bioconductor/3.15-R-4.2.1 
+      - Rackham: R/4.1.1 R_packages/4.1.1 
+
+   - Launch the R interpreter and initialize a renv environment.
+
+   - Install the package "datarium" 
+
+.. solution:: 
+   :class: dropdown 
+
+       1. Create a project directory and change to it: 
+
+       .. code-block::
+
+          $ mkdir -v <path-to-your-dir>/r_proj_dat && cd $_      
+   
+       2. Load R, prerequisites, and other needed modules 
+
+       .. tabs:: 
+
+          .. tab:: Rackham 
+             
+             .. code-block::
+
+                ml R/4.1.1 R_packages/4.1.1             
+         
+          .. tab:: Kebnekaise 
+
+             .. code-block:: 
+
+                ml GCC/11.3.0  OpenMPI/4.1.4  R/4.2.1 R-bundle-Bioconductor/3.15-R-4.2.1
+
+          .. tab:: Cosmos
+
+             .. code-block:: 
+
+                ml GCC/11.3.0  OpenMPI/4.1.4 R/4.2.1 R-bundle-Bioconductor/3.15-R-4.2.1
+
+       3. Launch the R interpreter and initialize a renv environment.
+
+       .. code-block:: 
+
+          $ R
+
+       .. code-block::
+
+          > renv::init()
+
+       4. Install "datarium" 
+
+       .. code-block:: 
+
+          install.packages("datarium") 
+
+       5. Try loading it with 
+
+       .. code-block:: 
+
+          > library(datarium) 
+
 
 Conda (UPPMAX)
 --------------
