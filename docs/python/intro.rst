@@ -58,36 +58,33 @@ Schedule
      - Packages
      - RB
    * - 11:35
-     - Isolated environments 1
+     - Isolated environments
      - RB
    * - 12:00
      - Lunch
      - .
    * - 13:00
-     - Isolated environments 2
-     - RB
-   * - 13:35
      - Batch
      - BB
-   * - 14:05
-     - Break
-     - .
-   * - 14:20
+   * - 13:30
      - GPU
      - BB
-   * - 14:40
-     - Simultaneous sessions
-     - BB * RB * RP
-   * - 15:10
+   * - 13:50
      - Break
      - .
-   * - 15:25
+   * - 14:05
+     - Simultaneous sessions
+     - BB * RB * RP
+   * - 14:35
+     - Break
+     - .
+   * - 14:50
      - Parallel and multi-threaded functions
      - PO
-   * - 16:00
+   * - 15:35
      - Summary and evaluation
      - RB
-   * - 16:15
+   * - 15:50
      - End of the day
      - .
 
