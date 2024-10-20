@@ -237,7 +237,7 @@ As all sentences are unique, such duplicates can be spotted.
 - The last part on Parallel and multi-threaded functions was a bit fast due to time which happens of course but it would be good to learn more on that. 
 materials 
 - The after lunch section was really difficult for me to follow, I feel like the lecturers didn't stop long enough on each topic to explain it properly and I only got a partial understanding
-- Maybe a better distribution of time between exercises would benefit. Spend less time on the begninnig and give more time to run exmaples on the interactive and parallel parts. Becuase I think this is the part were we need more help.
+- Maybe a better distribution of time between exercises would benefit. Spend less time on the beginning and give more time to run examples on the interactive and parallel parts. Because I think this is the part were we need more help.
 - the 14:00 to 15:00 session was a bit hard to keep up with.
 - Time per exercise can be optimised. More time for python jupyter and GPU exercises will be good for us.
 - Time organization: morning pace was slow compared to the afternoon one. Maybe more time of coding together with the lecturer, especially for the second part of the program (more complex concepts of batch work and interactive work)
@@ -264,7 +264,7 @@ recommended by the literature. I would correct this two days later,
 let's see if that made it into the feedback.
 
 - more and slower code-alongs
-- The pace was relatively slow, which was great. as then also those how have very limited knowledge can also keep up the pace. However, in the afternoon it clearly went more faster. Maybe speed up in the morning a bit to have more time practicing actually submitting the jobs? As that was my main motivation for this, I basically skipped the very last lecture about parallelization and instead coded to make submittinch batch jobs work. 
+- The pace was relatively slow, which was great. as then also those how have very limited knowledge can also keep up the pace. However, in the afternoon it clearly went more faster. Maybe speed up in the morning a bit to have more time practicing actually submitting the jobs? As that was my main motivation for this, I basically skipped the very last lecture about parallelization and instead coded to make submitting batch jobs work. 
 
 ### Materials
 
@@ -376,7 +376,7 @@ Average: `((4 * 10) + (5 * 9) + (4 * 8) + (8 * 7) + (3 * 6)) / 24` = 8.0
 
 Agreed, I think learning-centered teaching would solve this.
 
-- Some students had problems loggin in to the needed systems. I also just noted that there was this log-in session in Monday when you mentioned it on tuesday. Maybe advertise that in the very beginning of the information email so that it does not go unnoticed. I had no problems loggin etc, but those who had would have benefited participating on Monday
+- Some students had problems logging in to the needed systems. I also just noted that there was this log-in session in Monday when you mentioned it on tuesday. Maybe advertise that in the very beginning of the information email so that it does not go unnoticed. I had no problems loggin etc, but those who had would have benefited participating on Monday
 
 Agreed, we could be more ruthless in letting our learners in, e.g. by putting
 the link to the Zoom on Rackham and Kebnekaise.

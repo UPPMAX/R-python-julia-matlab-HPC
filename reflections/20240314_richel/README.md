@@ -90,7 +90,7 @@ Examples of content I remove, as it would not fit my teaching goals:
   do that in the session on parallel programs
 - on R virtual environments: use a virtual environment, not describe
   what it is in detail
-- in the parallel programs, letting learners fix code for parallizing
+- in the parallel programs, letting learners fix code for parallelizing
   code: this is not a course on parallel programming. Instead,
   let them run code that can do calculations in parallel, on the CPU/GPU
 
