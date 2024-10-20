@@ -656,3 +656,199 @@ Conclusion
         wrapt                     1.16.0
         zipp                      3.17.0
         zope.interface            6.1
+
+
+
+    .. code-block::
+
+        b-an01 [~]$ module load GCC/12.3.0
+        b-an01 [~]$ module load Python/3.11.3
+        b-an01 [~]$ pip list
+        Package           Version
+        ----------------- -------
+        flit_core         3.9.0
+        packaging         23.1
+        pip               23.1.2
+        setuptools        67.7.2
+        setuptools-scm    7.1.0
+        tomli             2.0.1
+        typing_extensions 4.6.3
+        wheel             0.40.0
+
+    However, loading ``SciPy-bundle/2023.11`` gives ``pandas``:
+
+    .. code-block::
+
+        b-an01 [~]$ module purge
+        The following modules were not unloaded:
+          (Use "module --force purge" to unload all):
+
+          1) snicenvironment   2) systemdefault
+        b-an01 [~]$ module load GCC/13.2.0
+        b-an01 [~]$ module load SciPy-bundle/2023.11
+        b-an01 [~]$ module list
+
+        Currently Loaded Modules:
+          1) snicenvironment (S)   4) zlib/1.2.13     7) OpenBLAS/0.3.24  10) bzip2/1.0.8      13) Tcl/8.6.13     16) libffi/3.4.4   19) cffi/1.15.1          22) Python-bundle-PyPI/2023.10
+          2) systemdefault   (S)   5) binutils/2.40   8) FlexiBLAS/3.3.1  11) ncurses/6.4      14) SQLite/3.43.1  17) OpenSSL/1.1    20) cryptography/41.0.5  23) pybind11/2.11.1
+          3) GCCcore/13.2.0        6) GCC/13.2.0      9) FFTW/3.3.10      12) libreadline/8.2  15) XZ/5.4.4       18) Python/3.11.5  21) virtualenv/20.24.6   24) SciPy-bundle/2023.11
+
+          Where:
+           S:  Module is Sticky, requires --force to unload or purge
+
+        b-an01 [~]$ pip list
+        Package                           Version
+        --------------------------------- ------------
+        alabaster                         0.7.13
+        appdirs                           1.4.4
+        asn1crypto                        1.5.1
+        atomicwrites                      1.4.1
+        attrs                             23.1.0
+        Babel                             2.13.1
+        backports.entry-points-selectable 1.2.0
+        backports.functools-lru-cache     1.6.6
+        beniget                           0.4.1
+        bitarray                          2.8.2
+        bitstring                         4.1.2
+        blist                             1.3.6
+        Bottleneck                        1.3.7
+        CacheControl                      0.13.1
+        cachy                             0.3.0
+        certifi                           2023.7.22
+        cffi                              1.16.0
+        chardet                           5.2.0
+        charset-normalizer                3.3.1
+        cleo                              2.0.1
+        click                             8.1.7
+        cloudpickle                       3.0.0
+        colorama                          0.4.6
+        commonmark                        0.9.1
+        crashtest                         0.4.1
+        cryptography                      41.0.5
+        Cython                            3.0.4
+        deap                              1.4.1
+        decorator                         5.1.1
+        distlib                           0.3.7
+        distro                            1.8.0
+        docopt                            0.6.2
+        docutils                          0.20.1
+        doit                              0.36.0
+        dulwich                           0.21.6
+        ecdsa                             0.18.0
+        editables                         0.5
+        exceptiongroup                    1.1.3
+        execnet                           2.0.2
+        filelock                          3.13.0
+        flit_core                         3.9.0
+        fsspec                            2023.10.0
+        future                            0.18.3
+        gast                              0.5.4
+        glob2                             0.7
+        html5lib                          1.1
+        idna                              3.4
+        imagesize                         1.4.1
+        importlib-metadata                6.8.0
+        importlib-resources               6.1.0
+        iniconfig                         2.0.0
+        intervaltree                      3.1.0
+        intreehooks                       1.0
+        ipaddress                         1.0.23
+        jaraco.classes                    3.3.0
+        jeepney                           0.8.0
+        Jinja2                            3.1.2
+        joblib                            1.3.2
+        jsonschema                        4.17.3
+        keyring                           24.2.0
+        keyrings.alt                      5.0.0
+        liac-arff                         2.5.0
+        lockfile                          0.12.2
+        markdown-it-py                    3.0.0
+        MarkupSafe                        2.1.3
+        mdurl                             0.1.2
+        mock                              5.1.0
+        more-itertools                    10.1.0
+        mpmath                            1.3.0
+        msgpack                           1.0.7
+        netaddr                           0.9.0
+        netifaces                         0.11.0
+        numexpr                           2.8.7
+        numpy                             1.26.2
+        packaging                         23.2
+        pandas                            2.1.3
+        pastel                            0.2.1
+        pathlib2                          2.3.7.post1
+        pathspec                          0.11.2
+        pbr                               5.11.1
+        pexpect                           4.8.0
+        pip                               23.2.1
+        pkginfo                           1.9.6
+        platformdirs                      3.11.0
+        pluggy                            1.3.0
+        ply                               3.11
+        pooch                             1.8.0
+        psutil                            5.9.6
+        ptyprocess                        0.7.0
+        py                                1.11.0
+        py-expression-eval                0.3.14
+        pyasn1                            0.5.0
+        pybind11                          2.11.1
+        pycparser                         2.21
+        pycryptodome                      3.19.0
+        pydevtool                         0.3.0
+        Pygments                          2.16.1
+        pylev                             1.4.0
+        PyNaCl                            1.5.0
+        pyparsing                         3.1.1
+        pyrsistent                        0.20.0
+        pytest                            7.4.3
+        pytest-xdist                      3.3.1
+        python-dateutil                   2.8.2
+        pythran                           0.14.0
+        pytoml                            0.1.21
+        pytz                              2023.3.post1
+        rapidfuzz                         2.15.2
+        regex                             2023.10.3
+        requests                          2.31.0
+        requests-toolbelt                 1.0.0
+        rich                              13.6.0
+        rich-click                        1.7.0
+        scandir                           1.10.0
+        scipy                             1.11.4
+        SecretStorage                     3.3.3
+        semantic-version                  2.10.0
+        setuptools                        68.2.2
+        setuptools-scm                    8.0.4
+        shellingham                       1.5.4
+        simplegeneric                     0.8.1
+        simplejson                        3.19.2
+        six                               1.16.0
+        snowballstemmer                   2.2.0
+        sortedcontainers                  2.4.0
+        Sphinx                            7.2.6
+        sphinx-bootstrap-theme            0.8.1
+        sphinxcontrib-applehelp           1.0.7
+        sphinxcontrib-devhelp             1.0.5
+        sphinxcontrib-htmlhelp            2.0.4
+        sphinxcontrib-jsmath              1.0.1
+        sphinxcontrib-qthelp              1.0.6
+        sphinxcontrib-serializinghtml     1.1.9
+        sphinxcontrib-websupport          1.2.6
+        tabulate                          0.9.0
+        threadpoolctl                     3.2.0
+        toml                              0.10.2
+        tomli                             2.0.1
+        tomli_w                           1.0.0
+        tomlkit                           0.12.1
+        typing_extensions                 4.8.0
+        tzdata                            2023.3
+        ujson                             5.8.0
+        urllib3                           2.0.7
+        versioneer                        0.29
+        virtualenv                        20.24.6
+        wcwidth                           0.2.8
+        webencodings                      0.5.1
+        wheel                             0.41.2
+        xlrd                              2.0.1
+        zipfile36                         0.1.3
+        zipp                              3.17.0
+
