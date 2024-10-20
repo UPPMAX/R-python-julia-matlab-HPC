@@ -1,4 +1,4 @@
-# Evaluatation 2024-10-22: Python
+# Evaluation 2024-10-22: Python
 
 These are the evaluation questions.
 The goals of these questions is to find out how successful

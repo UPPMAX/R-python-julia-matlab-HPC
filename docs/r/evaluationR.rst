@@ -1,4 +1,4 @@
-# Evaluatation 2024-10-24: R
+# Evaluation 2024-10-24: R
 These are the evaluation questions.
 The goals of these questions is to find out how successful
 the course is in achieving its teaching goals.
