@@ -185,12 +185,12 @@ MATLAB terminal interface
       - ``c.parcluster``
       - ``c.AdditionalProperties.``
       - ``c.batch``
-      - ...
+   - Starting a job from within Matlab 
 
 This section will show you how to use MATLAB completely from the shell/terminal without having to open the GUI. This could be useful if you only have a regular SSH connection or otherwise need to run something fast and lightweight instead of having to open the GUI. This is an extra advantage when you have a poor network connection. 
 
 Starting MATLAB
-'''''''''''''''
+^^^^^^^^^^^^^^^
      
 To start Matlab on the command line, without running the GUI, load the MATLAB version and do 
 
@@ -254,7 +254,7 @@ Of course, we can work in MATLAB like this in exactly the same way as in the GUI
 However, we are now going to look at running in batch on the compute nodes. 
 
 Job settings at the command line
-''''''''''''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you want to run a MATLAB program on the cluster with batch, you have to set some things for the job. Start MATLAB and do this.  
 
@@ -292,7 +292,7 @@ Asking for 1 hour walltime.
 
 .. exercise:: Run job settings
 
-   Do the job settings on of:
+   Do the job settings on one of:
    
    - HPC2N: CLUSTER=kebnekaise
    - UPPMAX: no CLUSTER, as said above - i.e. just c=parcluster;
@@ -312,33 +312,40 @@ Asking for 1 hour walltime.
 
 
 Job settings in the Cluster Profile Manager
-'''''''''''''''''''''''''''''''''''''''''''
+"""""""""""""""""""""""""""""""""""""""""""
+
+.. note:: This is about the GUI
+
+   You can change the job settings (or make them all together) inside the GUI. You change the job settings within the Cluster Profile Manager in that case. 
+
+   Note that this is ONLY in the case you want to use the GUI. You can work completely from within the MATLAB terminal interface if you want. 
 
 If you run MATLAB in the GUI after having configured the cluster, MATLAB will start with a default cluster profile, typically something that includes the name of the cluster. This is just the set of configurations that were set by `configCluster`. You can view, edit, and/or add to this profile by clicking the ``Parallel`` menu icon and selecting ``Create and Manage Clusters``.
 
-.. figure:: ../../Rackham-matlab-parallel.png
+.. figure:: img/Rackham-matlab-parallel.png
    :width: 550
    :align: center
 
    Location of Parallel Menu in GUI.
 
-.. figure:: ../../Rackham-matlab-cluster-profile-mgr.png
+.. figure:: img/Rackham-matlab-cluster-profile-mgr.png
    :width: 550
    :align: center
 
    Cluster Profile Manager.
 
 If you scroll down in the window that appears when you select the right cluster, you will see a box titled ``Scheduler Plugin``. This box lets you set SBATCH parameters like
- - Your account name (project name),
- - Your email address,
- - The memory per CPU, including units,
- - The number of processes per node,
- - Which partition you want,
- - Whether you need an exclusive node,
- - The name of your reservation, and most importantly,
- - The wall time for your job.
 
-.. figure:: ../../Rackham-matlab-cluster-profile-mgr2.png
+- Your account name (project name),
+- Your email address,
+- The memory per CPU, including units,
+- The number of processes per node,
+- Which partition you want,
+- Whether you need an exclusive node,
+- The name of your reservation, and most importantly,
+- The wall time for your job.
+
+.. figure:: img/Rackham-matlab-cluster-profile-mgr2.png
    :width: 550
    :align: center
 
@@ -348,9 +355,10 @@ In other words, anything you might otherwise set by calling ``c.AdditionalProper
 
 If you are on Desktop On Demand on LUNARC, these settings do not override the parameters set in the GfxLauncher for the MATLAB GUI session itself, but rather to any batch jobs you submit from *within* the GUI.
 
+More about MATLAB in the GUI in the next session. 
 
-Running a job
-'''''''''''''
+Running a job from within MATLAB terminal interface
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Starting a simple MATLAB program inside MATLAB on the terminal. It will as default use your cluster profile which you just created and saved above. 
 
@@ -385,15 +393,15 @@ or with
    job.fetchOutputs{:}
 
 - If you need the Job id, run ``squeue --me`` on the command line.
-- To get the MATLAB  jobid do ``id=job.ID`` within MATLAB. 
+- To get the MATLAB jobid do ``id=job.ID`` within MATLAB. 
 - To see if the job is running, inside MATLAB, do ``job.State``
 
 Serial
-''''''
+""""""
 
 After starting MATLAB, you can use this 
 
-- Get a handle to the cluster
+- Get a handle to the cluster (remember, on Rackham, just use ``c=parcluster;`` 
 
 .. code-block::
 
@@ -440,8 +448,28 @@ If you are running a lot of jobs or if you want to quit MATLAB and restart it at
    j2=jobs(2)
    output = j2.fetchOutputs{:}
 
+.. example:: Type-along!  
+
+   After doing the job settings further up, let us try running an example. We will use the example ``add2.m`` which adds two numbers. I just used 1 and 2, but you can pick any numbers you want. 
+
+   .. code-block::
+
+      job = c.batch(@add2, 1, {1,2})
+
+   Check if it has finished with: 
+
+   .. code-block:: 
+
+      job.State
+
+   When it has finished, retrieve the result with: 
+
+   .. code-block:: 
+
+      job.fetchOutputs{:}
+
 Parallel
-''''''''
+""""""""
 
 Running parallel batch jobs are quite similar to running serial jobs, we just need to specify a MATLAB Pool to use and of course MATLAB code that is parallelized. This is easiest illustrated with an example:
 
@@ -503,6 +531,12 @@ There is more information about batch jobs here on `Mathworks <https://se.mathwo
 MATLAB batch jobs
 -----------------
 
+.. admonition:: Content
+
+   - Creating a batch script to run Matlab 
+      - Serial
+      - Parallel
+        
 While we can submit batch jobs (or even batch jobs of batch jobs) from inside MATLAB (and that may be the most common way of using the batch system with MATLAB), it is also possible to create a batch submit script and use that to run MATLAB. 
 
 The difference here is that when the batch script has been submitted, you cannot make changes to your job. It is not interactive. That is also an advantage - you can submit the job, log out, and then come back later and see the results. 
@@ -513,7 +547,7 @@ The difference here is that when the batch script has been submitted, you cannot
   
 
 Serial batch jobs 
-''''''''''''''''''''''''''''''''''''''''''''''''''
+^^^^^^^^^^^^^^^^^
 
 Here is an example of a serial batch job for UPPMAX/HPC2N/LUNARC. 
 
@@ -613,7 +647,7 @@ Where ``<batchscript.sh>`` is the name you gave your batchscript. You can find o
    Try run the serial batch script. Submit it, then check that it is running with ``squeue --me``. Check the output in the ``matlab_JOBID.out`` (and the error in the ``matlab_JOBID.err`` file). 
 
 Parallel batch script
-'''''''''''''''''''''
+^^^^^^^^^^^^^^^^^^^^^
 
 This is an example batch script for parallel MATLAB 
 
@@ -692,10 +726,16 @@ Inside the MATLAB code, the number of CPU-cores (NumWorkers in MATLAB terminolog
 GPU code
 --------
 
+.. admonition:: Content
+
+   - How to use GPUs with Matlab 
+      - Inside Matlab
+      - In a batch script
+
 In order to use GPUs, you have to ask for them. 
 
 Inside MATLAB
-'''''''''''''
+^^^^^^^^^^^^^
 
 .. note:: 
 
@@ -785,7 +825,7 @@ Inside MATLAB
    Try and add GPUs to your cluster profile, save it. Run ``c.AdditionalProperties`` to see what was added. Then do ``c.AdditionalProperties.GpusPerNode = '';`` to remove it. See that it was removed. 
          
 Batch scripts 
-'''''''''''''
+^^^^^^^^^^^^^
 
 In order to use GPUs in a batch job, you do something like this: 
 
