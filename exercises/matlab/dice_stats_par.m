@@ -17,4 +17,7 @@ end
 
 % make dstats results readable
 dstats = array2table(dstats, 'VariableNames',{'D','Mean','Median','Mode'});
+writetable(dstats,'dice_stats_out.txt','Delimiter','\t')
 t=toc;
+fprintf(t)
+end
