@@ -277,46 +277,58 @@ On the LUNARC HPC desktop, if you want to use the MATLAB graphical user interfac
 The (HEP,CPU) nodes are private, so avoid those. The regular versions run on our Intel 32-core nodes because they have built-in GPU partitions. If you don't plan to do any graphical work inside the GUI, you can choose the (CPU) version of your preferred release to get onto an AMD 48-core node, which also allows you to run for up to 7 days (168:00:00) instead of the usual 2-day limit.
 
 
-Examples
-^^^^^^^^
+Exercises
+^^^^^^^^^
 Try them yourself!
 
-1. Load MATLAB in the terminal or GUI and do a few simple commands at the command line.
+.. exercise:: 
+   Load MATLAB in the terminal or GUI and do a few simple commands at the command line. For example,
 
-.. code-block:: console
+    .. code-block:: console
+    
+       $ ml matlab/2023b
+       $ matlab -singleCompThread -nodisplay
+                                   < M A T L A B (R) >
+                      Copyright 1984-2023 The MathWorks, Inc.
+                 R2023b Update 7 (23.2.0.2515942) 64-bit (glnxa64)
+                                  January 30, 2024
+       To get started, type doc.
+       For product information, visit www.mathworks.com.
+       >> a = 5;
+       >> b = eye(2);
+       >> c = a+b
+       c =
+           6     5
+           5     6
 
-   $ ml matlab/2023b
-   $ matlab -singleCompThread -nodisplay
-                               < M A T L A B (R) >
-                  Copyright 1984-2023 The MathWorks, Inc.
-             R2023b Update 7 (23.2.0.2515942) 64-bit (glnxa64)
-                              January 30, 2024
-   To get started, type doc.
-   For product information, visit www.mathworks.com.
-   >> a = 5;
-   >> b = eye(2);
-   >> c = a+b
-   c =
-       6     5
-       5     6
+.. exercise::
+   Copy the example function below to a file called ``add2.m`` in your working directory or the MATLAB directory that the configuration step created for you in your Documents folder. Then run it at the MATLAB command line.
 
-2. Run an example function, ``add2(a,b)`` (the function file is in the exercises folder).
+  .. code-block:: matlab
 
-.. code-block:: console
+      function result = add2(x,y)
+      result = x+y
+      disp("The sum of "+x+" and "+y+" is "+result)
+      end
 
-   >> sum2 = add2(5,8);
-   result =
-       13
-   The sum of 5 and 8 is 13
-   >> sum2
-   sum2 =
-       13
 
-3. Exit the MATLAB command line with ``quit`` or ``exit`` (this can take a few seconds).
+.. solution::
 
-.. code-block:: console
+    .. code-block:: console
+    
+       >> add2(5,8)
+       result =
+           13
+       The sum of 5 and 8 is 13
+       >> 
 
-   >> exit
+
+.. exercise:: 
+   Exit the MATLAB command line with ``quit`` or ``exit`` (this can take a few seconds).
+
+  .. code-block:: console
+  
+     >> exit
 
 .. keypoints::
 

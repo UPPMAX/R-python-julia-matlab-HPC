@@ -182,10 +182,10 @@ MATLAB terminal interface
 
    - starting Matlab on the command line
    - Job settings
-     - ``c.parcluster``
-     - ``c.AdditionalProperties.``
-     - ``c.batch``
-     - ...
+      - ``c.parcluster``
+      - ``c.AdditionalProperties.``
+      - ``c.batch``
+      - ...
 
 This section will show you how to use MATLAB completely from the shell/terminal without having to open the GUI. This could be useful if you only have a regular SSH connection or otherwise need to run something fast and lightweight instead of having to open the GUI. This is an extra advantage when you have a poor network connection. 
 
