@@ -216,7 +216,7 @@ package with.
 
 Load the module for the Python package and verify if it is loaded.
 
-.. dropdown:: Anwer
+.. dropdown:: Answer
 
     Search the module system with these commands    
 
