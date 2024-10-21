@@ -45,9 +45,12 @@ The GfxLauncher will prompt you for resource specification and then Desktop On D
 
 Some On Demand applications will let you configure and submit separate batch jobs that are not bound by the parameters set for the graphical user interface (GUI) in GfxLauncher, although the initial configuration process can be rather involved. For example, you could launch the MATLAB GUI with a wall time of 2 hours, but having set the right configurations, you could use a livescript in the GUI to submit a batch job that lasts 3 days. Such a batch job will not be interrupted if the GUI used to submit it closes or times out. Keep in mind that the optimal resources for the computations to be done in your batch job are often very different from the resources needed to run the GUI.
 
+Getting Started
+---------------
 
-Where do I start?
------------------
+Where are the On-Demand Applications?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 On the LUNARC HPC Desktop, the Applications menu lists all the applications available to be run interactively, and opening one prefixed by "Applications -" will start it in Desktop On Demand. There is no specific "Desktop On Demand" application in the list. Most common IDEs can be found in a drop-down menu that appears when you hover over ``Applications - <Language>`` for your language of choice, but more niche packages may be listed under a subject-matter field instead, like ``Applications - Engineering``.
 
 .. admonition:: Terminals on the Compute nodes
@@ -66,7 +69,7 @@ On the LUNARC HPC Desktop, the Applications menu lists all the applications avai
 
 
 How do I start?
----------------
+^^^^^^^^^^^^^^^
 
 For most programs, the start-up process is roughly the same:
 
