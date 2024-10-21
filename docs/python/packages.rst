@@ -111,6 +111,20 @@ These problems are addressed in the session on isolated environments.
 Exercises
 ---------
 
+.. dropdown:: Need a video?
+
+    You can see a video on how these exercises are done here:
+
+    ::
+        _Comment: Using Python packages at [CENTER]'s [CLUSTER].
+        This video is about the session 'Python packages' in the Python-Julia-R-MATLAB course given by HPC2N, LUNARC and UPPMAX. It shows how to do the exercises using [CENTER]'s [CLUSTER].
+        The course material can be found at https://uppmax.github.io/R-python-julia-matlab-HPC/python/packages
+
+    - `HPC2N <https://youtu.be/lXfSvy_gRLc>`_
+    - LUNARC: TODO
+    - `UPPMAX <https://youtu.be/nIkjk8R8rx0>`
+
+
 These exercises follow a common user journey, 
 for a user that needs to use a certain Python packages:
 
