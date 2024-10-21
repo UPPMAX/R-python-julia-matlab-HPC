@@ -112,15 +112,10 @@ Preliminary schedule
      - END
      -
 
-
 .. instructor-note::
 
-   - **FIX**
-   - Intro 10 min 
-   - Lecture and demo 10 min
-   - Exercise 0 min
-
-
+   - Intro 5 min 
+   - Lecture and 10 min
 
 What is Julia?
 --------------
@@ -177,12 +172,13 @@ Shortcomings of Julia
 
 
 
-More on Julia?
---------------
+More on Julia
+-------------
 
 - Documentation at the HPC centres UPPMAX and HPC2N
    - UPPMAX: http://docs.uppmax.uu.se/software/julia/
    - HPC2N: https://www.hpc2n.umu.se/resources/software/julia
+   - LUNARC: The user demand on Julia has been low, so no documentation has been needed so far.
 - Official Julia documentation is found `here: <https://docs.julialang.org/en/v1/>`_
 - Slack channel for Julia and instructions for joining it are found here: https://julialang.org/slack/
 - `HPC2N YouTube video on Julia in HPC <https://www.youtube.com/watch?v=bXHe7Kj3Xxg>`_
