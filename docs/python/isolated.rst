@@ -230,10 +230,12 @@ Exercise 1.4: install Python packages
 
         .. code-block:: console
 
-            pip install --user spacy seaborn
+            pip install --user pytest
 
         This virtual environment will be used in later sessions too
-        and is assumed to contain these packages.
+        and is assumed to contain more than just ``pytest``
+        (see exercise 2). However, to get our first experience
+        in, we install something light first.
 
     .. tab:: HPC2N
 
@@ -244,8 +246,9 @@ Exercise 1.4: install Python packages
             pip install --no-cache-dir --no-build-isolation spacy seaborn 
 
         This virtual environment will be used in later sessions too
-        and is assumed to contain these packages.
-
+        and is assumed to contain more than just ``pytest``
+        (see exercise 2). However, to get our first experience
+        in, we install something light first.
 
 Exercise 1.5: check if the Python packages are installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -280,36 +283,7 @@ Exercise 1.5: check if the Python packages are installed
 
             pip list --user
 
-Exercise 1.6: use the virtual environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. tabs::
-
-   .. tab:: UPPMAX
-
-      Start Python and import a Python package:
-
-      .. code-block:: console
-           
-         (vpyenv) $ python
-         Python 3.11.8 (main, Feb  8 2024, 11:48:52) [GCC 12.3.0] on linux
-         Type "help", "copyright", "credits" or "license" for more information.
-         >>> import spacy
-         >>> 
-
-   .. tab:: HPC2N
-
-      Start Python and import a Python package:
-
-      .. code-block:: console
-
-         (vpyenv) b-an01 [/proj/nobackup/r-py-jl-m/bbrydsoe/python]$ python
-         Python 3.11.3 (main, Oct 30 2023, 16:00:15) [GCC 12.3.0] on linux
-         Type "help", "copyright", "credits" or "license" for more information.
-         >>> import spacy
-         >>> 
-
-Exercise 1.7: deactivate the virtual environment
+Exercise 1.6: deactivate the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
@@ -326,8 +300,84 @@ Exercise 1.7: deactivate the virtual environment
 
             deactivate
 
-Exercise 1.8: confirm the Python packages are not reachable anymore
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Well done, you've just created a virtual environment called ``vpyenv``!
+
+Exercise 2: work with ``vpyenv``
+--------------------------------
+
+.. tabs::
+
+   .. tab:: Learning objectives
+
+       - Install complex packages in an already-created virtual environment
+
+   .. tab:: For teachers
+
+       Takes around 3 minutes for an experienced user
+
+In this exercise, we re-use the course environment ``vpyenv``
+to install two Python packages we need.
+
+Exercise 2.1: activate the virtual environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+    .. tab:: UPPMAX
+
+        Activate the virtual environment called ``vpyenv`` as such:      
+
+        .. code-block:: console
+
+            source /proj/r-py-jl-m-rackham/[username]/python/vpyenv/bin/activate
+
+        This virtual environment will be used in later sessions too.    
+
+    where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl-m-rackham/sven/python/vpyenv``.
+
+    .. tab:: HPC2N
+
+        Activate the virtual environment called ``vpyenv`` as such:      
+
+        .. code-block:: console
+
+            source /proj/nobackup/r-py-jl-m/[username]/python/vpyenv/bin/activate
+
+        where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/sven/python/vpyenv``.
+
+        This virtual environment will be used in later sessions too.    
+
+
+Exercise 2.2: install the big Python packages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+    .. tab:: UPPMAX
+
+        Install the ``spacy`` and ``seaborn`` packages
+
+        .. code-block:: console
+
+            pip install --user spacy seaborn
+
+        This virtual environment will be used in later sessions too
+        and is assumed to contain these packages.
+
+    .. tab:: HPC2N
+
+        Install the ``spacy`` and ``seaborn`` packages
+
+        .. code-block:: console
+
+            pip install --no-cache-dir --no-build-isolation spacy seaborn 
+
+        This virtual environment will be used in later sessions too
+        and is assumed to contain these packages.
+
+
+Exercise 2.3: check if the Python packages are installed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -359,9 +409,22 @@ Exercise 1.8: confirm the Python packages are not reachable anymore
 
             pip list --user
 
-Well done, you've just created a virtual environment called ``vpyenv``!
+Exercise 2.4: deactivate the virtual environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. tabs::
 
+   .. tab:: UPPMAX
+
+      .. code-block:: console
+
+            deactivate
+
+   .. tab:: HPC2N
+
+      .. code-block:: console
+
+            deactivate
 
 Conclusion
 ----------
