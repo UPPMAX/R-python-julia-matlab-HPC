@@ -155,7 +155,7 @@ Exercise 1.1: load the modules needed
 
         .. code-block:: console
 
-            module load python/3.11.8
+            module load python/3.11.8 python_ML_packages/3.11.8-cpu
 
     .. tab:: HPC2N
 
