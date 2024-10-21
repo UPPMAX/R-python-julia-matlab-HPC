@@ -20,7 +20,7 @@ Python packages
           that adds more pre-installed Python packages
         - Learners have installed a Python package
 
-        Lesson plan (45 minutes in total):
+        Lesson plan (30 minutes in total):
 
         - 5 mins: prior knowledge
             - What are Python packages?
@@ -28,18 +28,14 @@ Python packages
             - How to find out if a package is already installed?
             - What are some Python package installers?
             - What are the differences?
-            - What are some Python package installers used on UPPMAX?
-            - What are some Python package installers used on HPC2N?
         - 5 mins: presentation
-        - 20 mins: challenge
+        - 15 mins: challenge
         - 5 mins: feedback
             - What are Python packages?
             - Why use Python packages?
             - How to find out if a package is already installed?
             - What are some Python package installers?
             - What are the differences?
-            - What are some Python package installers used on UPPMAX?
-            - What are some Python package installers used on HPC2N?
 
 .. admonition:: Compute allocations in this workshop 
 
