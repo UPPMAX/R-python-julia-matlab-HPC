@@ -79,9 +79,9 @@ All centers have their documentation on virtual environment managers:
 
 In this session, we use ``venv``, as it works for all centers.
 
-- `HPC2N venv<https://docs.hpc2n.umu.se/tutorials/userinstalls/#venv>`_
+- `HPC2N venv <https://docs.hpc2n.umu.se/tutorials/userinstalls/#venv>`_
 - LUNARC: TODO
-- `UPPMAX venv<https://docs.uppmax.uu.se/software/python_venv/>`_
+- `UPPMAX venv <https://docs.uppmax.uu.se/software/python_venv/>`_
 
 
 General workflow
