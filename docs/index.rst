@@ -245,7 +245,16 @@ Prepare your environment now!
 
               $ /proj/nobackup/hpc2n2023-110/bbrydsoe/       
 
+.. admonition:: Do you want the whole repo?
 
+   - If you are happy with just the exercises, the tar balls of the language specific ones are enough.
+   - By cloning the whole repo, you get all the materials, planning documents, and exercises.
+   - If you think this makes sense type this in the command line in the directory you want it.
+     - ``git clone https://github.com/UPPMAX/R-python-julia-matlab-HPC.git``
+   - Note however, that if you during exercise work modify files, they will be overwritten if you make ``git pull`` (like if the teacher needs to modify something).
+      - Then make a copy somewhere else with your answers!
+
+   
 
 Content of the course
 ---------------------
