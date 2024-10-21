@@ -448,7 +448,7 @@ If you are running a lot of jobs or if you want to quit MATLAB and restart it at
    j2=jobs(2)
    output = j2.fetchOutputs{:}
 
-.. example:: Type-along!  
+.. type-along::
 
    After doing the job settings further up, let us try running an example. We will use the example ``add2.m`` which adds two numbers. I just used 1 and 2, but you can pick any numbers you want. You can find the ``add2.m`` script in the exercises/matlab directory or you can 'download it <https://raw.githubusercontent.com/UPPMAX/R-python-julia-matlab-HPC/refs/heads/main/exercises/matlab/add2.m>'_ from here.  
 
