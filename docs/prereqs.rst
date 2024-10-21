@@ -103,6 +103,10 @@ Get familiar with a text editor on a cluster
 All clusters provide the most common command-line text editors.
 We recommend ``nano`` unless you are used to another editor:
 
-- `Text editors at HPC2N <https://docs.hpc2n.umu.se/tutorials/linuxguide/#editors>`_ 
-- `Text editors at UPPMAX <http://docs.uppmax.uu.se/software/text_editors/>`_ 
-  - Any of the above links would be helpful for you
+- `HPC2N documentation on text editors <https://docs.hpc2n.umu.se/tutorials/linuxguide/#editors>`_ 
+- `UPPMAX documentation on text editors <http://docs.uppmax.uu.se/software/text_editors/>`_ 
+- LUNARC does not have documentation on text editors (yet), but any other
+  center's documentation will work
+
+
+
