@@ -335,6 +335,7 @@ Content of the course
    :maxdepth: 2
    :caption: Extra reading:
 
+   extra/isolated_extra.rst
    r/morepackages.rst
    r/packagesBianca.rst
    extra/matlab.rst
