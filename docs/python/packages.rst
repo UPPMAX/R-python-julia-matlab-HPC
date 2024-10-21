@@ -102,7 +102,7 @@ Exercises
     You can see a video on how these exercises are done here:
 
     - `HPC2N <https://youtu.be/lXfSvy_gRLc>`_
-    - LUNARC: TODO
+    - `LUNARC <https://youtu.be/jlvrgRP94mw>`_
     - `UPPMAX <https://youtu.be/nIkjk8R8rx0>`_
 
 
