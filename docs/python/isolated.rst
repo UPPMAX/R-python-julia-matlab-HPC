@@ -294,7 +294,7 @@ Exercise 1.6: use the virtual environment
          (vpyenv) $ python
          Python 3.11.8 (main, Feb  8 2024, 11:48:52) [GCC 12.3.0] on linux
          Type "help", "copyright", "credits" or "license" for more information.
-         >>> import mhcnuggets
+         >>> import spacy
          >>> 
 
    .. tab:: HPC2N
