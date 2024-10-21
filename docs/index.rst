@@ -138,7 +138,7 @@ Schedule Fall 2024
 
 .. warning::
 
-   - **Please be sure that you have gone through the `pre-requirements <https://uppmax.github.io/R-python-julia-matlab-HPC/prereqs.html>`_**
+   - **Please be sure that you have gone through the `pre-requirements <https://uppmax.github.io/R-python-julia-matlab-HPC/prereqs.html>`_ **
    - It mentions the familiarity with the LINUX command line.
    - The applications to connect to the clusters
       - terminals
