@@ -131,6 +131,7 @@ At LUNARC the recommended way to run RStudio is in Thinlinc with Desktop On Dema
    :width: 350
    :align: center
 
+
 There is a regular version and a "(CPU)" version for each release.
 - Regular versions run an Intel 32-core node with a GPU partition, but the wall time limit is 48 hours.
 - CPU versions run on an AMD 48-core CPU-only node, and allows users to set a wall time of up to 168 hours (7 days), at the cost of reduced graphical support.
