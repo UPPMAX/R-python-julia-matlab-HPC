@@ -117,7 +117,9 @@ Exercises
 
 
     ::
-        _Comment: Using Python packages at [CENTER]'s [CLUSTER].
+        _This: is a comment
+
+        Using Python packages at [CENTER]'s [CLUSTER].
 
         This video is about the session 'Python packages' in the Python-Julia-R-MATLAB course given by HPC2N, LUNARC and UPPMAX. It shows how to do the exercises using [CENTER]'s [CLUSTER].
         The course material can be found at https://uppmax.github.io/R-python-julia-matlab-HPC/python/packages
