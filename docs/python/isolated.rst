@@ -103,15 +103,18 @@ However, there are more efficient ways, which we will use.
 Exercises
 ---------
 
-In these exercises, we create multiple virtual environments.
+.. dropdown:: Need a video?
 
-+----------+--------------------------+------------------------------------+
-| Exercise | Virtual environment name | Time to install packages (minutes) |
-+==========+==========================+====================================+
-| 1        | ``vpyenv``               | 1                                  |
-+----------+--------------------------+------------------------------------+
+    You can see a video on how these exercises are done here:
 
-Exercise 0: remove the Python packages installed in the home folder
+    - `HPC2N: TODO
+    - `LUNARC: TODO
+    - `UPPMAX <https://youtu.be/lj_Q-5l0BqU>`_
+
+In these exercises, we first make sure we are using isolated environments,
+after we create, activate, use and deactivate one.
+
+Exercise 1: remove the Python packages installed in the home folder
 -------------------------------------------------------------------
 
 In the previous session, we have installed Python packages in the home folder. This will interfere with our virtual environments.
@@ -124,7 +127,7 @@ To make sure your virtual environments work, ruthlessly delete the Python packag
 
 You will be asked to confirm.
 
-Exercise 1: work with ``vpyenv``
+Exercise 2: work with ``vpyenv``
 --------------------------------
 
 .. tabs::
