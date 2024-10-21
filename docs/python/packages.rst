@@ -83,11 +83,9 @@ the HPC clusters used in this course:
 | ``pip``           | Recommended     | Supported        | Supported        |
 +-------------------+-----------------+------------------+------------------+
 
-In this session we use ``pip``, 
-because it is a commonly-used package installation system
-that works on all HPC clusters used in this course.
-The use of ``conda`` (and its differences with ``pip`) can be read at
-`this course's 'Extra Reading' section 'Conda at UPPMAX'  <https://uppmax.github.io/R-python-julia-matlab-HPC/python/condaUPPMAX.html>`_.
+In this session we use ``pip``, because it is a commonly-used package installation system that works on all HPC clusters used in this course.
+The use of ``conda`` (and its differences with ``pip``) can be read at
+`this course's 'Extra Reading' section Conda at UPPMAX <https://uppmax.github.io/R-python-julia-matlab-HPC/python/condaUPPMAX.html>`_.
 
 In this session, we will install packages to your default user folder.
 Because this one default user folder, installing a different version of one package
@@ -130,9 +128,9 @@ Here we see this in action.
 
 For this exercise, use the documentation of your HPC center:
 
-- `HPC2N <https://docs.hpc2n.umu.se/documentation/modules>`_
-- `LUNARC <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/>`_
-- `UPPMAX <http://docs.uppmax.uu.se/software/python/>`_
+- `HPC2N python packages <https://docs.hpc2n.umu.se/documentation/modules>`_
+- `LUNARC Python <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/>`_
+- `UPPMAX Python <http://docs.uppmax.uu.se/software/python/>`_
 
 Load the Python module of the correct version,
 including prerequisite modules if needed:
