@@ -168,22 +168,22 @@ How to determine if a Python package is installed?
 
         pip list
 
-The Python package ``wheels`` is known to be installed. Which version?
+The Python package ``wheel`` is known to be installed. Which version?
 
 .. dropdown:: Answer HPC2N
 
-    When doing ``pip list``, look for ``wheels`` in the list.
-    You'll find ``wheels`` to have version ``0.42.0``
+    When doing ``pip list``, look for ``wheel`` in the list.
+    You'll find ``wheel`` to have version ``0.40.0``
 
 .. dropdown:: Answer LUNARC
 
-    When doing ``pip list``, look for ``wheels`` in the list.
-    You'll find ``wheels`` to have version ``TODO``
+    When doing ``pip list``, look for ``wheel`` in the list.
+    You'll find ``wheel`` to have version ``TODO``
 
 .. dropdown:: Answer UPPMAX
 
-    When doing ``pip list``, look for ``wheels`` in the list.
-    You'll find ``wheels`` to have version ``0.40.0``
+    When doing ``pip list``, look for ``wheel`` in the list.
+    You'll find ``wheel`` to have version ``0.40.0``
 
 Exercise 2: loading a Python package that comes with a module
 -------------------------------------------------------------
@@ -199,26 +199,69 @@ In this exercise, we search for and use a module to use a pre-installed
 Python package.
 The Python package we use differs by center:
 
-- HPC2N: Theano
+- HPC2N: Theano (as a Python package for Python 3.7.4)
 - LUNARC: Unknown
 - UPPMAX: TensorFlow (as a Python package for CPU)
 
 Use your center's documentation to find out which module to load your Python
 package with.
 
-.. dropdown:: Answer
+.. dropdown:: Hint HPC2N
 
-    Search the module system with these commands    
+    It is hard to find useful information on Theano
+    at `the HPC2N documentation <https://docs.hpc2n.umu.se/>`_.
 
-    - HPC2N: Searching for 'Theano' at `the HPC2N documentation <https://www.hpc2n.umu.se/>`
-      takes one to `the Theano page <https://www.hpc2n.umu.se/resources/software/theano>`_
-    - LUNARC: TODO
-    - UPPMAX: searching for ``TensorFlow`` at 
-      `the UPPMAX documentation <https://docs.uppmax.uu.se>`_
-      takes you to
-      `the TensorFlow page <https://docs.uppmax.uu.se/software/tensorflow>`_.
-      There, clicking on 'TensorFlow as a Python package for CPU' takes you to
-      the header `TensorFlow as a Python package for CPU <https://docs.uppmax.uu.se/software/tensorflow/#tensorflow-as-a-python-package-for-cpu>`_.
+    Instead, search the main HPC2N website at
+    `https://www.hpc2n.umu.se/ <https://www.hpc2n.umu.se/>`.
+
+.. dropdown:: Answer HPC2N
+
+    Searching for 'Theano' at the main HPC2N website at
+    `https://www.hpc2n.umu.se/ <https://www.hpc2n.umu.se/>`.
+    takes one to `the Theano page <https://www.hpc2n.umu.se/resources/software/theano>`_
+
+    Here, it is recommended to do:
+
+    .. code-block:: python
+        module spider theano
+
+    There are two versions of Theano, we need the second one:
+
+    - ``Theano/1.1.2-PyMC``
+    - ``Theano/1.0.4-Python-3.7.4``
+
+    Getting the information of it:
+
+    .. code-block:: python
+        module spider Theano/1.0.4-Python-3.7.4
+
+    This tells us to do:
+
+    .. code-block:: python
+        module load GCC/8.3.0  OpenMPI/3.1.4 Theano/1.0.4-Python-3.7.4
+
+    Finding out the package version:
+
+    .. code-block:: python
+        pip list
+
+    Gives us:
+
+    .. code-block:: python
+        Theano                        1.0.4
+
+.. dropdown:: Answer HPC2N
+
+    TODO
+
+.. dropdown:: Answer UPPMAX
+
+    Searching for ``TensorFlow`` at 
+    `the UPPMAX documentation <https://docs.uppmax.uu.se>`_
+    takes you to
+    `the TensorFlow page <https://docs.uppmax.uu.se/software/tensorflow>`_.
+    There, clicking on 'TensorFlow as a Python package for CPU' takes you to
+    the header `TensorFlow as a Python package for CPU <https://docs.uppmax.uu.se/software/tensorflow/#tensorflow-as-a-python-package-for-cpu>`_.
 
 
 Load the module for the Python package and verify if it is loaded.
