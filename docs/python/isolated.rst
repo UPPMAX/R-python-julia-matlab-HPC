@@ -44,6 +44,8 @@ Isolated environments
 
     - Rackham: ``/proj/r-py-jl-m-rackham``
     - Kebnekaise: ``/proj/nobackup/r-py-jl-m``
+    - COSMOS: Does not have a storage.
+      When this is added, it will be at ``lunarc/nobackup/projects/lu2024-7-80``
 
 Introduction
 ------------
