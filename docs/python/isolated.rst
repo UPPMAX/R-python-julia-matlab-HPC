@@ -174,9 +174,9 @@ Exercise 1.2: create the virtual environment
 
       .. code-block:: console
 
-          $ python -m venv --system-site-packages /proj/r-py-jl/[username]/python/vpyenv
+          $ python -m venv --system-site-packages /proj/r-py-jl-m-rackham/[username]/python/vpyenv
 
-      where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl/sven/python/vpyenv``.
+      where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl-m-rackham/sven/python/vpyenv``.
 
    .. tab:: HPC2N
 
@@ -200,9 +200,9 @@ Exercise 1.3: activate the virtual environment
 
       .. code-block:: console
 
-          source /proj/r-py-jl/[username]/python/vpyenv/bin/activate
+          source /proj/r-py-jl-m-rackham/[username]/python/vpyenv/bin/activate
 
-      where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl/sven/python/vpyenv``.
+      where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl-m-rackham/sven/python/vpyenv``.
 
    .. tab:: HPC2N
 
@@ -222,11 +222,11 @@ Exercise 1.4: install Python packages
 
    .. tab:: UPPMAX
 
-      Install the ``spacy`` and ``seaborn`` packages
+      Install the ``mhcnuggets`` package
 
       .. code-block:: console
 
-          pip install --user spacy seaborn
+          pip install --user mhcnuggets
 
    .. tab:: HPC2N
 
@@ -283,7 +283,7 @@ Exercise 1.6: use the virtual environment
          (vpyenv) $ python
          Python 3.11.8 (main, Feb  8 2024, 11:48:52) [GCC 12.3.0] on linux
          Type "help", "copyright", "credits" or "license" for more information.
-         >>> import spacy
+         >>> import mhcnuggets
          >>> 
 
    .. tab:: HPC2N
@@ -315,7 +315,41 @@ Exercise 1.7: deactivate the virtual environment
 
             deactivate
 
+Exercise 1.8: confirm the Python packages are not reachable anymore
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. tabs::
+
+   .. tab:: UPPMAX
+
+      To see all installed Python packages:
+
+      .. code-block:: console
+
+            pip list
+
+      To see which Python packages you have installed yourself 
+      (i.e. not loaded from a module), use:
+
+      .. code-block:: console
+
+            pip list --user
+
+   .. tab:: HPC2N
+
+      .. code-block:: console
+
+            pip list
+
+      To see which Python packages you have installed yourself 
+      (i.e. not loaded from a module), use:
+
+      .. code-block:: console
+
+            pip list --user
+
 Well done, you've just created a virtual environment called ``vpyenv``!
+
 
 
 Conclusion
