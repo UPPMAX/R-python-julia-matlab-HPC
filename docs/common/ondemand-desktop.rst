@@ -73,9 +73,9 @@ For most programs, the start-up process is roughly the same:
 #. Log into COSMOS via Thinlinc to start a LUNARC HPC Desktop session.
 #. Click ``Applications`` in the top left corner and hover over the items prefixed with ``Applications -`` until you find your desired application.
 #. Upon clicking your chosen application, a pop-up, the Gfx Launcher interface, will appear and let you set the following options:
-      #. **wall time** - how long your interactive session will remain open. When it ends, the whole window closes immediately and any unsaved work is lost. You can select the time from a drop-down menu, or type in a number of minutes or hours manually, as long as that number does not exceed 48 hours. Default is 30 minutes.
+      #. **Wall time** - how long your interactive session will remain open. When it ends, the whole window closes immediately and any unsaved work is lost. You can select the time from a drop-down menu, or type in the time manually. CPU-only applications can run for up to 168 hours (7 days), but the rest are limited to 48 hours. Default is 30 minutes.
       #. **Requirements** - how many tasks per node you need. The default is usually 1 or 4 tasks per node. There is also a **gear icon** to the right of this box that can pull up a second menu where you can set the name of your job, the number of tasks per node, the amount of memory per CPU core, and/or toggle whether or not to use a full node.
-      #. **Resource** - which kind of node you want in terms of the architecture (AMD or Intel) and number of cores in the CPU (or GPU, if you choose the Accelerated Terminal). For most programs, you only have 2 choices: one AMD option and one Intel option.
+      #. **Resource** - which kind of node you want in terms of the architecture (AMD or Intel) and number of cores in the CPU (or GPU). Options and defaults vary by program.
       #. **Project** - choose from a drop-down menu the project with which your work is associated. This is mainly to keep your usage in line with your licenses and permissions, and to send any applicable invoices to the correct PI. Licensed software will only work for projects whose group members are covered by the license.
 
 
