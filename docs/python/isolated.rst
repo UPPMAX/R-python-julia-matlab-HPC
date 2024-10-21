@@ -157,11 +157,19 @@ Exercise 1.1: load the modules needed
 
             module load python/3.11.8 python_ML_packages/3.11.8-cpu
 
+        This virtual environment will be used in later sessions too
+        and is assumed to contain the ``seaborn`` Python package.
+        The ``python_ML_packages/3.11.8-cpu`` module assures it is present.
+
     .. tab:: HPC2N
 
         .. code-block:: console
 
             module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07 matplotlib/3.7.2
+
+        This virtual environment will be used in later sessions too
+        and is assumed to contain the ``seaborn`` Python package.
+        The ``SciPy-bundle/2023.07`` module assures it is present.
 
 Exercise 1.2: create the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -232,11 +240,6 @@ Exercise 1.4: install Python packages
 
             pip install --user colorama
 
-        This virtual environment will be used in later sessions too
-        and is assumed to contain more than just ``colorama``
-        (see exercise 2). However, to get our first experience
-        in, we install something light first.
-
     .. tab:: HPC2N
 
         Install the lightweight ``colorama`` package:
@@ -244,11 +247,6 @@ Exercise 1.4: install Python packages
         .. code-block:: console
 
             pip install --no-cache-dir --no-build-isolation seaborn 
-
-        This virtual environment will be used in later sessions too
-        and is assumed to contain more than just ``colorama``
-        (see exercise 2). However, to get our first experience
-        in, we install something light first.
 
 Exercise 1.5: check if the Python packages are installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -301,130 +299,6 @@ Exercise 1.6: deactivate the virtual environment
             deactivate
 
 Well done, you've just created a virtual environment called ``vpyenv``!
-
-Exercise 2: work with ``vpyenv`` and install two big Python packages
---------------------------------------------------------------------
-
-.. tabs::
-
-   .. tab:: Learning objectives
-
-       - Install complex packages in an already-created virtual environment
-
-   .. tab:: For teachers
-
-       Takes around 3 minutes for an experienced user
-
-In this exercise, we re-use the course environment ``vpyenv``
-to install two Python packages we need.
-
-Exercise 2.1: activate the virtual environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. tabs::
-
-    .. tab:: UPPMAX
-
-        Activate the virtual environment called ``vpyenv`` as such:      
-
-        .. code-block:: console
-
-            source /proj/r-py-jl-m-rackham/[username]/python/vpyenv/bin/activate
-
-        This virtual environment will be used in later sessions too.    
-
-    where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl-m-rackham/sven/python/vpyenv``.
-
-    .. tab:: HPC2N
-
-        Activate the virtual environment called ``vpyenv`` as such:      
-
-        .. code-block:: console
-
-            source /proj/nobackup/r-py-jl-m/[username]/python/vpyenv/bin/activate
-
-        where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/sven/python/vpyenv``.
-
-        This virtual environment will be used in later sessions too.    
-
-
-Exercise 2.2: install the big Python packages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. tabs::
-
-    .. tab:: UPPMAX
-
-        Install the ``seaborn`` package.
-
-        .. code-block:: console
-
-            pip install --user seaborn
-
-        This virtual environment will be used in later sessions too
-        and is assumed to contain these packages.
-
-    .. tab:: HPC2N
-
-        Install the ``seaborn`` package.
-
-        .. code-block:: console
-
-            pip install --no-cache-dir --no-build-isolation seaborn 
-
-        This virtual environment will be used in later sessions too
-        and is assumed to contain these packages.
-
-
-Exercise 2.3: check if the Python packages are installed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. tabs::
-
-   .. tab:: UPPMAX
-
-      To see all installed Python packages:
-
-      .. code-block:: console
-
-            pip list
-
-      To see which Python packages you have installed yourself 
-      (i.e. not loaded from a module), use:
-
-      .. code-block:: console
-
-            pip list --user
-
-   .. tab:: HPC2N
-
-      .. code-block:: console
-
-            pip list
-
-      To see which Python packages you have installed yourself 
-      (i.e. not loaded from a module), use:
-
-      .. code-block:: console
-
-            pip list --user
-
-Exercise 2.4: deactivate the virtual environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. tabs::
-
-   .. tab:: UPPMAX
-
-      .. code-block:: console
-
-            deactivate
-
-   .. tab:: HPC2N
-
-      .. code-block:: console
-
-            deactivate
 
 Conclusion
 ----------
