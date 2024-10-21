@@ -184,9 +184,9 @@ Exercise 1.2: create the virtual environment
      
       .. code-block:: console
 
-          $ python -m venv --system-site-packages /proj/nobackup/hpc2n2024-025/[username]/python/vpyenv
+          $ python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/[username]/python/vpyenv
 
-      where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/hpc2n2024-025/sven/python/vpyenv``.
+      where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/sven/python/vpyenv``.
 
 
 Exercise 1.3: activate the virtual environment
@@ -210,9 +210,10 @@ Exercise 1.3: activate the virtual environment
      
       .. code-block:: console
 
-            source /proj/nobackup/hpc2n2024-025/[username]/python/vpyenv/bin/activate
+            source /proj/nobackup/r-py-jl-m/[username]/python/vpyenv/bin/activate
 
-      where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/hpc2n2024-025/sven/python/vpyenv``.
+
+      where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/sven/python/vpyenv``.
 
 
 Exercise 1.4: install Python packages
@@ -292,7 +293,7 @@ Exercise 1.6: use the virtual environment
 
       .. code-block:: console
 
-         (vpyenv) b-an01 [/proj/nobackup/hpc2n2024-025/bbrydsoe/python]$ python
+         (vpyenv) b-an01 [/proj/nobackup/r-py-jl-m/bbrydsoe/python]$ python
          Python 3.11.3 (main, Oct 30 2023, 16:00:15) [GCC 12.3.0] on linux
          Type "help", "copyright", "credits" or "license" for more information.
          >>> import spacy
