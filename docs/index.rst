@@ -39,14 +39,16 @@ Introduction to running R, Python, Julia, and Matlab in HPC
 
 .. admonition:: Exercises
 
-   There are two main ways to get the exercises. In either case, you should do so from the directory you will be working in, on either Rackham, Kebnekaise, or Cosmos: 
+   There are three main ways to get the exercises. In any case, you should do so from the directory you will be working in, on either Rackham, Kebnekaise, or Cosmos: 
 
-   - Copy them from the computer system you are on (only until 2024-11-01): 
-      - Rackham: cp /proj/r-py-jl-m-rackham/exercises.tar.gz .
-      - Kebnekaise: cp /proj/nobackup/r-py-jl-m/exercises.tar.gz . 
-      - Cosmos: cp ~bbrydsoe/exercises.tar.gz . 
-      - Then afterwards you unpack them with tar zxvf exercises.tar.gz 
+   - Copy them from the computer system you are on (only until 2024-11-01) and unpack them by entering ``tar -xzvf exercises.tar.gz``
+
+      - Rackham: ``cp /proj/r-py-jl-m-rackham/exercises.tar.gz`` .
+      - Kebnekaise: ``cp /proj/nobackup/r-py-jl-m/exercises.tar.gz`` .
+      - (No local repository for Cosmos)
+
    - Clone them with git from the repo: ``git clone https://github.com/UPPMAX/R-python-julia-matlab-HPC.git``
+   - Copy the tarball from the web into your working directory with ``wget https://github.com/UPPMAX/R-python-julia-matlab-HPC/blob/main/exercises/exercises.tar.gz`` and unpack them with ``tar -xzvf exercises.tar.gz``
 
 
 Schedule Fall 2024
