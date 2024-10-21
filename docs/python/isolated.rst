@@ -223,11 +223,11 @@ Exercise 1.4: install Python packages
 
    .. tab:: UPPMAX
 
-      Install the ``mhcnuggets`` package
+      Install the ``spacy`` and ``seaborn`` packages
 
       .. code-block:: console
 
-          pip install --user mhcnuggets
+          pip install --user spacy seaborn
 
    .. tab:: HPC2N
 
