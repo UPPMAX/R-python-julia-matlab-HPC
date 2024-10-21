@@ -234,11 +234,12 @@ Exercise 1.4: install Python packages
 
     .. tab:: UPPMAX
 
-        Install the lightweight ``colorama`` package:
+        Install the lightweight ``colorama`` and the ``seaborn`` package,
+        the latter being needed for a later session:
 
         .. code-block:: console
 
-            pip install colorama
+            pip install colorama seaborn
 
         Note that ``--user`` must be omitted: else the package
         will be installed in the global user folder.
