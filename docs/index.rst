@@ -202,7 +202,7 @@ The HPC centers UPPMAX, HPC2N, and LUNARC
 
      - HPC2N has Kebnekaise with GPUs.
      - LUNARC has Cosmos, with 9 GPUs (4 are partitions of Intel nodes).
-     - LUNARC has Desktop On Demand, allowing some applications to run on the backend without the use of a terminal or batch script.
+     - LUNARC has Desktop On Demand, allowing some applications to run on the back-end without the use of a terminal or batch script.
      - Conda is recommended only for UPPMAX and LUNARC users, and only using the conda-forge repository.
     
 Prepare your environment now!
