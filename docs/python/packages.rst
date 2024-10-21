@@ -209,10 +209,10 @@ package with.
 .. dropdown:: Hint HPC2N
 
     It is hard to find useful information on Theano
-    at `the HPC2N documentation <https://docs.hpc2n.umu.se/>`_.
+    at the HPC2N documentation at https://docs.hpc2n.umu.se/.
 
     Instead, search the main HPC2N website at
-    `https://www.hpc2n.umu.se/ <https://www.hpc2n.umu.se/>`.
+    https://www.hpc2n.umu.se/.
 
 .. dropdown:: Answer HPC2N
 
@@ -223,6 +223,7 @@ package with.
     Here, it is recommended to do:
 
     .. code-block:: python
+
         module spider theano
 
     There are two versions of Theano, we need the second one:
@@ -233,21 +234,25 @@ package with.
     Getting the information of it:
 
     .. code-block:: python
+
         module spider Theano/1.0.4-Python-3.7.4
 
     This tells us to do:
 
     .. code-block:: python
+
         module load GCC/8.3.0  OpenMPI/3.1.4 Theano/1.0.4-Python-3.7.4
 
     Finding out the package version:
 
     .. code-block:: python
+
         pip list
 
     Gives us:
 
     .. code-block:: python
+
         Theano                        1.0.4
 
 .. dropdown:: Answer HPC2N
