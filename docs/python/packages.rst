@@ -78,30 +78,16 @@ the HPC clusters used in this course:
 +-------------------+-----------------+------------------+------------------+
 | Package installer | HPC2N           | LUNARC           | UPPMAX's Rackham |
 +===================+=================+==================+==================+
-| ``conda``         | Unsupported [1] | Recommended [2]  | Supported        |
+| ``conda``         | Unsupported     | Recommended      | Supported        |
 +-------------------+-----------------+------------------+------------------+
-| ``pip``           | Recommended     | Available        | Recommended      |
+| ``pip``           | Recommended     | Supported        | Supported        |
 +-------------------+-----------------+------------------+------------------+
-
-- ``[1]`` `HPC2N guide against using conda <https://www.hpc2n.umu.se/documentation/guides/anaconda>`_
-- ``[2]`` `LUNARC Python user guide <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/#recommended-use>`_
 
 In this session we use ``pip``, 
 because it is a commonly-used package installation system
 that works on all HPC clusters used in this course.
-
-As a first impression, however, here is a simple comparison between the two:
-
-+------------------------------+-----------+----------+
-| Parameter                    | ``conda`` | ``pip``  |
-+==============================+===========+==========+
-| Installs Python packages     | Yes       | Yes      |
-+------------------------------+-----------+----------+
-| Installs non-Python software | Yes       | No       |
-+------------------------------+-----------+----------+
-
-We have not scheduled to discuss ``conda`` in this course, 
-yet teaching materials can be found at `Conda at UPPMAX <https://uppmax.github.io/R-python-julia-matlab-HPC/python/condaUPPMAX.html>`_.
+The use of ``conda`` (and its differences with ``pip`) can be read at
+`this course's 'Extra Reading' section 'Conda at UPPMAX'  <https://uppmax.github.io/R-python-julia-matlab-HPC/python/condaUPPMAX.html>`_.
 
 In this session, we will install packages to your default user folder.
 Because this one default user folder, installing a different version of one package
