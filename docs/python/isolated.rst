@@ -170,23 +170,23 @@ Exercise 1.2: create the virtual environment
 
     .. tab:: UPPMAX
 
-    Create the virtual environment called ``vpyenv`` as such:      
+        Create the virtual environment called ``vpyenv`` as such:      
 
-    .. code-block:: console
+        .. code-block:: console
 
-        python -m venv --system-site-packages /proj/r-py-jl-m-rackham/[username]/python/vpyenv
+            python -m venv --system-site-packages /proj/r-py-jl-m-rackham/[username]/python/vpyenv
 
-    where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl-m-rackham/sven/python/vpyenv``.
+        where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl-m-rackham/sven/python/vpyenv``.
 
    .. tab:: HPC2N
 
-    Create the virtual environment called ``vpyenv`` as such:      
+        Create the virtual environment called ``vpyenv`` as such:      
 
-    .. code-block:: console
+        .. code-block:: console
 
-        python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/[username]/python/vpyenv
+            python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/[username]/python/vpyenv
 
-    where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/sven/python/vpyenv``.
+        where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/sven/python/vpyenv``.
 
 
 Exercise 1.3: activate the virtual environment
@@ -302,8 +302,8 @@ Exercise 1.6: deactivate the virtual environment
 
 Well done, you've just created a virtual environment called ``vpyenv``!
 
-Exercise 2: work with ``vpyenv``
---------------------------------
+Exercise 2: work with ``vpyenv`` and install two big Python packages
+--------------------------------------------------------------------
 
 .. tabs::
 
