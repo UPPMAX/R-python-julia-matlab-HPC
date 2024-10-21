@@ -128,7 +128,7 @@ Here we see this in action.
 
 For this exercise, use the documentation of your HPC center:
 
-- `HPC2N python packages <https://docs.hpc2n.umu.se/documentation/modules>`_
+- `HPC2N python packages <https://docs.hpc2n.umu.se/tutorials/userinstalls/#python__packages>`_
 - `LUNARC Python <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/>`_
 - `UPPMAX Python <http://docs.uppmax.uu.se/software/python/>`_
 
