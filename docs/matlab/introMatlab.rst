@@ -28,18 +28,17 @@ Introduction to MATLAB
       
 .. admonition:: MATLAB Exercise files
 
-    - files are in: `here <https://github.com/UPPMAX/R-python-julia-matlab-HPC/tree/main/exercises/exercises.tar.gz>`_ [RP: exact name and path subject to change]
-    - Or you can copy them from the computer system you are on (only until 2024-11-01): 
+    - Link to exercises tarball: https://github.com/UPPMAX/R-python-julia-matlab-HPC/raw/refs/heads/main/exercises/exercises.tar.gz
+    - Or you can copy them from the computer system you are on (only until 2024-11-01) and unpack them with ``tar -xzvf exercises.tar.gz``
+
       - Rackham: cp /proj/r-py-jl-m-rackham/exercises.tar.gz .
       - Kebnekaise: cp /proj/nobackup/r-py-jl-m/exercises.tar.gz . 
-      - Cosmos: cp ~bbrydsoe/exercises.tar.gz .
-      - Then afterwards you unpack it with tar zxvf exercises.tar.gz
 
 
 .. challenge:: Download the exercise files
 
-    - Use ``wget`` to download the tarball above.
-    - Un-tar it with ``tar -xvf <filename.tar.gz>`` in your personal project folder, which you should have created a while ago (https://uppmax.github.io/R-python-julia-matlab-HPC/index.html#prepare-your-environment-now).
+    - Use ``wget`` to download the tarball from the web, if you didn't copy it from your local computer system.
+    - Un-tar it with ``tar -xzvf <filename.tar.gz>`` in your personal project folder, which you should have created a while ago (https://uppmax.github.io/R-python-julia-matlab-HPC/index.html#prepare-your-environment-now).
     - Enter the directory and list the content with the ``tree`` command.
 
 Preliminary schedule
