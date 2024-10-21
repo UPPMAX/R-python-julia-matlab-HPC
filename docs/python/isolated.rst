@@ -69,7 +69,7 @@ In this course, we will look at the following environment managers:
 +===============+=================+===============+=======================+==================+
 | ``conda``     | Avoid           | OK            | Avoid                 |Language agnostic |
 +---------------+-----------------+---------------+-----------------------+------------------+
-| ``venv``      | Recommended     | ?Undocumented | Recommended           |Python only       |
+| ``venv``      | Recommended     | OK            | Recommended           |Python only       |
 +---------------+-----------------+---------------+-----------------------+------------------+
 
 All centers have their documentation on virtual environment managers:
@@ -81,7 +81,7 @@ All centers have their documentation on virtual environment managers:
 In this session, we use ``venv``, as it works for all centers.
 
 - `HPC2N venv <https://docs.hpc2n.umu.se/tutorials/userinstalls/#venv>`_
-- LUNARC: TODO
+- LUNARC: Not documented yet
 - `UPPMAX venv <https://docs.uppmax.uu.se/software/python_venv/>`_
 
 
@@ -128,6 +128,8 @@ To make sure your virtual environments work, ruthlessly delete the Python packag
 
 You will be asked to confirm.
 
+This works for all centers.
+
 Exercise 2: work with ``vpyenv``
 --------------------------------
 
@@ -155,16 +157,6 @@ Exercise 1.1: load the modules needed
 
 .. tabs::
 
-    .. tab:: UPPMAX
-
-        .. code-block:: console
-
-            module load python/3.11.8 python_ML_packages/3.11.8-cpu
-
-        This virtual environment will be used in later sessions too
-        and is assumed to contain the ``seaborn`` Python package.
-        The ``python_ML_packages/3.11.8-cpu`` module assures it is present.
-
     .. tab:: HPC2N
 
         .. code-block:: console
@@ -175,20 +167,31 @@ Exercise 1.1: load the modules needed
         and is assumed to contain the ``seaborn`` Python package.
         The ``SciPy-bundle/2023.07`` module assures it is present.
 
+    .. tab:: LUNARC
+
+        .. code-block:: console
+
+            module load GCC/12.2.0  OpenMPI/4.1.4 Seaborn/0.12.2
+
+        This virtual environment will be used in later sessions too
+        and is assumed to contain the ``seaborn`` Python package.
+        The ``Seaborn`` module assures it is present.
+
+    .. tab:: UPPMAX
+
+        .. code-block:: console
+
+            module load python/3.11.8 python_ML_packages/3.11.8-cpu
+
+        This virtual environment will be used in later sessions too
+        and is assumed to contain the ``seaborn`` Python package.
+        The ``python_ML_packages/3.11.8-cpu`` module assures it is present.
+
+
 Exercise 1.2: create the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
-
-    .. tab:: UPPMAX
-
-        Create the virtual environment called ``vpyenv`` as such:      
-
-        .. code-block:: console
-
-            python -m venv --system-site-packages /proj/r-py-jl-m-rackham/[username]/python/vpyenv
-
-        where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl-m-rackham/sven/python/vpyenv``.
 
    .. tab:: HPC2N
 
@@ -200,23 +203,30 @@ Exercise 1.2: create the virtual environment
 
         where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/sven/python/vpyenv``.
 
+    .. tab:: LUNARC
+
+        Create the virtual environment called ``vpyenv`` as such:      
+
+        .. code-block:: console
+
+            python -m venv --system-site-packages ~/my_venvs/vpyenv
+
+    .. tab:: UPPMAX
+
+        Create the virtual environment called ``vpyenv`` as such:      
+
+        .. code-block:: console
+
+            python -m venv --system-site-packages /proj/r-py-jl-m-rackham/[username]/python/vpyenv
+
+        where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl-m-rackham/sven/python/vpyenv``.
+
+
 
 Exercise 1.3: activate the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
-
-    .. tab:: UPPMAX
-
-        Activate the virtual environment called ``vpyenv`` as such:      
-
-        .. code-block:: console
-
-            source /proj/r-py-jl-m-rackham/[username]/python/vpyenv/bin/activate
-
-        This virtual environment will be used in later sessions too.    
-
-    where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl-m-rackham/sven/python/vpyenv``.
 
     .. tab:: HPC2N
 
@@ -230,11 +240,55 @@ Exercise 1.3: activate the virtual environment
 
         This virtual environment will be used in later sessions too.    
 
+    .. tab:: LUNARC
+
+        Activate the virtual environment called ``vpyenv`` as such:      
+
+        .. code-block:: console
+
+            source ~/my_venvs/vpyenv/bin/activate
+
+        This virtual environment will be used in later sessions too.    
+
+    .. tab:: UPPMAX
+
+        Activate the virtual environment called ``vpyenv`` as such:      
+
+        .. code-block:: console
+
+            source /proj/r-py-jl-m-rackham/[username]/python/vpyenv/bin/activate
+
+        where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl-m-rackham/sven/python/vpyenv``.
+
+        This virtual environment will be used in later sessions too.    
+
+
+
 
 Exercise 1.4: install Python packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
+
+
+    .. tab:: HPC2N
+
+        Install the lightweight ``colorama`` package:
+
+        .. code-block:: console
+
+            pip install --no-cache-dir --no-build-isolation seaborn 
+
+    .. tab:: LUNARC
+
+        Install the lightweight ``emoji`` package.
+
+        .. code-block:: console
+
+            pip install emoji
+
+        Note that ``--user`` must be omitted: else the package
+        will be installed in the global user folder.
 
     .. tab:: UPPMAX
 
@@ -248,18 +302,38 @@ Exercise 1.4: install Python packages
         Note that ``--user`` must be omitted: else the package
         will be installed in the global user folder.
 
-    .. tab:: HPC2N
-
-        Install the lightweight ``colorama`` package:
-
-        .. code-block:: console
-
-            pip install --no-cache-dir --no-build-isolation seaborn 
-
 Exercise 1.5: check if the Python packages are installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
+
+   .. tab:: HPC2N
+
+      .. code-block:: console
+
+            pip list
+
+      To see which Python packages you have installed yourself 
+      (i.e. not loaded from a module), use:
+
+      .. code-block:: console
+
+            pip list --user
+
+   .. tab:: LUNARC
+
+      To see all installed Python packages:
+
+      .. code-block:: console
+
+            pip list
+
+      To see which Python packages you have installed yourself 
+      (i.e. not loaded from a module), use:
+
+      .. code-block:: console
+
+            pip list --user
 
    .. tab:: UPPMAX
 
@@ -276,23 +350,24 @@ Exercise 1.5: check if the Python packages are installed
 
             pip list --user
 
-   .. tab:: HPC2N
 
-      .. code-block:: console
-
-            pip list
-
-      To see which Python packages you have installed yourself 
-      (i.e. not loaded from a module), use:
-
-      .. code-block:: console
-
-            pip list --user
 
 Exercise 1.6: deactivate the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
+
+   .. tab:: HPC2N
+
+      .. code-block:: console
+
+            deactivate
+
+   .. tab:: LUNARC
+
+      .. code-block:: console
+
+            deactivate
 
    .. tab:: UPPMAX
 
@@ -300,11 +375,6 @@ Exercise 1.6: deactivate the virtual environment
 
             deactivate
 
-   .. tab:: HPC2N
-
-      .. code-block:: console
-
-            deactivate
 
 Well done, you've just created a virtual environment called ``vpyenv``!
 
