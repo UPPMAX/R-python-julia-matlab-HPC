@@ -162,7 +162,9 @@ including prerequisite modules if needed:
 | Center | Python version |
 +========+================+
 | HPC2N  | 3.11.3         |
++--------+----------------+
 | LUNARC | 3.11.3         |
++--------+----------------+
 | UPPMAX | 3.11.8         |
 +--------+----------------+
 
