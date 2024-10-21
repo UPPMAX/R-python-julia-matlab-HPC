@@ -277,7 +277,6 @@ Content of the course
    python/jupyter.md
    common/parallel.rst
    python/condaUPPMAX.rst
-   python/exercisesPython.rst
    python/summaryPython.rst
    python/evaluationPython.rst
    
@@ -291,7 +290,6 @@ Content of the course
    julia/batchJulia.rst
    common/parallel.rst
    julia/interactiveJulia.rst
-   julia/exercisesJulia.rst
    julia/summaryJulia.rst
    
 .. toctree::
@@ -307,7 +305,6 @@ Content of the course
    r/MLR.rst
    r/interactiveR.rst
    r/rstudio.rst
-   r/exercisesR.rst
    r/summaryR.rst
    r/evaluationR.rst
 
