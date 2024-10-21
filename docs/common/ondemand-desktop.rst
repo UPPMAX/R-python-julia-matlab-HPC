@@ -45,9 +45,12 @@ The GfxLauncher will prompt you for resource specification and then Desktop On D
 
 Some On Demand applications will let you configure and submit separate batch jobs that are not bound by the parameters set for the graphical user interface (GUI) in GfxLauncher, although the initial configuration process can be rather involved. For example, you could launch the MATLAB GUI with a wall time of 2 hours, but having set the right configurations, you could use a livescript in the GUI to submit a batch job that lasts 3 days. Such a batch job will not be interrupted if the GUI used to submit it closes or times out. Keep in mind that the optimal resources for the computations to be done in your batch job are often very different from the resources needed to run the GUI.
 
+Getting Started
+---------------
 
-Where do I start?
------------------
+Where are the On-Demand Applications?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 On the LUNARC HPC Desktop, the Applications menu lists all the applications available to be run interactively, and opening one prefixed by "Applications -" will start it in Desktop On Demand. There is no specific "Desktop On Demand" application in the list. Most common IDEs can be found in a drop-down menu that appears when you hover over ``Applications - <Language>`` for your language of choice, but more niche packages may be listed under a subject-matter field instead, like ``Applications - Engineering``.
 
 .. admonition:: Terminals on the Compute nodes
@@ -66,16 +69,16 @@ On the LUNARC HPC Desktop, the Applications menu lists all the applications avai
 
 
 How do I start?
----------------
+^^^^^^^^^^^^^^^
 
 For most programs, the start-up process is roughly the same:
 
 #. Log into COSMOS via Thinlinc to start a LUNARC HPC Desktop session.
 #. Click ``Applications`` in the top left corner and hover over the items prefixed with ``Applications -`` until you find your desired application.
 #. Upon clicking your chosen application, a pop-up, the Gfx Launcher interface, will appear and let you set the following options:
-      #. **wall time** - how long your interactive session will remain open. When it ends, the whole window closes immediately and any unsaved work is lost. You can select the time from a drop-down menu, or type in a number of minutes or hours manually, as long as that number does not exceed 48 hours. Default is 30 minutes.
+      #. **Wall time** - how long your interactive session will remain open. When it ends, the whole window closes immediately and any unsaved work is lost. You can select the time from a drop-down menu, or type in the time manually. CPU-only applications can run for up to 168 hours (7 days), but the rest are limited to 48 hours. Default is 30 minutes.
       #. **Requirements** - how many tasks per node you need. The default is usually 1 or 4 tasks per node. There is also a **gear icon** to the right of this box that can pull up a second menu where you can set the name of your job, the number of tasks per node, the amount of memory per CPU core, and/or toggle whether or not to use a full node.
-      #. **Resource** - which kind of node you want in terms of the architecture (AMD or Intel) and number of cores in the CPU (or GPU, if you choose the Accelerated Terminal). For most programs, you only have 2 choices: one AMD option and one Intel option.
+      #. **Resource** - which kind of node you want in terms of the architecture (AMD or Intel) and number of cores in the CPU (or GPU). Options and defaults vary by program.
       #. **Project** - choose from a drop-down menu the project with which your work is associated. This is mainly to keep your usage in line with your licenses and permissions, and to send any applicable invoices to the correct PI. Licensed software will only work for projects whose group members are covered by the license.
 
 
