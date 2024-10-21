@@ -240,6 +240,9 @@ Exercise 1.4: install Python packages
 
             pip install colorama
 
+        Note that ``--user`` must be omitted: else the package
+        will be installed in the global user folder.
+
     .. tab:: HPC2N
 
         Install the lightweight ``colorama`` package:
