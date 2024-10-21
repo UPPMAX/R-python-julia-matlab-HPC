@@ -18,7 +18,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Introduction to running R, Python, and Julia in HPC'
+project = 'Introduction to running R, Python, Julia and MATLAB in HPC'
 copyright = '2024, UPPMAX & HPC2N'
 author = 'UPPMAX & HPC2N'
 github_user = "UPPMAX"
