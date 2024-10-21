@@ -243,7 +243,7 @@ Exercise 1.4: install Python packages
 
         .. code-block:: console
 
-            pip install --no-cache-dir --no-build-isolation spacy seaborn 
+            pip install --no-cache-dir --no-build-isolation seaborn 
 
         This virtual environment will be used in later sessions too
         and is assumed to contain more than just ``colorama``
@@ -355,22 +355,22 @@ Exercise 2.2: install the big Python packages
 
     .. tab:: UPPMAX
 
-        Install the ``spacy`` and ``seaborn`` packages
+        Install the ``seaborn`` package.
 
         .. code-block:: console
 
-            pip install --user spacy seaborn
+            pip install --user seaborn
 
         This virtual environment will be used in later sessions too
         and is assumed to contain these packages.
 
     .. tab:: HPC2N
 
-        Install the ``spacy`` and ``seaborn`` packages
+        Install the ``seaborn`` package.
 
         .. code-block:: console
 
-            pip install --no-cache-dir --no-build-isolation spacy seaborn 
+            pip install --no-cache-dir --no-build-isolation seaborn 
 
         This virtual environment will be used in later sessions too
         and is assumed to contain these packages.
