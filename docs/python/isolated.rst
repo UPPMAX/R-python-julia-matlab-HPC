@@ -151,42 +151,42 @@ Exercise 1.1: load the modules needed
 
 .. tabs::
 
-   .. tab:: UPPMAX
-      
-      .. code-block:: console
+    .. tab:: UPPMAX
 
-          module load python/3.11.8
+        .. code-block:: console
 
-   .. tab:: HPC2N
-     
-      .. code-block:: console
+            module load python/3.11.8
 
-          module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07 matplotlib/3.7.2
+    .. tab:: HPC2N
+
+        .. code-block:: console
+
+            module load GCC/12.3.0 Python/3.11.3 SciPy-bundle/2023.07 matplotlib/3.7.2
 
 Exercise 1.2: create the virtual environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
-   .. tab:: UPPMAX
+    .. tab:: UPPMAX
 
-      Create the virtual environment called ``vpyenv`` as such:      
+    Create the virtual environment called ``vpyenv`` as such:      
 
-      .. code-block:: console
+    .. code-block:: console
 
-          $ python -m venv --system-site-packages /proj/r-py-jl-m-rackham/[username]/python/vpyenv
+        python -m venv --system-site-packages /proj/r-py-jl-m-rackham/[username]/python/vpyenv
 
-      where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl-m-rackham/sven/python/vpyenv``.
+    where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl-m-rackham/sven/python/vpyenv``.
 
    .. tab:: HPC2N
 
-      Create the virtual environment called ``vpyenv`` as such:      
-     
-      .. code-block:: console
+    Create the virtual environment called ``vpyenv`` as such:      
 
-          $ python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/[username]/python/vpyenv
+    .. code-block:: console
 
-      where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/sven/python/vpyenv``.
+        python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/[username]/python/vpyenv
+
+    where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/sven/python/vpyenv``.
 
 
 Exercise 1.3: activate the virtual environment
@@ -194,26 +194,25 @@ Exercise 1.3: activate the virtual environment
 
 .. tabs::
 
-   .. tab:: UPPMAX
+    .. tab:: UPPMAX
 
-      Activate the virtual environment called ``vpyenv`` as such:      
+    Activate the virtual environment called ``vpyenv`` as such:      
 
-      .. code-block:: console
+    .. code-block:: console
 
-          source /proj/r-py-jl-m-rackham/[username]/python/vpyenv/bin/activate
+        source /proj/r-py-jl-m-rackham/[username]/python/vpyenv/bin/activate
 
-      where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl-m-rackham/sven/python/vpyenv``.
+    where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl-m-rackham/sven/python/vpyenv``.
 
-   .. tab:: HPC2N
+    .. tab:: HPC2N
 
-      Activate the virtual environment called ``vpyenv`` as such:      
-     
-      .. code-block:: console
+        Activate the virtual environment called ``vpyenv`` as such:      
+
+        .. code-block:: console
 
             source /proj/nobackup/r-py-jl-m/[username]/python/vpyenv/bin/activate
 
-
-      where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/sven/python/vpyenv``.
+        where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/sven/python/vpyenv``.
 
 
 Exercise 1.4: install Python packages
@@ -221,21 +220,21 @@ Exercise 1.4: install Python packages
 
 .. tabs::
 
-   .. tab:: UPPMAX
+    .. tab:: UPPMAX
 
-      Install the ``spacy`` and ``seaborn`` packages
+        Install the ``spacy`` and ``seaborn`` packages
 
-      .. code-block:: console
+        .. code-block:: console
 
-          pip install --user spacy seaborn
+            pip install --user spacy seaborn
 
-   .. tab:: HPC2N
+    .. tab:: HPC2N
 
-      Install the ``spacy`` and ``seaborn`` packages
-     
-      .. code-block:: console
+        Install the ``spacy`` and ``seaborn`` packages
 
-          pip install --no-cache-dir --no-build-isolation spacy seaborn 
+        .. code-block:: console
+
+            pip install --no-cache-dir --no-build-isolation spacy seaborn 
 
 Exercise 1.5: check if the Python packages are installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
