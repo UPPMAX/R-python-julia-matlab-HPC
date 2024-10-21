@@ -118,9 +118,9 @@ Exercises
 These exercises follow a common user journey, 
 for a user that needs to use a certain Python packages:
 
-- In exercise 1, we determine if a Python package is already installed
-- In exercise 2, we determine if a machine learning Python package is already installed
-- If all fails, in exercise 3, we install a Python package ourselves
+- In exercise 1, we use a Python package that comes with the Python module
+- In exercise 2, we use a Python package that comes with a software module
+- In exercise 3, we install a Python package ourselves
 
 Like any user, we'll try to be autonomous and read your favorite HPC center's
 documentation.
