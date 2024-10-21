@@ -28,7 +28,13 @@ Introduction to MATLAB
       
 .. admonition:: MATLAB Exercise files
 
-    - files are in: `here <https://github.com/UPPMAX/R-python-julia-matlab-HPC/tree/main/exercises/matlab/MatlabExercises.tar.gz>`_ [RP: exact name and path subject to change]
+    - files are in: `here <https://github.com/UPPMAX/R-python-julia-matlab-HPC/tree/main/exercises/exercises.tar.gz>`_ [RP: exact name and path subject to change]
+    - Or you can copy them from the computer system you are on (only until 2024-11-01): 
+      - Rackham: cp /proj/r-py-jl-m-rackham/exercises.tar.gz .
+      - Kebnekaise: cp /proj/nobackup/r-py-jl-m/exercises.tar.gz . 
+      - Cosmos: cp ~bbrydsoe/exercises.tar.gz .
+      - Then afterwards you unpack it with tar zxvf exercises.tar.gz
+
 
 .. challenge:: Download the exercise files
 

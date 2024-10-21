@@ -13,18 +13,27 @@ Introduction Python
   
 .. admonition:: Exercises 
 
-    - You can download the exercises from the course GitHub repo, under the "exercises" -> "python" directory: <https://github.com/UPPMAX/R-python-julia-matlab-HPC/tree/main/exercises/python>
+    - You can download the exercises from the course GitHub repo, under the ``exercises/python`` directory: <https://github.com/UPPMAX/R-python-julia-matlab-HPC/tree/main/exercises/python>
+
+      - ``wget https://github.com/UPPMAX/R-python-julia-matlab-HPC/tree/main/exercises/python``
+
+    - Or you can copy them from the computer system you are on (only until 2024-11-01): 
+
+      - Rackham: ``cp /proj/r-py-jl-m-rackham/exercises.tar.gz`` .
+      - Kebnekaise: ``cp /proj/nobackup/r-py-jl-m/exercises.tar.gz`` . 
+
+    - Then afterwards you unpack it with ``tar -xzvf exercises.tar.gz``
     
 .. admonition:: **Your expectations?**
    
-    - Find best practices for using Python at UPPMAX, HPC2N, and LUNARC
+    - Learn best practices for using Python at UPPMAX, HPC2N, and LUNARC
     - Packages
-    - Use the HPC performance with Python
+    - Get HPC performance with Python
 
  **Not covered**
     
-    - Improve python *coding* skills 
-    - Other clusters (though they work in a mostly very similar way)
+    - Improving Python *coding* skills 
+    - Other clusters (though they mostly work in a very similar way)
 
 Schedule
 --------------------
@@ -105,7 +114,7 @@ As you probably already know…
 
 In particular, what sets Python apart from other languages is its fantastic
 open-source ecosystem for scientific computing and machine learning with
-libraries like NumPy, SciPy, scikit-learn, and Pytorch.
+libraries like NumPy, SciPy, scikit-learn, Pandas, and Pytorch.
 
 - `Official Python documentation <https://www.python.org/doc/>`_
 - `Python forum <https://python-forum.io/>`_
@@ -169,7 +178,7 @@ Other NAISS centres
     - Teach you how to navigate the module system
     - Show you how to find out which versions of Python and packages are installed
     - Use the package handler **pip**
-    - Explain how to create and use virtual environments
+    - Explain briefly how to create and use virtual environments
     - Show you how to run batch jobs 
     - Show some examples with parallel computing and using GPUs
 

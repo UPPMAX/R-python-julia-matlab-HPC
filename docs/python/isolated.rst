@@ -73,15 +73,15 @@ In this course, we will look at the following environment managers:
 
 All centers have their documentation on virtual environment managers:
 
-- `HPC2N <https://docs.hpc2n.umu.se/tutorials/userinstalls/#working__with__venv>`_
-- `LUNARC <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/#creating-conda-environments>`_ (uses conda)
-- `UPPMAX <http://docs.uppmax.uu.se/software/python_virtual_environments/>`_
+- `HPC2N working with venv <https://docs.hpc2n.umu.se/tutorials/userinstalls/#working__with__venv>`_
+- `LUNARC creating conda environments <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/#creating-conda-environments>`_ (uses conda)
+- `UPPMAX virtual environments <http://docs.uppmax.uu.se/software/python_virtual_environments/>`_
 
 In this session, we use ``venv``, as it works for all centers.
 
-- `HPC2N <https://docs.hpc2n.umu.se/tutorials/userinstalls/#venv>`_
+- `HPC2N venv <https://docs.hpc2n.umu.se/tutorials/userinstalls/#venv>`_
 - LUNARC: TODO
-- `UPPMAX <https://docs.uppmax.uu.se/software/python_venv/>`_
+- `UPPMAX venv <https://docs.uppmax.uu.se/software/python_venv/>`_
 
 
 General workflow
