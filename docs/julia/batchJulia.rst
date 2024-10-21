@@ -16,13 +16,13 @@ Running Julia in batch mode
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: ``naiss2024-22-107``
-   - Kebnekaise: ``hpc2n2024-025``
+   - Rackham: ``naiss2024-22-1202``
+   - Kebnekaise: ``hpc2n2024-114``
 
 .. admonition:: Storage space for this workshop 
 
-   - Rackham: ``/proj/r-py-jl``
-   - Kebnekaise: ``/proj/nobackup/hpc2n2024-025``
+   - Rackham: ``/proj/r-py-jl-m-rackham``
+   - Kebnekaise: ``/proj/nobackup/r-py-jl-m``
 
 .. warning::
 
@@ -78,7 +78,7 @@ Serial code
         .. code-block:: bash
 
             #!/bin/bash -l                 # -l cleans the environment in the batch job, recommended at UPPMAX
-            #SBATCH -A naiss2024-22-107    # your project_ID
+            #SBATCH -A naiss2024-22-1202    # your project_ID
             #SBATCH --time=00:10:00        # Asking for 10 minutes
             #SBATCH -n 1                   # Asking for 1 core
             #SBATCH --error=job.%J.err     # error file
@@ -95,7 +95,7 @@ Serial code
         .. code-block:: bash
    
             #!/bin/bash            
-            #SBATCH -A hpc2n2024-025     # your project_ID       
+            #SBATCH -A hpc2n2024-114     # your project_ID       
             #SBATCH -J job-serial        # name of the job         
             #SBATCH -n 1                 # nr. tasks  
             #SBATCH --time=00:03:00      # requested time
@@ -132,7 +132,7 @@ Serial code + self-installed package in virt. env.
         .. code-block:: bash
         
             #!/bin/bash -l               # -l cleans the environment in the batch job, recommended at UPPMAX
-            #SBATCH -A naiss2024-22-107   # Change to your own after the course
+            #SBATCH -A naiss2024-22-1202   # Change to your own after the course
             #SBATCH --time=00:10:00       # Asking for 10 minutes
             #SBATCH -n 1                  # Asking for 1 core
             #SBATCH --error=job.%J.err    # error file
@@ -160,7 +160,7 @@ Serial code + self-installed package in virt. env.
         .. code-block:: bash
 
             #!/bin/bash            
-            #SBATCH -A hpc2n2024-025     # your project_ID       
+            #SBATCH -A hpc2n2024-114     # your project_ID       
             #SBATCH -J job-serial        # name of the job         
             #SBATCH -n 1                 # nr. tasks  
             #SBATCH --time=00:03:00      # requested time
@@ -460,7 +460,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
         
                #!/bin/bash -l
-               #SBATCH -A naiss2024-22-107
+               #SBATCH -A naiss2024-22-1202
                #SBATCH -J job
                #SBATCH -n 1
                #SBATCH --time=00:10:00
@@ -478,7 +478,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
             
                #!/bin/bash
-               #SBATCH -A naiss2024-22-107
+               #SBATCH -A naiss2024-22-1202
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -496,7 +496,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
            
                #!/bin/bash
-               #SBATCH -A naiss2024-22-107
+               #SBATCH -A naiss2024-22-1202
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -513,7 +513,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
            
                #!/bin/bash
-               #SBATCH -A naiss2024-22-107
+               #SBATCH -A naiss2024-22-1202
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -538,7 +538,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
         
                #!/bin/bash
-               #SBATCH -A hpc2n2024-025
+               #SBATCH -A hpc2n2024-114
                #SBATCH -J job
                #SBATCH -n 1
                #SBATCH --time=00:10:00
@@ -557,7 +557,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
             
                #!/bin/bash
-               #SBATCH -A hpc2n2024-025
+               #SBATCH -A hpc2n2024-114
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -576,7 +576,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: sh
            
                #!/bin/bash
-               #SBATCH -A hpc2n2024-025
+               #SBATCH -A hpc2n2024-114
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -594,7 +594,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: sh
            
                #!/bin/bash
-               #SBATCH -A hpc2n2024-025
+               #SBATCH -A hpc2n2024-114
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -668,7 +668,7 @@ reference point, we show the simulation on CPUs as well.
 
           
             #!/bin/bash -l
-            #SBATCH -A naiss2024-22-107    # your project_ID  
+            #SBATCH -A naiss2024-22-1202    # your project_ID  
             #SBATCH -M snowy
             #SBATCH -p node
             #SBATCH --gres=gpu:1
@@ -688,7 +688,7 @@ reference point, we show the simulation on CPUs as well.
         .. code-block:: sh
 
             #!/bin/bash            
-            #SBATCH -A hpc2n2024-025     # your project_ID       
+            #SBATCH -A hpc2n2024-114     # your project_ID       
             #SBATCH -J job-serial        # name of the job         
             #SBATCH -n 1                 # nr. tasks  
             #SBATCH --time=00:03:00      # requested time
@@ -809,7 +809,7 @@ Exercises
             .. code-block:: sh
     
                 #!/bin/bash            
-                #SBATCH -A hpc2n2024-025     # your project_ID       
+                #SBATCH -A hpc2n2024-114     # your project_ID       
                 #SBATCH -J job-serial        # name of the job         
                 #SBATCH -n 1                 # nr. tasks  
                 #SBATCH --time=00:03:00      # requested time
@@ -829,7 +829,7 @@ Exercises
             .. code-block:: sh
     
                 #!/bin/bash -l
-                #SBATCH -A naiss2024-22-107  # Change to your own after the course
+                #SBATCH -A naiss2024-22-1202  # Change to your own after the course
                 #SBATCH -J job-serial        # name of the job         
                 #SBATCH -n 1                 # nr. tasks  
                 #SBATCH --time=00:05:00 # Asking for 5 minutes
@@ -881,7 +881,7 @@ Exercises
             .. code-block:: sh
                 
                 #!/bin/bash            
-                #SBATCH -A hpc2n2024-025     # your project_ID       
+                #SBATCH -A hpc2n2024-114     # your project_ID       
                 #SBATCH -J job-serial        # name of the job         
                 #SBATCH -n 1                 # nr. tasks  
                 #SBATCH --time=00:03:00      # requested time
@@ -912,7 +912,7 @@ Exercises
             .. code-block:: sh
     
                 #!/bin/bash -l
-                #SBATCH -A naiss2024-22-107   # your project_ID  
+                #SBATCH -A naiss2024-22-1202   # your project_ID  
                 #SBATCH -M snowy
                 #SBATCH -p node
                 #SBATCH --gres=gpu:1
@@ -980,7 +980,7 @@ Exercises
         .. code-block:: sh
         
             #!/bin/bash            
-            #SBATCH -A Project-ID        # your project_ID       
+            #SBATCH -A hpc2n2024-114        # your project_ID       
             #SBATCH -J job-serial        # name of the job         
             #SBATCH -n 1                 # nr. tasks        #remove this line for UPPMAX  
             #SBATCH --time=00:15:00      # requested time
@@ -1024,7 +1024,7 @@ Exercises
             .. code-block:: sh
                 
                #!/bin/bash -l
-               #SBATCH -A naiss2024-22-107        # your project_ID
+               #SBATCH -A naiss2024-22-1202        # your project_ID
                #SBATCH -J job-serial        # name of the job
                #SBATCH -M snowy
                #SBATCH -p node
@@ -1067,7 +1067,7 @@ Exercises
             .. code-block:: sh
                 
                 #!/bin/bash            
-                #SBATCH -A hpc2n2024-025     # your project_ID       
+                #SBATCH -A hpc2n2024-114     # your project_ID       
                 #SBATCH -J job-serial        # name of the job         
                 #SBATCH -n 1                 # nr. tasks  
                 #SBATCH --time=00:20:00      # requested time
