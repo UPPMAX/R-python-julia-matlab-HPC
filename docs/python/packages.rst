@@ -148,7 +148,16 @@ including prerequisite modules if needed:
 
 .. dropdown:: Answer HPC2N
 
-    ``module load GCC/12.3.0 Python/3.11.3``
+    .. code-block:: bash
+
+        module load GCC/12.3.0 Python/3.11.3
+
+    If you get an error, because you've already loaded
+    (conflicting) modules, do the command below and try again:
+
+    .. code-block:: bash
+
+        module purge
 
 .. dropdown:: Answer LUNARC
 
@@ -156,7 +165,9 @@ including prerequisite modules if needed:
 
 .. dropdown:: Answer UPPMAX
 
-    ``module load python/3.11.8``
+    .. code-block:: bash
+
+        module load python/3.11.8
 
 How to determine if a Python package is installed?
 
@@ -183,7 +194,7 @@ The Python package ``wheel`` is known to be installed. Which version?
 .. dropdown:: Answer UPPMAX
 
     When doing ``pip list``, look for ``wheel`` in the list.
-    You'll find ``wheel`` to have version ``0.40.0``
+    You'll find ``wheel`` to have version ``0.42.0``
 
 Exercise 2: loading a Python package that comes with a module
 -------------------------------------------------------------
@@ -191,17 +202,16 @@ Exercise 2: loading a Python package that comes with a module
 .. admonition:: Learning objectives
 
     - Practice reading documentation
-    - Rehearse the documentation to load a Python machine learning module
-    - Apply the documentation to show if a Python package is already installed
+    - Load a Python package module
 
 Some Python packages need another module to be loaded.
 In this exercise, we search for and use a module to use a pre-installed
 Python package.
 The Python package we use differs by center:
 
-- HPC2N: Theano (as a Python package for Python 3.7.4)
+- HPC2N: Theano, as a Python 3.7.4 package
 - LUNARC: Unknown
-- UPPMAX: TensorFlow (as a Python package for CPU)
+- UPPMAX: TensorFlow, as a Python 3.11.8 package for CPU
 
 Use your center's documentation to find out which module to load your Python
 package with.
@@ -216,9 +226,9 @@ package with.
 
 .. dropdown:: Answer HPC2N
 
-    Searching for 'Theano' at the main HPC2N website at
-    `https://www.hpc2n.umu.se/ <https://www.hpc2n.umu.se/>`.
-    takes one to `the Theano page <https://www.hpc2n.umu.se/resources/software/theano>`_
+    Searching for 'Theano' at the main HPC2N website (not the documentation!)
+    at https://www.hpc2n.umu.se/ will take you to
+    `the Theano page <https://www.hpc2n.umu.se/resources/software/theano>`_
 
     Here, it is recommended to do:
 
@@ -243,7 +253,15 @@ package with.
 
         module load GCC/8.3.0  OpenMPI/3.1.4 Theano/1.0.4-Python-3.7.4
 
-    Finding out the package version:
+    If you get an error, because you've already loaded
+    (conflicting) modules, do the command below and load
+    the modules above again:
+
+    .. code-block:: bash
+
+        module purge
+
+    With all modules loaded, finding out the package version:
 
     .. code-block:: bash
 
