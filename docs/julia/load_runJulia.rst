@@ -83,6 +83,30 @@ Check for Julia versions
 
          $ module spider Julia/1.8.5
 
+   .. tab:: LUNARC
+   
+      Check all available version Julia versions with:
+
+      .. code-block:: console
+ 
+         $ module spider julia
+
+      Notice that the output if you are working on the Intel (*kebnekaise.hpc2n.umu.se*) or AMD 
+      (*kebnekaise-amd.hpc2n.umu.se*) login nodes. In the former, you will see more installed versions of
+      Julia as this hardware is older.
+      
+      To see how to load a specific version of Julia, including the prerequisites, do 
+
+      .. code-block:: console
+   
+         $ module spider Julia/<version>
+
+      Example for Julia 1.8.5
+
+      .. code-block:: console
+
+         $ module spider Julia/1.8.5-linux-x86_64
+
 .. admonition:: Output at UPPMAX as of Oct 2024
    :class: dropdown
 
@@ -189,12 +213,26 @@ For this course, we recommend using the following Julia versions, because the ex
 
             $ ml Julia/1.8.5-linux-x86_64
 
+      .. tab:: LUNARC
+
+         .. code-block:: console
+
+            $ module load Julia/1.8.5-linux-x86_64
+
+         Note: Uppercase ``J``.   
+
+         For short, you can also use: 
+
+         .. code-block:: console
+
+            $ ml Julia/1.8.5-linux-x86_64
+
 Workflow in Julia (DEMO)
 ------------------------
 
 .. demo::
 
-   The teacher will do this as a demo. You will have the opportunity to test in the next session!
+   The teacher will do this as a demo. You will have the opportunity to test soon!
 
 After loading the appropriate modules for Julia, you will have access to the
 read-eval-print-loop (REPL) command line by typing ``julia``: 
@@ -220,6 +258,23 @@ read-eval-print-loop (REPL) command line by typing ``julia``:
 
 
    .. tab:: HPC2N
+
+        .. code-block:: julia-repl
+         
+         $ ml Julia/1.8.5-linux-x86_64
+         $ julia 
+
+            _       _ _(_)_     |  Documentation: https://docs.julialang.org
+           (_)     | (_) (_)    |
+            _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+           | | | | | | |/ _` |  |
+           | | |_| | | | (_| |  |  Version 1.8.5 (2023-01-08)
+          _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+         |__/                   |
+
+         julia> 
+
+   .. tab:: LUNARC
 
         .. code-block:: julia-repl
          
