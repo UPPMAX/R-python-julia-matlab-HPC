@@ -33,6 +33,7 @@ jobs:
       - name: remove unused folders
         run: |
           rm -rf docs/julia/not_used
+          rm -rf docs/r/not_used
           rm -rf docs/python/not_used
           rm -rf docs/matlab/not_used
           rm -rf docs/matlab/README.md
