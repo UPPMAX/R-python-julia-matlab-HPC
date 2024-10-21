@@ -29,22 +29,23 @@ Introduction Julia
 .. admonition:: Julia Exercise files
 
     - On HPC2N, you can copy the Julia exercises in a tarball 
-      from ``/proj/nobackup/r-py-jl-m/juliaExercises.tar.gz``
+      from ``/proj/nobackup/r-py-jl-m/exercises.tar.gz``
     - On UPPMAX you can copy the exercises in a tarball 
-      from ``/proj/r-py-jl-m-rackham/juliaExercises.tar``
+      from ``/proj/r-py-jl-m-rackham/exercises.tar.gz``
+    - On LUNARC you can copy the exercises in a tarball from ``~bbrydsoe/exercises.tar.gz`` 
 
 .. admonition:: Exercises 
 
-    - You can download the exercises from the course GitHub repo, under the "exercises" -> "python" directory: https://github.com/UPPMAX/R-python-julia-matlab-HPC/tree/main/exercises/julia 
+    - You can download the exercises from the course GitHub repo, under the "exercises" -> "julia" directory: https://github.com/UPPMAX/R-python-julia-matlab-HPC/tree/main/exercises/julia 
     - Copy the file and un-tar it in you personal project folder you created a while ago (https://uppmax.github.io/R-python-julia-matlab-HPC/index.html#prepare-your-environment-now). Finally enter the directory and list the content with the ``tree`` command.
 
     .. code-block:: bash
 
        cd /proj/r-py-jl-m-rackham/<your-name>        # on Rackham
        cd /proj/nobackup/r-py-jl-m/<your-name>       # on Kebnekaise
-       cp ../juliaExercises.tar .
-       tar xvf juliaExercises.tar
-       tree julia
+       cp ../exercises.tar.gz .
+       tar zxvf exercises.tar.gz
+       tree exercises/julia
 
 
 Preliminary schedule

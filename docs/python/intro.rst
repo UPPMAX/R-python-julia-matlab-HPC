@@ -14,6 +14,11 @@ Introduction Python
 .. admonition:: Exercises 
 
     - You can download the exercises from the course GitHub repo, under the "exercises" -> "python" directory: <https://github.com/UPPMAX/R-python-julia-matlab-HPC/tree/main/exercises/python>
+    - Or you can copy them from the computer system you are on (only until 2024-11-01): 
+      - Rackham: cp /proj/r-py-jl-m-rackham/exercises.tar.gz .
+      - Kebnekaise: cp /proj/nobackup/r-py-jl-m/exercises.tar.gz . 
+      - Cosmos: cp ~bbrydsoe/exercises.tar.gz .
+      - Then afterwards you unpack it with tar zxvf exercises.tar.gz
     
 .. admonition:: **Your expectations?**
    

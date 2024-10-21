@@ -37,6 +37,18 @@ Introduction to running R, Python, Julia, and Matlab in HPC
       - The examples will often have specific information, like module names and versions, which may vary. What you learn here should help you to make any changes needed for the other centres. 
       - When present, links to the Python/Julia/R/Matlab documentation at other NAISS centres are given in the corresponding session.
 
+.. admonition:: Exercises
+
+   There are two main ways to get the exercises. In either case, you should do so from the directory you will be working in, on either Rackham, Kebnekaise, or Cosmos: 
+
+   - Copy them from the computer system you are on (only until 2024-11-01): 
+      - Rackham: cp /proj/r-py-jl-m-rackham/exercises.tar.gz .
+      - Kebnekaise: cp /proj/nobackup/r-py-jl-m/exercises.tar.gz . 
+      - Cosmos: cp ~bbrydsoe/exercises.tar.gz . 
+      - Then afterwards you unpack them with tar zxvf exercises.tar.gz 
+   - Clone them with git from the repo: ``git clone https://github.com/UPPMAX/R-python-julia-matlab-HPC.git``
+
+
 Schedule Fall 2024
 --------------------
 
