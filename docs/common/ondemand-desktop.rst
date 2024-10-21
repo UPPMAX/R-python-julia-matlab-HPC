@@ -6,7 +6,7 @@ Desktop On Demand
 
    - What is Desktop On Demand?
    - When should I useit?
-   - How do I start?
+   - Where and how do I start?
 
    
    
@@ -46,16 +46,27 @@ The GfxLauncher will prompt you for resource specification and then Desktop On D
 Some On Demand applications will let you configure and submit separate batch jobs that are not bound by the parameters set for the graphical user interface (GUI) in GfxLauncher, although the initial configuration process can be rather involved. For example, you could launch the MATLAB GUI with a wall time of 2 hours, but having set the right configurations, you could use a livescript in the GUI to submit a batch job that lasts 3 days. Such a batch job will not be interrupted if the GUI used to submit it closes or times out. Keep in mind that the optimal resources for the computations to be done in your batch job are often very different from the resources needed to run the GUI.
 
 
+Where do I start?
+-----------------
+On the LUNARC HPC Desktop, the Applications menu lists all the applications available to be run interactively, and opening one prefixed by "Applications -" will start it in Desktop On Demand. There is no specific "Desktop On Demand" application in the list. Most common IDEs can be found in a drop-down menu that appears when you hover over ``Applications - <Language>`` for your language of choice, but more niche packages may be listed under a subject-matter field instead, like ``Applications - Engineering``.
+
+.. admonition:: Terminals on the Compute nodes
+
+   If you don't see the program you want to run interactively listed under any other ``Applications`` sub-menus, you may still be able to launch it via one of the terminals under ``Applications - General``, or the **GPU Accelerated Terminal** (GPU support) under ``Applications - Visualization``.  
+   
+   
+   .. figure:: ../../img/Cosmos-AppMenu.png
+      :width: 400
+      :align: center
+   
+   The CPU terminal allows for a wall time of up to 168 hours (7 days), while the two GPU terminals can only run for 48 hours (2 days) at most. For more on the specifications of the different nodes these terminals can run on, see `LUNARC's webpage on COSMOS <https://www.lunarc.lu.se/systems/cosmos/>`_.
+
+
+**Please be aware that only the applications in the menus prefixed with "Applications -" are set up to run on the Compute nodes.** If you start a terminal session or other application from ``Favorites`` or ``System Tools`` and launch an interactive program from that, it will run on a Login node, with all the risks that that entails for your user privileges.
+
+
 How do I start?
 ---------------
-On the LUNARC HPC Desktop, the Applications menu lists all the applications available to be run interactively, and opening one prefixed by "Applications -" will start it in Desktop On Demand. There is no specific "Desktop On Demand" application in the list. Most common IDEs can be found in a drop-down menu that appears when you hover over ``Applications - <Language>`` for your language of choice, but more niche packages may be listed under a subject-matter field instead, like ``Applications - Engineering``. If you don't see the program you want to run interactively listed under any other ``Applications`` sub-menus, you may still be able to launch it via the **Interactive Terminal** (CPU only) under ``Applications - General``, or the **Accelerated Terminal** (GPU support) under ``Applications - Visualization``.  
-
-
-.. figure:: ../../img/Cosmos-AppMenu.png
-   :width: 400
-   :align: center
-
-**Please be aware that only the applications in the menus prefixed with "Applications -" are set up to run on the Compute nodes.** If you start a terminal session from Favorites or System Tools and launch an interactive program from that, it will run on a Login node, with all the risks that that entails for your user privileges.
 
 For most programs, the start-up process is roughly the same:
 
