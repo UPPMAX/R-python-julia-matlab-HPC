@@ -22,7 +22,7 @@ Introduction Python
       - Rackham: ``cp /proj/r-py-jl-m-rackham/exercises.tar.gz`` .
       - Kebnekaise: ``cp /proj/nobackup/r-py-jl-m/exercises.tar.gz`` . 
 
-    - Then afterwards you unpack it with ``tar -zxvf exercises.tar.gz``
+    - Then afterwards you unpack it with ``tar -xzvf exercises.tar.gz``
     
 .. admonition:: **Your expectations?**
    
