@@ -222,7 +222,7 @@ package with.
 
     Here, it is recommended to do:
 
-    .. code-block:: python
+    .. code-block:: bash
 
         module spider theano
 
@@ -233,25 +233,25 @@ package with.
 
     Getting the information of it:
 
-    .. code-block:: python
+    .. code-block:: bash
 
         module spider Theano/1.0.4-Python-3.7.4
 
     This tells us to do:
 
-    .. code-block:: python
+    .. code-block:: bash
 
         module load GCC/8.3.0  OpenMPI/3.1.4 Theano/1.0.4-Python-3.7.4
 
     Finding out the package version:
 
-    .. code-block:: python
+    .. code-block:: bash
 
         pip list
 
     Gives us:
 
-    .. code-block:: python
+    .. code-block:: bash
 
         Theano                        1.0.4
 
