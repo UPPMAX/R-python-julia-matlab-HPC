@@ -226,27 +226,27 @@ Exercise 1.4: install Python packages
 
     .. tab:: UPPMAX
 
-        Install the ``spacy`` and ``seaborn`` packages
+        Install the lightweight ``colorama`` package:
 
         .. code-block:: console
 
-            pip install --user pytest
+            pip install --user colorama
 
         This virtual environment will be used in later sessions too
-        and is assumed to contain more than just ``pytest``
+        and is assumed to contain more than just ``colorama``
         (see exercise 2). However, to get our first experience
         in, we install something light first.
 
     .. tab:: HPC2N
 
-        Install the ``spacy`` and ``seaborn`` packages
+        Install the lightweight ``colorama`` package:
 
         .. code-block:: console
 
             pip install --no-cache-dir --no-build-isolation spacy seaborn 
 
         This virtual environment will be used in later sessions too
-        and is assumed to contain more than just ``pytest``
+        and is assumed to contain more than just ``colorama``
         (see exercise 2). However, to get our first experience
         in, we install something light first.
 
