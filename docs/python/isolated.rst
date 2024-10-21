@@ -238,7 +238,7 @@ Exercise 1.4: install Python packages
 
         .. code-block:: console
 
-            pip install --user colorama
+            pip install colorama
 
     .. tab:: HPC2N
 
