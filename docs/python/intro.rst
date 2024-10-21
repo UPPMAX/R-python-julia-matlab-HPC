@@ -15,7 +15,7 @@ Introduction Python
 
     - You can download the exercises from the course GitHub repo, under the ``exercises/python`` directory: <https://github.com/UPPMAX/R-python-julia-matlab-HPC/tree/main/exercises/python>
 
-      - ``wget https://github.com/UPPMAX/R-python-julia-matlab-HPC/tree/main/exercises/python``
+      - Download all exercises at once: ``wget https://raw.githubusercontent.com/UPPMAX/R-python-julia-matlab-HPC/refs/heads/main/exercises/exercises.tar.gz``
 
     - Or you can copy them from the computer system you are on (only until 2024-11-01): 
 
