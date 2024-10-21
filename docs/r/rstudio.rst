@@ -40,7 +40,6 @@ However, we recommend you to use a RStudio module.
       - Use MobaXterm or
 
 
-
 Check for RStudio versions
 ..........................
 
@@ -66,8 +65,7 @@ Check all available  versions with:
              D:  Default Module
 
           Use "module spider" to find all possible modules and extensions.
-          Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
-
+          Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".       
 
 - load R_packages
 - module load RStudio
@@ -76,7 +74,6 @@ Check all available  versions with:
    - it might take 5-10 minutes for RStudio to start, especially if you loaded R_packages as well, but once it starts, there should be no further delays
    - do *not* start RStudio through the graphical menu system in ThinLinc, this will not have access to loaded modules.
    - if it takes a long time and might be due to that you have saved a lot of workspace
-  
 
 Example:
 
@@ -123,3 +120,43 @@ Login to ThinLinc desktop application by providing the following
 Alternatively, you can use ThinLinc in the browser: https://kebnekaise-tl.hpc2n.umu.se:300/
 
 When in ThinLinc, you can start Rstudio either from the menu (version 4.0.4) or from the command line. If you start it from the command line you first need to load R and its prerequisites, but you can pick between several versions this way. 
+
+
+At LUNARC
+----------
+
+At LUNARC the recommended way to run RStudio is in Thinlinc with Desktop On Demand. All available versions are in the Applications menu under ``Applications-R``.
+
+.. figure:: ../../img/Cosmos-AppMenu-RStudio.png
+   :width: 350
+   :align: center
+
+There is a regular version and a "(CPU)" version for each release.
+- Regular versions run an Intel 32-core node with a GPU partition, but the wall time limit is 48 hours.
+- CPU versions run on an AMD 48-core CPU-only node, and allows users to set a wall time of up to 168 hours (7 days), at the cost of reduced graphical support.
+
+There is no need to pre-load any modules before starting RStudio from the Desktop On Demand ``Applications-R menu``.
+
+If you run from the command line, you will need to load R/4.4.1 (check prerequisite versions of GCC and OpenMPI with ``ml spider R/4.4.1``) and one of the RStudio modules above. Please only launch RStudio from one of the Desktop On Demand terminals, not the front-end terminal in the ``Favorites`` menu.
+
+.. admonition:: ``ml avail`` output at LUNARC as of October 21 2024
+   :class: dropdown
+    
+       .. code-block::  console
+    
+          [<user>@cosmos2 /]$ ml avail RStudio
+            
+          --------------------- /sw/easybuild_milan/modules/all/Core ---------------------
+               rstudio/2024.04.0-735    rstudio/2024.04.2-764 (D)
+         
+           Where:
+            D:  Default Module
+         
+          If the avail list is too long consider trying:
+         
+          "module --default avail" or "ml -d av" to just list the default modules.
+          "module overview" or "ml ov" to display the number of modules for each name.
+         
+          Use "module spider" to find all possible modules and extensions.
+          Use "module keyword key1 key2 ..." to search for all possible modules matching
+          any of the "keys".
