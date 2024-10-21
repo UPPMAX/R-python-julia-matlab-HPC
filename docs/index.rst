@@ -48,7 +48,7 @@ Introduction to running R, Python, Julia, and Matlab in HPC
       - (No local repository for Cosmos)
 
    - Clone them with git from the repo: ``git clone https://github.com/UPPMAX/R-python-julia-matlab-HPC.git``
-   - Copy the tarball from the web into your working directory with ``wget https://github.com/UPPMAX/R-python-julia-matlab-HPC/blob/main/exercises/exercises.tar.gz`` and unpack them with ``tar -xzvf exercises.tar.gz``
+   - Copy the tarball from the web into your working directory with ``wget https://github.com/UPPMAX/R-python-julia-matlab-HPC/raw/refs/heads/main/exercises/exercises.tar.gz`` and unpack them with ``tar -xzvf exercises.tar.gz``
 
 
 Schedule Fall 2024
@@ -131,6 +131,11 @@ Schedule Fall 2024
         - Directory name on Kebnekaise: ``/proj/nobackup/r-py-jl-m``
         - Please create a suitably named subdirectory below ``/proj/nobackup/r-py-jl-m``, for your own exercises.
 
+   - Where to work on LUNARC
+
+        - Project ID: ``lu2024-7-80`` (for use in slurm scripts)
+        - Home directories have much larger quotas at LUNARC than at UPPMAX or HPC2N. Create a suitable sub-directory in your home directory or a personal project folder.
+
 .. warning::
 
    - **Please be sure that you have gone through the `pre-requirements <https://uppmax.github.io/R-python-julia-matlab-HPC/prereqs.html>`_**
@@ -170,10 +175,10 @@ Briefly about the cluster hardware and system at UPPMAX and HPC2N
 
 - The **calculation nodes** have to be used for intense computing. 
 
-The two HPC centers UPPMAX and HPC2N
-====================================
+The HPC centers UPPMAX, HPC2N, and LUNARC
+=========================================
 
-.. admonition:: Two HPC centers
+.. admonition:: Three HPC centers
 
    - There are many similarities:
    
@@ -184,19 +189,21 @@ The two HPC centers UPPMAX and HPC2N
      
    - ... and small differences:
    
-     - commands to load Python, Python packages, R, Julia
+     - commands to load Python, Python packages, R, Julia, and MATLAB
      - slightly different flags to Slurm
      
    - ... and some bigger differences:
    
-     - UPPMAX has three different clusters 
+     - UPPMAX has three different clusters: 
 
        - Rackham for general purpose computing on CPUs only
        - Snowy available for local projects and suits long jobs (< 1 month) and has GPUs
        - Bianca for sensitive data and has GPUs
 
-   - HPC2N has Kebnekaise with GPUs  
-   - Conda is recommended only for UPPMAX users
+     - HPC2N has Kebnekaise with GPUs.
+     - LUNARC has Cosmos, with 9 GPUs (4 are partitions of Intel nodes).
+     - LUNARC has Desktop On Demand, allowing some applications to run on the back-end without the use of a terminal or batch script.
+     - Conda is recommended only for UPPMAX and LUNARC users, and only using the conda-forge repository.
     
 Prepare your environment now!
 -----------------------------
@@ -249,19 +256,13 @@ Prepare your environment now!
       .. tab:: Cosmos
 
          - Cosmos through terminal: ``<user>@cosmos.lunarc.lu.se``
-         - Cosmos through ThinLinc, use: ``<user>@cosmos-dt.lunarc.lu.se``
+         - Cosmos through ThinLinc, use: ``<user>@cosmos-dt.lunarc.lu.se`` (requires 2FA)
 
-         - Create a working directory where you can code along.
-
-           - Example. If your username is bbrydsoe and you are at HPC2N, then we recommend you create this folder:
-
-           .. code-block:: console
-
-              $ /proj/nobackup/hpc2n2023-110/bbrydsoe/       
+         - Create a working directory where you can code along. Users should have plenty of space in their home directories.
 
 .. admonition:: Do you want the whole repo?
 
-   - If you are happy with just the exercises, the tar balls of the language specific ones are enough.
+   - If you are happy with just the exercises, the tarballs of the language specific ones are enough.
    - By cloning the whole repo, you get all the materials, planning documents, and exercises.
    - If you think this makes sense type this in the command line in the directory you want it.
      - ``git clone https://github.com/UPPMAX/R-python-julia-matlab-HPC.git``
