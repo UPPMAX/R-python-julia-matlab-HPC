@@ -118,6 +118,11 @@ libraries like NumPy, SciPy, scikit-learn, Pandas, and Pytorch.
 
 - `Official Python documentation <https://www.python.org/doc/>`_
 - `Python forum <https://python-forum.io/>`_
+- `NumPy documentation <https://numpy.org/>`_
+- `SciPy user guide <https://docs.scipy.org/doc/scipy/tutorial/index.html>`_
+- `Pandas user guide <https://pandas.pydata.org/docs/user_guide/index.html#user-guide>`_
+- `scikit-Learn documentation <https://scikit-learn.org/stable/>`_
+- ...etc.
 
 Material for improving your programming skills
 ::::::::::::::::::::::::::::::::::::::::::::::
