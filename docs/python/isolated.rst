@@ -196,11 +196,13 @@ Exercise 1.3: activate the virtual environment
 
     .. tab:: UPPMAX
 
-    Activate the virtual environment called ``vpyenv`` as such:      
+        Activate the virtual environment called ``vpyenv`` as such:      
 
-    .. code-block:: console
+        .. code-block:: console
 
-        source /proj/r-py-jl-m-rackham/[username]/python/vpyenv/bin/activate
+            source /proj/r-py-jl-m-rackham/[username]/python/vpyenv/bin/activate
+
+        This virtual environment will be used in later sessions too.    
 
     where ``[username]`` is your UPPMAX username, for example ``python -m venv --system-site-packages /proj/r-py-jl-m-rackham/sven/python/vpyenv``.
 
@@ -213,6 +215,8 @@ Exercise 1.3: activate the virtual environment
             source /proj/nobackup/r-py-jl-m/[username]/python/vpyenv/bin/activate
 
         where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/sven/python/vpyenv``.
+
+        This virtual environment will be used in later sessions too.    
 
 
 Exercise 1.4: install Python packages
@@ -228,6 +232,9 @@ Exercise 1.4: install Python packages
 
             pip install --user spacy seaborn
 
+        This virtual environment will be used in later sessions too
+        and is assumed to contain these packages.
+
     .. tab:: HPC2N
 
         Install the ``spacy`` and ``seaborn`` packages
@@ -235,6 +242,10 @@ Exercise 1.4: install Python packages
         .. code-block:: console
 
             pip install --no-cache-dir --no-build-isolation spacy seaborn 
+
+        This virtual environment will be used in later sessions too
+        and is assumed to contain these packages.
+
 
 Exercise 1.5: check if the Python packages are installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
