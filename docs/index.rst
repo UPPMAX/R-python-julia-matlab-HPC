@@ -176,7 +176,7 @@ The HPC centers UPPMAX, HPC2N, and LUNARC
 Prepare your environment now!
 -----------------------------
 
-.. challenge:: Log in and create a user folder
+.. challenge:: Log in and create a user folder (if not done already)
 
    - Please log in to Rackham, Kebnekaise, Cosmos or other cluster that you are using.
 
