@@ -20,17 +20,16 @@ Isolated environments
 
         - Create the virtual environment called ``vpyenv`` needed later on
 
-        Lesson plan (60 minutes in total):
+        Lesson plan (25 minutes in total):
 
         - 5 mins: prior knowledge
-        - How to deal with two tools that need incompatible sets of Python packages?
-        - How to solve the problem when there are two tools that need incompatible sets of Python packages?
-        - What is a virtual environment manager?
-        - Which virtual environment managers exists? 
-        - What are the differences between virtual environment managers?
+            - How to deal with two tools that need incompatible sets of Python packages?
+            - How to solve the problem when there are two tools that need incompatible sets of Python packages?
+            - What is a virtual environment manager?
+            - How to is a virtual environment manager used? What is the workflow?
         - 5 mins: presentation
-        - Why?
-        - Exercises
+            - Why?
+            - Exercises
         - 15 mins: challenge
         - 5 mins: feedback
 
