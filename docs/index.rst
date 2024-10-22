@@ -254,11 +254,11 @@ Prepare your environment now!
 
          - Create a working directory where you can code along.
 
-           - Example. If your username is bbrydsoe and you are at HPC2N, then we recommend you create this folder:
+           - Example. If your username is ``bbrydsoe`` and you are at HPC2N, then we recommend you create this folder:
 
            .. code-block:: console
 
-              $ /proj/nobackup/hpc2n2023-110/bbrydsoe/
+              $ /proj/nobackup/r-py-jl-m/bbrydsoe/
 
       .. tab:: Cosmos
 
