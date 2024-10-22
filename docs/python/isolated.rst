@@ -324,13 +324,6 @@ Exercise 1.5: check if the Python packages are installed
 
             pip list
 
-      To see which Python packages you have installed yourself 
-      (i.e. not loaded from a module), use:
-
-      .. code-block:: console
-
-            pip list --user
-
    .. tab:: UPPMAX
 
       To see all installed Python packages:
