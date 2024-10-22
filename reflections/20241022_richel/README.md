@@ -36,5 +36,5 @@ Before teaching, I saw the evaluation. Beyond the 'rate your confidence'
 questions I prepared, more questions were added. Maybe because HPC2N
 requires that. 
 
-- Python: https://forms.office.com/e/G4U0gKL76w
-R: https://forms.office.com/e/g1HiqfEaXi
+- [Python](https://forms.office.com/e/G4U0gKL76w)
+- [R](https://forms.office.com/e/g1HiqfEaXi)
