@@ -270,7 +270,7 @@ Exercise 1.4: install Python packages
 
     .. tab:: HPC2N
 
-        Install the lightweight ``colorama`` package:
+        Install the ``seaborn`` package:
 
         .. code-block:: console
 
@@ -373,7 +373,8 @@ Exercise 1.6: deactivate the virtual environment
             deactivate
 
 
-Well done, you've just created a virtual environment called ``vpyenv``!
+Well done, you've just created a virtual environment called ``vpyenv``
+that has ``seaborn`` installed!
 
 Conclusion
 ----------
@@ -388,7 +389,6 @@ Conclusion
         - UPPMAX: Conda and ``venv``
         - HPC2N has ``venv``
     - created, activated, used and deactivated virtual environments
-    - installed Python packages by using a ``requirements.txt`` file
 
     You may:
 
