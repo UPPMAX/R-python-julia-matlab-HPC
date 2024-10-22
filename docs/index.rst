@@ -37,18 +37,6 @@ Introduction to running R, Python, Julia, and Matlab in HPC
       - The examples will often have specific information, like module names and versions, which may vary. What you learn here should help you to make any changes needed for the other centres. 
       - When present, links to the Python/Julia/R/Matlab documentation at other NAISS centres are given in the corresponding session.
 
-.. admonition:: Exercises
-
-   There are three main ways to get the exercises. In any case, you should do so from the directory you will be working in, on either Rackham, Kebnekaise, or Cosmos: 
-
-   - Copy them from the computer system you are on (only until 2024-11-01) and unpack them by entering ``tar -xzvf exercises.tar.gz``
-
-      - Rackham: ``cp /proj/r-py-jl-m-rackham/exercises.tar.gz`` .
-      - Kebnekaise: ``cp /proj/nobackup/r-py-jl-m/exercises.tar.gz`` .
-      - (No local repository for Cosmos)
-
-   - Clone them with git from the repo: ``git clone https://github.com/UPPMAX/R-python-julia-matlab-HPC.git``
-   - Copy the tarball from the web into your working directory with ``wget https://github.com/UPPMAX/R-python-julia-matlab-HPC/raw/refs/heads/main/exercises/exercises.tar.gz`` and unpack them with ``tar -xzvf exercises.tar.gz``
 
 
 Schedule Fall 2024
@@ -116,26 +104,6 @@ Schedule Fall 2024
    - We answer those questions as soon as possible
 
         
-.. hint::
-
-   - Main project on UPPMAX:
-     
-        - Project ID: ``naiss2024-22-1202``
-        - Directory name on rackham: ``/proj/r-py-jl-m-rackham``
-        - Please create a suitably named subdirectory below ``/proj/r-py-jl-m-rackham``, for your own exercises. 
-   
-
-   - Local project on HPC2N: 
-
-        - Project ID: ``hpc2n2024-114``
-        - Directory name on Kebnekaise: ``/proj/nobackup/r-py-jl-m``
-        - Please create a suitably named subdirectory below ``/proj/nobackup/r-py-jl-m``, for your own exercises.
-
-   - Where to work on LUNARC
-
-        - Project ID: ``lu2024-7-80`` (for use in slurm scripts)
-        - Home directories have much larger quotas at LUNARC than at UPPMAX or HPC2N. Create a suitable sub-directory in your home directory or a personal project folder.
-
 .. warning::
 
    - **Please be sure that you have gone through the `pre-requirements <https://uppmax.github.io/R-python-julia-matlab-HPC/prereqs.html>`_**
@@ -279,6 +247,38 @@ Prepare your environment now!
    - Note however, that if you during exercise work modify files, they will be overwritten if you make ``git pull`` (like if the teacher needs to modify something).
       - Then make a copy somewhere else with your answers!
 
+.. hint::
+
+   - Main project on UPPMAX:
+     
+        - Project ID: ``naiss2024-22-1202``
+        - Directory name on rackham: ``/proj/r-py-jl-m-rackham``
+        - Please create a suitably named subdirectory below ``/proj/r-py-jl-m-rackham``, for your own exercises. 
+   
+
+   - Local project on HPC2N: 
+
+        - Project ID: ``hpc2n2024-114``
+        - Directory name on Kebnekaise: ``/proj/nobackup/r-py-jl-m``
+        - Please create a suitably named subdirectory below ``/proj/nobackup/r-py-jl-m``, for your own exercises.
+
+   - Where to work on LUNARC
+
+        - Project ID: ``lu2024-7-80`` (for use in slurm scripts)
+        - Home directories have much larger quotas at LUNARC than at UPPMAX or HPC2N. Create a suitable sub-directory in your home directory or a personal project folder.
+
+.. admonition:: Exercises
+
+   There are three main ways to get the exercises. In any case, you should do so from the directory you will be working in, on either Rackham, Kebnekaise, or Cosmos: 
+
+   - Copy them from the computer system you are on (only until 2024-11-01) and unpack them by entering ``tar -xzvf exercises.tar.gz``
+
+      - Rackham: ``cp /proj/r-py-jl-m-rackham/exercises.tar.gz`` .
+      - Kebnekaise: ``cp /proj/nobackup/r-py-jl-m/exercises.tar.gz`` .
+      - (No local repository for Cosmos)
+
+   - Clone them with git from the repo: ``git clone https://github.com/UPPMAX/R-python-julia-matlab-HPC.git``
+   - Copy the tarball from the web into your working directory with ``wget https://github.com/UPPMAX/R-python-julia-matlab-HPC/raw/refs/heads/main/exercises/exercises.tar.gz`` and unpack them with ``tar -xzvf exercises.tar.gz``
    
 
 Content of the course
