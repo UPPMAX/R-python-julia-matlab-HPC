@@ -252,7 +252,7 @@ Python package.
 The Python package we use differs by center:
 
 - HPC2N: Theano, as a Python 3.7.4 package
-- LUNARC: ``matplotlib`` version 2.2.5, as a Python 2.7.18 package
+- LUNARC: ``matplotlib`` version 3.8.2
 - UPPMAX: TensorFlow, as a Python 3.11.8 package for CPU
 
 Try to find your center's documentation to find out which module to load your Python
@@ -312,7 +312,7 @@ Load the module for the Python package and verify if it is loaded.
 
     .. code-block:: bash
 
-        module load GCC/8.3.0  OpenMPI/3.1.4 Theano/1.0.4-Python-3.7.4
+        module load GCC/8.3.0 OpenMPI/3.1.4 Theano/1.0.4-Python-3.7.4
 
     If you get an error, because you've already loaded
     (conflicting) modules, do the command below and load
