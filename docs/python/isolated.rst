@@ -376,6 +376,11 @@ Exercise 1.6: deactivate the virtual environment
 Well done, you've just created a virtual environment called ``vpyenv``
 that has ``seaborn`` installed!
 
+More exercises
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+More exercises can be found at `here <https://uppmax.github.io/R-python-julia-matlab-HPC/extra/isolated_extra.html>`_.
+
 Conclusion
 ----------
 
