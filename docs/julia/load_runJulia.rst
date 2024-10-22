@@ -468,13 +468,13 @@ Exercises
    - Can you start Julia without loading a Julia module?
         - Yes?
         - No?
-     - How do you toggle to the ``package`` mode? 
+   - How do you toggle to the ``package`` mode? 
         - Which character?
-     - How do you toggle back to the ``Julia`` mode? 
+   - How do you toggle back to the ``Julia`` mode? 
         - Which character?
-     - How do you toggle to the ``help`` mode? 
+   - How do you toggle to the ``help`` mode? 
         - Which character?
-     - How do you toggle to the ``shell`` mode? 
+   - How do you toggle to the ``shell`` mode? 
         - Which character?
 
 
@@ -484,9 +484,10 @@ Exercises
    - Start a Julia shell session with ``julia``
    - It offers several modes that can make your workflow easier, i.e.
    
-      - ``Julian``
-      -``shell``
-      - ``package manager``
-      - ``help``
+       - ``Julian``
+       - ``shell``
+       - ``package manager``
+       - ``help``
+
    - Run scripts with ``julia <script.jl>``
     
