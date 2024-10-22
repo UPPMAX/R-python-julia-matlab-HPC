@@ -1,5 +1,5 @@
-Session: Interactive work on compute nodes
-==========================================
+Session: Matlab in Jupyter
+==========================
 
 .. note::
 
