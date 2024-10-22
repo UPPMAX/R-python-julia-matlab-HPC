@@ -75,7 +75,7 @@ It takes into account that one may need to leave early too.
         - MATLAB GUI and SLURM
         - Parallel
         - MATLAB client on your desktop
-        - Interactive work on compute nodes
+        - Matlab in Jupyter
 
         With answers
         - Poor
@@ -111,6 +111,10 @@ It takes into account that one may need to leave early too.
         - I can check that I am in an interactive session
         - I can work with Matlab in parallel 
         - I can start run Matlab in Jupyter
+        - I can view add-ons and toolboxes
+        - I can install add-ons
+        - I can use GPUs with Matlab
+
  
         13.Did today's course meet your expectation?
 
