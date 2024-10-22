@@ -1,5 +1,5 @@
-Interactive work on compute nodes
-=================================
+Session: Interactive work on compute nodes
+==========================================
 
 .. note::
 
