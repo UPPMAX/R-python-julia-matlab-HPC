@@ -14,13 +14,35 @@ Log in to one of the HPC systems covered in this course
 These are the ways to access your HPC cluster:
 
 +---------------------------------------------+-------------------------------------------------------------------+
-| How to access your HPC cluster              | How does that look like                                           |
+| How to access your HPC cluster              | How it looks like                                                 |
 +=============================================+===================================================================+
 | Remote desktop via a website                | .. figure:: img/rackham_remote_desktop_via_website_480_x_270.png  |
 +---------------------------------------------+-------------------------------------------------------------------+
 | Remote desktop via a local ThinLinc client  | .. figure:: img/thinlinc_local_rackham_zoom.png                   |
 +---------------------------------------------+-------------------------------------------------------------------+
 | Console environment using an SSH client     | .. figure:: img/login_rackham_via_terminal_terminal_409_x_290.png |
++---------------------------------------------+-------------------------------------------------------------------+
+
++---------------------------------------------+-------------------------------------------------------------------+
+| How to access your HPC cluster              | Features
++=============================================+===================================================================+
+| Remote desktop via a website                | - Familiar remote desktop                                         |
+|                                             | - Clumsy and clunky                                               |
+|                                             | - Slow on UPPMAX                                                  |
+|                                             | - No need to install software                                     |
+|                                             | - Works on HPC2N and UPPMAX                                       |
+|                                             | - Needs 2FA for UPPMAX                                            |
++---------------------------------------------+-------------------------------------------------------------------+
+| Remote desktop via a local ThinLinc client  | - Familiar remote desktop                                         |
+|                                             | - Clumsy                                                          |
+|                                             | - Need to install ThinLinc                                        |
+|                                             | - Works on all centers                                            |
+|                                             | - Needs 2FA for UPPMAX                                            |
++---------------------------------------------+-------------------------------------------------------------------+
+| Console environment using an SSH client     | - A console environment may be unfamiliar                         |
+|                                             | - Great to use                                                    |
+|                                             | - Need to install an SSH client                                   |
+|                                             | - Works on all centers                                            |
 +---------------------------------------------+-------------------------------------------------------------------+
 
 .. tabs::
