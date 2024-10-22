@@ -161,11 +161,11 @@ Example **Code along**
       
          We are. Notice that we got a response from all four cores we have allocated.   
 
-      .. tab:: UPPMAX
+      .. tab:: LUNARC
    
-   .. code-block:: console
+         .. code-block:: console
       
-            [bjornc@rackham2 ~]$ interactive -A naiss2024-22-1202 -p core -n 4 -t 10:00
+            [bjornc@cosmos1 ~]$ interactive -A naiss2024-22-1202 -p core -n 4 -t 10:00
             You receive the high interactive priority.
             There are free cores, so your job is expected to start at once.
       
@@ -174,19 +174,16 @@ Example **Code along**
             Waiting for job 29556505 to start...
             Starting job now -- you waited for 1 second.
           
-            [bjornc@r483 ~]$ module load julia/1.8.5
+            [bjornc@cn050 ~]$ module load julia/1.8.5
 
          Let us check that we actually run on the compute node: 
 
          .. code-block:: console
       
-            [bjornc@r483 ~]$ srun hostname
-            r483.uppmax.uu.se
-            r483.uppmax.uu.se
-            r483.uppmax.uu.se
-            r483.uppmax.uu.se
+            [bjornc@cn050 ~]$ echo $SLURM_CPUS_ON_NODE
+            4
 
-         We are. Notice that we got a response from all four cores we have allocated.   
+         We are, because the $SLURM* environment variable gves an output. Notice that we got 4, whihc is nt the size of the physcial node bt the allocation size.   
 
       
 Running a script
@@ -270,6 +267,17 @@ When you have finished using the allocation, either wait for it to end, or close
                   salloc: Relinquishing job allocation 20174806
                   salloc: Job allocation 20174806 has been revoked.
                   [~]$
+
+   .. tab:: LUNARC
+   
+      .. code-block:: sh 
+                  
+                  [~]$ exit
+                  exit
+                  [screen is terminating]
+                  Connection to cn050 closed.
+
+                  [~]$ 
 
 Running IJulia and Jupyter notebooks 
 ------------------------------------
