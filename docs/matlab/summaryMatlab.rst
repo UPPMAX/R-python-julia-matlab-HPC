@@ -18,11 +18,5 @@ Summary
     - Discuss in breakout rooms
     - Learn from each other
 
-.. note:: Evaluation 
-
-   You can find the evaluation form for the Matlab part of the course here: https://forms.office.com/e/pHgHxfUch5 
-    
-.. seealso::
-
 
 
