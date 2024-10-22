@@ -45,6 +45,7 @@ Because you will have to wait until the nodes are allocated, and because you can
     This is somewhat convoluted to get to work correctly at HPC2N, but possible. Please contact us at support@hpc2n.umu.se if you want to go this route at HPC2N. 
 
 
+
 Julia "interactively" on the compute nodes 
 -------------------------------------------
 
@@ -68,7 +69,14 @@ run on the allocated nodes instead of the login node.
       .. code-block:: console
           
          $ salloc -n <tasks> --time=HHH:MM:SS -A hpc2n2023-114
-         
+
+   .. tab:: LUNARC (interactive)
+
+      .. code-block:: console
+          
+         $ interactive -n <tasks> --time=HHH:MM:SS -A lu2024-7-80
+      
+
       
 where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in 
       hours, minutes, and seconds (maximum T168 hours), and then you give the id for your project 
@@ -84,7 +92,12 @@ Your request enters the job queue just like any other job, and interactive/sallo
 You can now run Julia scripts on the allocated resources directly instead of waiting for 
       your batch job to return a result. This is an advantage if you want to test your Julia 
       script or perhaps figure out which parameters are best.
-                  
+
+.. admonition:: Documentation at the centers
+
+   - `Interactive allocation on UPPMAX <https://docs.uppmax.uu.se/cluster_guides/start_interactive_node/>`_
+   - `Interactive allocation on HPC2N <https://docs.hpc2n.umu.se/documentation/batchsystem/job_submission/#interactive>`_
+   - `Interactive allocation on LUNARC <https://lunarc-documentation.readthedocs.io/en/latest/manual/manual_interactive/#starting-an-interactive-session>`_
 
 Example **Code along**
 ######################
@@ -147,7 +160,34 @@ Example **Code along**
             b-cn0241.hpc2n.umu.se
       
          We are. Notice that we got a response from all four cores we have allocated.   
+
+      .. tab:: UPPMAX
+   
+   .. code-block:: console
       
+            [bjornc@rackham2 ~]$ interactive -A naiss2024-22-1202 -p core -n 4 -t 10:00
+            You receive the high interactive priority.
+            There are free cores, so your job is expected to start at once.
+      
+            Please, use no more than 6.4 GB of RAM.
+      
+            Waiting for job 29556505 to start...
+            Starting job now -- you waited for 1 second.
+          
+            [bjornc@r483 ~]$ module load julia/1.8.5
+
+         Let us check that we actually run on the compute node: 
+
+         .. code-block:: console
+      
+            [bjornc@r483 ~]$ srun hostname
+            r483.uppmax.uu.se
+            r483.uppmax.uu.se
+            r483.uppmax.uu.se
+            r483.uppmax.uu.se
+
+         We are. Notice that we got a response from all four cores we have allocated.   
+
       
 Running a script
 ''''''''''''''''
