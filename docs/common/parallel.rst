@@ -384,8 +384,8 @@ available for each language.
 
                 print("Time spent parallel: %.2f sec" % (endtime-starttime))
 
-         First load the modules ``ml GCCcore/10.3.0 Python/3.9.5`` and then run the script
-         with the command  ``python sleep.py`` to use 4 processes.
+         First load the modules ``ml GCCcore/11.2.0 Python/3.9.6`` and then run the script
+         with the command  ``srun -A "your-project" -n 1 -c 4 -t 00:05:00 python sleep.py`` to use 4 processes.
 
       .. tab:: Julia
 
@@ -418,7 +418,8 @@ available for each language.
             @btime sleep_threaded(n) evals=1 samples=1
             
          First load the Julia module ``ml Julia/1.8.5-linux-x86_64`` and then run the script
-         with the command  ``julia --threads 6 sleep-threads.jl`` to use 4 Julia threads.
+         with the command  ``srun -A "your-project" -n 1 -c 4 -t 00:05:00 julia --threads 4 sleep-threads.jl`` 
+         to use 4 Julia threads.
 
          We can also use the *Distributed* package that allows the scaling of simulations beyond
          a single node (call the script ``sleep-distributed.jl``): 
@@ -431,18 +432,21 @@ available for each language.
             n = 4   # number of iterations
 
             function sleep_parallel(n)
-                @distributed for i in 1:n
+               @sync @distributed for i in 1:n
                     sleep(1)
                 end
             end         
 
-         Run the script with the command  ``julia -p 4 sleep-distributed.jl`` to use 4 Julia processes.
+            @btime sleep_parallel(n) evals=1 samples=1
+
+         Run the script with the command  ``srun -A "your-project" -n 1 -c 4 -t 00:05:00 julia -p 4 sleep-distributed.jl`` 
+         to use 4 Julia processes.
 
       .. tab:: R 
    
          In the following example ``sleep.R`` the `Sys.sleep()` function is called `n` times
          first in serial mode and then by using `n` processes. Start by loading the 
-         modules ``ml GCC/10.2.0 OpenMPI/4.0.5 R/4.0.4``
+         modules ``ml GCC/12.2.0  OpenMPI/4.1.4 R/4.2.2``
 
          .. code-block:: r
         
@@ -470,7 +474,7 @@ available for each language.
             stopCluster(cl)
             parallel_time
 
-         Run the script with the command  ``Rscript --no-save --no-restore sleep.R``.
+         Run the script with the command  ``srun -A "your-project" -n 1 -c 4 -t 00:05:00 Rscript --no-save --no-restore sleep.R``.
 
       .. tab:: Matlab 
    
@@ -837,7 +841,8 @@ Exercises
 
             Here is a parallel code using the ``parallel`` and ``doParallel`` packages in R (call it 
             ``integration2d.R``). Note: check if those packages are already installed for the required
-            R version, otherwise install them with ``install.packages()``.
+            R version, otherwise install them with ``install.packages()``. The recommended R version
+            for this exercise is ``ml GCC/12.2.0 OpenMPI/4.1.4 R/4.2.2`` (HPC2N).
 
             .. admonition:: integrationd.R
                :class: dropdown
