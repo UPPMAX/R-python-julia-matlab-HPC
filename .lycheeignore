@@ -3,8 +3,7 @@ b-cn1403.hpc2n.umu.se
 b-cn1520.hpc2n.umu.se
 file://
 localhost
-127.0.0.0
-127.0.0.1
+127.0.0.*
 r486
 bianca.uppmax.uu.se
 docs.uppmax.uu.se
@@ -12,4 +11,4 @@ https://machinelearningmastery.com/machine-learning-in-r-step-by-step
 https://python-forum.io
 https://github.com/UPPMAX/R-python-julia-matlab-HPC/tree/main/exercises/matlab/MatlabExercises.tar.gz
 https://r-forge.r-project.org/
-
+forms.office.com

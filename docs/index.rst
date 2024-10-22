@@ -325,6 +325,7 @@ Content of the course
    common/parallel.rst
    julia/interactiveJulia.rst
    julia/summaryJulia.rst
+   julia/evaluationJulia.rst
    
 .. toctree::
    :maxdepth: 2
@@ -355,6 +356,7 @@ Content of the course
    matlab/local_desktopMatlab.rst
    matlab/jupyterMatlab.rst
    matlab/summaryMatlab.rst
+   matlab/evaluationMatlab.rst
 
 .. toctree::
    :maxdepth: 2

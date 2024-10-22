@@ -3,6 +3,7 @@
 #SBATCH -A lu2024-7-80
 # We are asking for 5 minutes
 #SBATCH --time=00:05:00
+#SBATCH --ntasks-per-node=1
 # Asking for one GPU
 #SBATCH -p gpua100
 #SBATCH --gres=gpu:1

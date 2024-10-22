@@ -6,6 +6,7 @@
 # The following two lines splits the output in a file for any errors and a file for other output.
 #SBATCH --error=job.%J.err
 #SBATCH --output=job.%J.out
+#SBATCH --ntasks-per-node=1
 # Asking for one A100
 #SBATCH -p gpua100
 #SBATCH --gres=gpu:1

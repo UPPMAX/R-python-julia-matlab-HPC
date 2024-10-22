@@ -81,7 +81,7 @@ Check for Julia versions
 
       .. code-block:: console
 
-         $ module spider Julia/1.8.5
+         $ module spider Julia/1.8.5-linux-x86_64
 
    .. tab:: LUNARC
    
@@ -450,17 +450,43 @@ Exercises
             julia serial-sum.jl Arg1 Arg2      # run the serial script
 
 
-.. Discussion:: **Menti**
+.. solution:: Solution for LUNARC
+   :class: dropdown
+   
+      This batch script is for UPPMAX. Adding the numbers 2 and 3. (FIX)
 
+      .. code-block:: console
+
+            $ ml Julia/1.8.5-linux-x86_64           # Julia module
+         
+            julia serial-sum.jl Arg1 Arg2      # run the serial script
+
+
+.. challenge:: 3. Check your understanding
+
+   - Check your understanding and answer in the shared document
    - Can you start Julia without loading a Julia module?
-   - How do you activate Julia packages in the Julia REPL? 
-   - How do you toggle to the package mode? 
+        - Yes?
+        - No?
+     - How do you toggle to the ``package`` mode? 
+        - Which character?
+     - How do you toggle back to the ``Julia`` mode? 
+        - Which character?
+     - How do you toggle to the ``help`` mode? 
+        - Which character?
+     - How do you toggle to the ``shell`` mode? 
+        - Which character?
+
 
 .. keypoints::
 
    - Before you can run Julia scripts or work in a Julia shell, first load a Julia module
    - Start a Julia shell session with ``julia``
-   - It offers several modes that can make your workflow easier, i.e., ``Julian``, 
-     ``shell``, ``package manager``, and ``help`` modes.
+   - It offers several modes that can make your workflow easier, i.e.
+   
+      - ``Julian``
+      -``shell``
+      - ``package manager``
+      - ``help``
    - Run scripts with ``julia <script.jl>``
     

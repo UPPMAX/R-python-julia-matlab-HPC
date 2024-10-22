@@ -37,7 +37,11 @@ SLURM is an Open Source job scheduler, which provides three key functions
 
 In order to run a batch job, you need to create and submit a SLURM submit file (also called a batch submit file, a batch script, or a job script).
 
-Guides and documentation at: https://docs.hpc2n.umu.se/documentation/batchsystem/intro/ and https://docs.uppmax.uu.se/cluster_guides/slurm/  
+Guides and documentation at: 
+
+- HPC2N: https://docs.hpc2n.umu.se/documentation/batchsystem/intro/ 
+- UPPMAX: https://docs.uppmax.uu.se/cluster_guides/slurm/  
+- LUNARC: https://lunarc-documentation.readthedocs.io/en/latest/manual/submitting_jobs/manual_basic_job/ 
 
 **Workflow**
 

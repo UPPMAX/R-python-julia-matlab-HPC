@@ -1,7 +1,7 @@
 Evaluation
 ==========
 
-The evaluation form can be found `here <https://forms.office.com/e/G4U0gKL76w>`_.
+The evaluation form for the Julia part can be found `here <https://forms.office.com/e/PzkkX3SvB1>`_.
 It takes into account that one may need to leave early too.
   
 
@@ -11,7 +11,7 @@ It takes into account that one may need to leave early too.
 
     .. code-block:: console
 
-        Introduction to running R, Python, Julia, and Matlab in HPC, 22-25/10-2024 - DAY 1 Python
+        Introduction to running R, Python, Julia, and Matlab in HPC, 22-25/10-2024 - DAY 2 Julia
 
         Thanks for your feedback.
         This feedback will be published as-is at the end of the evaluation period (after 1 November 2024), if and only if there are no personal details (email, address, etc.) in the feedback. Do mention the teachers, assistants, etc by name!
@@ -70,13 +70,10 @@ It takes into account that one may need to leave early too.
 
         - Introduction
         - Load and run
-        - Packages
-        - Isolated environments
-        - Python in batch
+        - Packages and isolated environments
+        - Julia in batch mode
+        - Parallel Julia
         - Interactive work
-        - Jupyter
-        - Parallel
-        - Conda
 
         With answers
         - Poor
@@ -98,27 +95,15 @@ It takes into account that one may need to leave early too.
 
         Give you confidence levels of the following statements below:
 
-        - I can use the module system to load a specific version of Python
-        - I can run Python
-        - I can use the Python interpreter
-        - I can run IPython
-        - I can use the IPython interpreter
-        - I can run a Python script
-        - I can determine the version of a Python package
-        - I can determine that a Python package is not installed
-        - I can load a Python package module
-        - I can install a Python package using ``pip``
-        - I can work (create, activate, work, deactivate) with a ``venv`` virtual environment
+        - I can use the module system to load a specific version of Julia
+        - I can run Julia
+        - I can use the Julia interpreter
+        - I can run a Julia script
+        - I can install a Julia package
+        - I can work (create, activate, work, deactivate) with Julia project environments
         - I can write a bash script
         - I can submit a script to the job scheduler
-        - I can write a bash script that uses GPUs
-        - I can start an interactive session
-        - I can check that I am in an interactive session
-        - I can start an interactive session with multiple cores
-        - I can check that I am in an interactive session with multiple cores
-        - I can start Jupyter
-        - I can start a script that uses parallel code
-        - I can measure the effect of using more nodes for parallel code
+        - I can work interactively with Julia on the compute nodes
 
         13.Did today's course meet your expectation?
 
