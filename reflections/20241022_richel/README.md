@@ -224,7 +224,7 @@ I felt there was enough time to work on exercises without disturbance.
 The durations of the sessions was long enough.
 When polling if learners had completed the exercise by using Zoom
 Reactions, two thirds gave a 'yes' as a reaction, the rest (all
-withot camera) having a 'no' as a reaction.
+without camera) having a 'no' as a reaction.
 
 After the break, there was a simultaneous session that I was allowed
 to teach, for UPPMAX users only. There 6 out of the 7 learners had
