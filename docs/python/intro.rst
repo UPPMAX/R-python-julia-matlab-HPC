@@ -46,7 +46,7 @@ Schedule
      - Topic
      - Teacher(s)
    * - 9:00
-     - (optional) First login
+     - (optional) `First login <https://uppmax.github.io/R-python-julia-matlab-HPC/common/login.html>`_
      - BB + PO + RB + RP
    * - 9:45
      - Break 
