@@ -105,7 +105,7 @@ Exercises
     You can see a video on how these exercises are done here:
 
     - `HPC2N: TODO
-    - `LUNARC: TODO
+    - ``LUNARC <https://youtu.be/Ryjgd37Ie2k>`_
     - `UPPMAX <https://youtu.be/lj_Q-5l0BqU>`_
 
 In these exercises, we first make sure we are using isolated environments,
