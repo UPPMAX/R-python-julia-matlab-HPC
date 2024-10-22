@@ -81,7 +81,7 @@ Check for Julia versions
 
       .. code-block:: console
 
-         $ module spider Julia/1.8.5
+         $ module spider Julia/1.8.5-linux-x86_64
 
    .. tab:: LUNARC
    

@@ -133,7 +133,7 @@ Example **Code along**
             salloc: Granted job allocation 20174806
             salloc: Waiting for resource configuration
             salloc: Nodes b-cn0241 are ready for job
-            [~]$ module load GCC/10.3.0 OpenMPI/4.1.1 julia/1.8.5
+            [~]$ module load GCC/11.2.0 OpenMPI/4.1.1 julia/1.8.5
             [~]$ 
                   
          Let us check that we actually run on the compute node: 
@@ -302,7 +302,7 @@ Running IJulia and Jupyter notebooks
 
       .. code-block:: console
 
-         $ module load GCC/10.3.0 JupyterLab/3.2.8
+         $ module load GCCcore/13.2.0  JupyterLab/4.2.0 
          $ module load Julia/1.8.5-linux-x86_64
          $ julia
 
@@ -327,7 +327,7 @@ Running IJulia and Jupyter notebooks
          # Clear the environment from any previously loaded modules
          module purge > /dev/null 2>&1
          # Load the module environment suitable for the job
-         module load GCC/10.3.0 JupyterLab/3.2.8
+         module load GCCcore/13.2.0  JupyterLab/4.2.0 
          # Load the Julia module
          ml Julia/1.8.5-linux-x86_64
          # Start JupyterLab
