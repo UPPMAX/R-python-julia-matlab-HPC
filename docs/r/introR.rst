@@ -84,33 +84,6 @@ Schedule
 
 .. mermaid::  intro_r_overview_course_r_and_modules.mmd
 
-..
-    _Comment This is the schedule as decided around 2024-09-23:
-
-    Time       |Topic                          |Teacher
-    -----------|-------------------------------|-------
-    09:00-09:45|First login                    |BB + PO + RB
-    09:45-10:00|Break                          |.
-    10:00-10:10|Syllabus                       |RB
-    10:10-10:20|R in general                   |RB
-    10:20-10:45|Load modules and run           |RB
-    10:45-11:00|Break                          |.
-    11:00-11:30|Packages 30/30                 |BB
-    11:30-12:00|Isolated environments          |BB
-    12:00-13:00|Lunch                          |.
-    13:00-13:30|Batch 30/30 mins               |BB
-    13:30-14:15|Parallel                       |PO
-    14:15-14:30|Break                          |.
-    14:30-15:15|Simultaneous session 45/45 mins|PO * RB
-    15:15-15:30|Break                          |.
-    15:30-16:00|Machine learning               |BB or PO
-    16:00-16:15|Summary and evaluation         |RB
-
-    Parallel session:
-     - HPC2N: ThinLinc & RStudio, by PO
-     - UPPMAX: ThinLinc, RStudio, interactive, by RB
-     - ?LUNARC, by ?RP
-
 .. list-table:: Schedule
    :widths: 25 25 50
    :header-rows: 1
@@ -119,7 +92,7 @@ Schedule
      - Topic
      - Teacher(s)
    * - 9:00
-     - First login
+     - (optional) `First login <https://uppmax.github.io/R-python-julia-matlab-HPC/common/login.html>`_
      - BB + PO + RB
    * - 9:45
      - Break
