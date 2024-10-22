@@ -72,18 +72,14 @@ In this course, we will look at the following environment managers:
 | ``venv``      | Recommended     | OK            | Recommended           |Python only       |
 +---------------+-----------------+---------------+-----------------------+------------------+
 
-All centers have their documentation on virtual environment managers:
+Although ``venv`` has an `official Python 'Virtual Environments and Packages' tutorial <https://docs.python.org/3/tutorial/venv.html>`_,
+most centers have their documentation on virtual environment managers with information specific to its clusters:
 
 - `HPC2N working with venv <https://docs.hpc2n.umu.se/tutorials/userinstalls/#working__with__venv>`_
-- `LUNARC creating conda environments <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/#creating-conda-environments>`_ (uses conda)
+- `LUNARC: Not documented (yet), pick any other center instead
 - `UPPMAX virtual environments <http://docs.uppmax.uu.se/software/python_virtual_environments/>`_
 
 In this session, we use ``venv``, as it works for all centers.
-
-- `HPC2N venv <https://docs.hpc2n.umu.se/tutorials/userinstalls/#venv>`_
-- LUNARC: Not documented yet
-- `UPPMAX venv <https://docs.uppmax.uu.se/software/python_venv/>`_
-
 
 General workflow
 ----------------
@@ -171,7 +167,7 @@ Exercise 1.1: load the modules needed
 
         .. code-block:: console
 
-            module load GCC/12.2.0  OpenMPI/4.1.4 Seaborn/0.12.2
+            module load GCC/12.2.0 OpenMPI/4.1.4 Seaborn/0.12.2
 
         This virtual environment will be used in later sessions too
         and is assumed to contain the ``seaborn`` Python package.
