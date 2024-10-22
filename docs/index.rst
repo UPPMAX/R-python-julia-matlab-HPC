@@ -138,7 +138,7 @@ Schedule Fall 2024
 
 .. warning::
 
-   - **Please be sure that you have gone through the `pre-requirements <https://uppmax.github.io/R-python-julia-matlab-HPC/prereqs.html>`_ **
+   - **Please be sure that you have gone through the `pre-requirements <https://uppmax.github.io/R-python-julia-matlab-HPC/prereqs.html>`_**
    - It mentions the familiarity with the LINUX command line.
    - The applications to connect to the clusters
       - terminals
@@ -226,7 +226,11 @@ Prepare your environment now!
 
            - Terminal: ``ssh -X <user>@rackham.uppmax.uu.se``
 
-           - ThinLinc app: ``<user>@rackham-gui.uppmax.uu.se``
+           - ThinLinc app: 
+
+               - server: ``rackham-gui.uppmax.uu.se``
+               - username: ``<user>``
+
            - ThinLinc in web browser: ``https://rackham-gui.uppmax.uu.se``
 
          2. If not already: **create a working directory** where you can code along.
@@ -237,26 +241,32 @@ Prepare your environment now!
 
             .. code-block:: console
 
-               $ mkdir /proj/r-py-jl/mrspock/
-               $ mkdir /proj/naiss2024-22-107/mrspock/
-
+               $ mkdir /proj/r-py-jl-m-rackham/mrspock/
+ 
       .. tab:: HPC2N
 
          - Kebnekaise through terminal: ``<user>@kebnekaise.hpc2n.umu.se``
-         - Kebnekaise through ThinLinc, use: ``<user>@kebnekaise-tl.hpc2n.umu.se``
+
+         - Kebnekaise through ThinLinc app
+
+               - server: ``kebnekaise-tl.hpc2n.umu.se``
+               - username: ``<user>``
 
          - Create a working directory where you can code along.
 
-           - Example. If your username is bbrydsoe and you are at HPC2N, then we recommend you create this folder:
+           - Example. If your username is ``bbrydsoe`` and you are at HPC2N, then we recommend you create this folder:
 
            .. code-block:: console
 
-              $ /proj/nobackup/hpc2n2023-110/bbrydsoe/
+              $ /proj/nobackup/r-py-jl-m/bbrydsoe/
 
       .. tab:: Cosmos
 
          - Cosmos through terminal: ``<user>@cosmos.lunarc.lu.se``
-         - Cosmos through ThinLinc, use: ``<user>@cosmos-dt.lunarc.lu.se`` (requires 2FA)
+         - Cosmos through ThinLinc app,  (requires 2FA)
+
+               - server: ``cosmos-dt.lunarc.lu.se``
+               - username: ``<user>``
 
          - Create a working directory where you can code along. Users should have plenty of space in their home directories.
 
