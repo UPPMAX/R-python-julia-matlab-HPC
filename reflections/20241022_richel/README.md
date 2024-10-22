@@ -38,3 +38,9 @@ requires that.
 
 - [Python](https://forms.office.com/e/G4U0gKL76w)
 - [R](https://forms.office.com/e/g1HiqfEaXi)
+
+9:18: Around 12 learners have visited. After telling each of them
+that they can go if (1) they have logged in and (2) can use a text editor,
+around 3 hang around with their cameras off. I assume they are
+waiting for the lesson to start.
+

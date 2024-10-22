@@ -1,7 +1,16 @@
 Pre-requirements
 ================
 
-To be able to follow this course, you need to be able to log in to at least one of our HPC clusters, in at least one way.
+.. admonition:: Goal
+
+    The goal of this page to make sure you can follow the course.
+
+These are the things you need to follow the course:
+
+- you can log in to at least one HPC cluster, in at least one way
+- you can start a text editor
+
+These are discussed in detail below
 
 .. note::
 
@@ -93,6 +102,17 @@ Need help? Contact support:
 | UPPMAX     | `Contact UPPMAX support <https://docs.uppmax.uu.se/support/>`_        |
 +------------+------------------------+----------------------------------------------+
 
+Use a text editor
+-----------------
+
+All clusters provide the most common command-line text editors.
+We recommend ``nano`` unless you are used to another editor:
+
+- `HPC2N documentation on text editors <https://docs.hpc2n.umu.se/tutorials/linuxguide/#editors>`_ 
+- `UPPMAX documentation on text editors <http://docs.uppmax.uu.se/software/text_editors/>`_ 
+- LUNARC does not have documentation on text editors (yet), but any other
+  center's documentation will work
+
 Get familiar with the Linux/Bash command line
 ---------------------------------------------
 
@@ -111,18 +131,3 @@ Get familiar with the Linux/Bash command line
 
 - LUNARC
     - Any of the above links would be helpful for you
-
-
-Get familiar with a text editor on a cluster
-----------------------------------------------
-
-All clusters provide the most common command-line text editors.
-We recommend ``nano`` unless you are used to another editor:
-
-- `HPC2N documentation on text editors <https://docs.hpc2n.umu.se/tutorials/linuxguide/#editors>`_ 
-- `UPPMAX documentation on text editors <http://docs.uppmax.uu.se/software/text_editors/>`_ 
-- LUNARC does not have documentation on text editors (yet), but any other
-  center's documentation will work
-
-
-
