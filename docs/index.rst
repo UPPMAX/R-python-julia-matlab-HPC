@@ -176,7 +176,7 @@ The HPC centers UPPMAX, HPC2N, and LUNARC
 Prepare your environment now!
 -----------------------------
 
-.. type-along::
+.. challenge:: Log in and create a user folder
 
    - Please log in to Rackham, Kebnekaise, Cosmos or other cluster that you are using.
 
@@ -184,7 +184,7 @@ Prepare your environment now!
 
       - It is up to you!
       - Graphics come easier with Thinlinc
-      - For this course, when having many windows open, it may be better to run in terminal, for screen space issues.
+      - For this course, when having many windows open, it may sometimes be better to run in terminal, for screen space issues.
 
    .. tabs::
 
@@ -238,7 +238,21 @@ Prepare your environment now!
 
          - Create a working directory where you can code along. Users should have plenty of space in their home directories.
 
-.. admonition:: Do you want the whole repo?
+.. admonition:: Get exercises
+
+   There are three main ways to get the exercises. In any case, you should do so from the directory you will be working in, on either Rackham, Kebnekaise, or Cosmos: 
+
+   - Copy them from the computer system you are on (only until 2024-11-01) and unpack them by entering ``tar -xzvf exercises.tar.gz``
+
+      - Rackham: ``cp /proj/r-py-jl-m-rackham/exercises.tar.gz`` .
+      - Kebnekaise: ``cp /proj/nobackup/r-py-jl-m/exercises.tar.gz`` .
+      - (No local repository for Cosmos)
+
+   - Clone them with git from the repo (see below about a warning): ``git clone https://github.com/UPPMAX/R-python-julia-matlab-HPC.git``
+   - Copy the tarball from the web into your working directory with ``wget https://github.com/UPPMAX/R-python-julia-matlab-HPC/raw/refs/heads/main/exercises/exercises.tar.gz`` and unpack them with ``tar -xzvf exercises.tar.gz``
+   
+
+.. warning:: Do you want the whole repo?
 
    - If you are happy with just the exercises, the tarballs of the language specific ones are enough.
    - By cloning the whole repo, you get all the materials, planning documents, and exercises.
@@ -247,7 +261,7 @@ Prepare your environment now!
    - Note however, that if you during exercise work modify files, they will be overwritten if you make ``git pull`` (like if the teacher needs to modify something).
       - Then make a copy somewhere else with your answers!
 
-.. hint::
+.. admonition:: Summary of Project ID and directory name
 
    - Main project on UPPMAX:
      
@@ -266,20 +280,6 @@ Prepare your environment now!
 
         - Project ID: ``lu2024-7-80`` (for use in slurm scripts)
         - Home directories have much larger quotas at LUNARC than at UPPMAX or HPC2N. Create a suitable sub-directory in your home directory or a personal project folder.
-
-.. admonition:: Exercises
-
-   There are three main ways to get the exercises. In any case, you should do so from the directory you will be working in, on either Rackham, Kebnekaise, or Cosmos: 
-
-   - Copy them from the computer system you are on (only until 2024-11-01) and unpack them by entering ``tar -xzvf exercises.tar.gz``
-
-      - Rackham: ``cp /proj/r-py-jl-m-rackham/exercises.tar.gz`` .
-      - Kebnekaise: ``cp /proj/nobackup/r-py-jl-m/exercises.tar.gz`` .
-      - (No local repository for Cosmos)
-
-   - Clone them with git from the repo: ``git clone https://github.com/UPPMAX/R-python-julia-matlab-HPC.git``
-   - Copy the tarball from the web into your working directory with ``wget https://github.com/UPPMAX/R-python-julia-matlab-HPC/raw/refs/heads/main/exercises/exercises.tar.gz`` and unpack them with ``tar -xzvf exercises.tar.gz``
-   
 
 Content of the course
 ---------------------
