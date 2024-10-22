@@ -73,27 +73,27 @@ Schedule
      - Lunch
      - .
    * - 13:00
-     - Batch
+     - Batch (RB: needs 10 more minutes next iteration)
      - BB
-   * - 13:30
+   * - 13:30 (RB: move to 10 minutes later next iteration)
      - GPU
      - BB
-   * - 13:50
+   * - 13:50 (RB: move to 10 minutes later next iteration)
      - Break
      - .
-   * - 14:05
+   * - 14:05 (RB: move to 10 minutes later next iteration)
      - Simultaneous sessions
      - BB * RB * RP
-   * - 14:35
+   * - 14:35 (RB: move to 10 minutes later next iteration)
      - Break
      - .
-   * - 14:50
+   * - 14:50 (RB: move to 10 minutes later next iteration)
      - Parallel and multi-threaded functions
      - PO
-   * - 15:35
+   * - 15:35 (RB: move to 10 minutes later next iteration)
      - Summary and evaluation
      - RB
-   * - 15:50
+   * - 15:50 (RB: move to 10 minutes later next iteration)
      - End of the day
      - .
 
