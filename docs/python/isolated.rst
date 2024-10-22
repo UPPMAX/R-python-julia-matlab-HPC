@@ -76,7 +76,7 @@ Although ``venv`` has an `official Python 'Virtual Environments and Packages' tu
 most centers have their documentation on virtual environment managers with information specific to its clusters:
 
 - `HPC2N working with venv <https://docs.hpc2n.umu.se/tutorials/userinstalls/#working__with__venv>`_
-- `LUNARC: Not documented (yet), pick any other center instead
+- LUNARC: Not documented (yet), pick any other center instead
 - `UPPMAX virtual environments <http://docs.uppmax.uu.se/software/python_virtual_environments/>`_
 
 In this session, we use ``venv``, as it works for all centers.
