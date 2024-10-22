@@ -26,7 +26,7 @@ These are the ways to access your HPC cluster and how that looks like:
 These are the ways to access your HPC cluster and some of their features:
 
 +---------------------------------------------+-------------------------------------------------------------------+
-| How to access your HPC cluster              | Features
+| How to access your HPC cluster              | Features                                                          |
 +=============================================+===================================================================+
 | Remote desktop via a website                | Familiar remote desktop                                           |
 +---------------------------------------------+-------------------------------------------------------------------+
