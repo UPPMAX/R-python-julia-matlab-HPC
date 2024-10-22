@@ -46,7 +46,7 @@ Schedule
      - Topic
      - Teacher(s)
    * - 9:00
-     - First login
+     - (optional) First login
      - BB + PO + RB + RP
    * - 9:45
      - Break 
