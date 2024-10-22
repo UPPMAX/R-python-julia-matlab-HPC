@@ -1,6 +1,18 @@
 Log in session 
 ==============
 
+.. admonition:: Goal
+
+    The goal of this optional sessions is to make sure that
+    you have fulledfilled the 
+    `prerequisites <https://uppmax.github.io/R-python-julia-matlab-HPC/prereqs.html>`_
+    to follow this course:
+
+    - you can log in
+    - you can start a text editor
+
+    If you can, see you at 10:00 sharp! Else, see you in this session.
+
 .. admonition:: Cluster-specific approaches
 
    - The course is a cooperation between **UPPMAX** (Rackham, Snowy, Bianca), **HPC2N** (Kebnekaise) and **LUNARC** (Cosmos) and will focus on the compute systems at all these centres.
