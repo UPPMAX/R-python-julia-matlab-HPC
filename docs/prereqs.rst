@@ -83,19 +83,15 @@ Here is an overview of where to find the documentation and a video showing the p
 
 Need help? Contact support:
 
-.. tabs::
-
-   .. tab:: Rackham
-
-      `Contact UPPMAX support <https://docs.uppmax.uu.se/support/>`_
-
-   .. tab:: Kebnekaise
-
-      `Contact HPC2N support <https://docs.hpc2n.umu.se/support/contact/>`_
-
-   .. tab:: COSMOS
-
-      `Contact LUNARC support <https://www.lunarc.lu.se/getting-help/>`_
++------------+-----------------------------------------------------------------------+
+| HPC Center | How to contact support                                                |
++============+=======================================================================+
+| HPC2N      | `Contact HPC2N support <https://docs.hpc2n.umu.se/support/contact/>`_ |
++------------+------------------------+----------------------------------------------+
+| LUNARC     | `Contact LUNARC support <https://www.lunarc.lu.se/getting-help/>`_    |
++------------+------------------------+----------------------------------------------+
+| UPPMAX     | `Contact UPPMAX support <https://docs.uppmax.uu.se/support/>`_        |
++------------+------------------------+----------------------------------------------+
 
 Get familiar with the Linux/Bash command line
 ---------------------------------------------
