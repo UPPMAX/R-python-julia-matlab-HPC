@@ -26,16 +26,14 @@ Python packages
             - What are Python packages?
             - Why use Python packages?
             - How to find out if a package is already installed?
-            - What are some Python package installers?
-            - What are the differences?
+            - How to install a Python package?
         - 5 mins: presentation
         - 15 mins: challenge
         - 5 mins: feedback
             - What are Python packages?
             - Why use Python packages?
             - How to find out if a package is already installed?
-            - What are some Python package installers?
-            - What are the differences?
+            - How to install a Python package?
 
 .. admonition:: Compute allocations in this workshop 
 
