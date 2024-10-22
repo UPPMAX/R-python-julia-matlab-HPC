@@ -11,7 +11,7 @@ To be able to follow this course, you need to be able to log in to at least one 
 Log in to one of the HPC systems covered in this course
 -------------------------------------------------------
 
-These are the ways to access your HPC cluster:
+These are the ways to access your HPC cluster and how that looks like:
 
 +---------------------------------------------+-------------------------------------------------------------------+
 | How to access your HPC cluster              | How it looks like                                                 |
@@ -23,26 +23,40 @@ These are the ways to access your HPC cluster:
 | Console environment using an SSH client     | .. figure:: img/login_rackham_via_terminal_terminal_409_x_290.png |
 +---------------------------------------------+-------------------------------------------------------------------+
 
+These are the ways to access your HPC cluster and some of their features:
+
 +---------------------------------------------+-------------------------------------------------------------------+
 | How to access your HPC cluster              | Features
 +=============================================+===================================================================+
-| Remote desktop via a website                | - Familiar remote desktop                                         |
-|                                             | - Clumsy and clunky                                               |
-|                                             | - Slow on UPPMAX                                                  |
-|                                             | - No need to install software                                     |
-|                                             | - Works on HPC2N and UPPMAX                                       |
-|                                             | - Needs 2FA for UPPMAX                                            |
+| Remote desktop via a website                | Familiar remote desktop                                           |
 +---------------------------------------------+-------------------------------------------------------------------+
-| Remote desktop via a local ThinLinc client  | - Familiar remote desktop                                         |
-|                                             | - Clumsy                                                          |
-|                                             | - Need to install ThinLinc                                        |
-|                                             | - Works on all centers                                            |
-|                                             | - Needs 2FA for UPPMAX                                            |
+|                                             | Clumsy and clunky                                                 |
 +---------------------------------------------+-------------------------------------------------------------------+
-| Console environment using an SSH client     | - A console environment may be unfamiliar                         |
-|                                             | - Great to use                                                    |
-|                                             | - Need to install an SSH client                                   |
-|                                             | - Works on all centers                                            |
+|                                             | Slow on UPPMAX                                                    |
++---------------------------------------------+-------------------------------------------------------------------+
+|                                             | No need to install software                                       |
++---------------------------------------------+-------------------------------------------------------------------+
+|                                             | Works on HPC2N and UPPMAX                                         |
++---------------------------------------------+-------------------------------------------------------------------+
+|                                             | Needs 2FA for UPPMAX                                              |
++---------------------------------------------+-------------------------------------------------------------------+
+| Remote desktop via a local ThinLinc client  | Familiar remote desktop                                           |
++---------------------------------------------+-------------------------------------------------------------------+
+|                                             | Clumsy                                                            |
++---------------------------------------------+-------------------------------------------------------------------+
+|                                             | Need to install ThinLinc                                          |
++---------------------------------------------+-------------------------------------------------------------------+
+|                                             | Works on all centers                                              |
++---------------------------------------------+-------------------------------------------------------------------+
+|                                             | Needs 2FA for UPPMAX                                              |
++---------------------------------------------+-------------------------------------------------------------------+
+| Console environment using an SSH client     | A console environment may be unfamiliar                           |
++---------------------------------------------+-------------------------------------------------------------------+
+|                                             | Great to use                                                      |
++---------------------------------------------+-------------------------------------------------------------------+
+|                                             | Need to install an SSH client                                     |
++---------------------------------------------+-------------------------------------------------------------------+
+|                                             | Works on all centers                                              |
 +---------------------------------------------+-------------------------------------------------------------------+
 
 .. tabs::
