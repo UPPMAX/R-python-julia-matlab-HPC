@@ -13,6 +13,19 @@ Log in to one of the HPC systems covered in this course
 
 These are the ways to access your HPC cluster:
 
++---------------------------------------------+-------------------------------------------------------------------+
+| How to access your HPC cluster              | How does that look like                                           |
++=============================================+===================================================================+
+| Remote desktop via a website                | .. figure:: img/rackham_remote_desktop_via_website_480_x_270.png  |
+|                                             |     :width: 480                                                   |
++---------------------------------------------+-------------------------------------------------------------------+
+| Remote desktop via a local ThinLinc client  | .. figure:: img/thinlinc_local_rackham_zoom.png                   |
+|                                             |     :width: 480                                                   |
++---------------------------------------------+-------------------------------------------------------------------+
+| Console environment using an SSH client     | .. figure:: img/login_rackham_via_terminal_terminal_409_x_290.png |
+|                                             |     :width: 480                                                   |
++---------------------------------------------+-------------------------------------------------------------------+
+
 .. tabs::
 
    .. tab:: Log in to a website
