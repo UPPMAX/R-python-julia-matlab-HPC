@@ -20,18 +20,14 @@ Session: Matlab in Jupyter
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: ``naiss2024-22-107``
-   - Kebnekaise: ``hpc2n2024-025``
+   - Rackham: ``naiss2024-22-1202``
+   - Kebnekaise: ``hpc2n2024-114``
 
 There are several ways to run Matlab interactively
 
 - Directly on the login nodes: **only** do this for short jobs that do not take a lot of resources
 - As an interactive job on the computer nodes, launched via the batch system or Desktop On-Demand (LUNARC)
 - Jupyter notebooks (HPC2N, UPPMAX)
-
-
-Running Matlab in a Jupyter notebook 
-------------------------------------
 
 - Like for Python it is possible to run Matlab in a notebook, i.e. in a web interface with possibility of inline 
         figures and debugging. An easy way to do this is to load *Python* and *Matlab* modules. In shell:
