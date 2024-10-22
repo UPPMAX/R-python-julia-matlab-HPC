@@ -189,7 +189,7 @@ Exercise 1.2: create the virtual environment
 
 .. tabs::
 
-   .. tab:: HPC2N
+    .. tab:: HPC2N
 
         Create the virtual environment called ``vpyenv`` as such:      
 
@@ -197,7 +197,8 @@ Exercise 1.2: create the virtual environment
 
             python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/[username]/python/vpyenv
 
-        where ``[username]`` is your HPC2N username, for example ``python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/sven/python/vpyenv``.
+        where ``[username]`` is your HPC2N username,
+        for example ``python -m venv --system-site-packages /proj/nobackup/r-py-jl-m/sven/python/vpyenv``.
 
     .. tab:: LUNARC
 
