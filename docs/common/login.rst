@@ -30,6 +30,19 @@ Log in session
 Log in!
 -------
 
++------------+------------------------+-------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| HPC Center | Method                 | Documentation                                                                                         | Video                                                     |
++============+========================+=======================================================================================================+===========================================================+
+| HPC2N      | SSH                    | `here <https://docs.hpc2n.umu.se/documentation/access/>_                                              | `here <https://youtu.be/pIiKOKBHIeY?si=2MVHoFeAI_wQmrtN>_ |
+| HPC2N      | Local ThinLinc client  | `here <https://docs.hpc2n.umu.se/documentation/access/>_                                              | `here <https://youtu.be/_jpj0GW9ASc?si=1k0ZnXABbhUm0px6>_ |
+| HPC2N      | Remote desktop website | `here <https://docs.hpc2n.umu.se/documentation/access/>_                                              | `here <https://youtu.be/_O4dQn8zPaw?si=z32av8XY81WmfMAW>_ |
+| LUNARC     | SSH                    | `here <https://lunarc-documentation.readthedocs.io/en/latest/getting_started/login_howto/>_           | `here <https://youtu.be/sMsenzWERTg>_                     |
+| LUNARC     | Local ThinLinc client  | `here <https://lunarc-documentation.readthedocs.io/en/latest/getting_started/using_hpc_desktop/>_     | `here <https://youtu.be/wn7TgElj_Ng>_                     |
+| UPPMAX     | SSH                    | `here <https://docs.uppmax.uu.se/getting_started/login_rackham_remote_desktop_local_thinlinc_client>_ | `here <https://youtu.be/TSVGSKyt2bQ>_                     |
+| UPPMAX     | Local ThinLinc client  | `here <https://docs.uppmax.uu.se/getting_started/login_rackham_console_password/>_                    | `here <https://youtu.be/PqEpsn74l0g>_                     |
+| UPPMAX     | Remote desktop website | `here <https://docs.uppmax.uu.se/getting_started/login_rackham_remote_desktop_website/>_              | `here <https://youtu.be/HQ2iuKRPabc>_                     |
++------------+------------------------+-------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+
 .. type-along::
   
    - Please log in to Rackham, Kebnekaise or other cluster that you are using.
@@ -37,7 +50,7 @@ Log in!
    .. admonition:: Use Thinlinc or terminal?
 
       - It is up to you!
-      - Graphics come easier with Thinlinc
+      - Graphics come easier with ThinLinc
       - For this course, when having many windows open, it may be better to run in terminal, for screen space issues.
 
 
