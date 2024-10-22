@@ -1,7 +1,7 @@
 Evaluation
 ==========
 
-The evaluation form can be found `here <https://forms.office.com/e/G4U0gKL76w>`_.
+The evaluation form for the Julia part can be found `here <https://forms.office.com/e/PzkkX3SvB1>`_.
 It takes into account that one may need to leave early too.
   
 
