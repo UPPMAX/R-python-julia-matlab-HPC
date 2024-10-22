@@ -4,6 +4,7 @@
 #SBATCH -n 24
 #SBATCH -o output_%j.out   # output file
 #SBATCH -e error_%j.err    # error messages
+#SBATCH --ntasks-per-node=1
 #SBATCH -p gpua100
 #SBATCH --gres=gpu:1
 #SBATCH --exclusive

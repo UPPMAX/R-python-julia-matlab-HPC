@@ -1,6 +1,7 @@
 #!/bin/bash
 #SBATCH -A lu2024-7-80 # Change to your own after the course
 #SBATCH --time=00:10:00 # Asking for 10 minutes
+#SBATCH --ntasks-per-node=1
 # Asking for one A100 card
 #SBATCH -p gpua100
 #SBATCH --gres=gpu:1
