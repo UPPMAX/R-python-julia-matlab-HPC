@@ -2,7 +2,7 @@
 
  * Teaching day: 2024-10-22
  * Topic: Python
- * Written on 2024-1?-??
+ * Written on 2024-10-22
 
 Before teaching, one thing that I think can be improved,
 is our decision making. As an example, there was a change
@@ -22,5 +22,19 @@ Markdown is mentioned and admired, where RestructuredText is completely absent.
 I'd enjoy converting all these pages to Markdown and then use good MkDocs
 instead :+1:
 
+Before teaching, I was wondering about how we make sure the learners log
+in. Currently, there is an onboarding session and a daily 9:00-9:50
+optional login session. I feel we treat the learners better than reasonable:
+when it is in the course prerequisites that its is required to be able to
+log in and we have an onboarding, we should be able to assume that learners
+can log in. This means that when a learner joins without being able
+to log in, it is acceptable to only help the learner when there is time
+(which is close to never). One way to meet in the middle, is to have daily
+log in sessions at 8:00, so this will not affect the teaching.
 
+Before teaching, I saw the evaluation. Beyond the 'rate your confidence'
+questions I prepared, more questions were added. Maybe because HPC2N
+requires that. 
 
+- Python: https://forms.office.com/e/G4U0gKL76w
+R: https://forms.office.com/e/g1HiqfEaXi

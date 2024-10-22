@@ -1,6 +1,8 @@
 Evaluation
 ==========
 
+https://forms.office.com/e/g1HiqfEaXi
+
 These are the evaluation questions.
 The goals of these questions is to find out how successful
 the course is in achieving its teaching goals.
