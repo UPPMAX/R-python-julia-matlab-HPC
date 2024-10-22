@@ -80,7 +80,7 @@ run on the allocated nodes instead of the login node.
       
 where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in 
       hours, minutes, and seconds (maximum T168 hours), and then you give the id for your project 
-      (**naiss2024-22-107** for this course)
+
 
 Your request enters the job queue just like any other job, and interactive/salloc will tell you that it is
       waiting for the requested resources. When salloc tells you that your job has been allocated 
@@ -165,16 +165,11 @@ Example **Code along**
    
          .. code-block:: console
       
-            [bjornc@cosmos1 ~]$ interactive -A naiss2024-22-1202 -p core -n 4 -t 10:00
-            You receive the high interactive priority.
-            There are free cores, so your job is expected to start at once.
-      
-            Please, use no more than 6.4 GB of RAM.
-      
-            Waiting for job 29556505 to start...
-            Starting job now -- you waited for 1 second.
+            [bjornc@cosmos1 ~]$ interactive -A lu2024-7-80 -p core -n 4 -t 10:00
+            Cluster name: COSMOS   
+            Waiting for JOBID 930844 to start
           
-            [bjornc@cn050 ~]$ module load julia/1.8.5
+            [bjornc@cn050 ~]$ module load Julia/1.8.5-linux-x86_64
 
          Let us check that we actually run on the compute node: 
 
