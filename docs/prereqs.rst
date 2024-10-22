@@ -59,54 +59,6 @@ These are the ways to access your HPC cluster and some of their features:
 |                                             | Works on all centers                                              |
 +---------------------------------------------+-------------------------------------------------------------------+
 
-.. tabs::
-
-   .. tab:: Log in to a website
-
-      Kebnekaise and Rackham offer a website to access a remote desktop
-      environment that one can use without any installation.
-
-      COSMOS does not have this functionality.
-
-      .. figure:: img/rackham_remote_desktop_via_website_480_x_270.png
-         :width: 480
-         :align: center
-
-   .. tab:: Log in via a local ThinLinc client
-
-      All centers allow to access a remote desktop
-      environment via a local ThinLinc client.
-
-      .. figure:: img/thinlinc_local_rackham_zoom.png
-         :width: 480
-         :align: center
-
-   .. tab:: Log in via SSH
-
-      All centers allow to access a terminal environment via an SSH client.
-
-      .. figure:: img/login_rackham_via_terminal_terminal_409_x_290.png
-         :width: 480
-         :align: center
-
-
-To learn how to log in to your cluster so, follow its documentation:
-
-.. tabs::
-
-   .. tab:: Rackham
-
-      See `the UPPMAX documentation on how to log in to Rackham <https://docs.uppmax.uu.se/getting_started/login_rackham/>`_
-
-   .. tab:: Kebnekaise
-
-      See `the HPC2N documentation on how to log in to Kebnekaise <https://docs.hpc2n.umu.se/tutorials/quickstart/>`_
-
-   .. tab:: COSMOS
-
-      See the LUNARC documentation on `how to log in to COSMOS's remote desktop <https://lunarc-documentation.readthedocs.io/en/latest/getting_started/using_hpc_desktop//>`_
-      and `how to log in to COSMOS using SSH <https://lunarc-documentation.readthedocs.io/en/latest/getting_started/login_howto/>`_
-
 Here is an overview of where to find the documentation and a video showing the procedure:
 
 +------------+------------------------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
