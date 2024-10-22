@@ -485,8 +485,9 @@ Exercises
    - It offers several modes that can make your workflow easier, i.e.
    
       - ``Julian``
-      -``shell``
+      - ``shell``
       - ``package manager``
       - ``help``
+
    - Run scripts with ``julia <script.jl>``
     
