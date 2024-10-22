@@ -15,8 +15,8 @@ Sessions: Interactive work on compute nodes
    
 .. objectives:: 
 
-   - Show how to reach the calculation nodes on UPPMAX and HPC2N
-   - Test some commands on the calculation nodes
+   - be able to start interactive sessions
+   - Be able to run Julia in Jupyter notebook
 
 .. admonition:: Compute allocations in this workshop 
 
@@ -27,12 +27,12 @@ There are several ways to run Julia interactively
 
 - Directly on the login nodes: **only** do this for short jobs that do not take a lot of resources
 - As an interactive job on the computer nodes, launched via the batch system
-- Jupyter notebooks (UPPMAX)
+- Jupyter notebooks on compute node.
 
 General
 -------
 
-In order to run interactively, you need to have compute nodes allocated to run on, and this is done through the batch system.  
+In order to run interactively, you need to have compute nodes allocated to run on, and this is done through the Slurm system.  
 
 Because you will have to wait until the nodes are allocated, and because you cannot know when this happens, this is not usually a recommended way to run Julia, but it is possible. 
 
@@ -41,17 +41,17 @@ Because you will have to wait until the nodes are allocated, and because you can
     (HPC2N) Do note that it is not *real* interactivity as you probably mean it, as you will have to run it as a Julia script instead of by starting Julia and giving commands inside it. 
     - The reason for this is that you are not actually logged into the compute node and only sees the output of the commands you run. 
 
-    Another option would be to use Jupyter notebooks. 
-    This is somewhat convoluted to get to work correctly at HPC2N, but possible. Please contact us at support@hpc2n.umu.se if you want to go this route at HPC2N. 
-
-
-
 Julia "interactively" on the compute nodes 
 -------------------------------------------
 
-To run interactively, you need to allocate resources on the cluster first. 
-You can use the command salloc to allow interactive use of resources allocated to your job. 
-When the resources are allocated, you need to preface commands with ``srun`` in order to 
+.. info::
+
+   - On UPPMAX and LUNARC: ``interactive ...``
+      - You get graphics as well!
+   - On HPC2N: ``salloc``
+      - This command works as well on the other clusters but brings no or bad graphics.
+
+   - When the resources are allocated, you need to preface commands with ``srun`` in order to 
 run on the allocated nodes instead of the login node. 
       
 - First, you make a request for resources with ``interactive``/``salloc``, like this:
@@ -78,20 +78,19 @@ run on the allocated nodes instead of the login node.
       
 
       
-where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in 
-      hours, minutes, and seconds (maximum T168 hours), and then you give the id for your project 
+where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in  hours, minutes, and seconds (maximum T168 hours), and then you give the id for your project 
 
 
-Your request enters the job queue just like any other job, and interactive/salloc will tell you that it is
-      waiting for the requested resources. When salloc tells you that your job has been allocated 
-      resources, you can interactively run programs on those resources with ``srun``. The commands 
-      you run with ``srun`` will then be executed on the resources your job has been allocated. 
-      If you do not preface with ``srun`` the command is run on the login node! 
-      
+- Your request enters the job queue just like any other job, and interactive/salloc will tell you that it is waiting for the requested resources. 
+- When salloc tells you that your job has been allocated resources, you can interactively run programs on those resources with ``srun``. 
+- The commands you run with ``srun`` will then be executed on the resources your job has been allocated. 
+- 
 
-You can now run Julia scripts on the allocated resources directly instead of waiting for 
-      your batch job to return a result. This is an advantage if you want to test your Julia 
-      script or perhaps figure out which parameters are best.
+.. admonition:: On HPC2N
+
+   - If you do not preface with ``srun`` the command is run on the login node! 
+   - You can now run Julia scripts on the allocated resources directly instead of waiting for your batch job to return a result. 
+   - This is an advantage if you want to test your Julia script or perhaps figure out which parameters are best.
 
 .. admonition:: Documentation at the centers
 
