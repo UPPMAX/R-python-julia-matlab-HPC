@@ -63,6 +63,10 @@ Summary
     - Discuss in breakout rooms
     - Learn from each other
 
+.. evaluation:: 
+
+   You can find the evaluation form for the Julia part of the course here: https://forms.office.com/e/PzkkX3SvB1
+    
 .. seealso::
 
 
