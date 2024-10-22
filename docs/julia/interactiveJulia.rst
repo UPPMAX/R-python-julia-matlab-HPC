@@ -273,8 +273,12 @@ When you have finished using the allocation, either wait for it to end, or close
 
                   [~]$ 
 
-Running IJulia and Jupyter notebooks 
+Running IJulia and Jupyter notebooks
 ------------------------------------
+
+.. warning::
+
+   - So far, not yet tested successfully on Cosmos.
 
 .. tabs::
 
