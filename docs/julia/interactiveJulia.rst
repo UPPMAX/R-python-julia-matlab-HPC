@@ -20,8 +20,8 @@ Sessions: Interactive work on compute nodes
 
 .. admonition:: Compute allocations in this workshop 
 
-   - Rackham: ``naiss2024-22-107``
-   - Kebnekaise: ``hpc2n2024-025``
+   - Rackham: ``naiss2024-22-1202``
+   - Kebnekaise: ``hpc2n2024-114``
 
 There are several ways to run Julia interactively
 
@@ -61,13 +61,13 @@ run on the allocated nodes instead of the login node.
 
       .. code-block:: console
           
-         $ interactive -n <tasks> --time=HHH:MM:SS -A naiss2024-22-107
+         $ interactive -n <tasks> --time=HHH:MM:SS -A naiss2024-22-1202
       
    .. tab:: HPC2N (salloc)
 
       .. code-block:: console
           
-         $ salloc -n <tasks> --time=HHH:MM:SS -A hpc2n2023-110
+         $ salloc -n <tasks> --time=HHH:MM:SS -A hpc2n2023-114
          
       
 where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in 
@@ -99,7 +99,7 @@ Example **Code along**
 
          .. code-block:: console
       
-            [bjornc@rackham2 ~]$ interactive -A naiss2024-22-107 -p core -n 4 -t 10:00
+            [bjornc@rackham2 ~]$ interactive -A naiss2024-22-1202 -p core -n 4 -t 10:00
             You receive the high interactive priority.
             There are free cores, so your job is expected to start at once.
       
@@ -126,7 +126,7 @@ Example **Code along**
          
          .. code-block:: console
       
-            [~]$ salloc -n 4 --time=00:30:00 -A hpc2n2024-025
+            [~]$ salloc -n 4 --time=00:30:00 -A hpc2n2024-114
             salloc: Pending job allocation 20174806
             salloc: job 20174806 queued and waiting for resources
             salloc: job 20174806 has been allocated resources
@@ -319,7 +319,7 @@ Running IJulia and Jupyter notebooks
 
          #!/bin/bash
          # Here you should put your own project id
-         #SBATCH -A naiss2024-22-107
+         #SBATCH -A hpc2n2024-114
          # This example asks for 1 core
          #SBATCH -n 1
          # Ask for a suitable amount of time. Remember, this is the time the Jupyter notebook will be available! HHH:MM:SS.
