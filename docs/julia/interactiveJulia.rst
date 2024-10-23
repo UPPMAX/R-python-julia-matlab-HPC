@@ -281,9 +281,6 @@ When you have finished using the allocation, either wait for it to end, or close
 Running IJulia and Jupyter notebooks
 ------------------------------------
 
-.. warning::
-
-   - So far, not yet tested successfully on Cosmos.
 
 .. tabs::
 
@@ -349,7 +346,7 @@ Running IJulia and Jupyter notebooks
 
    .. tab:: HPC2N & LUNARC
 
-      - Like for Python it is possible to run a Julia in a notebook, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the *JupyterLab* and *Julia* modules. In shell:
+      - Like for Python it is possible to run a Julia in a Jupyter, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the *JupyterLab* and *Julia* modules. In shell:
 
       .. code-block:: console
 
