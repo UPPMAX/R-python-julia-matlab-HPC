@@ -1,13 +1,6 @@
 Sessions: Interactive work on compute nodes
 ===========================================
 
-.. note::
-
-   - It is possible to run Julia directly on the login (including ThinLinc) nodes.
-   - But this should *only* be done for shorter jobs or jobs that do not use a lot of resources, as the login nodes can otherwise become slow for all users. 
-   - If you want to work interactively with your code or data, you should start an interactive session.
-   - If you rather will run a script which won't use any interactive user input while running, you can instead start a batch job, see next session.
-   
 .. questions::
 
    - How to reach the calculation nodes
@@ -23,6 +16,13 @@ Sessions: Interactive work on compute nodes
    - Rackham: ``naiss2024-22-1202``
    - Kebnekaise: ``hpc2n2024-114``
 
+.. note::
+
+   - It is possible to run Julia directly on the login (including ThinLinc) nodes.
+   - But this should *only* be done for shorter jobs or jobs that do not use a lot of resources, as the login nodes can otherwise become slow for all users. 
+   - If you want to work interactively with your code or data, you should start an interactive session.
+   - If you rather will run a script which won't use any interactive user input while running, you can instead start a batch job, see next session.
+   
 There are several ways to run Julia interactively
 
 - Directly on the login nodes: **only** do this for short jobs that do not take a lot of resources
@@ -38,13 +38,13 @@ Because you will have to wait until the nodes are allocated, and because you can
 
 .. warning::
 
-    (HPC2N) Do note that it is not *real* interactivity as you probably mean it, as you will have to run it as a Julia script instead of by starting Julia and giving commands inside it. 
-    - The reason for this is that you are not actually logged into the compute node and only sees the output of the commands you run. 
+   - (HPC2N) Do note that it is not *real* interactivity as you probably mean it, as you will have to run it as a Julia script instead of by starting Julia and giving commands inside it. 
+   - The reason for this is that you are not actually logged into the compute node and only sees the output of the commands you run. 
 
 Julia "interactively" on the compute nodes 
 -------------------------------------------
 
-.. info::
+.. note::
 
    - On UPPMAX and LUNARC: ``interactive ...``
       - You get graphics as well!
@@ -84,7 +84,6 @@ where <tasks> is the number of tasks (or cores, for default 1 task per core), ti
 - Your request enters the job queue just like any other job, and interactive/salloc will tell you that it is waiting for the requested resources. 
 - When salloc tells you that your job has been allocated resources, you can interactively run programs on those resources with ``srun``. 
 - The commands you run with ``srun`` will then be executed on the resources your job has been allocated. 
-- 
 
 .. admonition:: On HPC2N
 
@@ -164,7 +163,7 @@ Example **Code along**
    
          .. code-block:: console
       
-            [bjornc@cosmos1 ~]$ interactive -A lu2024-7-80 -p core -n 4 -t 10:00
+            [bjornc@cosmos1 ~]$ interactive -A lu2024-7-80 -n 4 -t 10:00
             Cluster name: COSMOS   
             Waiting for JOBID 930844 to start
           
@@ -387,6 +386,15 @@ Running IJulia and Jupyter notebooks
 
          - On Kebnekaise, you can run Jupyter notebooks with Julia kernels by using batch scripts    
          - https://docs.hpc2n.umu.se/tutorials/jupyter/#jupyterlab__with__julia
+
+Exercises
+---------
+
+.. challenge:: 1. Try to run scripts from an interactive session 
+
+   - Try out one or two of the scripts from the exercise folder ``batchJulia``.
+   - First create an interactive session with the right Slurm commands to the ``interactive``/``salloc`` command.
+       - use the commands from the batch job script belonging to the julia script at `examples of batch scripts for julia <https://uppmax.github.io/R-python-julia-matlab-HPC/julia/batchJulia.html#examples-of-batch-scripts-for-julia>`_
 
 
 .. keypoints::
