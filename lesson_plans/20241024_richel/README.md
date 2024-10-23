@@ -58,3 +58,25 @@ Time  | Topic                   | State
 10:20 | Load modules and run    | 7/10
 14:30 | Simultaneous session    | Done
 16:00 | Summary and evaluation  | Done
+
+Currently, my sessions have two setups:
+
+![](tab_look.png)
+
+> The tab look
+
+![](dropdown_look.png)
+
+> The dropdown look
+
+Today I feel the dropdown look to be cleaner,
+as it preserves vertical space better,
+so I'll use that one instead.
+I do want to change the colors of the admonition per HPC center :-)
+
+- [ ] change the colors of the admonition per HPC center
+
+
+
+
+

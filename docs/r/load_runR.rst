@@ -579,42 +579,19 @@ Exercise 1: find an R module
 
     - find the module to be able to run R
 
-.. tabs::
+Use the module system to find which versions of R are provided
+by your cluster's module system.
 
-    .. tab:: Exercise 1: find an R module
+.. admonition:: Answer UPPMAX
+    :class: dropdown 
 
-        Use the module system to find which versions of R are provided
-        by your cluster's module system.
+    From a terminal, do:
 
-    .. tab:: HPC2N
-   
-        From a terminal, do:
+    .. code-block:: console
 
-        .. code-block:: console
- 
-            module spider R
+        module spider R
 
-        You will see a list of modules that provide for different versions of R.
-
-    .. tab:: LUNARC
-   
-        From a terminal, do:
-
-        .. code-block:: console
- 
-            module spider R
-
-        You will see a list of modules that provide for different versions of R.
-
-    .. tab:: UPPMAX
-
-        From a terminal, do:
-
-        .. code-block:: console
- 
-           module spider R
-
-        You will see a list of modules that provide for different versions of R.
+    You will see a list of modules that provide for different versions of R.
 
 
 Exercise 2: load an R module
@@ -636,27 +613,26 @@ For this course, we recommend these versions of R:
 |UPPMAX    |4.1.1    |
 +----------+---------+
 
-.. tabs::
+Load the module for the R version recommended to use in this course.
 
-    .. tab:: Exercise 2: load an R module
+.. admonition:: Answer HPC2N
+    :class: dropdown 
 
-        Load the module for the R version recommended to use in this course.
+    .. code-block:: console
 
-    .. tab:: HPC2N
+        module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2
 
-        .. code-block:: console
+.. admonition:: Answer LUNARC
+    :class: dropdown 
 
-            module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2
+    TODO
 
-    .. tab:: LUNARC
+.. admonition:: Answer UPPMAX
+    :class: dropdown 
 
-        TODO
+    .. code-block:: console
 
-    .. tab:: UPPMAX
-
-        .. code-block:: console
-
-            module load R/4.1.1
+        module load R/4.1.1
 
 
 Exercise 3: use the R interpreter
@@ -680,79 +656,36 @@ Exercise 3.1: start the R interpreter
 
 Start the R interpreter.
 
-.. tabs::
+.. admonition:: Answer
+    :class: dropdown 
 
-    .. tab:: HPC2N
+    .. code-block:: console
 
-        .. code-block:: console
-
-            R
-
-    .. tab:: LUNARC
-
-        .. code-block:: console
-
-            R
-
-    .. tab:: UPPMAX
-
-        .. code-block:: console
-
-            R
-
+        R
 
 Exercise 3.2: check which packages are installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 From within the R interpreter, check which packages are installed.
 
-.. tabs::
+.. admonition:: Answer HPC2N
+    :class: dropdown 
 
-    .. tab:: HPC2N
+    .. code-block:: console
 
-        .. code-block:: console
-
-            installed.packages()
-
-    .. tab:: LUNARC
-
-        .. code-block:: console
-
-            installed.packages()
-
-    .. tab:: UPPMAX
-
-        .. code-block:: console
-
-            installed.packages()
-
+        installed.packages()
 
 Exercise 3.3: load a package
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 From within the R interpreter, load the ``parallel`` package.
 
-.. tabs::
+.. admonition:: Answer HPC2N
+    :class: dropdown 
 
+    .. code-block:: console
 
-    .. tab:: HPC2N
-
-        .. code-block:: console
-
-            library(parallel)
-
-    .. tab:: LUNARC
-
-        .. code-block:: console
-
-            library(parallel)
-
-    .. tab:: UPPMAX
-
-        .. code-block:: console
-
-            library(parallel)
-
+        library(parallel)
          
 Exercise 4: run an R script
 ---------------------------
@@ -780,50 +713,50 @@ Exercise 4.2: run
 
 Run the R script called ``hello.R``, using ``Rscript``.
 
-.. tabs::
+.. admonition:: Answer HPC2N
+    :class: dropdown 
 
-    .. tab:: HPC2N
+    .. code-block:: console
 
-        .. code-block:: console
+        Rscript hello.R
 
-            Rscript hello.R
+    This will look similar to:
 
-        This will look similar to:
+    .. code-block:: console
 
-        .. code-block:: console
+        b-an01 [~]$ Rscript hello.R
+        [1] "Hello World!"
+        b-an01 [~]$ 
 
-            b-an01 [~]$ Rscript hello.R
-            [1] "Hello World!"
-            b-an01 [~]$ 
+.. admonition:: Answer LUNARC
+    :class: dropdown 
 
-    .. tab:: LUNARC
+    .. code-block:: console
 
-        .. code-block:: console
+        Rscript hello.R
 
-            Rscript hello.R
+    This will look similar to:
 
-        This will look similar to:
+    .. code-block:: console
 
-        .. code-block:: console
+        [bbrydsoe@rackham2 bbrydsoe]$ Rscript hello.R
+        [1] "Hello World!"
+        [bbrydsoe@rackham2 bbrydsoe]$
 
-            [bbrydsoe@rackham2 bbrydsoe]$ Rscript hello.R
-            [1] "Hello World!"
-            [bbrydsoe@rackham2 bbrydsoe]$
+.. admonition:: Answer UPPMAX
+    :class: dropdown 
 
+    .. code-block:: console
 
-    .. tab:: UPPMAX
+        Rscript hello.R
 
-        .. code-block:: console
+    This will look similar to:
 
-            Rscript hello.R
+    .. code-block:: console
 
-        This will look similar to:
-
-        .. code-block:: console
-
-            [bbrydsoe@rackham2 bbrydsoe]$ Rscript hello.R
-            [1] "Hello World!"
-            [bbrydsoe@rackham2 bbrydsoe]$
+        [bbrydsoe@rackham2 bbrydsoe]$ Rscript hello.R
+        [1] "Hello World!"
+        [bbrydsoe@rackham2 bbrydsoe]$
 
 Exercise 5: download and extract the tarbal with exercises
 ----------------------------------------------------------
