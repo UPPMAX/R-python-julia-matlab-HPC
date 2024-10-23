@@ -60,72 +60,20 @@ we will need to find a module that loads a specific version of R.
 HPC2N, UPPMAX, LUNARC, and most of the Swedish HPC centres use the same module system:
 
 - `the HPC2N documentation of the module system <https://docs.hpc2n.umu.se/documentation/modules/>`_
-- `the UPPMAX documentation of the module system <http://docs.uppmax.uu.se/cluster_guides/modules/>`_
 - `the LUNARC documentation of the module system <https://lunarc-documentation.readthedocs.io/en/latest/manual/manual_modules/#using-modules>`_ 
+- `the UPPMAX documentation of the module system <http://docs.uppmax.uu.se/cluster_guides/modules/>`_
 
-HPC2N, LUNARC, and UPPMAX do differ how their module systems show results when searching for a module with ``ml avail``:
+HPC2N, LUNARC, and UPPMAX do differ how their module systems show results when searching for a module with ``module avail``:
 
 - HPC2N: a module is hidden from search until a prerequisite module is loaded
-- UPPMAX: when searching for a module, one can always see all modules
 - LUNARC: a module is hidden from search until a prerequisite module is loaded
+- UPPMAX: when searching for a module, one can always see all modules
 
 All modules can be found with ``module spider`` though. 
 
 Here is how to find the modules that load different versions of R:
 
 .. tabs::
-
-    .. tab:: UPPMAX
-
-        From a terminal, do:
-
-        .. code-block:: console
- 
-           module spider R
-
-        .. admonition:: How does the output look like ?
-            :class: dropdown
-    
-            The output will look similar to this output
-            (run at UPPMAX on October 15 2023):
-
-            .. code-block::
-
-                [bbrydsoe@rackham3 bbrydsoe]$ module spider R
-
-                ----------------------------------------------------------------------------
-                R:
-                ----------------------------------------------------------------------------
-                   Versions:
-                      R/3.0.2
-                      R/3.2.3
-                      R/3.3.2
-                      R/3.4.0
-                      R/3.4.3
-                      R/3.5.0
-                      R/3.5.2
-                      R/3.6.0
-                      R/3.6.1
-                      R/4.0.0
-                      R/4.0.4
-                      R/4.1.1
-                      R/4.2.1
-                      R/4.3.1
-                   Other possible modules matches:
-                      454-dataprocessing  ADMIXTURE  ANTLR  ARCS  ARC_assembler  ARPACK-NG  ..
-                .
-                ----------------------------------------------------------------------------
-                  To find other possible module matches execute:
-            
-                      $ module -r spider '.*R.*'
-
-                ----------------------------------------------------------------------------
-                  For detailed information about a specific "R" package (including how to load the modules) use the module's full name.
-                  Note that names that have a trailing (E) are extensions provided by other modules.
-                  For example:
-            
-                     $ module spider R/4.2.1
-                ----------------------------------------------------------------------------
 
     .. tab:: HPC2N
    
@@ -215,44 +163,61 @@ Here is how to find the modules that load different versions of R:
                      $ module spider R/4.4.1
                 ------------------------------------------------------------------------------------------
 
+    .. tab:: UPPMAX
+
+        From a terminal, do:
+
+        .. code-block:: console
+
+           module spider R
+
+        .. admonition:: How does the output look like ?
+            :class: dropdown
+
+            The output will look similar to this output
+            (run at UPPMAX on October 15 2023):
+
+            .. code-block::
+
+                [bbrydsoe@rackham3 bbrydsoe]$ module spider R
+
+                ----------------------------------------------------------------------------
+                R:
+                ----------------------------------------------------------------------------
+                   Versions:
+                      R/3.0.2
+                      R/3.2.3
+                      R/3.3.2
+                      R/3.4.0
+                      R/3.4.3
+                      R/3.5.0
+                      R/3.5.2
+                      R/3.6.0
+                      R/3.6.1
+                      R/4.0.0
+                      R/4.0.4
+                      R/4.1.1
+                      R/4.2.1
+                      R/4.3.1
+                   Other possible modules matches:
+                      454-dataprocessing  ADMIXTURE  ANTLR  ARCS  ARC_assembler  ARPACK-NG  ..
+                .
+                ----------------------------------------------------------------------------
+                  To find other possible module matches execute:
+            
+                      $ module -r spider '.*R.*'
+
+                ----------------------------------------------------------------------------
+                  For detailed information about a specific "R" package (including how to load the modules) use the module's full name.
+                  Note that names that have a trailing (E) are extensions provided by other modules.
+                  For example:
+            
+                     $ module spider R/4.2.1
+                ----------------------------------------------------------------------------
  
 Here is how to find out how to load an R module of a specific version:
 
 .. tabs::
-
-    .. tab:: UPPMAX
-
-        To see how to load a specific version of R, including the prerequisites, do 
-
-        .. code-block:: console
-
-            module spider R/<version>
-
-        where ``<version>`` is an R version, in ``major.minor.patch`` format, 
-        for example, ``module spider R/4.1.1``.
-
-        .. admonition:: How does the output look like?
-            :class: dropdown
-
-            Your output will look similar to this:
-
-            .. code-block:: console
-
-                [bbrydsoe@rackham3 bbrydsoe]$ module load spider R/4.1.1
-                
-                ----------------------------------------------------------------------------
-                 R: R/4.1.1
-                ----------------------------------------------------------------------------
-                
-                    This module can be loaded directly: module load R/4.1.1
-                
-                Help:
-                    R - use R Version 4.1.1
-                
-                    https://www.r-project.org
-                
-                  Many, many R and Bioconductor packages are available in the module 
-                  'R_packages/4.1.2'
 
     .. tab:: HPC2N
    
@@ -355,6 +320,40 @@ Here is how to find out how to load an R module of a specific version:
                      assertive.datetimes-0.0-3, assertive.files-0.0-2, assertive.matrices-0.0-2,
                      ... 
         
+    .. tab:: UPPMAX
+
+        To see how to load a specific version of R, including the prerequisites, do 
+
+        .. code-block:: console
+
+            module spider R/<version>
+
+        where ``<version>`` is an R version, in ``major.minor.patch`` format, 
+        for example, ``module spider R/4.1.1``.
+
+        .. admonition:: How does the output look like?
+            :class: dropdown
+
+            Your output will look similar to this:
+
+            .. code-block:: console
+
+                [bbrydsoe@rackham3 bbrydsoe]$ module load spider R/4.1.1
+                
+                ----------------------------------------------------------------------------
+                 R: R/4.1.1
+                ----------------------------------------------------------------------------
+                
+                    This module can be loaded directly: module load R/4.1.1
+                
+                Help:
+                    R - use R Version 4.1.1
+                
+                    https://www.r-project.org
+                
+                  Many, many R and Bioconductor packages are available in the module 
+                  'R_packages/4.1.2'
+
   
 2. Load an R module
 -------------------
@@ -363,17 +362,6 @@ When you have a found a modules to load your favorite version of R,
 here is how you load that module:
 
 .. tabs::
-
-    .. tab:: UPPMAX
-
-        To load an R module of a specific version, do:
-
-        .. code-block:: console
-
-            module load R/<version>
-
-        where ``<version>`` is an R version, in ``major.minor.patch`` format, 
-        for example, ``module load R/4.1.1``
 
     .. tab:: HPC2N
 
@@ -387,6 +375,22 @@ here is how you load that module:
 
         where ``<version>`` is an R version, in ``major.minor.patch`` format, 
         for example, ``module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2``
+
+    .. tab:: LUNARC
+
+        TODO
+
+    .. tab:: UPPMAX
+
+        To load an R module of a specific version, do:
+
+        .. code-block:: console
+
+            module load R/<version>
+
+        where ``<version>`` is an R version, in ``major.minor.patch`` format, 
+        for example, ``module load R/4.1.1``
+
 
 
 If you care about reproducibility of your programming environments and R scripts,
@@ -582,16 +586,6 @@ Exercise 1: find an R module
         Use the module system to find which versions of R are provided
         by your cluster's module system.
 
-    .. tab:: UPPMAX
-
-        From a terminal, do:
-
-        .. code-block:: console
- 
-           module spider R
-
-        You will see a list of modules that provide for different versions of R.
-
     .. tab:: HPC2N
    
         From a terminal, do:
@@ -602,6 +596,27 @@ Exercise 1: find an R module
 
         You will see a list of modules that provide for different versions of R.
 
+    .. tab:: LUNARC
+   
+        From a terminal, do:
+
+        .. code-block:: console
+ 
+            module spider R
+
+        You will see a list of modules that provide for different versions of R.
+
+    .. tab:: UPPMAX
+
+        From a terminal, do:
+
+        .. code-block:: console
+ 
+           module spider R
+
+        You will see a list of modules that provide for different versions of R.
+
+
 Exercise 2: load an R module
 ----------------------------
 
@@ -611,17 +626,31 @@ Exercise 2: load an R module
 
 For this course, we recommend these versions of R:
 
-- HPC2N: R version 4.1.2
-- UPPMAX: R version 4.1.1
++----------+---------+
+|HPC center|R version|
++==========+=========+
+|HPC2N     |4.1.2    |
++----------+---------+
+|LUNARC    |?4.1.1   |
++----------+---------+
+|UPPMAX    |4.1.1    |
++----------+---------+
 
 .. tabs::
 
     .. tab:: Exercise 2: load an R module
 
-        Load the module for the R version recommended to use in this course:
+        Load the module for the R version recommended to use in this course.
 
-        - HPC2N: R version 4.1.2
-        - UPPMAX: R version 4.1.1
+    .. tab:: HPC2N
+
+        .. code-block:: console
+
+            module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2
+
+    .. tab:: LUNARC
+
+        TODO
 
     .. tab:: UPPMAX
 
@@ -629,11 +658,6 @@ For this course, we recommend these versions of R:
 
             module load R/4.1.1
 
-    .. tab:: HPC2N
-
-        .. code-block:: console
-
-            module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2
 
 Exercise 3: use the R interpreter
 ---------------------------------
@@ -645,7 +669,8 @@ Exercise 3: use the R interpreter
 
 .. mermaid:: load_run_r_interpreter.mmd 
 
-Here we 
+Here we:
+
 - start the R interpreter
 - find out which packages are already installed
 - load an R package
@@ -653,11 +678,21 @@ Here we
 Exercise 3.1: start the R interpreter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Start the R interpreter.
+
 .. tabs::
 
-    .. tab:: Exercise 3.1: start the R interpreter
+    .. tab:: HPC2N
 
-        Start the R interpreter.
+        .. code-block:: console
+
+            R
+
+    .. tab:: LUNARC
+
+        .. code-block:: console
+
+            R
 
     .. tab:: UPPMAX
 
@@ -665,26 +700,13 @@ Exercise 3.1: start the R interpreter
 
             R
 
-    .. tab:: HPC2N
-
-        .. code-block:: console
-
-            R
 
 Exercise 3.2: check which packages are installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+From within the R interpreter, check which packages are installed.
+
 .. tabs::
-
-    .. tab:: Exercise 3.2: check which packages are installed
-
-        From within the R interpreter, check which packages are installed.
-
-    .. tab:: UPPMAX
-
-        .. code-block:: console
-
-            installed.packages()
 
     .. tab:: HPC2N
 
@@ -692,22 +714,40 @@ Exercise 3.2: check which packages are installed
 
             installed.packages()
 
+    .. tab:: LUNARC
+
+        .. code-block:: console
+
+            installed.packages()
+
+    .. tab:: UPPMAX
+
+        .. code-block:: console
+
+            installed.packages()
+
+
 Exercise 3.3: load a package
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+From within the R interpreter, load the ``parallel`` package.
+
 .. tabs::
 
-    .. tab:: Exercise 3.3: load a package
 
-        From within the R interpreter, load the ``parallel`` package.
-
-    .. tab:: UPPMAX
+    .. tab:: HPC2N
 
         .. code-block:: console
 
             library(parallel)
 
-    .. tab:: HPC2N
+    .. tab:: LUNARC
+
+        .. code-block:: console
+
+            library(parallel)
+
+    .. tab:: UPPMAX
 
         .. code-block:: console
 
@@ -728,52 +768,19 @@ In this exercise, we will run an example script.
 Exercise 4.1: get an R script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. tabs::
+Get the R script `hello.R <https://raw.githubusercontent.com/UPPMAX/R-python-julia-HPC/main/exercises/r/hello.R>`_ by
+downloading it from the terminal:
 
-    .. tab:: Exercise 4.1: get an R script
+.. code-block:: console
 
-        Get the R script `hello.R <https://raw.githubusercontent.com/UPPMAX/R-python-julia-HPC/main/exercises/r/hello.R>`_ in any way.
-
-    .. tab:: 1. Download directly
-
-        Download the script directly using ``wget``
-
-        .. code-block:: console
-
-            wget https://raw.githubusercontent.com/UPPMAX/R-python-julia-HPC/main/exercises/r/hello.R
-
-    .. tab:: 3. Create from terminal, using ``nano``
-
-        Create the script yourself using ``nano``:
-
-        .. code-block:: console
-
-            nano hello.R
-
-        Copy-paste `the hello.R code <https://raw.githubusercontent.com/UPPMAX/R-python-julia-HPC/main/exercises/r/hello.R>`_.
+    wget https://raw.githubusercontent.com/UPPMAX/R-python-julia-HPC/main/exercises/r/hello.R
 
 Exercise 4.2: run
 ^^^^^^^^^^^^^^^^^
 
+Run the R script called ``hello.R``, using ``Rscript``.
+
 .. tabs::
-
-    .. tab:: Exercise 4.2: load a package
-
-        Run the R script called ``hello.R``, using ``Rscript``.
-
-    .. tab:: UPPMAX
-
-        .. code-block:: console
-
-            Rscript hello.R
-
-        This will look similar to:
-
-        .. code-block:: console
-
-            [bbrydsoe@rackham2 bbrydsoe]$ Rscript hello.R
-            [1] "Hello World!"
-            [bbrydsoe@rackham2 bbrydsoe]$
 
     .. tab:: HPC2N
 
@@ -789,6 +796,34 @@ Exercise 4.2: run
             [1] "Hello World!"
             b-an01 [~]$ 
 
+    .. tab:: LUNARC
+
+        .. code-block:: console
+
+            Rscript hello.R
+
+        This will look similar to:
+
+        .. code-block:: console
+
+            [bbrydsoe@rackham2 bbrydsoe]$ Rscript hello.R
+            [1] "Hello World!"
+            [bbrydsoe@rackham2 bbrydsoe]$
+
+
+    .. tab:: UPPMAX
+
+        .. code-block:: console
+
+            Rscript hello.R
+
+        This will look similar to:
+
+        .. code-block:: console
+
+            [bbrydsoe@rackham2 bbrydsoe]$ Rscript hello.R
+            [1] "Hello World!"
+            [bbrydsoe@rackham2 bbrydsoe]$
 
 Exercise 5: download and extract the tarbal with exercises
 ----------------------------------------------------------

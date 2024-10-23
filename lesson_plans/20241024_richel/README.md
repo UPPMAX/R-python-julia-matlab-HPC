@@ -31,7 +31,7 @@ Here is the current state of my sessions:
 
 Time  | Topic                   | State
 ------|-------------------------|------
-10:00 | Introduction            | 7/10
+10:00 | Introduction            | 10/10
 10:10 | Syllabus                | 7/10
 10:20 | Load modules and run    | 7/10
 14:30 | Simultaneous session    | Done
@@ -49,4 +49,12 @@ Also:
 
 - [x] Document how to get and extract the tarbal
 
+Last session:
 
+Time  | Topic                   | State
+------|-------------------------|------
+10:00 | Introduction            | Done
+10:10 | Syllabus                | Done
+10:20 | Load modules and run    | 7/10
+14:30 | Simultaneous session    | Done
+16:00 | Summary and evaluation  | Done
