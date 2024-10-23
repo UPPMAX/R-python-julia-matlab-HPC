@@ -21,7 +21,7 @@ Summary
       - Make it for each project you have for reproducibility.
       - Julia has its own mechanism to create virtual environments. 
   
-         - HPC2N 
+         - HPC2N & LUNARC
   
             - The Julia installation is lean, no additional package besides the Base and
               and Standard Libraries are installed.
@@ -43,9 +43,12 @@ Summary
         (similar flags)
       
          - At HPC2N: ``salloc`` ...
-         - At UPPMAX: ``interactive`` ...
+         - At UPPMAX/LUNARC: ``interactive`` ...
 
       - Follow the same procedure as usual by loading the Julia module and possible prerequisites.
+      - Run Julia in Jupyter lab/notebook
+
+         - Procedure is to use the IJulia package and start a jupyter notebook from the julia command line.
 
    - Parallel
       - You deploy cores and nodes via SLURM, either in interactive mode or batch
