@@ -742,15 +742,6 @@ Exercise 4.1: get an R script
 
             wget https://raw.githubusercontent.com/UPPMAX/R-python-julia-HPC/main/exercises/r/hello.R
 
-    .. tab:: 2. Create from terminal, using ``echo``
-
-        Create the script yourself:
-
-        .. code-block:: console
-
-            echo 'message <- "Hello World!"' > hello.R
-            echo 'print(message)' >> hello.R
-
     .. tab:: 3. Create from terminal, using ``nano``
 
         Create the script yourself using ``nano``:
@@ -760,21 +751,6 @@ Exercise 4.1: get an R script
             nano hello.R
 
         Copy-paste `the hello.R code <https://raw.githubusercontent.com/UPPMAX/R-python-julia-HPC/main/exercises/r/hello.R>`_.
-
-    .. tab:: 4. Download from GitHub
-
-        You can download the (files of the) exercises from 
-        `the course GitHub repo, in the exercises folder <https://github.com/UPPMAX/R-python-julia-HPC/tree/main/exercises/r>`_.
-
-    .. tab:: 5. UPPMAX: copy from tarball on Rackham
-
-        Copy the exercises from ``/proj/naiss2024-22-107/Exercises.tar.gz``
-        and uncompress the files.
-
-    .. tab:: 6. HPC2N: copy from tarball on Kebnekaise
-
-        Copy the exercises from ``/proj/nobackup/hpc2n2024-025/Exercises.tar.gz``
-        and uncompress the files.
 
 Exercise 4.2: run
 ^^^^^^^^^^^^^^^^^
