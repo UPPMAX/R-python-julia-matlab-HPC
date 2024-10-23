@@ -214,7 +214,7 @@ my colleague took over the teacher role again.
 In that improvised sessions, I did not talk much about IPython,
 as I feel it is useless and time should be spent differently,
 hence I predict low confidence for IPython.
-Addtionally, a colleague helped me remind about a shared document
+Additionally, a colleague helped me remind about a shared document
 where learners can ask questions. Also here, I spent less time
 on this shared document, as I think it is not worth my
 time to talk about a shared document I do not care about.
