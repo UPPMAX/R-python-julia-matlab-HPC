@@ -236,7 +236,7 @@ She wanted to know if `pip list --user` required an
 additional argument, such as a username. Instead of asking
 for clarification first, I rushed to give an answer, that
 was different from her question. My bad! One possible
-cause for this is that I feel unsecure about `pip list --user`:
+cause for this is that I feel insecure about `pip list --user`:
 I've never used it and I don't care, but it was in the course
 material. I should remove this.
 
