@@ -101,8 +101,6 @@ It takes into account that one may need to leave early too.
         - I can use the module system to load a specific version of Python
         - I can run Python
         - I can use the Python interpreter
-        - I can run IPython
-        - I can use the IPython interpreter
         - I can run a Python script
         - I can determine the version of a Python package
         - I can determine that a Python package is not installed

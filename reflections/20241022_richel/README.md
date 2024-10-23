@@ -296,3 +296,214 @@ Suggests for next course:
   are confident in a topic I taught. I am interested in their free
   comments too. Besides that, the evaluation form feels like an administrative
   monster
+
+## Summary of evaluation results
+
+There are 5 evaluation results, out of the 9 learners that stayed in the end.
+
+```
+1. Overall, how would you rate today's training event?
+- 7.4. Average Number
+```
+
+This question gives me no useful info.
+
+
+```
+2. Today's content and feedback to the lecturers (e.g. materials, exercises, structure): – What did you like best?
+- "the best parts were how to find correct modules, submit jobs, and the examples for parallel codes "
+- "materials"
+```
+
+This question gives me no useful info.
+
+
+```
+3. Today's content and feedback to the lecturers (e.g. materials, exercises, structure): – Where should we improve?
+
+- "the lecturers shouldn't say the person's names and point to specific persons to reply questions"
+- "Going through the examples more throughly."
+```
+
+I will definitely keep pointing to learners, as per the literature. 
+Next time, I will show the references to the literature again.
+
+
+```
+4. Training event organisation (e.g. announcement, registration, ...): – What did you like best? – Where should we improve?
+- "material online is excellent"
+- "well organized"
+```
+
+No info.
+
+```
+5. Length of teaching today was
+Adequate	3	
+Too short	1	
+Too long	1	
+```
+
+No info.
+
+```
+6. Depth of content was
+Adequate	5	
+Too superficial	0	
+Too profound	0	
+```
+
+No info.
+
+```
+7. The pace of teaching was
+Adequate	3	
+Too slow	0	
+Too fast	2	
+```
+
+No info: which session?
+
+```
+8. Teaching aids used (e.g. slides) were well prepared
+Agree completely	0	
+Agree	4	
+No strong feelings	0	
+Disagree	1	
+Disagree completely	0	
+```
+
+No info: which session?
+
+```
+9. Hands-on exercises and demonstrations were
+Adequate	3	
+Too few	2	
+Too many	0	
+```
+
+No info: which session?
+
+```
+10. Hands-on exercises and demonstrations were well prepared
+Agree completely	3	
+Agree	2	
+No strong feelings	0	
+Disagree	0	
+Disagree completely	0	
+```
+
+No info: which session?
+
+
+```
+11. How would you rate the separate sessions?
+Introduction
+Load and run
+Packages
+Isolated environments
+Python in batch
+Interactive work
+Jupyter
+Parallel
+Conda
+```
+
+![Ratings](ratings.png)
+
+I am happy to see that the 'Excellent's are all in sections
+that I taught ('Packages', 'Isolated environments')
+or that I may have taught (i.e. these we discussed in the simulaneous session)
+('Interactive work', 'Jupyter') or that I partially taught ('Load and run').
+The lowest rating ('poor') is in none of my sessions. I do see a low 'fair'
+rating in my sessions, except for Jupyter, where there are more teachers.
+My theory is that the person that did not like to be addressed by name
+followed Jupyter in the HPC2N or LUNARC session and gave a 'fair'
+to the other sessions.
+
+```
+12. Give your confidence levels of the following statements
+I can use the module system to load a specific version of Python
+I can run Python
+I can use the Python interpreter
+I can run a Python script
+I can determine the version of a Python package
+I can determine that a Python package is/is not installed
+I can load a Python (machine learning) module
+I can install a Python package
+I can work (create, activate, work, deactivate) with a venv virtual environment
+I can export and import a virtual environment
+I can write a bash script
+I can submit a script to the job scheduler
+I can write a bash script that uses GPUs
+I can start an interactive session
+I can check that I am in an interactive session
+I can start an interactive session with multiple cores
+I can check that I am in an interactive session with multiple cores
+I can start Jupyter
+I can start a script that uses parallel code
+I can measure the effect of using more nodes for parallel code
+```
+
+I am happy to see that the IPython question is not there.
+Seems like I am not the only one that thinks it can be removed from the
+course material?
+
+![](confidences_1.png)
+![](confidences_2.png)
+![](confidences_3.png)
+
+The confidences that were lowest of the part I am one of the teachers
+are 'I can start an interactive session with multiple cores'
+and 'I can check that I am in an interactive session with multiple cores'.
+I for sure did not teach this, as I felt there are more important things to
+do. Also: I think other things are more important.
+
+The sessions that I do care about ..
+
+- I can determine the version of a Python package
+- I can determine that a Python package is/is not installed
+- I can load a Python (machine learning) module
+- I can install a Python package
+- I can work (create, activate, work, deactivate) with a venv virtual environment
+
+
+... did reasonably well, with 1 learner
+stating 'I have some confidence in this'. 
+I wish I knew what was the problem with that one learner.
+
+A weird response is 'I can export and import a virtual environment',
+which had same confidences as the other session, although I did
+not teach it! I hoped that the learners would all state 'I have no
+idea what this is about'. Maybe some carry-over effect?
+
+- [x] Remove question 'I can export and import a virtual environment' from evaluation
+    - Done!
+
+```
+13.Did today's course meet your expectation?
+Yes	3	
+No	0	
+Not sure	2	
+```
+
+Useless info to me.
+
+```
+
+14. Which future training topics would you like to be provided by the training host(s)?
+"- xarray and dask"
+```
+
+Useless info to me.
+
+```
+15. Do you have any additional comments?
+- A sheet summarizing the most important parts with key code snippets to do the items in 12)"
+```
+
+Fun! This learner suggests that I actually should have worked on a proper
+summary page, with -indeed- the key points. Will do so next time! Thanks!
+
+- [ ] Base summary on evaluation form
+
