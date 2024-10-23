@@ -13,6 +13,11 @@ first.
 Procedure
 ---------
 
+.. admonition:: Prefer a video?
+    :class: dropdown
+
+    See `this YouTube video <https://youtu.be/N-TRzv9LdF4?si=6uIqHI4J8h_2ry7P&t=396>`_.
+
 The procedure has these steps:
 
 - Get the tarbal
