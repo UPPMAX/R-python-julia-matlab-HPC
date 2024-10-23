@@ -17,11 +17,16 @@ body.wy-body-for-nav img.with-border {
 .rst-content .solution > .admonition-title::before {
     content: "\02714\0FE0E";  /* Check mark */ }
 
+.rst-content .answer_hpc2n > .admonition-title::before {
+    background-color: lightred;
+    content: "\02714\0FE0E";  /* Check mark */ }
+.rst-content .answer_lunarc > .admonition-title::before {
+    background-color: lightgreen;
+    content: "\02714\0FE0E";  /* Check mark */ }
 .rst-content .answer_uppmax > .admonition-title::before {
     background-color: lightblue;
     content: "\02714\0FE0E";  /* Check mark */ }
 }
-
 .rst-content .homework > .admonition-title::before {
     content: "\01F4DD";  /* Memo */ }
 .rst-content .discussion > .admonition-title::before {
