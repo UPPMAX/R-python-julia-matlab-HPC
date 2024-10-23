@@ -58,8 +58,7 @@ Julia "interactively" on the compute nodes
    - On HPC2N: ``salloc``
       - This command works as well on the other clusters but brings no or bad graphics.
 
-   - When the resources are allocated, you need to preface commands with ``srun`` in order to 
-run on the allocated nodes instead of the login node. 
+   - When the resources are allocated, you need to preface commands with ``srun`` in order to run on the allocated nodes instead of the login node. 
       
 - First, you make a request for resources with ``interactive``/``salloc``, like this:
 
