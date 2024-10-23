@@ -1,7 +1,9 @@
 Evaluation
 ==========
 
-- The evaluation form can be found ``here in the future again``
+The evaluation form can be found `here <https://forms.office.com/e/g1HiqfEaXi>`_.
+It takes into account that one may need to leave early too.
+
 
 .. dropdown:: What is in the form?
 
