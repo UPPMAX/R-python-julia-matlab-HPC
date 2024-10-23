@@ -608,7 +608,7 @@ For this course, we recommend these versions of R:
 +==========+=========+
 |HPC2N     |4.1.2    |
 +----------+---------+
-|LUNARC    |?4.1.1   |
+|LUNARC    |4.2.1   |
 +----------+---------+
 |UPPMAX    |4.1.1    |
 +----------+---------+
@@ -625,7 +625,9 @@ Load the module for the R version recommended to use in this course.
 .. admonition:: Answer LUNARC
     :class: dropdown 
 
-    TODO
+    .. code-block:: console
+
+        module load GCC/11.3.0 OpenMPI/4.1.4 R/4.2.1
 
 .. admonition:: Answer UPPMAX
     :class: dropdown 
