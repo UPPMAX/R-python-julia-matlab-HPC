@@ -15,8 +15,8 @@ Sessions: Interactive work on compute nodes
    
 .. objectives:: 
 
-   - Show how to reach the calculation nodes on UPPMAX and HPC2N
-   - Test some commands on the calculation nodes
+   - be able to start interactive sessions
+   - Be able to run Julia in Jupyter notebook
 
 .. admonition:: Compute allocations in this workshop 
 
@@ -27,12 +27,12 @@ There are several ways to run Julia interactively
 
 - Directly on the login nodes: **only** do this for short jobs that do not take a lot of resources
 - As an interactive job on the computer nodes, launched via the batch system
-- Jupyter notebooks (UPPMAX)
+- Jupyter notebooks on compute node.
 
 General
 -------
 
-In order to run interactively, you need to have compute nodes allocated to run on, and this is done through the batch system.  
+In order to run interactively, you need to have compute nodes allocated to run on, and this is done through the Slurm system.  
 
 Because you will have to wait until the nodes are allocated, and because you cannot know when this happens, this is not usually a recommended way to run Julia, but it is possible. 
 
@@ -41,16 +41,17 @@ Because you will have to wait until the nodes are allocated, and because you can
     (HPC2N) Do note that it is not *real* interactivity as you probably mean it, as you will have to run it as a Julia script instead of by starting Julia and giving commands inside it. 
     - The reason for this is that you are not actually logged into the compute node and only sees the output of the commands you run. 
 
-    Another option would be to use Jupyter notebooks. 
-    This is somewhat convoluted to get to work correctly at HPC2N, but possible. Please contact us at support@hpc2n.umu.se if you want to go this route at HPC2N. 
-
-
 Julia "interactively" on the compute nodes 
 -------------------------------------------
 
-To run interactively, you need to allocate resources on the cluster first. 
-You can use the command salloc to allow interactive use of resources allocated to your job. 
-When the resources are allocated, you need to preface commands with ``srun`` in order to 
+.. info::
+
+   - On UPPMAX and LUNARC: ``interactive ...``
+      - You get graphics as well!
+   - On HPC2N: ``salloc``
+      - This command works as well on the other clusters but brings no or bad graphics.
+
+   - When the resources are allocated, you need to preface commands with ``srun`` in order to 
 run on the allocated nodes instead of the login node. 
       
 - First, you make a request for resources with ``interactive``/``salloc``, like this:
@@ -68,23 +69,34 @@ run on the allocated nodes instead of the login node.
       .. code-block:: console
           
          $ salloc -n <tasks> --time=HHH:MM:SS -A hpc2n2023-114
-         
-      
-where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in 
-      hours, minutes, and seconds (maximum T168 hours), and then you give the id for your project 
-      (**naiss2024-22-107** for this course)
 
-Your request enters the job queue just like any other job, and interactive/salloc will tell you that it is
-      waiting for the requested resources. When salloc tells you that your job has been allocated 
-      resources, you can interactively run programs on those resources with ``srun``. The commands 
-      you run with ``srun`` will then be executed on the resources your job has been allocated. 
-      If you do not preface with ``srun`` the command is run on the login node! 
+   .. tab:: LUNARC (interactive)
+
+      .. code-block:: console
+          
+         $ interactive -n <tasks> --time=HHH:MM:SS -A lu2024-7-80
       
 
-You can now run Julia scripts on the allocated resources directly instead of waiting for 
-      your batch job to return a result. This is an advantage if you want to test your Julia 
-      script or perhaps figure out which parameters are best.
-                  
+      
+where <tasks> is the number of tasks (or cores, for default 1 task per core), time is given in  hours, minutes, and seconds (maximum T168 hours), and then you give the id for your project 
+
+
+- Your request enters the job queue just like any other job, and interactive/salloc will tell you that it is waiting for the requested resources. 
+- When salloc tells you that your job has been allocated resources, you can interactively run programs on those resources with ``srun``. 
+- The commands you run with ``srun`` will then be executed on the resources your job has been allocated. 
+- 
+
+.. admonition:: On HPC2N
+
+   - If you do not preface with ``srun`` the command is run on the login node! 
+   - You can now run Julia scripts on the allocated resources directly instead of waiting for your batch job to return a result. 
+   - This is an advantage if you want to test your Julia script or perhaps figure out which parameters are best.
+
+.. admonition:: Documentation at the centers
+
+   - `Interactive allocation on UPPMAX <https://docs.uppmax.uu.se/cluster_guides/start_interactive_node/>`_
+   - `Interactive allocation on HPC2N <https://docs.hpc2n.umu.se/documentation/batchsystem/job_submission/#interactive>`_
+   - `Interactive allocation on LUNARC <https://lunarc-documentation.readthedocs.io/en/latest/manual/manual_interactive/#starting-an-interactive-session>`_
 
 Example **Code along**
 ######################
@@ -147,7 +159,26 @@ Example **Code along**
             b-cn0241.hpc2n.umu.se
       
          We are. Notice that we got a response from all four cores we have allocated.   
+
+      .. tab:: LUNARC
+   
+         .. code-block:: console
       
+            [bjornc@cosmos1 ~]$ interactive -A lu2024-7-80 -p core -n 4 -t 10:00
+            Cluster name: COSMOS   
+            Waiting for JOBID 930844 to start
+          
+            [bjornc@cn050 ~]$ module load Julia/1.8.5-linux-x86_64
+
+         Let us check that we actually run on the compute node: 
+
+         .. code-block:: console
+      
+            [bjornc@cn050 ~]$ echo $SLURM_CPUS_ON_NODE
+            4
+
+         We are, because the $SLURM* environment variable gves an output. Notice that we got 4, whihc is nt the size of the physcial node bt the allocation size.   
+
       
 Running a script
 ''''''''''''''''
@@ -231,8 +262,23 @@ When you have finished using the allocation, either wait for it to end, or close
                   salloc: Job allocation 20174806 has been revoked.
                   [~]$
 
-Running IJulia and Jupyter notebooks 
+   .. tab:: LUNARC
+   
+      .. code-block:: sh 
+                  
+                  [~]$ exit
+                  exit
+                  [screen is terminating]
+                  Connection to cn050 closed.
+
+                  [~]$ 
+
+Running IJulia and Jupyter notebooks
 ------------------------------------
+
+.. warning::
+
+   - So far, not yet tested successfully on Cosmos.
 
 .. tabs::
 

@@ -33,7 +33,7 @@ In the Python's lesson on environments, we saw that there are different ways to 
 environments in this language, for instance, ``conda`` and ``pip``. This situation is simplified
 in Julia (if you are working with Julia code only) because environments are managed by Julia
 itself. Julia distinguishes between **project environments** and **package directories** 
-(https://docs.julialang.org/en/v1/manual/code-loading/#Environments). In the former, only the
+(`Julia environments <https://docs.julialang.org/en/v1/manual/code-loading/#Environments>`_). In the former, only the
 Tom's Obvious Minimal Language (TOML) files (Project.toml, Manifest.toml) are present while in the
 latter also source files are included with some specific layout. 
 
@@ -99,7 +99,7 @@ In a fresh Julia installation, we can see the following project information:
 Here, we can see among other things that nothing (any package) has been added to project,
 the UUID of the project, and the location of the *.toml* file.  
 Let's install a package ``DFTK``, for instance, that performs Density Functional Theory
-routines (https://juliapackages.com/p/dftk):
+routines (`DFTK <https://juliapackages.com/p/dftk>`_):
 
 .. code-block:: julia-repl
 
@@ -394,6 +394,10 @@ A selection of the Julia packages and libraries installed on UPPMAX and HPC2N ar
         The Julia versions installed at HPC2N include only the Base and Standard library
         modules.
 
+   .. tab:: LUNARC
+
+        The Julia versions installed at LUNARC include only the Base and Standard library
+        modules.
 
 Exercises
 ---------
@@ -406,7 +410,7 @@ Exercises
     offers tools for dealing with ``.csv`` files. After this, check that this package
     was installed. Finally, deactivate the environment.
 
-    .. solution:: Solution for both centres
+    .. solution:: Solution for all centres
         :class: dropdown
             
             .. code-block:: julia
@@ -428,7 +432,7 @@ Exercises
     offers tools for dealing with ``.csv`` files. After this, check that this package
     was installed. Finally, deactivate the environment.
 
-    .. solution:: Solution for both centres
+    .. solution:: Solution for all centres
         :class: dropdown
             
             .. code-block:: julia
