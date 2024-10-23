@@ -188,7 +188,8 @@ Give you confidence levels of the following statements below:
 ```
 
 Only question 12 (the confidences) and 15 (any other comments)
-are the ones that matter to me.
+are the ones that matter to me. Question 11 is useful to me,
+but needlessly personal, hurtful and I don't care about satisfaction.
 
 - [ ] In meeting with teachers, discuss the evaluation form
 
@@ -199,8 +200,7 @@ that they can go if (1) they have logged in and (2) can use a text editor,
 around 3 hang around with their cameras off. I assume they are
 waiting for the lesson to start.
 
-- [x] Make this more explicit in the schedule
-    - Done, for the Python and R schedules
+- [x] Make this more explicit in the Python and R schedule
 
 The course started at 10:01. Due to technical issues, I took over the
 first sessions without any preparations. I improvised in
@@ -230,6 +230,17 @@ When polling if learners had completed the exercise by using Zoom
 Reactions, two thirds gave a 'yes' as a reaction, the rest (all
 without camera) having a 'no' as a reaction.
 
+One thing I did wrong, was a question from a LUNARC.
+She wanted to know if `pip list --user` required an
+additional argument, such as a username. Instead of asking
+for clarification first, I rushed to give an answer, that
+was different from her question. My bad! One possible
+cause for this is that I feel unsecure about `pip list --user`:
+I've never used it and I don't care, but it was in the course
+material. I should remove this.
+
+- [x] Remove `pip list --user` from the course material
+
 After the break, there was a simultaneous session that I was allowed
 to teach, for UPPMAX users only. There 6 out of the 7 learners had
 their camera on. Here, all learners with a camera having
@@ -245,9 +256,9 @@ to the documentation page with the procedure.
 I think that that documentation page can be improved,
 by rewriting an existing page.
 
-- [ ] Improve https://docs.uppmax.uu.se/software/jupyter/
+- [x] Improve https://docs.uppmax.uu.se/software/jupyter/
   similar to https://docs.uppmax.uu.se/software/jupyter_on_bianca/
-- [ ] Add video
+- [x] Add video
 
 What I noticed in the simultaneous session, upon questioning the learners,
 that 6 out of 6 learners did not know what a login node is.
@@ -398,15 +409,6 @@ No info: which session?
 
 ```
 11. How would you rate the separate sessions?
-Introduction
-Load and run
-Packages
-Isolated environments
-Python in batch
-Interactive work
-Jupyter
-Parallel
-Conda
 ```
 
 ![Ratings](ratings.png)
@@ -423,35 +425,15 @@ to the other sessions.
 
 ```
 12. Give your confidence levels of the following statements
-I can use the module system to load a specific version of Python
-I can run Python
-I can use the Python interpreter
-I can run a Python script
-I can determine the version of a Python package
-I can determine that a Python package is/is not installed
-I can load a Python (machine learning) module
-I can install a Python package
-I can work (create, activate, work, deactivate) with a venv virtual environment
-I can export and import a virtual environment
-I can write a bash script
-I can submit a script to the job scheduler
-I can write a bash script that uses GPUs
-I can start an interactive session
-I can check that I am in an interactive session
-I can start an interactive session with multiple cores
-I can check that I am in an interactive session with multiple cores
-I can start Jupyter
-I can start a script that uses parallel code
-I can measure the effect of using more nodes for parallel code
 ```
-
-I am happy to see that the IPython question is not there.
-Seems like I am not the only one that thinks it can be removed from the
-course material?
 
 ![](confidences_1.png)
 ![](confidences_2.png)
 ![](confidences_3.png)
+
+I am happy to see that the IPython question is not there.
+Seems like I am not the only one that thinks it can be removed from the
+course material?
 
 The confidences that were lowest of the part I am one of the teachers
 are 'I can start an interactive session with multiple cores'
@@ -467,7 +449,6 @@ The sessions that I do care about ..
 - I can install a Python package
 - I can work (create, activate, work, deactivate) with a venv virtual environment
 
-
 ... did reasonably well, with 1 learner
 stating 'I have some confidence in this'. 
 I wish I knew what was the problem with that one learner.
@@ -478,7 +459,6 @@ not teach it! I hoped that the learners would all state 'I have no
 idea what this is about'. Maybe some carry-over effect?
 
 - [x] Remove question 'I can export and import a virtual environment' from evaluation
-    - Done!
 
 ```
 13.Did today's course meet your expectation?
