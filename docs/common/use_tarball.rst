@@ -31,10 +31,11 @@ to your current folder:
 .. admonition:: How does that look like?
    :class: dropdown
 
-    .. code-block::  console
-    
+    Your output will look similar to this:
 
-        [richel@rackham3 ~]$ wget https://github.com/UPPMAX/R-python-julia-matlab-HPC/raw/refs/heads/main/exercises/exercises.tar.gz
+    .. code-block::  console
+
+        [sven@rackham3 ~]$ wget https://github.com/UPPMAX/R-python-julia-matlab-HPC/raw/refs/heads/main/exercises/exercises.tar.gz
         --2024-10-23 11:49:30--  https://github.com/UPPMAX/R-python-julia-matlab-HPC/raw/refs/heads/main/exercises/exercises.tar.gz
         Resolving github.com (github.com)... 4.225.11.194
         Connecting to github.com (github.com)|4.225.11.194|:443... connected.
@@ -65,9 +66,11 @@ In a terminal, use the following command to uncompress the file:
 .. admonition:: How does that look like?
    :class: dropdown
 
+    Your output will look similar to this:
+
     .. code-block::  console
 
-        [richel@rackham3 ~]$ tar -xvzf exercises.tar.gz 
+        [sven@rackham3 ~]$ tar -xvzf exercises.tar.gz 
         exercises/
         exercises/julia/
         exercises/julia/script-df-rackham.sh
