@@ -131,7 +131,7 @@ A common pattern in those well-established languages (traditional paradigm) is t
 This pattern created the so called **two-language problem** where programmers had to choose between **productivity** 
 (R, Python) or **performance** (Fortran, C/C++) and when both were needed programmers had to learn the language that 
 offered the desired capability and use some interface between different languages. 
-Performant languages traditionally needed to be compiled while languages focusing on productivity are interpreted.
+Performant languages traditionally need to be compiled while languages focusing on productivity are interpreted.
 
 Among the different features of Julia, is its capability of integrating both aspects **productivity and performance 
 into a single language**. In this way, Julia programmers can in principle write software without changing their focus 
