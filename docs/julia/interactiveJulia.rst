@@ -58,8 +58,7 @@ Julia "interactively" on the compute nodes
    - On HPC2N: ``salloc``
       - This command works as well on the other clusters but brings no or bad graphics.
 
-   - When the resources are allocated, you need to preface commands with ``srun`` in order to 
-run on the allocated nodes instead of the login node. 
+   - When the resources are allocated, you need to preface commands with ``srun`` in order to run on the allocated nodes instead of the login node. 
       
 - First, you make a request for resources with ``interactive``/``salloc``, like this:
 
@@ -282,9 +281,6 @@ When you have finished using the allocation, either wait for it to end, or close
 Running IJulia and Jupyter notebooks
 ------------------------------------
 
-.. warning::
-
-   - So far, not yet tested successfully on Cosmos.
 
 .. tabs::
 
@@ -350,7 +346,7 @@ Running IJulia and Jupyter notebooks
 
    .. tab:: HPC2N & LUNARC
 
-      - Like for Python it is possible to run a Julia in a notebook, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the *JupyterLab* and *Julia* modules. In shell:
+      - Like for Python it is possible to run a Julia in a Jupyter, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the *JupyterLab* and *Julia* modules. In shell:
 
       .. code-block:: console
 
@@ -409,6 +405,9 @@ Exercises
    - Start an interactive session on a calculation node by a SLURM allocation
    
       - At HPC2N: ``salloc`` ...
-      - At UPPMAX: ``interactive`` ...
+      - At UPPMAX/LUNARC: ``interactive`` ...
    - Follow the same procedure as usual by loading the Julia module and possible prerequisites.
+   - Run Julia in Jupyter lab/notebook
+
+      - Procedure is to use the IJulia package and start a jupyter notebook from the julia command line.
     

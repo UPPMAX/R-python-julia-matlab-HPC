@@ -342,6 +342,8 @@ GPU code
             # The following two lines splits the output in a file for any errors and a file for other output.
             #SBATCH --error=job.%J.err
             #SBATCH --output=job.%J.out
+            # This is needed on LUNARC when running on GPUs
+            #SBATCH --ntasks-per-node=1
             # Asking for one A100. You need to give the gpua100 partition and then ask for one GPU 
             #SBATCH -p gpua100
             #SBATCH --gres=gpu:1
