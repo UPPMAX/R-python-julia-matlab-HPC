@@ -6,8 +6,8 @@ Load and run R
 
     You can see this session as a video on YouTube:
 
-    - HPC2N: TODO
-    - LUNARC: TODO
+    - `HPC2N <https://youtu.be/3FHvyaPsAXU>`_
+    - `LUNARC <https://youtu.be/opRmSCYIeGQ>`_
     - `UPPMAX <https://youtu.be/rkahZzZxfuI>`_
 
 .. tabs::
