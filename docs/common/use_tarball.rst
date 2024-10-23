@@ -21,7 +21,8 @@ The procedure has these steps:
 Step 1: get the tarbal
 ^^^^^^^^^^^^^^^^^^^^^^
 
-In a terminal, use the following command to download the file:
+In a terminal, use the following command to download the file
+to your current folder:
 
 .. code-block::  console
 
