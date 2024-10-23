@@ -293,32 +293,26 @@ Running IJulia and Jupyter notebooks
          .. code-block:: console
 
             $ module load julia/1.8.5
-            $ module load python/3.10.8
+            $ module load python/3.9.5
             $ julia
 
       In Julia:
 
          .. code-block:: julia-repl
-
+            
+            julia> using Pkg
+            julia> Pkg.add("IJulia")
+            julia> Pkg.build("IJulia")
             julia> using IJulia
-            julia> notebook(dir="</path/to/work/dir/>")
+            julia> notebook(dir=".",detached=true)
 
       A Firefox session should start with the Jupyter notebook interface.
 
       .. figure:: ../../img/Jupyter_julia.png
 
-      .. warning:: 
+      .. note:: 
 
-         **If not**, you may have to build IJulia the first time with Pkg.build("IJulia"). Since "IJulia" is *pre-installed centrally* on UPPMAX you must activate the central environment by following these steps below. This should only be needed the first time like this
-
-      .. code-block:: julia-repl
-            
-         julia> using Pkg
-         julia> Pkg.activate(DEPOT_PATH[2]*"/environments/v1.8");
-         julia> Pkg.build("IJulia")
-         julia> notebook(dir="</path/to/work/dir/>")
-
-      This builds the package also locally before starting the notebook. If not done, Jupyter will not find the Julia kernel of that version.
+         - You only have to add and build IJulia the first time for each julia version and each jupyter, provided with a python version at UPPMAX
 
       .. tip::
 
