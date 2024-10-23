@@ -582,7 +582,7 @@ Exercise 1: find an R module
 Use the module system to find which versions of R are provided
 by your cluster's module system.
 
-.. admonition:: Answer UPPMAX
+.. admonition:: Answer
     :class: dropdown 
 
     From a terminal, do:
@@ -668,7 +668,7 @@ Exercise 3.2: check which packages are installed
 
 From within the R interpreter, check which packages are installed.
 
-.. admonition:: Answer HPC2N
+.. admonition:: Answer
     :class: dropdown 
 
     .. code-block:: console
@@ -680,7 +680,7 @@ Exercise 3.3: load a package
 
 From within the R interpreter, load the ``parallel`` package.
 
-.. admonition:: Answer HPC2N
+.. admonition:: Answer
     :class: dropdown 
 
     .. code-block:: console
