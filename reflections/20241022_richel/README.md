@@ -498,7 +498,10 @@ summary page, with -indeed- the key points. Will do so next time! Thanks!
 - [ ] Base summary on evaluation form
 
 Analyzing the amount of learners present during the day
-(data: [counts_20241022.csv](counts_20241022.csv)),
+(data: [counts_20241022.csv](counts_20241022.csv)) ...
+
+![](n_learners_in_time.png)
+
 I see that there have been 19 learners max (at around 10:35),
 where there were 10 at the start of lunch.
 This happened even though
