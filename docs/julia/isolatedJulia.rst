@@ -120,7 +120,7 @@ Now, the project information tells us about the recently installed package:
 Create a project environment
 ----------------------------
 
-Let's now create a **project environment**, this can be done as follows (if typing along, you have to change the path to your environment, like ``/proj/py-r-jl/$USER/julia`` on rackham):
+Let's now create a **project environment**, this can be done as follows (if typing along, you have to change the path to your environment, like ``/proj/py-r-jl-m-rackham/$USER/julia`` on rackham):
 
 .. type-along::
 
