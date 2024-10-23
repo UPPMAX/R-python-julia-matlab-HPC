@@ -89,11 +89,7 @@ Check for Julia versions
 
       .. code-block:: console
  
-         $ module spider julia
-
-      Notice that the output if you are working on the Intel (*kebnekaise.hpc2n.umu.se*) or AMD 
-      (*kebnekaise-amd.hpc2n.umu.se*) login nodes. In the former, you will see more installed versions of
-      Julia as this hardware is older.
+         $ module spider Julia
       
       To see how to load a specific version of Julia, including the prerequisites, do 
 
