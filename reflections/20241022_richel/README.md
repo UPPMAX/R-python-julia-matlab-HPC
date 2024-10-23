@@ -218,6 +218,7 @@ Additionally, a colleague helped me remind about a shared document
 where learners can ask questions. Also here, I spent less time
 on this shared document, as I think it is not worth my
 time to talk about a shared document I do not care about.
+I am happy how we, teachers, dealt with the technical problem.
 
 There was a learner that found a mistake in my teaching material,
 about a mismatch in versions of matplotlib. I already fixed it :-)
@@ -336,9 +337,18 @@ This question gives me no useful info.
 - "Going through the examples more throughly."
 ```
 
-I will definitely keep pointing to learners, as per the literature. 
+I will definitely keep pointing to learners, as per the literature.
+When I told the class I would do so, I told them to turn off the cameras
+if they'd be unfortable with me doing so. I don't know why this learner
+kept his/her camera on if he/she is uncomfortable with this.
+I did explain why I think this is important (to get to know what all
+learners think, not just the ones that are more vocal) and I stressed
+multiple times that 'I don't know' is a fine answer too.
+In other courses, where I take the time to show my teaching
+style, this feedback is not found in the evaluations.
 Next time, I will show the references to the literature again.
 
+- [ ] Next iteration: take the time to discuss my teaching style
 
 ```
 4. Training event organisation (e.g. announcement, registration, ...): – What did you like best? – Where should we improve?
