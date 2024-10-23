@@ -387,7 +387,16 @@ here is how you load that module:
 
     .. tab:: LUNARC
 
-        TODO
+        After having done ``module spider R/4.2.1``,
+        you will get a list of which other modules needs to be loaded first,
+        resulting in:
+
+        .. code-block:: console
+
+            module load GCC/11.3.0 OpenMPI/4.1.4 R/4.2.1 R/<version>
+
+        where ``<version>`` is an R version, in ``major.minor.patch`` format, 
+        for example, ``module load GCC/11.3.0 OpenMPI/4.1.4 R/4.2.1 R/4.1.2``
 
     .. tab:: UPPMAX
 
