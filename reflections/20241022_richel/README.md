@@ -264,7 +264,10 @@ In more general terms:
   It hints that some think I am approachable.
 - I am happy that all my exercises have answers and a video:
   the Feedback is there. Also, Feedback consisted
-  out of two demos by learners and one one-on-one demo by me
+  out of two demos by learners and one one-on-one demo by me.
+- The answers I provide, however, can be improved, by adding more
+  'How does that look like?' dropdowns. I did not do it this time,
+  as I struggled with the RST markup too much
 - All my exercise sessions were 15 minutes. This was a good length.
   It was a lot of waiting and I was able to be silent too
 - I am happy that my exercises use `wget` instead of a tarball.

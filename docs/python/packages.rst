@@ -93,7 +93,8 @@ These problems are addressed in the session on isolated environments.
 Exercises
 ---------
 
-.. dropdown:: Need a video?
+.. admonition:: Need a video?
+    :class: dropdown
 
     You can see a video on how these exercises are done here:
 
@@ -143,7 +144,8 @@ including prerequisite modules if needed:
 | UPPMAX | 3.11.8         |
 +--------+----------------+
 
-.. dropdown:: Answer HPC2N
+.. admonition:: Answer HPC2N
+    :class: dropdown
 
     To search for the main Python module in general:
 
@@ -170,7 +172,8 @@ including prerequisite modules if needed:
 
         module purge
 
-.. dropdown:: Answer LUNARC
+.. admonition:: Answer LUNARC
+    :class: dropdown
 
     To search for the main Python module in general:
 
@@ -197,7 +200,8 @@ including prerequisite modules if needed:
 
         module purge
 
-.. dropdown:: Answer UPPMAX
+.. admonition:: Answer UPPMAX
+    :class: dropdown
 
     .. code-block:: bash
 
@@ -213,7 +217,8 @@ including prerequisite modules if needed:
 
 How to determine if a Python package is installed?
 
-.. dropdown:: Answer
+.. admonition:: Answer
+    :class: dropdown
 
     There are multiple ways. One easy one, is, in a terminal, type:
 
@@ -223,17 +228,20 @@ How to determine if a Python package is installed?
 
 The Python package ``wheel`` is known to be installed. Which version?
 
-.. dropdown:: Answer HPC2N
+.. admonition:: Answer HPC2N
+    :class: dropdown
 
     When doing ``pip list``, look for ``wheel`` in the list.
     You'll find ``wheel`` to have version ``0.40.0``
 
-.. dropdown:: Answer LUNARC
+.. admonition:: Answer LUNARC
+    :class: dropdown
 
     When doing ``pip list``, look for ``wheel`` in the list.
     You'll find ``wheel`` to have version ``0.40.0``
 
-.. dropdown:: Answer UPPMAX
+.. admonition:: Answer UPPMAX
+    :class: dropdown
 
     When doing ``pip list``, look for ``wheel`` in the list.
     You'll find ``wheel`` to have version ``0.42.0``
@@ -258,7 +266,8 @@ The Python package we use differs by center:
 Try to find your center's documentation to find out which module to load your Python
 package with.
 
-.. dropdown:: Answer HPC2N
+.. admonition:: Answer HPC2N
+    :class: dropdown
 
     It is hard to find useful information on Theano
     at the HPC2N documentation at https://docs.hpc2n.umu.se/.
@@ -270,14 +279,16 @@ package with.
     at https://www.hpc2n.umu.se/ will take you to
     `the Theano page <https://www.hpc2n.umu.se/resources/software/theano>`_
 
-.. dropdown:: Answer LUNARC
+.. admonition:: Answer LUNARC
+    :class: dropdown
 
     There is no documentation on this (yet).
     Instead, use the
     `LUNARC documentation on modules <https://lunarc-documentation.readthedocs.io/en/latest/manual/manual_modules/#hierarchical-naming-scheme-concept>`_
     to find the module yourself
 
-.. dropdown:: Answer UPPMAX
+.. admonition:: Answer UPPMAX
+    :class: dropdown
 
     Searching for ``TensorFlow`` at 
     `the UPPMAX documentation <https://docs.uppmax.uu.se>`_
@@ -288,7 +299,8 @@ package with.
 
 Load the module for the Python package and verify if it is loaded.
 
-.. dropdown:: Answer HPC2N
+.. admonition:: Answer HPC2N
+    :class: dropdown
 
     At `the HPC2N Theano page <https://www.hpc2n.umu.se/resources/software/theano>`_,
     it is recommended to do:
@@ -334,7 +346,8 @@ Load the module for the Python package and verify if it is loaded.
 
         Theano                        1.0.4
 
-.. dropdown:: Answer LUNARC
+.. admonition:: Answer LUNARC
+    :class: dropdown
 
     There is no documentation on this (yet).
     Instead, use the
@@ -382,7 +395,8 @@ Load the module for the Python package and verify if it is loaded.
         matplotlib                        3.8.2
 
 
-.. dropdown:: Answer UPPMAX
+.. admonition:: Answer UPPMAX
+    :class: dropdown
 
     - Copy from the documentation: ``module load python_ML_packages/3.11.8-cpu``
     - ``pip list`` to find ``tensorflow-cpu`` with version ``2.16.1``
@@ -401,20 +415,23 @@ Here we install a Python package ourselves.
 Use your center's documentation to find out how to install Python packages
 using ``pip``.
 
-.. dropdown:: Answer HPC2N
+.. admonition:: Answer HPC2N
+    :class: dropdown
 
     Searching for 'pip install' at `the HPC2N documentation <https://docs.hpc2n.umu.se/>`
     takes one to `Working with venv <https://docs.hpc2n.umu.se/tutorials/userinstalls/#working__with__venv>`_
     (whatever that is). Searching for ``pip install`` takes use to
     the HPC2N recommendation there to use ``pip install --no-cache-dir --no-build-isolation MYPACKAGE``
 
-.. dropdown:: Answer LUNARC
+.. admonition:: Answer LUNARC
+    :class: dropdown
 
     Searching for 'pip' at `the LUNARC documentation <https://lunarc-documentation.readthedocs.io/>`
     takes one to `Python installations <https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/Python/#python-installations>`_
     The LUNARC recommendation there is to use ``pip install --prefix=$HOME/local package_name``
 
-.. dropdown:: Answer UPPMAX
+.. admonition:: Answer UPPMAX
+    :class: dropdown
 
     UPPMAX: searching for ``pip install`` at 
     `the UPPMAX documentation <https://docs.uppmax.uu.se>`_
@@ -426,12 +443,14 @@ using ``pip``.
 
 Install a Python package called ``mhcnuggets``. Which version gets installed?
 
-.. dropdown:: Answer HPC2N
+.. admonition:: Answer HPC2N
+    :class: dropdown
 
     Do ``pip install --no-cache-dir --no-build-isolation mhcnuggets``,
     then ``pip list`` to see that ``mhcnuggets`` version 2.4.1
 
-.. dropdown:: Answer LUNARC
+.. admonition:: Answer LUNARC
+    :class: dropdown
 
     The documentation at LUNARC, to use
     ``pip install --prefix=$HOME/mhcnuggets`` is incomplete.
@@ -448,7 +467,8 @@ Install a Python package called ``mhcnuggets``. Which version gets installed?
     Using ``pip list`` shows that ``mhcnuggets`` version 2.4.1
     gets installed.
 
-.. dropdown:: Answer UPPMAX
+.. admonition:: Answer UPPMAX
+    :class: dropdown
 
     Do ``pip install mhcnuggets``, then ``pip list`` to see that ``mhcnuggets`` version 2.4.1
     gets installed
