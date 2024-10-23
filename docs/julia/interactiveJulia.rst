@@ -405,6 +405,9 @@ Exercises
    - Start an interactive session on a calculation node by a SLURM allocation
    
       - At HPC2N: ``salloc`` ...
-      - At UPPMAX: ``interactive`` ...
+      - At UPPMAX/LUNARC: ``interactive`` ...
    - Follow the same procedure as usual by loading the Julia module and possible prerequisites.
+   - Run Julia in Jupyter lab/notebook
+
+      - Procedure is to use the IJulia package and start a jupyter notebook from the julia command line.
     
