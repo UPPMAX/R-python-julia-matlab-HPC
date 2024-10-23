@@ -821,7 +821,19 @@ cluster and install the ``CUDA`` package in Julia as in the next sequence of com
                 Resolving package versions...
                 Installed CEnum ───────── v0.4.2
                 ...
-     
+
+   .. tab:: LUNARC
+
+        .. code-block:: console
+
+            $ ml Julia/1.8.5-linux-x86_64   # Julia version
+            $ ml CUDA/11.4.1                # CUDA toolkit module
+            $ julia
+            (v1.8) pkg> add CUDA 
+                Updating registry at `~/.julia/registries/General.toml`
+                Resolving package versions...
+                Installed CEnum ───────── v0.4.2
+                ...
 
 Once this initial setting is completed, you will be able to use the GPUs available on the
 cluster. Here, there is a simple example for computing a matrix-matrix multiplication. As a 
@@ -871,6 +883,26 @@ reference point, we show the simulation on CPUs as well.
 
             julia script-gpu.jl
 
+   .. tab:: LUNARC
+
+        .. code-block:: sh
+
+            #!/bin/bash            
+            #SBATCH -A lu202X-XX-XX      # your project_ID       
+            #SBATCH -J job-serial        # name of the job         
+            #SBATCH -n 1                 # nr. tasks  
+            #SBATCH --time=00:03:00      # requested time
+            #SBATCH --error=job.%J.err   # error file
+            #SBATCH --output=job.%J.out  # output file
+            #Asking for one A100 GPU
+            #SBATCH -p gpua100
+            #SBATCH --gres=gpu:1              
+
+            ml purge  > /dev/null 2>&1
+            ml Julia/1.8.5-linux-x86_64
+            ml CUDA/11.4.1
+
+            julia script-gpu.jl
 
    .. tab:: script-gpu.jl 
    
@@ -1008,7 +1040,25 @@ Exercises
                 
                 julia serial-sum.jl Arg1 Arg2    # run the serial script
                 
+    .. solution:: Solution for HPC2N
+        :class: dropdown
+        
+            This batch script is for Kebnekaise. 
+            
+            .. code-block:: sh
+    
+                #!/bin/bash            
+                #SBATCH -A lu202X-XX-XX      # your project_ID       
+                #SBATCH -J job-serial        # name of the job         
+                #SBATCH -n 1                 # nr. tasks  
+                #SBATCH --time=00:03:00      # requested time
+                #SBATCH --error=job.%J.err   # error file
+                #SBATCH --output=job.%J.out  # output file                                                                                                                                                                         
 
+                ml purge  > /dev/null 2>&1   # recommended purge
+                ml Julia/1.8.5-linux-x86_64  # Julia module
+                        
+                julia serial-sum.jl Arg1 Arg2    # run the serial script
 
 .. challenge:: 2. Run the GPU script
     
@@ -1126,6 +1176,29 @@ Exercises
                   0.000813 seconds (2 allocations: 512.047 KiB)
                   0.000176 seconds (16 allocations: 384 bytes)
 
+    .. solution:: Solution for LUNARC
+        :class: dropdown
+        
+            This batch script is for Cosmos.
+
+            .. code-block:: sh
+                
+                #!/bin/bash            
+                #SBATCH -A lu202X-XX-XX      # your project_ID       
+                #SBATCH -J job-serial        # name of the job         
+                #SBATCH -n 1                 # nr. tasks  
+                #SBATCH --time=00:03:00      # requested time
+                #SBATCH --error=job.%J.err   # error file
+                #SBATCH --output=job.%J.out  # output file  
+                #Asking for one A100 GPU
+                #SBATCH -p gpua100
+                #SBATCH --gres=gpu:1   
+
+                ml purge  > /dev/null 2>&1
+                ml Julia/1.8.5-linux-x86_64
+                ml CUDA/11.4.1
+
+                julia script-gpu.jl
   
 .. challenge:: 3. Machine Learning job on GPUs 
     
