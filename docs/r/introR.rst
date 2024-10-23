@@ -146,6 +146,6 @@ Schedule
 Simultaneous session:
 
  - HPC2N: ThinLinc & RStudio, by PO
- - UPPMAX: ThinLinc, RStudio, interactive, by RB
  - LUNARC, by ?RP
+ - UPPMAX: `Running RStudio on Rackham <https://docs.uppmax.uu.se/software/rstudio_on_rackham/>`_, by RB
 
