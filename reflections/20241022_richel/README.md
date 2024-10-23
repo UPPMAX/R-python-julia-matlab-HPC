@@ -411,9 +411,9 @@ Conda
 
 ![Ratings](ratings.png)
 
-I am happy to see that the 'Excellent's are all in sections
+I am happy to see that the 'Excellents' are all in sections
 that I taught ('Packages', 'Isolated environments')
-or that I may have taught (i.e. these we discussed in the simulaneous session)
+or that I may have taught (i.e. these we discussed in the simultaneous session)
 ('Interactive work', 'Jupyter') or that I partially taught ('Load and run').
 The lowest rating ('poor') is in none of my sessions. I do see a low 'fair'
 rating in my sessions, except for Jupyter, where there are more teachers.
