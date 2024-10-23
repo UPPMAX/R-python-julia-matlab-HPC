@@ -7,7 +7,6 @@ body.wy-body-for-nav img.with-border {
 .rst-content .admonition-no-content {
     padding-bottom: 0px;
 }
-
 .rst-content .demo > .admonition-title::before {
     content: "\01F440";  /* Eyes */ }
 .rst-content .type-along > .admonition-title::before {
@@ -16,17 +15,6 @@ body.wy-body-for-nav img.with-border {
     content: "\0270D\0FE0F";  /* Hand */ }
 .rst-content .solution > .admonition-title::before {
     content: "\02714\0FE0E";  /* Check mark */ }
-
-.rst-content .answer_hpc2n > .admonition-title::before {
-    background-color: lightred;
-    content: "\02714\0FE0E";  /* Check mark */ }
-.rst-content .answer_lunarc > .admonition-title::before {
-    background-color: lightgreen;
-    content: "\02714\0FE0E";  /* Check mark */ }
-.rst-content .answer_uppmax > .admonition-title::before {
-    background-color: lightblue;
-    content: "\02714\0FE0E";  /* Check mark */ }
-}
 .rst-content .homework > .admonition-title::before {
     content: "\01F4DD";  /* Memo */ }
 .rst-content .discussion > .admonition-title::before {
@@ -54,4 +42,20 @@ body.wy-body-for-nav img.with-border {
 /* sphinx_toggle_button, make the font white */
 .rst-content .toggle.admonition button.toggle-button {
     color: white;
+}
+
+/* Richel's fancy admonitions */
+.rst-content .answer_hpc2n > .admonition-title::before {
+    background-color: lightred;
+    content: "\02714\0FE0E";  /* Check mark */
+}
+
+.rst-content .answer_lunarc > .admonition-title::before {
+    background-color: lightgreen;
+    content: "\02714\0FE0E";  /* Check mark */
+}
+
+.rst-content .answer_uppmax > .admonition-title::before {
+    background-color: lightblue;
+    content: "\02714\0FE0E";  /* Check mark */
 }
