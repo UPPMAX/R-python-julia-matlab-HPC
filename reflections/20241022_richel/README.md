@@ -339,7 +339,7 @@ This question gives me no useful info.
 
 I will definitely keep pointing to learners, as per the literature.
 When I told the class I would do so, I told them to turn off the cameras
-if they'd be unfortable with me doing so. I don't know why this learner
+if they'd be uncomfortable with me doing so. I don't know why this learner
 kept his/her camera on if he/she is uncomfortable with this.
 I did explain why I think this is important (to get to know what all
 learners think, not just the ones that are more vocal) and I stressed
