@@ -3,6 +3,12 @@ Introduction R
 
 .. figure:: img/r_logo_50.png
 
+.. admonition:: Prefer this session as video?
+    :class: dropdown
+
+    See `this YouTube video <https://youtu.be/N-TRzv9LdF4>`_,
+    to see this session as a video.
+
 .. tabs::
 
    .. tab:: Learning objectives
@@ -44,7 +50,6 @@ Introduction R
     - run RStudio
 
     on HPC2N, UPPMAX, or LUNARC
-
 
 .. admonition:: **Course non-goals**
 
