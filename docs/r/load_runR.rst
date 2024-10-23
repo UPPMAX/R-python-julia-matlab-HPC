@@ -1,6 +1,15 @@
 Load and run R
 ==============
 
+.. admonition:: Prefer this session as video?
+    :class: dropdown
+
+    You can see this session as a video on YouTube:
+
+    - HPC2N: TODO
+    - LUNARC: TODO
+    - `UPPMAX <https://youtu.be/rkahZzZxfuI>`_
+
 .. tabs::
 
    .. tab:: Learning objectives
