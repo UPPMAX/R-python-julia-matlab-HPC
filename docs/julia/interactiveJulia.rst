@@ -294,7 +294,7 @@ Running IJulia and Jupyter notebooks
 
             $ module load julia/1.8.5
             $ module load python/3.9.5
-            $ julia
+            $ julia -p 4
 
       In Julia:
 
