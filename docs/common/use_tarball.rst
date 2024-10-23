@@ -1,5 +1,5 @@
-Use the tarball
-===============
+Use the tarball with exercises
+==============================
 
 .. admonition:: Goal
 

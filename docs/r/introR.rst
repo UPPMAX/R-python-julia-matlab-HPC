@@ -9,6 +9,7 @@ Introduction R
 
       - see a first overview of the R programming language
       - see the overview of the course
+      - hear about 'the tarbal with exercises'
 
    .. tab:: For teachers
 
@@ -50,7 +51,6 @@ Introduction R
     - improve R coding skills 
     - use R on other HPC clusters
 
-
 First overview of R
 -------------------
 
@@ -69,12 +69,6 @@ R is used in many NAISS centres:
 
 - `here is an overview of 6 NAISS centres and their R documentation <http://docs.uppmax.uu.se/software/r/#overview-of-naiss-centers-and-their-documentation-about-r>`_
 - `here is an (incomplete) overview of R courses being taught at NAISS <http://docs.uppmax.uu.se/software/r/#learning-r>`_
-
-.. admonition:: R Exercise files
-
-   - On HPC2N, you can copy the exercise tarball from /proj/nobackup/r-py-jl-m/exercises.tar.gz 
-   - On LUNARC, you can copy the exercise tarball from ~bbrydsoe/exercises.tar.gz  
-   - On UPPMAX, you can copy the exercise tarball from /proj/r-py-jl-m-rackham/exercises.tar.gz 
 
 
 Schedule
@@ -128,4 +122,13 @@ Simultaneous session:
  - LUNARC, by ?RP
  - UPPMAX: `Running RStudio on Rackham <https://docs.uppmax.uu.se/software/rstudio_on_rackham/>`_, by RB
 
+Exercises used in the course
+----------------------------
 
+The course uses a so-called tarball files with exercises as
+used in this course.
+
+See `here <https://uppmax.github.io/R-python-julia-matlab-HPC/common/use_tarball.html>`_
+how to get and decompress it.
+
+In the 'Load modules and run' session, there is the time to do so.

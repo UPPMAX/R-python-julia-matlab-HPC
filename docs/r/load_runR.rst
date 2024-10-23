@@ -789,6 +789,13 @@ Exercise 4.2: run
             [1] "Hello World!"
             b-an01 [~]$ 
 
+
+Exercise 5: download and extract the tarbal with exercises
+----------------------------------------------------------
+
+See `here <https://uppmax.github.io/R-python-julia-matlab-HPC/common/use_tarball.html>`_
+how to download and extract the tarbal with exercises.
+
 Conclusions
 -----------
 
