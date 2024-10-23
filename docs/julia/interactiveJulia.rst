@@ -341,7 +341,7 @@ Running IJulia and Jupyter notebooks
       - Copy-paste one of the address lines from the jupyter output
       - You can start the Julia kernel in the upper right corner!
 
-   .. tab:: HPC2N
+   .. tab:: HPC2N & LUNARC
 
       - Like for Python it is possible to run a Julia in a notebook, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the *JupyterLab* and *Julia* modules. In shell:
 
