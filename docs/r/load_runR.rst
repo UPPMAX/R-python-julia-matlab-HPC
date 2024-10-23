@@ -171,7 +171,7 @@ Here is how to find the modules that load different versions of R:
 
            module spider R
 
-        .. admonition:: How does the output look like ?
+        .. admonition:: How does the output look like?
             :class: dropdown
 
             The output will look similar to this output
@@ -230,7 +230,7 @@ Here is how to find out how to load an R module of a specific version:
         where ``<version>`` is an R version, in ``major.minor.patch`` format, 
         for example, ``module spider R/4.1.2``.
 
-        .. admonition:: How does the output look like ?
+        .. admonition:: How does the output look like?
             :class: dropdown
 
             Your output will look similar to this:
@@ -276,7 +276,7 @@ Here is how to find out how to load an R module of a specific version:
 
         where ``<version>`` is an R version, in ``major.minor.patch`` format, for example, ``module spider R/4.2.1``.
 
-        .. admonition:: How does the output look like ?
+        .. admonition:: How does the output look like?
             :class: dropdown
 
             Your output will look similar to this:
@@ -422,7 +422,7 @@ from the terminal, we can start the R interpreter like this:
 
     R
 
-.. admonition:: How does the output look like ?
+.. admonition:: How does the output look like?
     :class: dropdown
 
     It will look similar to this:
@@ -488,7 +488,7 @@ From within the R interpreter, we can check which packages are installed using:
 
     installed.packages()
 
-.. admonition:: How does the output look like ?
+.. admonition:: How does the output look like?
     :class: dropdown
 
         Output will look similar to this:
