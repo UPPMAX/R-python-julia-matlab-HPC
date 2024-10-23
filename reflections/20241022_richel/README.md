@@ -275,3 +275,21 @@ In more general terms:
   There were too many cameras off for my taste, maybe the recording causes
   this?
 
+Suggests for next course:
+
+- The [prerequirements](https://uppmax.github.io/R-python-julia-matlab-HPC/prereqs.html)
+  should only be pre-requirements, not things that are 'nice to have'.
+  I suggest to remove the whole 'Get familiar with the Linux/Bash command line'
+  session
+- The [login sessions](https://uppmax.github.io/R-python-julia-matlab-HPC/common/login.html)
+  should only be about login. 
+  Stating what the goal of this optional session is, would be enough.
+  I suggest to remove anything but that.
+- Remove IPython from session on running Python
+- The evaluation form will be useless: in a course with 4 teachers,
+  rating the course as a whole gives little information that is useful
+  to a teacher. I don't care about the satisfaction of learners either:
+  all I care about is if they have learned something, i.e. if they
+  are confident in a topic I taught. I am interested in their free
+  comments too. Besides that, the evaluation form feels like an administrative
+  monster
