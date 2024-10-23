@@ -75,8 +75,12 @@ so I'll use that one instead.
 I do want to change the colors of the admonition per HPC center :-)
 
 - [ ] change the colors of the admonition per HPC center
+    - I gave up here
 
+Videos are done, so the material is finished.
 
+TODO:
+- Check and prepare Piors
 
 
 
