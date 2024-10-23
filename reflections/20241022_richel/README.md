@@ -498,7 +498,7 @@ summary page, with -indeed- the key points. Will do so next time! Thanks!
 - [ ] Base summary on evaluation form
 
 Analyzing the amount of learners present during the day
-(data: [counts_20241022.csv](counts_20241022.csv)) ...
+(data: [20241022_counts.csv](20241022_counts.csv)) ...
 
 ![](n_learners_in_time.png)
 
