@@ -60,9 +60,6 @@ Before teaching, I saw the evaluation. Beyond the 'rate your confidence'
 questions I prepared, more questions were added. Maybe because HPC2N
 requires that. 
 
-- [Python](https://forms.office.com/e/G4U0gKL76w)
-- [R](https://forms.office.com/e/g1HiqfEaXi)
-
 These are the questions in the evaluation now:
 
 ```
@@ -214,6 +211,13 @@ the learners had their camera on, as per my request.
 I felt there was enough time to work on exercises without disturbance.
 When the technical issues were over, at 10:35,
 my colleague took over the teacher role again.
+In that improvised sessions, I did not talk much about IPython,
+as I feel it is useless and time should be spent differently,
+hence I predict low confidence for IPython.
+Addtionally, a colleague helped me remind about a shared document
+where learners can ask questions. Also here, I spent less time
+on this shared document, as I think it is not worth my
+time to talk about a shared document I do not care about.
 
 There was a learner that found a mistake in my teaching material,
 about a mismatch in versions of matplotlib. I already fixed it :-)
@@ -224,7 +228,7 @@ I felt there was enough time to work on exercises without disturbance.
 The durations of the sessions was long enough.
 When polling if learners had completed the exercise by using Zoom
 Reactions, two thirds gave a 'yes' as a reaction, the rest (all
-withot camera) having a 'no' as a reaction.
+without camera) having a 'no' as a reaction.
 
 After the break, there was a simultaneous session that I was allowed
 to teach, for UPPMAX users only. There 6 out of the 7 learners had
@@ -233,8 +237,41 @@ achieved the teaching goal of starting Jupyter. 1 out of 7 got stuck
 and I lead her to also start Jupyter.
 I felt there was enough time to work on the exercise without disturbance.
 The durations of the session was long enough.
+I did not prepare for this session at all, as the material was good enough:
+I'd feel at home with an UPPMAX-only group anyways and am confident
+I can improvise there.
+I did not use the course material at all, instead send the learners
+to the documentation page with the procedure.
+I think that that documentation page can be improved,
+by rewriting an existing page.
+
+- [ ] Improve https://docs.uppmax.uu.se/software/jupyter/
+  similar to https://docs.uppmax.uu.se/software/jupyter_on_bianca/
+- [ ] Add video
+
+What I noticed in the simultaneous session, upon questioning the learners,
+that 6 out of 6 learners did not know what a login node is.
+From that I infer that this course is the first formal introduction
+to our clusters for most of our learners.
 
 For the summary and evaluation, I used question 12 of the evaluation form.
 I think that was good enough. I did not use a breakout room, as we did
 not practice that enough today.
+
+In more general terms:
+
+- I am happy to have had questions asked by learners during sessions.
+  It hints that some think I am approachable.
+- I am happy that all my exercises have answers and a video:
+  the Feedback is there. Also, Feedback consisted
+  out of two demos by learners and one one-on-one demo by me
+- All my exercise sessions were 15 minutes. This was a good length.
+  It was a lot of waiting and I was able to be silent too
+- I am happy that my exercises use `wget` instead of a tarball.
+  The word 'tarball' seemed already new for the learners, judging by
+  their facial expression
+- I am reasonably happy with the amount of interaction I got.
+  I spoke with all learners that had their camera on.
+  There were too many cameras off for my taste, maybe the recording causes
+  this?
 
