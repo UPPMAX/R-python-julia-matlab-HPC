@@ -118,7 +118,7 @@ Serial code
         .. code-block:: bash
    
             #!/bin/bash            
-            #SBATCH -A lu202X-XX-XX      # your project_ID       
+            #SBATCH -A lu2024-7-80      # your project_ID       
             #SBATCH -J job-serial        # name of the job         
             #SBATCH -n 1                 # nr. tasks  
             #SBATCH --time=00:03:00      # requested time
@@ -213,7 +213,7 @@ Serial code + self-installed package in virt. env.
         .. code-block:: bash
    
             #!/bin/bash            
-            #SBATCH -A lu202X-XX-XX      # your project_ID       
+            #SBATCH -A lu2024-7-80      # your project_ID       
             #SBATCH -J job-serial        # name of the job         
             #SBATCH -n 1                 # nr. tasks  
             #SBATCH --time=00:03:00      # requested time
@@ -709,7 +709,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
         
                #!/bin/bash
-               #SBATCH -A lu202X-XX-XX
+               #SBATCH -A lu2024-7-80
                #SBATCH -J job
                #SBATCH -n 1
                #SBATCH --time=00:10:00
@@ -728,7 +728,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: bash
             
                #!/bin/bash
-               #SBATCH -A lu202X-XX-XX
+               #SBATCH -A lu2024-7-80
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -747,7 +747,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: sh
            
                #!/bin/bash
-               #SBATCH -A lu202X-XX-XX
+               #SBATCH -A lu2024-7-80
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -765,7 +765,7 @@ The corresponding batch scripts for these examples are given here:
             .. code-block:: sh
            
                #!/bin/bash
-               #SBATCH -A lu202X-XX-XX
+               #SBATCH -A lu2024-7-80
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
@@ -890,7 +890,7 @@ reference point, we show the simulation on CPUs as well.
         .. code-block:: sh
 
             #!/bin/bash            
-            #SBATCH -A lu202X-XX-XX      # your project_ID       
+            #SBATCH -A lu2024-7-80      # your project_ID       
             #SBATCH -J job-serial        # name of the job         
             #SBATCH -n 1                 # nr. tasks  
             #SBATCH --time=00:03:00      # requested time
@@ -1050,7 +1050,7 @@ Exercises
             .. code-block:: sh
     
                 #!/bin/bash            
-                #SBATCH -A lu202X-XX-XX      # your project_ID       
+                #SBATCH -A lu2024-7-80      # your project_ID       
                 #SBATCH -J job-serial        # name of the job         
                 #SBATCH -n 1                 # nr. tasks  
                 #SBATCH --time=00:03:00      # requested time
@@ -1186,7 +1186,7 @@ Exercises
             .. code-block:: sh
                 
                 #!/bin/bash            
-                #SBATCH -A lu202X-XX-XX      # your project_ID       
+                #SBATCH -A lu2024-7-80      # your project_ID       
                 #SBATCH -J job-serial        # name of the job         
                 #SBATCH -n 1                 # nr. tasks  
                 #SBATCH --time=00:03:00      # requested time
