@@ -666,7 +666,8 @@ Exercises
                            #SBATCH --time=00:20:00      # requested time
                            #SBATCH --error=job.%J.err   # error file
                            #SBATCH --output=job.%J.out  # output file 
-			                  #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
+                           # reservation (optional)
+                           #SBATCH --reservation=RPJM-course*FIXME* 
 
                            # Do a purge and load any modules you need, here for Python 
                            ml purge > /dev/null 2>&1
@@ -818,7 +819,8 @@ Exercises
                            #SBATCH --time=00:20:00      # requested time
                            #SBATCH --error=job.%J.err   # error file
                            #SBATCH --output=job.%J.out  # output file 
-			                  #SBATCH --reservation=RPJM-course*FIXME* # reservation (optional)
+                           # reservation (optional)
+                           #SBATCH --reservation=RPJM-course*FIXME* 
 
                            ml purge  > /dev/null 2>&1
                            ml Julia/1.9.3-linux-x86_64

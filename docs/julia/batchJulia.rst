@@ -29,7 +29,7 @@ Running Julia in batch mode
    - Any longer, resource-intensive, or parallel jobs must be run through a **batch script**.
 
 
-The batch system used at both UPPMAX and HPC2N is called SLURM. 
+The batch system used at LUNARC, UPPMAX and HPC2N is called SLURM. 
 
 SLURM is an Open Source job scheduler, which provides three key functions
 
@@ -38,7 +38,8 @@ SLURM is an Open Source job scheduler, which provides three key functions
 - Manages a job queue, distributing work across resources according to policies
 
 In order to run a batch job, you need to create and submit a SLURM submit file (also called a batch submit file, a batch script, or a job script).
-Guides and documentation at: `HPC2N <http://www.hpc2n.umu.se/support>`_ and `UPPMAX <https://docs.uppmax.uu.se/cluster_guides/slurm/>`_. 
+Guides and documentation at: `HPC2N <http://www.hpc2n.umu.se/support>`_, `UPPMAX <https://docs.uppmax.uu.se/cluster_guides/slurm/>`_,
+and `LUNARC <https://lunarc-documentation.readthedocs.io/en/latest/manual/submitting_jobs/manual_basic_job/>`_.
 
 **Workflow**
 
@@ -108,7 +109,27 @@ Serial code
                        
             julia serial.jl              # run the serial script
             
+   .. tab:: LUNARC
+
+        Short serial example for running on Cosmos with Julia v. 1.8.5
+       
+        .. code-block:: bash
+   
+            #!/bin/bash            
+            #SBATCH -A lu202X-XX-XX      # your project_ID       
+            #SBATCH -J job-serial        # name of the job         
+            #SBATCH -n 1                 # nr. tasks  
+            #SBATCH --time=00:03:00      # requested time
+            #SBATCH --error=job.%J.err   # error file
+            #SBATCH --output=job.%J.out  # output file                                                                                                                                                                         
+
+
+            ml purge  > /dev/null 2>&1   # recommended purge
+            ml Julia/1.8.5-linux-x86_64  # Julia module
+                       
+            julia serial.jl              # run the serial script
             
+
    .. tab:: serial.jl 
    
         Julia example code.
@@ -182,6 +203,40 @@ Serial code + self-installed package in virt. env.
             Status `/pfs/proj/nobackup/path/Julia-Test/my-third-env/Project.toml`
             [acf6eb54] DFTK v0.6.2
 
+   .. tab:: LUNARC
+
+        Short serial example for running on Cosmos. Loading Julia v. 1.8.5 and using any Julia packages you have installed
+        with virtual environment.
+
+        .. code-block:: bash
+   
+            #!/bin/bash            
+            #SBATCH -A lu202X-XX-XX      # your project_ID       
+            #SBATCH -J job-serial        # name of the job         
+            #SBATCH -n 1                 # nr. tasks  
+            #SBATCH --time=00:03:00      # requested time
+            #SBATCH --error=job.%J.err   # error file
+            #SBATCH --output=job.%J.out  # output file                                                                                                                                                                         
+
+
+            ml purge  > /dev/null 2>&1   # recommended purge
+            ml Julia/1.8.5-linux-x86_64  # Julia module
+
+            # Move to the directory where the ".toml" files 
+            # for the environment are located
+            julia --project=. serial-env.jl  # run the script 
+
+        If this works, you will see the installed packages in the output file. In the present case
+        because I installed the ``DFTK`` package only in ``my-third-env`` environment, I can 
+        see the following output:
+
+        .. code-block:: sh
+
+            Status `/path-to-your-folder/Julia-Test/my-third-env/Project.toml`
+            [acf6eb54] DFTK v0.6.2                       
+            julia serial.jl              # run the serial script
+
+
    .. tab:: serial-env.jl 
    
         Julia example code where an environment is used.
@@ -190,6 +245,8 @@ Serial code + self-installed package in virt. env.
         
             using Pkg
             Pkg.status()
+
+
 
 
 Parallel code
@@ -258,6 +315,37 @@ Parallel code
             # Add the installed ``mpiexecjl`` wrapper to your path on the Linux command line
             $ export PATH=/home/u/username/.julia/bin:$PATH
             # Now the wrapper should be available on the command line 
+
+   .. tab:: LUNARC
+
+        The ``Threaded`` and ``Distributed`` packages are included in the Base installation. However, 
+        in order to use MPI with Julia you will need to follow the next steps (only the first time): 
+       
+        .. code-block:: console
+      
+            # Load the tool chain which contains a MPI library
+            $ ml foss/2021b
+            # Load Julia
+            $ ml Julia/1.8.5-linux-x86_64
+            # Start Julia on the command line
+            $ julia 
+            # Change to ``package mode`` and add the ``MPI`` package 
+            (v1.8) pkg> add MPI 
+            # In the ``julian`` mode run these commands:
+
+        .. code-block:: julia
+        
+            julia> using MPI 
+            julia> MPI.install_mpiexecjl() 
+                 [ Info: Installing `mpiexecjl` to `/home/u/username/.julia/bin`...
+                 [ Info: Done!
+
+        .. code-block:: console
+
+            # Add the installed ``mpiexecjl`` wrapper to your path on the Linux command line
+            $ export PATH=/home/u/username/.julia/bin:$PATH
+            # Now the wrapper should be available on the command line 
+
 .. tabs:: 
 
    .. tab:: serial.jl 
@@ -595,6 +683,87 @@ The corresponding batch scripts for these examples are given here:
            
                #!/bin/bash
                #SBATCH -A hpc2n2024-114
+               #SBATCH -J job
+               #SBATCH -n 8
+               #SBATCH --time=00:10:00
+               #SBATCH --error=job.%J.err
+               #SBATCH --output=job.%J.out
+   
+               ml purge  > /dev/null 2>&1
+               ml Julia/1.8.5-linux-x86_64
+               ml foss/2021b
+   
+               # export the PATH of the Julia MPI wrapper
+               export PATH=/home/u/username/.julia/bin:$PATH
+   
+               time mpiexecjl -np 8 julia mpi.jl
+
+   .. tab:: LUNARC 
+   
+      .. tabs::
+
+         .. tab:: job-serial.sh  
+
+            .. code-block:: bash
+        
+               #!/bin/bash
+               #SBATCH -A lu202X-XX-XX
+               #SBATCH -J job
+               #SBATCH -n 1
+               #SBATCH --time=00:10:00
+               #SBATCH --error=job.%J.err
+               #SBATCH --output=job.%J.out
+   
+               ml purge  > /dev/null 2>&1
+               ml Julia/1.8.5-linux-x86_64
+   
+               # "time" command is optional
+               time julia serial.jl
+
+
+         .. tab:: job-threaded.sh 
+   
+            .. code-block:: bash
+            
+               #!/bin/bash
+               #SBATCH -A lu202X-XX-XX
+               #SBATCH -J job
+               #SBATCH -n 8
+               #SBATCH --time=00:10:00
+               #SBATCH --error=job.%J.err
+               #SBATCH --output=job.%J.out
+   
+               ml purge  > /dev/null 2>&1
+               ml Julia/1.8.5-linux-x86_64
+   
+               # "time" command is optional
+               time julia -t 8 threaded.jl               
+   
+         .. tab:: job-distributed.sh 
+   
+   
+            .. code-block:: sh
+           
+               #!/bin/bash
+               #SBATCH -A lu202X-XX-XX
+               #SBATCH -J job
+               #SBATCH -n 8
+               #SBATCH --time=00:10:00
+               #SBATCH --error=job.%J.err
+               #SBATCH --output=job.%J.out
+   
+               ml purge  > /dev/null 2>&1
+               ml Julia/1.8.5-linux-x86_64
+   
+               # "time" command is optional
+               time julia -p 8 distributed.jl  
+   
+         .. tab:: job-mpi.sh 
+   
+            .. code-block:: sh
+           
+               #!/bin/bash
+               #SBATCH -A lu202X-XX-XX
                #SBATCH -J job
                #SBATCH -n 8
                #SBATCH --time=00:10:00
