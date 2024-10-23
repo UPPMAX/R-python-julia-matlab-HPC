@@ -876,3 +876,6 @@ Excellents
 untarred
 Uncompress
 uncompress
+answerhpc
+answerlunarc
+answeruppmax
