@@ -713,7 +713,7 @@ Exercise 4.2: run
 
 Run the R script called ``hello.R``, using ``Rscript``.
 
-.. answer_hpc2n:: Answer HPC2N
+.. answerhpc2n:: Answer HPC2N
     :class: dropdown 
 
     .. code-block:: console
@@ -728,7 +728,7 @@ Run the R script called ``hello.R``, using ``Rscript``.
         [1] "Hello World!"
         b-an01 [~]$ 
 
-.. answer_lunarc:: Answer LUNARC
+.. answerlunarc:: Answer LUNARC
     :class: dropdown 
 
     .. code-block:: console
@@ -743,7 +743,7 @@ Run the R script called ``hello.R``, using ``Rscript``.
         [1] "Hello World!"
         [bbrydsoe@rackham2 bbrydsoe]$
 
-.. answer_uppmax:: Answer UPPMAX
+.. answeruppmax:: Answer UPPMAX
     :class: dropdown 
 
     .. code-block:: console

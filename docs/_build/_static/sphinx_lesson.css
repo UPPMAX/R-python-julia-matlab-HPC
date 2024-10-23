@@ -45,17 +45,20 @@ body.wy-body-for-nav img.with-border {
 }
 
 /* Richel's fancy admonitions */
-.rst-content .answer_hpc2n > .admonition-title::before {
+.rst-content .answerhpc2n > .admonition-title::before {
     background-color: lightred;
+    color: lightred;
     content: "\02714\0FE0E";  /* Check mark */
 }
 
-.rst-content .answer_lunarc > .admonition-title::before {
+.rst-content .answerlunarc > .admonition-title::before {
     background-color: lightgreen;
+    color: lightgreen;
     content: "\02714\0FE0E";  /* Check mark */
 }
 
-.rst-content .answer_uppmax > .admonition-title::before {
-    background-color: lightblue;
+.rst-content .answeruppmax > .admonition-title::before {
+    color: lightblue;
+    color: lightblue;
     content: "\02714\0FE0E";  /* Check mark */
 }
