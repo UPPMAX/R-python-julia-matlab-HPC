@@ -44,21 +44,3 @@ body.wy-body-for-nav img.with-border {
     color: white;
 }
 
-/* Richel's fancy admonitions */
-.rst-content .answerhpc2n > .admonition-title::before {
-    background-color: lightred;
-    color: lightred;
-    content: "\02714\0FE0E";  /* Check mark */
-}
-
-.rst-content .answerlunarc > .admonition-title::before {
-    background-color: lightgreen;
-    color: lightgreen;
-    content: "\02714\0FE0E";  /* Check mark */
-}
-
-.rst-content .answeruppmax > .admonition-title::before {
-    color: lightblue;
-    color: lightblue;
-    content: "\02714\0FE0E";  /* Check mark */
-}
