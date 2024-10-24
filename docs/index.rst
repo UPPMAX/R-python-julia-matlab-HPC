@@ -338,9 +338,9 @@ Content of the course
    r/isolatedR
    r/batchR.rst
    common/parallel.rst
-   r/MLR.rst
    r/interactiveR.rst
    r/rstudio.rst
+   r/MLR.rst
    r/summaryR.rst
    r/evaluationR.rst
 
@@ -350,10 +350,10 @@ Content of the course
 
    matlab/introMatlab.rst
    matlab/load_runMatlab.rst
-   matlab/add_onsMatlab.rst
    matlab/slurmMatlab.rst
    matlab/jobsMatlab.rst
    common/parallel.rst
+   matlab/add_onsMatlab.rst
    matlab/local_desktopMatlab.rst
    matlab/jupyterMatlab.rst
    matlab/summaryMatlab.rst
