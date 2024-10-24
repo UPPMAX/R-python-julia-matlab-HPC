@@ -72,14 +72,6 @@ HPC2N, UPPMAX, LUNARC, and most of the Swedish HPC centres use the same module s
 - `the LUNARC documentation of the module system <https://lunarc-documentation.readthedocs.io/en/latest/manual/manual_modules/#using-modules>`_ 
 - `the UPPMAX documentation of the module system <http://docs.uppmax.uu.se/cluster_guides/modules/>`_
 
-HPC2N, LUNARC, and UPPMAX do differ how their module systems show results when searching for a module with ``module avail``:
-
-- HPC2N: a module is hidden from search until a prerequisite module is loaded
-- LUNARC: a module is hidden from search until a prerequisite module is loaded
-- UPPMAX: when searching for a module, one can always see all modules
-
-All modules can be found with ``module spider`` though. 
-
 Here is how to find the modules that load different versions of R:
 
 .. tabs::
@@ -396,7 +388,7 @@ here is how you load that module:
             module load GCC/11.3.0 OpenMPI/4.1.4 R/4.2.1 R/<version>
 
         where ``<version>`` is an R version, in ``major.minor.patch`` format, 
-        for example, ``module load GCC/11.3.0 OpenMPI/4.1.4 R/4.2.1 R/4.1.2``
+        for example, ``module load GCC/11.3.0 OpenMPI/4.1.4 R/4.2.1``
 
     .. tab:: UPPMAX
 
@@ -626,7 +618,7 @@ For this course, we recommend these versions of R:
 +==========+=========+
 |HPC2N     |4.1.2    |
 +----------+---------+
-|LUNARC    |4.2.1   |
+|LUNARC    |4.2.1    |
 +----------+---------+
 |UPPMAX    |4.1.1    |
 +----------+---------+
