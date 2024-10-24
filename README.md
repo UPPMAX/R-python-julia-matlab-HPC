@@ -6,6 +6,14 @@
 
 This repository contains the source code for the UPPMAX/HPC2N [R, Python, Julia, and Matlab in HPC course](https://uppmax.github.io/R-python-julia-matlab-HPC/)
 
+# Getting PDFs of the material
+
+You can clone the repository: git clone https://github.com/UPPMAX/R-python-julia-matlab-HPC.git 
+
+After doing that, you can convert the .rst files to .pdf file with this online tool: https://cloudconvert.com/rst-to-pdf 
+
+The documentation files you see on the rendered pages (https://uppmax.github.io/R-python-julia-matlab-HPC/) are found under R-python-julia-matlab-HPC/docs/<language> 
+
 ## Credits
 
 Built with Sphinx using a theme provided by Read the Docs. 
