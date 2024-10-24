@@ -366,7 +366,7 @@ repository http://ftp.acc.umu.se/mirror/CRAN/
           install.packages('nuggets', repos='http://ftp.acc.umu.se/mirror/CRAN/')
 
 
-.. solution:: Solution for installing nuggests 
+.. solution:: Solution for installing nuggets 
 
    1)
 
