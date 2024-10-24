@@ -33,15 +33,15 @@ Load and run R
 
       Lesson plan (25 minutes in total):
 
-      - 3 mins: prior knowledge
+      - 10:15: 3 mins: Prior
           - You want to write and run R code on an HPC cluster
             Which ways do you know?
           - How to start R on an HPC cluster?
           - What is a module system?
           - Why is there a module system?
-      - 7 mins: presentation: loading and running R
-      - 15 mins: challenge
-      - 5 mins: feedback
+      - 10:18: 7 mins: Present: loading and running R
+      - 10:25: 15 mins: Challenge
+      - 10:40: 5 mins: Feedback
 
 Introduction
 ------------
@@ -135,7 +135,7 @@ Here is how to find the modules that load different versions of R:
 
             .. code-block:: console 
 
-                [bbrydsoe@cosmos3 python]$ ml spider R
+                [bbrydsoe@cosmos3 python]$ module spider R
 
                 ------------------------------------------------------------------------------------------
                   R:

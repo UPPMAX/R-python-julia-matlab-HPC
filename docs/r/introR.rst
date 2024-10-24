@@ -24,18 +24,17 @@ Introduction R
       - Learners have seen an overview of the course
       - Learners have seen an first overview of the R programming language
 
-      Lesson plan (20 minutes in total):
+      Lesson plan (15 minutes in total):
 
-      - 2 min: discuss random people with videos, based on recommendation by [Bell, Mike. The fundamentals of teaching: A five-step model to put the research evidence into practice. Routledge, 2020]
-      - 5 mins: prior knowledge
+      - 9:00: 2 min: discuss random people with videos, based on recommendation by [Bell, Mike. The fundamentals of teaching: A five-step model to put the research evidence into practice. Routledge, 2020]
+      - 9:02: 3 mins: Prior
          - What is R?
          - Why use R?
          - What are features of R?
          - Can R do everything?
          - What are R packages?
-      - 5 mins: presentation: First overview of R
-      - 5 mins: presentation: Course schedule
-      - 3 mins: feedback
+      - 9:05: 5 mins: Present: First overview of R
+      - 9:10: 5 mins: Present: Course schedule
 
 .. admonition:: **Course learning objectives**
  

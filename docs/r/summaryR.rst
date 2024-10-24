@@ -1,6 +1,147 @@
 Summary
 =======
 
+You can find the module to be able to run R:
+
+.. code-block:: console
+
+    module spider R
+
+You can load the module to be able to run R:
+
+.. code-block:: console
+
+    module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2
+    module load GCC/11.3.0 OpenMPI/4.1.4 R/4.2.1
+    module load R/4.1.1
+
+You can run the R interpreter
+
+.. code-block:: console
+
+    R
+
+You can run the R command to get the list of installed R packages
+
+.. code-block:: console
+
+    installed.packages()
+
+You can run an R script from the command-line
+
+.. code-block:: console
+
+    Rscript my_script.R
+
+You can find out if an R package is already installed
+
+.. code-block:: console
+
+    installed.packages()
+    library(my_package)
+
+You can load the pre-installed R packages
+
+.. code-block:: console
+
+    module load R_packages/4.1.1
+
+You can install an R package from CRAN
+
+
+.. code-block:: console
+
+    install.packages("my_package", repos = "my_repo")
+
+You can install an R package from GitHub
+
+.. code-block:: console
+
+    #
+
+You can manually download and install an R package
+
+.. code-block:: console
+
+    #
+
+- UPPMAX-only: I can manually download and install an R package on Bianca
+
+.. code-block:: console
+
+    #
+
+You can use `renv` to create, activate, use and deactivate a virtual environment
+
+.. code-block:: console
+
+    #
+
+- UPPMAX-only: I can use `conda` to create, activate, use and deactivate a virtual environment
+
+.. code-block:: console
+
+    #
+
+You can submit a job to the scheduler to run an R script with regular code
+
+.. code-block:: console
+
+    #
+You can submit a job to the scheduler to run an R script that uses parallel code
+
+.. code-block:: console
+
+    #
+
+You can submit a job to the scheduler to run an R script that uses a GPU
+
+.. code-block:: console
+
+    #
+
+You can find and load the R machine learning modules
+
+.. code-block:: console
+
+    #
+
+You can submit a job to the scheduler to run an R script that uses machine learning
+
+.. code-block:: console
+
+    #
+
+You can start an interactive session
+
+.. code-block:: console
+
+    #
+
+You can verify I am on the login node yes/no
+
+.. code-block:: console
+
+    #
+
+You can start an interactive session with multiple cores
+
+.. code-block:: console
+
+    #
+
+You can verify my interactive session uses multiple cores 
+
+.. code-block:: console
+
+    #
+
+You can start RStudio
+
+.. code-block:: console
+
+    #
+
 .. keypoints::
 
    - Load and run
@@ -12,7 +153,7 @@ Summary
          
          - use ``library(<pkg-name>)`` to see if available
 
-   - Isolated environments 
+   Yousolated environments 
       - With a virtual environment you can tailor an environment with specific
         versions.
       - You can make it for each project you have for reproducibility using
@@ -26,7 +167,7 @@ Summary
       - Remember to include possible input arguments to the R script in
         the batch script.
    
-   - Interactive work on calculation nodes
+   Younteractive work on calculation nodes
       - Start an interactive session on a calculation node by a SLURM
         allocation (similar flags)
 
