@@ -19,7 +19,9 @@ Extra MATLAB Exercises
       t_out = toc;
     end
 
-.. challenge:: Run the following code as a batch job with ``iter=10000`` and set the number of workers equal to 8. Start with `the SBATCH template here <https://uppmax.github.io/R-python-julia-matlab-HPC/matlab/slurmMatlab.html#parallel-batch-script>`.
+.. challenge:: Compare 2 ways to parallelize code.
+
+  1. Run the following code with the MATLAB batch command with ``iter=10000`` and set the number of workers equal to 6.
 
    .. code-block:: matlab
     
@@ -30,6 +32,7 @@ Extra MATLAB Exercises
       dstats = zeros(numel(nsides),4);
       
       tic
+      % parallelize or serialize as desired
       parfor nf = 1:numel(nsides)
           rolls = randi([1,nsides(nf)], [iter, 1], 'uint32');
           mmm = [nsides(nf) mean(double(rolls)) median(rolls) mode(rolls)];
@@ -49,33 +52,10 @@ Extra MATLAB Exercises
 
     You can play with the number of workers to see how the running time changes, and try submitting from the MATLAB command line or regular terminal.
 
+    2. What happens if you try to run this code unmodified with a batch submission script like the `monte_carlo_pi.m` script was run in class? How are the results in your output script different from what your fetched at the MATLAB command line? Why?
+
 .. solution::
 
-  The following is an example batch script where you will need to modify the #SBATCH parameters and the name of the MATLAB module to fit your resources.
-
-  .. code-block:: matlab
-    #!/bin/bash
-    # Change to your actual project number
-    #SBATCH -A XXXX-YY-ZZZ
-    #SBATCH --ntasks-per-node=<how many tasks>
-    #SBATCH --nodes <how many nodes>
-    
-    # Asking for 30 min (change as you want)
-    #SBATCH -t 00:30:00
-    #SBATCH --error=matlab_%J.err
-    #SBATCH --output=matlab_%J.out
-    
-    # Clean the environment
-    module purge > /dev/null 2>&1
-    
-    # Change depending on resource and MATLAB version
-    # to find out available versions: module spider matlab
-    module add MATLAB/<version>
-    
-    # Executing a parallel matlab program
-    srun matlab -nojvm -nodisplay -nodesktop -nosplash -r "par_dice_stats(10000)"
-
-    The .out file will be ugly, and the time may be hard to find in it. A clean version of the output table will be saved as ``dice_stats_out.txt``
-
+   2. If you try to, say, modify your ``parallel_example-<cluster>.sh`` to take ``dice_stats_par.m`` without modifying the latter, in the output log file, you will find that the resulting data table has been printed as many times as the number of tasks you assigned with ``--ntasks-per-node``, and the time will have been much longer.
 
 
