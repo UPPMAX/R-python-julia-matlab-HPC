@@ -5,97 +5,102 @@ Summary
 
 - You can use the module system to load a specific version of Matlab
 
-module load matlab
+   module load matlab
 
 - You can start the Matlab GUI
 
-matlab
+   matlab
 
 - You can run Matlab on the terminal
 
-matlab -nodisplay [-singleCompThread -nosplash -nodesktop]
+   matlab -nodisplay [-singleCompThread -nosplash -nodesktop]
 
 
 **Slurm job scheduler**
 
 - You can configure the cluster
 
-configCluster.sh <project-id if on UPPMAX or LUNARC>
+   configCluster.sh <project-id if on UPPMAX or LUNARC>
 
 - You can can add job settings needed to run jobs from Matlab
 
-c.AdditionalProperties.<properties like AccountName/WallTime>
+   c.AdditionalProperties.<properties like AccountName/WallTime>
 
 - You can work in the Matlab terminal interface
 
-It works almost the same as with GUI.
+   It works almost the same as with GUI.
 
 - You can submit jobs from inside the Matlab terminal interface
 
-job = batch('myScript');
+   job = batch('myScript');
 
 - You can write and submit a Matlab batch script
 
-batchscript.sh
-!/bin/bash
-#SBATCH -A my_account
-#SBATCH -t 00:10:00
-module load <matlab version>
-matlab -nojvm -nodisplay -r "monte_carlo_pi(100000)"
+   - ``batchscript.sh``
 
-sbatch <batchscript.sh>
+.. code-block:: bash
+
+   !/bin/bash
+   #SBATCH -A my_account
+   #SBATCH -t 00:10:00
+   module load <matlab version>
+   matlab -nojvm -nodisplay -r "monte_carlo_pi(100000)"
+
+   - ``sbatch batchscript.sh``
 
 - You can use GPUs with Matlab
 
-c.AdditionalProperties.GpusPerNode = 1;
+   c.AdditionalProperties.GpusPerNode = 1;
 
 **Matlab GUI and Slurm** 
 
 - You can submit jobs from inside the Matlab GUI
 
-c=parcluster('name-of-your-cluster');
-%extra slurm settings
-j = c.batch(@myfunction,'nr. outputs',{'list of input args'},'pool','nr. workers');
-j.wait;                               % wait for the results
-j.fetchOutputs{:};                % fetch the results
+.. code-block:: matlab
+
+   c=parcluster('name-of-your-cluster');
+   %extra slurm settings
+   j = c.batch(@myfunction,'nr. outputs',{'list of input args'},'pool','nr. workers');
+   j.wait;                               % wait for the results
+   j.fetchOutputs{:};                % fetch the results
 
 Note that batch also accepts script names in place of function names, but these must be given in single quotes, with no @ or .m. 
 
 - You can work with Matlab in parallel
 
-parfor
-spmd
-parfeval
+   parfor
+   spmd
+   parfeval
 
 - You can check that you are in an interactive session
 
-After running ``interactive..`` on UPPMAX or LUNARC you will see that the linux prompt shows another hostname
+   After running ``interactive..`` on UPPMAX or LUNARC you will see that the linux prompt shows another hostname
 
 **Add-Ons**
 
 - You can view add-ons and toolboxes
 
-It is all more or less graphical
+   It is all more or less graphical
 
 - You can install add-ons
 
-Search in add-ons explorer and install.
-Ends up in local folder and is in the part so it should be reached wherever you are in the file tree.
+    Search in add-ons explorer and install.
+    Ends up in local folder and is in the part so it should be reached wherever you are in the file tree.
 
 
 **Session-UPPMAX: Matlab client on the desktop** 
 
 - You can use the Matlab client on the desktop
 
-download and decompress UPPMAX configure file.
-run configCluster on local MATLAB and set user name
-Steps to run
-        set parcluster settings, like you do otherwise.
+   download and decompress UPPMAX configure file.
+   run configCluster on local MATLAB and set user name
+   Steps to run
+           set parcluster settings, like you do otherwise.
 
 **Session: Matlab in Jupyter**
 
 - You can start run Matlab in Jupyter
 
-You need to configure and install some python packages the first time
-After that starting jupyter will find the Matlab kernel 
+   You need to configure and install some python packages the first time
+   After that starting jupyter will find the Matlab kernel 
 
