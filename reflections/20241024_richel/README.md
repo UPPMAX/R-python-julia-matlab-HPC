@@ -78,11 +78,39 @@ more.
 
 ## Session 14:30-15:15: interactive and RStudio
 
-...
+It was delated 15 minutes, which was no problem.
+Prior took 15 minutes, in which I recapped earlier sessions too.
+I gave the learners 15 minutes for the exercise.
+All 4 learners were able to complete the procedure.
+
+During the 15 minutes, there was 1 learner that shared her
+screen with a question beyond the content of this session.
+1 learner needed to install a local ThinLinc client and this
+did not work. That learner did see how it looked like
+and stated she is confident she could do it via the website.
+
+As the learning objectives were achieved, I ended the session earlier
+(there were no more questions).
+I do think the session's length is correct, in the case there would
+be some slower learners.
+
+I told the 4 learners when the next session would start,
+which was 15 minutes later on the schedule, as
+I expected other sessions to do take the scheduled amount of time.
+However, it turned out that the next session would like to start
+earlier. I took the blame and hoped for the best.
+What I did not know is that it would be only the UPPMAX learners left,
+so we could have easily started 15 minutes earlier.
 
 ## Session 16:00-16:15: summary and evaluation
 
-...
+I've not shown the summary, although it follows the
+evaluation questions, as I feel it increases the evaluation
+results, as the confidences will be higher, due to the refresher.
+The full procedure took 3 minutes. It took 5 minutes
+for the 5 learners to fill in the evaluation forms.
+All learners said bye, except for 1.
+That 1 learner had a question, which was answered.
 
 ## Analysis
 
