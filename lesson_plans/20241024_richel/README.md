@@ -91,7 +91,7 @@ TODO:
 - [x] Check and prepare Priors
 
 I don't like my course material. It makes me
-lecture yoo much and I know I should not. Next course iteration,
+lecture too much and I know I should not. Next course iteration,
 I will be pointing to the centers' documentation more.
 I did not make the time to properly do this, mostly
 to take it easier on myself after some ruthless days of preparing
