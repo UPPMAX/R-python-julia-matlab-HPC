@@ -54,7 +54,7 @@ This is the schedule of that day:
 - 1x a LUNARC user that needed help, I put him in a Zoom room with the LUNARC
   teacher
 
-## Session: 10:00-10:45 intro and syllabus and load and run R
+## Session: 10:00-10:45: intro and syllabus and load and run R
 
 There were 5 learners. I did the regular teaching cycles, with a Prior
 at the start. There were 3 that -per my request- turned on their camera,
@@ -75,3 +75,16 @@ more.
 
 - [ ] In the next course iteration: use more active learning methods in this
   session
+
+## Session 14:30-15:15: interactive and RStudio
+
+...
+
+## Session 16:00-16:15: summary and evaluation
+
+...
+
+## Evaluation results
+
+...
+
