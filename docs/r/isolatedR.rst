@@ -245,6 +245,11 @@ Example - Creating a renv and installing ``knitr``
 
           > library(datarium) 
 
+       NOTE: Later, when you need it, for instance in a batch script, you can either  
+
+       - work from inside the r_proj directory 
+       - Load the renv with: ``renv::load("<path-to-your-renv>")``
+
 
 Conda (UPPMAX)
 --------------
