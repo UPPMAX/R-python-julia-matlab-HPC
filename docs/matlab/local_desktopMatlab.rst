@@ -20,6 +20,15 @@ Session: MATLAB client on the desktop
             - R2023b
 
 
+DUMP
+----
+
+.. figure:: ./img/matlab_enterpasswd.PNG
+.. figure:: ./img/matlab_jobmonitor.PNG
+.. figure:: ./img/matlab_usercred.PNG
+
+
+
 Let's get started together!
 ---------------------------
 
