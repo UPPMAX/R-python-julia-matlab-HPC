@@ -1,5 +1,5 @@
-The Slurm job scheduler and MATLAB
-==================================
+Slurm job scheduler and MATLAB in terminal
+==========================================
 
 .. questions::
 
