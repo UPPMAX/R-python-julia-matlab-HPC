@@ -366,6 +366,39 @@ repository http://ftp.acc.umu.se/mirror/CRAN/
           install.packages('nuggets', repos='http://ftp.acc.umu.se/mirror/CRAN/')
 
 
+.. solution:: Solution for installing nuggests 
+
+   1)
+
+   - UPPMAX: ``module load R_packages/4.1.1``
+   - HPC2N: ``module load GCC/11.3.0  OpenMPI/4.1.4 R/4.2.1``
+   - LUNARC: ``module load GCC/11.3.0  OpenMPI/4.1.4 R/4.2.1``
+
+   2)
+
+   - ``echo R_LIBS_USER="$HOME/R-packages-%V" > ~/.Renviron``
+
+   OR (option if UPPMAX or HPC2N)
+
+   - UPPMAX: ``echo R_LIBS_USER="/proj/r-py-jl-m-rackham/<yourdir>/R-packages-%V" > ~/.Renviron``
+   - HPC2N: ``echo R_LIBS_USER="/proj/nobackup/r-py-jl-m/<yourdir>/R-packages-%V" > ~/.Renviron``
+
+   3) Create directory for R packages:
+
+   - LUNARC: ``mkdir -p $HOME/R-packages-4.2.1``
+   - UPPMAX:
+       - ``mkdir -p $HOME/R-packages-4.1.1``
+       - OR ``mkdir -p /proj/r-py-jl-m-rackham/<yourdir>/R-packages-4.1.1``
+   - HPC2N:
+       - ``mkdir -p $HOME/R-packages-4.2.1``
+       - OR ``mkdir -p /proj/nobackup/r-py-jl-m/<yourdir>/R-packages/4.2.1``
+
+   4) Either of
+
+   - Start R and install: ``install.packages('nuggets', repos='http://ftp.acc.umu.se/mirror/CRAN/')``
+   - Install from command line: ``R --quiet --no-save --no-restore -e "install.packages('nuggets', repos='http://ftp.acc.umu.se/mirror/CRAN/')"``
+
+
 For other ways to install R packages, including from GitHub or manually, look at the "More about R packages" from the "Extra reading" section in the bottom left side of the menu. 
 
 .. note:: 
