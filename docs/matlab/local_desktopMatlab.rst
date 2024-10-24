@@ -9,10 +9,12 @@ Session-UPPMAX: Matlab client on the desktop
 .. warning::
 
    - This solution is possible only if
-      - you have an UPPMAX compute project and 
+      - you have an UPPMAX compute project 
       - a working matlab on your computer with one of the version available on the cluster:
+
          - check with ``module avail matlab``
          - Examples of the newest ones: 
+
             - R2020b
             - R2022a
             - R2022b
@@ -64,8 +66,8 @@ The Rackham MATLAB support package can be found at `uppsala.Desktop.zip <https:/
       >> c = parcluster('local');
 
 
-CONFIGURING JOBS
-................
+Configuring Slurm details
+.........................
 
 Prior to submitting the job, various parameters can be assigned, such as queue, e-mail, walltime, etc.  The following is a partial list of parameters.  See AdditionalProperties for the complete list.  Only AccountName, Partition, MemUsage and WallTime.
 
@@ -141,6 +143,7 @@ Start job
 .........
 
 - Copy this script and paste in a new file ``parallel_example_local.m`` that you save in the working directory where you are (check with ``pwd`` in the Matlab Command Window).
+
     - The script is supposed to loop over ``sleepTime`` seconds of work ``nLoopIters`` times. 
     - We will define the number of processes in the batch submit line.
 
@@ -231,8 +234,18 @@ Exercises
    - Try to run a script from the `MATLAB GUI and SLURM session <./jobsMatlab.html>`_
    - Check in a rackham terminal: ``squeue -M snowy --me``
 
-   
+.. keypoints:: 
 
+   - Steps to configure  first time 
+       - download and decompress UPPMAX configure file.
+       - run configCluster on local MATLAB and set user name
+   - Steps to run
+       - set ``parcluster`` settings, like you do otherwise.
+   - Note: only ``parcluster`` will work, not ``parpool``.
+
+.. admonitions:: Do you get problems
+
+   - Send a support ticket to UPPMAX via `supr.naiss.se/support <javascript:void(window.open('https://supr.naiss.se/support/?centre_resource=c4','_blank','toolbar=1,location=1,status=1,menubar=1,scrollbars=1,resizable=1'));>`_
 
 
 
