@@ -278,8 +278,8 @@ When you have finished using the allocation, either wait for it to end, or close
 
                   [~]$ 
 
-Running IJulia and Jupyter notebooks
-------------------------------------
+Running IJulia and Jupyter 
+--------------------------
 
 
 .. tabs::
@@ -288,7 +288,7 @@ Running IJulia and Jupyter notebooks
 
       - For more interactiveness you can run IJulia.
       - You benefit a lot if you are using ThinLinc
-      - Like for Python it is possible to run a Julia in a notebook, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the python module as well. In shell:
+      - Like for Python it is possible to run Julia in Jupyter, i.e. in a web interface with possibility of inline figures and debugging. An easy way to do this is to load the python module as well. In shell:
 
          .. code-block:: console
 
