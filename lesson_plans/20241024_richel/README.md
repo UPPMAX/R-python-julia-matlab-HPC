@@ -80,7 +80,7 @@ I do want to change the colors of the admonition per HPC center :-)
 Videos are done, so the material is finished.
 
 TODO:
-- Check and prepare Piors
+- Check and prepare Priors
 
 
 

@@ -33,15 +33,14 @@ Load and run R
 
       Lesson plan (25 minutes in total):
 
-      - 5 mins: prior knowledge
-          - You want to write and run R code on an HPC cluster. 
+      - 3 mins: prior knowledge
+          - You want to write and run R code on an HPC cluster
             Which ways do you know?
           - How to start R on an HPC cluster?
           - What is a module system?
           - Why is there a module system?
-      - 5 mins: presentation: loading and running R
-          - skip R packages, that is next session
-      - 10 mins: challenge
+      - 7 mins: presentation: loading and running R
+      - 15 mins: challenge
       - 5 mins: feedback
 
 Introduction
