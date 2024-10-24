@@ -882,3 +882,5 @@ answeruppmax
 enterpasswd
 jobmonitor
 usercred
+CurrentFolder
+
