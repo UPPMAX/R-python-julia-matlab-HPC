@@ -134,7 +134,7 @@ Unset a value when no longer needed.
 
 
 Start job
----------
+.........
 
 - Copy this script and paste in a new file ``parallel_example_local.m`` that you save in the working directory where you are (check with ``pwd`` in the Matlab Command Window).
     - The script is supposed to loop over ``sleepTime`` seconds of work ``nLoopIters`` times. 
