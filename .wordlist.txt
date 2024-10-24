@@ -883,4 +883,5 @@ enterpasswd
 jobmonitor
 usercred
 CurrentFolder
+signalled
 
