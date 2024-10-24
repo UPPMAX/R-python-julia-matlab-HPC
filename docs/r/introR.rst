@@ -110,7 +110,7 @@ Schedule
 +-------+------------------------+-----------------+
 | 14:15 | Break                  | .               |
 +-------+------------------------+-----------------+
-| 14:30 | Simultaneous session   | PO \* RB \* ?RP |
+| 14:30 | Simultaneous session   | PO \* RB \* RP  |
 +-------+------------------------+-----------------+
 | 15:15 | Break                  | .               |
 +-------+------------------------+-----------------+
@@ -124,7 +124,7 @@ Schedule
 Simultaneous session:
 
  - HPC2N: ThinLinc & RStudio, by PO
- - LUNARC, by ?RP
+ - LUNARC: On-Demand and RStudio, by RP
  - UPPMAX: `Running RStudio on Rackham <https://docs.uppmax.uu.se/software/rstudio_on_rackham/>`_, by RB
 
 Exercises used in the course
