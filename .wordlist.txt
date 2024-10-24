@@ -879,3 +879,6 @@ uncompress
 answerhpc
 answerlunarc
 answeruppmax
+enterpasswd
+jobmonitor
+usercred
