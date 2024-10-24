@@ -44,10 +44,10 @@ Here we will only focus on the first two options.
 DUMP
 ----
 
-.. figure:: ../img/Add-On_explorer.PNG
-.. figure:: ../img/Add-On_manager.PNG
-.. figure:: ../img/Toolbar_Add-Ons.PNG
-.. figure:: ../img/Add-On_manager.PNG
+.. figure:: ./img/Add-On_explorer.PNG
+.. figure:: ./img/Add-On_manager.PNG
+.. figure:: ./img/Toolbar_Add-Ons.PNG
+.. figure:: ./img/Add-On_manager.PNG
 
 
 Install Add-Ons from File
