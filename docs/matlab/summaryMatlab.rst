@@ -15,7 +15,7 @@ Summary
 
       matlab &
 
-   - or on-demad on LUNARC
+   - or On-demand on LUNARC
 
 - You can run Matlab on the terminal
 
