@@ -109,6 +109,10 @@ Set some additional parameters related to Slurm on Rackham
    >> % Specify the partition
    >> c.AdditionalProperties.Partition = 'devcore';
 
+   >> % Specify another cluster: 'snowy'
+   >> c.AdditionalProperties.ClusterName='snowy'
+   >> c.AdditionalProperties.ProcsPerNode = 16;
+
    >> % Specify number of GPUs
    >> c.AdditionalProperties.GPUsPerNode = 1;
    >> c.AdditionalProperties.GPUCard = 'gpu-card';
@@ -206,6 +210,15 @@ Start job
 - The script looped over 1 s work 16 times, but with 8 processes.
 - In an ideal world it would have taken ``16 / 8 = 2 s``. Now it took 2.5 s with some "overhead"
 
+.. admonition:: Run on Snowy
+
+   .. code-block:: matlab
+
+      >> c.AdditionalProperties.ClusterName='snowy'
+      >> c.AdditionalProperties.ProcsPerNode = 16;
+
+
+
 Exercises
 ---------
 
@@ -213,8 +226,13 @@ Exercises
 
    - Use the instructions above to try to make it work!
 
-.. challenge:: 2. Run a script.
+.. challenge:: 2. Run a script on snowy
 
    - Try to run a script from the `MATLAB GUI and SLURM session <./jobsMatlab.html>`_
+   - Check in a rackham terminal: ``squeue -M snowy --me``
+
+   
+
+
 
 
