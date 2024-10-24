@@ -111,5 +111,5 @@ Exercises
 
 .. challenge:: 1. Find the **kalmanf** and install it and run a test command.
 
-.. challenge:: 2. (Optinal) Browse the add-ons and get inspired for your own work!
+.. challenge:: 2. (Optional) Browse the add-ons and get inspired for your own work!
 
