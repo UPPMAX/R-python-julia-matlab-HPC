@@ -70,16 +70,16 @@ Preliminary schedule
      - **Break**
      - 
    * - 11.05
-     - Add-Ons/packages 
+     - Add-Ons 
      - BC
    * - 11.30
-     - Slurm jobs on the command line  
+     - Slurm job scheduler and Matlab  
      - BB
    * - 12.00
      - **LUNCH**
      -
    * - 13.00
-     - Parallel, syntax, pool, matlab batch
+     - Matlab GUI and Slurm
      - PO, RP
    * - 13.30
      - Parallel and multithreaded functions   
@@ -91,7 +91,7 @@ Preliminary schedule
      - Cont'd Parallel and multithreaded functions   
      - PO
    * - 14.30
-     - GPU 
+     - GPU???
      - Lecture+code along + exercise 30m
    * - 14.50
      - **Coffee break**
