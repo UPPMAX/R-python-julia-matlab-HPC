@@ -50,61 +50,58 @@ Preliminary schedule
 
    * - Time
      - Topic
-     - Activity
+     - Teacher(s)
    * - 9:00
      - Log in 
-     - 45m
+     - Several
    * - 9.45
      - **Coffee break**
      - 
    * - 10:00
      - Syllabus 
-     - 10m
+     - RP
    * - 10.15
      - Introduction, MATLAB in general
-     - Lecture 20 m 
+     - RP
    * - 10.25
      - Loading modules and running MATLAB codes 
-     - Lecture+code along 30m
+     - RP
    * - 10.50
      - **Break**
      - 
    * - 11.05
-     - Add-Ons/packages 
-     - Lecture+code along 25m
+     - Add-Ons 
+     - BC
    * - 11.30
-     - Slurm jobs on the command line  
-     - Lecture+code along + exercise 45m
+     - Slurm job scheduler and Matlab  
+     - BB
    * - 12.00
      - **LUNCH**
      -
    * - 13.00
-     - Parallel, syntax, pool, matlab batch
-     - 
+     - Matlab GUI and Slurm
+     - PO, RP
    * - 13.30
      - Parallel and multithreaded functions   
-     - Lecture+code along + exercise 30m
+     - PO
    * - 13.50
      - **break**
      - 
    * - 14.00
      - Cont'd Parallel and multithreaded functions   
-     - Lecture+code along + exercise 30m
+     - PO
    * - 14.30
-     - GPU 
+     - GPU???
      - Lecture+code along + exercise 30m
    * - 14.50
      - **Coffee break**
      - 
    * - 15.05
-     - Simultaneous session — UPPMAX: Interactive work
-     - Lecture+code along 25m
+     - Simultaneous session — UPPMAX: Client on the local desktop
+     - BC
    * - .
-     - Simultaneous session — HPC2N: Interactive work
-     - Lecture+code along 25m   
-   * - .
-     - Simultaneous session — LUNARC: Interactive work
-     - Lecture+code along 25m  
+     - Simultaneous session — MATLAB in Jupyter
+     - PO   
    * - 15.35
      - Summary 
      -

@@ -104,10 +104,14 @@ Set some additional parameters related to Slurm on Rackham
    >> c.AdditionalProperties.ProcsPerNode = 20;
 
 
-[OPTIONAL]
+   [OPTIONAL]
 
    >> % Specify the partition
    >> c.AdditionalProperties.Partition = 'devcore';
+
+   >> % Specify another cluster: 'snowy'
+   >> c.AdditionalProperties.ClusterName='snowy'
+   >> c.AdditionalProperties.ProcsPerNode = 16;
 
    >> % Specify number of GPUs
    >> c.AdditionalProperties.GPUsPerNode = 1;
@@ -134,15 +138,30 @@ Unset a value when no longer needed.
 
 
 Start job
----------
+.........
+
+- Copy this script and paste in a new file ``parallel_example_local.m`` that you save in the working directory where you are (check with ``pwd`` in the Matlab Command Window).
+    - The script is supposed to loop over ``sleepTime`` seconds of work ``nLoopIters`` times. 
+    - We will define the number of processes in the batch submit line.
 
 .. code-block:: matlab
 
-   job = c.batch(@parallel_example, 1, {16}, 'Pool',8,'CurrentFolder','.');
+   function t = parallel_example_local(nLoopIters, sleepTime)
+   t0 = tic;
+   parfor idx = 1:nLoopIters
+      A(idx) = idx;
+      pause(sleepTime);
+   end
+   t = toc(t0);
+
+
+.. code-block:: matlab
+
+   job = c.batch(@parallel_example_local, 1, {16,1}, 'Pool',8,'CurrentFolder','.');
 
 - Submission to the cluster requires SSH credentials. 
 - You will be prompted for username and password or identity file (private key). 
-- The username and location of the private key will be stored in MATLAB for future sessions.
+    - It will not ask again until you define a new cluster handle ``c`` or in next session.
 
 .. figure:: ./img/matlab_usercred.PNG
 
@@ -183,4 +202,37 @@ Start job
 .. code-block:: matlab
 
    >> job.fetchOutputs{:}
+
+   ans =
+
+       2.4853
+
+- The script looped over 1 s work 16 times, but with 8 processes.
+- In an ideal world it would have taken ``16 / 8 = 2 s``. Now it took 2.5 s with some "overhead"
+
+.. admonition:: Run on Snowy
+
+   .. code-block:: matlab
+
+      >> c.AdditionalProperties.ClusterName='snowy'
+      >> c.AdditionalProperties.ProcsPerNode = 16;
+
+
+
+Exercises
+---------
+
+.. challenge:: 1. Configure your local Matlab to talk to UPPMAX
+
+   - Use the instructions above to try to make it work!
+
+.. challenge:: 2. Run a script on snowy
+
+   - Try to run a script from the `MATLAB GUI and SLURM session <./jobsMatlab.html>`_
+   - Check in a rackham terminal: ``squeue -M snowy --me``
+
+   
+
+
+
 
