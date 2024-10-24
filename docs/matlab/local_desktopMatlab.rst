@@ -1,4 +1,4 @@
-Session: MATLAB client on the desktop
+Session-UPPMAX: Matlab client on the desktop
 =====================================
 
 .. admonition:: Use own computer's matlab
@@ -20,15 +20,6 @@ Session: MATLAB client on the desktop
             - R2023b
 
 
-DUMP
-----
-
-.. figure:: ./img/matlab_enterpasswd.PNG
-.. figure:: ./img/matlab_jobmonitor.PNG
-.. figure:: ./img/matlab_usercred.PNG
-
-
-
 Let's get started together!
 ---------------------------
 
@@ -37,7 +28,6 @@ Let's get started together!
    - You can try to type-along
 
 The Rackham MATLAB support package can be found at `uppsala.Desktop.zip <https://github.com/UPPMAX/UPPMAX-documentation/raw/main/docs/software/files/matlab/uppsala.Desktop.zip>`_.
-
 
 
 - Download the ZIP file and start MATLAB.
@@ -57,7 +47,7 @@ The Rackham MATLAB support package can be found at `uppsala.Desktop.zip <https:/
    Username on RACKHAM (e.g. jdoe):  
 
 - Type your rackham user name.
-- As a result the following 
+- As a result:
 
 .. code-block:: matlab 
    
@@ -66,7 +56,7 @@ The Rackham MATLAB support package can be found at `uppsala.Desktop.zip <https:/
 
 .. note:: 
 
-   - To submit to the local machine instead of the cluster, run the following:
+   - To submit jobs to the local machine instead of the cluster, run the following:
 
    .. code-block:: matlab
 
@@ -102,37 +92,26 @@ Prior to submitting the job, various parameters can be assigned, such as queue, 
 
 Set some additional parameters related to Slurm on Rackham
 
-.. code-block: matlab
+.. code-block:: matlab
 
    >> % Specify the account
    >> c.AdditionalProperties.AccountName = 'naiss2024-22-1202';
 
-   >> % Specify the partition
-   >> c.AdditionalProperties.Partition = 'devcore';
-
    >> % Specify the wall time (e.g., 1 day, 5 hours, 30 minutes
    >> c.AdditionalProperties.WallTime = '00:30:00';
 
-   [OPTIONAL]
-
    >> % Specify cores per node
-   >> c.AdditionalProperties.ProcsPerNode = 4;
+   >> c.AdditionalProperties.ProcsPerNode = 20;
 
-   >> % Use reservation 
-   >> c.AdditionalProperties.Reservation = 'reservation-name';
+
+[OPTIONAL]
+
+   >> % Specify the partition
+   >> c.AdditionalProperties.Partition = 'devcore';
 
    >> % Specify number of GPUs
    >> c.AdditionalProperties.GPUsPerNode = 1;
    >> c.AdditionalProperties.GPUCard = 'gpu-card';
-
-- Submission to the cluster requires SSH credentials. 
-- You will be prompted for username and password or identity file (private key).  -
-- The username and location of the private key will be stored in MATLAB for future sessions.
-- Jobs will now default to the cluster rather than submit to the local machine.
-
-
-
-Save changes after modifying AdditionalProperties for the above changes to persist between MATLAB sessions.
 
 .. code-block:: matlab
 
@@ -153,7 +132,47 @@ Unset a value when no longer needed.
    >> c.AdditionalProperties.EmailAddress = '';
    >> c.saveProfile
 
-- check the queue on rackham
+
+Start job
+---------
+
+.. code-block:: matlab
+
+   job = c.batch(@parallel_example, 1, {16}, 'Pool',8,'CurrentFolder','.');
+
+- Submission to the cluster requires SSH credentials. 
+- You will be prompted for username and password or identity file (private key). 
+- The username and location of the private key will be stored in MATLAB for future sessions.
+
+.. figure:: ./img/matlab_usercred.PNG
+
+.. figure:: ./img/matlab_enterpasswd.PNG
+
+- Jobs will now default to the cluster rather than submit to the local machine.
+
+.. code-block:: matlab
+
+   >> job.State
+
+   ans =
+
+       'running'
+
+- You can run this several times until it gives 
+
+.. code-block:: matlab
+
+   >> job.State
+
+   ans =
+
+       'finished'
+
+- You can also watch queue
+
+.. figure:: ./img/matlab_jobmonitor.PNG
+
+- Or on Rackham (it really runs there!):
 
 .. code-block:: console
 
@@ -161,4 +180,7 @@ Unset a value when no longer needed.
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
           50827312   devcore MATLAB_R  bjornc2  R       2:20      1 r483
 
+.. code-block:: matlab
+
+   >> job.fetchOutputs{:}
 
