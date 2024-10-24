@@ -82,6 +82,10 @@ Schedule
 | 15:50 | End of the day                        | .                 |
 +-------+---------------------------------------+-------------------+
 
+- RB: suggests 'Batch' to get 10 more minutes
+  and more all sessions
+  in the next course iteration
+
 What is python?
 ---------------
 
