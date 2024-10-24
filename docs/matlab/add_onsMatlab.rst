@@ -109,4 +109,7 @@ It's in the path so it should be possible to run directly if you don't need to r
 Exercises
 ---------
 
-Find the **kalmanf** and install it and run a test command.
+.. challenge:: 1. Find the **kalmanf** and install it and run a test command.
+
+.. challenge:: 2. (Optinal) Browse the add-ons and get inspired for your own work!
+
