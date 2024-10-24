@@ -80,7 +80,26 @@ I do want to change the colors of the admonition per HPC center :-)
 Videos are done, so the material is finished.
 
 TODO:
-- Check and prepare Priors
 
+- [x] Fix layout
+- [x] Fix `module load ... R/4.2.1 R/4.2.1`
+- [x] Fix mermaid graphs to match the exercise
+- [x] Fix mermaid graphs to remove the command it shows,
+  especial 'Load an R package library' is confusing (in an earlier
+  mermaid version, one could add a newline before `library`)
+- [x] Remove `module avail`, as it is not a learning objective
+- [x] Check and prepare Priors
 
+I don't like my course material. It makes me
+lecture yoo much and I know I should not. Next course iteration,
+I will be pointing to the centers' documentation more.
+I did not make the time to properly do this, mostly
+to take it easier on myself after some ruthless days of preparing
+the Python session.
+
+- [ ] Next course iteration: make 'Load and run R' point to documentation more
+
+What does need to be done:
+
+- [ ] Make summary match evaluation
 
