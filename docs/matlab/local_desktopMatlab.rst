@@ -1,4 +1,4 @@
-Session-UPPMAX:Matlab client on the desktop
+Session-UPPMAX: Matlab client on the desktop
 =====================================
 
 .. admonition:: Use own computer's matlab
