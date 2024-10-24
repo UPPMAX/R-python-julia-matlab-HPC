@@ -70,9 +70,6 @@ Preliminary schedule
      - **Break**
      - 
    * - 11.05
-     - Add-Ons 
-     - BC
-   * - 11.30
      - Slurm job scheduler and Matlab  
      - BB
    * - 12.00
@@ -91,8 +88,8 @@ Preliminary schedule
      - Cont'd Parallel and multithreaded functions   
      - PO
    * - 14.30
-     - GPU???
-     - Lecture+code along + exercise 30m
+     - Add-Ons 
+     - BC
    * - 14.50
      - **Coffee break**
      - 

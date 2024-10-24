@@ -233,7 +233,13 @@ Example - Creating a renv and installing ``knitr``
 
           install.packages("datarium") 
 
-       5. Try loading it with 
+       5. Save it
+
+       .. code-block::
+
+          renv::snapshot()
+
+       6. Try loading it with 
 
        .. code-block:: 
 

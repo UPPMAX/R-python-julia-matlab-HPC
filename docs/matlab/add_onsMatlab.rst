@@ -1,15 +1,21 @@
 Add-Ons
 =======
 
-.. admonition:: MATLAB Add-Ons and environments
+.. admonition:: MATLAB Add-Ons
    
-   - MATLAB **Add-Ons broaden the use of MATLAB** considerably! 
-   - Instead of writing code yourself there may be others that have done the same!
-   
-.. questions::
-
-   - How to use Toolboxes and add-ons?
-   - How to check for and use the pre-installed Add-Ons?
+   - Add-ons extend the capabilities of MATLAB® by providing additional functionality for specific tasks and applications, such as:
+      - connecting to hardware devices
+      - additional algorithms
+      - interactive apps
+   - Available from:
+      - MathWorks® 
+      - the global MATLAB user community
+   - Encompass a wide variety of resources
+      - products
+      - apps
+      - toolboxes
+      - support packages
+   - `More information <https://se.mathworks.com/help/matlab/add-ons.html?s_tid=CRUX_lftnavZ>`_
    
 
 .. admonition:: Learners should be able to
@@ -22,6 +28,7 @@ Add-Ons
 
 MATLAB Add-Ons manager
 ----------------------
+
 In the GUI, the Add-Ons manager can be selected from the menu at the top. The drop-down menu options allow users to:
    - **Browse a library of Add-Ons to download.** Note that some Add-Ons require a separate license.
    - **Manage Add-Ons already downloaded.**
@@ -33,6 +40,34 @@ Here we will only focus on the first two options.
 .. note::
 
    Note that very many packages are already included in the  Academic installation and license
+
+.. admonition:: Some toolboxes
+
+   - Matlab products
+      - Parallel Computing Toolbox
+      - MATLAB Parallel Server
+      - Deep Learning Toolbox
+      - Statistics and Machine Learning Toolbox
+   - Simulink
+      - Stateflow
+      - SimEvents
+      - Simscape
+
+.. admonition:: Some toolboxes provides GUI for their tools Apps
+
+   - Matlab products
+      - Deep Network Designer - Design and visualize deep learning networks Deep Network Designer
+      - Curve Fitter - Fit curves and surfaces to data
+      - Deep Learning Toolbox
+      - Statistics and Machine Learning Toolbox
+   - Simulink
+      - Stateflow
+      - SimEvents
+      - Simscape
+
+    .. figure:: ./img/apps.PNG
+
+    - We won't cover the usage of the toolboxes here!
 
 
 DUMP
@@ -74,4 +109,7 @@ It's in the path so it should be possible to run directly if you don't need to r
 Exercises
 ---------
 
-Find the **kalmanf** and install it and run a test command.
+.. challenge:: 1. Find the **kalmanf** and install it and run a test command.
+
+.. challenge:: 2. (Optional) Browse the add-ons and get inspired for your own work!
+
