@@ -38,64 +38,43 @@ Introduction Python
 Schedule
 --------------------
 
-.. list-table:: Course schedule
-   :widths: 25 25 50
-   :header-rows: 1
-
-   * - Time
-     - Topic
-     - Teacher(s)
-   * - 9:00
-     - (optional) `First login <https://uppmax.github.io/R-python-julia-matlab-HPC/common/login.html>`_
-     - BB + PO + RB + RP
-   * - 9:45
-     - Break 
-     - .
-   * - 10:00
-     - Syllabus
-     - RP
-   * - 10:10
-     - Python in general
-     - RP
-   * - 10:20
-     - Load modules and run
-     - RP
-   * - 10:50
-     - Break
-     - .
-   * - 11:05
-     - Packages
-     - RB
-   * - 11:35
-     - Isolated environments
-     - RB
-   * - 12:00
-     - Lunch
-     - .
-   * - 13:00
-     - Batch (RB: needs 10 more minutes next iteration)
-     - BB
-   * - 13:30 (RB: move to 10 minutes later next iteration)
-     - GPU
-     - BB
-   * - 13:50 (RB: move to 10 minutes later next iteration)
-     - Break
-     - .
-   * - 14:05 (RB: move to 10 minutes later next iteration)
-     - Simultaneous sessions
-     - BB * RB * RP
-   * - 14:35 (RB: move to 10 minutes later next iteration)
-     - Break
-     - .
-   * - 14:50 (RB: move to 10 minutes later next iteration)
-     - Parallel and multi-threaded functions
-     - PO
-   * - 15:35 (RB: move to 10 minutes later next iteration)
-     - Summary and evaluation
-     - RB
-   * - 15:50 (RB: move to 10 minutes later next iteration)
-     - End of the day
-     - .
++-------+---------------------------------------+-------------------+
+| Time  | Topic                                 | Teacher(s)        |
++=======+=======================================+===================+
+| 9:00  | (optional) First login                | BB + PO + RB + RP |
++-------+---------------------------------------+-------------------+
+| 9:45  | Break                                 | .                 |
++-------+---------------------------------------+-------------------+
+| 10:00 | Syllabus                              | RP                |
++-------+---------------------------------------+-------------------+
+| 10:10 | Python in general                     | RP                |
++-------+---------------------------------------+-------------------+
+| 10:20 | Load modules and run                  | RP                |
++-------+---------------------------------------+-------------------+
+| 10:50 | Break                                 | .                 |
++-------+---------------------------------------+-------------------+
+| 11:05 | Packages                              | RB                |
++-------+---------------------------------------+-------------------+
+| 11:35 | Isolated environments                 | RB                |
++-------+---------------------------------------+-------------------+
+| 12:00 | Lunch                                 | .                 |
++-------+---------------------------------------+-------------------+
+| 13:00 | Batch                                 | BB                |
++-------+---------------------------------------+-------------------+
+| 13:30 | GPU                                   | BB                |
++-------+---------------------------------------+-------------------+
+| 13:50 | Break                                 | .                 |
++-------+---------------------------------------+-------------------+
+| 14:05 | Simultaneous sessions                 | BB \* RB \* RP    |
++-------+---------------------------------------+-------------------+
+| 14:35 | Break                                 | .                 |
++-------+---------------------------------------+-------------------+
+| 14:50 | Parallel and multi-threaded functions | PO                |
++-------+---------------------------------------+-------------------+
+| 15:35 | Summary and evaluation                | RB                |
++-------+---------------------------------------+-------------------+
+| 15:50 | End of the day                        | .                 |
++-------+---------------------------------------+-------------------+
 
 Simultaneous session:
 
