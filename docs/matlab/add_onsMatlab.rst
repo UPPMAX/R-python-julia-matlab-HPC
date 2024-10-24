@@ -47,7 +47,7 @@ DUMP
 .. figure:: ./img/Add-On_explorer.PNG
 .. figure:: ./img/Add-On_manager.PNG
 .. figure:: ./img/Toolbar_Add-Ons.PNG
-.. figure:: ./img/Add-On_manager.PNG
+.. figure:: ./img/my_products.PNG
 
 
 Install Add-Ons from File
