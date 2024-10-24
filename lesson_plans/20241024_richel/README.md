@@ -101,5 +101,6 @@ the Python session.
 
 What does need to be done:
 
-- [ ] Make summary match evaluation
+- [x] Make summary match evaluation
+
 
