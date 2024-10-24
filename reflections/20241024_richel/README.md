@@ -112,6 +112,11 @@ for the 5 learners to fill in the evaluation forms.
 All learners said bye, except for 1.
 That 1 learner had a question, which was answered.
 
+I discussed this story with a colleague afterwards.
+He will try out a combination of showing
+summary yes/no, answers in summary yes/no
+and report to me.
+
 ## Analysis
 
 [20241024_counts.csv](20241024_counts.csv)
