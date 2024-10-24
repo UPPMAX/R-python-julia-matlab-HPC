@@ -314,9 +314,9 @@ Asking for 1 hour walltime.
 Job settings in the Cluster Profile Manager
 '''''''''''''''''''''''''''''''''''''''''''
 
-.. note:: This is about the GUI
+.. note:: This is about the GUI.
 
-   You can change the job settings (or make them all together) inside the GUI. You change the job settings within the Cluster Profile Manager in that case. 
+   You can change the job settings (or make them all together) inside the GUI. To do that, you change the job settings within the Cluster Profile Manager. 
 
    Note that this is ONLY in the case you want to use the GUI. You can work completely from within the MATLAB terminal interface if you want. 
 
@@ -351,7 +351,7 @@ If you scroll down in the window that appears when you select the right cluster,
 
    Editing parameters of Scheduler Plugin in Cluster Profile Manager.
 
-In other words, anything you might otherwise set by calling ``c.AdditionalProperties.<insert_property>=...`` can be set in the GUI in this scheduler plugin. Just keep in mind that these settings are saved between sessions.
+In other words, almost anything you might otherwise set by calling ``c.AdditionalProperties.<insert_property>=...`` can be set in the GUI in this scheduler plugin. Just keep in mind that these settings are saved between sessions.
 
 If you are on Desktop On Demand on LUNARC, these settings do not override the parameters set in the GfxLauncher for the MATLAB GUI session itself, but rather to any batch jobs you submit from *within* the GUI.
 
