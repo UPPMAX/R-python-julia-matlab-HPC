@@ -104,7 +104,7 @@ Set some additional parameters related to Slurm on Rackham
    >> c.AdditionalProperties.ProcsPerNode = 20;
 
 
-[OPTIONAL]
+   [OPTIONAL]
 
    >> % Specify the partition
    >> c.AdditionalProperties.Partition = 'devcore';
@@ -156,8 +156,8 @@ Start job
    job = c.batch(@parallel_example_local, 1, {16,1}, 'Pool',8,'CurrentFolder','.');
 
 - Submission to the cluster requires SSH credentials. 
-- You will be prompted for username and password or identity file (private key). It wil not as kuntil you define a new cluster handle ``c``.
-- The username and location of the private key will be stored in MATLAB for future sessions.
+- You will be prompted for username and password or identity file (private key). 
+    - It will not ask again until you define a new cluster handle ``c`` or in next session.
 
 .. figure:: ./img/matlab_usercred.PNG
 
