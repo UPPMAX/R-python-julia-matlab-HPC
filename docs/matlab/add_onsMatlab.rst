@@ -28,6 +28,7 @@ Add-Ons
 
 MATLAB Add-Ons manager
 ----------------------
+
 In the GUI, the Add-Ons manager can be selected from the menu at the top. The drop-down menu options allow users to:
    - **Browse a library of Add-Ons to download.** Note that some Add-Ons require a separate license.
    - **Manage Add-Ons already downloaded.**
@@ -39,6 +40,34 @@ Here we will only focus on the first two options.
 .. note::
 
    Note that very many packages are already included in the  Academic installation and license
+
+.. admonition:: Some toolboxes
+
+   - Matlab products
+      - Parallel Computing Toolbox
+      - MATLAB Parallel Server
+      - Deep Learning Toolbox
+      - Statistics and Machine Learning Toolbox
+   - Simulink
+      - Stateflow
+      - SimEvents
+      - Simscape
+
+.. admonition:: Some toolboxes provides GUI for their tools Apps
+
+   - Matlab products
+      - Deep Network Designer - Design and visualize deep learning networks Deep Network Designer
+      - Curve Fitter - Fit curves and surfaces to data
+      - Deep Learning Toolbox
+      - Statistics and Machine Learning Toolbox
+   - Simulink
+      - Stateflow
+      - SimEvents
+      - Simscape
+
+    .. figure:: ./img/apps.PNG
+
+    - We won't cover the usage of the toolboxes here!
 
 
 DUMP
