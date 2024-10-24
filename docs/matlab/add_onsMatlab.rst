@@ -1,15 +1,21 @@
 Add-Ons
 =======
 
-.. admonition:: MATLAB Add-Ons and environments
+.. admonition:: MATLAB Add-Ons
    
-   - MATLAB **Add-Ons broaden the use of MATLAB** considerably! 
-   - Instead of writing code yourself there may be others that have done the same!
-   
-.. questions::
-
-   - How to use Toolboxes and add-ons?
-   - How to check for and use the pre-installed Add-Ons?
+   - Add-ons extend the capabilities of MATLAB® by providing additional functionality for specific tasks and applications, such as:
+      - connecting to hardware devices
+      - additional algorithms
+      - interactive apps
+   - Available from:
+      - MathWorks® 
+      - the global MATLAB user community
+   - Encompass a wide variety of resources
+      - products
+      - apps
+      - toolboxes
+      - support packages
+   - `More infoermation <https://se.mathworks.com/help/matlab/add-ons.html?s_tid=CRUX_lftnavZ>`_
    
 
 .. admonition:: Learners should be able to
