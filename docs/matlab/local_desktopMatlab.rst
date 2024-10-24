@@ -1,4 +1,4 @@
-Session: MATLAB client on the desktop
+Session-UPPMAX:Matlab client on the desktop
 =====================================
 
 .. admonition:: Use own computer's matlab
@@ -20,15 +20,6 @@ Session: MATLAB client on the desktop
             - R2023b
 
 
-DUMP
-----
-
-.. figure:: ./img/matlab_enterpasswd.PNG
-.. figure:: ./img/matlab_jobmonitor.PNG
-.. figure:: ./img/matlab_usercred.PNG
-
-
-
 Let's get started together!
 ---------------------------
 
@@ -37,7 +28,6 @@ Let's get started together!
    - You can try to type-along
 
 The Rackham MATLAB support package can be found at `uppsala.Desktop.zip <https://github.com/UPPMAX/UPPMAX-documentation/raw/main/docs/software/files/matlab/uppsala.Desktop.zip>`_.
-
 
 
 - Download the ZIP file and start MATLAB.
@@ -161,4 +151,10 @@ Unset a value when no longer needed.
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
           50827312   devcore MATLAB_R  bjornc2  R       2:20      1 r483
 
+
+.. figure:: ./img/matlab_usercred.PNG
+
+.. figure:: ./img/matlab_enterpasswd.PNG
+
+.. figure:: ./img/matlab_jobmonitor.PNG
 
