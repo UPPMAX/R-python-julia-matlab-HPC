@@ -78,7 +78,7 @@ more.
 
 ## Session 14:30-15:15: interactive and RStudio
 
-It was delated 15 minutes, which was no problem.
+It was delayed 15 minutes, which was no problem.
 Prior took 15 minutes, in which I recapped earlier sessions too.
 I gave the learners 15 minutes for the exercise.
 All 4 learners were able to complete the procedure.
