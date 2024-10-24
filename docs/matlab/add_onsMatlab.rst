@@ -5,24 +5,18 @@ Add-Ons
    
    - MATLAB **Add-Ons broaden the use of MATLAB** considerably! 
    - Instead of writing code yourself there may be others that have done the same!
-   - Isolated environments solve a couple of problems:
-
-      - You can install specific, also older, versions into them.
-      - You can create one for each project and no problem if the two projects require different versions.
-      - You can remove the environment and create a new one, if not needed or with errors.
    
 .. questions::
 
-   - How to install Add-Ons?
-   - How to work with isolated environments?
-   - How to check for and use the UPPMAX pre-installed Add-Ons?
+   - How to use Toolboxes and add-ons?
+   - How to check for and use the pre-installed Add-Ons?
    
 
-.. objectives:: 
+.. admonition:: Learners should be able to
 
-   - Give a general *theoretical* introduction to isolated environments 
-   - Show how to install own Add-Ons
-   - Show how to check for MATLAB Add-Ons at UPPMAX
+   - navigate to toolboxes and add-ons
+   - view add-ons and toolboxes
+   - install and use add-ons    
    
 - Before going into installing Add-Ons let's have a background to the MATLAB environments and ecosystem!
 
