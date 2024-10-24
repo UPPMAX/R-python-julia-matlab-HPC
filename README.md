@@ -12,7 +12,7 @@ You can clone the repository: ``git clone https://github.com/UPPMAX/R-python-jul
 
 After doing that, you can convert the .rst files to .pdf files with this online tool: https://cloudconvert.com/rst-to-pdf 
 
-The documentation files you see on the rendered pages (https://uppmax.github.io/R-python-julia-matlab-HPC/) are found under R-python-julia-matlab-HPC/docs/<language> 
+The documentation files you see on the rendered pages (https://uppmax.github.io/R-python-julia-matlab-HPC/) are found under ``R-python-julia-matlab-HPC/docs/<language>``.
 
 ## Credits
 
