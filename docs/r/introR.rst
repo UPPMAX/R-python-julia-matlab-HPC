@@ -126,6 +126,9 @@ Schedule
 | 16:15 | Done                         | .            |
 +-------+------------------------------+--------------+
 
+- RB: suggest to make 'Batch' 15 minutes longer and remove a session,
+  in the next course iteration
+
 Exercises used in the course
 ----------------------------
 
