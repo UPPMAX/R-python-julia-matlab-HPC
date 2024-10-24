@@ -158,7 +158,7 @@ Example **Type along**
             salloc: Granted job allocation 20174806
             salloc: Waiting for resource configuration
             salloc: Nodes b-cn0241 are ready for job
-            [~]$ module load GCC/10.3.0 OpenMPI/4.1.1 R/4.0.4
+            [~]$ module load GCC/12.2.0  OpenMPI/4.1.4 R/4.2.2
             [~]$ 
                   
       
@@ -181,10 +181,8 @@ Example **Type along**
       - You need to reload all modules you used on the login node!!!
 
 
-   [bjornc@r484 ~]$ module load R/4.1.1
-
-
    **The script** 
+
    Adding two numbers from user input (``serial_sum.R``)
    
    - You will find it in the exercise directory ``exercises/r/`` so go there with ``cd``.
@@ -219,18 +217,18 @@ Example **Type along**
           $ Rscript serial_sum.R 3 4
           [1] "The sum of the two numbers is 7"
 
-   **Running R interpreter (UPPMAX)**
+   **Running R with workers**
 
-   - First start R and check available workers with ``future``
+   - First start R and check available workers with ``future``. 
+   - Create a R script called `script-workers.R`` with the following content:
 
    .. code-block:: R 
 
-         > library(future)
-         > availableWorkers()
-         [1] "r483" "r483" "r483" "r483"
-         > availableCores()
-         nproc
-             4
+         library(future)
+         availableWorkers()
+         availableCores()
+
+   - Execute the code with ``srun -n 1 -c 4 Rscript script-workers.R``
 
 
 Exit
