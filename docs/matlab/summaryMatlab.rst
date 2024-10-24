@@ -5,46 +5,48 @@ Summary
 
 - You can use the module system to load a specific version of Matlab
 
-.. code-block:: console
+   .. code-block:: console
 
-   module load matlab
+      module load matlab
 
 - You can start the Matlab GUI
 
-.. code-block:: console
+   .. code-block:: console
 
-   matlab
+      matlab &
+
+   - or on-demad on LUNARC
 
 - You can run Matlab on the terminal
 
-.. code-block:: console
+   .. code-block:: console
 
-   matlab -nodisplay [-singleCompThread -nosplash -nodesktop]
+      matlab -nodisplay [-singleCompThread -nosplash -nodesktop]
 
 
 **Slurm job scheduler and Matlab in terminal**
 
 - You can configure the cluster
 
-.. code-block:: matlab
+   .. code-block:: matlab
 
-   configCluster.sh <project-id if on UPPMAX or LUNARC>
+      configCluster.sh <project-id if on UPPMAX or LUNARC>
 
 - You can can add job settings needed to run jobs from Matlab
 
-.. code-block:: matlab
+   .. code-block:: matlab
 
-   c.AdditionalProperties.<properties like AccountName/WallTime>
+      c.AdditionalProperties.<properties like AccountName/WallTime>
 
 - You can work in the Matlab terminal interface
 
-   It works almost the same as with GUI.
+   - It works almost the same as with GUI.
 
 - You can submit jobs from inside the Matlab terminal interface
 
-.. code-block:: matlab
+   .. code-block:: matlab
 
-   job = batch('myScript');
+      job = batch('myScript');
 
 - You can write and submit a Matlab batch script
 
@@ -58,37 +60,37 @@ Summary
       module load <matlab version>
       matlab -nojvm -nodisplay -r "monte_carlo_pi(100000)"
 
-.. code-block:: console
+   .. code-block:: console
    
-   sbatch batchscript.sh``
+      sbatch batchscript.sh``
 
 - You can use GPUs with Matlab
+ 
+   .. code-block:: matlab
 
-.. code-block:: matlab
-
-   c.AdditionalProperties.GpusPerNode = 1;
+      c.AdditionalProperties.GpusPerNode = 1;
 
 **Matlab GUI and Slurm** 
 
 - You can submit jobs from inside the Matlab GUI
 
-.. code-block:: matlab
+   .. code-block:: matlab
 
-   c=parcluster('name-of-your-cluster');
-   %extra slurm settings
-   j = c.batch(@myfunction,'nr. outputs',{'list of input args'},'pool','nr. workers');
-   j.wait;                               % wait for the results
-   j.fetchOutputs{:};                % fetch the results
+      c=parcluster('name-of-your-cluster');
+      %extra slurm settings
+      j = c.batch(@myfunction,'nr. outputs',{'list of input args'},'pool','nr. workers');
+      j.wait;                               % wait for the results
+      j.fetchOutputs{:};                % fetch the results
 
-Note that batch also accepts script names in place of function names, but these must be given in single quotes, with no @ or .m. 
+   - Note that batch also accepts script names in place of function names, but these must be given in single quotes, with no @ or .m. 
 
 - You can work with Matlab in parallel
 
-.. code-block:: matlab
+   .. code-block:: matlab
 
-   parfor
-   spmd
-   parfeval
+      parfor
+      spmd
+      parfeval
 
 - You can check that you are in an interactive session
 
