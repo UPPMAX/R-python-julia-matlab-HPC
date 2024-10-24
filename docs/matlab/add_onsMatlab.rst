@@ -15,7 +15,7 @@ Add-Ons
       - apps
       - toolboxes
       - support packages
-   - `More infoermation <https://se.mathworks.com/help/matlab/add-ons.html?s_tid=CRUX_lftnavZ>`_
+   - `More information <https://se.mathworks.com/help/matlab/add-ons.html?s_tid=CRUX_lftnavZ>`_
    
 
 .. admonition:: Learners should be able to
