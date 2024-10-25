@@ -5,8 +5,8 @@
 #SBATCH -n 1 
 # Asking for 30 min (change as you want) 
 #SBATCH -t 00:30:00 
-#SBATCH –error=matlab_%J.err 
-#SBATCH –output=matlab_%J.out
+#SBATCH --error=matlab_%J.err 
+#SBATCH --output=matlab_%J.out
 
 # Clean the environment module purge > /dev/null 2>&1
 
@@ -17,4 +17,4 @@ module add MATLAB/2023a.Update4
 # Executing the matlab program monte_carlo_pi.m for the value n=100000 
 # (n is number of steps - see program). 
 # The command ‘time’ is timing the execution time 
-matlab -nojvm -nodisplay -r “monte_carlo_pi(100000)”
+matlab -nojvm -nodisplay -r "monte_carlo_pi(100000)"
