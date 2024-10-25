@@ -900,3 +900,7 @@ SimEvents
 GpusPerNode
 myfunction
 spmd
+Kalman
+previewImage
+xml
+addons
