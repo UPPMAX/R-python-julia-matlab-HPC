@@ -178,11 +178,11 @@ Exercises
 .. keypoints:: 
 
    - Many Add-Ons, like toolboxes and packages are available at the Clusters
-   - You can view add-ons and toolboxes
+   - You can view Add-Ons and toolboxes
 
       - It is all more or less graphical
 
-    - You can install add-ons
+    - To install Add-Ons
 
-      - Search in add-ons explorer and install.
+      - Search in Add-Ons explorer and install.
       - Ends up in local folder and is in the path so it should be reached wherever you are in the file tree.
