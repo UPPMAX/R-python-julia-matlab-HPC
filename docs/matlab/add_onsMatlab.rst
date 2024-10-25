@@ -115,52 +115,51 @@ It's in the path so it should be possible to run directly if you don't need to r
       - You downloaded the add-on from the File Exchange at MATLAB Central™.
        <https://se.mathworks.com/help/matlab/matlab_env/get-add-ons.html>
 
-Demo
-----
 
-- First test if kalmanf works as a function 
+.. demo:: 
 
+   - Search for 'kalmanf'
+   - click "Learning the Kalman Filter
+   - Look at the documentation
+   - Test if the command works today:
 
-- Search for 'kalmanf'
-- click "Learning the Kalman Filter
-- Look at the documentation
-- Test if the command works today:
+   .. code-block:: matlab
 
-.. code-block:: matlab
+      >> kalmanf
+      Unrecognized function or variable 'kalmanf'.
 
-   >> kalmanf
-   Unrecognized function or variable 'kalmanf'.
+   - OK it is not there
+   - click Add
 
-- OK it is not there
-- click Add
-   - Download and Add to path
-- Type email address connected to your MathWorks account
-- Installation starts
-It will end up in: 
+      - Download and Add to path
 
-.. code-block:: console
+   - Type email address connected to your MathWorks account
+   - Installation starts
+   - It will end up in: 
 
-   $ tree MATLAB\ Add-Ons/
-   MATLAB\ Add-Ons/
-   └── Functions
-       └── Learning\ the\ Kalman\ Filter
-           ├── kalmanf.m
-           └── resources
-               ├── addons_core.xml
-               ├── kalmanf.zip
-               ├── matlab_path_entries.xml
-               ├── metadata.xml
-               ├── previewImage.png
-               └── screenshot.png
+   .. code-block:: console
 
-- Now test:
+      $ tree MATLAB\ Add-Ons/
+      MATLAB\ Add-Ons/
+      └── Functions
+          └── Learning\ the\ Kalman\ Filter
+              ├── kalmanf.m
+              └── resources
+                  ├── addons_core.xml
+                  ├── kalmanf.zip
+                  ├── matlab_path_entries.xml
+                  ├── metadata.xml
+                  ├── previewImage.png
+                  └── screenshot.png
 
-.. code-block:: matlab
+   - Now test:
 
-   >> kalmanf()
-   'kalmanf' requires Learning the Kalman Filter version 1.0.0.0 to be enabled.
+   .. code-block:: matlab
 
-- OK. It is installed but may need some other things. Just an example!!
+      >> kalmanf()
+      'kalmanf' requires Learning the Kalman Filter version 1.0.0.0 to be enabled.
+   
+   - OK. It is installed but may need some other things. Just an example!!
 
 Exercises
 ---------
