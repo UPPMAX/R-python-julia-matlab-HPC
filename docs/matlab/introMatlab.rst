@@ -98,7 +98,10 @@ Preliminary schedule
      - BC
    * - .
      - Simultaneous session — MATLAB in Jupyter
-     - PO   
+     - PO
+   * - 15.05
+     - Simultaneous session — LUNARC: MATLAB with Desktop On Demand
+     - RP
    * - 15.35
      - Summary 
      -
