@@ -1,13 +1,7 @@
 Session: Matlab in Jupyter
 ==========================
 
-.. note::
 
-   - It is possible to run Matlab directly on the login (including ThinLinc) nodes.
-   - But this should *only* be done for shorter jobs or jobs that do not use a lot of resources, as the login nodes can otherwise become slow for all users. 
-   - If you want to work interactively with your code or data, you should start an interactive session.
-   - If you rather will run a script which won't use any interactive user input while running, you can instead start a batch job, see next session.
-   
 .. questions::
 
    - How to reach the calculation nodes
@@ -15,13 +9,28 @@ Session: Matlab in Jupyter
    
 .. objectives:: 
 
-   - Show how to reach the calculation nodes on UPPMAX and HPC2N
+   - Show how to reach the calculation nodes on UPPMAX and HPC2N by using Jupyter-lab
    - Test some commands on the calculation nodes
+
+.. note::
+
+   - It is possible to run Matlab directly on the login (including ThinLinc) nodes.
+   - But this should *only* be done for shorter jobs or jobs that do not use a lot of resources, as the login nodes can otherwise become slow for all users. 
+   - If you want to work interactively with your code or data, you should start an interactive session. In the present 
+     lesson you will see how to run interactive jobs by using Jupyter-lab. 
+   
 
 .. admonition:: Compute allocations in this workshop 
 
    - Rackham: ``naiss2024-22-1202``
    - Kebnekaise: ``hpc2n2024-114``
+   - Cosmos: ``lu2024-7-80``
+ 
+.. admonition:: Storage space for this workshop 
+
+   - Rackham: ``/proj/r-py-jl-m-rackham``
+   - Kebnekaise: ``/proj/nobackup/r-py-jl-m`` 
+   - Cosmos: your home directory should have plenty of space
 
 There are several ways to run Matlab interactively
 
@@ -129,6 +138,9 @@ There are several ways to run Matlab interactively
       version from the module you loaded. When you try to run a notebook, Matlab will ask for a type of license. Because you are 
       running this notebook on our HPC center, you can choose the option Existing License and then Start MATLAB.
 
+      If you don't need any longer the Jupyter job, you should cancel the job with ``scancel job_ID``. Otherwise it will keep running
+      until the time limit of your batch script is reached.
+
       .. admonition:: Running Matlab in Jupyter on compute nodes at HPC2N
 
          - On Kebnekaise, you can run Jupyter notebooks with Matlab kernels by using batch scripts    
@@ -137,14 +149,12 @@ There are several ways to run Matlab interactively
 
 
                
-
-
 .. keypoints::
 
-   - **FIX**
-   - Start an interactive session on a calculation node by a SLURM allocation
+   - There are several ways to run MATLAB jobs interactively. One can use the MATLAB GUI, the interactive sessions: 
+     ``salloc`` (HPC2N), ``interactive`` (UPPMAX), and also by running a Jupyter notebook on the computing nodes.
    
-      - At HPC2N: ``salloc`` ...
-      - At UPPMAX: ``interactive`` ...
-   - Follow the same procedure as usual by loading the Julia module and possible prerequisites.
+   - To run a Jupyter notebook on the computing nodes you will need to follow the prerequisites mentioned in the lesson. 
+   - If the Jupyter job is no longer needed, cancel it with ``scancel job_ID``. It will not be canceled automatically if you just
+     close the web browser.
     

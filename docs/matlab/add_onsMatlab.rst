@@ -93,6 +93,11 @@ You can install some Add-Ons manually using an installation file. This is useful
 - You downloaded the add-on from the Add-On Explorer without installing it.
 - You downloaded the add-on from the File Exchange at MATLAB Central™.
 
+- Search in add-ons explorer and install.
+- Ends up in local folder and is in the part so it should be reached wherever you are in the file tree.
+
+
+
 .. warning::
 
    To be able to you need however use email for mathworks account.
@@ -100,9 +105,13 @@ You can install some Add-Ons manually using an installation file. This is useful
 Default Add-On Installation Folder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The install location of an add-on depends on its type. MATLAB installs MathWorks® products in the matlabroot folder and hardware support packages in the folder returned by matlabshared.supportpkg.getSupportPackageRoot. For more information about a specific support package install location, see the documentation for the package.
 
-- Linux® — ~/MATLAB Add-Ons
+- ``~/MATLAB Add-Ons``
+
+- The install location of an add-on depends on its type.
+- MATLAB installs MathWorks® products in the matlabroot folder and hardware support packages in the folder returned by matlabshared.supportpkg.getSupportPackageRoot.
+- For more information about a specific support package install location, see the documentation for the package.
+
 
 It's in the path so it should be possible to run directly if you don't need to run a installation file.
 

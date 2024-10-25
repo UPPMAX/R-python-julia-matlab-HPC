@@ -1345,7 +1345,7 @@ Exercises
                .. code-block:: bash
 
                         #!/bin/bash            
-                        #SBATCH -A hpc2n2023-110     # your project_ID       
+                        #SBATCH -A hpc2n202X-XYZ     # your project_ID       
                         #SBATCH -J job-parallel      # name of the job         
                         #SBATCH -n 4                 # nr. tasks  
                         #SBATCH --time=00:20:00      # requested time
