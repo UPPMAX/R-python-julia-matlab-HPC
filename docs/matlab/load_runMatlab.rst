@@ -160,7 +160,7 @@ Load a MATLAB module
 
 For reproducibility, we recommend ALWAYS loading a specific module instead of using the default version! 
 
-For this course, we recommend using MATLAB R2023x at UPPMAX (202??), LUNARC (2023b), and HPC2N (202??).
+For this course, we recommend using MATLAB R2023x at UPPMAX (R2023b), LUNARC (2023b), and HPC2N (2023a.Update4).
 
 .. type-along::
     
