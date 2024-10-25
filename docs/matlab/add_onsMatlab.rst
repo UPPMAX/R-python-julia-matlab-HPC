@@ -134,7 +134,7 @@ Demo
 - OK it is not there
 - click Add
    - Download and Add to path
-- Type email address conneted to your MathWorks account
+- Type email address connected to your MathWorks account
 - Installation starts
 It will end up in: 
 
