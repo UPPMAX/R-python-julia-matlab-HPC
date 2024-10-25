@@ -20,9 +20,9 @@ Add-Ons
 
 .. admonition:: Learners should be able to
 
-   - navigate to toolboxes and add-ons
-   - view add-ons and toolboxes
-   - install and use add-ons    
+   - navigate to toolboxes and Add-Ons
+   - view Add-Ons and toolboxes
+   - install and use Add-Ons    
    
 - Before going into installing Add-Ons let's have a background to the MATLAB environments and ecosystem!
 
@@ -33,10 +33,10 @@ MATLAB Add-Ons manager
 
 
 In the GUI, the Add-Ons manager can be selected from the menu at the top. The drop-down menu options allow users to:
+
    - **Browse a library of Add-Ons to download.** Note that some Add-Ons require a separate license.
 
-  
-   .. figure:: ./img/Add-On_explorer.PNG
+     .. figure:: ./img/Add-On_explorer.PNG
 
 
    - **Manage Add-Ons already downloaded.**
@@ -91,35 +91,31 @@ Install Add-Ons
 
 .. figure:: ./img/searchforaddons.PNG
 
-
 - Ends up in local folder and is in the part so it should be reached wherever you are in the file tree.
 
 - ``~/MATLAB Add-Ons``
 
-- MATLAB installs MathWorks® products in the matlabroot folder and hardware support packages in the folder returned by matlabshared.supportpkg.getSupportPackageRoot.
+- It's in the path so it should be possible to run directly if you don't need to run a installation file.
+
 - For more information about a specific support package install location, see the documentation for the package.
-
-
-It's in the path so it should be possible to run directly if you don't need to run a installation file.
 
 .. warning::
 
-   To be able to you need however use email for mathworks account.
+   To be able to install you need to use the email for a **personal mathworks account**.
 
 .. seealso::
 
    You can install some Add-Ons manually using an installation file. This is useful in several situations:
 
-      - The add-on is not available for installation through the Add-On Explorer, for example, if you create a custom add-on yourself or receive one from someone else.
-      - You downloaded the add-on from the Add-On Explorer without installing it.
-      - You downloaded the add-on from the File Exchange at MATLAB Central™.
-       <https://se.mathworks.com/help/matlab/matlab_env/get-add-ons.html>
-
+   - The add-on is not available for installation through the Add-On Explorer, for example, if you create a custom add-on yourself or receive one from someone else.
+   - You downloaded the add-on from the Add-On Explorer without installing it.
+   - You downloaded the add-on from the File Exchange at MATLAB Central™.
+   - `MathWorkds page on getting Add-Ons <https://se.mathworks.com/help/matlab/matlab_env/get-add-ons.html>`_ 
 
 .. demo:: 
 
-   - Search for 'kalmanf'
-   - click "Learning the Kalman Filter
+   - Search for ``kalmanf``
+   - Click "Learning the Kalman Filter"
    - Look at the documentation
    - Test if the command works today:
 
@@ -128,11 +124,8 @@ It's in the path so it should be possible to run directly if you don't need to r
       >> kalmanf
       Unrecognized function or variable 'kalmanf'.
 
-   - OK it is not there
-   - click Add
-
-      - Download and Add to path
-
+   - OK, it is not there
+   - Click "Add", and "Download and Add to path"
    - Type email address connected to your MathWorks account
    - Installation starts
    - It will end up in: 
@@ -141,6 +134,19 @@ It's in the path so it should be possible to run directly if you don't need to r
 
       $ tree MATLAB\ Add-Ons/
       MATLAB\ Add-Ons/
+      └── Collections
+      |   └── Efficient\ GRIB1\ data\ reader
+      |       ├── core.28328
+      |       ├── license.txt
+      |       ├── readGRIB1.c
+      |       ├── readGRIB1.mexa64
+      |       └── resources
+      |           ├── addons_core.xml
+      |           ├── matlab_path_entries.xml
+      |           ├── metadata.xml
+      |           ├── previewImage.png
+      |           ├── readGRIB1.zip
+      |           └── screenshot.png
       └── Functions
           └── Learning\ the\ Kalman\ Filter
               ├── kalmanf.m
@@ -152,6 +158,7 @@ It's in the path so it should be possible to run directly if you don't need to r
                   ├── previewImage.png
                   └── screenshot.png
 
+   - Evidently it is a ``function``. Note that I already have something classified as ``collections``
    - Now test:
 
    .. code-block:: matlab
@@ -168,3 +175,14 @@ Exercises
 
 .. challenge:: 2. (Optional) Browse the add-ons and get inspired for your own work!
 
+.. keypoints:: 
+
+   - Many Add-Ons, like toolboxes and packages are available at the Clusters
+   - You can view add-ons and toolboxes
+
+      - It is all more or less graphical
+
+    - You can install add-ons
+
+      - Search in add-ons explorer and install.
+      - Ends up in local folder and is in the path so it should be reached wherever you are in the file tree.
