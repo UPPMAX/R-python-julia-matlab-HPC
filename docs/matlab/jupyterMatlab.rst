@@ -24,6 +24,13 @@ Session: Matlab in Jupyter
 
    - Rackham: ``naiss2024-22-1202``
    - Kebnekaise: ``hpc2n2024-114``
+   - Cosmos: ``lu2024-7-80``
+ 
+.. admonition:: Storage space for this workshop 
+
+   - Rackham: ``/proj/r-py-jl-m-rackham``
+   - Kebnekaise: ``/proj/nobackup/r-py-jl-m`` 
+   - Cosmos: your home directory should have plenty of space
 
 There are several ways to run Matlab interactively
 
