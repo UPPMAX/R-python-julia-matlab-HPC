@@ -29,10 +29,23 @@ Add-Ons
 MATLAB Add-Ons manager
 ----------------------
 
+.. figure:: ./img/Toolbar_Add-Ons.PNG
+
+
 In the GUI, the Add-Ons manager can be selected from the menu at the top. The drop-down menu options allow users to:
    - **Browse a library of Add-Ons to download.** Note that some Add-Ons require a separate license.
+
+  
+   .. figure:: ./img/Add-On_explorer.PNG
+
+
    - **Manage Add-Ons already downloaded.**
+
+   .. figure:: ./img/Add-On_manager.PNG
+
+
    - Package user-generated code as a Toolbox or App
+
    - Get hardware-related support packages
 
 Here we will only focus on the first two options.
@@ -40,6 +53,8 @@ Here we will only focus on the first two options.
 .. note::
 
    Note that very many packages are already included in the  Academic installation and license
+
+.. figure:: ./img/my_products.PNG
 
 .. admonition:: Some toolboxes
 
@@ -69,51 +84,83 @@ Here we will only focus on the first two options.
 
     - We won't cover the usage of the toolboxes here!
 
-
-DUMP
-----
-
-.. figure:: ./img/Toolbar_Add-Ons.PNG
-
-.. figure:: ./img/Add-On_explorer.PNG
-
-.. figure:: ./img/my_products.PNG
-
-.. figure:: ./img/Add-On_manager.PNG
-
-
-
-Install Add-Ons from File
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-<https://se.mathworks.com/help/matlab/matlab_env/get-add-ons.html>
-
-You can install some Add-Ons manually using an installation file. This is useful in several situations:
-- The add-on is not available for installation through the Add-On Explorer, for example, if you create a custom add-on yourself or receive one from someone else.
-- You downloaded the add-on from the Add-On Explorer without installing it.
-- You downloaded the add-on from the File Exchange at MATLAB Central™.
+Install Add-Ons
+~~~~~~~~~~~~~~~
 
 - Search in add-ons explorer and install.
+
+.. figure:: ./img/searchforaddons.PNG
+
+
 - Ends up in local folder and is in the part so it should be reached wherever you are in the file tree.
-
-
-
-.. warning::
-
-   To be able to you need however use email for mathworks account.
-
-Default Add-On Installation Folder
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 - ``~/MATLAB Add-Ons``
 
-- The install location of an add-on depends on its type.
 - MATLAB installs MathWorks® products in the matlabroot folder and hardware support packages in the folder returned by matlabshared.supportpkg.getSupportPackageRoot.
 - For more information about a specific support package install location, see the documentation for the package.
 
 
 It's in the path so it should be possible to run directly if you don't need to run a installation file.
+
+.. warning::
+
+   To be able to you need however use email for mathworks account.
+
+.. seealso::
+
+   You can install some Add-Ons manually using an installation file. This is useful in several situations:
+
+      - The add-on is not available for installation through the Add-On Explorer, for example, if you create a custom add-on yourself or receive one from someone else.
+      - You downloaded the add-on from the Add-On Explorer without installing it.
+      - You downloaded the add-on from the File Exchange at MATLAB Central™.
+       <https://se.mathworks.com/help/matlab/matlab_env/get-add-ons.html>
+
+Demo
+----
+
+- First test if kalmanf works as a function 
+
+
+- Search for 'kalmanf'
+- click "Learning the Kalman Filter
+- Look at the documentation
+- Test if the command works today:
+
+.. code-block:: matlab
+
+   >> kalmanf
+   Unrecognized function or variable 'kalmanf'.
+
+- OK it is not there
+- click Add
+   - Download and Add to path
+- Type email address conneted to your MathWorks account
+- Installation starts
+It will end up in: 
+
+.. code-block:: console
+
+   $ tree MATLAB\ Add-Ons/
+   MATLAB\ Add-Ons/
+   └── Functions
+       └── Learning\ the\ Kalman\ Filter
+           ├── kalmanf.m
+           └── resources
+               ├── addons_core.xml
+               ├── kalmanf.zip
+               ├── matlab_path_entries.xml
+               ├── metadata.xml
+               ├── previewImage.png
+               └── screenshot.png
+
+- Now test:
+
+.. code-block:: matlab
+
+   >> kalmanf()
+   'kalmanf' requires Learning the Kalman Filter version 1.0.0.0 to be enabled.
+
+- OK. It is installed but may need some other things. Just an example!!
 
 Exercises
 ---------
