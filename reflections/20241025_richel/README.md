@@ -12,14 +12,14 @@
 
 > Learners in time for the R day
 
-![Learners over the centers](centers_venn.png)
+![Registrations over the centers](centers_venn.png)
 
-> Learners over the centers
+> Registrations over the centers
 
 ![Registrations per language](languages_venn.png)
 
 > Registrations per language
 
-![Number of learners per language](n_learners_per_language.png)
+![Number of registrations per language](n_learners_per_language.png)
 
-> Number of learners per language
+> Number of registrations per language
