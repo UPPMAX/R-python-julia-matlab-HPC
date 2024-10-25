@@ -121,6 +121,22 @@ and report to me.
 
 [20241024_counts.csv](20241024_counts.csv)
 
+![](centers_venn.png)
+
+> Centers of R learners
+
+![](languages_venn.png)
+
+> Languages of R learners
+
+![](n_learners_per_language.png)
+
+> Number of learners per language
+
+![](n_learners_in_time.png)
+
+> Learners in time
+
 ## Evaluation results
 
 ...
