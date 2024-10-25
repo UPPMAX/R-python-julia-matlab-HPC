@@ -16,11 +16,10 @@ Introduction to MATLAB
     
 .. admonition:: Your expectations?
    
-    - Find best practices for using MATLAB at UPPMAX and HPC2N
+    - Find best practices for using MATLAB at UPPMAX, HPC2N and LUNARC
     - Toolboxes and Add-Ons
     - HPC performance with MATLAB
 
-    
     **Not covered**
     
     - Improve MATLAB *coding* skills 
