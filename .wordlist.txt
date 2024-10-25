@@ -904,3 +904,4 @@ Kalman
 previewImage
 xml
 addons
+searchforaddons
