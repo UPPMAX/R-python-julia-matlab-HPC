@@ -105,7 +105,7 @@ Summary
 - You can install add-ons
 
     - Search in add-ons explorer and install.
-    - Ends up in local folder and is in the part so it should be reached wherever you are in the file tree.
+    - Ends up in local folder and is in the path so it should be reached wherever you are in the file tree.
 
 **Session-UPPMAX: Matlab client on the desktop** 
 

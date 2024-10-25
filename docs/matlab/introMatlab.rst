@@ -16,7 +16,7 @@ Introduction to MATLAB
     
 .. admonition:: Your expectations?
    
-    - Find best practices for using MATLAB at UPPMAX, HPC2N and LUNARC
+    - Find best practices for using MATLAB at UPPMAX, HPC2N, and LUNARC
     - Toolboxes and Add-Ons
     - HPC performance with MATLAB
 
@@ -148,7 +148,7 @@ Of course MATLAB also has some drawbacks:
 More on MATLAB?
 ---------------
 
-- Documentation at the HPC centres UPPMAX and HPC2N
+- Documentation at the HPC centres UPPMAX, HPC2N, and LUNARC
    - UPPMAX: http://docs.uppmax.uu.se/software/matlab/
    - HPC2N: https://www.hpc2n.umu.se/resources/software/matlab and https://www.hpc2n.umu.se/documentation/guides/parallel-matlab
    - LUNARC: https://lunarc-documentation.readthedocs.io/en/latest/guides/applications/MATLAB/
