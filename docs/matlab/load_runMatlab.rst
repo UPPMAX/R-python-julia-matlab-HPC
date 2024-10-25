@@ -5,7 +5,7 @@ Different recommended procedures for each HPC center:
   - **UPPMAX and HPC2N**: use module system to load at command line
   - **LUNARC**: recommended to use Desktop On-Demand menu, but interactive and non-interactive command lines available
 
-Most HPC centres in Sweden is using the same or similar module system for their software. The difference lies in which modules are installed and their versions/naming. The general examples below will be the same for all/most HPC centres in Sweden - the specific names for the modules will vary a little.
+Most HPC centres in Sweden use the same or a similar module system for their software. The difference lies in which modules are installed and their versions/naming. The general examples below will be similar for all HPC centres in Sweden, with some variation in naming and available versions.
    
 .. objectives:: 
 
@@ -83,7 +83,7 @@ Check for MATLAB versions
 
 .. note::
   
-  In this course we will use MATLAB R202??.
+  In this course we will mainly use MATLAB R2023b.
 
 .. admonition:: Output at UPPMAX (Rackham) as of 16 October 2024  
     :class: dropdown
@@ -168,20 +168,20 @@ For this course, we recommend using MATLAB R2023x at UPPMAX (202??), LUNARC (202
 
    .. tabs::
 
-      .. tab:: UPPMAX and LUNARC
+      .. tab:: UPPMAX
    
          Go back and check which MATLAB modules were available. To load version 2023b, do:
 
          .. code-block:: console
 
-            $ module load matlab/2023b
+            $ module load matlab/R2023b
         
          Note: all lowercase.
          For short, you can also use: 
 
          .. code-block:: console
 
-            $ ml matlab/2023b
+            $ ml matlab/R2023b
 
  
       .. tab:: HPC2N 
@@ -196,7 +196,22 @@ For this course, we recommend using MATLAB R2023x at UPPMAX (202??), LUNARC (202
          .. code-block:: console
 
             $ ml MATLAB/2023b
-    
+
+      .. tab:: LUNARC
+   
+         Go back and check which MATLAB modules were available. To load version 2023b, do:
+
+         .. code-block:: console
+
+            $ module load matlab/2023b
+        
+         Note: all lowercase.
+         For short, you can also use: 
+
+         .. code-block:: console
+
+            $ ml matlab/2023b
+
 
 Start MATLAB and Run a Script
 -----------------------------
