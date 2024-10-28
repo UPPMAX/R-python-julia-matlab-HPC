@@ -905,3 +905,4 @@ previewImage
 xml
 addons
 searchforaddons
+clusterguide
