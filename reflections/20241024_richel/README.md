@@ -237,11 +237,11 @@ Useless to me: which sessions?
 
 ![Ratings](../../evaluations/20241024/evaluation_4.png)
 
-Only my sessons:
+Only my sessions:
 
 - Introduction: 2x very good, 2x excellent
 - Load and run: 4x excellent
-- Interactice work on the compute node: 1x very good, 4x excellent
+- Interactive work on the compute node: 1x very good, 4x excellent
 - Using RStudio: 2x very good, 2x excellent
 
 So, although I dislike my 'Load and run' session, it has been
