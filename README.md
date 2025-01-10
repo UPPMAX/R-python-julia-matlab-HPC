@@ -6,6 +6,8 @@
 
 This repository contains the source code for the UPPMAX/HPC2N [R, Python, Julia, and Matlab in HPC course](https://uppmax.github.io/R-python-julia-matlab-HPC/)
 
+This 4-day course is not given any longer. Instead we refer to this course for [R, Matlab and Julia](https://github.com/UPPMAX/R-matlab-julia-HPC), or for [HPC-Python](https://github.com/UPPMAX/HPC-python/tree/main)
+
 ## Getting PDFs of the material
 
 You can clone the repository: ``git clone https://github.com/UPPMAX/R-python-julia-matlab-HPC.git``
