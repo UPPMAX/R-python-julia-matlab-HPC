@@ -7,9 +7,13 @@ name: Check links
 # Only run this on the main branch, or with Pull Requests
 on:
   push:
-    branches:
-      - main
+    paths:
+      - 'docs/**'
+      - .github/workflows/check_links.yaml
   pull_request:
+    paths:
+      - 'docs/**'
+      - .github/workflows/check_links.yaml
 
 jobs:
   check_links:
